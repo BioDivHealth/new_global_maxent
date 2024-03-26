@@ -1,0 +1,15 @@
+
+
+primary in forest = forest
+
+secondary in forest = wood harvested from secondary
+
+primary in non-forest = non-forest
+
+secondary in non-forest = non-forest
+
+use points to estimate preferences for invertebrates
+
+-problems with bias of point
+-disconitous habitat
+-non-exact points
