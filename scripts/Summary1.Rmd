@@ -1,0 +1,242 @@
+---
+title: "RESPONSES OF ZOONOTIC DISEASE TO GLOBAL CHANGE"
+author: "David Redding"
+date: "17 January 2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(data.table)
+require(ggplot2)
+require(viridis)
+```
+
+How zoonotic diseases will respond as a whole to global change is uncertain. Much of the change will be down to ecological responses of host and vector species. Here, I examine how the 'arena of contact' (defined as the overlap of B & E in Fig. 1) for zoonotic diseases will change from present day to four future time points: 2030,2050,2070 and 2080. While futher complexties within each disease may mean some of these predicted changes do not manafest, these result show the prevailing direct of change.
+
+![Fig 1. Systems models of human zoonoses](C:/Users/yyyy/Dropbox/presentations/conceptual_model10.jpg)
+
+```{r Inputs}
+##read in
+files<-list.files("C:\\Users\\yyyy\\Dropbox\\New_Global_MAXENT\\results2",full.names=TRUE)
+print("Number of diseases in summary:")
+length(files)
+```
+
+```{r echo=FALSE}
+
+for (i in 1:length(files)){
+  
+  load(files[i])
+  if(i==1) {res10<-res9} else {res10<-rbind(res10,res9)}
+}
+
+dat1<-res10
+
+##remove duplicates
+dat1<-dat1[!duplicated(dat1),]
+
+##create main values
+dat1$mean<-((dat1$future_realised_change_upper-dat1$future_realised_change_lower)/2)+dat1$future_realised_change_lower
+dat1$sd<-(dat1$future_realised_change_upper-dat1$future_realised_change_lower)/4
+
+###also for climate only data (so no SSP!)
+dat1$climmean<-((dat1$future_realised_clim_upper-dat1$future_realised_clim_lower)/2)+dat1$future_realised_clim_lower
+dat1$climsd<-(dat1$future_realised_clim_upper-dat1$future_realised_clim_lower)/4
+
+##create zero for present day
+dat1a<-dat1[dat1$year==2030,]
+dat1a$year<-2015
+#dat1a[, c("RCP","ssp") ]<-0
+dat1a[, c("mean","sd","climmean","climsd","future_realised_upper","future_realised_lower","future_realised_clim_upper","future_realised_clim_lower","future_realised_change_upper","future_realised_change_lower")]<-0
+dat1<-rbind(dat1,dat1a)
+
+###creat RCP SSP unique?
+dat1$RCPSSP<-paste(dat1$RCP,dat1$ssp)
+dat1$diseaseRCPSSP<-paste(dat1$name,dat1$RCP,dat1$ssp)
+dat1$diseaseRCPSSPyear<-paste(dat1$name,dat1$RCP,dat1$ssp,dat1$year)
+dat1$diseaseRCPSSPyearmean<-paste(dat1$name,dat1$RCP,dat1$ssp,dat1$year,dat1$mean)
+
+##remove duplicates2
+dat1<-dat1[!duplicated(dat1$diseaseRCPSSPyearmean),]
+
+##remove duplicates3
+dat1<-dat1[order(dat1$mean,decreasing=TRUE),]
+dat1<-dat1[!duplicated(dat1$diseaseRCPSSPyear),]
+
+#dat1b<-aggregate(dat1$mean,by=list(dat1$diseaseRCPSSP),max)
+#dat1c<-aggregate(dat1$mean,by=list(dat1$diseaseRCPSSP),min)
+dat1d<-aggregate(dat1$mean,by=list(dat1$diseaseRCPSSP),function (x) max(abs(x)))
+
+### find maximum for each disease and then create a value relative to that maximum
+dat1<-merge(dat1,dat1d,by.x="diseaseRCPSSP",by.y="Group.1")
+dat1$true_mean<-dat1$mean/dat1$x
+
+##simplify
+dat1$Type2<-gsub("HUMAN->HUMAN","HUMAN",dat1$Type)
+dat1$Type2<-gsub("HOST->VECTOR->HUMAN->VECTOR->HUMAN","HUMAN->VECTOR->HUMAN",dat1$Type2)
+
+
+###
+require(maptools)
+data(wrld_simpl)
+wrld_simpl[wrld_simpl$NAME=="Taiwan","REGION"]<-142
+wrld_simpl[wrld_simpl$NAME=="Taiwan","SUBREGION"]<-30
+wrld_simpl<-wrld_simpl[wrld_simpl$REGION!=0,]
+
+
+dat1$REGIONS<-NA
+dat1$SUBREGIONS<-NA
+dat1$AREA<-NA
+dat1$POPULATIONATRISK<-NA
+dat1$max_lat<-NA
+dat1$min_lat<-NA
+
+for(x in 1:nrow(dat1)){
+  tt<-dat1$countries[x]
+  ws2<-wrld_simpl[wrld_simpl$ISO2 %in% strsplit(tt,",")[[1]],]@data
+  if(nrow(ws2)==0){next}
+  ws2<-ws2[order(ws2$REGION,ws2$SUBREGION),]
+  dat1$REGIONS[x]<-paste0(unique(ws2$REGION),collapse=",")
+  dat1$SUBREGIONS[x]<-paste0(unique(ws2$SUBREGION),collapse=",")
+  dat1$AREA[x]<-sum(ws2$AREA,na.rm=TRUE)
+  dat1$POPULATIONATRISK[x]<-sum(ws2$POP2005,na.rm=TRUE)
+  dat1$max_lat[x]<-max(ws2$LAT,na.rm=TRUE)
+  dat1$min_lat[x]<-min(ws2$LAT,na.rm=TRUE)
+}
+
+###
+dat1$tropics<-"Widespread"
+dat1$tropics[dat1$max_lat>33 & dat1$min_lat<(-33)]<-"Global"
+dat1$tropics[dat1$max_lat>33 & dat1$min_lat>0]<-"Northern"
+dat1$tropics[dat1$max_lat<(0) & dat1$min_lat<(-33)]<-"Southern"
+dat1$tropics[dat1$max_lat<33 & dat1$min_lat>(-33)]<-"Tropical"
+
+dat1$tropics2<-dat1$tropics
+dat1$tropics2[dat1$tropics=="Southern"]<-"Temperate"
+dat1$tropics2[dat1$tropics=="Northern"]<-"Temperate"
+dat1$tropics2[dat1$tropics=="Global"]<-"Widespread"
+
+
+dat1$group3<-dat1$group
+dat1$group3[regexpr('vir', dat1$group)!=(-1)]<-"virus"
+
+
+
+
+```
+#Summary plots
+
+Here are the results of the runs across all diseases, with response variable as the number of new cases, coloured by first SSP then RCP:
+```{r}
+
+ggplot(dat1[dat1$x<2e+08,], aes(x=year,y=mean,col=(ssp),group=diseaseRCPSSP))+
+          geom_line(lwd=2,alpha=0.5)+
+          theme_bw()+
+          geom_abline(slope=0,intercept=0,lwd=1,lty=2)
+
+ggplot(dat1[dat1$x<2e+08,], aes(x=year,y=mean,col=(-RCP),group=diseaseRCPSSP))+
+          geom_line(lwd=2,alpha=0.5)+
+          theme_bw()+
+          geom_abline(slope=0,intercept=0,lwd=1,lty=2)
+
+
+
+```
+
+
+Here are the results of the runs across all diseases, with response variable as the relative change in cases, coloured by first SSP then RCP:
+
+```{r}
+
+ggplot(dat1, aes(x=year,y=true_mean,col=ssp,group=diseaseRCPSSP))+
+          geom_line(lwd=1,alpha=0.1)+
+          theme_bw()+
+          geom_abline(slope=0,intercept=0,lwd=2,lty=2)
+          
+ggplot(dat1, aes(x=year,y=true_mean,col=(-RCP),group=diseaseRCPSSP))+
+          geom_line(lwd=1,alpha=0.1)+
+          theme_bw()+
+          geom_abline(slope=0,intercept=0,lwd=2,lty=2)
+```
+
+
+The same summary but divide into sub-types of zoonotic disease:
+
+```{r plots}
+
+ggplot(dat1[dat1$group3=="bacteria",], aes(x=jitter(year,4),y=jitter(true_mean,0.01)))+
+          #geom_line(size=1.5,alpha=0.1)+
+          #geom_point()+
+          geom_hex(bins=5,binwidth = c(5,0.25))+
+         facet_grid(tropics2~Type2,scales="free")+
+          theme(strip.text.x = element_text(size = 7, colour = "black"))+
+         theme_bw()+
+          xlim(2025,2085)+
+          geom_abline(slope=0,intercept = 0,lty=2)+
+          scale_fill_viridis(direction=-1)+
+          labs(title="Bacteria")
+
+ggplot(dat1[dat1$group3=="virus",], aes(x=jitter(year,4),y=jitter(true_mean,0.01)))+
+          #geom_line(size=1.5,alpha=0.1)+
+          #geom_point()+
+          geom_hex(bins=5,binwidth = c(5,0.25))+
+         facet_grid(tropics2~Type2,scales="free")+
+          theme(strip.text.x = element_text(size = 7, colour = "black"))+
+         theme_bw()+
+          xlim(2025,2085)+
+          geom_abline(slope=0,intercept = 0,lty=2)+
+          scale_fill_viridis(direction=-1)+
+          labs(title="Virus")
+
+ggplot(dat1[dat1$group3=="parasite",], aes(x=jitter(year,4),y=jitter(true_mean,0.01)))+
+          #geom_line(size=1.5,alpha=0.1)+
+          #geom_point()+
+          geom_hex(bins=5,binwidth = c(5,0.25))+
+         facet_grid(tropics2~Type2,scales="free")+
+          theme(strip.text.x = element_text(size = 7, colour = "black"))+
+         theme_bw()+
+          xlim(2025,2085)+
+          geom_abline(slope=0,intercept = 0,lty=2)+
+          scale_fill_viridis(direction=-1)+
+          labs(title="Parasite")
+
+
+#ggplot(dat1, aes(x=year,y=mean,colour=group3,group=diseaseRCPSSP))+
+#          geom_line(size=1,alpha=0.1)+
+#         facet_grid(tropics2~Type2,scales="free")+
+#          theme(strip.text.x = element_text(size = 7, colour = "black"))+
+#         theme_bw()+
+#          geom_abline(slope=0,intercept = 0,lty=2)
+
+
+
+```
+
+Again, the same summary but with raw climatic/niche differences:
+
+```{r, warning=FALSE,message=FALSE}
+
+
+ggplot(dat1, aes(x=year,y=climmean,colour=group3,group=diseaseRCPSSP))+
+          geom_line(size=1,alpha=0.1)+
+         facet_grid(tropics~Type2,scales="free_y")+
+          theme(strip.text.x = element_text(size = 7, colour = "black"))+
+         theme_bw()+
+          geom_abline(slope=0,intercept = 0,lty=2)
+
+          geom_smooth(span=0.1)+
+
+
+```
+
+```{r}
+
+dat1$true_mean2<-cut(dat1$true_mean,breaks=7)
+
+xtabs(data=dat1,true_mean2~Type2+tropics2+group3)
+
+```
+
