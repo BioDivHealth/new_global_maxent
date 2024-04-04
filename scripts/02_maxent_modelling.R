@@ -5,7 +5,8 @@ library(rgdal)
 #library(lubridate)
 #library(grr)
 library(doParallel)
-library(maptools)
+library(maptools) # deprecated in 2023
+library(terra)
 
 # Load in functions and map data ---- 
 # load in helper functions 
@@ -13,6 +14,7 @@ source("scripts/functions6.r")
 
 # load in wrld_simpl tif file
 data(wrld_simpl)
+data("wrld_simpl", package = "terra")   
 tt <- raster("X:\\DRtemp\\wrld_simpl.tif")
 plot(tt)
 
