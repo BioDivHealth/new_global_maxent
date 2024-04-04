@@ -33,10 +33,11 @@ unzip(zipfile = "coastlines.zip",
 coastlines <- st_read("data/ne_10m_coastline/ne_10m_coastline.shp")
 plot(coastlines)
 
-source("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\do_auc.r")
-source("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\rast_to_range.r")
+# load function files
+source("scripts/functions/do_auc.R")
+source("scripts/functions/rast_to_range.r")
 
-##read livestock data
+# read livestock data
 lvst<-stack(list.files("C:\\Users\\david.redding\\Dropbox\\global_IUCN\\data\\",pattern="_Da.tif",full.names=TRUE))
 names(lvst)<-c("buffalo","chickens","cattle","ducks","goats","horses","pigs","sheep")
 

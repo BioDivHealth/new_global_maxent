@@ -10,7 +10,7 @@ library(terra)
 
 # Load in functions and map data ---- 
 # load in helper functions 
-source("scripts/functions6.r")
+source("scripts/functions/functions6.r")
 
 # load in wrld_simpl tif file
 data(wrld_simpl)
