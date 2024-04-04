@@ -14,6 +14,8 @@ Analysis order:
 - 04_Combine_maxent_models_by_transmission_model.R
 - 05_combine_and_future_dispersion.R
 
+Helpful functions are stored in function6.R
+
 Figure scripts:
 
 
