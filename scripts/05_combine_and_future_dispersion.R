@@ -50,8 +50,8 @@ if (length(tif_files) == 0) {
 lvst <- stack(list.files("data/global_IUCN",pattern="_Da.tif",full.names=TRUE))
 names(lvst) <- c("buffalo","chickens","cattle","ducks","goats","horses","pigs","sheep")
 
-##read in admins to move away from GRID
-ad1 <- readOGR("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\admin1\\ne_10m_admin_1_states_provinces.shp",
+# read in admins to move away from GRID
+ad1 <- st_read("data/admin1/ne_10m_admin_1_states_provinces.shp",
              "ne_10m_admin_1_states_provinces")
 
 ##base raster template
