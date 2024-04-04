@@ -54,11 +54,13 @@ names(lvst) <- c("buffalo","chickens","cattle","ducks","goats","horses","pigs","
 ad1 <- st_read("data/admin1/ne_10m_admin_1_states_provinces.shp",
              "ne_10m_admin_1_states_provinces")
 
-##base raster template
-template<-raster(nrow=3600, ncol=8640,ext=extent(-180, 180, -60, 90),crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+# Read in PREDICTS ----
+# base raster template
+template <- raster(nrow=3600, ncol=8640,ext=extent(-180, 180, -60, 90),
+                   crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
 
-##defaunation surface
-predicts<-raster("C:\\Users\\david.redding\\Dropbox\\global_IUCN\\data\\predicts_resampled_template.tif")
+# defaunation surface
+predicts <- raster("data/global_IUCN/predicts_resampled_template.tif")
 
 ##create rasterized admin
 pres_ad1<-fasterize(st_as_sf(ad1),template,field="diss_me")
