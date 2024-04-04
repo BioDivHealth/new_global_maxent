@@ -100,16 +100,17 @@ pres2 <- gsub(" ALL4.r","",pres2)
 
 
 ###find all present day
-iucn1<-list.files("data/disease_host_ranges",pattern="3.tif",full.names=TRUE)
-iucn2<-list.files("D:\\Users\\xxxx\\Documents\\disease_host_ranges\\",pattern="3.tif",full.names=FALSE)
-iucn2<-gsub("3.tif","",iucn2)
+iucn1 <- list.files("data/disease_host_ranges",pattern="3.tif",full.names=TRUE)
+iucn2 <- list.files("data/disease_host_ranges",pattern="3.tif",full.names=FALSE)
+iucn2 <- gsub("3.tif","",iucn2)
 
 ##load world simple
-wrld_simpl3<-readOGR("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\wrld_simpl3.shp","wrld_simpl3")
+wrld_simpl3 <- read_sf("data/wrld_simpl/wrld_simpl3.shp","wrld_simpl3")
 #wrld_simpl3[wrld_simpl3$NAME %in% c("Russia","France"),]
-wrld_simpl3@data[wrld_simpl3$NAME=="Russia","SUBREGION"]<-wrld_simpl3@data[wrld_simpl3$NAME=="Ukraine","SUBREGION"]
+wrld_simpl3 <- wrld_simpl3 %>%
+  mutate(SUBREGION = if_else(NAME == "Russia", SUBREGION[NAME == "Ukraine"], SUBREGION))
 #wrld_simpl3[wrld_simpl3$NAME %in% c("Siberia","Mongolia"),]
-wrld_simpl3@data[wrld_simpl3$NAME=="Siberia","SUBREGION"]<-30
+wrld_simpl3data[wrld_simpl3$NAME=="Siberia","SUBREGION"]<-30
 wrld_simpl3@data[wrld_simpl3$NAME=="Siberia","REGION"]<-142
 wrld_simpl3@data[wrld_simpl3$NAME=="Siberia","ISO2"]<-"XX"
 wrld_simpl3@data[wrld_simpl3$NAME=="Siberia","FIPS"]<-"XX"
@@ -118,12 +119,36 @@ wrld_simpl3@data[wrld_simpl3$NAME=="Paraguay","SUBREGION"]<-4
 wrld_simpl3@data[wrld_simpl3$NAME=="Uruguay","SUBREGION"]<-4
 wrld_simpl3@data[wrld_simpl3$NAME=="Argentina","SUBREGION"]<-4
 
-###find neighbours
-neigh1a<-read.csv(file="C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\country_borders.csv",stringsAsFactors = FALSE)
-neigh1a<-neigh1a[!is.na(neigh1a$country_border_code),]
+# DPLYR version
+# Update SUBREGION for Siberia
+wrld_simpl3$SUBREGION[wrld_simpl3$NAME == "Siberia"] <- 30
+
+# Update REGION for Siberia
+wrld_simpl3$REGION[wrld_simpl3$NAME == "Siberia"] <- 142
+
+# Update ISO2 for Siberia
+wrld_simpl3$ISO2[wrld_simpl3$NAME == "Siberia"] <- "XX"
+
+# Update FIPS for Siberia
+wrld_simpl3$FIPS[wrld_simpl3$NAME == "Siberia"] <- "XX"
+
+# Update SUBREGION for Chile, Paraguay, Uruguay, Argentina
+wrld_simpl3$SUBREGION[wrld_simpl3$NAME %in% c("Chile", "Paraguay", "Uruguay", "Argentina")] <- 4
+
+# Check the updated values
+unique(wrld_simpl3$SUBREGION)
+unique(wrld_simpl3$REGION)
+unique(wrld_simpl3$ISO2)
+unique(wrld_simpl3$FIPS)
+
+
+# Find neighbours ----
+
+neigh1a <- read.csv(file="data/country_borders.csv",stringsAsFactors = FALSE)
+neigh1a <- neigh1a[!is.na(neigh1a$country_border_code),]
 
 ###rasterize world simple
-ws2<-fasterize(st_as_sf(wrld_simpl3),template)
+ws2 <- fasterize(st_as_sf(wrld_simpl3),template)
 
 ###create new raster
 t2<-ws2
