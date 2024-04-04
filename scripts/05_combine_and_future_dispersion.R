@@ -19,7 +19,7 @@ library(ggplot2)
 library(velox)
 library(smoothr)
 
-# Download coastlines data ----
+# Import coastlines and livestock data ----
 download.file("https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/ne_10m_coastline.zip", 
               destfile = 'coastlines.zip')
 
@@ -38,11 +38,12 @@ source("scripts/functions/do_auc.R")
 source("scripts/functions/rast_to_range.r")
 
 # read livestock data
-lvst<-stack(list.files("C:\\Users\\david.redding\\Dropbox\\global_IUCN\\data\\",pattern="_Da.tif",full.names=TRUE))
-names(lvst)<-c("buffalo","chickens","cattle","ducks","goats","horses","pigs","sheep")
+lvst <- stack(list.files("data/global_IUCN/",pattern="_Da.tif",full.names=TRUE))
+names(lvst) <- c("buffalo","chickens","cattle","ducks","goats","horses","pigs","sheep")
 
 ##read in admins to move away from GRID
-ad1<-readOGR("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\admin1\\ne_10m_admin_1_states_provinces.shp","ne_10m_admin_1_states_provinces")
+ad1 <- readOGR("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\admin1\\ne_10m_admin_1_states_provinces.shp",
+             "ne_10m_admin_1_states_provinces")
 
 ##base raster template
 template<-raster(nrow=3600, ncol=8640,ext=extent(-180, 180, -60, 90),crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
