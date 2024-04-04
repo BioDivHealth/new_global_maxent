@@ -1,3 +1,5 @@
+
+# Install required libraries ----
 jj=0
 
 library(spocc)
@@ -24,7 +26,7 @@ library(Hmisc)
 
 source("E:\\Dropbox\\R_scripts\\find_synonyms6.R")
 
-conts<-stack(list.files("E:\\Dropbox\\Public\\conts\\",pattern=".tif",full.names=T))
+conts <- stack(list.files("E:\\Dropbox\\Public\\conts\\",pattern=".tif",full.names=T))
 
 template<-raster(nrow=3600, ncol=8640,ext=extent(-180, 180, -60, 90),crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
 
