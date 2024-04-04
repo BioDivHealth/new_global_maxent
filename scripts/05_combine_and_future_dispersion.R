@@ -38,7 +38,16 @@ source("scripts/functions/do_auc.R")
 source("scripts/functions/rast_to_range.r")
 
 # read livestock data
-lvst <- stack(list.files("data/global_IUCN/",pattern="_Da.tif",full.names=TRUE))
+
+# List all the TIFF files in the directory
+tif_files <- list.files("data/global_IUCN", pattern="_Da.tif", full.names = TRUE)
+
+# Check if there are any files
+if (length(tif_files) == 0) {
+  stop("No TIFF files found matching the pattern.")
+}
+
+lvst <- stack(list.files("data/global_IUCN",pattern="_Da.tif",full.names=TRUE))
 names(lvst) <- c("buffalo","chickens","cattle","ducks","goats","horses","pigs","sheep")
 
 ##read in admins to move away from GRID
