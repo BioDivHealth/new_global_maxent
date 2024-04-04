@@ -78,27 +78,29 @@ point_data <- point_data[!is.na(point_data$SumCases),]
 #point_data$LU<-paste(" ",point_data$name_LU,sep="")
 
 # Read disease data ----
-d1<-read.csv("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\disease_table32c.csv",stringsAsFactors=FALSE)
-d1$name2<-paste(" ",d1$name,sep="")
-d1$name2<-gsub(" angiostrongylus costaricensis "," angiostrongylus costaricensis",d1$name2)
-d1$spillover_rate2<-cut(d1$cases_per_year,breaks=c(0,0.99,99,99999,999999999999),labels=FALSE)/4
+d1 <- read.csv("data/disease_table32c.csv",stringsAsFactors=FALSE)
+d1$name2 <- paste(" ",d1$name,sep="")
+d1$name2 <- gsub(" angiostrongylus costaricensis "," angiostrongylus costaricensis",d1$name2)
+d1$spillover_rate2 <- cut(d1$cases_per_year,breaks=c(0,0.99,99,99999,999999999999),labels=FALSE)/4
 
 ###do or not
-d2<-read.csv("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\diseases4a.csv",stringsAsFactors=FALSE)
-d2a<-d2[!is.na(d2$disease),]
+d2 <- read.csv("data/diseases4a.csv",stringsAsFactors=FALSE)
+d2a <- d2[!is.na(d2$disease),]
 d2a$level[is.na(d2a$level)]<-999
-d2b<-d2a[d2a$level>=1 & d2a$level!=999,]
-nums<-unique(d2b$combine)
+d2b <- d2a[d2a$level>=1 & d2a$level!=999,]
+nums <- unique(d2b$combine)
+
+# Find all present day ----
+## TO DO: these are large files, maybe put all of these on a zenodo??
+## USER NOTES: Please replace this file path with your own 
+pres1 <- list.files("O:\\Users\\Public\\Documents\\per_disease3\\",pattern=" ALL4",full.names=TRUE)
+pres2 <- list.files("D:\\Users\\Public\\Documents\\per_disease3\\",pattern=" ALL4",full.names=FALSE)
+pres2 <- gsub("  ALL4.r","",pres2)
+pres2 <- gsub(" ALL4.r","",pres2)
+
 
 ###find all present day
-pres1<-list.files("D:\\Users\\Public\\Documents\\per_disease3\\",pattern=" ALL4",full.names=TRUE)
-pres2<-list.files("D:\\Users\\Public\\Documents\\per_disease3\\",pattern=" ALL4",full.names=FALSE)
-pres2<-gsub("  ALL4.r","",pres2)
-pres2<-gsub(" ALL4.r","",pres2)
-
-
-###find all present day
-iucn1<-list.files("D:\\Users\\xxxx\\Documents\\disease_host_ranges\\",pattern="3.tif",full.names=TRUE)
+iucn1<-list.files("data/disease_host_ranges",pattern="3.tif",full.names=TRUE)
 iucn2<-list.files("D:\\Users\\xxxx\\Documents\\disease_host_ranges\\",pattern="3.tif",full.names=FALSE)
 iucn2<-gsub("3.tif","",iucn2)
 
