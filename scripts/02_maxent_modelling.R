@@ -17,6 +17,8 @@ data(wrld_simpl)
 data("wrld_simpl", package = "terra")   
 tt <- raster("X:\\DRtemp\\wrld_simpl.tif")
 plot(tt)
+world_shp <- st_read("data/wrld_simpl/wrld_simpl3.shp")
+plot(world_shp)
 
 files2<-list.files("C:\\temp\\da2\\",pattern="_points.r",full.names=TRUE)
 files2a<-list.files("C:\\temp\\da2\\",pattern="_points.r",full.names=FALSE)

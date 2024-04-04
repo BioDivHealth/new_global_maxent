@@ -8,7 +8,7 @@ To add:
 - contact info for Dave
 
 Analysis order:
-- 01_GBIF_Points.R
+- 01_species_gbif.R
 - 02_maxentX2.R 
 - 03_project_rasters_present.R
 - 04_Combine_maxent_models_by_transmission_model.R
