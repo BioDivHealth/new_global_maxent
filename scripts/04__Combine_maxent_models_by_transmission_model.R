@@ -1,33 +1,36 @@
-
+# Load libraries -----
 
 require(raster)
-require(rgdal)
+#require(rgdal)  # deprecated
 require(dismo)
 require(data.table)
 require(sp)
-require(maptools)
+#require(maptools) # deprecated
 require(doParallel)
 require(fasterize)
 require(sf)
 
-data(wrld_simpl)
+data(wrld_simpl) # might not work if maptools deprecated
 
 ##set raster template
 template <-
-  raster(
+ raster(
     nrow = 3600,
     ncol = 8640,
     ext = extent(-180, 180,-60, 90),
     crs = "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
   )
-values(template) <- 1:ncell(template)
+#values(template) <- 1:ncell(template)
 
-ws_ras <- fasterize(st_as_sf(wrld_simpl), template, field = "UN")
+#ws_ras <- fasterize(st_as_sf(wrld_simpl), template, field = "UN")
+
+# load pre-existing raster
+ws_ras <- raster("data/wrld_simpl/wrld_simpl_raster.tif")
 
 ##mask template by area
 template <- mask(template, ws_ras)
 
-source("C:\\Users\\xxxx\\Dropbox\\R_scripts\\functions6.r")
+source("scripts/functions/functions6.r")
 
 ##data.table function
 cbind2 <-
@@ -46,15 +49,12 @@ lcs <-
     "gfsh2",
     "gfsh3")
 
+wrld_simpl <- read_sf("data/wrld_simpl/wrld_simpl3.shp","wrld_simpl3")
 data(wrld_simpl)
 wrld_simpl[wrld_simpl$NAME == "Russia", "SUBREGION"] <- 161
 
 ###read disease data
-d1 <-
-  read.csv(
-    "C:\\Users\\Latitude7400\\Dropbox\\New_Global_MAXENT\\disease_table32c.csv",
-    stringsAsFactors = FALSE
-  )
+d1 <- read.csv("data/disease_table32c.csv",stringsAsFactors=FALSE)
 d1$name2 <- paste(" ", d1$name, sep = "")
 d1$name2 <-
   gsub(" angiostrongylus costaricensis ",
@@ -68,40 +68,45 @@ d1$spillover_rate2 <-
   ) / 4
 
 ###look up all diseases
-load(file = "C:\\Users\\Latitude7400\\Dropbox\\legion2\\dis1.r")
+load(file = "scripts/functions/dis1.r")
 
 ##read in diseases
 diseases <-
-  read.csv(file = "C:\\Users\\Latitude7400\\Dropbox\\legion2\\diseases1.csv",
+  read.csv(file = "data/diseases1.csv",
            stringsAsFactors = FALSE,
            encoding = "latin1")
 
 ##get all points data for each
 points1a <-
   list.files(
-    "C:\\Users\\Public\\Documents\\points\\",
+    "data/points",
     pattern = "all_points",
     full.names = TRUE
   )
+
 points1 <-
   list.files(
-    "C:\\Users\\Public\\Documents\\points\\",
+    "data/points",
     pattern = "_points",
     full.names = TRUE
   )
+
 points2b <- points1[!points1 %in% points1a]
+
 points1a <-
   list.files(
-    "C:\\Users\\Public\\Documents\\points\\",
+    "data/points",
     pattern = "all_points",
     full.names = FALSE
   )
+
 points1 <-
   list.files(
-    "C:\\Users\\Public\\Documents\\points\\",
+    "data/points",
     pattern = "_points",
     full.names = FALSE
   )
+
 points2 <- points1[!points1 %in% points1a]
 points2 <- gsub("_points.r", "", points2, fixed = TRUE)
 points3 <- data.frame(species = points2, filen = points2b)
