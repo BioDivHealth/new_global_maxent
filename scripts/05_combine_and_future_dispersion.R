@@ -62,22 +62,22 @@ template <- raster(nrow=3600, ncol=8640,ext=extent(-180, 180, -60, 90),
 # defaunation surface
 predicts <- raster("data/global_IUCN/predicts_resampled_template.tif")
 
-##create rasterized admin
-pres_ad1<-fasterize(st_as_sf(ad1),template,field="diss_me")
+# create rasterized admin
+pres_ad1 <- fasterize(st_as_sf(ad1),template,field="diss_me")
 
-##read in two country points
-lesstwo<-read.csv("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\disease_in_two_or_fewer_countries4.csv",stringsAsFactors=FALSE)
-lesstwo$name2<-paste(" ",lesstwo$name,sep="")
-lesstwo$dummy<-1
-coordinates(lesstwo)<-~Longitude+Latitude
+# read in two country points
+lesstwo <- read.csv("data/disease_in_two_or_fewer_countries4.csv",stringsAsFactors=FALSE)
+lesstwo$name2 <- paste(" ",lesstwo$name,sep="")
+lesstwo$dummy <- 1
+coordinates(lesstwo) <- ~Longitude+Latitude
 
 
-##read in empress-i point data
-point_data<-read.csv("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\all_empress_i_data4.csv",stringsAsFactors = FALSE)
-point_data<-point_data[!is.na(point_data$SumCases),]
+# Read in empress-i point data ----
+point_data <- read.csv("data/all_empress_i_data4.csv",stringsAsFactors = FALSE)
+point_data <- point_data[!is.na(point_data$SumCases),]
 #point_data$LU<-paste(" ",point_data$name_LU,sep="")
 
-###read disease data
+# Read disease data ----
 d1<-read.csv("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\disease_table32c.csv",stringsAsFactors=FALSE)
 d1$name2<-paste(" ",d1$name,sep="")
 d1$name2<-gsub(" angiostrongylus costaricensis "," angiostrongylus costaricensis",d1$name2)
