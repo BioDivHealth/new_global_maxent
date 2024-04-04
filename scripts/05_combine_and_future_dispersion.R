@@ -172,11 +172,11 @@ for (i in sample(nums)){
 
 
   ##check what has been processed
-   been_done<-list.files("D:\\Users\\xxxx\\Documents\\gainlossresults\\",pattern="_2.csv")
+  been_done<-list.files("data/gainlossresults/", pattern="_2.csv")
   been_done<-gsub("_X_",";",been_done)
   been_done<-read.table(text=been_done,sep=";")[,1]
    
-   if(nam_dis %in% been_done){next}#else {break}}
+   if(nam_dis %in% been_done){next}#else {break}} 
   
 
   ## make livstock
@@ -586,10 +586,11 @@ for (i in sample(nums)){
     }  
     
     ##write main data
-    fwrite(resF,file=paste("D:\\Users\\xxxx\\Documents\\datasets1\\",nam_dis,"_",sample(1:1000,1),"_all_data3.csv",sep=""))
+    # TO DO: REPLACE THIS WITH YOUR OWN FILE PATH!
+    fwrite(resF,file=paste("OS/Users/xxxx/Documentsdata/datasets1/",nam_dis,"_",sample(1:1000,1),"_all_data3.csv",sep=""))
     
     ##write gain loss
-    fwrite(dis_trans,file=paste("D:\\Users\\xxxx\\Documents\\gainlossresults\\",nam_dis,"_",sample(1:1000,1),"_2.csv",sep=""))
+    fwrite(dis_trans,file=paste("data/gainlossresults/",nam_dis,"_",sample(1:1000,1),"_2.csv",sep=""))
     
    print("DONE")
 } ##end of nums loop
