@@ -1,5 +1,7 @@
 
 ###run disease validation
+
+# Load libraries -----
 library(biomod2)
 library(dismo)
 library(maptools)
@@ -11,24 +13,25 @@ library(fasterize)
 library(dismo)
 library(sf)
 library(rgdal)
-
 library(viridis)
 library(sp)
-
 library(ggplot2)
 library(velox)
-
 library(smoothr)
 
-download.file("http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_coastline.zip", 
+# Download coastlines data ----
+download.file("https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/ne_10m_coastline.zip", 
               destfile = 'coastlines.zip')
 
 # unzip the file
 unzip(zipfile = "coastlines.zip", 
       exdir = 'ne-coastlines-10m')
 
-# load the data 
-coastlines <- readOGR("ne-coastlines-10m/ne_10m_coastline.shp")
+# load the data - rgdal version
+#coastlines <- readOGR("data/ne_10m_coastline/ne_10m_coastline.shp")
+# load the data - sf version
+coastlines <- st_read("data/ne_10m_coastline/ne_10m_coastline.shp")
+plot(coastlines)
 
 source("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\do_auc.r")
 source("C:\\Users\\david.redding\\Dropbox\\New_Global_MAXENT\\rast_to_range.r")
