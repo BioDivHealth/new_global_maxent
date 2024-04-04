@@ -113,21 +113,24 @@ points3 <- data.frame(species = points2, filen = points2b)
 rm(points1a, points1, points2b, points2)
 
 #load gridded livestock of the world
+# TO DO: ADD YOUR OWN FILEPATH
 lt2 <-
-  fread("C:\\Users\\Public\\Documents\\livestock_future_2030_2050_2070_2080b.csv")
+  fread("≈livestock_future_2030_2050_2070_2080b.csv")
 setkey(lt2, cell_by_year)
 
 
 ####Get all future climate niches
+# TO DO: ADD YOUR OWN FILEPATH
+
 link2b <-
   list.files(
-    "C:\\Users\\Public\\Documents\\resultsY2",
+    "/Volumes/OS/Users/Public/Documents/resultsY2",
     pattern = ".tif",
     full.names = TRUE
   )
 link2 <-
   list.files(
-    "C:\\Users\\Public\\Documents\\resultsY2",
+    "/Volumes/OS/Users/Public/Documents/resultsY2",
     pattern = ".tif",
     full.names = FALSE
   )
@@ -153,6 +156,7 @@ link2 <- gsub("presentXXX", "present", link2, fixed = TRUE)
 link3 <- read.table(text = link2,
                     sep = ";",
                     stringsAsFactors = FALSE)
+
 link3$filen <- link2b
 names(link3)[1:3] <- c("species", "year", "RCP")
 link3$RCP <- as.numeric(gsub("present", "999", link3$RCP))
@@ -163,6 +167,7 @@ link3$speciesX <- gsub("_1_subs_", ";", link3$speciesX, fixed = TRUE)
 link3$speciesX <- gsub("_2_subs_", ";", link3$speciesX, fixed = TRUE)
 link3$speciesX <- gsub("_3_subs_", ";", link3$speciesX, fixed = TRUE)
 link3$speciesX <- gsub("_4_subs_", ";", link3$speciesX, fixed = TRUE)
+
 others1 <-
   read.table(text = link3$speciesX,
              sep = ";",
@@ -173,7 +178,7 @@ rm(link2, link2b)
 
 ###
 futlg <-
-  read.csv(file = "C:\\Users\\Public\\Documents\\futlg.csv", stringsAsFactors =
+  read.csv(file = "data/futlg.csv", stringsAsFactors =
              FALSE)
 futlg$filen <-
   gsub("C:", "C:\\Users\\Public\\Documents", futlg$filen, fixed = TRUE)
