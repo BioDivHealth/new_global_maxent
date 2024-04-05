@@ -25,7 +25,7 @@ files2a<-gsub("_points.r","",files2a)
 
 # Get current bioclim data ----
 spdata<-stack("C:\\temp\\predictorsX.tif")
-names(spdata)<-read.csv("E:\\Dropbox\\names1.csv",stringsAsFactors=FALSE)$x
+names(spdata) <-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 spdata<-subset(spdata,c(8,10:length(names(spdata))))
 Altitude<-subset(spdata,1)
 #names(Altitude)<-"Altitude"
