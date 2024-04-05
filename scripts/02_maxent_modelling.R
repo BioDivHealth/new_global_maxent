@@ -47,7 +47,7 @@ while (z<length(files2)){
   #save(pack1,file=paste("C:\\temp\\disease_analyses\\",name1,"-",ID(),"all_points.r",sep=""))
   #write.csv(data.frame(disease=dis,type=hv2$type[z],name1=name1),file=paste("C:\\temp\\disease_analyses\\",name1,"-",ID(),".csv",sep=""))
   #save(data1, file=paste("C:\\temp\\disease_analyses\\",name1,"_points.r",sep=""))
-  save(xm, file=paste("C:\\temp\\disease_analyses2\\",name1,"_maxent.r",sep=""))}
+  save(xm, file=paste("/Volumes/OS/Users/xxxx/Dropbox/New_Global_MAXENT\disease_analyses2",name1,"_maxent.r",sep=""))}
   print(z);z=z+1
   gc();removeTmpFiles(5)
 }

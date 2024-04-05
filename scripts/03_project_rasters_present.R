@@ -1,4 +1,4 @@
-
+# Load Livraries ----
 
 #setwd('/scratch/scratch/ucbtdw0/sdms')
 
@@ -9,6 +9,7 @@ suppressMessages(library(foreach))
 suppressMessages(library(rJava))
 
 
+# Bring in data ----
 spdata<-stack("V://temp//predictorsX.tif")
 names(spdata)<-read.csv("V://temp//names1.csv",stringsAsFactors=FALSE)$x
 
@@ -33,7 +34,7 @@ files1<-files1[files2 %in% files2x]
 files2<-files2[files2 %in% files2x]
 
 
-############## PROCESS SPECIES #################
+# PROCESS SPECIES ----
 
 endCluster()
 
@@ -53,7 +54,8 @@ for (ii in 1:nrow(link3b)){
   print(ii)
 }
 
-files2b<-gsub("X:/DRtemp/resultsY/","",probs1,fixed=TRUE)
+# TO DO: link to your own results Y2 filepath here
+files2b<-gsub("OS/Users/Public/Documents/resultsY2/","",probs1,fixed=TRUE)
 files2b<-gsub("_present_XXX.tif","_maxent.r",files2b,fixed=TRUE)
 
 files1<-files1[files2 %in% files2b]
