@@ -1,0 +1,578 @@
+Taxa,lower,Average of Mass,Average of walking speed,Average of d,Average of density
+Achatina,achatina,250,0.01,0.000169543,5600
+Aedes,aedes,0.1,1,1.74E-05,150000
+Aedes aegypti,aedes aegypti,0.1,1,1.74E-05,150000
+Aedes albopictus,aedes albopictus,0.1,1,1.74E-05,150000
+Aedes aquasalis,aedes aquasalis,0.1,1,1.74E-05,150000
+Aedes bellator,aedes bellator,0.1,1,1.74E-05,150000
+Aedes camptorhynchus,aedes camptorhynchus,0.1,1,1.74E-05,150000
+Aedes cooki,aedes cooki,0.1,1,1.74E-05,150000
+Aedes darlingi,aedes darlingi,0.1,1,1.74E-05,150000
+Aedes kochi,aedes kochi,0.1,1,1.74E-05,150000
+Aedes polynesiensis,aedes polynesiensis,0.1,1,1.74E-05,150000
+Aedes pseudoscutellaris,aedes pseudoscutellaris,0.1,1,1.74E-05,150000
+Aedes rotumae,aedes rotumae,0.1,1,1.74E-05,150000
+Aedes scapularis,aedes scapularis,0.1,1,1.74E-05,150000
+Aedes triseriatus,aedes triseriatus,0.1,1,1.74E-05,150000
+Aedes vigilax,aedes vigilax,0.1,1,1.74E-05,150000
+Aedes aegypti,aedes aegypti,0.1,1,1.74E-05,150000
+Aegialomys xanthaeolus,aegialomys xanthaeolus,79.79,0.657838673,0.000121603,41
+Aethomys chrysophilus,aethomys chrysophilus,80.85,0.658968271,0.000122071,40
+Aethomys namaquensis,aethomys namaquensis,57.1,0.629837906,0.000110321,45
+Akodon azarae,akodon azarae,25.27,0.56650635,8.70E-05,57
+Akodon mollis,akodon mollis,30.39,0.58025794,9.18E-05,54
+Alces alces,alces alces,461900.76,2.028884987,0.001513082,3
+Alopex lagopus,alopex lagopus,3584.37,1.078797097,0.000367971,13
+Amblyomma,amblyomma,2.75,0.01,4.56E-05,840
+Amblyomma americanum,amblyomma americanum,2.75,0.01,4.56E-05,840
+Amblyomma cajennense,amblyomma cajennense,2.75,0.01,4.56E-05,840
+Amblyomma hebraeum,amblyomma hebraeum,2.75,0.01,4.56E-05,840
+Amblyomma lepidum,amblyomma lepidum,2.75,0.01,4.56E-05,840
+Amblyomma maculatum,amblyomma maculatum,2.75,0.01,4.56E-05,840
+Amblyomma nodosum,amblyomma nodosum,2.75,0.01,4.56E-05,840
+Amblyomma testudinarium,amblyomma testudinarium,2.75,0.01,4.56E-05,840
+Amblyomma triste,amblyomma triste,2.75,0.01,4.56E-05,840
+Amblyomma variegatum,amblyomma variegatum,2.75,0.01,4.56E-05,840
+Amphipsylla primaris,amphipsylla primaris,0.01,0.01,8.90E-06,0
+Anomiopsyllus,anomiopsyllus,0.01,0.01,8.90E-06,0
+Anopheles,anopheles,0.1,1,1.74E-05,150000
+Anopheles albimanus,anopheles albimanus,0.1,1,1.74E-05,150000
+Anopheles albitarsis,anopheles albitarsis,0.1,1,1.74E-05,150000
+Anopheles aquasalis,anopheles aquasalis,0.1,1,1.74E-05,150000
+Anopheles arabensis,anopheles arabensis,0.1,1,1.74E-05,150000
+Anopheles arabinensis,anopheles arabinensis,0.1,1,1.74E-05,150000
+Anopheles argyritarsi,anopheles argyritarsi,0.1,1,1.74E-05,150000
+Anopheles argyropus,anopheles argyropus,0.1,1,1.74E-05,150000
+Anopheles artemievi,anopheles artemievi,0.1,1,1.74E-05,150000
+Anopheles atroparvus,anopheles atroparvus,0.1,1,1.74E-05,150000
+Anopheles aztecus,anopheles aztecus,0.1,1,1.74E-05,150000
+Anopheles baimaii,anopheles baimaii,0.1,1,1.74E-05,150000
+Anopheles balabacensis,anopheles balabacensis,0.1,1,1.74E-05,150000
+Anopheles bancroftii,anopheles bancroftii,0.1,1,1.74E-05,150000
+Anopheles barbirostris,anopheles barbirostris,0.1,1,1.74E-05,150000
+Anopheles beklemishevi,anopheles beklemishevi,0.1,1,1.74E-05,150000
+Anopheles bellator,anopheles bellator,0.1,1,1.74E-05,150000
+Anopheles benarrochi,anopheles benarrochi,0.1,1,1.74E-05,150000
+Anopheles bifurcatus,anopheles bifurcatus,0.1,1,1.74E-05,150000
+Anopheles braziliensis,anopheles braziliensis,0.1,1,1.74E-05,150000
+Anopheles claviger,anopheles claviger,0.1,1,1.74E-05,150000
+Anopheles coustani,anopheles coustani,0.1,1,1.74E-05,150000
+Anopheles cruzii,anopheles cruzii,0.1,1,1.74E-05,150000
+Anopheles culicifacies,anopheles culicifacies,0.1,1,1.74E-05,150000
+Anopheles darlingi,anopheles darlingi,0.1,1,1.74E-05,150000
+Anopheles deaneorum,anopheles deaneorum,0.1,1,1.74E-05,150000
+Anopheles dirus,anopheles dirus,0.1,1,1.74E-05,150000
+Anopheles donaldi,anopheles donaldi,0.1,1,1.74E-05,150000
+Anopheles dunhami,anopheles dunhami,0.1,1,1.74E-05,150000
+Anopheles epiroticus,anopheles epiroticus,0.1,1,1.74E-05,150000
+Anopheles farauti,anopheles farauti,0.1,1,1.74E-05,150000
+Anopheles flavirostris,anopheles flavirostris,0.1,1,1.74E-05,150000
+Anopheles fluviatilis,anopheles fluviatilis,0.1,1,1.74E-05,150000
+Anopheles freeborni,anopheles freeborni,0.1,1,1.74E-05,150000
+Anopheles funestus,anopheles funestus,0.1,1,1.74E-05,150000
+Anopheles gambiae,anopheles gambiae,0.1,1,1.74E-05,150000
+Anopheles hackeri,anopheles hackeri,0.1,1,1.74E-05,150000
+Anopheles homunculus,anopheles homunculus,0.1,1,1.74E-05,150000
+Anopheles hyrcanus,anopheles hyrcanus,0.1,1,1.74E-05,150000
+Anopheles introlatus,anopheles introlatus,0.1,1,1.74E-05,150000
+Anopheles kleini,anopheles kleini,0.1,1,1.74E-05,150000
+Anopheles kochi,anopheles kochi,0.1,1,1.74E-05,150000
+Anopheles koliensis,anopheles koliensis,0.1,1,1.74E-05,150000
+Anopheles latens,anopheles latens,0.1,1,1.74E-05,150000
+Anopheles lesteri,anopheles lesteri,0.1,1,1.74E-05,150000
+Anopheles letifer,anopheles letifer,0.1,1,1.74E-05,150000
+Anopheles leucosphyrus,anopheles leucosphyrus,0.1,1,1.74E-05,150000
+Anopheles maculatus,anopheles maculatus,0.1,1,1.74E-05,150000
+Anopheles maculipennis,anopheles maculipennis,0.1,1,1.74E-05,150000
+Anopheles marajoara,anopheles marajoara,0.1,1,1.74E-05,150000
+Anopheles martinius,anopheles martinius,0.1,1,1.74E-05,150000
+Anopheles mediopunctatus,anopheles mediopunctatus,0.1,1,1.74E-05,150000
+Anopheles melas,anopheles melas,0.1,1,1.74E-05,150000
+Anopheles merus,anopheles merus,0.1,1,1.74E-05,150000
+Anopheles messeae,anopheles messeae,0.1,1,1.74E-05,150000
+Anopheles minimus,anopheles minimus,0.1,1,1.74E-05,150000
+Anopheles moucheti,anopheles moucheti,0.1,1,1.74E-05,150000
+Anopheles nili,anopheles nili,0.1,1,1.74E-05,150000
+Anopheles nuneztovari,anopheles nuneztovari,0.1,1,1.74E-05,150000
+Anopheles oswaldoi,anopheles oswaldoi,0.1,1,1.74E-05,150000
+Anopheles paludis,anopheles paludis,0.1,1,1.74E-05,150000
+Anopheles punctulatus,anopheles punctulatus,0.1,1,1.74E-05,150000
+Anopheles stephensi,anopheles stephensi,0.1,1,1.74E-05,150000
+Anopheles wellcomei,anopheles wellcomei,0.1,1,1.74E-05,150000
+Anopheles arabinensis,anopheles arabinensis,0.1,1,1.74E-05,150000
+Anourosorex squamipes,anourosorex squamipes,20,0.549540874,8.13E-05,62
+Apodemus,apodemus,21.9,0.556062791,8.35E-05,60
+Apodemus agrarius,apodemus agrarius,21.11,0.553413273,8.26E-05,61
+Apodemus ponticus,apodemus ponticus,21.11,0.553413273,8.26E-05,61
+Apodemus sylvaticus,apodemus sylvaticus,21.9,0.556062791,8.35E-05,60
+Aroapyrgus,aroapyrgus,10,0.01,6.64E-05,5600
+Arvicanthis abyssinicus,arvicanthis abyssinicus,73.34,0.650669453,0.000118657,42
+Arvicanthis niloticus,arvicanthis niloticus,95.8,0.67366443,0.00012825,38
+Bandicota bengalensis,bandicota bengalensis,226.99,0.753610559,0.000164845,29
+Bandicota indica,bandicota indica,583.09,0.851945332,0.000216924,22
+Biomphalaria,biomphalaria,10,0.01,6.64E-05,5600
+Bison bison,bison bison,624577.07,2.110047759,0.001651941,3
+Bison bonasus,bison bonasus,675876.7,2.131811852,0.001690326,3
+Bithynia,bithynia,10,0.01,6.64E-05,5600
+Blarina brevicauda,blarina brevicauda,18.56,0.544228445,7.95E-05,63
+Boophilus,boophilus,2.75,0.01,4.56E-05,840
+Bos mutus,bos mutus,500000,2.049897761,0.001548386,3
+Bothriocroton hydrosauri,bothriocroton hydrosauri,2.75,0.01,4.56E-05,840
+Bradypus tridactylus,bradypus tridactylus,4375.8,1.107142624,0.000389966,12
+Bradypus variegatus,bradypus variegatus,4136.36,1.099072859,0.000383632,12
+Bubalus arnee,bubalus arnee,929500.97,2.221971994,0.001854555,2
+Bulinus,bulinus,10,0.318340478,6.64E-05,5600
+Bulinus africanus,bulinus africanus,10,0.318340478,6.64E-05,5600
+Bulinus forskalii,bulinus forskalii,10,0.318340478,6.64E-05,5600
+Callopsylla dolabris,callopsylla dolabris,0.01,0.01,8.90E-06,0
+Calomys callosus,calomys callosus,44.95,0.610549614,0.000102902,48
+Calomys laucha,calomys laucha,14,0.524641626,7.33E-05,69
+Camelus ferus,camelus ferus,523615.19,2.061826025,0.001568755,3
+Canis aureus,canis aureus,9658.7,1.227172257,0.00049101,9
+Canis latrans,canis latrans,11989.1,1.262142399,0.000522885,9
+Canis lupus,canis lupus,31756.51,1.432532094,0.000694244,7
+Cannomys badius,cannomys badius,472.07,0.828870977,0.000203993,24
+Capreolus capreolus,capreolus capreolus,22502.01,1.369792775,0.000628023,7
+Castor canadensis,castor canadensis,18124.41,1.331804275,0.000589704,8
+Cavia aperea,cavia aperea,1000,0.91383145,0.000253793,19
+Cavia tschudii,cavia tschudii,1000,0.91383145,0.000253793,19
+Ceratophyllus,ceratophyllus,0.01,0.01,8.90E-06,0
+Cercopithecus,cercopithecus,4096.161765,1.097678413,0.000382543,12
+Cerdocyon thous,cerdocyon thous,5741.66,1.14694072,0.000422045,11
+Cerradomys subflavus,cerradomys subflavus,49.91,0.618914254,0.000106084,47
+Cervus elaphus,cervus elaphus,240867.13,1.864220075,0.001251919,4
+Choloepus didactylus,choloepus didactylus,6646.5,1.168969532,0.000440406,11
+Choloepus hoffmanni,choloepus hoffmanni,5893.5,1.150839151,0.000425263,11
+Chrysops,chrysops,0.25,1,2.27E-05,12507.6
+Chrysops dimidiata,chrysops dimidiata,0.25,1,2.27E-05,12507.6
+Chrysops discalis,chrysops discalis,0.25,1,2.27E-05,12507.6
+Chrysops distinctipennis,chrysops distinctipennis,0.25,1,2.27E-05,12507.6
+Chrysops silacea,chrysops silacea,0.25,1,2.27E-05,12507.6
+Citellophilus sungaris,citellophilus sungaris,0.01,0.01,8.90E-06,0
+Coquillettidia,coquillettidia,0.1,1,1.74E-05,150000
+Coquillettidia juxtamansonia,coquillettidia juxtamansonia,0.1,1,1.74E-05,150000
+Cricetomys gambianus,cricetomys gambianus,1267.52,0.942432441,0.000271919,17
+Crocidura,crocidura,13.465,0.521990894,7.25E-05,70
+Crocidura theresae,crocidura theresae,17.6,0.540483882,7.83E-05,64
+Ctenophthalmus,ctenophthalmus,0.01,0.01,8.90E-06,0
+Culex,culex,0.1,1,1.74E-05,150000
+Culex annulirostris,culex annulirostris,0.1,1,1.74E-05,150000
+Culex bitaeniorhynchus,culex bitaeniorhynchus,0.1,1,1.74E-05,150000
+Culex gelidus,culex gelidus,0.1,1,1.74E-05,150000
+Culex molestus,culex molestus,0.1,1,1.74E-05,150000
+Culex pipiens,culex pipiens,0.1,1,1.74E-05,150000
+Culex quinquefasciatu,culex quinquefasciatu,0.1,1,1.74E-05,150000
+Culex quinquefasciatus,culex quinquefasciatus,0.1,1,1.74E-05,150000
+Culex tritaenorhynchus,culex tritaenorhynchus,0.1,1,1.74E-05,150000
+Culex vishnui,culex vishnui,0.1,1,1.74E-05,150000
+Culex  quinquefasciatus,culex  quinquefasciatus,0.1,1,1.74E-05,150000
+Culicoides,culicoides,0.1,1,1.74E-05,150000
+Cynomys gunnisoni,cynomys gunnisoni,797.93,0.88740429,0.000237657,20
+Cynomys ludovicianus,cynomys ludovicianus,871.74,0.897669371,0.000243855,20
+Dasypus novemcinctus,dasypus novemcinctus,3949.01,1.092470129,0.000378492,12
+Dendrohyrax,dendrohyrax,3078.05,1.057649912,0.00035202,13
+Dermacentor,dermacentor,2.75,0.01,4.56E-05,840
+Dermacentor andersoni,dermacentor andersoni,2.75,0.01,4.56E-05,840
+Dermacentor silvarum,dermacentor silvarum,2.75,0.01,4.56E-05,840
+Dermacentor variabilis,dermacentor variabilis,2.75,0.01,4.56E-05,840
+Desmodus rotundus,desmodus rotundus,33.16,0.586875512,9.42E-05,53
+Diamanus montanus,diamanus montanus,0.01,0.01,8.90E-06,0
+Didelphis marsupialis,didelphis marsupialis,1134.75,0.928973072,0.000263302,18
+Didelphis virginiana,didelphis virginiana,1428.295,0.957177386,0.000281534,17
+Dinopsyllus lypusus,dinopsyllus lypusus,0.01,0.01,8.90E-06,0
+Eidolon helvum,eidolon helvum,254.61,20,0.000170447,28
+Elephantulus,elephantulus,50.45666667,0.619791353,0.000106421,47
+Eothenomys miletus,eothenomys miletus,19.59,0.548063118,8.08E-05,62
+Epomophorus gambianus,epomophorus gambianus,134.59,20,0.000141586,35
+Epomops franqueti,epomops franqueti,118.99,0.692918986,0.000136601,36
+Eptesicus fuscus,eptesicus fuscus,17.49,20,7.82E-05,64
+Eptesicus serotinus,eptesicus serotinus,23.09,20,8.48E-05,59
+Erethizon dorsatum,erethizon dorsatum,7419.46,1.185808337,0.000454734,10
+Erinaceus,erinaceus,721.97,0.87593845,0.000230838,21
+Frontopsylla luculenta,frontopsylla luculenta,0.01,0.01,8.90E-06,0
+Funambulus palmarum,funambulus palmarum,136.4,0.705329371,0.000142138,34
+Funambulus pennantii,funambulus pennantii,111.11,0.68677426,0.000133904,37
+Funisciurus anerythrus,funisciurus anerythrus,223.54,0.752111592,0.000164112,30
+Funisciurus congicus,funisciurus congicus,112,0.687486926,0.000134215,37
+Galea musteloides,galea musteloides,386.64,0.807636582,0.00019248,25
+Gerbilliscus afra,gerbilliscus afra,115.205,0.688418923,0.000134753,36.5
+Gerbilliscus brantsii,gerbilliscus brantsii,113.845,0.687115861,0.000134202,36.5
+Gerbilliscus leucogaster,gerbilliscus leucogaster,73.75,0.651141182,0.00011885,41
+Gerbilliscus robustus,gerbilliscus robustus,95.99,0.67383797,0.000128324,38
+Gerbillus gerbillus,gerbillus gerbillus,26.99,0.571376633,8.87E-05,56
+Gerbillus nanus,gerbillus nanus,25.5,0.567174013,8.73E-05,57
+Glossina fuscipes,glossina fuscipes,2,1,4.16E-05,822
+Glossina morsitans,glossina morsitans,2,1,4.16E-05,822
+Glossina palpalis,glossina palpalis,2,1,4.16E-05,822
+Glossina palpides,glossina palpides,2,1,4.16E-05,822
+Glossina tachinoides,glossina tachinoides,2,1,4.16E-05,822
+Graomys griseoflavus,graomys griseoflavus,68.32,0.644699483,0.000116234,42
+Graphiurus,graphiurus,35.094,0.591216266,9.58E-05,52
+Haemagogus janthinomys,haemagogus janthinomys,0.1,1,1.74E-05,150000
+Haemaphysalis flava,haemaphysalis flava,2.75,0.01,4.56E-05,840
+Haemaphysalis hystericis,haemaphysalis hystericis,2.75,0.01,4.56E-05,840
+Haemaphysalis leachii,haemaphysalis leachii,2.75,0.01,4.56E-05,840
+Haemaphysalis longicornis,haemaphysalis longicornis,2.75,0.01,4.56E-05,840
+Haemaphysalis punctata,haemaphysalis punctata,2.75,0.01,4.56E-05,840
+Haemaphysalis yeni,haemaphysalis yeni,2.75,0.01,4.56E-05,840
+Hectopsylla,hectopsylla,0.01,0.01,8.90E-06,0
+Heliosciurus,heliosciurus,297.2366667,0.780493715,0.0001783,27
+Heterohyrax brucei,heterohyrax brucei,2453.66,1.02693267,0.000329545,14
+Heteromys,heteromys,102.7483333,0.679824517,0.00013089,38
+Histiotus macrotus,histiotus macrotus,11,0.50844871,6.83E-05,74
+Holochilus sciureus,holochilus sciureus,120.42,0.693995927,0.000137076,36
+Hoplopsyllus anomalus,hoplopsyllus anomalus,0.01,0.01,8.90E-06,0
+Hyalomma,hyalomma,2.75,0.01,4.56E-05,840
+Hyalomma marginatum,hyalomma marginatum,2.75,0.01,4.56E-05,840
+Hylomyscus alleni,hylomyscus alleni,22.308,0.557398741,8.39E-05,60
+Hypsignathus monstrosus,hypsignathus monstrosus,336.97,0.793328327,0.00018493,26
+Ixodes,ixodes,2.75,0.01,4.56E-05,840
+Ixodes hexagonus,ixodes hexagonus,2.75,0.01,4.56E-05,840
+Ixodes holocyclus,ixodes holocyclus,2.75,0.01,4.56E-05,840
+Ixodes japonesi,ixodes japonesi,2.75,0.01,4.56E-05,840
+Ixodes monospinosus,ixodes monospinosus,2.75,0.01,4.56E-05,840
+Ixodes ovatus,ixodes ovatus,2.75,0.01,4.56E-05,840
+Ixodes pacificus,ixodes pacificus,2.75,0.01,4.56E-05,840
+Ixodes persculatus,ixodes persculatus,2.75,0.01,4.56E-05,840
+Ixodes persulcatus,ixodes persulcatus,2.75,0.01,4.56E-05,840
+Ixodes persulcaus,ixodes persulcaus,2.75,0.01,4.56E-05,840
+Ixodes ricinus,ixodes ricinus,2.75,0.01,4.56E-05,840
+Ixodes scapularis,ixodes scapularis,2.75,0.01,4.56E-05,840
+Ixodes tasmani,ixodes tasmani,2.75,0.01,4.56E-05,840
+Ixodes trianguliceps,ixodes trianguliceps,2.75,0.01,4.56E-05,840
+Ixodes ventalloi,ixodes ventalloi,2.75,0.01,4.56E-05,840
+Ixodida,ixodida,2.75,0.01,4.56E-05,840
+Jaculus jaculus,jaculus jaculus,59.8,0.633632222,0.000111815,44
+Kobus ellipsiprymnus,kobus ellipsiprymnus,204393.48,1.824848503,0.001193507,4
+Lasiopodomys brandtii,lasiopodomys brandtii,26.89026442,10.2586351,8.57E-05,60.5
+Lasiurus cinereus,lasiurus cinereus,27.06,0.571569062,8.88E-05,56
+Lemniscomys striatus,lemniscomys striatus,43.65,0.6082247,0.000102027,49
+Leptotrombidium,leptotrombidium,0.01,0.01,8.90E-06,150000
+Lepus americanus,lepus americanus,1568.42,0.968893871,0.000289307,16
+Lepus europaeus,lepus europaeus,3816.43,1.08763093,0.00037475,12
+Lophuromys flavopunctatus,lophuromys flavopunctatus,57.07,0.629794878,0.000110305,45
+Lutzomyia,lutzomyia,0.05,0.01,1.42E-05,150000
+Macaca,macaca,7193.830588,1.181057189,0.000450666,10
+Mansonia,mansonia,0.1,1,1.74E-05,150000
+Mansonia pseudotitillans,mansonia pseudotitillans,0.1,1,1.74E-05,150000
+Mansonia uniformis,mansonia uniformis,0.1,1,1.74E-05,150000
+Marmota,marmota,4255.134286,1.103125251,0.000386806,12
+Marmota baibacina,marmota baibacina,4255.134286,1.103125251,0.000386806,12
+Marmota caudata,marmota caudata,4350,1.106291827,0.000389295,12
+Marmota himalayana,marmota himalayana,4255.134286,1.103125251,0.000386806,12
+Marmota sibirica,marmota sibirica,4255.134286,1.103125251,0.000386806,12
+Martes martes,martes martes,1299.99,0.945536508,0.000273927,17
+Mastomys coucha,mastomys coucha,53.81,0.624997513,0.000108433,46
+Mastomys natalensis,mastomys natalensis,41.85,0.604904076,0.000100784,49
+Meles meles,meles meles,11884.03,1.260698937,0.000521547,9
+Mephitis mephitis,mephitis mephitis,2399.99,1.023984368,0.000327431,14
+Meriones,meriones,89.5975,0.667827912,0.000125776,39
+Meriones libycus,meriones libycus,91.33,0.669492706,0.000126479,39
+Meriones meridianus,meriones meridianus,89.5975,0.667827912,0.000125776,39
+Meriones persicus,meriones persicus,107.52,0.683848193,0.00013263,37
+Meriones shawi,meriones shawi,90.6,0.668794613,0.000126184,39
+Meriones tamariscinus,meriones tamariscinus,89.5975,0.667827912,0.000125776,39
+Meriones tristrami,meriones tristrami,111.62,0.687183247,0.000134082,37
+Meriones unguiculatus,meriones unguiculatus,57.75,0.630765395,0.000110685,45
+Meriones vinogradovi,meriones vinogradovi,117,0.691401413,0.000135932,36
+Micromys minutus,micromys minutus,6.99,0.479344925,5.99E-05,85
+Microtus,microtus,41.8771875,20,0.000100801,49.5
+Microtus arvalis,microtus arvalis,34.0621875,20,9.45E-05,53
+Microtus fortis,microtus fortis,41.224375,20,0.000100343,50
+Microtus pennsylvanicus,microtus pennsylvanicus,42.53,20,0.000101258,49
+Miniopterus schreibersii,miniopterus schreibersii,10.876,20,6.81E-05,74
+Monopsyllus,monopsyllus,0.01,0.01,8.90E-06,0
+Murina,murina,7.54,0.484088065,6.12E-05,83
+Mus booduga,mus booduga,12.55615385,0.517270203,7.10E-05,71
+Mus minutoides,mus minutoides,6.43,0.474169404,5.84E-05,87
+Mustela eversmanii,mustela eversmanii,1684.21,0.977907129,0.000295366,16
+Mustela putorius,mustela putorius,975.55,0.910895465,0.000251971,19
+Myodes glareolus,myodes glareolus,20.73,0.552107962,8.22E-05,61
+Myodes regulus,myodes regulus,25.02833333,0.565799099,8.68E-05,58
+Myodes rufocanus,myodes rufocanus,36.43,0.594094857,9.68E-05,51
+Myotis blythii,myotis blythii,9.597169811,20,6.57E-05,77
+Myotis chiloensis,myotis chiloensis,9.597169811,20,6.57E-05,77
+Myotis dasycneme,myotis dasycneme,15.16,0.530099014,7.50E-05,67
+Myotis daubentonii,myotis daubentonii,7.63,20,6.14E-05,83
+Myotis mystacinus,myotis mystacinus,9.597169811,20,6.57E-05,77
+Necromys lasiurus,necromys lasiurus,39.93,0.601222203,9.94E-05,50
+Necromys obscurus,necromys obscurus,38.56428571,0.598508315,9.84E-05,51
+Nectomys,nectomys,216.89,0.749164586,0.000162676,30
+Neopsylla,neopsylla,0.01,0.01,8.90E-06,0
+Neotoma albigula,neotoma albigula,208.18,0.745183399,0.000160748,30
+Neotoma cinerea,neotoma cinerea,285.89,0.776554545,0.000176292,27
+Neotoma mexicana,neotoma mexicana,203,0.742746451,0.000159573,30
+Neotoma micropus,neotoma micropus,255.14,0.765151285,0.00017055,28
+Neotricula aperta,neotricula aperta,10,0.01,6.64E-05,5600
+Nesokia indica,nesokia indica,178.08,0.730207131,0.000153606,32
+Nosopsylla,nosopsylla,0.01,0.01,8.90E-06,0
+Nosopsyllus laeviceps,nosopsyllus laeviceps,0.01,0.01,8.90E-06,0
+Nyctereutes procyonoides,nyctereutes procyonoides,4214.99,1.101766725,0.00038574,12
+Nyctomys sumichrasti,nyctomys sumichrasti,59.99,0.633893579,0.000111918,44
+Ochlerotatus,ochlerotatus,0.1,1,1.74E-05,150000
+Ochlerotatus melanimon,ochlerotatus melanimon,0.1,1,1.74E-05,150000
+Ochlerotatus taeniorhynchu,ochlerotatus taeniorhynchu,0.1,1,1.74E-05,150000
+Ochlerotatus vigilax,ochlerotatus vigilax,0.1,1,1.74E-05,150000
+Odocoileus virginianus,odocoileus virginianus,75901.25,1.604347572,0.000894605,5
+Oligoryzomys andinus,oligoryzomys andinus,61.08346154,0.635383853,0.000112508,44
+Oligoryzomys chacoensis,oligoryzomys chacoensis,23,0.559616768,8.47E-05,59
+Oligoryzomys flavescens,oligoryzomys flavescens,21.3,0.554058279,8.28E-05,61
+Oligoryzomys longicaudatus,oligoryzomys longicaudatus,27.54,0.572877034,8.92E-05,56
+Oligoryzomys microtis,oligoryzomys microtis,22.5,0.558020081,8.41E-05,60
+Oligoryzomys nigripes,oligoryzomys nigripes,20.33,0.550711264,8.17E-05,61
+Oncomelania,oncomelania,10,0.01,6.64E-05,5600
+Ondatra zibethicus,ondatra zibethicus,991.31,0.912795171,0.000253149,19
+Opisocrostis,opisocrostis,0.01,0.01,8.90E-06,0
+Orchopeas howardii,orchopeas howardii,0.01,0.01,8.90E-06,0
+Orchopeas neotomae,orchopeas neotomae,0.01,0.01,8.90E-06,0
+Orchopeas sexdentatus,orchopeas sexdentatus,0.01,0.01,8.90E-06,0
+Ornithodoros,ornithodoros,2.75,0.01,4.56E-05,840
+Oropsylla,oropsylla,0.01,0.01,8.90E-06,0
+Oryzomys,oryzomys,79.79,0.657838673,0.000121603,41
+Oryzomys palustris,oryzomys palustris,53.26,0.624163332,0.000108109,46
+Otomys angoniensis,otomys angoniensis,100.64,0.677994674,0.000130102,38
+Otomys irroratus,otomys irroratus,114.45,0.689423613,0.000135063,36
+Ototylomys phyllotis,ototylomys phyllotis,86.94,0.665219013,0.000124679,39
+Paguma larvata,paguma larvata,4300,1.104630422,0.000387988,12
+Pan troglodytes,pan troglodytes,45000,1.498938199,0.000768358,6
+Panstrongylus,panstrongylus,0.5,1,2.78E-05,1000
+Parafossarulus,parafossarulus,10,0.01,6.64E-05,5600
+Peromyscus leucopus,peromyscus leucopus,18.07,0.542338781,7.89E-05,64
+Peromyscus maniculatus,peromyscus maniculatus,19.98,0.549469402,8.13E-05,62
+Peromyscus yucatanicus,peromyscus yucatanicus,27.13,0.571761059,8.88E-05,56
+Phlebotomus,phlebotomus,0.01,0.01,8.90E-06,150000
+Polygenis bohlsi,polygenis bohlsi,0.01,0.01,8.90E-06,0
+Polygenis litargus,polygenis litargus,0.01,0.01,8.90E-06,0
+Polygenis tripus,polygenis tripus,0.01,0.01,8.90E-06,0
+Pomacea canaliculata,pomacea canaliculata,10,0.01,6.64E-05,5600
+Presbytis femoralis,presbytis femoralis,7026.91,1.177458126,0.000447597,10
+Procavia capensis,procavia capensis,2952.48,1.051938635,0.000347779,14
+Procyon lotor,procyon lotor,6373.72,1.16261839,0.000435068,11
+Proechimys cuvieri,proechimys cuvieri,339.85,0.794206517,0.000185389,26
+Proechimys guyannensis,proechimys guyannensis,314.03,0.78609014,0.000181175,27
+Psammomys obesus,psammomys obesus,102.15,0.679308563,0.000130667,38
+Psorophora,psorophora,0.1,1,1.74E-05,150000
+Pteropus,pteropus,452.5545,20,0.000201502,24
+Pteropus alecto,pteropus alecto,610.13,20,0.000219805,22
+Pteropus conspicillatus,pteropus conspicillatus,760.71,0.881910649,0.000234376,20
+Pteropus poliocephalus,pteropus poliocephalus,702.78,20,0.000229036,21
+Pteropus scapulatus,pteropus scapulatus,380.35,20,0.000191563,25
+Pulex irritans,pulex irritans,0.01,0.01,8.90E-06,0
+Rangifer tarandus,rangifer tarandus,109088.5,1.681811689,0.000994197,5
+Rattus exulans,rattus exulans,50.63,0.620067731,0.000106527,47
+Rattus losea,rattus losea,104.63,0.681430252,0.000131583,37
+Rattus tanezumi,rattus tanezumi,147.9879032,0.712751516,0.000145516,33.5
+Reithrodontomys megalotis,reithrodontomys megalotis,10.72,0.506747276,6.78E-05,75
+Reithrodontomys mexicanus,reithrodontomys mexicanus,15.71,0.532560565,7.58E-05,66
+Rhadinopsylla,rhadinopsylla,0.01,0.01,8.90E-06,0
+Rhinolophus macrotis,rhinolophus macrotis,6.18,20,5.78E-05,88
+Rhinolophus pearsonii,rhinolophus pearsonii,11.49465116,20,6.92E-05,73
+Rhinolophus pusillus,rhinolophus pusillus,11.49465116,20,6.92E-05,73
+Rhinolophus sinicus,rhinolophus sinicus,11.49465116,20,6.92E-05,73
+Rhipicephalus,rhipicephalus,2.75,0.01,4.56E-05,840
+Rhipicephalus appendiculatus,rhipicephalus appendiculatus,2.75,0.01,4.56E-05,840
+Rhipicephalus decoloratus,rhipicephalus decoloratus,2.75,0.01,4.56E-05,840
+Rhipicephalus microplus,rhipicephalus microplus,2.75,0.01,4.56E-05,840
+Rhipicephalus pumilio,rhipicephalus pumilio,2.75,0.01,4.56E-05,840
+Rhipicephalus sanguineus,rhipicephalus sanguineus,2.75,0.01,4.56E-05,840
+Rhizomys pruinosus,rhizomys pruinosus,2450,1.026733404,0.000329402,14
+Rhizomys sinensis,rhizomys sinensis,2475,1.028089389,0.000330377,14
+Rhizomys sumatrensis,rhizomys sumatrensis,2500,1.029433511,0.000331344,14
+Rhodnius,rhodnius,0.5,1,2.78E-05,1000
+Rhombomys opimus,rhombomys opimus,12.55615385,0.517270203,7.10E-05,71
+Robertsiella,robertsiella,10,0.01,6.64E-05,5600
+Rousettus aegyptiacus,rousettus aegyptiacus,134,20,0.000141406,35
+Sabethes,sabethes,0.1,1,1.74E-05,150000
+Saimiri sciureus,saimiri sciureus,749.47,0.880205653,0.000233363,21
+Sciurus carolinensis,sciurus carolinensis,545.4,0.844576645,0.000212747,23
+Sciurus griseus,sciurus griseus,703.85,0.873048791,0.000229137,21
+Sciurus niger,sciurus niger,454.2766667,0.824741326,0.000201725,24
+Sciurus stramineus,sciurus stramineus,433.3,0.8196881,0.000198969,24
+Semisulcospira,semisulcospira,10,0.01,6.64E-05,5600
+Sigmodon,sigmodon,110.65,0.686403967,0.000133742,37
+Sigmodon hispidus,sigmodon hispidus,110.65,0.686403967,0.000133742,37
+Sorex araneus,sorex araneus,9.18,0.496633086,6.48E-05,78
+Sorex cinereus,sorex cinereus,7.307714286,0.482122837,6.07E-05,84
+Sorex monticolus,sorex monticolus,6.92,0.478718149,5.97E-05,85
+Spermophilus alashanicus,spermophilus alashanicus,353.1876667,0.798190987,0.000187477,26
+Spermophilus armatus,spermophilus armatus,306.48,0.783607129,0.000179896,27
+Spermophilus beecheyi,spermophilus beecheyi,597.82,0.854712898,0.000218505,22
+Spermophilus beldingi,spermophilus beldingi,272.53,0.771738136,0.000173854,28
+Spermophilus dauricus,spermophilus dauricus,353.1876667,0.798190987,0.000187477,26
+Spermophilus lateralis,spermophilus lateralis,175.1,0.728606933,0.000152853,32
+Spermophilus parryii,spermophilus parryii,353.1876667,0.798190987,0.000187477,26
+Spermophilus pygmaeus,spermophilus pygmaeus,173.46,0.727716153,0.000152435,32
+Spermophilus richardsonii,spermophilus richardsonii,325.1,0.789638485,0.00018301,26
+Spermophilus townsendii,spermophilus townsendii,207.29,0.744768477,0.000160547,30
+Spermophilus undulatus,spermophilus undulatus,742.91,0.879200259,0.000232767,21
+Spermophilus variegatus,spermophilus variegatus,714.58,0.874767646,0.000230148,21
+Stenoponia tripectinata,stenoponia tripectinata,0.01,0.01,8.90E-06,0
+Stivalis,stivalis,0.01,0.01,8.90E-06,0
+Stivalius cognatus,stivalius cognatus,0.01,0.01,8.90E-06,0
+Stomoxys calcitrans,stomoxys calcitrans,0.25,1,2.27E-05,200
+Suncus murinus,suncus murinus,43.76,0.60842374,0.000102102,49
+Sus scrofa,sus scrofa,84471.54,1.626816071,0.000922894,5
+Sylvilagus brasiliensis,sylvilagus brasiliensis,1259.003636,0.940254957,0.00027068,17.66666667
+Sylvilagus floridanus,sylvilagus floridanus,1207.19,0.936476605,0.000268087,18
+Syncerus caffer,syncerus caffer,592665.98,2.095711036,0.001626922,3
+Synosternus cleopatrae,synosternus cleopatrae,0.01,0.01,8.90E-06,0
+Tadarida brasiliensis,tadarida brasiliensis,12.61,0.517558043,7.11E-05,71
+Tamandua tetradactyla,tamandua tetradactyla,4800,1.120540251,0.000400608,12
+Tamias,tamias,391.50625,0.759802519,0.000173219,31.5
+Tamias striatus,tamias striatus,68.4325,0.644837393,0.000116289,42
+Tatera indica,tatera indica,138.28,0.706585659,0.000142705,34
+Thiara,thiara,10,0.01,6.64E-05,5600
+Thrassis bacchi,thrassis bacchi,0.01,0.01,8.90E-06,0
+Thrassis francisi,thrassis francisi,0.01,0.01,8.90E-06,0
+Thrassis pandorae,thrassis pandorae,0.01,0.01,8.90E-06,0
+Tiamastus cavicola,tiamastus cavicola,0.01,0.01,8.90E-06,0
+Triatoma,triatoma,0.5,1,2.78E-05,1000
+Vulpes vulpes,vulpes vulpes,4820.36,1.121156998,0.000401102,12
+Xenopsylla,xenopsylla,0.01,0.01,8.90E-06,0
+Zygodontomys brevicauda,zygodontomys brevicauda,52.22,0.622565275,0.00010749,46
+Aethomys,aethomys,68.975,0.644403088,0.000116196,42.5
+Akodon,akodon,27.83,0.573382145,8.94E-05,55.5
+Alces,alces,461900.76,2.028884987,0.001513082,3
+Amphipsylla,amphipsylla,0.01,0.01,8.90E-06,0
+Anourosorex,anourosorex,20,0.549540874,8.13E-05,62
+Arvicanthis,arvicanthis,84.57,0.662166941,0.000123453,40
+Bandicota,bandicota,405.04,0.802777946,0.000190885,25.5
+Bison,bison,650226.885,2.120929805,0.001671133,3
+Blarina,blarina,18.56,0.544228445,7.95E-05,63
+Bolomys,bolomys,39.93,0.601222203,9.94E-05,50
+Bos,bos,500000,2.049897761,0.001548386,3
+Bothriocroton,bothriocroton,2.75,0.01,4.56E-05,840
+Bradypus,bradypus,4256.08,1.103107741,0.000386799,12
+Bubalus,bubalus,929500.97,2.221971994,0.001854555,2
+Callopsylla,callopsylla,0.01,0.01,8.90E-06,0
+Calomys,calomys,34.63333333,0.581913618,9.30E-05,55
+Camelus,camelus,523615.19,2.061826025,0.001568755,3
+Canis,canis,25775.76429,1.378853589,0.000640731,7.571428571
+Cannomys,cannomys,472.07,0.828870977,0.000203993,24
+Capreolus,capreolus,22502.01,1.369792775,0.000628023,7
+Castor,castor,18124.41,1.331804275,0.000589704,8
+Cavia,cavia,1000,0.91383145,0.000253793,19
+Cerdocyon,cerdocyon,5741.66,1.14694072,0.000422045,11
+Cervus,cervus,240867.13,1.864220075,0.001251919,4
+Choloepus,choloepus,6270,1.159904341,0.000432835,11
+Citellophilus,citellophilus,0.01,0.01,8.90E-06,0
+Citellus,citellus,458.185,0.803458206,0.000192601,26.5
+Cricetomys,cricetomys,1267.52,0.942432441,0.000271919,17
+Cynomys,cynomys,834.835,0.89253683,0.000240756,20
+Dasypus,dasypus,3949.01,1.092470129,0.000378492,12
+Desmodus,desmodus,33.16,0.586875512,9.42E-05,53
+Diamanus,diamanus,0.01,0.01,8.90E-06,0
+Didelphis,didelphis,1208.13625,0.936024151,0.00026786,17.75
+Dinopsyllus,dinopsyllus,0.01,0.01,8.90E-06,0
+Eidolon,eidolon,254.61,20,0.000170447,28
+Eothenomys,eothenomys,19.59,0.548063118,8.08E-05,62
+Epomophorus,epomophorus,134.59,20,0.000141586,35
+Epomops,epomops,118.99,0.692918986,0.000136601,36
+Eptesicus,eptesicus,20.29,20,8.15E-05,61.5
+Erethizon,erethizon,7419.46,1.185808337,0.000454734,10
+Frontopsylla,frontopsylla,0.01,0.01,8.90E-06,0
+Funambulus,funambulus,123.755,0.696051815,0.000138021,35.5
+Funisciurus,funisciurus,167.77,0.719799259,0.000149164,33.5
+Galea,galea,386.64,0.807636582,0.00019248,25
+Gerbilliscus,gerbilliscus,87.82,0.665719351,0.000124918,39.25
+Gerbillus,gerbillus,26.245,0.569275323,8.80E-05,56.5
+Glossina,glossina,2,1,4.16E-05,822
+Graomys,graomys,68.32,0.644699483,0.000116234,42
+Haemagogus,haemagogus,0.1,1,1.74E-05,150000
+Haemaphysalis,haemaphysalis,2.75,0.01,4.56E-05,840
+Heterohyrax,heterohyrax,2453.66,1.02693267,0.000329545,14
+Histiotus,histiotus,11,0.50844871,6.83E-05,74
+Holochilus,holochilus,120.42,0.693995927,0.000137076,36
+Hoplopsyllus,hoplopsyllus,0.01,0.01,8.90E-06,0
+Hylomyscus,hylomyscus,22.308,0.557398741,8.39E-05,60
+Hypsignathus,hypsignathus,336.97,0.793328327,0.00018493,26
+Juculus,juculus,59.8,0.633632222,0.000111815,44
+Kobus,kobus,204393.48,1.824848503,0.001193507,4
+Lasiopodomys,lasiopodomys,12.55615385,0.517270203,7.10E-05,71
+Lasiurus,lasiurus,27.06,0.571569062,8.88E-05,56
+Lemniscomys,lemniscomys,43.65,0.6082247,0.000102027,49
+Lepus,lepus,2692.425,1.028262401,0.000332028,14
+Lophuromys,lophuromys,57.07,0.629794878,0.000110305,45
+Martes,martes,1299.99,0.945536508,0.000273927,17
+Mastomys,mastomys,45.83666667,0.611601888,0.000103334,48
+Meles,meles,11884.03,1.260698937,0.000521547,9
+Mephitis,mephitis,2399.99,1.023984368,0.000327431,14
+Micromys,micromys,6.99,0.479344925,5.99E-05,85
+Miniopterus,miniopterus,10.876,20,6.81E-05,74
+Mus,mus,9.493076923,0.495719803,6.47E-05,79
+Mustela,mustela,1329.88,0.944401297,0.000273668,17.5
+Myodes,myodes,25.72958333,0.56602747,8.70E-05,57.75
+Myotis,myotis,10.31630189,16.1060198,6.67E-05,76.2
+Necromys,necromys,39.24714286,0.599865259,9.89E-05,50.5
+Neotoma,neotoma,238.0525,0.75740892,0.000166791,28.75
+Neotricula,neotricula,10,0.01,6.64E-05,5600
+Nesokia,nesokia,178.08,0.730207131,0.000153606,32
+Nosopsyllus,nosopsyllus,0.01,0.01,8.90E-06,0
+Nyctereutes,nyctereutes,4214.99,1.101766725,0.00038574,12
+Nyctomys,nyctomys,59.99,0.633893579,0.000111918,44
+Odocoileus,odocoileus,75901.25,1.604347572,0.000894605,5
+Oligoryzomys,oligoryzomys,24.09375,0.562581783,8.57E-05,58.5
+Ondatra,ondatra,991.31,0.912795171,0.000253149,19
+Orchopeas,orchopeas,0.01,0.01,8.90E-06,0
+Otomys,otomys,107.545,0.683709144,0.000132583,37
+Ototylomys,ototylomys,86.94,0.665219013,0.000124679,39
+Paguma,paguma,4300,1.104630422,0.000387988,12
+Pan,pan,45000,1.498938199,0.000768358,6
+Peromyscus,peromyscus,19.14333333,0.545979074,8.01E-05,63
+Polygenis,polygenis,0.01,0.01,8.90E-06,0
+Pomacea,pomacea,10,0.01,6.64E-05,5600
+Presbytis,presbytis,7026.91,1.177458126,0.000447597,10
+Procavia,procavia,2952.48,1.051938635,0.000347779,14
+Procyon,procyon,6373.72,1.16261839,0.000435068,11
+Proechimys,proechimys,326.94,0.790148328,0.000183282,26.5
+Psammomys,psammomys,102.15,0.679308563,0.000130667,38
+Pulex,pulex,0.01,0.01,8.90E-06,0
+Rangifer,rangifer,109088.5,1.681811689,0.000994197,5
+Rattus,rattus,112.8089516,0.681750254,0.000132285,37.75
+Reithrodontomys,reithrodontomys,13.215,0.51965392,7.18E-05,70.5
+Rhinolophus,rhinolophus,10.16598837,20,6.63E-05,76.75
+Rhizomys,rhizomys,2475,1.028085435,0.000330374,14
+Rhombomys,rhombomys,12.55615385,0.517270203,7.10E-05,71
+Rousettus,rousettus,134,20,0.000141406,35
+Saimiri,saimiri,749.47,0.880205653,0.000233363,21
+Sciurus,sciurus,534.2066667,0.840513716,0.000210644,23
+Sorex,sorex,7.802571429,0.485824691,6.17E-05,82.33333333
+Spermophilus,spermophilus,400.1248182,0.801964811,0.000190365,25.90909091
+Stenoponia,stenoponia,0.01,0.01,8.90E-06,0
+Stivalius,stivalius,0.01,0.01,8.90E-06,0
+Stomoxys,stomoxys,0.25,1,2.27E-05,200
+Suncus,suncus,43.76,0.60842374,0.000102102,49
+Sus,sus,84471.54,1.626816071,0.000922894,5
+Sylvilagus,sylvilagus,1246.050227,0.939310369,0.000270032,17.75
+Syncerus,syncerus,592665.98,2.095711036,0.001626922,3
+Synosternus,synosternus,0.01,0.01,8.90E-06,0
+Tadarida,tadarida,12.61,0.517558043,7.11E-05,71
+Tamandua,tamandua,4800,1.120540251,0.000400608,12
+Tatera,tatera,138.28,0.706585659,0.000142705,34
+Thrassis,thrassis,0.01,0.01,8.90E-06,0
+Tiamastus,tiamastus,0.01,0.01,8.90E-06,0
+Urocitellus,urocitellus,353.1876667,0.798190987,0.000187477,26
+Vulpes,vulpes,4408.363333,1.107037031,0.000390058,12.33333333
+Zygodontomys,zygodontomys,48.12333333,0.615450918,0.000104799,47.33333333
+Galba,cousini,50,0.000345,6.47E-05,15.98333333
+Galba,cubensis,50,0.000345,6.47E-05,15.98333333
+Galba,obrussa,50,0.000345,6.47E-05,15.98333333
+Galba,truncatula,50,0.000345,6.47E-05,15.98333333
+Lymnaea,fragilis,50,0.000345,6.47E-05,15.98333333
+Lymnaea,stagnalis,50,0.000345,6.47E-05,15.98333333
+Lymnaea,taurica,50,0.000345,6.47E-05,15.98333333
+Omphiscola,glabra,50,0.000345,6.47E-05,15.98333333
+Pseudosuccinea,columella,50,0.000345,6.47E-05,15.98333333
+Radix,ampla,50,0.000345,6.47E-05,15.98333333
+Radix,auricularia,50,0.000345,6.47E-05,15.98333333
+Radix,balthica,50,0.000345,6.47E-05,15.98333333
+Radix,labiata,50,0.000345,6.47E-05,15.98333333
+Radix,lagotis,50,0.000345,6.47E-05,15.98333333
+Radix,natalensis,50,0.000345,6.47E-05,15.98333333
+Radix,rubiginosa,50,0.000345,6.47E-05,15.98333333
+Austropeplea, ollula ,50,0.000345,6.47E-05,15.98333333
+Stagnicola,palustris ,50,0.000345,6.47E-05,15.98333333
+Bubalus,bubalus,50,0.000345,6.47E-05,15.98333333
+Bithynia,tentaculata,50,0.000345,6.47E-05,15.98333333
+Semisulcospira,semisulcospira,50,0.000345,6.47E-05,15.98333333
+Thiara,melania,50,0.000345,6.47E-05,15.98333333

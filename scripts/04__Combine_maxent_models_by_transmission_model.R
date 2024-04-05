@@ -193,7 +193,7 @@ plot(fnf)
 
 ##ecological data about species
 spec_hab <-
-  read.csv("C:\\Users\\xxxx\\Dropbox\\legion2\\habitat_both_fin.csv",
+  read.csv("data/habitat_both_fin.csv",
            stringsAsFactors = FALSE)
 spec_hab$Snow.and.ice[spec_hab$Snow.and.ice == 0] <- NA
 spec_hab$f <-
@@ -213,12 +213,12 @@ spec_hab$water <-
 
 spec_dist <-
   read.csv(
-    "C:\\Users\\xxxx\\Dropbox\\legion2\\host_density_d_distance.csv",
+    "data/host_density_d_distance.csv",
     stringsAsFactors = FALSE
   )
 spec_desp <-
   read.csv(
-    "C:\\Users\\xxxx\\Dropbox\\legion2\\dispersal_distance_all.csv",
+    "data/dispersal_distance_all.csv",
     stringsAsFactors = FALSE
   )
 spec_desp$binom <- gsub("_", " ", spec_desp$binom)
@@ -241,8 +241,9 @@ for (x in (x + 1):length(dis1)) {
   dis2 <- dis2[!duplicated(dis2$name1), ]
   
  ### what is this
+  # TO DO: make sure you change the file path to your per_disease file
   if (paste("", dis1[x], " ALL4.r", sep = "") %in% list.files(
-    "C:/Users/Public/Documents/per_disease3/",
+    "OS/Users/Public/Documents/per_disease3/",
     pattern = " ALL4.r",
     full.names = FALSE
   )) {
@@ -993,9 +994,10 @@ for (x in (x + 1):length(dis1)) {
   
   
   #save present day
+  # TO DO: LINK TO YOUR OWN FILE PATH FOR PER_DISEASE HERE!
   save(res6,
        file = paste(
-         "C:/Users/Public/Documents/per_disease3/",
+         "OS/Users/Public/Documents/per_disease3/",
          dis3$disease,
          "ALL4.r"
        ))
