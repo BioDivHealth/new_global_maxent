@@ -17,26 +17,26 @@ library(rgbif)
 library(rgdal)
 library(Hmisc)
 
-
+# Load libraries ----
 #library(parallel)
 #cl <- makeCluster(2)
 #stopCluster(cl)
 
-######run script#############
+# Read in data ----
 
-source("E:\\Dropbox\\R_scripts\\find_synonyms6.R")
+source("scripts/functions/find_synonyms6.R")
 
-conts <- stack(list.files("E:\\Dropbox\\Public\\conts\\",pattern=".tif",full.names=T))
+conts <- stack(list.files("data/conts/",pattern=".tif",full.names=T))
 
 template<-raster(nrow=3600, ncol=8640,ext=extent(-180, 180, -60, 90),crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
 
-spec1 = read.csv("E:\\Dropbox\\disease_niche_analysis\\disease_data\\DRs_data\\disease_table28.csv",stringsAsFactors=FALSE)
+spec1 = read.csv("data/disease_table28.csv",stringsAsFactors=FALSE)
 spec1b<-spec1#[spec1$run==1,]
 
-load(file="E:\\Dropbox\\disease_analyses\\wrld_simpl2.r")
-load(file="E:\\Dropbox\\disease_analyses\\regions.r")
-load(file="E:\\Dropbox\\disease_analyses\\subregions.r")
-source(file="E:\\Dropbox\\disease_analyses\\functions7.R")
+load(file="scripts/functions/wrld_simpl2.R")
+load(file="scripts/functions/regions.r")
+load(file="scripts/functions/subregions.r")
+source(file="scripts/functions/functions7.R")
 
 #xxx1<-list.files("E:/Documents/climate_data",full.names=T,pattern=".tif")
 

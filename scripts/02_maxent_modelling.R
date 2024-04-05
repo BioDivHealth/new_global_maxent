@@ -14,8 +14,7 @@ source("scripts/functions/functions6.r")
 
 # load in wrld_simpl tif file
 data(wrld_simpl)
-data("wrld_simpl", package = "terra")   
-tt <- raster("X:\\DRtemp\\wrld_simpl.tif")
+tt <- raster("data/wrld_simpl/wrld_simpl_raster.tif")
 plot(tt)
 world_shp <- st_read("data/wrld_simpl/wrld_simpl3.shp")
 plot(world_shp)
