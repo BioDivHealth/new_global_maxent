@@ -94,7 +94,7 @@ source(file="scripts/functions/functions7.R")
 #ttt<-randomPoints(invar,1000,tryf=5)
 #invar1<-extract(invar,ttt)
 #print(i)}
-#source("E:\\Dropbox\\R_scripts\\MEE_code\\Code_S7_remove_autocorrelation.R")
+#source("scripts/functions/Code_S7_remove_autocorrelation.R")
 ##remove unecessary invariants
 #invar2<-autocor(invar1,threshold=0.7)
 #invar<-subset(invar,colnames(invar2))
@@ -111,7 +111,7 @@ source(file="scripts/functions/functions7.R")
 #names1<-names(spdata)
 #write.csv(names1,file=".//names1.csv")
 spdata<-stack("C:\\temp\\predictorsX.tif")
-names(spdata)<-read.csv("C:\\temp\\names1.csv",stringsAsFactors=FALSE)$x
+names(spdata)<-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 		
 ############## PROCESS SPECIES #################
 
@@ -125,7 +125,7 @@ for (i in i:(nrow(spec1b))){
 
 	spec1<-spec1b[i,]
 	countries<-spec1$countries
-	subs2<-wrld_simpl[wrld_simpl$ISO2 %in% strsplit(countries,",")[[1]],]
+	subs2<-wrld_simpl2[wrld_simpl2$ISO2 %in% strsplit(countries,",")[[1]],]
 	if(is.na(countries)){next}
 	dis<-spec1$name
 	geogX<-geog(countries,wrld_simpl2,regions,subregions)	

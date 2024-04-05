@@ -11,7 +11,7 @@ suppressMessages(library(rJava))
 
 # Bring in data ----
 spdata<-stack("V://temp//predictorsX.tif")
-names(spdata)<-read.csv("V://temp//names1.csv",stringsAsFactors=FALSE)$x
+names(spdata)<-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 
 
 files1<-list.files("V://temp//",pattern="maxent",recursive=TRUE,full.names=TRUE)
