@@ -180,13 +180,16 @@ rm(link2, link2b)
 futlg <-
   read.csv(file = "data/futlg.csv", stringsAsFactors =
              FALSE)
+head(futlg)
+# TO DO: CHANGE THIS TO YOUR OWN FILEPATH
 futlg$filen <-
-  gsub("C:", "C:\\Users\\Public\\Documents", futlg$filen, fixed = TRUE)
+  gsub("C:/", "OS/Users/Public/Documents/", futlg$filen, fixed = TRUE)
 futlg$filen <- gsub("/updated_states", "", futlg$filen, fixed = TRUE)
 futlg$filen <- gsub("LUH1//", "LUH1/", futlg$filen, fixed = TRUE)
 
 ## forest not forest land
-fnf <- raster("C:\\Users\\Public\\Documents\\fnf_map.txt")
+fnf <- raster("data/fnf_map.txt")
+plot(fnf)
 
 ##ecological data about species
 spec_hab <-
