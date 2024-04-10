@@ -587,7 +587,7 @@ for (i in sample(nums)){
     
     ##write main data
     # TO DO: REPLACE THIS WITH YOUR OWN FILE PATH!
-    fwrite(resF,file=paste("OS/Users/xxxx/Documentsdata/datasets1/",nam_dis,"_",sample(1:1000,1),"_all_data3.csv",sep=""))
+    fwrite(resF,file=paste("OS/Users/xxxx/Documents/datasets1/",nam_dis,"_",sample(1:1000,1),"_all_data3.csv",sep=""))
     
     ##write gain loss
     fwrite(dis_trans,file=paste("data/gainlossresults/",nam_dis,"_",sample(1:1000,1),"_2.csv",sep=""))
