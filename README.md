@@ -9,21 +9,24 @@ Climate change impacts on zoonotic/vector-borne diseases pose significant threat
 
 
 ## Navigation
-- navigation for each of the folders
-- simple diagram of the workflow
 
+* 📁[data](https://github.com/BioDivHealth/new_global_maxent/tree/main/data) contains most of the data needed to complete the analyses. For any files that are too large, please see the **Data** section below.
+* 📁[scripts](https://github.com/BioDivHealth/new_global_maxent/tree/main/scripts) contains all of the R code needed to complete the analyses.
+* 📁[figures](https://github.com/BioDivHealth/new_global_maxent/tree/main/figures) contains all of the figures associated with this manuscript.
+
+  
 ## Analysis order:
-- [01_species_gbif.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/01_species_gbif_25.R)
-- [02_maxentX2.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/02_maxent_modelling.R)
-- [03_project_rasters_present.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/03_project_rasters_present.R)
-- [04_Combine_maxent_models_by_transmission_model.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/04__Combine_maxent_models_by_transmission_model.R)
-- [05_combine_and_future_dispersion.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/05_combine_and_future_dispersion.R)
+- 📝 [01_species_gbif.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/01_species_gbif_25.R)
+- 📝 [02_maxentX2.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/02_maxent_modelling.R)
+- 📝 [03_project_rasters_present.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/03_project_rasters_present.R)
+- 📝 [04_Combine_maxent_models_by_transmission_model.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/04__Combine_maxent_models_by_transmission_model.R)
+- 📝 [05_combine_and_future_dispersion.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/05_combine_and_future_dispersion.R)
 
 
 ## Data: 
 
 All of the data in this repository can be found in either the [data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data) or in dropbox links (see below) where the files were too large to incorporate into the Github repository. 
 
-* **per_disease3** data can be downloaded [here](https://www.dropbox.com/scl/fo/gen8spncb15csjfz7thyj/ACuRzeswgWdM2DFIH8H8F7c?rlkey=wxnm9f13pv8yxavw018ubhum4&dl=0)
-* **livestock_future_2030_2050_2070_2080b.csv** can be downloaded [here](https://www.dropbox.com/scl/fi/7gvr5n5t4fvn99mho02bf/livestock_future_2030_2050_2070_2080b.csv?rlkey=5n6hix1ouu84mbkiruaoolprz&dl=0)
-* **disease_analyses2** data can be downloaded [here](https://www.dropbox.com/scl/fo/3ogm3f5bde2hjqs9oqjzk/ABD7HCw0V1fCx9IrQGNDoTk?rlkey=wsduuu4jj25m75vidh49y7tf0&dl=0)
+* 📁**per_disease3** data can be downloaded [here](https://www.dropbox.com/scl/fo/gen8spncb15csjfz7thyj/ACuRzeswgWdM2DFIH8H8F7c?rlkey=wxnm9f13pv8yxavw018ubhum4&dl=0)
+* 📊**livestock_future_2030_2050_2070_2080b.csv** can be downloaded [here](https://www.dropbox.com/scl/fi/7gvr5n5t4fvn99mho02bf/livestock_future_2030_2050_2070_2080b.csv?rlkey=5n6hix1ouu84mbkiruaoolprz&dl=0)
+* 📁**disease_analyses2** data can be downloaded [here](https://www.dropbox.com/scl/fo/3ogm3f5bde2hjqs9oqjzk/ABD7HCw0V1fCx9IrQGNDoTk?rlkey=wsduuu4jj25m75vidh49y7tf0&dl=0)
