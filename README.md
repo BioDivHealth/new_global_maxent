@@ -27,8 +27,8 @@ Climate change impacts on zoonotic/vector-borne diseases pose significant threat
 
 All of the data in this repository can be found in either the [data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data) or in dropbox links (see below) where the files were too large to incorporate into the Github repository. 
 
-* 📁**per_disease3** data can be downloaded [here](https://www.dropbox.com/scl/fo/gen8spncb15csjfz7thyj/ACuRzeswgWdM2DFIH8H8F7c?rlkey=wxnm9f13pv8yxavw018ubhum4&dl=0)
+* 📊**per_disease3** data can be downloaded [here](https://www.dropbox.com/scl/fo/gen8spncb15csjfz7thyj/ACuRzeswgWdM2DFIH8H8F7c?rlkey=wxnm9f13pv8yxavw018ubhum4&dl=0)
 * 📊**livestock_future_2030_2050_2070_2080b.csv** can be downloaded [here](https://www.dropbox.com/scl/fi/7gvr5n5t4fvn99mho02bf/livestock_future_2030_2050_2070_2080b.csv?rlkey=5n6hix1ouu84mbkiruaoolprz&dl=0)
-* 📁**disease_analyses2** data can be downloaded [here](https://www.dropbox.com/scl/fo/3ogm3f5bde2hjqs9oqjzk/ABD7HCw0V1fCx9IrQGNDoTk?rlkey=wsduuu4jj25m75vidh49y7tf0&dl=0)
-* 📁**MODIS landcover** data can be downloaded [here](https://lpdaac.usgs.gov/products/mcd12q1v006/) and we have put a sample in the [MODIS data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data/MODIS)
-* 📁**Worldclim bioclimate** data can be downloaded [here](https://www.worldclim.org/data/bioclim.html) and we have put a sample in the [worldclim data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data/worldclim)
+* 📊**disease_analyses2** data can be downloaded [here](https://www.dropbox.com/scl/fo/3ogm3f5bde2hjqs9oqjzk/ABD7HCw0V1fCx9IrQGNDoTk?rlkey=wsduuu4jj25m75vidh49y7tf0&dl=0)
+* 📊**MODIS landcover** data can be downloaded [here](https://lpdaac.usgs.gov/products/mcd12q1v006/) and we have put a sample in the [MODIS data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data/MODIS)
+* 📊**Worldclim bioclimate** data can be downloaded [here](https://www.worldclim.org/data/bioclim.html) and we have put a sample in the [worldclim data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data/worldclim)
