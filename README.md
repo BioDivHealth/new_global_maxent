@@ -1,4 +1,4 @@
-# Ecological impacts of climate change will transform public health priorities for zoonotic and vector-borne disease
+# Manuscript title: Ecological impacts of climate change will transform public health priorities for zoonotic and vector-borne disease
 
 ## Authors: David W Redding, Rory Gibb and Kate E Jones
 
