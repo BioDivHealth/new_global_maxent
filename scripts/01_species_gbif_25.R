@@ -24,7 +24,7 @@ library(Hmisc)
 
 # Read in data ----
 
-source("scripts/functions/find_synonyms6.R")
+#source("scripts/functions/find_synonyms6.R")
 
 conts <- stack(list.files("data/conts/",pattern=".tif",full.names=T))
 
@@ -38,63 +38,66 @@ load(file="scripts/functions/regions.r")
 load(file="scripts/functions/subregions.r")
 source(file="scripts/functions/functions7.R")
 
-#xxx1<-list.files("E:/Documents/climate_data",full.names=T,pattern=".tif")
+# Note: this is a sample file. Please unzip to use on your computer.
+xxx1<-list.files("data/worldclim",full.names=T,pattern=".tif")
 
-#xxx<-gsub("bi",";",xxx1)
-#xxx<-gsub(".tif",";",xxx)
-#xxx<-gsub("_data/",";",xxx)
+xxx<-gsub("bi",";",xxx1)
+xxx<-gsub(".tif",";",xxx)
+xxx<-gsub("_data/",";",xxx)
 
-#yyy<-read.table(text=xxx,sep=";",stringsAsFactors=FALSE)[,c(2,3)]
-#yyy$model<-substr(yyy$V2, 1, 2)
-#yyy$rcp<-substr(yyy$V2, 3, 4)
-#yyy$year<-substr(yyy$V3, 1, 2)
-#yyy$layer<-substr(yyy$V3, 3, 4)
-#yyy$filen<-xxx1
-#yyy$replicate<-paste(yyy$model,yyy$rcp,yyy$year)
+yyy<-read.table(text=xxx,sep=";",stringsAsFactors=FALSE)[,c(2,3)]
+yyy$model<-substr(yyy$V2, 1, 2)
+yyy$rcp<-substr(yyy$V2, 3, 4)
+yyy$year<-substr(yyy$V3, 1, 2)
+yyy$layer<-substr(yyy$V3, 3, 4)
+yyy$filen<-xxx1
+yyy$replicate<-paste(yyy$model,yyy$rcp,yyy$year)
 
-#lcf<-stack(list.files("E:\\Documents\\landcover_data\\",full.names=T,pattern=".tif"))
+# Note: this is a sample file. Please unzip to use on your computer.
+lcf<-stack(list.files("data/MODIS/",full.names=T,pattern=".tif"))
 #names(lcf)<- c("modis2050max","modis2050min","modis2050norm","modis2070max","modis2070min","modis2070norm")
 #lc2<-stack(list.files("E:\\Documents\\landcover_pres\\",full.names=T,pattern=".tif"))
 #names(lc2)<-"present"
 #lc<-stack(lc2,lcf)
 #lc<-mask(lc,spdata$X1)
-#writeRaster(lc,format="GTiff",file="E:\\Documents\\landcover_data\\lc.tif")
-#lc<-stack("E:\\Documents\\landcover_data\\lc.tif")
+writeRaster(lc,format="GTiff",file="data/MODIS/lc.tif")
+#lc<-stack("data/MODIS/lc.tif")
 #names(lc)<- c("present","modis2050max","modis2050min","modis2050norm","modis2070max","modis2070min","modis2070norm")
 
 #zzz<-data.frame(layer=names(lc),year=c(15,50,50,50,70,70,70),rcp=c(99,85,45,60,85,45,60))
 
-#invar<-stack(list.files("E:\\Documents\\invariant_data\\",pattern=".tif",full.names=TRUE))
+# Note: this is a sample file. Please unzip to use on your computer.
+invar<-stack(list.files("data/worldclim/invariant_data/wc2.1_30s_elev.zip.download",pattern=".tif",full.names=TRUE))
 #names(invar)<-c("DEMSRE1a","INMSRE1a","INSSRE1a","OPISRE1a","SBDHWS1a","SCLHWS1a","SGRHWS1a","SLPSRT1a","SOCHWS1a","SSLHWS1a","SSNHWS1a","TBDHWS1a","TCLHWS1a","TGRHWS1a","TOCHWS1a","TPHHWS1a","TSLHWS1a","TSNHWS1a","TWISRE1a")
 #invar<-crop(invar,lc2)
 #invar2<-resample(invar,presbi)
-#writeRaster(invar2,format="GTiff",file="E:\\Documents\\invariant_data\\invar2.tif")
-#invar<-stack(file="C:\\Users\\User\\Documents\\invariant_data\\invar.tif")
+#writeRaster(invar2,format="GTiff",file="data/worldclim/invariant_data/invar2.tif")
+#invar<-stack(file="data/worldclim/invariant_data/invar.tif")
 #for (i in 1:nlayers(invar)){
 #	invar2<-(subset(invar,i))
-#	writeRaster(invar2,format="GTiff",paste(file="E:\\Documents\\invariant_data\\invar_",names(invar)[i],".tif",sep=""))
+#	writeRaster(invar2,format="GTiff",paste(file="data/worldclim/invariant_data/invar_",names(invar)[i],".tif",sep=""))
 #	}
 
-#invar<-stack(list.files("E:\\Dropbox\\Documents\\desktop_crap\\soil_layers\\",pattern=".tif",full.names=TRUE))
-#alt<-raster("E:\\Documents\\invasion_data\\alt\\alt\\w001001.adf")
+#invar<-stack(list.files("data/worldclim/",pattern=".tif",full.names=TRUE))
+#alt<-raster("data/w001001.adf")
 #alt<-aggregate(alt,fact=6)
 #alt<-resample(alt,invar)
 #invar2<-stack(subset(invar,2:8),alt)
-#writeRaster(invar2,format="GTiff",file="E:\\Documents\\invariant_data\\invar2.tif")
+#writeRaster(invar2,format="GTiff",file="data/worldclim/invariant_data/invar2.tif")
 #
 ##load invariant data
-#invar<-stack("E:\\Documents\\invariant_data\\invar2.tif")
+#invar<-stack("data/worldclim/invariant_data/invar2.tif")
 #names(invar)<-c("DEMSRE1a","INMSRE1a","INSSRE1a","OPISRE1a","SBDHWS1a","SCLHWS1a","SGRHWS1a","SLPSRT1a","SOCHWS1a","SSLHWS1a","SSNHWS1a","TBDHWS1a","TCLHWS1a","TGRHWS1a","TOCHWS1a","TPHHWS1a","TSLHWS1a","TSNHWS1a","TWISRE1a")
 #names(invar)<-c("TBDHWS1a","TCLHWS1a","GRHWS1a","TOCHWS1a","TPHHWS1a","TSLHWS1a","TSNHWS1a","Altitude")
 #invar<-resample(invar,lc$present)
 
 ###check for errors
 #for(i in 1:100){
-#invar<-stack("E:\\Documents\\invariant_data\\invar2.tif")
+#invar<-stack("data/worldclim/invariant_data/invar2.tif")
 #ttt<-randomPoints(invar,1000,tryf=5)
 #invar1<-extract(invar,ttt)
 #print(i)}
-#source("scripts/functions/Code_S7_remove_autocorrelation.R")
+source("scripts/functions/Code_S7_remove_autocorrelation.R")
 ##remove unecessary invariants
 #invar2<-autocor(invar1,threshold=0.7)
 #invar<-subset(invar,colnames(invar2))
@@ -107,10 +110,10 @@ source(file="scripts/functions/functions7.R")
 #presbi<-resample(presbi,lc$present)
 
 #spdata<-stack(invar,lc$present,presbi)
-#writeRaster(spdata,format="GTiff",file=".//predictorsX.tif",overwrite=TRUE)
+#writeRaster(spdata,format="GTiff",file="data/predictorsX.tif",overwrite=TRUE)
 #names1<-names(spdata)
-#write.csv(names1,file=".//names1.csv")
-spdata<-stack("C:\\temp\\predictorsX.tif")
+#write.csv(names1,file="data/names1.csv")
+#spdata<-stack("data/predictorsX.tif")
 names(spdata)<-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 		
 ############## PROCESS SPECIES #################
@@ -140,7 +143,7 @@ for (i in i:(nrow(spec1b))){
 	hv2<-hv[!hv$species %in% c(c("human","cattle","ducks","chickens","pigs","sheep","goats"),capitalize(c("human","cattle","ducks","chickens","pigs","sheep","goats"))),]
 
 	if(!nrow(dom)==0){for (y in 1:nrow(dom)){
-			write.table(data.frame(disease=dis,type=dom$type[y],name1=tolower(dom$species[y])),file=paste("C:\\temp\\disease_analyses\\",ID(),"_XXX.csv",sep=""),sep=",")
+			write.table(data.frame(disease=dis,type=dom$type[y],name1=tolower(dom$species[y])),file=paste("data/disease_analyses2/",ID(),"_XXX.csv",sep=""),sep=",")
 			}}
 
 	if(!nrow(hv2)==0){
@@ -148,8 +151,8 @@ for (i in i:(nrow(spec1b))){
 	while(z<=nrow(hv2)){
 	#for (z in 1:nrow(hv2)){
 
-		#spdata<-stack(".//predictorsX.tif")
-		#names(spdata)<-read.csv(".//names1.csv",stringsAsFactors=FALSE)$x
+		#spdata<-stack("data/predictorsX.tif")
+		#names(spdata)<-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 	
 		key1<-find_synonyms(hv2$species[z])
 		data1<-process_species(key=key1$Taxa_synonyms,keyX=key1$Genus_synonyms,geog1=geogX,template)
@@ -164,10 +167,10 @@ for (i in i:(nrow(spec1b))){
 		
 		#if(class(xm)[1]!="MaxEnt"){qq=qq+1;if(qq>2){z=z+1};next}else{qq=1;
 		#save(pack1,file=paste("C:\\temp\\disease_analyses\\",name1,"-",ID(),"all_points.r",sep=""))
-		write.csv(data.frame(disease=dis,type=hv2$type[z],name1=name1),file=paste("C:\\temp\\disease_analyses\\",name1,"-",ID(),".csv",sep=""))
-		if(paste("C:\\temp\\disease_analyses\\",name1,"_points.r",sep="") %in% list.files("C:\\temp\\disease_analyses\\",full.names=TRUE)){print(z);z=z+1;next}
-		save(data1, file=paste("C:\\temp\\disease_analyses\\",name1,"_points.r",sep=""))
-		#save(xm, file=paste("C:\\temp\\disease_analyses\\",name1,"_maxent.r",sep=""))}
+		write.csv(data.frame(disease=dis,type=hv2$type[z],name1=name1),file=paste("data/disease_analyses2/",name1,"-",ID(),".csv",sep=""))
+		if(paste("data/disease_analyses2/",name1,"_points.r",sep="") %in% list.files("data/disease_analyses2/",full.names=TRUE)){print(z);z=z+1;next}
+		save(data1, file=paste("data/disease_analyses2/",name1,"_points.r",sep=""))
+		#save(xm, file=paste("data/disease_analyses2/",name1,"_maxent.r",sep=""))}
 		print(z);z=z+1
 		gc()
 		}}

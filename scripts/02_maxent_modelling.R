@@ -24,7 +24,7 @@ files2a<-list.files("C:\\temp\\da2\\",pattern="_points.r",full.names=FALSE)
 files2a<-gsub("_points.r","",files2a)
 
 # Get current bioclim data ----
-spdata<-stack("C:\\temp\\predictorsX.tif")
+spdata<-stack("data/predictorsX.tif")
 names(spdata) <-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 spdata<-subset(spdata,c(8,10:length(names(spdata))))
 Altitude<-subset(spdata,1)
@@ -43,10 +43,10 @@ while (z<length(files2)){
   gc()
   
   if(class(xm)[1]!="list"){qq=qq+1;if(qq>2){z=z+1};next}else{qq=1;
-  #save(pack1,file=paste("C:\\temp\\disease_analyses\\",name1,"-",ID(),"all_points.r",sep=""))
-  #write.csv(data.frame(disease=dis,type=hv2$type[z],name1=name1),file=paste("C:\\temp\\disease_analyses\\",name1,"-",ID(),".csv",sep=""))
-  #save(data1, file=paste("C:\\temp\\disease_analyses\\",name1,"_points.r",sep=""))
-  save(xm, file=paste("/Volumes/OS/Users/xxxx/Dropbox/New_Global_MAXENT\disease_analyses2",name1,"_maxent.r",sep=""))}
+  #save(pack1,file=paste("data/disease_analyses2/",name1,"-",ID(),"all_points.r",sep=""))
+  #write.csv(data.frame(disease=dis,type=hv2$type[z],name1=name1),file=paste("data/disease_analyses2/",name1,"-",ID(),".csv",sep=""))
+  #save(data1, file=paste("data/disease_analyses2/",name1,"_points.r",sep=""))
+  save(xm, file=paste("data/disease_analyses2/",name1,"_maxent.r",sep=""))}
   print(z);z=z+1
   gc();removeTmpFiles(5)
 }

@@ -1,7 +1,4 @@
-# Load Livraries ----
-
-#setwd('/scratch/scratch/ucbtdw0/sdms')
-
+# Load Libraries ----
 suppressMessages(library(dismo))
 suppressMessages(library(raster))
 suppressMessages(library(foreach))
@@ -10,14 +7,14 @@ suppressMessages(library(rJava))
 
 
 # Bring in data ----
-spdata<-stack("V://temp//predictorsX.tif")
+spdata<-stack("data/predictorsX.tif")
 names(spdata)<-read.csv("data/names1.csv",stringsAsFactors=FALSE)$x
 
 
-files1<-list.files("V://temp//",pattern="maxent",recursive=TRUE,full.names=TRUE)
-files2<-list.files("V://temp//",pattern="maxent",recursive=TRUE,full.names=FALSE)
+files1<-list.files("data/disease_analyses2/",pattern="maxent",recursive=TRUE,full.names=TRUE)
+files2<-list.files("data/disease_analyses2/",pattern="maxent",recursive=TRUE,full.names=FALSE)
 
-files2<-gsub("disease_analyses/","",files2,fixed=TRUE)
+files2<-gsub("disease_analyses2/","",files2,fixed=TRUE)
 files2<-gsub("disease_analyses2/","",files2,fixed=TRUE)
 
 
