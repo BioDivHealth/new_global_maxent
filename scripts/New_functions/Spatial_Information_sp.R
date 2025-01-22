@@ -95,25 +95,26 @@ retrieve_syns<-function(spp_name,   # [Character] The species name from which to
   rm(t_11)  
   
   # Summarize the results of the name checking and correction
-  if (!is.null(correct_name)|nrow(correct_name)!=0){
-    y.d<-cbind(spp.x,correct_name[,colnames(correct_name)%in%
-                                    c("data_source_title","score","matched_name2")]) #
-    
-    names(y.d)[1]<-"or_name"
-    
-    spp.x<-y.d$matched_name2  # Use the corrected name for the rest of taxnomic querys
-    
-    ifelse(y.d$matched_name2==y.d$or_name,
-           y.d$Status<-"Correct",
-           y.d$Status<-"Incorrect")
-    
-  } else {
-    y.d<-data.frame(or_name=spp.x,
-                    matched_name2=NA,
-                    Status="Not_found",
-                    data_source_title=NA,
-                    score=NA)
-  }
+  if (!is.null(correct_name)){
+    if(nrow(correct_name)!=0){
+      y.d<-cbind(spp.x,correct_name[,colnames(correct_name)%in%
+                                      c("data_source_title","score","matched_name2")]) #
+      
+      names(y.d)[1]<-"or_name"
+      
+      spp.x<-y.d$matched_name2  # Use the corrected name for the rest of taxnomic querys
+      
+      ifelse(y.d$matched_name2==y.d$or_name,
+             y.d$Status<-"Correct",
+             y.d$Status<-"Incorrect")
+      
+    }} else {
+      y.d<-data.frame(or_name=spp.x,
+                      matched_name2=NA,
+                      Status="Not_found",
+                      data_source_title=NA,
+                      score=NA)
+    }
   
   # b.Use the corrected or original name to look for taxonomic data----
   #   b.1. Get the basic data from the IUCN red list----
