@@ -28,13 +28,13 @@ rm(list.of.packages,new.packages)
 # crs_p <- "EPSG:4083" # USE the regCan UTM area
 
 # 0.1 Load the functions----
-  functions<-"C:/Users/Gonzalo/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/scripts/New_functions" %>% list.files(recursive = FALSE,pattern = ".R$",full.names = TRUE)
+  functions<-"F:/OneDrive - Natural History Museum/Projects/New_global_maxent/scripts/New_functions" %>% list.files(recursive = FALSE,pattern = ".R$",full.names = TRUE)
   lapply(functions,function(x) source(x))
 
 # 1. Get the species occurrence data ----
 # a. GBIF data----
   # Parameters for the point-data
-  route_points <- "C:/Users/Gonzalo/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/data/points"
+  route_points <- "F:/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/data/points"
   D.points <- route_points  %>% list.files(pattern=".r",full.names = TRUE)
 
   get.points <-function(y){
