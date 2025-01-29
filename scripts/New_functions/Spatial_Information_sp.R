@@ -166,7 +166,7 @@ retrieve_syns<-function(spp_name,   # [Character] The species name from which to
       
       while( is.null(g) && t_11 <= n_times){
         
-        try(g <- rl_search(name = b$result$accepted_name,silent=TRUE)$result)
+        try(g <- rl_search(name = b$result$accepted_name[1],silent=TRUE)$result)
         t_11 <- t_11 + 1
       }
     }
