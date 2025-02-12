@@ -28,16 +28,16 @@ rm(list.of.packages,new.packages)
 # crs_p <- "EPSG:4083" # USE the regCan UTM area
 
 # 0.1 Load the functions----
-  # functions <- "F:/OneDrive - Natural History Museum/Projects/New_global_maxent/scripts/New_functions" %>% list.files(recursive = FALSE,pattern = ".R$",full.names = TRUE)
-  functions <- "C:/Users/Gonzalo/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/scripts/New_functions" %>% list.files(recursive = FALSE,pattern = ".R$",full.names = TRUE)  
+  functions <- "F:/OneDrive - Natural History Museum/Projects/New_global_maxent/scripts/New_functions" %>% list.files(recursive = FALSE,pattern = ".R$",full.names = TRUE)
+  # functions <- "C:/Users/Gonzalo/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/scripts/New_functions" %>% list.files(recursive = FALSE,pattern = ".R$",full.names = TRUE)  
 
-lapply(functions,function(x) source(x))
+  lapply(functions,function(x) source(x))
 
 # 1. Get the species occurrence data ----
 # a. GBIF data----
   # Parameters for the point-data
-  # route_points <- "F:/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/data/points"
-  route_points <- "C:/Users/Gonzalo/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/data/points"
+  route_points <- "F:/OneDrive - Natural History Museum/Projects/New_global_maxent/data/points"
+  # route_points <- "C:/Users/Gonzalo/OneDrive - Natural History Museum/Projects/New_global_maxent/new_global_maxent/data/points"
 
   D.points <- route_points  %>% list.files(pattern=".r",full.names = TRUE)
 
@@ -93,15 +93,22 @@ lapply(functions,function(x) source(x))
   
   # b. Get some species information----  
     spp_list_raw <- unique(p.Gbif.comb$name) %>% as.character() # Some names are just really long numbers!!!
-    spp_list_raw[c(427:429)]
     
-      # Retrive synonims
-        # The retrive synonims function doesn't like to run in paralell (possibly due to the API conexions to external servers)
-        # we are going to try to Future package to run multiple sessions of R in the background
+  # b.1 Retrive synonims----
+  #   The retrive synonims function doesn't like to run in paralell (possibly due to the API conexions to external servers)
+  #   we are going to try to Future package to run multiple sessions of R in the background
     options(iucn_redlist_key="eb704359f6ea22d50235efebf7f4a2f5f843a66fa951cf6a376df71cf7268986")
-    tax_raw <- lapply(spp_list_raw, function(y) retrieve_syns(spp=y))
     
-      
+    tax_raw <- list()
+    
+    for(i in 2196:length(spp_list_raw)){
+      tax_raw[[i]] <- lapply(spp_list_raw[i], function(y) retrieve_syns(spp=y))
+      }
+     
+  # b.2 Aggregate the taxonomic information----
+    tax_info <- lapply(tax_raw,function(x) return(x[[1]]$TaxDat)) %>% rbindlist()
+     
+    rbindlist(tax_raw)
     
         
     

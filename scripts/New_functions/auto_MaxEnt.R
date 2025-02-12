@@ -74,8 +74,12 @@ Auto_maxent<-function(
     }
     
     if(time_macth == TRUE){
-      warning("Model selection not available when models are fitted using time-series data!")
-      mod.select=FALSE
+      # Check the requirements for the time-matching selection:
+      # Environmental information with the right format
+      
+      # All the needed parameters for the spatio-temporal information extraction
+      
+      
     }
   }
   
@@ -146,7 +150,7 @@ Auto_maxent<-function(
   
   # Display the information ----
   sf::sf_use_s2(TRUE)
-  plot(sty.a %>% st_geometry())  
+  # plot(sty.a %>% st_geometry())  
   
   # 1.e Crop the environmental information ----
   if("SpatRaster" %in% class(predictors)){
@@ -158,7 +162,7 @@ Auto_maxent<-function(
     
   }
   
-  # 2. Generate the background data ----
+  # 2. Generate the background data and extract the environmental information ----
   # Get the number of background points
   if(n_bk=="AUTO"){
     # With the AUTO parameter we are going to sample the study area until we find a number of background points that represents the
@@ -186,74 +190,72 @@ Auto_maxent<-function(
     }
   }
   
-  
-  # 2.1 Create the background points ----
-  if(type_bk %in% c("Random","BwData","BwData_inv")){
-    bk_points <- backgroundPOINTS(presence = y_points,
-                                  background_n = n_bk,
-                                  TrainTest = 1,
-                                  range_samp = sty.a,
-                                  weights.p = type_bk)$Train
-  }
-  
-  if(type_bk %in% "EnvBK"){
-    # The selection of variables can have an impact on the shape and distribution of the PCA scores, therefore we are going to 
-    if(select_var!=FALSE | time_macth == TRUE){
-      Warning("When Select_var is set to `TRUE` EnvBK is not available since the configuration of variables have an impact on the shape of the environmental hyperspace! Background points sampled at random!")
+  # 2.1 No time coordination needed ----
+  if(time_macth == FALSE){
+    # 2.1.a Create the background points ----
+    if(type_bk %in% c("Random","BwData","BwData_inv")){
       bk_points <- backgroundPOINTS(presence = y_points,
                                     background_n = n_bk,
                                     TrainTest = 1,
                                     range_samp = sty.a,
-                                    weights.p = "Random")$Train
-      
-    }else{
-      bk_points <-  bk_env(p.points=y_points,
-                           env_var=pred.dat,
-                           n_bk=n_bk,
-                           density_pc=TRUE)[["points"]] %>% st_cast("POINT")
+                                    weights.p = type_bk)$Train
     }
-  }
-  
-  gc(); gc()
-  
-  # 3. Variable selection methods ----
-  # Prepare the presence absence vector
-  bk_points <- bk_points %>% mutate(presence=0,.before=0)
-  y_points <- y_points %>% mutate(presence=1,.before=0)
-  
-  obs_sp <- rbind(y_points %>% dplyr::select("presence"),
-                  bk_points %>% dplyr::select("presence"))
-  
-  obs_index <- obs_sp$presence %>% st_drop_geometry()
-  
-  
-  # 3.a Extract the values from the environmental variables----
-  if(time_macth){
-    warning("The `time_macth==TRUE` only works for years and only when the year is included in the name of the variable!")  
     
-    mod.dat <- Time_machine(d.route=d.route,
-                            d.range=d.range,
-                            ref_rast=pred.dat)
+    if(type_bk %in% "EnvBK"){
+      # The selection of variables can have an impact on the shape and distribution of the PCA scores 
+      if(select_var!=FALSE | time_macth == TRUE){
+        Warning("When Select_var is set to `TRUE` Background points are firstly sampled at random and this data is used to run the variable selection. After this, the selected variables are used to produce the final set of Bk points.")
+        bk_points <- backgroundPOINTS(presence = y_points,
+                                      background_n = n_bk,
+                                      TrainTest = 1,
+                                      range_samp = sty.a,
+                                      weights.p = "Random")$Train
+        
+      }else{
+        bk_points <-  bk_env(p.points=y_points,
+                             env_var=pred.dat,
+                             n_bk=n_bk,
+                             density_pc=TRUE)[["points"]] %>% st_cast("POINT")
+      }
+    }
+    gc(); gc()
     
-    # Combine the two datasets and check their lengthgs
+    # 2.1.b Prepare the presence absence vector----
+    bk_points <- bk_points %>% mutate(presence=0,.before=0)
+    y_points <- y_points %>% mutate(presence=1,.before=0)
     
+    obs_sp <- rbind(y_points %>% dplyr::select("presence"),
+                    bk_points %>% dplyr::select("presence"))
     
-    # Are there other variables (NEED TO RECONFIGURE PRED.DAT?)
+    obs_index <- obs_sp$presence %>% st_drop_geometry()
     
-    
-  }else{
+    # 2.1.c Extract the values from the environmental variables ----
     mod.dat <- pred.dat %>% terra::extract(obs_sp %>% vect(),ID=F)
+    
+    # 2.1.d Remove empty cases from the data----
+    dat.index <- complete.cases(mod.dat)
+    obs_index <- obs_index[dat.index]
+    
+    mod.dat <- mod.dat[dat.index,]
+    }
+  
+  # 2.2 Time coordination/matched ----
+  if(time_macth == TRUE){
+    raw.time <- Time_matchine(x = pred.dat, y = y_points, y.t = "eventDate", 
+                  time.i = "year", jump.i = 1, id.p = "key",continuous_data = "9999-01-01",
+                  
+                  # Sampling the temporal data accordingly?
+                  bk_sampling = TRUE, sampling_type = type_bk, sampling_area = sty.a, 
+                  number_points = n_bk # [[Numerica]] Number of ramdom points to sample at each time jump. This will also be the final number of Bk points returned by the function (a random sample of n bk_points will be extracted)
+                             )
+  
+  # Select the time-period to run predictions
+    obs_time <- xtabs(~raw.time$time-period)
+    period<-
+    mod.dat
+    
+    
   }
-  
-  
-  
-  
-  # 3.a.1 Remove empty cases from the data----
-  dat.index <- complete.cases(mod.dat)
-  obs_index <- obs_index[dat.index]
-  
-  mod.dat <- mod.dat[dat.index,]
-  
   # 3.b Variable selection ----
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Other methods are jet to be implemented :S
@@ -281,7 +283,7 @@ Auto_maxent<-function(
     
     mod.dat <- mod.dat[,colnames(mod.dat) %in% vars_s]
     
-    if(type_bk %in% "EnvBK"){
+    if(type_bk %in% "EnvBK" & time_macth == FALSE){
       
       bk_points <-  bk_env(p.points=y_points,
                            env_var=pred.dat[[names(pred.dat) %in% vars_s]],
