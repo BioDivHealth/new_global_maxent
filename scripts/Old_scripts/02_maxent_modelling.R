@@ -19,8 +19,8 @@ plot(tt)
 world_shp <- st_read("data/wrld_simpl/wrld_simpl3.shp")
 plot(world_shp)
 
-files2<-list.files("C:\\temp\\da2\\",pattern="_points.r",full.names=TRUE)
-files2a<-list.files("C:\\temp\\da2\\",pattern="_points.r",full.names=FALSE)
+files2<-list.files(here("data","disease_analsyses2"),pattern="_points.r",full.names=TRUE)
+files2a<-list.files("",pattern="_points.r",full.names=FALSE)
 files2a<-gsub("_points.r","",files2a)
 
 # Get current bioclim data ----
