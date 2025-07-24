@@ -1,0 +1,102 @@
+detection_csv
+
+name	type	description
+AssocID	number	Row number from current VIRION version
+DetectionMethod	string	Four harmonized categories in descending order of strength of evidence: “Isolation/Observation,” “PCR/Sequencing,” “Antibodies,” and “Not specified”. In some cases where detection method is not available via metadata, source information is used as DetectionOriginal (e.g., “NCBI Nucleotide”).
+DetectionOriginal	string	Method used for determing the presence of a virus as described in the original work
+HostFlagID	boolean	Denotes the presence of possible uncertainty in host identification, which users may want to check before proceeding any further.
+NCBIAccession	string	A unique identifier assigned to a record in sequence databases such as GenBank
+
+edgelist
+
+name	type	description
+HostTaxID	number	Taxonomic identification number from NCBI for host taxa.
+VirusTaxID	number	Taxonomic identification number from NCBI for virus taxa.
+AssocID	string	Row number from current VIRION version
+
+provenance_csv
+
+name	type	description
+AssocID	number	Row number from current VIRION version
+HostOriginal	string	Host name from original dataset
+VirusOriginal	string	Virus name from original dataset
+Database	string	Source for the record. One of EID2, Shaw, HP3, GMPD2, PREDICT, OR GenBank
+DatabaseVersion	string	For static data, a citation. For dynamic data (e.g. Genbank) the access URL and a time stamp
+ReferenceText	string	A text description of literature sources
+PMID	number	PubMed identifiers for literature sources
+
+taxonomy_host
+
+name	type	description
+HostTaxID	number	Taxonomic identification number from NCBI for host taxa.
+Host	string	Host species name
+HostGenus	string	Host genus name
+HostFamily	string	Host family name
+HostOrder	string	Host order name
+HostClass	string	Host class name
+HostNCBIResolved	boolean	Indicates whether or not the host taxa could harmonized with the NCBI taxonomy.
+
+taxonomy_virus
+
+name	type	description
+VirusTaxID	number	Taxonomic identification number from NCBI for virus taxa.
+Virus	string	Virus species name
+VirusGenus	string	Virus genus name
+VirusFamily	string	Virus family name
+VirusOrder	string	Virus order name
+VirusClass	string	Virus class name
+VirusNCBIResolved	boolean	Indicates whether or not the virus taxa could harmonized with the NCBI taxonomy.
+ICTVRatified	boolean	Indicates whether or not the virus taxa is ratified by the nternational Committee on Taxonomy of Viruses (ICTV).
+Database	string	Source for the record. One of EID2, Shaw, HP3, GMPD2, PREDICT, OR GenBank
+
+temporal_csv
+
+name	type	description
+AssocID	number	Row number from current VIRION version
+PublicationYear	number	For literature derived records. PublicationYear provides the year the literature source was published, accessed either from the original database’s reference description or from scraping the PubMed database.
+ReleaseYear	number	The year a given association was “released” in public information (EID2 and PREDICT) or a publicly deposited sample on GenBank. For PREDICT, all values are given as 2021, given the release of a static file at that time even though some findings may have been published or deposited in GenBank earlier. (This redundancy should be captured in overlap with GenBank and EID2.)
+ReleaseMonth	number	The month a given association was “released” to the public
+ReleaseDay	number	The day a given association was “released” to the public
+CollectionYear	number	Reports the year of actual sample collection (GenBank and Predict)
+CollectionMonth	number	Reports the month of actual sample collection (GenBank and Predict)
+CollectionDay	number	Reports the day of actual sample collection (GenBank and Predict)
+
+virion_csv
+
+name	type	description
+Host	string	Host species name
+Virus	string	Virus species name
+HostTaxID	number	Taxonomic identification number from NCBI for host taxa.
+VirusTaxID	number	Taxonomic identification number from NCBI for virus taxa.
+HostNCBIResolved	boolean	Indicates whether or not the host taxa could harmonized with the NCBI taxonomy.
+VirusNCBIResolved	boolean	Indicates whether or not the virus taxa could harmonized with the NCBI taxonomy.
+ICTVRatified	boolean	Indicates whether or not the virus taxa is ratified by the nternational Committee on Taxonomy of Viruses (ICTV).
+HostGenus	string	Host genus name
+HostFamily	string	Host family name
+HostOrder	string	Host order name
+HostClass	string	Host class name
+HostOriginal	string	Host name from original dataset
+VirusGenus	string	Virus genus name
+VirusFamily	string	Virus family name
+VirusOrder	string	Virus order name
+VirusClass	string	Virus class name
+VirusOriginal	string	Virus name from original dataset
+HostFlagID	boolean	Denotes the presence of possible uncertainty in host identification, which users may want to check before proceeding any further.
+DetectionMethod	string	Four harmonized categories in descending order of strength of evidence: “Isolation/Observation,” “PCR/Sequencing,” “Antibodies,” and “Not specified”. In some cases where detection method is not available via metadata, source information is used as DetectionOriginal (e.g., “NCBI Nucleotide”).
+DetectionOriginal	string	Method used for determing the presence of a virus as described in the original work
+Database	string	Source for the record. One of EID2, Shaw, HP3, GMPD2, PREDICT, OR GenBank
+DatabaseVersion	string	For static data, a citation. For dynamic data (e.g. Genbank) the access URL and a time stamp
+PublicationYear	number	For literature derived records. PublicationYear provides the year the literature source was published, accessed either from the original database’s reference description or from scraping the PubMed database.
+ReferenceText	string	A text description of literature sources
+PMID	number	PubMed identifiers for literature sources
+ReleaseYear	number	The year a given association was “released” in public information (EID2 and PREDICT) or a publicly deposited sample on GenBank. For PREDICT, all values are given as 2021, given the release of a static file at that time even though some findings may have been published or deposited in GenBank earlier. (This redundancy should be captured in overlap with GenBank and EID2.)
+ReleaseMonth	number	The month a given association was “released” to the public
+ReleaseDay	number	The day a given association was “released” to the public
+CollectionYear	number	Reports the year of actual sample collection (GenBank and Predict)
+CollectionMonth	number	Reports the month of actual sample collection (GenBank and Predict)
+CollectionDay	number	Reports the day of actual sample collection (GenBank and Predict)
+AssocID	number	Row number. Used as an id. Will be specific to a given version of the data
+DatabaseDOI	string	Persistent digital identifer for the database
+Release_Date	date	Date data were released
+Collection_Date	string	Date of actual sample collection
+NCBIAccession	string	A unique identifier assigned to a record in sequence databases such as GenBank
