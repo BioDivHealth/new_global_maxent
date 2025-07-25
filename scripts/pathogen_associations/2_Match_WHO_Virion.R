@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# 3_Match_WHO_Virion.R
+# 2_Match_WHO_Virion.R
 # ------------------------------------------------------------------------------
 # Purpose: Identify which WHO priority pathogens are present in the VIRION
 #          database and retrieve their corresponding VirusTaxID identifiers.
