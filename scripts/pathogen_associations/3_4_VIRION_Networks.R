@@ -57,7 +57,7 @@ network_data <- host_associations %>%
   # Create lowercase host names for matching
   mutate(Host_lower = str_to_lower(Host)) %>%
   # Use standardized host names if available (match on lowercase)
-  left_join(host_taxonomy %>% select(Host, Host_lower, correct_name, Class, Family, Order), 
+  left_join(host_taxonomy %>% select(Host, Host_lower, correct_name,Phylum, Class, Family, Order), 
             by = "Host_lower") %>%
   mutate(
     # Use standardized name if available, otherwise original
@@ -76,13 +76,18 @@ network_data <- host_associations %>%
   #filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
   # Remove uncertain host identifications if desired
   filter(!HostFlagID | is.na(HostFlagID)) %>%
-  select(Virus_clean, Host_clean, VirusFamily, HostClass = Class, HostFamily = Family, HostOrder = Order,
-         Risk_category) %>%
+  select(Pathogen = Virus_clean, Host_clean, HostTaxID, PathogenTaxID = VirusTaxID, 
+         PathogenGenus = VirusGenus, PathogenFamily = VirusFamily, 
+         PathogenOrder = VirusOrder, PathogenClass = VirusClass, HostPhylum = Phylum,
+         HostClass = Class, HostFamily = Family, HostOrder = Order, DetectionMethod,
+         `PHEIC risk`) %>%
   distinct() %>%
-  filter(!is.na(Virus_clean), !is.na(Host_clean))
+  mutate(MainSource = "VIRION") %>%
+  filter(!is.na(Pathogen), !is.na(Host_clean))
 
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
-
+dir.create(here("data_artur", "WHO", "networks"), showWarnings = FALSE)
+write_csv(network_data, here("data_artur", "WHO", "networks", "virion_who_network.csv"))
 
 # ------------------------------| Create network objects |-------------------
 

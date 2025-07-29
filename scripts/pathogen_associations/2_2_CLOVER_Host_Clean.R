@@ -57,8 +57,9 @@ cat("Starting species standardization process...\n")
 # Initialize progress variable (uncomment and set if resuming)
 # progress <- 1
 
-for (i in 1:length(host_species_list)) {
+#for (i in 1:length(host_species_list)) {
 #for (i in 1:5) {  # Remove this line once testing is complete
+for (i in progress:length(host_species_list)) {  # Remove this line once testing is complete
     sp <- host_species_list[i]
     cat("Processing species", i, "of", length(host_species_list), ":", sp, "\n")
     
@@ -68,6 +69,8 @@ for (i in 1:length(host_species_list)) {
     species_list[[i]]$type <- "host"
     species_list[[i]]$host_species <- sp    
 }
+
+progress = length(species_list) + 1
 
 # Create one-row-per-species dataframe -----------------------------------
 cat("Creating standardized taxonomic dataframe...\n")
@@ -117,6 +120,11 @@ tax_df_joined <- tax_df %>%
   relocate(HostTaxID, .after = Host) %>% 
   relocate(Genus, Family, Order, Class, Phylum, .after = taxon_level)
 
+for (i in 1:nrow(tax_df_joined)){
+  if(nchar(tax_df_joined$Spp_syn[i]) > 0){
+  tax_df_joined$Spp_syn[i] =  clean_synonyms2(tax_df_joined$Spp_syn[i])}
+}
+
 # Create output directory if it doesn't exist
 output_dir <- here("data_artur", "WHO", "clover")
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
@@ -128,37 +136,6 @@ write_csv(tax_df_joined, output_file)
 cat("Standardization complete!\n")
 cat("Processed", nrow(tax_df), "host species records\n")
 cat("Results saved to:", output_file, "\n")
-
-# Summary statistics ------------------------------------------------------
-cat("\n=== STANDARDIZATION SUMMARY ===\n")
-cat("Total species processed:", length(host_species_list), "\n")
-cat("Records with correct names:", sum(!is.na(tax_df$correct_name)), "\n")
-cat("Success rate:", round(sum(!is.na(tax_df$correct_name)) / nrow(tax_df) * 100, 1), "%\n")
-
-# Taxonomic breakdown
-cat("\nTaxonomic breakdown:\n")
-if (sum(!is.na(tax_df$Phylum)) > 0) {
-  cat("Phyla represented:\n")
-  print(table(tax_df$Phylum, useNA = "ifany"))
-}
-
-if (sum(!is.na(tax_df$Class)) > 0) {
-  cat("\nClasses represented:\n")
-  print(table(tax_df$Class, useNA = "ifany"))
-}
-
-# Species with issues
-problematic_species <- tax_df %>% 
-  filter(is.na(correct_name)) %>%
-  select(Submitted_name, host_species)
-
-if (nrow(problematic_species) > 0) {
-  cat("\nSpecies that could not be standardized:\n")
-  print(problematic_species)
-}
-
-cat("\nProcess completed successfully!\n")
-
 # ------------------------------------------------------------------------------
 # TAXONOMY VISUALIZATIONS
 # ------------------------------------------------------------------------------
@@ -226,146 +203,9 @@ p2_order_bars <- host_clean %>%
     fill = "Class"
   )
 
-# 3. HIERARCHICAL TREEMAP
-if (!require(treemap)) install.packages("treemap")
-library(treemap)
 
-treemap_data <- host_clean %>%
-  count(Class, Order, name = "species_count") %>%
-  filter(species_count >= 2) %>%  # Only show orders with 2+ species
-  arrange(desc(species_count))
-
-if (nrow(treemap_data) > 0) {
-  p3_treemap <- treemap(
-    treemap_data,
-    index = c("Class", "Order"),
-    vSize = "species_count",
-    type = "index",
-    palette = "Set3",
-    title = "CLOVER Host Taxonomic Diversity: Class > Order",
-    fontsize.title = 14,
-    fontsize.labels = c(12, 10),
-    align.labels = list(c("left", "top"), c("center", "center")),
-    overlap.labels = 0.5,
-    inflate.labels = FALSE
-  )
-}
-
-# 4. DETAILED TAXONOMIC BREAKDOWN
-top_families <- host_clean %>%
-  count(Class, Order, Family, sort = TRUE) %>%
-  slice_head(n = 20)
-
-if (nrow(top_families) > 0) {
-  p4_family_detail <- top_families %>%
-    mutate(
-      Family = fct_reorder(Family, n),
-      Class_Order = paste(Class, Order, sep = " - ")
-    ) %>%
-    ggplot(aes(x = Family, y = n, fill = Class)) +
-    geom_col(alpha = 0.8) +
-    coord_flip() +
-    scale_fill_brewer(palette = "Dark2") +
-    theme_minimal() +
-    theme(
-      plot.title = element_text(size = 14, face = "bold"),
-      axis.text.y = element_text(size = 9),
-      legend.position = "bottom"
-    ) +
-    labs(
-      title = "Top 20 CLOVER Host Families by Species Count",
-      subtitle = "Showing taxonomic class",
-      x = "Family",
-      y = "Number of Species",
-      fill = "Class"
-    )
-}
-
-# Save all plots
-output_plots_dir <- here("figures", "clover_taxonomy_plots")
-dir.create(output_plots_dir, showWarnings = FALSE, recursive = TRUE)
-
-ggsave(here(output_plots_dir, "clover_host_class_distribution.png"), p1_class_pie, 
-       width = 10, height = 8, dpi = 300, bg = "white")
-ggsave(here(output_plots_dir, "clover_host_orders_top20.png"), p2_order_bars, 
-       width = 12, height = 8, dpi = 300, bg = "white")
-
-if (exists("p4_family_detail")) {
-  ggsave(here(output_plots_dir, "clover_host_families_top20.png"), p4_family_detail, 
-         width = 12, height = 10, dpi = 300, bg = "white")
-}
-
-# Save treemap as PNG
-if (nrow(treemap_data) > 0) {
-  png(here(output_plots_dir, "clover_host_taxonomy_treemap.png"), width = 12, height = 8, 
-      units = "in", res = 300, bg = "white")
-  treemap(
-    treemap_data,
-    index = c("Class", "Order"),
-    vSize = "species_count",
-    type = "index",
-    palette = "Set3",
-    title = "CLOVER Host Taxonomic Diversity: Class > Order",
-    fontsize.title = 14,
-    fontsize.labels = c(12, 10),
-    align.labels = list(c("left", "top"), c("center", "center")),
-    overlap.labels = 0.5,
-    inflate.labels = FALSE
-  )
-  dev.off()
-}
 
 # Display plots
 cat("Displaying taxonomy visualizations...\n")
 print(p1_class_pie)
 print(p2_order_bars) 
-
-if (exists("p4_family_detail")) {
-  print(p4_family_detail)
-}
-
-# Taxonomic diversity summary
-diversity_summary <- host_clean %>%
-  group_by(Class) %>%
-  summarise(
-    Species = n(),
-    Orders = n_distinct(Order),
-    Families = n_distinct(Family),
-    Genera = n_distinct(Genus),
-    .groups = "drop"
-  ) %>%
-  arrange(desc(Species)) %>%
-  mutate(
-    `Avg Species/Order` = round(Species/Orders, 1),
-    `Avg Species/Family` = round(Species/Families, 1)
-  )
-
-# Print summary table
-cat("\n=== TAXONOMIC DIVERSITY SUMMARY ===\n")
-print(diversity_summary)
-
-if (nrow(top_families) > 0) {
-  cat("\n=== TOP FAMILIES BY SPECIES COUNT ===\n")
-  print(top_families)
-}
-
-cat("\nTaxonomy visualizations completed!\n")
-cat("All plots saved to:", output_plots_dir, "\n")
-
-# Species richness by taxonomic level
-richness_stats <- tibble(
-  Level = c("Phylum", "Class", "Order", "Family", "Genus", "Species"),
-  Count = c(
-    n_distinct(host_clean$Phylum),
-    n_distinct(host_clean$Class), 
-    n_distinct(host_clean$Order),
-    n_distinct(host_clean$Family),
-    n_distinct(host_clean$Genus),
-    nrow(host_clean)
-  )
-)
-
-cat("\n=== TAXONOMIC RICHNESS ACROSS LEVELS ===\n")
-print(richness_stats)
-
-cat("\nVisualization analysis complete!\n") 

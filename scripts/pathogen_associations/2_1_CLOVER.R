@@ -215,6 +215,9 @@ final_host_associations <- final_host_associations_raw %>%
     ReleaseYear, AssocID, NCBIAccession
   )
 
+final_host_associations <- final_host_associations %>%
+  left_join(who_df %>% dplyr::select(ID, `PHEIC risk`), by = "ID")
+
 # Join back with WHO metadata
 final_output <- who_df %>%
   left_join(
