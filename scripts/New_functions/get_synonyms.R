@@ -2,8 +2,7 @@
 ## Extract the taxonomic information and list of sinonyms for a given specie
 ## ----////\/</\>/>\><>/\><><>>\/><></\/\/\/\--><><><><><|>|<|<|><|>|>|>|>|~#
 #
-# spp_name = spp_list_raw[i]
-# print(spp_name)
+
 
 clean_synonyms <- function(x) {
                 x %>%
@@ -16,6 +15,26 @@ clean_synonyms <- function(x) {
                     unique() %>% # deduplicate
                     paste(collapse = ", ")
             }
+
+clean_synonyms2 <- function(x) {
+    x %>%
+        as.character() %>% # be sure everything is character
+        gsub('c\\(|\\)|"|\\\\', "", .) %>% # strip c(  )  "  and escaped quotes
+        strsplit(split = "[,;]") %>% # break on commas
+        unlist() %>%
+        trimws() %>% # remove leading / trailing spaces
+        discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
+        unique() %>% # deduplicate
+        paste(collapse = "; ") %>% 
+        strsplit(split = "[,;]") %>% 
+        unlist() %>%
+        trimws() %>% # remove leading / trailing spaces
+        discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
+        unique() %>% 
+        paste(collapse = "; ")
+    # deduplicate
+}
+
 
 clean__genus_synonyms <- function(x) {
                 x %>%
@@ -214,7 +233,19 @@ IUCN_get_data <- function(g, b, genus, species, infra = NULL, n_times = 3) {
     cat("IUCN Class:", IUCN_Class, "\n")
     cat("IUCN Order:", IUCN_Order, "\n")
     cat("IUCN Family:", IUCN_Family, "\n")
-
+    # ------------------------------------------------------------------
+    # Replace zero-length objects with NA ------------------------------
+    # ------------------------------------------------------------------
+    vars <- c("IUCN_Present", "IUCN_id", "IUCN_name", "IUCN_latest",
+              "IUCN_date", "IUCN_Category", "IUCN_N_syn", "IUCN_syn",
+              "IUCN_status", "IUCN_Phylum", "IUCN_Class",
+              "IUCN_Order", "IUCN_Family")
+    
+    for (v in vars) {
+        if (exists(v, inherits = TRUE) && length(get(v)) == 0) {
+            assign(v, NA, inherits = TRUE)
+        }
+    }
     IUCN_data <- unique(data.frame(
         IUCN_Present, IUCN_id, IUCN_name, IUCN_latest, IUCN_date,
         IUCN_Category, IUCN_N_syn, IUCN_syn, IUCN_status,
@@ -242,9 +273,16 @@ ITIS_get_species_data <- function(spp.x, n_times = 3) {
     if (is.list(TSN) & is.null(TSN[[1]])) {
         TSN[[1]] <- data.frame()
     }
-
+    if(is.null(TSN)){
+        TSN = list(data.frame(c(NULL)))
+        #TSN[[1]] = data.frame(list(c(NA)), list(c(NA)))
+    }
     if (nrow(TSN[[1]]) == 0) {
         try(TSN.two <- get_tsn(spp.x, searchtype = "scientific", silent = TRUE))
+        if(!exists("TSN.two")){
+            TSN.two = NA
+            attr(TSN.two) = "does not exists"
+        }
         if (attr(TSN.two, "match") == "found") {
             tsn2 <- itis_acceptname(TSN.two[[1]], silent = TRUE)
             ## 1. Add a new row (tibble is currently empty)
@@ -256,6 +294,8 @@ ITIS_get_species_data <- function(spp.x, n_times = 3) {
                     nameUsage      = "valid"
                 )
         } else if (attr(TSN.two, "match") == "not found") {
+            TSN <- list(c(NULL))
+        } else if(attr(TSN.two, "match") == "does not exist"){
             TSN <- list(c(NULL))
         }
     }
@@ -557,7 +597,19 @@ if (is.null(TSN[[1]])) {
 }
 
 # GBIF_get_data function
-GBIF_get_data <- function(spp.x, n_times = 3) {
+GBIF_get_data <- function(spp.x, species, n_times = 3) {
+    
+    GBIF_Present <- NA
+    GBIF_id <- NA
+    GBIF_name <- NA
+    GBIF_Phylum <- NA
+    GBIF_Class <- NA
+    GBIF_Order <- NA
+    GBIF_Family <- NA
+    
+    GBIF_Status <- NA
+    GBIF_syn <- NA
+    GBIF_N_syn <- NA
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
     key_1 <- NULL
     t_6 <- 1
@@ -567,7 +619,9 @@ GBIF_get_data <- function(spp.x, n_times = 3) {
         t_6 <- t_6 + 1
     }
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-
+    
+    # For binomial species
+    if (!is.na(species)){
     if (length(key_1) == 0) {
         GBIF_Present <- "No"
         GBIF_id <- NA
@@ -582,13 +636,17 @@ GBIF_get_data <- function(spp.x, n_times = 3) {
         GBIF_syn <- NA
         GBIF_N_syn <- NA
     } else {
-        GBIF_id <- paste(key_1[key_1$status == "ACCEPTED" & key_1$matchtype == "EXACT", 20], collapse = "-")
-        GBIF_name <- paste(unique(key_1[key_1$specieskey == GBIF_id, 13]), collapse = "-")
-
-        GBIF_Phylum <- toupper(paste(unique(key_1[key_1$specieskey == GBIF_id, 9]), collapse = "-"))
-        GBIF_Class <- toupper(paste(unique(key_1[key_1$specieskey == GBIF_id, 22]), collapse = "-"))
-        GBIF_Order <- toupper(paste(unique(key_1[key_1$specieskey == GBIF_id, 10]), collapse = "-"))
-        GBIF_Family <- toupper(paste(unique(key_1[key_1$specieskey == GBIF_id, 11]), collapse = "-"))
+        GBIF_id <- paste(key_1$specieskey[key_1$status == "ACCEPTED" & key_1$matchtype == "EXACT"], collapse = "-")
+        if(GBIF_id == ""){
+            max_conf = max(key_1$confidence)
+            GBIF_id <- paste(key_1$usagekey[key_1$status == "ACCEPTED" & key_1$matchtype == "FUZZY" & key_1$confidence==max_conf], collapse = "-")
+        }
+        GBIF_name <- paste(unique(key_1$species[key_1$specieskey == GBIF_id]), collapse = "-")
+        GBIF_Status = paste(unique(key_1$status[key_1$specieskey == GBIF_id]), collapse = "-")
+        GBIF_Phylum <- toupper(paste(unique(key_1$phylum[key_1$specieskey == GBIF_id]), collapse = "-"))
+        GBIF_Class <- toupper(paste(unique(key_1$class[key_1$specieskey == GBIF_id]), collapse = "-"))
+        GBIF_Order <- toupper(paste(unique(key_1$order[key_1$specieskey == GBIF_id]), collapse = "-"))
+        GBIF_Family <- toupper(paste(unique(key_1$family[key_1$specieskey == GBIF_id]), collapse = "-"))
 
         if (is.na(GBIF_name)) {
             GBIF_Present <- "No"
@@ -600,38 +658,82 @@ GBIF_get_data <- function(spp.x, n_times = 3) {
             GBIF_Class <- NA
             GBIF_Order <- NA
             GBIF_Family <- NA
-
+            
+            GBIF_Status <- NA
             GBIF_syn <- NA
             GBIF_N_syn <- NA
         }
 
-        if (GBIF_name == "") {
+        if (GBIF_name == "" & !"SYNONYM" %in% key_1$status) {
             GBIF_Present <- "No"
             GBIF_id <- NA
 
             GBIF_name <- NA
-
+         
             GBIF_Phylum <- NA
             GBIF_Class <- NA
             GBIF_Order <- NA
             GBIF_Family <- NA
 
+            GBIF_Status <- NA
             GBIF_syn <- NA
             GBIF_N_syn <- NA
         } else {
             GBIF_Present <- "Yes"
-            GBIF_syn <- paste(key_1[key_1$status == "SYNONYM", 13], collapse = ";")
+            GBIF_syn <- paste(unique(key_1$species[key_1$status == "SYNONYM"]), collapse = ";")
+            GBIF_syn_multi <- unique(key_1$species[key_1$status == "SYNONYM"])
+            if(nchar(GBIF_id) == 0){
+                GBIF_id <- paste(key_1$usagekey[key_1$status == "SYNONYM"], collapse = "-")
+                GBIF_id_multi <- key_1$usagekey[key_1$status == "SYNONYM"]
+            }
             if (length(key_1[key_1$status == "SYNONYM", 1]) == 0) {
                 GBIF_N_syn <- NA
             } else {
                 GBIF_N_syn <- length(key_1[key_1$status == "SYNONYM", 1])
             }
+            if (!is.na(GBIF_syn) & GBIF_syn!="" & GBIF_name=="") {
+             try(tax <- get_gbifid_(sci = GBIF_syn_multi[1])[[1]], silent = TRUE)
+                if(dim(tax)[1]>0){
+                    GBIF_name = paste(unique(tax$species[tax$status=="ACCEPTED" & tax$matchtype=="EXACT"]), collapse = "; ")
+                    GBIF_Status <- paste(unique(tax$status[key_1$usagekey == GBIF_id_multi[1]]), collapse = "-")
+                    GBIF_Phylum <- toupper(paste(unique(tax$phylum[tax$usagekey == GBIF_id_multi[1]]), collapse = "-"))
+                    GBIF_Class <- toupper(paste(unique(tax$class[tax$usagekey == GBIF_id_multi[1]]), collapse = "-"))
+                    GBIF_Order <- toupper(paste(unique(tax$order[tax$usagekey == GBIF_id_multi[1]]), collapse = "-"))
+                    GBIF_Family <- toupper(paste(unique(tax$family[tax$usagekey == GBIF_id_multi[1]]), collapse = "-"))
+                }
+            }
         }
     }
-
+    # For genus level
+    } else {
+        if (length(key_1) == 0) {
+            GBIF_Present <- "No"
+            GBIF_id <- NA
+            
+            GBIF_name <- NA
+            
+            GBIF_Phylum <- NA
+            GBIF_Class <- NA
+            GBIF_Order <- NA
+            GBIF_Family <- NA
+            
+            GBIF_syn <- NA
+            GBIF_N_syn <- NA
+        } else {
+            GBIF_Present <- "Yes"
+            GBIF_id <- paste(key_1$usagekey[key_1$status == "ACCEPTED" & key_1$matchtype == "HIGHERRANK"], collapse = "-")
+            GBIF_name <- paste(unique(key_1$genus[key_1$usagekey == GBIF_id]), collapse = "-")
+            GBIF_Phylum <- toupper(paste(unique(key_1$phylum[key_1$usagekey == GBIF_id]), collapse = "-"))
+            GBIF_Class <- toupper(paste(unique(key_1$class[key_1$usagekey == GBIF_id]), collapse = "-"))
+            GBIF_Order <- toupper(paste(unique(key_1$order[key_1$usagekey == GBIF_id]), collapse = "-"))
+            GBIF_Family <- toupper(paste(unique(key_1$family[key_1$usagekey == GBIF_id]), collapse = "-"))
+            GBIF_syn = NA
+            GBIF_N_syn = NA
+        }
+    }
     GBif_data <- data.frame(
         GBIF_Present, GBIF_id, GBIF_name,
-        GBIF_N_syn, GBIF_syn, GBIF_Phylum,
+        GBIF_N_syn, GBIF_syn, GBIF_Phylum, GBIF_Status,
         GBIF_Class, GBIF_Order, GBIF_Family
     )
 
@@ -654,7 +756,7 @@ CapSp <- function(x) {
 
 ## ----////\/</\>/>\><>/\><><>>\/><></\/\/\/\><><><|><|><>||||~/\/\/\/\/\/\#
 
-retrieve_syns <- function(spp_name, # [Character] The species name from which to collect taxonomic information
+retrieve_syns_new <- function(spp_name, # [Character] The species name from which to collect taxonomic information
                           n_times = 3, # [Numeric] Number of times the search is repeated until a data is found,default value = 1
                           Gbif = FALSE # [Logical] Should we check Gbif for a taxonomic macthing of the species
 ) {
@@ -681,6 +783,7 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
 
     spp.x <- CapSp(spp.x)
 
+    spp.x_copy = spp.x # save a copy of the original name
     # a.2 Check if the name is related with a species/sub-specie or other taxonomic class (Class, Order, Family)
     #     by analyzing the number of terms of the character string
     correct_name <- NULL
@@ -715,7 +818,7 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
                 )])
 
             names(y.d)[1] <- "or_name"
-            if ("Accepted" %in% y.d$taxonomicStatus) {
+            if ("Accepted" %in% y.d$taxonomicStatus & !"Synonym" %in% y.d$taxonomicStatus) {
                 accepted <- y.d %>% filter(taxonomicStatus == "Accepted")
                 if (length(unique(accepted$matchedCanonicalFull > 1))) {
                     # If there are more than one accepted name, we select the one with the highest sortScore
@@ -725,7 +828,11 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
                     # If there is only one accepted name, we use it
                     spp.x <- unique(accepted$matchedCanonicalFull)
                 }
-            } else {
+            } else if ("Synonym" %in% y.d$taxonomicStatus) {
+                y2d = y.d %>% filter(taxonomicStatus != "N/A" )
+                res_max <- y2d %>% slice_max(sortScore, n = 1)
+                spp.x <- unique(res_max$matchedCanonicalFull)
+            } else if (unique(y.d$taxonomicStatus=="N/A")){
                 res_max <- y.d %>% slice_max(sortScore, n = 1)
                 spp.x <- unique(res_max$matchedCanonicalFull)
             }
@@ -738,7 +845,7 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
     } else {
         y.d <- data.frame(
             or_name = spp.x,
-            matched_name2 = NA,
+            y.d = NA,
             Status = "Not_found",
             data_source_title = NA,
             score = NA
@@ -750,6 +857,10 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
     #
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
     # Check if this is a genus-level name (single word) or species-level name (two or more words)
+    if(is.na(spp.x) | is.null(spp.x)){
+        spp.x = spp.x_copy
+    }
+    
     elems <- spp.x %>%
         strsplit(split = " ") %>%
         unlist()
@@ -807,7 +918,7 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
 
         # Should we retrieve synonim information from GBIF?
         if (Gbif == TRUE) {
-            GBif_data <- GBIF_get_data(spp.x = spp.x, n_times = n_times)
+            GBif_data <- GBIF_get_data(spp.x = spp.x,species = species, n_times = n_times)
         }
 
         # C. Return the Taxonomic information
@@ -824,9 +935,31 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
 
             Spp_syn <- Spp_syn[-c(Spp_syn %>% grep(pattern = "NA"))]
             Spp_syn <- Spp_syn[!duplicated(Spp_syn)]
-
+            
+            # initialise
+            correct_name <- NA_character_
+            
+            # Extract unique names (remove NA, keep first if multiple)
+            iucn_unique <- na.omit(unique(IUCN_data$IUCN_name))
+            itis_unique <- na.omit(unique(ITIS_data$ITIS_name))
+            gbif_unique <- na.omit(unique(GBif_data$GBIF_name))
+            
+            # Apply robust logic
+            if (length(iucn_unique) > 0 && length(itis_unique) > 0 && identical(iucn_unique[1], itis_unique[1])) {
+                correct_name <- iucn_unique[1]
+            } else if (length(itis_unique) > 0 && (length(iucn_unique) == 0)) {
+                correct_name <- itis_unique[1]
+            } else if (length(iucn_unique) > 0) {
+                correct_name <- iucn_unique[1]
+            } else if (length(gbif_unique) > 0) {
+                correct_name <- gbif_unique[1]
+            }
+             
             return(list(
+                Submitted_name = spp_name,
                 Spp_syn = Spp_syn,
+                taxon_level = "species",
+                correct_name = correct_name,
                 IUCN_spp = IUCN_data$IUCN_name,
                 Or_name = spp.x,
                 TaxDat = Tax_dat
@@ -858,6 +991,7 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
 
             iucn_unique <- unique(IUCN_data2$IUCN_name)
             itis_unique <- unique(ITIS_data$ITIS_name)
+            gbif_unique <- unique(GBif_data$GBIF_name)
             # both names present and identical
             if (!is.na(iucn_unique) && !is.na(itis_unique) &&
                 identical(iucn_unique, itis_unique)) {
@@ -866,11 +1000,13 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
                 # only ITIS name present
             } else if (is.na(iucn_unique) && !is.na(itis_unique)) {
                 correct_name <- itis_unique
-
                 # only IUCN name present
             } else if (!is.na(iucn_unique) && is.na(itis_unique)) {
                 correct_name <- iucn_unique
-            }
+            } else if (!is.na(gbif_unique) && is.na(itis_unique) && is.na(iucn_unique)) {
+                correct_name <- gbif_unique
+            } 
+            
 
             return(list(
                 Submitted_name = spp_name,
@@ -910,7 +1046,25 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
         #Extract the ITIS data for the genus
         ITIS_data <- ITIS_get_genus_data(genus = genus, n_times = n_times)
         
-        Tax_dat <- cbind(Or_name = spp.x, IUCN_data, ITIS_data)
+        # GBIF DATA
+        if (Gbif == TRUE) {
+            GBif_data <- GBIF_get_data(spp.x = spp.x, species = species, n_times = n_times)
+        } else {
+            GBif_data <- data.frame(
+                GBIF_Present = "No",
+                GBIF_id = NA,
+                GBIF_name = NA,
+                GBIF_N_syn = NA,
+                GBIF_syn = NA,
+                GBIF_Phylum = NA,
+                GBIF_Class = NA,
+                GBIF_Order = NA,
+                GBIF_Family = NA
+            )
+        }
+        
+        
+        Tax_dat <- cbind(Or_name = spp.x, IUCN_data, ITIS_data, GBif_data)
             
         ## --- usage inside your pipeline --------------------------------------------
         Spp_syn <- c(
@@ -926,20 +1080,20 @@ retrieve_syns <- function(spp_name, # [Character] The species name from which to
             # initialise
             correct_name <- NA_character_
 
-            iucn_unique <- unique(IUCN_data$IUCN_name)
-            itis_unique <- unique(ITIS_data$ITIS_name)
-            # both names present and identical
-            if (!is.na(iucn_unique) && !is.na(itis_unique) &&
-                identical(iucn_unique, itis_unique)) {
-                correct_name <- iucn_unique
-
-                # only ITIS name present
-            } else if (is.na(iucn_unique) && !is.na(itis_unique)) {
-                correct_name <- itis_unique
-
-                # only IUCN name present
-            } else if (!is.na(iucn_unique) && is.na(itis_unique)) {
-                correct_name <- iucn_unique
+            # Extract unique names (remove NA, keep first if multiple)
+            iucn_unique <- na.omit(unique(IUCN_data$IUCN_name))
+            itis_unique <- na.omit(unique(ITIS_data$ITIS_name))
+            gbif_unique <- na.omit(unique(GBif_data$GBIF_name))
+            
+            # Apply robust logic
+            if (length(iucn_unique) > 0 && length(itis_unique) > 0 && identical(iucn_unique[1], itis_unique[1])) {
+                correct_name <- iucn_unique[1]
+            } else if (length(itis_unique) > 0 && (length(iucn_unique) == 0)) {
+                correct_name <- itis_unique[1]
+            } else if (length(iucn_unique) > 0) {
+                correct_name <- iucn_unique[1]
+            } else if (length(gbif_unique) > 0) {
+                correct_name <- gbif_unique[1]
             }
 
             return(list(

@@ -49,7 +49,7 @@ for (i in progress:length(host_species_list)) {
     sp = host_species_list[i]
     cat("Processing species", i, "of", length(host_species_list), ":", sp, "\n")
     
-    species_list[[i]] = retrieve_syns(sp,   # [Character] The species name from which to collect taxonomic information
+    species_list[[i]] = retrieve_syns_new(sp,   # [Character] The species name from which to collect taxonomic information
                                             n_times=3,  # [Numeric] Number of times the search is repeated until a data is found,default value = 1
                                             Gbif=TRUE)
     species_list[[i]]$type = "host"
