@@ -30,13 +30,13 @@ library(rlang)  # For dynamic column references
 # DATA LOADING FUNCTIONS
 # =============================================================================
 # library(remotes)
-# remotes::install_github("viralemergence/virionData")
+remotes::install_github("viralemergence/virionData")
 
 #' Load VIRION data from local files
 #' @param data_path Path to VIRION data directory
 #' @param files Vector of file names to load (default: all main files)
 #' @return List containing loaded data frames
-load_virion_data <- function(data_path = "data_artur/virion_download/15896981", 
+load_virion_data <- function(data_path = "data/virion_download/16423191", 
                             files = c("virion.csv.gz", "edgelist.csv", 
                                      "taxonomy_host.csv", "taxonomy_virus.csv",
                                      "provenance.csv.gz", "detection.csv.gz", 
@@ -157,9 +157,7 @@ get_virion_versions <- function() {
 
 # =============================================================================
 virion_data <- load_virion_data()
-names(virion)
 
-head(virion_data$taxonomy_virus)
 
 # I guess next steps will be to use virion_data$taxonomy_virus [Virus & VirusFamily]
 # Columns and match ours WHO pathogens to those to then identify hosts
