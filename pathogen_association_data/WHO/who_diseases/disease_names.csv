@@ -1,0 +1,72 @@
+Pathogens,Disease_name
+Mammarenavirus lassaense,Lassa fever
+Mammarenavirus lujoense,Lujo hemorrhagic fever
+Klebsiella pneumoniae,Klebsiella infection (pneumonia sepsis)
+Salmonella enterica non typhoidal serovars,Non-typhoidal salmonellosis
+Shigella dysenteriae serotype 1,Shigellosis (bacillary dysentery)
+Vibrio cholerae serogroup 0139,Cholera
+Yersinia pestis,Plague
+Subgenus Sarbecovirus,Severe Acute Respiratory Syndrome (SARS); COVID-19
+Orthoebolavirus sudanense,Sudan virus disease (Ebola virus disease)
+Orthoebolavirus zairense,Ebola virus disease
+Orthomarburgvirus marburgense,Marburg virus disease
+Orthoflavivirus denguei,Dengue
+Orthoflavivirus flavi,Yellow fever
+Orthoflavivirus zikaense,Zika virus disease
+Orthoflavivirus nilense,West Nile fever
+Orthonairovirus haemorrhagiae,Crimean-Congo hemorrhagic fever
+Alphainfluenzavirus influenzae (H1N1),Influenza (H1N1)
+Alphainfluenzavirus influenzae (H2N1),Influenza (H2N1)
+Alphainfluenzavirus influenzae (H3N1),Influenza (H3N1)
+Alphainfluenzavirus influenzae (H5N1),Influenza (H5N1 avian influenza)
+Alphainfluenzavirus influenzae (H6N1),Influenza (H6N1)
+Alphainfluenzavirus influenzae (H7N1),Influenza (H7N1)
+Alphainfluenzavirus influenzae (H10N1),Influenza (H10N1)
+Phlebovirus riftense,Rift Valley fever
+Orthopoxvirus monkeypox,Mpox (Monkeypox)
+Alphavirus chikungunya,Chikungunya fever
+Enterovirus coxsackiepol,Poliomyelitis
+Enterovirus alphacoxsackie 71,Hand  foot and mouth disease
+Enterovirus deconjucti 68,Enterovirus D68 respiratory disease
+Lentivirus humimdef1,HIV infection / AIDS
+Recombinant mastadenovirus,Adenovirus acute respiratory disease
+Metapneumovirus hominis,Human metapneumovirus infection
+Mamastrovirus virginiaense,Astrovirus gastroenteritis
+Paslahepevirus balayani genotype 3,Hepatitis E
+Protoparvovirus carnivoran,No known human disease
+Orthopicobirnavirus hominis,Picobirnavirus gastroenteritis
+Genus Vesiculovirus,Vesicular stomatitis
+Genus Rotavirus,Rotavirus gastroenteritis
+Orthoreovirus mammalis,Reovirus infection (usually mild)
+Mammarenavirus juninense,Argentine hemorrhagic fever
+Orthoflavivirus encephalitidis,Tick-borne encephalitis
+Orthohantavirus sinnombreense,Hantavirus pulmonary syndrome
+Orthopoxvirus vaccinia,Vaccinia (vaccinia virus infection)
+Alphavirus venezuelan,Venezuelan equine encephalitis
+Mastadenovirus blackbeardi serotype 14,Adenovirus acute respiratory disease
+Orthobunyavirus oropoucheense,Oropouche fever
+Subgenus Merbecovirus,Middle East Respiratory Syndrome (MERS)
+Orthohantavirus hantanense,Hemorrhagic fever with renal syndrome (Hantaan virus)
+Orthobornavirus bornaense,Borna disease (encephalitis)
+Henipavirus nipahense,Nipah virus disease
+Bandavirus dabieense,Severe fever with thrombocytopenia syndrome (SFTS)
+Orthohepadnavirus hominoidei genotype C,Hepatitis B
+Bunyavirales Nairoviridae Orthonairovirus haemorrhagiae,Crimean-Congo hemorrhagic fever
+Bunyavirales Orthohantavirus hantanense,Hemorrhagic fever with renal syndrome (Hantaan virus)
+Bunyavirales Bandavirus dabieense,Severe fever with thrombocytopenia syndrome (SFTS)
+Alphainfluenzavirus influenzae (H2Nx),Influenza (H2 subtype)
+Alphainfluenzavirus influenzae (H3N2),Influenza (H3N2)
+Alphainfluenzavirus influenzae (H5Nx),Influenza (H5 subtype)
+Alphainfluenzavirus influenzae (H6Nx),Influenza (H6 subtype)
+Alphainfluenzavirus influenzae (H7Nx),Influenza (H7 subtype)
+Alphainfluenzavirus influenzae (H10Nx),Influenza (H10 subtype)
+Paramyxoviridae Orthopoxvirus vaccinia,Vaccinia (vaccinia virus infection)
+Human polioviruses,Poliomyelitis
+Enterovirus D68 (EV-D68),Enterovirus D68 respiratory disease
+Enterovirus A71 (EV-A71),Hand  foot and mouth disease
+Human immunodeficiency virus 1 (HIV-1),HIV infection / AIDS
+Human mastadenovirus B,Adenovirus acute respiratory disease
+Mamastrovirus 9 (GIl.B-human),Astrovirus gastroenteritis
+Carnivore protoparvoviruses (CPV),No known human disease
+Human picobirnavirus,Picobirnavirus gastroenteritis
+Reoviriales Orthoreovirus mammalis,Reovirus infection (usually mild)

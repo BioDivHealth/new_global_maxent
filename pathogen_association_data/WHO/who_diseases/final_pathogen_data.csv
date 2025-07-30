@@ -1,0 +1,69 @@
+Family,PHEIC risk,Pathogens,previous_name,msl39_viral_name
+Arenaviridae,High,Mammarenavirus lassaense,Lassa Fever virus,Mammarenavirus lassaense
+Arenaviridae,High,Mammarenavirus lujoense,Lujo virus,Mammarenavirus lujoense
+Bacteria,High,Klebsiella pneumoniae,NA,NA
+Bacteria,High,Salmonella enterica non typhoidal serovars,NA,NA
+Bacteria,High,Shigella dysenteriae serotype 1,NA,NA
+Bacteria,High,Vibrio cholerae serogroup 0139,NA,NA
+Bacteria,High,Yersinia pestis,NA,NA
+Coronaviridae,High,Subgenus Sarbecovirus,NA,NA
+Filoviridae,High,Orthoebolavirus sudanense,Sudan ebolavirus,Orthoebolavirus sudanense
+Filoviridae,High,Orthoebolavirus zairense,Ebola virus,Orthoebolavirus zairense
+Filoviridae,High,Orthomarburgvirus marburgense,Marburg virus,Orthomarburgvirus marburgense
+Flaviviridae,High,Orthoflavivirus denguei,Dengue virus,Orthoflavivirus denguei
+Flaviviridae,High,Orthoflavivirus flavi,Yellow fever virus,Orthoflavivirus flavi
+Flaviviridae,High,Orthoflavivirus zikaense,Zika virus,Orthoflavivirus zikaense
+Flaviviridae,High,Orthoflavivirus nilense,West Nile virus,Orthoflavivirus nilense
+Nairoviridae,High,Orthonairovirus haemorrhagiae,NA,NA
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H1N1),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H2N1),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H3N1),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H5N1),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H6N1),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H7N1),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H10N1),Influenza A,Alphainfluenzavirus influenzae
+Phenuiviridae,High,Phlebovirus riftense,Rift Valley Fever virus,Phlebovirus riftense
+Poxviridae,High,Orthopoxvirus monkeypox,Monkeypox virus,Orthopoxvirus monkeypox
+Togaviridae,High,Alphavirus chikungunya,Chikungunya virus,Alphavirus chikungunya
+Picornaviridae,Medium,Enterovirus coxsackiepol,Polio virus,Enterovirus coxsackiepol
+Picornaviridae,Medium,Enterovirus alphacoxsackie 71,Enterovirus A71 (EV-A71),Enterovirus alphacoxsackie 71
+Picornaviridae,Medium,Enterovirus deconjucti 68,Enterovirus D68 (EV-D68),Enterovirus deconjucti 68
+Retroviridae,Medium,Lentivirus humimdef1,Human immunodeficiency virus 1 (HIV-1),Lentivirus humimdef1
+Adenoviridae,Low-Medium,Recombinant mastadenovirus,NA,NA
+Pneumoviridae,Low-Medium,Metapneumovirus hominis,Human metapneumovirus,Metapneumovirus hominis
+Astroviridae,Low,Mamastrovirus virginiaense,Mamastrovirus 9,Mamastrovirus virginiaense
+Hepeviridae,Low,Paslahepevirus balayani genotype 3,Hepatitis E virus,Paslahepevirus balayani
+Parvoviridae,Low,Protoparvovirus carnivoran,Carnivore protoparvoviruses,Protoparvovirus carnivoran
+Picobirnaviridae,Low,Orthopicobirnavirus hominis,Human picobirnavirus,Orthopicobirnavirus hominis
+Rhabdoviridae,Low,Genus Vesiculovirus,Genus Vesiculovirus,Genus Vesiculovirus
+Sedoreoviridae,Low,Genus Rotavirus,NA,NA
+Spinareoviridae,Low,Orthoreovirus mammalis,Mammalian orthoreovirus,Orthoreovirus mammalis
+Arenaviridae,High,Mammarenavirus juninense,Junin virus,Mammarenavirus juninense
+Coronaviridae,High,subgenus Sarbecovirus,Severe Acute Respiratory Syndrome coronavirus,subgenus Sarbecovirus
+Flaviviridae,High,Orthoflavivirus encephalitidis,Tick-borne encephalitis virus,Orthoflavivirus encephalitidis
+Hantaviridae,High,Orthohantavirus sinnombreense,Sinnombre virus,Orthohantavirus sinnombreense
+Poxviridae,High,Orthopoxvirus vaccinia,Vaccinia virus,Orthopoxvirus vaccinia
+Togaviridae,High,Alphavirus venezuelan,Venezuelan equine encephalitis virus,Alphavirus venezuelan
+Adenoviridae,Low-Medium,Mastadenovirus blackbeardi serotype 14,Adenovirus B,Mastadenovirus blackbeardi
+Peribunyaviridae,Low,Orthobunyavirus oropoucheense,Oropouche virus,Orthobunyavirus oropoucheense
+Hantaviridae,High,Orthohantavirus hantanense,Hantaan orthohantavirus,Orthohantavirus hantanense
+Bornaviridae,Low,Orthobornavirus bornaense,Mammalian Bornavirus 1 (BoDV-1),Orthobornavirus bornaense
+Coronaviridae,High,subgenus Merbecovirus,Middle East Respiratory Syndrome Coronavirus,subgenus Merbecovirus
+Paramyxoviridae,High,Henipavirus nipahense,Nipah virus,Henipavirus nipahense
+Phenuiviridae,High,Bandavirus dabieense,SFTS virus,Bandavirus dabieense
+Hepadnaviridae,Low,Orthohepadnavirus hominoidei,NA,NA
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H2Nx),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H3N2),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H5Nx),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H6Nx),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H7Nx),Influenza A,Alphainfluenzavirus influenzae
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H10Nx),Influenza A,Alphainfluenzavirus influenzae
+Paramyxoviridae,High,Orthopoxvirus vaccinia,Vaccinia virus,Orthopoxvirus vaccinia
+Picornaviridae,Medium,Human polioviruses,NA,NA
+Picornaviridae,Medium,Enterovirus D68 (EV-D68),Enterovirus D68 (EV-D68),Enterovirus deconjucti 68
+Picornaviridae,Medium,Enterovirus A71 (EV-A71),Enterovirus A71 (EV-A71),Enterovirus alphacoxsackie 71
+Retroviridae,Medium,Human immunodeficiency virus 1 (HIV-1),Human immunodeficiency virus 1 (HIV-1),Lentivirus humimdef1
+Adenoviridae,Low-Medium,Human mastadenovirus B,NA,NA
+Astroviridae,Low,Mamastrovirus 9 (GII.B-human),NA,NA
+Parvoviridae,Low,Carivore protoparvoviruses (CPV),NA,NA
+Picobirnaviridae,Low,Human picobirnavirus,Human picobirnavirus,Orthopicobirnavirus hominis

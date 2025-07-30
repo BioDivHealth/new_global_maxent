@@ -1,0 +1,6 @@
+Family,PHEIC risk,Pathogens,previous_name,msl39_viral_name,Disease_name,ID,PathogenTaxID,Clover_PathogenName,Clover_PathogenClass,match_source,num_clover_matches,num_host_associations
+Bacteria,High,Klebsiella pneumoniae,NA,NA,Klebsiella infection (pneumonia sepsis),B1,573,klebsiella pneumoniae,gammaproteobacteria,exact,1,21
+Bacteria,High,Salmonella enterica non typhoidal serovars,NA,NA,Non-typhoidal salmonellosis,B2,28901,salmonella enterica,gammaproteobacteria,manual,1,101
+Bacteria,High,Shigella dysenteriae serotype 1,NA,NA,Shigellosis (bacillary dysentery),B3,622,shigella dysenteriae,gammaproteobacteria,manual,1,3
+Bacteria,High,Vibrio cholerae serogroup 0139,NA,NA,Cholera,B4,666,vibrio cholerae,gammaproteobacteria,manual,1,10
+Bacteria,High,Yersinia pestis,NA,NA,Plague,B5,632,yersinia pestis,gammaproteobacteria,exact,1,37

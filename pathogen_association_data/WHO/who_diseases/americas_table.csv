@@ -1,0 +1,47 @@
+﻿Family,PHEIC risk,Priority Pathogens,Prototype Pathogens
+Arenaviridae,High,,Mammarenavirus juninense
+Bacteria,High,Klebsiella pneumoniae,
+Bacteria,High,Salmonella enterica non typhoidal serovars,
+Bacteria,High,Yersinia Pestis,
+Coronaviridae,High,subgenus Sarbecovirus,subgenus Sarbecovirus
+Filoviridae,High,,
+Flaviviridae,High,Orthoflavivirus denguei,Orthoflavivirus denguei
+Flaviviridae,High,Orthoflavivirus flavi,
+Flaviviridae,High,Orthoflavivirus zikaense,Orthoflavivirus zikaense
+Flaviviridae,High,,Orthoflavivirus encephalitidis
+Flaviviridae,High,,Orthoflavivirus nilense
+Hantaviridae,High,Orthohantavirus sinnombreense,Orthohantavirus sinnombreense
+Nairoviridae,High,,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H1,Alphainfluenzavirus Influenzae H1
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H2,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H3,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H5,Alphainfluenzavirus Influenzae H5
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H6,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H7,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H10,
+Paramyxoviridae,High,,
+Phenuiviridae,High,,
+Poxviridae,High,Orthopoxvirus monkeypox,Orthopoxvirus monkeypox
+Poxviridae,High,,Orthopoxvirus vaccinia
+Togaviridae,High,Alphavirus chikungunya,Alphavirus chikungunya
+Togaviridae,High,Alphavirus venezuelan,Alphavirus venezuelan
+Picornaviridae,Medium,,Enterovirus alphacoxsackie 71
+Picornaviridae,Medium,,Enterovirus deconjucti 68
+Retroviridae,Medium,Lentivirus humimdef1,Lentivirus humimdef1
+Adenoviridae,Low-Medium,,Mastadenovirus blackbeardi serotype 14
+Adenoviridae,Low-Medium,,Recombinant mastadenovirus
+Pneumoviridae,Low-Medium,,Metapneumovirus hominis
+Anelloviridae,Low,,
+Astroviridae,Low,,Mamastrovirus virginiaense
+Bornaviridae,Low,,
+Hepadnaviridae,Low,,
+Hepeviridae,Low,,Paslahepevirus balayani genotype 3
+Herpesviridae,Low,,
+Papillomaviridae,Low,,
+Parvoviridae,Low,,Protoparvovirus carnivoran
+Peribunyaviridae,Low,,Orthobunyavirus oropoucheense
+Picobirnaviridae,Low,,Orthopicobirnavirus hominis
+Polyomaviridae,Low,,
+Rhabdoviridae,Low,,Genus Vesiculovirus
+Sedoreoviridae,Low,,Genus Rotavirus
+Spinareoviridae,Low,,Orthoreovirus mammalis

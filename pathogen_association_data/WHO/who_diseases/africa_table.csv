@@ -1,0 +1,49 @@
+Family,PHEIC risk,Priority Pathogens,Prototype Pathogens
+Arenaviridae,High,Mammarenavirus lassaense,Mammarenavirus lassaense
+Arenaviridae,High,,Mammarenavirus lujoense
+Bacteria,High,Klebsiella pneumoniae,
+Bacteria,High,Salmonella enterica non typhoidal serovars,
+Bacteria,High,Shigella dysenteriae serotype 1,
+Bacteria,High,Vibrio cholerae serogroup 0139,
+Bacteria,High,Yersinia Pestis,
+Coronaviridae,High,Subgenus Sarbecovirus,Subgenus Sarbecovirus
+Filoviridae,High,Orthoebolavirus sudanense,
+Filoviridae,High,Orthoebolavirus zairense,Orthoebolavirus zairense
+Filoviridae,High,Orthomarburgvirus marburgense,
+Flaviviridae,High,Orthoflavivirus denguei,Orthoflavivirus denguei
+Flaviviridae,High,Orthoflavivirus flavi,
+Flaviviridae,High,Orthoflavivirus zikaense,Orthoflavivirus zikaense
+Flaviviridae,High,,Orthoflavivirus nilense
+Hantaviridae,High,,
+Nairoviridae,High,Orthonairovirus haemorrhagiae,Orthonairovirus haemorrhagiae
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H1,Alphainfluenzavirus Influenzae H1
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H2,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H3,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H5,Alphainfluenzavirus Influenzae H5
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H6,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H7,
+Orthomyxoviridae,High,Alphainfluenzavirus Influenzae H10,
+Par amyxoviridae,High,,
+Phenuiviridae,High,,Phlebovirus riftense
+Poxviridae,High,Orthopoxvirus monkeypox,Orthopoxvirus monkeypox
+Togaviridae,High,Alphavirus chikungunya,Alphavirus chikungunya
+Picornaviridae,Medium,Enterovirus coxsackiepol,
+Picornaviridae,Medium,,Enterovirus alphacoxsackie 71
+Picornaviridae,Medium,,Enterovirus deconjucti 68
+Retroviridae,Medium,Lentivirus humimdef1,Lentivirus humimdefl
+Adenoviridae,Low-Medium,,Recombinant mastadenovirus
+Pneumoviridae,Low-Medium,,Metapneumovirus hominis
+Anelloviridae,Low,,
+Astroviridae,Low,,Mamastrovirus virginiaense
+Bornaviridae,Low,,
+Hepadnaviridae,Low,,
+Hepeviridae,Low,,Paslahepevirus balayani genotype 3
+Herpesviridae,Low,,
+Papillomaviridae,Low,,
+Parvoviridae,Low,,Protoparvovirus carnivoran
+Peribunyaviridae,Low,,
+Picobirnaviridae,Low,,Orthopicobirnavirus hominis
+Polyomaviridae,Low,,
+Rhabdoviridae,Low,,Genus Vesiculovirus
+Sedoreoviridae,Low,,Genus Rotavirus
+Spinareoviridae,Low,,Orthoreovirus mammalis
