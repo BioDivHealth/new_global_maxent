@@ -26,7 +26,7 @@ collapse_vals <- function(x, sep = "; ") {
 }
 
 # Load data ----------------------------------------------------------------
-clover_hosts_file <- here("data_artur", "WHO", "clover", "who_bacteria_clover_hosts.csv")
+clover_hosts_file <- here("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv")
 clover_hosts_data <- read_csv(clover_hosts_file)
 
 host_species <- clover_hosts_data %>%
@@ -54,23 +54,18 @@ hosts_ids <- clover_hosts_data %>%
 species_list <- list()
 
 cat("Starting species standardization process...\n")
-# Initialize progress variable (uncomment and set if resuming)
-# progress <- 1
 
-#for (i in 1:length(host_species_list)) {
-#for (i in 1:5) {  # Remove this line once testing is complete
-for (i in progress:length(host_species_list)) {  # Remove this line once testing is complete
+for (i in 1:length(host_species_list)) {
     sp <- host_species_list[i]
     cat("Processing species", i, "of", length(host_species_list), ":", sp, "\n")
     
     species_list[[i]] <- retrieve_syns_new(sp,   # [Character] The species name from which to collect taxonomic information
-                                       n_times=3,  # [Numeric] Number of times the search is repeated until a data is found,default value = 1
+                                       n_times=10,  # [Numeric] Number of times the search is repeated until a data is found,default value = 1
                                        Gbif=TRUE)
     species_list[[i]]$type <- "host"
     species_list[[i]]$host_species <- sp    
 }
 
-progress = length(species_list) + 1
 
 # Create one-row-per-species dataframe -----------------------------------
 cat("Creating standardized taxonomic dataframe...\n")
@@ -126,7 +121,7 @@ for (i in 1:nrow(tax_df_joined)){
 }
 
 # Create output directory if it doesn't exist
-output_dir <- here("data_artur", "WHO", "clover")
+output_dir <- here("pathogen_association_data", "WHO", "clover")
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Save the standardized host species data --------------------------------

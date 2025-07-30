@@ -21,9 +21,9 @@ library(frictionless)
 #devtools::install_github("frictionlessdata/frictionless-r")
 
 # ------------------------------| Helper paths  |------------------------------
-input_csv_path <- here("data_artur", "WHO", "virion", "who_pathogens_virion_taxid.csv")
-output_long_path <- here("data_artur", "WHO", "virion", "who_pathogens_virion_hosts_long.csv")
-output_summary_path <- here("data_artur", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv")
+input_csv_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_taxid.csv")
+output_long_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_long.csv")
+output_summary_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv")
 
 # ----------------------------- Load datasets ------------------------------
 ## 1. WHO pathogen-virion matches -----------------------------------------------
@@ -36,8 +36,7 @@ if (!exists("virion_data")) {
   source(here("scripts", "pathogen_associations", "virion_data.R"))
 }
 
-
-dictionaries = virionData::get_data_dictionary(datapackage_json = here("data_artur","virion_download",
+dictionaries = virionData::get_data_dictionary(datapackage_json = here("pathogen_association_data","virion_download",
                                                                        "15896981","datapackage.json"))
 
 print(dictionaries)
@@ -85,8 +84,6 @@ who_virion_long <- who_virion %>%
 cat("  - Expanded to", nrow(who_virion_long), "WHO pathogen-VirusTaxID pairs\n")
 
 # Filter selected viruses from Virion  ----------------------------
-
-# This gives 2075 rows [include all types of risk, low and medium-low too] 
 virion_who_taxa = virion %>% 
   filter(VirusTaxID %in% unique(who_virion_long$VirusTaxID)) %>%
   filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
@@ -159,7 +156,7 @@ cat("Covering", n_distinct(who_virion_hosts_complete$Virus), "Virion pathogens\n
 cat("With", n_distinct(who_virion_hosts_complete$Host), "unique host species\n")
 
 
-#write_csv(who_virion_hosts_complete, output_long_path)
+write_csv(who_virion_hosts_complete, output_long_path)
 
 # ----------------------------- Summarise host associations -------------------
 who_virion_hosts_short = who_virion_hosts_complete %>% select(Host, 
@@ -180,7 +177,7 @@ who_virion_hosts_short = who_virion_hosts_complete %>% select(Host,
                                                               DetectionMethod,
                                                               HostFlagID) %>% filter(!is.na(Host)) %>% distinct()
 
-#write_csv(who_virion_hosts_short, output_summary_path)
+write_csv(who_virion_hosts_short, output_summary_path)
 
 host_species = who_virion_hosts_short %>%
   select(Host, HostGenus, HostFamily, HostFlagID) %>%
@@ -208,7 +205,6 @@ if (nrow(unmatched_pathogens) > 0) {
   cat("Unmatched pathogens:\n")
   print(unmatched_pathogens$Pathogens)
 }
-
 
 # Check for uncertain host identifications
 uncertain_hosts <- virus_host_final %>%

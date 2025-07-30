@@ -15,8 +15,8 @@ library(fuzzyjoin)
 library(magrittr)
 
 # ------------------------------| Helper paths  |------------------------------
-who_csv_path   <- file.path("data_artur", "WHO", "who_diseases", "who_pathogens_diseases.csv")
-output_csv_path <- file.path("data_artur", "WHO", "virion", "who_pathogens_virion_taxid.csv")
+who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogens_diseases.csv")
+output_csv_path <- file.path("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_taxid.csv")
 
 # ------------------------------| Load datasets |------------------------------
 # 1. WHO pathogen list ---------------------------------------------------------
@@ -36,7 +36,7 @@ taxonomy_virus <- virion_data$taxonomy_virus
 # Create a lowercase, trimmed helper column for safer joins --------------------
 who_long <- who_df %>%
   # Gather all possible virus name columns into one
-  select(ID, Pathogens, previous_name, msl39_viral_name, Family) %>%
+  select(ID, Pathogens, previous_name, msl39_viral_name, Family, Disease_name) %>%
   pivot_longer(cols = c(Pathogens, previous_name, msl39_viral_name), names_to = "name_type", values_to = "virus_name") %>%
   filter(!is.na(virus_name) & virus_name != "") %>%
   mutate(virus_key = str_to_lower(str_trim(virus_name)))
@@ -81,13 +81,13 @@ manual_matches <- who_long %>%
   inner_join(manual_mappings, by = c("virus_key" = "who_name_lower")) %>%
   inner_join(taxonomy_virus_proc, by = c("virion_name_lower" = "virus_key")) %>%
   mutate(dist = 0.5, match_source = "manual") %>%  # Flag as manual matches with intermediate distance
-  select(ID, name_type, virus_name, VirusTaxID, Virus, VirusFamily, Database, dist, match_source)
+  select(ID, name_type, virus_name,Disease_name, VirusTaxID, Virus, VirusFamily, Database, dist, match_source)
 
 # ------------------------------| Exact matches |------------------------------
 exact_matches <- who_long %>%
   inner_join(taxonomy_virus_proc, by = "virus_key") %>%
   mutate(dist = 0, match_source = "exact") %>%  # Add distance column and source for exact matches
-  select(ID, name_type, virus_name, VirusTaxID, Virus, VirusFamily, Database, dist, match_source)
+  select(ID, name_type, virus_name,Disease_name, VirusTaxID, Virus, VirusFamily, Database, dist, match_source)
 
 # ------------------------------| Fuzzy matches |------------------------------
 # Attempt fuzzy matching only for those still unmatched ------------------------
@@ -112,7 +112,7 @@ if (nrow(unmatched) > 0) {
     left_join(fuzzy_candidates, by = c("virus_key", "ID", "name_type")) %>%
     filter(!is.na(VirusTaxID)) %>%
     mutate(match_source = "fuzzy") %>%
-    select(ID, name_type, virus_name, VirusTaxID, Virus, VirusFamily, Database, dist, match_source)
+    select(ID, name_type, virus_name,Disease_name, VirusTaxID, Virus, VirusFamily, Database, dist, match_source)
 } else {
   fuzzy_matches <- tibble()
 }
@@ -158,6 +158,7 @@ collapsed_matches <- final_matches %>%
     Virion_Database = paste(unique(Database), collapse = "; "),
     matched_name_type = paste(unique(name_type), collapse = "; "),
     matched_virus_name = paste(unique(virus_name), collapse = "; "),
+    matched_disease_name = paste(unique(Disease_name), collapse = "; "),
     #match_type = paste(unique(match_type), collapse = "; "),
     match_source = paste(unique(match_source), collapse = "; "),  # Add this line
     fuzzy_scores = if_else(
@@ -174,21 +175,11 @@ collapsed_matches <- final_matches %>%
 final_output <- who_df %>%
   left_join(collapsed_matches, by = "ID")
 
-
-View(final_output %>% select(Pathogens, previous_name, msl39_viral_name, ID, VirusTaxID, Virion_VirusName, match_type))
-
-
 # Save CSV --------------------------------------------------------------------
 write_csv(final_output, output_csv_path)
-
 
 # ------------------------------| Console summary |---------------------------
 cat("Match summary:\n")
 cat(" - Total WHO pathogen records: ", nrow(who_df), "\n", sep = "")
 cat(" - Successfully matched (exact + fuzzy): ", sum(!is.na(final_output$VirusTaxID)), "\n", sep = "")
 cat(" - Unmatched: ", sum(is.na(final_output$VirusTaxID)), "\n", sep = "")
-
-if (any(is.na(final_output$VirusTaxID))) {
-  cat("\nUnmatched WHO pathogen names (first 20 shown):\n")
-  print(head(final_output$Pathogens[is.na(final_output$VirusTaxID)], 20))
-} 

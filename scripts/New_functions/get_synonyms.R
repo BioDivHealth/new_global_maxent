@@ -23,13 +23,13 @@ clean_synonyms2 <- function(x) {
         strsplit(split = "[,;]") %>% # break on commas
         unlist() %>%
         trimws() %>% # remove leading / trailing spaces
-        discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
+        purrr::discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
         unique() %>% # deduplicate
         paste(collapse = "; ") %>% 
         strsplit(split = "[,;]") %>% 
         unlist() %>%
         trimws() %>% # remove leading / trailing spaces
-        discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
+        purrr::discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
         unique() %>% 
         paste(collapse = "; ")
     # deduplicate
@@ -39,10 +39,11 @@ clean_synonyms2 <- function(x) {
 clean__genus_synonyms <- function(x) {
                 x %>%
                     as.character() %>% # be sure everything is character
+                    #purrr::discard(~ str_detect(.x, "\\d")) %>% 
                     strsplit(split = ";") %>% # break on semicolons
                     unlist() %>%
                     trimws() %>% # remove leading / trailing spaces
-                    discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
+                    purrr::discard(~ .x %in% c("", "NA")) %>% # drop empties / literal "NA"
                     unique() %>% # deduplicate
                     paste(collapse = "; ")
             }
@@ -281,7 +282,7 @@ ITIS_get_species_data <- function(spp.x, n_times = 3) {
         try(TSN.two <- get_tsn(spp.x, searchtype = "scientific", silent = TRUE))
         if(!exists("TSN.two")){
             TSN.two = NA
-            attr(TSN.two) = "does not exists"
+            attr(TSN.two,"match") = "does not exists"
         }
         if (attr(TSN.two, "match") == "found") {
             tsn2 <- itis_acceptname(TSN.two[[1]], silent = TRUE)

@@ -16,7 +16,7 @@ collapse_vals <- function(x, sep = "; ") {
 }
 
 # Load data ----------------------------------------------------------------
-who_virion_hosts_short = read_csv(here("data_artur", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv"))
+who_virion_hosts_short = read_csv(here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv"))
 
 host_species = who_virion_hosts_short %>%
   dplyr::select(Host, HostGenus, HostFamily, HostFlagID) %>%
@@ -44,20 +44,17 @@ hosts_ids = who_virion_hosts_short %>%
 species_list = list()
 
 cat("Starting species standardization process...\n")
-for (i in progress:length(host_species_list)) {
-#for (i in 1:5) {  # Remove this line once testing is complete
+
+for (i in 1:length(host_species_list)) {
     sp = host_species_list[i]
     cat("Processing species", i, "of", length(host_species_list), ":", sp, "\n")
     
     species_list[[i]] = retrieve_syns_new(sp,   # [Character] The species name from which to collect taxonomic information
-                                            n_times=3,  # [Numeric] Number of times the search is repeated until a data is found,default value = 1
+                                            n_times=7,  # [Numeric] Number of times the search is repeated until a data is found,default value = 1
                                             Gbif=TRUE)
     species_list[[i]]$type = "host"
     species_list[[i]]$host_species = sp    
 }
-
-progress = length(species_list) + 1
-
 
 # Create one-row-per-species dataframe -----------------------------------
 cat("Creating standardized taxonomic dataframe...\n")
@@ -85,7 +82,6 @@ tax_df <- map_dfr(species_list, function(rec) {
 })
 
 # Add consolidated taxonomic information ----------------------------------
-#tax_df = read_csv(here("data_artur", "WHO", "who_host_species_standardized.csv"))
 
 tax_df$Phylum <- coalesce(tax_df$IUCN_Phylum, 
                           tax_df$ITIS_Phylum, 
@@ -111,8 +107,13 @@ tax_df_joined = tax_df %>%
   relocate(Genus, Family, Order, Class, Phylum, .after = taxon_level)
 # Create output directory if it doesn't exist
 
-output_dir <- here("data_artur","WHO","virion")
-#dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
+for (i in 1:nrow(tax_df_joined)){
+  if(nchar(tax_df_joined$Spp_syn[i]) > 0){
+    tax_df_joined$Spp_syn[i] =  clean_synonyms2(tax_df_joined$Spp_syn[i])}
+}
+
+output_dir <- here("pathogen_association_data","WHO","virion")
+dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Save the standardized host species data --------------------------------
 output_file <- here(output_dir, "who_host_species_standardized.csv")
@@ -163,7 +164,7 @@ library(ggplot2)
 library(tidyverse)
 library(here)
 library(magrittr)
-host = read_csv(here("data_artur","WHO","virion","who_host_species_standardized.csv"))
+host = read_csv(here("pathogen_association_data","WHO","virion","who_host_species_standardized.csv"))
 host %<>% dplyr::select(Host, correct_name, Genus, Family, Order, Class, Phylum)
 
 # ------------------------------------------------------------------------------
@@ -229,14 +230,3 @@ p2_order_bars <- host_clean %>%
   )
 
 print(p2_order_bars)
-
-
-
-# Save all plots
-output_dir <- here("figures", "taxonomy_plots")
-dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
-
-ggsave(here(output_dir, "host_class_distribution.png"), p1_class_pie, 
-       width = 10, height = 8, dpi = 300, bg = "white")
-ggsave(here(output_dir, "host_orders_top15.png"), p2_order_bars, 
-       width = 12, height = 8, dpi = 300, bg = "white")

@@ -15,10 +15,10 @@ library(fuzzyjoin)
 library(magrittr)
 library(dplyr)
 # ------------------------------| Helper paths  |------------------------------
-who_csv_path   <- file.path("data_artur", "WHO", "who_diseases", "who_pathogens_diseases.csv")
-output_csv_path <- file.path("data_artur", "WHO", "clover", "who_bacteria_clover_taxid.csv")
-output_hosts_path <- file.path("data_artur", "WHO", "clover", "who_bacteria_clover_hosts.csv")
-output_unique_hosts_path <- file.path("data_artur", "WHO", "clover", "who_bacteria_clover_unique_hosts.csv")
+who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogens_diseases.csv")
+output_csv_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_taxid.csv")
+output_hosts_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv")
+output_unique_hosts_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_unique_hosts.csv")
 
 # ------------------------------| Load datasets |------------------------------
 # 1. WHO pathogen list ---------------------------------------------------------
@@ -35,12 +35,12 @@ unique(who_df$Pathogens)
 
 # 2. CLOVER bacteria database --------------------------------------------------
 # Read column descriptions
-clover_col_desc <- read_csv(here("data_artur","viralemergence-clover-2604d22",
+clover_col_desc <- read_csv(here("pathogen_association_data","viralemergence-clover-2604d22",
                                  "clover","clover_1.0_allpathogens",
                                  "CLOVER_ColumnDescriptions.csv"))
 
 # Read bacteria dataset
-clover_bacteria <- read_csv(here("data_artur","viralemergence-clover-2604d22",
+clover_bacteria <- read_csv(here("pathogen_association_data","viralemergence-clover-2604d22",
                                  "clover","clover_1.0_allpathogens",
                                  "CLOVER_1.0_Bacteria_AssociationsFlatFile.csv"))
 
@@ -48,7 +48,7 @@ clover_bacteria <- read_csv(here("data_artur","viralemergence-clover-2604d22",
 # Create a lowercase, trimmed helper column for safer joins --------------------
 who_long <- who_df %>%
   # For bacteria, we only have the main Pathogens column (no previous_name, msl39_viral_name)
-  dplyr::select(ID, Pathogens, Family) %>%
+  dplyr::select(ID, Pathogens, Family, Disease_name) %>%
   mutate(
     bacteria_name = Pathogens,
     name_type = "Pathogens",
@@ -91,13 +91,13 @@ manual_matches <- who_long %>%
   inner_join(manual_mappings, by = c("bacteria_key" = "who_name_lower")) %>%
   inner_join(clover_bacteria_proc, by = c("clover_name_lower" = "bacteria_key")) %>%
   mutate(dist = 0.5, match_source = "manual") %>%
-  dplyr::select(ID, name_type, bacteria_name, all_of(names(clover_bacteria_proc)), dist, match_source)
+  dplyr::select(ID, name_type, bacteria_name, Disease_name, all_of(names(clover_bacteria_proc)), dist, match_source)
 
 # ------------------------------| Exact matches |------------------------------
 exact_matches <- who_long %>%
   inner_join(clover_bacteria_proc, by = "bacteria_key") %>%
   mutate(dist = 0, match_source = "exact") %>%
-  dplyr::select(ID, name_type, bacteria_name, all_of(names(clover_bacteria_proc)), dist, match_source)
+  dplyr::select(ID, name_type, bacteria_name, Disease_name, all_of(names(clover_bacteria_proc)), dist, match_source)
 
 # ------------------------------| Fuzzy matches |------------------------------
 # Attempt fuzzy matching only for those still unmatched ------------------------
@@ -116,7 +116,7 @@ if (nrow(unmatched) > 0) {
       group_by(bacteria_key.x, ID, name_type) %>%
       slice_min(order_by = dist, n = 1, with_ties = FALSE) %>%
       ungroup() %>%
-      dplyr::select(ID, name_type, bacteria_name, Host, HostTaxID, HostGenus, HostFamily, HostOrder, HostClass, HostNCBIResolved,
+      dplyr::select(ID, name_type, bacteria_name,Disease_name, Host, HostTaxID, HostGenus, HostFamily, HostOrder, HostClass, HostNCBIResolved,
              Pathogen, PathogenTaxID, PathogenType, PathogenClass, PathogenOrder, 
              PathogenFamily, PathogenGenus, PathogenNCBIResolved,
              DetectionMethod, DetectionMethodOriginal, ICTVRatified,
@@ -153,7 +153,7 @@ final_host_associations_raw <- all_host_associations %>%
   # Reorder columns for better readability
   dplyr::select(
     # WHO pathogen information
-    ID, bacteria_name, name_type, match_source, dist,
+    ID, bacteria_name, Disease_name ,name_type, match_source, dist,
     # CLOVER pathogen information  
     PathogenTaxID, Pathogen, PathogenType, PathogenClass, PathogenOrder, 
     PathogenFamily, PathogenGenus, PathogenNCBIResolved,
@@ -167,7 +167,7 @@ final_host_associations_raw <- all_host_associations %>%
 
 # Collapse to one row per pathogen/host association
 final_host_associations <- final_host_associations_raw %>%
-  group_by(ID, bacteria_name, PathogenTaxID, Pathogen, Host, HostTaxID) %>%
+  group_by(ID, bacteria_name, Disease_name, PathogenTaxID, Pathogen, Host, HostTaxID) %>%
   summarise(
     # Keep first values for pathogen info
     name_type = first(name_type),
