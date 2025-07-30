@@ -1,0 +1,75 @@
+scientific_name,common_name,exclusion_reason,notes
+Ambystoma mexicanum,Axolotl,model_lab,Used to study regeneration and developmental processes.
+Anas platyrhynchos,Mallard,exclude_if_domestic_only,Include for wild occurrences; separate domestic records
+Anas platyrhynchos domesticus,Duck (domestic),domesticated,
+Anolis carolinensis,Carolina anole,model_lab,Used to study reptile genomics.
+Anser anser domesticus,Goose (domestic),domesticated,Greylag-derived
+Anser cygnoides domesticus,Chinese goose,domesticated,From swan goose
+Astyanax mexicanus,Mexican tetra (blind cavefish),model_lab,Rapid convergent evolution; troglomorphism; circadian rhythms; sleep.
+Bombina bombina,Fire-bellied toad,model_lab,Used to study sexual selection and sexual conflict.
+Bombina variegata,Yellow-bellied toad,model_lab,Used to study sexual selection and sexual conflict.
+Bos frontalis,Mithun,domesticated,Gayal; domestic derivative of gaur
+Bos grunniens,Yak (domestic),domesticated,
+Bos indicus,Zebu cattle,domesticated,Often styled Bos taurus indicus
+Bos javanicus domesticus,Bali cattle,domesticated,Derived from banteng
+Bos taurus,Cattle,domesticated,
+Bubalus bubalis,Water buffalo,domesticated,
+Cairina moschata domestica,Muscovy duck,domesticated,
+Camelus bactrianus,Bactrian camel,domesticated,Domestic two-humped camel
+Camelus dromedarius,Dromedary,domesticated,One-humped camel
+Canis lupus familiaris,Dog,domesticated,
+Capra hircus,Goat,domesticated,
+Carassius auratus,Goldfish,domesticated,
+Cavia porcellus,Guinea pig,domesticated,
+Chinchilla lanigera,Chinchilla,domesticated,Fur and pet strains
+Columba livia,Rock dove,exclude_if_domestic_only,Include for wild/feral populations
+Columba livia domestica,Pigeon,domesticated,Domestic rock dove
+Coturnix japonica,Japanese quail,domesticated,Domesticated quail
+Ctenopharyngodon idella,Grass carp,farmed_managed,Stocked and aquaculture
+Cyprinus carpio,Common carp (incl. koi),domesticated,Food and ornamental strains
+Danio rerio,Zebrafish,model_lab,Standard vertebrate model
+Dromaius novaehollandiae,Emu,farmed_managed,Farmed; domestication disputed
+Equus africanus asinus,Ass,domesticated,Domestic donkey
+Equus caballus,Horse,domesticated,
+Felis catus,Cat,domesticated,
+Gallus gallus domesticus,Chicken,domesticated,
+Gasterosteus aculeatus,Three-spined stickleback,model_lab,Ethology and behavioural ecology.
+Heterocephalus glaber,Naked mole-rat,model_lab,"Studied for pain insensitivity, thermoregulation, cancer resistance, eusociality, and longevity."
+Hypophthalmichthys molitrix,Silver carp,farmed_managed,Stocked and aquaculture
+Hypophthalmichthys nobilis,Bighead carp,farmed_managed,Stocked and aquaculture
+Ictalurus punctatus,Channel catfish,farmed_managed,North American aquaculture
+Lama glama,Llama,domesticated,
+Macaca fascicularis,Long-tailed macaque,model_lab,Used in neuroscience and disease studies.
+Macaca mulatta,Rhesus macaque,model_lab,Used in infectious disease and cognition research.
+Meleagris gallopavo,Turkey,domesticated,Domestic forms within species
+Melopsittacus undulatus,Budgerigar,domesticated,
+Mesocricetus auratus,Golden hamster,model_lab,First used to study kala-azar (leishmaniasis); domesticated.
+Mus musculus,Mouse,model_lab,"Classic model vertebrate; many inbred strains; quantitative genetics, molecular evolution, genomics."
+Mustela putorius furo,Ferret,model_lab,Model for influenza A virus; domesticated. Standardised from Mustela furo.
+Myotis lucifugus,Little brown bat,model_lab,Used to demonstrate echolocation; behavioural model for temperate microbats.
+Neovison vison,American mink,domesticated,Domesticated for fur; also feral populations
+Nothobranchius furzeri,Turquoise killifish,model_lab,"Extremely short lifespan; ageing, disease and evolution research."
+Numida meleagris,Helmeted guinea fowl,domesticated,
+Oncorhynchus mykiss,Rainbow trout,farmed_managed,Widely farmed and feral
+Oreochromis niloticus,Nile tilapia,farmed_managed,Main tilapia in aquaculture
+Oryctolagus cuniculus,European rabbit,exclude_if_domestic_only,Include for wild occurrences
+Oryctolagus cuniculus domesticus,Rabbit,domesticated,
+Oryzias latipes,Medaka (Japanese ricefish),model_lab,Important in developmental biology; generally sturdier than zebrafish.
+Ovis aries,Sheep,domesticated,
+Pavo cristatus,Indian peafowl,farmed_managed,Ornamental captive-bred; domestication debated
+Perdix perdix,Grey partridge,farmed_managed,Game-farmed
+Petromyzon marinus,Sea lamprey,model_lab,Spinal cord research.
+Poecilia reticulata,Guppy,model_lab,Sexual selection and sexual conflict; many ornamental strains.
+Rangifer tarandus,Reindeer,semi_domesticated,Only cervid widely accepted as domesticated
+Rattus norvegicus,Rat,model_lab,Toxicology and neuroscience; useful for primary cell cultures; larger organs than mouse; domesticated lab strains.
+Rhea americana,Greater rhea,farmed_managed,Farmed in places
+Salmo salar,Atlantic salmon,farmed_managed,Large aquaculture industry
+Serinus canaria domestica,Canary,domesticated,
+Sigmodon hispidus,Cotton rat,model_lab,Formerly used in polio research.
+Struthio camelus,Ostrich,under_domestication,Extensively farmed with selective breeding
+Sus scrofa domesticus,Pig,domesticated,
+Taeniopygia guttata,Zebra finch,model_lab,Model for the song system and non-mammalian auditory systems; domesticated lab lines.
+Takifugu rubripes,Japanese pufferfish,model_lab,Small genome with relatively little non-coding DNA.
+Vicugna pacos,Alpaca,domesticated,
+Xenopus laevis,African clawed frog,model_lab,"Eggs and embryos used in developmental biology, cell biology, toxicology, and neuroscience."
+Xenopus tropicalis,Western clawed frog,model_lab,"Eggs and embryos used in developmental biology, cell biology, toxicology, and neuroscience."
