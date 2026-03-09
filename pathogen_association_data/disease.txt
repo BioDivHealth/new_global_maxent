@@ -1,0 +1,73 @@
+  Family                    PHEIC risk Pathogens                                  previous_name                                 msl39_viral_name                       
+   <chr>                     <chr>        <chr>                                      <chr>                                         <chr>                                  
+ 1 Arenaviridae              High         Mammarenavirus lassaense                   Lassa Fever virus                             Mammarenavirus lassaense               
+ 2 Arenaviridae              High         Mammarenavirus lujoense                    Lujo virus                                    Mammarenavirus lujoense                
+ 3 Bacteria                  High         Klebsiella pneumoniae                      NA                                            NA                                     
+ 4 Bacteria                  High         Salmonella enterica non typhoidal serovars NA                                            NA                                     
+ 5 Bacteria                  High         Shigella dysenteriae serotype 1            NA                                            NA                                     
+ 6 Bacteria                  High         Vibrio cholerae serogroup 0139             NA                                            NA                                     
+ 7 Bacteria                  High         Yersinia pestis                            NA                                            NA                                     
+ 8 Coronaviridae             High         Subgenus Sarbecovirus                      Severe Acute Respiratory Syndrome coronavirus Subgenus Sarbecovirus                  
+ 9 Filoviridae               High         Orthoebolavirus sudanense                  Sudan ebolavirus                              Orthoebolavirus sudanense              
+10 Filoviridae               High         Orthoebolavirus zairense                   Ebola virus                                   Orthoebolavirus zairense               
+11 Filoviridae               High         Orthomarburgvirus marburgense              Marburg virus                                 Orthomarburgvirus marburgense          
+12 Flaviviridae              High         Orthoflavivirus denguei                    Dengue virus                                  Orthoflavivirus denguei                
+13 Flaviviridae              High         Orthoflavivirus flavi                       Yellow fever virus                            Orthoflavivirus flavi                  
+14 Flaviviridae              High         Orthoflavivirus zikaense                   Zika virus                                    Orthoflavivirus zikaense               
+15 Flaviviridae              High         Orthoflavivirus nilense                    West Nile virus                               Orthoflavivirus nilense                
+16 Nairoviridae              High         Orthonairovirus haemorrhagiae              Crimean-Congo hemorhagic fever virus (CCHF)   Orthonairovirus haemorrhagiae          
+17 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H1N1)      Influenza A                                   Alphainfluenzavirus influenzae         
+18 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H2N1)      Influenza A                                   Alphainfluenzavirus influenzae         
+19 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H3N1)      Influenza A                                   Alphainfluenzavirus influenzae         
+20 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H5N1)      Influenza A                                   Alphainfluenzavirus influenzae         
+21 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H6N1)      Influenza A                                   Alphainfluenzavirus influenzae         
+22 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H7N1)      Influenza A                                   Alphainfluenzavirus influenzae         
+23 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H10N1)     Influenza A                                   Alphainfluenzavirus influenzae         
+24 Phenuiviridae             High         Phlebovirus riftense                       Rift Valley Fever virus                       Phlebovirus riftense                   
+25 Poxviridae                High         Orthopoxvirus monkeypox                    Monkeypox virus                               Orthopoxvirus monkeypox                
+26 Togaviridae               High         Alphavirus chikungunya                     Chikungunya virus                             Alphavirus chikungunya                 
+27 Picornaviridae            Medium       Enterovirus coxsackiepol                   Polio virus                                   Enterovirus coxsackiepol               
+28 Picornaviridae            Medium       Enterovirus alphacoxsackie 71              Enterovirus A71 (EV-A71)                      Enterovirus alphacoxsackie 71          
+29 Picornaviridae            Medium       Enterovirus deconjucti 68                  Enterovirus D68 (EV-D68)                      Enterovirus deconjucti 68              
+30 Retroviridae              Medium       Lentivirus humimdef1                       Human immunodeficiency virus 1 (HIV-1)        Lentivirus humimdef1                   
+31 Adenoviridae              Low-Medium   Recombinant mastadenovirus                 NA                                            NA                                     
+32 Pneumoviridae             Low-Medium   Metapneumovirus hominis                    Human metapneumovirus                         Metapneumovirus hominis                
+33 Astroviridae              Low          Mamastrovirus virginiaense                 Mamastrovirus 9                               Mamastrovirus virginiaense             
+34 Hepeviridae               Low          Paslahepevirus balayani genotype 3         Hepatitis E virus                             Paslahepevirus balayani                
+35 Parvoviridae              Low          Protoparvovirus carnivoran                 Carnivore protoparvoviruses                   Protoparvovirus carnivoran             
+36 Picobirnaviridae          Low          Orthopicobirnavirus hominis                Human picobirnavirus                          Orthopicobirnavirus hominis            
+37 Rhabdoviridae             Low          Genus Vesiculovirus                        Genus Vesiculovirus                           Genus Vesiculovirus                    
+38 Sedoreoviridae            Low          Genus Rotavirus                            NA                                            NA                                     
+39 Spinareoviridae           Low          Orthoreovirus mammalis                     Mammalian orthoreovirus                       Orthoreovirus mammalis                 
+40 Arenaviridae              High         Mammarenavirus juninense                   Junin virus                                   Mammarenavirus juninense               
+41 Flaviviridae              High         Orthoflavivirus encephalitidis             Tick-borne encephalitis virus                 Orthoflavivirus encephalitidis         
+42 Hantaviridae              High         Orthohantavirus sinnombreense              Sinnombre virus                               Orthohantavirus sinnombreense          
+43 Poxviridae                High         Orthopoxvirus vaccinia                     Vaccinia virus                                Orthopoxvirus vaccinia                 
+44 Togaviridae               High         Alphavirus venezuelan                      Venezuelan equine encephalitis virus          Alphavirus venezuelan                  
+45 Adenoviridae              Low-Medium   Mastadenovirus blackbeardi serotype 14     Adenovirus B                                  Mastadenovirus blackbeardi             
+46 Peribunyaviridae          Low          Orthobunyavirus oropoucheense              Oropouche virus                               Orthobunyavirus oropoucheense          
+47 Coronaviridae             High         Subgenus Merbecovirus                      Middle East Respiratory Syndrome Coronavirus  Subgenus Merbecovirus                  
+48 Hantaviridae              High         Orthohantavirus hantanense                 Hantaan orthohantavirus                       Orthohantavirus hantanense             
+49 Bornaviridae              Low          Orthobornavirus bornaense                  Mammalian Bornavirus 1 (BoDV-1)               Orthobornavirus bornaense              
+50 Paramyxoviridae           High         Henipavirus nipahense                      Nipah virus                                   Henipavirus nipahense                  
+51 Phenuiviridae             High         Bandavirus dabieense                       SFTS virus                                    Bandavirus dabieense                   
+52 Hepadnaviridae            Low          Orthohepadnavirus hominoidei genotype C    Hepatitis B virus genotype C                  Orthohepadnavirus hominoidei genotype C
+53 Bunyavirales Nairoviridae High         Orthonairovirus haemorrhagiae              Crimean-Congo hemorhagic fever virus (CCHF)   Orthonairovirus haemorrhagiae          
+54 Bunyavirales              High         Orthohantavirus hantanense                 Hantaan orthohantavirus                       Orthohantavirus hantanense             
+55 Bunyavirales              High         Bandavirus dabieense                       SFTS virus                                    Bandavirus dabieense                   
+56 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H2Nx)      Influenza A                                   Alphainfluenzavirus influenzae         
+57 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H3N2)      Influenza A                                   Alphainfluenzavirus influenzae         
+58 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H5Nx)      Influenza A                                   Alphainfluenzavirus influenzae         
+59 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H6Nx)      Influenza A                                   Alphainfluenzavirus influenzae         
+60 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H7Nx)      Influenza A                                   Alphainfluenzavirus influenzae         
+61 Orthomyxoviridae          High         Alphainfluenzavirus influenzae (H10Nx)     Influenza A                                   Alphainfluenzavirus influenzae         
+62 Paramyxoviridae           High         Orthopoxvirus vaccinia                     Vaccinia virus                                Orthopoxvirus vaccinia                 
+63 Picornaviridae            Medium       Human polioviruses                         NA                                            NA                                     
+64 Picornaviridae            Medium       Enterovirus D68 (EV-D68)                   Enterovirus D68 (EV-D68)                      Enterovirus deconjucti 68              
+65 Picornaviridae            Medium       Enterovirus A71 (EV-A71)                   Enterovirus A71 (EV-A71)                      Enterovirus alphacoxsackie 71          
+66 Retroviridae              Medium       Human immunodeficiency virus 1 (HIV-1)     Human immunodeficiency virus 1 (HIV-1)        Lentivirus humimdef1                   
+67 Adenoviridae              Low-Medium   Human mastadenovirus B                     NA                                            NA                                     
+68 Astroviridae              Low          Mamastrovirus 9 (GIl.B-human)              Mamastrovirus 9                               Mamastrovirus virginiaense             
+69 Parvoviridae              Low          Carnivore protoparvoviruses (CPV)          Carnivore protoparvoviruses                   Protoparvovirus carnivoran             
+70 Picobirnaviridae          Low          Human picobirnavirus                       Human picobirnavirus                          Orthopicobirnavirus hominis            
+71 Reoviriales               Low          Orthoreovirus mammalis                     Mammalian orthoreovirus                       Orthoreovirus mammalis                 
