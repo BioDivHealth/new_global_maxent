@@ -1,0 +1,98 @@
+# EFSA to Combined WHO Mapping Summary
+
+- Appendix A header row detected: 1
+- Appendix A pathogens read: 38
+- Appendix G header row detected: 1
+- Appendix G rows read: 187
+- Unique EFSA pathogens represented in Appendix G: 24
+- Unique pathogens in combined WHO network: 52
+- Unique diseases in combined WHO network: 42
+- EFSA Appendix A pathogens matched to combined WHO network: 4
+- Exact matches: 3
+- Manual matches: 1
+- Fuzzy review candidates: 0
+- Unmatched EFSA pathogens: 34
+
+## Unmatched EFSA pathogens
+- Alkhurma haemorrhagic fever virus
+- African horse sickness virus
+- Aino virus
+- Akabane virus
+- African swine fever virus
+- Bovine ephemeral fever virus
+- Bhanja virus
+- Bluetongue virus
+- Cache Valley virus
+- Eastern equine encephalomyelitis virus
+- Equine encephalosis virus
+- Epizootic hemorrhagic disease virus, Ibaraki virus
+- Getah virus
+- Highland J virus
+- Japanese encephalitis virus
+- Kasba virus
+- Kotonkan virus
+- Main drain virus
+- Middelburg virus
+- Nairobi sheep disease virus
+- Peruvian horse sickness virus
+- Schmallenberg virus
+- Shuni virus
+- St. Louis encephalitis virus
+- Thogoto viruses
+- Vesicular stomatitis - Alagoas virus
+- Vesicular stomatitis - Indiana virus
+- Vesicular stomatitis - New Jersey virus
+- Equine encephalomyelitis (Western) virus
+- Yunnan virus
+- Wesselsbron virus
+- Ehrlichia ruminantium
+- Hepatozoon canis
+- Leishmania infantum
+
+## Combined WHO vector-screened diseases not covered by EFSA matches
+- Chikungunya fever [clear]
+- Dengue [clear]
+- Oropouche fever [clear]
+- Plague [clear]
+- Severe fever with thrombocytopenia syndrome (SFTS) [clear]
+- Tick-borne encephalitis [clear]
+- Yellow fever [clear]
+- Zika virus disease [clear]
+- Vaccinia (vaccinia virus infection) [review]
+
+## Rows needing manual review
+- West Nile Virus (manual; manual_synonym)
+- African horse sickness virus (unmatched; unmatched)
+- African swine fever virus (unmatched; unmatched)
+- Akabane virus (unmatched; unmatched)
+- Bluetongue virus (unmatched; unmatched)
+- Bovine ephemeral fever virus (unmatched; unmatched)
+- Cache Valley virus (unmatched; unmatched)
+- Eastern equine encephalomyelitis virus (unmatched; unmatched)
+- Ehrlichia ruminantium (unmatched; unmatched)
+- Epizootic hemorrhagic disease virus, Ibaraki virus (unmatched; unmatched)
+- Equine encephalomyelitis (Western) virus (unmatched; unmatched)
+- Getah virus (unmatched; unmatched)
+- Hepatozoon canis (unmatched; unmatched)
+- Highland J virus (unmatched; unmatched)
+- Japanese encephalitis virus (unmatched; unmatched)
+- Leishmania infantum (unmatched; unmatched)
+- Schmallenberg virus (unmatched; unmatched)
+- St. Louis encephalitis virus (unmatched; unmatched)
+- Thogoto viruses (unmatched; unmatched)
+- Vesicular stomatitis - Alagoas virus (unmatched; unmatched)
+- Yunnan virus (unmatched; unmatched)
+- Aino virus (unmatched; unmatched)
+- Alkhurma haemorrhagic fever virus (unmatched; unmatched)
+- Bhanja virus (unmatched; unmatched)
+- Equine encephalosis virus (unmatched; unmatched)
+- Kasba virus (unmatched; unmatched)
+- Kotonkan virus (unmatched; unmatched)
+- Main drain virus (unmatched; unmatched)
+- Middelburg virus (unmatched; unmatched)
+- Nairobi sheep disease virus (unmatched; unmatched)
+- Peruvian horse sickness virus (unmatched; unmatched)
+- Shuni virus (unmatched; unmatched)
+- Vesicular stomatitis - Indiana virus (unmatched; unmatched)
+- Vesicular stomatitis - New Jersey virus (unmatched; unmatched)
+- Wesselsbron virus (unmatched; unmatched)

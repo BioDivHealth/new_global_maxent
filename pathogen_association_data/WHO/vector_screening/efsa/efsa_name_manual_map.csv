@@ -1,0 +1,8 @@
+source_name,canonical_name,combined_pathogen,combined_disease_name,applies_to,notes
+Leishmaania infantum,Leishmania infantum,,,efsa_internal,Appendix G spelling variant normalized to canonical species name.
+Leishmannia infantum,Leishmania infantum,,,efsa_internal,Appendix G spelling variant normalized to canonical species name.
+Cowdria/Ehrlichia ruminantium,Ehrlichia ruminantium,,,efsa_internal,Appendix A synonym normalized to match Appendix G naming.
+Vesicular stomatitis Alagoas virus,Vesicular stomatitis - Alagoas virus,,,efsa_internal,Appendix A isolate name normalized to the punctuation used in Appendix G.
+Crimean-Congo haemorrhagic fever virus,Crimean-Congo haemorrhagic fever virus,Orthonairovirus haemorrhagiae,Crimean-Congo hemorrhagic fever,combined_mapping,Combined WHO network uses taxonomic pathogen naming and American spelling in disease label.
+Rift Valley fever virus,Rift Valley fever virus,Phlebovirus riftense,Rift Valley fever,combined_mapping,Combined WHO network stores the ICTV-style pathogen name rather than the common virus label.
+West Nile virus,West Nile virus,Orthoflavivirus nilense,West Nile fever,combined_mapping,Combined WHO network stores the ICTV-style pathogen name and a fever disease label.
