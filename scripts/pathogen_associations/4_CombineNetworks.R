@@ -1,10 +1,13 @@
 library(pacman)
 p_load(here, tidyverse, readr, magrittr)
 
-clover_network = read_csv(here("pathogen_association_data", "WHO", "networks", "clover_who_network.csv"))
-clover_disease_names = read_csv(here("pathogen_association_data", "WHO", "networks", "clover_who_network.csv"))
+clover_network = read_csv(here("pathogen_association_data", "WHO",
+                               "networks", "clover_who_network.csv"))
+clover_disease_names = read_csv(here("pathogen_association_data", 
+                                     "WHO", "networks", "clover_who_network.csv"))
 
-virion_network = read_csv(here("pathogen_association_data", "WHO", "networks", "virion_who_network.csv"))
+virion_network = read_csv(here("pathogen_association_data",
+                               "WHO", "networks", "virion_who_network.csv"))
 
 clover_network$PathogenType = "bacteria"
 virion_network$PathogenType = "virus"

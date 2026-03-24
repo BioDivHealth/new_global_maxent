@@ -1,0 +1,188 @@
+efsa_pathogen,efsa_pathogen_clean,efsa_abbreviation,vector_species,vector_group,vector_status,field_results,laboratory_results,vn_database_species,vn_priority_species,source,vector_species_raw
+African horse sickness virus,african horse sickness virus,AHSV,Culicoides obsoletus s.l.,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides obsoletus s.l.
+African horse sickness virus,african horse sickness virus,AHSV,Culicoides scoticus,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides scoticus
+African swine fever virus,african swine fever virus,ASFV,Ornithodoros erraticus,tick,potential,,positive,yes,yes,EFSA Appendix G,Ornithodoros erraticus
+African swine fever virus,african swine fever virus,ASFV,Ornithodoros moubata,tick,potential,,positive,no,no,EFSA Appendix G,Ornithodoros moubata
+African swine fever virus,african swine fever virus,ASFV,Ornithodoros moubata s.l.,tick,potential,positive,,no,no,EFSA Appendix G,Ornithodoros moubata s.l.
+African swine fever virus,african swine fever virus,ASFV,Ornithodoros porcinus porcinus,tick,potential,positive,,no,no,EFSA Appendix G,Ornithodoros porcinus porcinus*
+Akabane virus,akabane virus,AKAV,Culicoides imicola,biting_midge,potential,positive,,yes,yes,EFSA Appendix G,Culicoides imicola
+Akabane virus,akabane virus,AKAV,Culicoides oxystoma,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides oxystoma
+Akabane virus,akabane virus,AKAV,Culicoides tainanus,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoides tainanus
+Bluetongue virus,bluetongue virus,BTV,Culicoides fulvus,biting_midge,potential,positive,,no,no,EFSA Appendix G,Culicoides fulvus
+Bluetongue virus,bluetongue virus,BTV,Culicoides imicola,biting_midge,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culicoides imicola
+Bluetongue virus,bluetongue virus,BTV,Culicoides obsoletus complex,biting_midge,potential,positive,,yes,yes,EFSA Appendix G,Culicoides obsoletus complex
+Bluetongue virus,bluetongue virus,BTV,Culicoides obsoletus s.l.,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides obsoletus s.l.
+Bluetongue virus,bluetongue virus,BTV,Culicoides orientalis,biting_midge,potential,positive,,no,no,EFSA Appendix G,Culicoides orientalis
+Bluetongue virus,bluetongue virus,BTV,Culicoides oxystoma,biting_midge,potential,positive,,yes,no,EFSA Appendix G,Culicoides oxystoma
+Bluetongue virus,bluetongue virus,BTV,Culicoides pulicaris,biting_midge,potential,positive,,yes,yes,EFSA Appendix G,Culicoides pulicaris
+Bluetongue virus,bluetongue virus,BTV,Culicoides scoticus,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides scoticus
+Bluetongue virus,bluetongue virus,BTV,Culicoides sonorensis,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoides sonorensis
+Bluetongue virus,bluetongue virus,BTV,Culicoides tainanus,biting_midge,potential,positive,,no,no,EFSA Appendix G,Culicoides tainanus
+Bovine ephemeral fever virus,bovine ephemeral fever virus,BEFV,Culicoides sonorensis,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoides sonorensis
+Cache Valley virus,cache valley virus,CVV,Aedes aegypti,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes aegypti
+Cache Valley virus,cache valley virus,CVV,Aedes albopictus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes albopictus
+Cache Valley virus,cache valley virus,CVV,Aedes japonicus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes japonicus
+Cache Valley virus,cache valley virus,CVV,Aedes triseriatus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes triseriatus
+Cache Valley virus,cache valley virus,CVV,Anopheles gambiae,mosquito,potential,positive,,yes,no,EFSA Appendix G,Anopheles gambiae
+Cache Valley virus,cache valley virus,CVV,Anopheles quadrimaculatus,mosquito,potential,,positive,no,no,EFSA Appendix G,Anopheles quadrimaculatus
+Cache Valley virus,cache valley virus,CVV,Culex tarsalis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex tarsalis
+Cache Valley virus,cache valley virus,CVV,Culex univittatus,mosquito,potential,positive,,yes,yes,EFSA Appendix G,Culex univittatus
+Crimean-Congo haemorrhagic fever virus,crimean congo hemorrhagic fever virus,CCHFV,Hyalomma aegyptium,tick,potential,positive,,yes,no,EFSA Appendix G,Hyalomma aegyptium
+Crimean-Congo haemorrhagic fever virus,crimean congo hemorrhagic fever virus,CCHFV,Hyalomma anatolicum,tick,potential,positive,,yes,no,EFSA Appendix G,Hyalomma anatolicum
+Crimean-Congo haemorrhagic fever virus,crimean congo hemorrhagic fever virus,CCHFV,Hyalomma asiaticum,tick,potential,positive,,no,no,EFSA Appendix G,Hyalomma asiaticum
+Crimean-Congo haemorrhagic fever virus,crimean congo hemorrhagic fever virus,CCHFV,Hyalomma marginatum,tick,potential,positive,,yes,yes,EFSA Appendix G,Hyalomma marginatum
+Eastern equine encephalitis virus,eastern equine encephalitis virus,EEEV,Culiseta melanura,mosquito,potential,positive,,no,no,EFSA Appendix G,Culiseta melanura
+Ehrlichia ruminantium,ehrlichia ruminantium,Cowdr,Amblyomma hebraeum,tick,highly_likely,positive,positive,no,no,EFSA Appendix G,Amblyomma hebraeum
+Ehrlichia ruminantium,ehrlichia ruminantium,Cowdr,Amblyomma variegatum,tick,potential,positive,,no,no,EFSA Appendix G,Amblyomma variegatum
+Epizootic hemorrhagic disease virus,epizootic hemorrhagic disease virus,EHDV/IBAV,Culicoldes insignis,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoldes insignis
+Epizootic hemorrhagic disease virus,epizootic hemorrhagic disease virus,EHDV/IBAV,Culicoldes obsoletus s.l.,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoldes obsoletus s.l.
+Epizootic hemorrhagic disease virus,epizootic hemorrhagic disease virus,EHDV/IBAV,Culicoldes scoticus,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoldes scoticus
+Epizootic hemorrhagic disease virus,epizootic hemorrhagic disease virus,EHDV/IBAV,Culicoldes sonorensis,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoldes sonorensis
+Getah virus,getah virus,GETV,Aedes vexans nipponii,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes vexans nipponii
+Getah virus,getah virus,GETV,Anopheles sinensis,mosquito,potential,positive,,no,no,EFSA Appendix G,Anopheles sinensis
+Getah virus,getah virus,GETV,Culex tritaeniorhynchus,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culex tritaeniorhynchus
+Hepatozoon canis,hepatozoon canis,hepat,Rhipicephalus sanguineus,tick,potential,positive,,yes,yes,EFSA Appendix G,Rhipicephalus sanguineus
+Highlands J virus,highlands j virus,HJV,Culex tarsalis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex tarsalis
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Aedes aegypti,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes aegypti
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Aedes albopictus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes albopictus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Aedes japonicus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes japonicus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Aedes notoscriptus,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes notoscriptus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Aedes purpureus,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes purpureus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Aedes vigilax,mosquito,potential,positive,,no,no,EFSA Appendix G,Aedes vigilax
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Anopheles sinensis,mosquito,potential,positive,,no,no,EFSA Appendix G,Anopheles sinensis
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex annulirostris,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex annulirostris
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex annulus,mosquito,potential,positive,,no,no,EFSA Appendix G,Culex annulus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex gelidus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex gelidus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex pipiens,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culex pipiens
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex pipiens biotype pipiens,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype pipiens
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex quinquefasciatus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex quinquefasciatus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex sitiens,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex sitiens
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex sitiens group,mosquito,potential,positive,,yes,no,EFSA Appendix G,Culex sitiens group
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex tritaeniorhynchus,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culex tritaeniorhynchus
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culex vishnui,,potential,positive,,yes,no,EFSA Appendix G,Culex vishnui
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Culiseta annulata,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culiseta annulata
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Mansonia septempunctata,mosquito,potential,,positive,no,no,EFSA Appendix G,Mansonia septempunctata
+Japanese encephalitis virus,japanese encephalitis virus,JEV,Mansonia uniformis,mosquito,potential,,positive,no,no,EFSA Appendix G,Mansonia uniformis
+Leishmania infantum,leishmania infantum,CanL,Evandromyia cortelezii,sand_fly,potential,positive,,no,no,EFSA Appendix G,Evandromyia cortelezii
+Leishmania infantum,leishmania infantum,CanL,Evandromyia edwardsi,sand_fly,potential,positive,,no,no,EFSA Appendix G,Evandromyia edwardsi
+Leishmania infantum,leishmania infantum,CanL,Expapillata firmatoi,sand_fly,potential,positive,,no,no,EFSA Appendix G,Expapillata firmatoi
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia cavernicola,sand_fly,potential,positive,,no,no,EFSA Appendix G,Lutzomyia cavernicola
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia cortelezzii s.l.,sand_fly,potential,positive,,no,no,EFSA Appendix G,Lutzomyia cortelezzii s.l.
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia cruzi,sand_fly,potential,,positive,no,no,EFSA Appendix G,Lutzomyia cruzi
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia lloydi,sand_fly,potential,positive,,no,no,EFSA Appendix G,Lutzomyia lloydi
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia longipalpis,sand_fly,highly_likely,positive,positive,no,no,EFSA Appendix G,Lutzomyia longipalpis
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia migonei,sand_fly,potential,positive,,no,no,EFSA Appendix G,Lutzomyia migonei
+Leishmania infantum,leishmania infantum,CanL,Lutzomyia renei,sand_fly,potential,positive,,no,no,EFSA Appendix G,Lutzomyia renei
+Leishmania infantum,leishmania infantum,CanL,Micropygomyia quinquefer,sand_fly,potential,positive,,no,no,EFSA Appendix G,Micropygomyia quinquefer
+Leishmania infantum,leishmania infantum,CanL,Nyssomyla whitmani,sand_fly,potential,positive,,no,no,EFSA Appendix G,Nyssomyla whitmani
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus longicuspis,sand_fly,potential,positive,,no,no,EFSA Appendix G,Phlebotomus longicuspis
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus mascittii,sand_fly,potential,positive,,yes,yes,EFSA Appendix G,Phlebotomus mascittii
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus neglectus,sand_fly,potential,positive,,yes,yes,EFSA Appendix G,Phlebotomus neglectus
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus papatasi,sand_fly,potential,positive,,yes,yes,EFSA Appendix G,Phlebotomus papatasi
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus perfiliewi,sand_fly,potential,positive,,yes,yes,EFSA Appendix G,Phlebotomus perfiliewi
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus perniciosus,sand_fly,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Phlebotomus perniciosus
+Leishmania infantum,leishmania infantum,CanL,Phlebotomus tobbi,sand_fly,potential,positive,,yes,yes,EFSA Appendix G,Phlebotomus tobbi
+Leishmania infantum,leishmania infantum,CanL,Pintomyia fischeri,sand_fly,potential,,positive,no,no,EFSA Appendix G,Pintomyia fischeri
+Leishmania infantum,leishmania infantum,CanL,Psathyromyia lutziana,sand_fly,potential,positive,,no,no,EFSA Appendix G,Psathyromyia lutziana
+Leishmania infantum,leishmania infantum,CanL,Sergentomyia minuta,sand_fly,potential,positive,,yes,no,EFSA Appendix G,Sergentomyia minuta
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes aegypti,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Aedes aegypti
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes albopictus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes albopictus
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes caspius,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes caspius
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes detritus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes detritus
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes durbanensis,mosquito,potential,positive,,no,no,EFSA Appendix G,Aedes durbanensis
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes melanimon,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes melanimon
+Rift Valley fever virus,rift valley fever virus,RVFV,Aedes vexans,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes vexans
+Rift Valley fever virus,rift valley fever virus,RVFV,Anopheles coustani,mosquito,potential,,positive,no,no,EFSA Appendix G,Anopheles coustani
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex antennatus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex antennatus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex erraticus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex erraticus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex erythrothorax,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex erythrothorax
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex nigripalpus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex nigripalpus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex pipiens,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex pipiens biotype molestus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype molestus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex pipiens biotype pipiens,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype pipiens
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex pipiens biotype pipiens x biotype molestus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype pipiens x biotype molestus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex pipiens s.l.,mosquito,potential,positive,,yes,no,EFSA Appendix G,Culex pipiens s.l.
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex poicilipes,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex poicilipes
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex quinquefasciatus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex quinquefasciatus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex tarsalis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex tarsalis
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex tritaeniorhynchus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex tritaeniorhynchus
+Rift Valley fever virus,rift valley fever virus,RVFV,Culex zombaensis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex zombaensis
+Rift Valley fever virus,rift valley fever virus,RVFV,Culiseta inornata,mosquito,potential,,positive,no,no,EFSA Appendix G,Culiseta inornata
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides chiopterus,biting_midge,potential,positive,,yes,yes,EFSA Appendix G,Culicoides chiopterus
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides imicola,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides imicola
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides nubeculosus,biting_midge,potential,positive,,yes,no,EFSA Appendix G,Culicoides nubeculosus
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides obsoletus,biting_midge,potential,,positive,yes,yes,EFSA Appendix G,Culicoides obsoletus
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides obsoletus complex,biting_midge,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culicoides obsoletus complex
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides obsoletus group,biting_midge,potential,positive,,yes,no,EFSA Appendix G,Culicoides obsoletus group
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides pulicaris,biting_midge,potential,positive,,yes,yes,EFSA Appendix G,Culicoides pulicaris
+Schmallenberg virus,schmallenberg virus,SBV,Culicoides sonorensis,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoides sonorensis
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex interfor,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex interfor
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex nigripalpus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex nigripalpus
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex pipiens,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex quinquefasciatus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex quinquefasciatus
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex saltanensis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex saltanensis
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex stigmatosoma,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex stigmatosoma
+St. Louis encephalitis virus,st louis encephalitis virus,SLEV,Culex tarsalis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex tarsalis
+Thogoto virus,thogoto virus,THOV,Haemaphysalis longicornis,tick,potential,,positive,no,no,EFSA Appendix G,Haemaphysalis longicornis
+Venezuelan equine encephalitis virus,venezuelan equine encephalitis virus,VEEV,Aedes detritus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes detritus
+Venezuelan equine encephalitis virus,venezuelan equine encephalitis virus,VEEV,Culex gnomatos,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex gnomatos
+Venezuelan equine encephalitis virus,venezuelan equine encephalitis virus,VEEV,Culex gnomatos/vomerifer,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex gnomatos/vomerifer
+Venezuelan equine encephalitis virus,venezuelan equine encephalitis virus,VEEV,Culex taeniopus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex taeniopus
+Venezuelan equine encephalitis virus,venezuelan equine encephalitis virus,VEEV,Psorophora columbiae,mosquito,potential,,positive,no,no,EFSA Appendix G,Psorophora columbiae
+Vesicular stomatitis - Alagoas virus,vesicular stomatitis alagoas virus,VSAV,Culicoides sonorensis,biting_midge,potential,,positive,no,no,EFSA Appendix G,Culicoides sonorensis
+West Nile virus,west nile virus,WNV,Aedes albopictus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes albopictus
+West Nile virus,west nile virus,WNV,Aedes australis,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes australis
+West Nile virus,west nile virus,WNV,Aedes canadensis,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes canadensis
+West Nile virus,west nile virus,WNV,Aedes detritus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes detritus
+West Nile virus,west nile virus,WNV,Aedes dorsalis,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes dorsalis
+West Nile virus,west nile virus,WNV,Aedes japonicus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes japonicus
+West Nile virus,west nile virus,WNV,Aedes kochi,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes kochi
+West Nile virus,west nile virus,WNV,Aedes melanimon,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes melanimon
+West Nile virus,west nile virus,WNV,Aedes notoscriptus,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes notoscriptus
+West Nile virus,west nile virus,WNV,Aedes procax,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes procax
+West Nile virus,west nile virus,WNV,Aedes sierrensis,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes sierrensis
+West Nile virus,west nile virus,WNV,Aedes taeniorhynchus,mosquito,potential,positive,,no,no,EFSA Appendix G,Aedes taeniorhynchus
+West Nile virus,west nile virus,WNV,Aedes triseriatus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes triseriatus
+West Nile virus,west nile virus,WNV,Aedes vexans,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes vexans
+West Nile virus,west nile virus,WNV,Aedes vigilax,mosquito,potential,,positive,no,no,EFSA Appendix G,Aedes vigilax
+West Nile virus,west nile virus,WNV,Coquillettidia linealis,mosquito,potential,,positive,no,no,EFSA Appendix G,Coquillettidia linealis
+West Nile virus,west nile virus,WNV,Coquillettidia perturbans,mosquito,potential,,positive,no,no,EFSA Appendix G,Coquillettidia perturbans
+West Nile virus,west nile virus,WNV,Culex annulirostris,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex annulirostris
+West Nile virus,west nile virus,WNV,Culex bitaeniorhynchus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex bitaeniorhynchus
+West Nile virus,west nile virus,WNV,Culex erythrothorax,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex erythrothorax
+West Nile virus,west nile virus,WNV,Culex gelidus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex gelidus
+West Nile virus,west nile virus,WNV,Culex incidens,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex incidens
+West Nile virus,west nile virus,WNV,Culex modestus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex modestus
+West Nile virus,west nile virus,WNV,Culex neavei group,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex neavei group
+West Nile virus,west nile virus,WNV,Culex nigripalpus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex nigripalpus
+West Nile virus,west nile virus,WNV,Culex pervigilans,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex pervigilans
+West Nile virus,west nile virus,WNV,Culex pipiens,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culex pipiens
+West Nile virus,west nile virus,WNV,Culex pipiens biotype molestus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype molestus
+West Nile virus,west nile virus,WNV,Culex pipiens biotype molestus x Culex quinquefasciatus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype molestus x Culex quinquefasciatus
+West Nile virus,west nile virus,WNV,Culex pipiens biotype pipiens,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype pipiens
+West Nile virus,west nile virus,WNV,Culex pipiens biotype pipiens x Culex quinquefasciatus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype pipiens x Culex quinquefasciatus
+West Nile virus,west nile virus,WNV,Culex pipiens biotype pipiens x biotype molestus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens biotype pipiens x biotype molestus
+West Nile virus,west nile virus,WNV,Culex pipiens s.l.,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culex pipiens s.l.
+West Nile virus,west nile virus,WNV,Culex pipiens/restuans,mosquito,potential,positive,,yes,no,EFSA Appendix G,Culex pipiens/restuans
+West Nile virus,west nile virus,WNV,Culex quinquefasciatus,mosquito,highly_likely,positive,positive,no,no,EFSA Appendix G,Culex quinquefasciatus
+West Nile virus,west nile virus,WNV,Culex restuans,mosquito,highly_likely,positive,positive,no,no,EFSA Appendix G,Culex restuans
+West Nile virus,west nile virus,WNV,Culex salinarius,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex salinarius
+West Nile virus,west nile virus,WNV,Culex sitiens,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex sitiens
+West Nile virus,west nile virus,WNV,Culex stigmatosoma,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex stigmatosoma
+West Nile virus,west nile virus,WNV,Culex tarsalis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex tarsalis
+West Nile virus,west nile virus,WNV,Culex thriambus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex thriambus
+West Nile virus,west nile virus,WNV,Culex torrentium,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex torrentium
+West Nile virus,west nile virus,WNV,Culex univittatus,mosquito,highly_likely,positive,positive,yes,yes,EFSA Appendix G,Culex univittatus
+West Nile virus,west nile virus,WNV,Culex vansomereni,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex vansomereni
+West Nile virus,west nile virus,WNV,Culiseta inornata,mosquito,potential,,positive,no,no,EFSA Appendix G,Culiseta inornata
+West Nile virus,west nile virus,WNV,Culiseta melanura,mosquito,potential,positive,,no,no,EFSA Appendix G,Culiseta melanura
+West Nile virus,west nile virus,WNV,Verrallina carmenti,mosquito,potential,,positive,no,no,EFSA Appendix G,Verrallina carmenti
+West Nile virus,west nile virus,WNV,Verrallina funerea,mosquito,potential,,positive,no,no,EFSA Appendix G,Verrallina funerea
+West Nile virus,west nile virus,WNV,Verrallina lineato,mosquito,potential,,positive,no,no,EFSA Appendix G,Verrallina lineato
+Western equine encephalitis virus,western equine encephalitis virus,WEEV,Aedes aegypti,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes aegypti
+Western equine encephalitis virus,western equine encephalitis virus,WEEV,Aedes albopictus,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Aedes albopictus
+Western equine encephalitis virus,western equine encephalitis virus,WEEV,Culex pipiens pallens,mosquito,potential,,positive,yes,yes,EFSA Appendix G,Culex pipiens pallens
+Western equine encephalitis virus,western equine encephalitis virus,WEEV,Culex quinquefasciatus,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex quinquefasciatus
+Western equine encephalitis virus,western equine encephalitis virus,WEEV,Culex tarsalis,mosquito,potential,,positive,no,no,EFSA Appendix G,Culex tarsalis
+Yunnan orbivirus,yunnan orbivirus,YUOV,Anopheles sinensis,mosquito,potential,positive,,no,no,EFSA Appendix G,Anopheles sinensis
+Yunnan orbivirus,yunnan orbivirus,YUOV,Culex tritaeniorhynchus,mosquito,potential,positive,,yes,yes,EFSA Appendix G,Culex tritaeniorhynchus

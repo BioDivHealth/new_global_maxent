@@ -1,0 +1,1028 @@
+disease,v_species,v_group,evidence_level,evidence_basis,location,source,notes,record_source
+chikungunya,Aedes aegypti,mosquito,confirmed,review,global,"(Delrieu et al., 2023)",,lit_review
+chikungunya,Aedes albopictus,mosquito,confirmed,review,global,"(Delrieu et al., 2023)",,lit_review
+chikungunya,Aedes aegypti,mosquito,confirmed,review,Africa; Asia; Americas,"(Higgs and Vanlandingham, 2015)",primary vector,lit_review
+chikungunya,Aedes albopictus,mosquito,confirmed,review,Africa; Asia; Europe; Americas,"(Higgs and Vanlandingham, 2015)",primary/major vector,lit_review
+chikungunya,Aedes africanus,mosquito,probable,review,Africa,"(Higgs and Vanlandingham, 2015)",sylvatic cycle,lit_review
+chikungunya,Aedes luteocephalus,mosquito,probable,review,Africa,"(Higgs and Vanlandingham, 2015)",sylvatic cycle,lit_review
+chikungunya,Aedes furcifer-taylori,mosquito,probable,review,Africa,"(Higgs and Vanlandingham, 2015)",sylvatic cycle,lit_review
+chikungunya,Aedes fulgens,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Aedes furcifer,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Aedes togoi,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Aedes triseriatus,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Aedes vexans,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Aedes vittatus,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Eretmapodites chrysogaster,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Opifex fuscus,mosquito,candidate,review,,"(Higgs and Vanlandingham, 2015)",lab competence,lit_review
+chikungunya,Aedes hensilli,mosquito,probable,review,"Yap Island, Federated States of Micronesia","(Higgs and Vanlandingham, 2015)",outbreak-associated; limited evidence,lit_review
+chikungunya,Aedes hensilli,mosquito,candidate,lab,"Yap Island, Federated States of Micronesia","(Ledermann et al., 2014)",lab susceptible,lit_review
+chikungunya,Aedes aegypti,mosquito,probable,lab,Australia,"(Van Den Hurk et al., 2010)",major potential vector; efficient laboratory vector,lit_review
+chikungunya,Aedes albopictus,mosquito,probable,lab,Australia,"(Van Den Hurk et al., 2010)",moderately efficient laboratory vector,lit_review
+chikungunya,Aedes procax,mosquito,probable,lab,Australia,"(Van Den Hurk et al., 2010)",efficient laboratory vector,lit_review
+chikungunya,Aedes vigilax,mosquito,probable,lab,Australia,"(Van Den Hurk et al., 2010)",efficient laboratory vector,lit_review
+chikungunya,Coquillettidia linealis,mosquito,probable,lab,Australia,"(Van Den Hurk et al., 2010)",efficient laboratory vector,lit_review
+chikungunya,Aedes notoscriptus,mosquito,candidate,lab,Australia,"(Van Den Hurk et al., 2010)",lower transmission; midgut escape barrier,lit_review
+chikungunya,Verrallina funerea,mosquito,candidate,lab,Australia,"(Van Den Hurk et al., 2010)",low transmission,lit_review
+chikungunya,Culex annulirostris,mosquito,weak,lab,Australia,"(Van Den Hurk et al., 2010)",poor laboratory vector; low transmission,lit_review
+chikungunya,Culex sitiens,mosquito,weak,lab,Australia,"(Van Den Hurk et al., 2010)",poor laboratory vector; very low transmission,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,review,Europe,Celina et al. 2023,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,probable,review,Central Europe,Celina et al. 2023,another significant vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,review,Old World,Celina et al. 2025,primary vector,lit_review
+Crimean-Congo haemorrhagic fever,Amblyomma variegatum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma aegyptium,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma asiaticum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma asiaticum kozlovi,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma detritum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma dromedarii,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma excavatum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma schulzei,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus bursa,tick,confirmed,review,,Celina et al. 2025,confirmed vector,lit_review
+Crimean-Congo haemorrhagic fever,Dermacentor marginatus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Dermacentor nuttalli,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis concinna,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis inermis,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis parva,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis punctata,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis sulcata,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Ixodes ricinus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus (Boophilus) annulatus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus appendiculatus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus (Boophilus) decoloratus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus evertsi evertsi,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus geigyi,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus guilhoni,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus sanguineus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus turanicus,tick,candidate,review,,Celina et al. 2025,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma spp.,tick,confirmed,review,Africa/Asia/Southern Europe,de la Fuente et al. 2017,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,field+lab,,EFSA 2010,s.l. complex principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,candidate,lab,,EFSA 2010,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,probable,lab,,EFSA 2010,experimental transmission,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma scupense,tick,candidate,review,,EFSA 2010,syn Hy. detritum potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,candidate,review,,EFSA 2010,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma excavatum,tick,candidate,review,,EFSA 2010,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma dromedarii,tick,candidate,review,,EFSA 2010,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,probable,lab,,EFSA 2010,experimental transmission,lit_review
+Crimean-Congo haemorrhagic fever,Ixodes ricinus,tick,weak,review,,EFSA 2010,not ascertained,lit_review
+Crimean-Congo haemorrhagic fever,Dermacentor marginatus,tick,weak,review,,EFSA 2010,no conclusive studies,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus sanguineus,tick,candidate,review,,EFSA 2010,associated with CCHFV,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus bursa,tick,probable,field,,EFSA 2010,putative vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus rossicus,tick,candidate,review,,EFSA 2010,associated with CCHFV,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis punctata,tick,candidate,review,,EFSA 2010,associated with CCHFV,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus pumilio,tick,candidate,review,,EFSA 2010,associated with CCHFV,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus turanicus,tick,candidate,review,,EFSA 2010,associated with CCHFV,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus evertsi,tick,candidate,lab,,EFSA 2010,experimental infection,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,review,Eurasia,Estrada-Pena et al. 2012,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,confirmed,review,Eurasia,Estrada-Pena et al. 2012,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma scupense,tick,probable,review,Eurasia,Estrada-Pena et al. 2012,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,probable,review,Eurasia,Estrada-Pena et al. 2012,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,weak,review,South Africa,Estrada-Pena et al. 2012,field infection only,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,weak,review,South Africa,Estrada-Pena et al. 2012,field infection only,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus evertsi,tick,weak,review,South Africa,Estrada-Pena et al. 2012,field positive only,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus annulatus,tick,candidate,review,several endemic countries,Estrada-Pena et al. 2012,field positive role unclear,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma spp.,tick,confirmed,review,,Hewson 2024,genus-level only,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,probable,review,southern Europe,Messina & Wint 2023,primary vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma lusitanicum,tick,candidate,review,southwestern Europe,Messina & Wint 2023,potential vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma aegyptium,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma asiaticum,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma dromedarii,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma excavatum,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impressum,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma lusitanicum,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma nitidum,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma schulzei,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma scupense,tick,probable,review,global,Parvage et al. 2025,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,probable,review,global,Parvage et al. 2025,high-capacity species,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus bursa,tick,candidate,review,Greece,Parvage et al. 2025,virus isolated from ticks,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma aegyptium,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma excavatum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma dromedarii,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis punctata,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Amblyomma variegatum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Ixodes ricinus,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Amblyomma lepidum,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma scupense,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma schulzei,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma onatoli,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus annulatus,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus evertsi,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus sanguineus,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus turanicus,tick,candidate,review,Arab world,Perveen and Khan 2022,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,review,Asia; Africa; Eastern Europe,Shah et al. 2023 Table 1,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,review,Middle East; Northern Africa; Southern Europe,Shahhosseini et al. 2021,main vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma dromedarii,tick,candidate,review,Middle East; Northern Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,candidate,review,Middle East; Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,candidate,review,Asia; Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma nitidum,tick,candidate,review,Central Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,candidate,review,Asia,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma asiaticum,tick,candidate,review,Asia,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma detritum,tick,candidate,review,Middle East; Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma excavatum,tick,candidate,review,Africa; Middle East,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,candidate,review,Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma schulzei,tick,candidate,review,Arabia peninsula,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,candidate,review,Northern Africa; Arabian Peninsula,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma lusitanicum,tick,candidate,review,Africa; Spain,Shahhosseini et al. 2021,caveated,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma isaaci,tick,candidate,review,Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impressum,tick,candidate,review,"Africa, Pakistan",Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus sanguineus,tick,candidate,review,Asia,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus bursa,tick,candidate,review,Southeastern Europe; Middle East,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus annulatus,tick,candidate,review,Middle East; Central parts of Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus turanicus,tick,candidate,review,Southern Europe; Asia,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus rossicus,tick,candidate,review,Caucasia; southern Russia,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus evertsi,tick,candidate,review,Sub-Saharan Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus decoloratus,tick,candidate,review,Uganda,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus appendiculatus,tick,candidate,review,Iran,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus microplus,tick,candidate,review,Africa; Pakistan,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus guilhoni,tick,candidate,review,Senegal,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus pulchellus,tick,candidate,review,Kenya,Shahhosseini et al. 2021,limited field finding,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis punctata,tick,candidate,review,Some parts of Asia; South-East of Europe,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis inermis,tick,candidate,review,Iran,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis concinna,tick,candidate,review,Turkey,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis sulcata,tick,candidate,review,Iran,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Haemaphysalis parva,tick,candidate,review,"Turkey, North Caucasus",Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Dermacentor marginatus,tick,candidate,review,Southern Europe;Middle East; Mediterranean,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Dermacentor niveus,tick,candidate,review,Tajikistan,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Ixodes ricinus,tick,candidate,review,Europe; Mediterranean; Northern Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Amblyomma variegatum,tick,candidate,review,Sub-Saharan Africa,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Ornithodoros lahorensis,tick,candidate,review,Iran,Shahhosseini et al. 2021,,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma spp.,tick,confirmed,review,,Spengler et al. 2016,natural vector,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus evertsi evertsi,tick,candidate,review,Mauritania,Spengler et al. 2016,PCR only,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus sanguineus,tick,weak,review,Mauritania,Spengler et al. 2016,debated,lit_review
+Crimean-Congo haemorrhagic fever,Rhipicephalus spp.,tick,candidate,review,,Spengler et al. 2016,isolated from ticks,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma aegyptium,tick,candidate,review,Tajikistan,Spengler et al. 2016,detected in tick,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,candidate,review,,Spengler et al. 2016,experimental transmission,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma spp.,tick,confirmed,review,Africa/Asia/Southern Europe,de la Fuente et al. 2017,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma marginatum,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma anatolicum,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma asiaticum,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma dromedarii,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,confirmed,review,,de la Fuente et al. 2024,principal vector,lit_review
+dengue,Aedes hensilli,mosquito,weak,field+lab,"Yap State, Federated States of Micronesia","(Ledermann et al., 2014)",low competence; debated,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,global,"(Kristan et al., 2025)",principal vector,lit_review
+dengue,Aedes albopictus,mosquito,probable,review,global,"(Kristan et al., 2025)",secondary vector,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,lab,Puerto Rico; Caribbean,"(Poole-Smith et al., 2015)",primary vector; only two species covered,lit_review
+dengue,Aedes mediovittatus,mosquito,probable,lab,Puerto Rico; Caribbean,"(Poole-Smith et al., 2015)",secondary vector candidate; competent in lab; only two species covered,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,global,"(Delrieu et al., 2023)",,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,global,"(Delrieu et al., 2023)",,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,United States and territories,"(Barrera, 2025)",principal vector,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,United States and territories,"(Barrera, 2025)",secondary vector,lit_review
+dengue,Aedes polynesiensis,mosquito,confirmed,review,American Samoa,"(Barrera, 2025)",regional vector,lit_review
+dengue,Aedes mediovittatus,mosquito,candidate,review,Puerto Rico; US Virgin Islands,"(Barrera, 2025)",not incriminated in outbreaks,lit_review
+dengue,Aedes furcifer,mosquito,confirmed,review,Senegal,Althouse et al. 2012,main vector in Senegal,lit_review
+dengue,Aedes taylori,mosquito,confirmed,review,Senegal,Althouse et al. 2012,main vector in Senegal,lit_review
+dengue,Aedes luteocephalus,mosquito,confirmed,review,Senegal,Althouse et al. 2012,main vector in Senegal,lit_review
+dengue,Aedes vittatus,mosquito,confirmed,review,Senegal,Althouse et al. 2012,main vector in Senegal,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,Senegal,Althouse et al. 2012,main vector in Senegal,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,global,Barrera 2025,principal vector,lit_review
+dengue,Aedes albopictus,mosquito,probable,review,,Barrera 2025,secondary vector,lit_review
+dengue,Aedes polynesiensis,mosquito,probable,review,South Pacific Islands,Barrera 2025,transmits dengue,lit_review
+dengue,Aedes mediovittatus,mosquito,candidate,review,Puerto Rico and US Virgin Islands,Barrera 2025,potential vector,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,,Delrieu et al. 2023,major vector,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,,Delrieu et al. 2023,,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,Cambodia,Doeurk et al. 2024,main vector,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,Cambodia,Doeurk et al. 2024,main vector,lit_review
+dengue,Aedes malayensis,mosquito,candidate,review,Cambodia,Doeurk et al. 2024,potential vector,lit_review
+dengue,Aedes scutellaris,mosquito,candidate,review,Cambodia,Doeurk et al. 2024,potential vector,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,,Islam et al. 2021,principal vector,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,,Islam et al. 2021,principal vector,lit_review
+dengue,Aedes polynesiensis,mosquito,probable,review,,Islam et al. 2021,secondary vector,lit_review
+dengue,Aedes niveus,mosquito,probable,review,,Islam et al. 2021,secondary vector,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,Americas,Jones et al. 2020,experimentally competent and field infection observed,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,Americas,Jones et al. 2020,experimentally competent and field infection observed,lit_review
+dengue,Culex quinquefasciatus,mosquito,weak,review,Americas,Jones et al. 2020,field infection only not experimentally competent,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,,Kristan et al. 2025,principal vector,lit_review
+dengue,Aedes albopictus,mosquito,probable,review,,Kristan et al. 2025,secondary vector,lit_review
+dengue,Aedes mediovittatus,mosquito,probable,lab,Puerto Rico,Poole-Smith et al. 2015,secondary vector,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,lab,Puerto Rico,Poole-Smith et al. 2015,primary vector,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,global,Rakotonirina et al. 2022,primary vector,lit_review
+dengue,Aedes albopictus,mosquito,confirmed,review,global,Rakotonirina et al. 2022,primary vector,lit_review
+dengue,Aedes polynesiensis,mosquito,confirmed,review,Pacific region,Rakotonirina et al. 2022,main vector,lit_review
+dengue,Aedes scutellaris,mosquito,candidate,review,Pacific region,Rakotonirina et al. 2022,highly suspected,lit_review
+dengue,Aedes pseudoscutellaris,mosquito,candidate,review,Pacific region,Rakotonirina et al. 2022,highly suspected,lit_review
+dengue,Aedes malayensis,mosquito,confirmed,review,,Rakotonirina et al. 2022,vector of DENV and CHIKV,lit_review
+dengue,Aedes aegypti,mosquito,confirmed,review,WHO European region,Schaffner and Mathis 2014,principal vector,lit_review
+dengue,Aedes albopictus,mosquito,probable,review,WHO European region,Schaffner and Mathis 2014,main established vector,lit_review
+dengue,Aedes cretinus,mosquito,candidate,review,Greece and Turkey,Schaffner and Mathis 2014,potential vector,lit_review
+dengue,Aedes japonicus,mosquito,candidate,review,central Europe,Schaffner and Mathis 2014,potential vector,lit_review
+dengue,Aedes vittatus,mosquito,weak,review,India; western Mediterranean,Schaffner and Mathis 2014,occasionally mentioned; role likely restricted,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,,Ayres et al. 2026,principal urban vector,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,candidate,review,,Ayres et al. 2026,secondary vector; debated,lit_review
+oropouche fever,Coquillettidia venezuelensis,mosquito,candidate,review,,Ayres et al. 2026,sylvatic cycle,lit_review
+oropouche fever,Aedes serratus,mosquito,candidate,review,,Ayres et al. 2026,sylvatic cycle,lit_review
+oropouche fever,Culicoides sonorensis,midge,candidate,review,North America,Ayres et al. 2026,lab competence,lit_review
+oropouche fever,Culicoides insignis,midge,candidate,review,Peru,Ayres et al. 2026,possible new vector,lit_review
+oropouche fever,Aedes albopictus,mosquito,weak,review,,Ayres et al. 2026,mixed lab evidence,lit_review
+oropouche fever,Aedes aegypti,mosquito,weak,review,Brazil,Ayres et al. 2026,vertical transmission/PCR,lit_review
+oropouche fever,Limatus durhamii,mosquito,weak,review,Brazil,Ayres et al. 2026,PCR only,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,,Gallichotte et al. 2025,principal vector,lit_review
+oropouche fever,Culicoides sonorensis,midge,probable,review,,Gallichotte et al. 2025,high competence,lit_review
+oropouche fever,Coquillettidia venezuelensis,mosquito,candidate,review,Trinidad and Tobago,Gallichotte et al. 2025,potential sylvatic vector,lit_review
+oropouche fever,Aedes serratus,mosquito,candidate,review,Brazil,Gallichotte et al. 2025,potential sylvatic vector,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,candidate,review,,Gallichotte et al. 2025,poor vector; low competence,lit_review
+oropouche fever,Aedes aegypti,mosquito,candidate,review,,Gallichotte et al. 2025,limited competence,lit_review
+oropouche fever,Aedes albopictus,mosquito,candidate,review,,Gallichotte et al. 2025,limited competence,lit_review
+oropouche fever,Aedes scapularis,mosquito,weak,review,,Gallichotte et al. 2025,parenteral inoculation only,lit_review
+oropouche fever,Psorophora ferox,mosquito,weak,review,,Gallichotte et al. 2025,parenteral inoculation only,lit_review
+oropouche fever,Culex tarsalis,mosquito,candidate,review,,Gallichotte et al. 2025,limited transmission,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,,González et al. 2025,principal vector,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,candidate,field,Cuba,González et al. 2025,PCR only; Cuban outbreak,lit_review
+oropouche fever,Aedes aegypti,mosquito,candidate,field,Cuba,González et al. 2025,PCR only; Cuban outbreak,lit_review
+oropouche fever,Coquillettidia venezuelensis,mosquito,candidate,review,,González et al. 2025,potential vector,lit_review
+oropouche fever,Aedes serratus,mosquito,candidate,review,,González et al. 2025,potential vector,lit_review
+oropouche fever,Culex pipiens,mosquito,weak,lab,Italy,Mancuso et al. 2025,no competence detected,lit_review
+oropouche fever,Aedes albopictus,mosquito,weak,lab,Italy,Mancuso et al. 2025,no competence detected,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,,Romero-Alvarez and Escobar 2018,main vector,lit_review
+oropouche fever,Coquillettidia venezuelensis,mosquito,candidate,review,Trinidad,Romero-Alvarez and Escobar 2018,sylvatic cycle,lit_review
+oropouche fever,Aedes (Ochlerotatus) serratus,mosquito,candidate,review,Brazil,Romero-Alvarez and Escobar 2018,sylvatic cycle,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,candidate,review,Brazil,Romero-Alvarez and Escobar 2018,candidate competent vector,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,,Sakkas et al. 2018,primary urban vector,lit_review
+oropouche fever,Coquillettidia venezuelensis,mosquito,probable,review,,Sakkas et al. 2018,secondary vector; sylvatic cycle,lit_review
+oropouche fever,Aedes (Ochlerotatus) serratus,mosquito,probable,review,,Sakkas et al. 2018,secondary vector; sylvatic cycle,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,candidate,review,,Sakkas et al. 2018,less important vector,lit_review
+oropouche fever,Culicoides,midge,candidate,review,,Sakkas et al. 2018,genus-level sylvatic vector,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,Brazil,Sciancalepore et al. 2022,primary vector,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,probable,review,Brazil,Sciancalepore et al. 2022,considerable urban vector,lit_review
+oropouche fever,Ochlerotatus serratus,mosquito,candidate,review,Brazil,Sciancalepore et al. 2022,listed mosquito vector,lit_review
+oropouche fever,Aedes aegypti,mosquito,candidate,review,Brazil,Sciancalepore et al. 2022,listed mosquito vector,lit_review
+oropouche fever,Culicoides paraensis,midge,confirmed,review,,Ayres et al. 2026,principal urban vector,lit_review
+oropouche fever,Culex quinquefasciatus,mosquito,candidate,review,,Ayres et al. 2026,secondary vector; debated,lit_review
+plague,Xenopsylla cheopis,flea,probable,review,,Ben Ari et al. 2011,likely main vector in human foci,lit_review
+plague,Citellophilus tesquorum altaicus,flea,candidate,review,,Ben Ari et al. 2011,winter maintenance in hibernating rodents,lit_review
+plague,Aetheca wagneri,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Ctenocephalides felis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Echidnophaga gallinaceus,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Epitedia wenmanni,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Epitedia eumolpi,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Hoplopsyllus anomalus,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Hystrichopsylla linsdalei,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Malaraeus telchinum,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Megabothris abantis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Nosopsyllus fasciatus,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Opisodasys nesiotis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,OCR spelling uncertain,lit_review
+plague,Orchopeas sexdentatus,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla bruneri,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla hirsuta,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla idahoensis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla labis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla montana,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla rupestris,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla tuberculata,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Oropsylla tuberculata cynomuris,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Pleochaetis exilis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Polygenis gwyni,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Pulex irritans,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Thrassis acamantis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Thrassis arizonensis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Thrassis bacchi,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Thrassis fotus,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Thrassis francisi,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Thrassis pandorae,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Xenopsylla cheopis,flea,confirmed,review,North America,Eisen et al. 2009 Table 1,experimentally confirmed,lit_review
+plague,Xenopsylla cheopis,flea,confirmed,review,,Gage and Kosoy 2005,principal vector,lit_review
+plague,Citellophilus tesquorum altaicus,flea,confirmed,review,southern Siberia,Gage and Kosoy 2005,important vector,lit_review
+plague,Oropsylla montana,flea,probable,review,,Gage and Kosoy 2005,less efficient vector,lit_review
+plague,Citellophilus tesquorum,flea,probable,review,,Gage and Kosoy 2005,blocking and transmission studies,lit_review
+plague,Neopsylla setosa,flea,probable,review,,Gage and Kosoy 2005,blocking study,lit_review
+plague,Xenopsylla brasiliensis,flea,candidate,review,,Gage and Kosoy 2005,possible exception among common rat fleas,lit_review
+plague,Xenopsylla astia,flea,probable,review,southern Asia,Gage and Kosoy 2005,relatively inefficient transmitter,lit_review
+plague,Nosopsyllus fasciatus,flea,probable,review,,Gage and Kosoy 2005,northern rat flea,lit_review
+plague,Rhadinopsylla rothschildi,flea,probable,review,,Gage and Kosoy 2005,block-free transmission,lit_review
+plague,Rhadinopsylla daurica,flea,probable,review,,Gage and Kosoy 2005,block-free transmission,lit_review
+plague,Malaraeus telchinum,flea,probable,review,,Gage and Kosoy 2005,mechanical transmission,lit_review
+plague,Hystrichopsylla linsdalei,flea,probable,review,,Gage and Kosoy 2005,important in enzootic transmission,lit_review
+plague,Pulex irritans,flea,weak,review,,Gage and Kosoy 2005,"mechanical vector, poor biological vector",lit_review
+plague,Xenopsylla cheopis,flea,weak,review,,Krasnov et al. 2006,example species; low transmission efficiency,lit_review
+plague,Paradoxopsyllus curvispinus,flea,weak,review,Japan; Southeast Asia,Medvedev et al. 2022,historical claim; debated,lit_review
+plague,Paradoxopsyllus custodis,flea,candidate,review,"Yunnan, China",Medvedev et al. 2022,limited epizootic mention,lit_review
+plague,Paradoxopsyllus dashidorzhii,flea,confirmed,review,Mongolia; Russia,Medvedev et al. 2022,main vector,lit_review
+plague,Paradoxopsyllus hesperius kalabukhovi,flea,confirmed,review,China; Mongolia; Russia,Medvedev et al. 2022,accessory vector,lit_review
+plague,Paradoxopsyllus repandus,flea,confirmed,review,Kazakhstan; Turkmenistan,Medvedev et al. 2022,accessory or occasional vector,lit_review
+plague,Paradoxopsyllus scorodumovi,flea,confirmed,review,Mongolia; Russia,Medvedev et al. 2022,main vector; occasional in Tuva,lit_review
+plague,Paradoxopsyllus teretifrons,flea,confirmed,review,Kazakhstan; Turkmenistan,Medvedev et al. 2022,plague vector,lit_review
+plague,Polygenis bohlsi bohlsi,flea,candidate,review,Northeast Brazil,Reis et al. 2021,naturally infected,lit_review
+plague,Polygenis tripus,flea,confirmed,review,Northeast Brazil,Reis et al. 2021,efficient vector; naturally infected,lit_review
+plague,Polygenis bohlsi jordani,flea,confirmed,review,Northeast Brazil,Reis et al. 2021,most effective vector,lit_review
+plague,Pulex irritans,flea,candidate,review,Northeast Brazil; Serra dos Orgaos (RJ),Reis et al. 2021,naturally infected,lit_review
+plague,Xenopsylla cheopis,flea,confirmed,review,Northeast Brazil; Serra dos Orgaos (RJ),Reis et al. 2021,classic plague vector; naturally infected,lit_review
+plague,Ctenocephalides felis,flea,candidate,review,Northeast Brazil; Serra dos Orgaos (RJ),Reis et al. 2021,naturally infected,lit_review
+Rift Valley fever,Aedes vexans,mosquito,probable,field+lab,Begues municipality; Catalonia; Spain,Birnberg et al. 2019,field-captured population,lit_review
+Rift Valley fever,Culex pipiens form molestus,mosquito,weak,lab,Spain,Brustolin et al. 2017,infection only; no dissemination,lit_review
+Rift Valley fever,Culex pipiens hybrid form,mosquito,probable,lab,Spain,Brustolin et al. 2017,infectious saliva,lit_review
+Rift Valley fever,Stegomyia albopicta,mosquito,probable,lab,Spain,Brustolin et al. 2017,infectious saliva,lit_review
+Rift Valley fever,Aedes caspius,mosquito,probable,review,Mediterranean Basin,Drouin et al. 2022,most competent among five,lit_review
+Rift Valley fever,Aedes detritus,mosquito,probable,review,Mediterranean Basin,Drouin et al. 2022,sensu lato pooled; high IR and moderate transmission,lit_review
+Rift Valley fever,Aedes vexans,mosquito,probable,review,Mediterranean Basin,Drouin et al. 2022,moderately competent,lit_review
+Rift Valley fever,Culex pipiens,mosquito,probable,review,Mediterranean Basin,Drouin et al. 2022,high transmission with midgut barriers,lit_review
+Rift Valley fever,Culex theileri,mosquito,candidate,review,Mediterranean Basin,Drouin et al. 2022,few data; only infection-rate summary,lit_review
+Rift Valley fever,Coquillettidia perturbans,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,highest measured vector competence,lit_review
+Rift Valley fever,Aedes japonicus japonicus,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,highest measured vector competence,lit_review
+Rift Valley fever,Culex tarsalis,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,high measured vector competence,lit_review
+Rift Valley fever,Aedes excrucians,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,high measured vector competence,lit_review
+Rift Valley fever,Aedes canadensis,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,measured vector competence,lit_review
+Rift Valley fever,Aedes sollicitans,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,measured vector competence,lit_review
+Rift Valley fever,Aedes triseriatus,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,measured vector competence,lit_review
+Rift Valley fever,Psorophora ferox,mosquito,probable,review,United States,Golnar et al. 2014 Table 1,measured vector competence,lit_review
+Rift Valley fever,Culex territans,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Aedes atlanticus,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Aedes taeniorhynchus,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Aedes albopictus,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Culex salinarius,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Culex pipiens,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Aedes vexans,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,lower measured vector competence,lit_review
+Rift Valley fever,Aedes aegypti,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,low measured vector competence,lit_review
+Rift Valley fever,Aedes cantator,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,low measured vector competence,lit_review
+Rift Valley fever,Mansonia dyari,mosquito,candidate,review,United States,Golnar et al. 2014 Table 1,low measured vector competence,lit_review
+Rift Valley fever,Culex erythrothorax,mosquito,weak,review,United States,Golnar et al. 2014 Table 1,very low measured vector competence,lit_review
+Rift Valley fever,Culex erraticus,mosquito,weak,review,United States,Golnar et al. 2014 Table 1,very low measured vector competence,lit_review
+Rift Valley fever,Culex nigripalpus,mosquito,weak,review,United States,Golnar et al. 2014 Table 1,near-zero measured vector competence,lit_review
+Rift Valley fever,Anopheles bradleyi-crucians,mosquito,weak,review,United States,Golnar et al. 2014 Table 1,near-zero measured vector competence,lit_review
+Rift Valley fever,Aedes circumluteolus,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Aedes mcintoshi,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Aedes ochraceus,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation and field detection,lit_review
+Rift Valley fever,Aedes pembaensis,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Aedes aegypti,mosquito,candidate,review,Northern and Eastern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Aedes durbanensis,mosquito,candidate,review,Southern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Aedes sudanensis,mosquito,candidate,review,Eastern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Aedes spp.,mosquito,candidate,review,Eastern and Southern Africa,Mgongoma et al. 2026,genus-level field detection,lit_review
+Rift Valley fever,Anopheles coustani,mosquito,candidate,review,Northern and Eastern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Anopheles gambiae,mosquito,candidate,review,Western and Southern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Anopheles gambiae arabiensis,mosquito,candidate,review,Northern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Anopheles pharoensis,mosquito,candidate,review,Western Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Anopheles squamosus,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Anopheles spp.,mosquito,candidate,review,Southern Africa,Mgongoma et al. 2026,genus-level field detection,lit_review
+Rift Valley fever,Culex antennatus,mosquito,candidate,review,Northern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Culex bitaeniorhynchus,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Culex neavei,mosquito,candidate,review,Eastern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Culex poicilipes,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation and field detection,lit_review
+Rift Valley fever,Culex pipiens,mosquito,candidate,review,Northern and Southern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Culex quinquefasciatus,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation and field detection,lit_review
+Rift Valley fever,Culex spp.,mosquito,candidate,review,Eastern Africa,Mgongoma et al. 2026,genus-level field detection,lit_review
+Rift Valley fever,Culex tritaeniorhynchus,mosquito,candidate,review,Eastern Africa,Mgongoma et al. 2026,field detection,lit_review
+Rift Valley fever,Culex univittatus,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Mansonia africana,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Mansonia uniformis,mosquito,probable,review,Africa,Mgongoma et al. 2026,review cites isolation,lit_review
+Rift Valley fever,Aedes vexans (Meigen),mosquito,probable,field+lab,Senegal,Ndiaye et al. 2016,natural infection plus lab competence,lit_review
+Rift Valley fever,Culex poicilipes (Theobald),mosquito,confirmed,field+lab,Senegal,Ndiaye et al. 2016,main vector in West Africa,lit_review
+Rift Valley fever,Culex quinquefasciatus Say,mosquito,candidate,lab,Senegal,Ndiaye et al. 2016,lab competence only,lit_review
+Rift Valley fever,Culex quinquefasciatus,mosquito,probable,field,Rwanda (Rwamagana and Kayonza districts),Nsengimana et al. 2025,RT-PCR positive plus isolation,lit_review
+Rift Valley fever,Anopheles ziemanni,mosquito,candidate,field,Rwanda (Ngoma district),Nsengimana et al. 2025,RT-PCR positive only,lit_review
+Rift Valley fever,Anopheles gambiae sensu lato,mosquito,candidate,field,Rwanda (Kirehe district),Nsengimana et al. 2025,RT-PCR positive only,lit_review
+Rift Valley fever,Culex poicilipes,mosquito,candidate,review,Rwanda,Nsengimana et al. 2025,author-designated candidate,lit_review
+Rift Valley fever,Mansonia africana,mosquito,candidate,review,Rwanda,Nsengimana et al. 2025,author-designated candidate,lit_review
+Rift Valley fever,Mansonia uniformis,mosquito,candidate,review,Rwanda,Nsengimana et al. 2025,author-designated candidate,lit_review
+Rift Valley fever,Culex annulioris,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector,lit_review
+Rift Valley fever,Anopheles squamosus,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector,lit_review
+Rift Valley fever,Anopheles funestus,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector,lit_review
+Rift Valley fever,Anopheles coustani,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector,lit_review
+Rift Valley fever,Anopheles rufipes,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector,lit_review
+Rift Valley fever,Aedes aegypti,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector; unlikely major vector,lit_review
+Rift Valley fever,Aedes africanus,mosquito,weak,review,Rwanda,Nsengimana et al. 2025,potential vector,lit_review
+Rift Valley fever,Aedes (Neomelaniconion) mcintoshi,mosquito,confirmed,review,,Pepin et al. 2010,maintenance vector,lit_review
+Rift Valley fever,Aedes (Neomelaniconion) circumluteolus,mosquito,confirmed,review,,Pepin et al. 2010,maintenance vector,lit_review
+Rift Valley fever,Aedes (Aedimorphus) vexans arabiensis,mosquito,probable,review,,Pepin et al. 2010,likely maintenance vector,lit_review
+Rift Valley fever,Aedes (Aedimorphus) dentatus,mosquito,probable,review,,Pepin et al. 2010,epidemiological importance,lit_review
+Rift Valley fever,Culex (Culex) pipiens,mosquito,confirmed,review,,Pepin et al. 2010,1977 Egypt vector,lit_review
+Rift Valley fever,Culex (Culex) poicilipes,mosquito,confirmed,review,,Pepin et al. 2010,West Africa outbreak vector,lit_review
+Rift Valley fever,Culex (Culex) theileri,mosquito,probable,review,,Pepin et al. 2010,epidemic vector,lit_review
+Rift Valley fever,Culex (Culex) tritaeniorhynchus,mosquito,probable,review,,Pepin et al. 2010,Saudi Arabia outbreak,lit_review
+Rift Valley fever,Culex (Culex) antennatus,mosquito,candidate,review,,Pepin et al. 2010,significance unclear,lit_review
+Rift Valley fever,Culex (Culex) neavei,mosquito,candidate,review,,Pepin et al. 2010,limited support,lit_review
+Rift Valley fever,Culex (Culex) zombaensis,mosquito,candidate,review,,Pepin et al. 2010,limited support,lit_review
+Rift Valley fever,Aedes (Neomelaniconion) palpalis group,mosquito,weak,review,,Pepin et al. 2010,debated,lit_review
+Rift Valley fever,Eretmapodites chrysogaster sensu lato,mosquito,weak,review,,Pepin et al. 2010,limited sample,lit_review
+Rift Valley fever,Eretmapodites quinquevittatus,mosquito,weak,review,,Pepin et al. 2010,debated,lit_review
+Rift Valley fever,Ochlerotatus juppi,mosquito,weak,review,,Pepin et al. 2010,no clear role,lit_review
+Rift Valley fever,Ochlerotatus caballus,mosquito,weak,review,,Pepin et al. 2010,lab only,lit_review
+Rift Valley fever,Amblyomma variegatum,tick,weak,review,,Pepin et al. 2010,field isolate,lit_review
+Rift Valley fever,Rhipicephalus appendiculatus,tick,weak,review,,Pepin et al. 2010,lab susceptibility,lit_review
+Rift Valley fever,Aedes mcintoshi,mosquito,probable,review,East Africa,Rolin et al. 2013,transovarial transmission,lit_review
+Rift Valley fever,Culex pipiens,mosquito,candidate,review,Egypt,Rolin et al. 2013,lab competence,lit_review
+Rift Valley fever,Aedes taeniorhynchus,mosquito,candidate,review,North America,Rolin et al. 2013,lab competence,lit_review
+Rift Valley fever,Anopheles gambiae arabiensis,mosquito,candidate,field,White Nile state; Khartoum state,Seufi and Galal 2010,PCR only,lit_review
+Rift Valley fever,Anopheles coustani,mosquito,candidate,field,White Nile state; Khartoum state,Seufi and Galal 2010,PCR only; table/text inconsistent,lit_review
+Rift Valley fever,Culex pipiens complex,mosquito,candidate,field,White Nile state; Khartoum state,Seufi and Galal 2010,PCR only,lit_review
+Rift Valley fever,Culex poicilipes,mosquito,candidate,field,White Nile state; Khartoum state,Seufi and Galal 2010,PCR only; table/text inconsistent,lit_review
+Rift Valley fever,Aedes aegypti,mosquito,candidate,field,White Nile state,Seufi and Galal 2010,PCR only,lit_review
+Rift Valley fever,Culex antennatus,mosquito,confirmed,review,Madagascar,Tantely et al. 2015,major vector,lit_review
+Rift Valley fever,Anopheles coustani,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Anopheles squamosus,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Culex univittatus,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Culex pipiens,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Culex quinquefasciatus,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Culex poicilipes,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Culex tritaeniorhynchus,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Eretmapodites quinquevittatus,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Mansonia uniformis,mosquito,candidate,review,Madagascar,Tantely et al. 2015,candidate vector,lit_review
+Rift Valley fever,Aedes palpalis,mosquito,probable,lab,Central African Republic,Turell et al. 2008,transmitted by bite,lit_review
+Rift Valley fever,Aedes mcintoshi,mosquito,probable,lab,Kenya,Turell et al. 2008,transmitted by bite,lit_review
+Rift Valley fever,Aedes circumluteolus,mosquito,probable,lab,Kenya,Turell et al. 2008,transmitted by bite,lit_review
+Rift Valley fever,Culex antennatus,mosquito,probable,lab,Kenya,Turell et al. 2008,transmitted by bite,lit_review
+Rift Valley fever,Culex pipiens,mosquito,probable,lab,Egypt,Turell et al. 2008,transmitted by bite,lit_review
+Rift Valley fever,Aedes aegypti,mosquito,weak,lab,Kenya,Turell et al. 2008,inoculated transmission only,lit_review
+Rift Valley fever,Aedes calceatus,mosquito,weak,lab,Kenya,Turell et al. 2008,no bite transmission in this study,lit_review
+Rift Valley fever,Culex quinquefasciatus,mosquito,weak,lab,Kenya,Turell et al. 2008,no bite transmission in this study,lit_review
+Rift Valley fever,Aedes aegypti,mosquito,probable,review,,Wu et al. 2025,highly competent Aedes vector,lit_review
+Rift Valley fever,Aedes albopictus,mosquito,probable,review,,Wu et al. 2025,highly competent Aedes vector,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,review,Asia-Pacific region,Casel et al. 2021,main transmission vector,lit_review
+SFTSV,Haemaphysalis flava,tick,weak,review,SFTS endemic areas,Casel et al. 2021,PCR only,lit_review
+SFTSV,Rhipicephalus microplus,tick,weak,review,SFTS endemic areas,Casel et al. 2021,PCR only,lit_review
+SFTSV,Amblyomma testudinarium,tick,weak,review,SFTS endemic areas,Casel et al. 2021,PCR only,lit_review
+SFTSV,Dermacentor nuttalli,tick,weak,review,SFTS endemic areas,Casel et al. 2021,PCR only,lit_review
+SFTSV,Hyalomma asiaticum,tick,weak,review,SFTS endemic areas,Casel et al. 2021,PCR only,lit_review
+SFTSV,Ixodes nipponensis,tick,weak,review,SFTS endemic areas,Casel et al. 2021,PCR only,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,review,,Cui et al. 2024,main vector,lit_review
+SFTSV,Ixodes sinensis,tick,confirmed,review,central and southern China,Cui et al. 2024,also vector; human-feeding note,lit_review
+SFTSV,Haemaphysalis flava,tick,confirmed,review,,Cui et al. 2024,also vector,lit_review
+SFTSV,Amblyomma testudinarium,tick,confirmed,review,,Cui et al. 2024,also vector,lit_review
+SFTSV,Ixodes nipponensis,tick,confirmed,review,,Cui et al. 2024,also vector,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,field+lab,China,Hu et al. 2020,positive control; established vector,lit_review
+SFTSV,Ixodes sinensis,tick,confirmed,lab,China,Hu et al. 2020,efficient vector; transovarial,lit_review
+SFTSV,Dermacentor silvarum,tick,weak,lab,China,Hu et al. 2020,PCR only; animal negative,lit_review
+SFTSV,Ixodes persulcatus,tick,weak,lab,China,Hu et al. 2020,PCR only; no transmission,lit_review
+SFTSV,Haemaphysalis longicornis,tick,candidate,review,,Huang et al. 2020,suspected vector,lit_review
+SFTSV,Amblyomma testudinarium,tick,confirmed,field,"Miyazaki Prefecture, Japan",Sato et al. 2021,primary vector; virus isolated,lit_review
+SFTSV,Haemaphysalis flava,tick,probable,field,"Miyazaki Prefecture, Japan",Sato et al. 2021,virus isolated; potential human vector,lit_review
+SFTSV,Haemaphysalis formosensis,tick,candidate,field,"Miyazaki Prefecture, Japan",Sato et al. 2021,virus isolated; maintenance role,lit_review
+SFTSV,Haemaphysalis hystricis,tick,probable,field,"Miyazaki Prefecture, Japan",Sato et al. 2021,virus isolated; potential vector,lit_review
+SFTSV,Haemaphysalis megaspinosa,tick,candidate,field,"Miyazaki Prefecture, Japan",Sato et al. 2021,virus isolated; maintenance role,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,review,,Sun et al. 2024,primary transmitter; tick vector,lit_review
+SFTSV,Haemaphysalis flava,tick,probable,review,,Sun et al. 2024,background-cited transmitter,lit_review
+SFTSV,Ixodes sinensis,tick,probable,review,,Sun et al. 2024,background-cited transmitter,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,review,Asia,Wang et al. 2021,primary vector,lit_review
+SFTSV,Ixodes sinensis,tick,confirmed,review,,Wang et al. 2021,transovarial/horizontal transmission,lit_review
+SFTSV,Haemaphysalis flava,tick,weak,review,ROK; Japan,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Haemaphysalis concinna,tick,weak,review,China,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Haemaphysalis formosensis,tick,weak,review,Japan,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Haemaphysalis hystricis,tick,weak,review,Japan,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Haemaphysalis megaspinosa,tick,weak,review,Japan; ROK,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Ixodes nipponensis,tick,weak,review,ROK,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Amblyomma testudinarium,tick,weak,review,ROK; Japan,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Rhipicephalus microplus,tick,weak,review,China,Wang et al. 2021 Table 1,PCR only,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,review,Asia-Pacific region,Xu et al. 2024,primary transmission vector,lit_review
+SFTSV,Haemaphysalis flava,tick,confirmed,review,,Xu et al. 2024,common transmission vector,lit_review
+SFTSV,Haemaphysalis hystricis,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Haemaphysalis formosensis,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Haemaphysalis concinna,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Haemaphysalis japonica,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Ixodes nipponensis,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Ixodes persulcatus,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Dermacentor silvarum,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Amblyomma testudinarium,tick,weak,review,,Xu et al. 2024,PCR only,lit_review
+SFTSV,Haemaphysalis longicornis,tick,confirmed,review,Asia-Pacific region,Zhang et al. 2022,transmitted by; major role,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,lab,,Belova et al. 2023,main vector; lab competence,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,confirmed,lab,,Belova et al. 2023,main vector; lab competence,lit_review
+tick-borne encephalitis,Dermacentor reticulatus,tick,candidate,field,Poland,Biernat et al. 2014,PCR only,lit_review
+tick-borne encephalitis,Dermacentor reticulatus,tick,probable,field+lab,northern Saxony Germany,Chitimia-Dobler et al. 2019,adult pools; repeated isolation; equal role,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,field+lab,northern Saxony Germany,Chitimia-Dobler et al. 2019,nymph pools only; common vector in source,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,,Jääskeläinen et al. 2011,principal vector of TBEV-Eur,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,probable,field,"Simo, Finnish Lapland, Finland",Jääskeläinen et al. 2011,field infection and virus isolation,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,confirmed,review,,Kazimírová et al. 2017,principal vector,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,,Kazimírová et al. 2017,principal vector,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,confirmed,review,nontropical Eurasia,Korenberg 2000,principal vector,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,nontropical Eurasia,Korenberg 2000,principal vector,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,"central, northern, and eastern Europe",Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,confirmed,review,"parts of the Baltic States, Finland, Russia, and Siberia",Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Ixodes hexagonus,tick,confirmed,review,Central Europe,Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Ixodes arboricola,tick,confirmed,review,Central Europe,Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Haemaphysalis punctata,tick,confirmed,review,Central Europe,Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Haemaphysalis concinna,tick,confirmed,review,Central Europe,Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Dermacentor marginatus,tick,confirmed,review,Central Europe,Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Dermacentor reticulatus,tick,confirmed,review,Central Europe,Kwasnik et al. 2023,,lit_review
+tick-borne encephalitis,Ixodes gibbosus,tick,weak,review,Mediterranean region,Kwasnik et al. 2023,marginal vector,lit_review
+tick-borne encephalitis,Haemaphysalis inermis,tick,probable,review,,Kwasnik et al. 2023,experimental competence,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,Europe,Mittova et al. 2024,principal vector in Europe,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,confirmed,review,Russia and Asia,Mittova et al. 2024,main vector in Russia and Asia,lit_review
+tick-borne encephalitis,Haemaphysalis concinna,tick,probable,review,Asia,Mittova et al. 2024,major vector in Asia,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,field,Odenwald Hills southwestern Germany,Ott et al. 2020,main vector,lit_review
+tick-borne encephalitis,Dermacentor reticulatus,tick,weak,field,Rhine plain southwestern Germany,Ott et al. 2020,single isolate; debated,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,,Petit et al. 2024,primary vector,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,probable,review,"widespread, including central Europe, Scandinavia and the UK",Petit et al. 2024,table-listed,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,review,Europe,Pustijanac et al. 2023,principal vector,lit_review
+tick-borne encephalitis,Ixodes persulcatus,tick,confirmed,review,,Pustijanac et al. 2023,principal vector,lit_review
+tick-borne encephalitis,Haemaphysalis concinna,tick,probable,review,Asia,Pustijanac et al. 2023,significant vector,lit_review
+tick-borne encephalitis,Dermacentor reticulatus,tick,probable,review,Poland; Germany,Pustijanac et al. 2023,significant involvement,lit_review
+tick-borne encephalitis,Ixodes ricinus,tick,confirmed,lab,"Central, Eastern and Northern Europe",Weisheit et al. 2015,natural vector; cell line,lit_review
+tick-borne encephalitis,Ixodes scapularis,tick,weak,lab,,Weisheit et al. 2015,not known natural vector; reduced capacity,lit_review
+Venezuelan equine encephalitis virus,Ochlerotatus detritus,mosquito,candidate,lab,UK,Chapman et al. 2020,salivary RNA only,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) vomerifer,mosquito,confirmed,field,Monte San Miguel Forest; middle Magdalena Valley; Colombia,Ferro et al. 2003,principal vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) pedroi,mosquito,confirmed,field,Monte San Miguel Forest; middle Magdalena Valley; Colombia,Ferro et al. 2003,principal vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) adamesi,mosquito,confirmed,field,Monte San Miguel Forest; middle Magdalena Valley; Colombia,Ferro et al. 2003,secondary vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) aikenii sensu lato,mosquito,confirmed,review,Panama,Ferro et al. 2003,ocossa and panocossa,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) taeniopus,mosquito,confirmed,review,Guatemala,Ferro et al. 2003,primary enzootic vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) taeniopus,mosquito,confirmed,lab,,Forrester et al. 2012,natural enzootic vector,lit_review
+Venezuelan equine encephalitis virus,Aedes (Ochlerotatus) taeniorhynchus,mosquito,probable,review,,Forrester et al. 2012,epizootic vector; prior study cited,lit_review
+Venezuelan equine encephalitis virus,Culex vomerifer,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex pedroi,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex adamesi,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex delpontei,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex ocossa,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex panocossa,mosquito,probable,review,peninsular Florida; USA,Sloyer et al. 2022,vector of VEEV-ID,lit_review
+Venezuelan equine encephalitis virus,Culex spissipes,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex taeniopus,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex cedecei,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex portesi,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Culex gnomatos,mosquito,candidate,review,,Sloyer et al. 2022,confirmed or suspected vector list,lit_review
+Venezuelan equine encephalitis virus,Aedes taeniorhynchus,mosquito,confirmed,review,,Torres et al. 2017,dominant epizootic vector,lit_review
+Venezuelan equine encephalitis virus,Psorophora confinnis,mosquito,confirmed,review,,Torres et al. 2017,dominant epizootic vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) portesi,mosquito,confirmed,review,Trinidad,Torres et al. 2017,transmits subtype IIIA,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) cedeci,mosquito,confirmed,review,Southern Florida; USA,Torres et al. 2017,transmits subtype II,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) dunni,mosquito,candidate,review,,Torres et al. 2017,reported VEEV vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) pedroi,mosquito,probable,review,Colombia,Torres et al. 2017,found infected with subtype ID,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) spissipes,mosquito,candidate,review,,Torres et al. 2017,reported VEEV vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) adamesi,mosquito,probable,review,Colombia,Torres et al. 2017,found infected with subtype ID,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) crybda,mosquito,candidate,review,,Torres et al. 2017,reported VEEV vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) vomerifer,mosquito,probable,review,Panama; Peru; Colombia,Torres et al. 2017,infected or susceptible in prior studies,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) ocossa,mosquito,probable,review,Lake Bayano; Panama,Torres et al. 2017,VEEV isolate,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) taeniopus,mosquito,confirmed,review,Panama; Guatemala,Torres et al. 2017,main vector in Guatemala,lit_review
+Venezuelan equine encephalitis virus,Culex (Melanoconion) erraticus,mosquito,probable,review,Lake Bayano; Panama,Torres et al. 2017,VEEV isolate,lit_review
+Venezuelan equine encephalitis virus,Culex (Culex) nigripalpus,mosquito,candidate,review,,Torres et al. 2017,reported VEEV vector,lit_review
+Venezuelan equine encephalitis virus,Culex (Culex) declarator,mosquito,candidate,review,,Torres et al. 2017,reported VEEV vector,lit_review
+Venezuelan equine encephalitis virus,Aedes (Ochlerotatus) scapularis,mosquito,probable,review,,Torres et al. 2017,incriminated in outbreaks,lit_review
+Venezuelan equine encephalitis virus,Aedes (Ochlerotatus) angustivittatus,mosquito,candidate,review,Colombia,Torres et al. 2017,found infected with VEEV,lit_review
+Venezuelan equine encephalitis virus,Aedes (Ochlerotatus) serratus,mosquito,candidate,review,,Torres et al. 2017,susceptible to VEE,lit_review
+Venezuelan equine encephalitis virus,Aedes (Ochlerotatus) fulvus,mosquito,candidate,review,,Torres et al. 2017,susceptible to VEE,lit_review
+Venezuelan equine encephalitis virus,Coquillettidia venezuelensis,mosquito,probable,review,,Torres et al. 2017,vector of VEE,lit_review
+Venezuelan equine encephalitis virus,Psorophora ferox,mosquito,probable,review,,Torres et al. 2017,VEEV isolated,lit_review
+Venezuelan equine encephalitis virus,Psorophora albipes,mosquito,probable,review,,Torres et al. 2017,VEEV isolated,lit_review
+Venezuelan equine encephalitis virus,Mansonia indubitans,mosquito,probable,review,,Torres et al. 2017,subtypes IC/IAB isolated,lit_review
+Venezuelan equine encephalitis virus,Mansonia titillans,mosquito,probable,review,,Torres et al. 2017,subtypes IC/IAB isolated,lit_review
+Venezuelan equine encephalitis virus,Mansonia dyari,mosquito,probable,review,Lake Bayano; Panama,Torres et al. 2017,subtypes IC/IAB isolated,lit_review
+Venezuelan equine encephalitis virus,Anopheles pseudopunctipennis,mosquito,probable,review,,Torres et al. 2017,subtypes IC/IAB isolated,lit_review
+West Nile virus,Culex pipiens s.l.,mosquito,confirmed,review,Europe,Bellini et al. 2014,major vector role,lit_review
+West Nile virus,Culex modestus,mosquito,probable,review,Europe,Bellini et al. 2014,regional role,lit_review
+West Nile virus,Culex univittatus,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Coquillettidia richiardii,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Aedes cantans,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Aedes caspius,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Aedes excrucians,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Aedes vexans,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Anopheles maculipennis s.s.,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Anopheles atroparvus,mosquito,candidate,review,Europe,Bellini et al. 2014,field-collected example,lit_review
+West Nile virus,Culex pipiens,mosquito,probable,review,Europe,Engler et al. 2013,important vector species,lit_review
+West Nile virus,Culex modestus,mosquito,probable,review,Europe,Engler et al. 2013,important vector species,lit_review
+West Nile virus,Culex perexiguus,mosquito,candidate,field,Spain,Engler et al. 2013,WNV-positive pools,lit_review
+West Nile virus,Ochlerotatus caspius,mosquito,weak,field,Italy,Engler et al. 2013,WNV-positive pools,lit_review
+West Nile virus,Aedes caspius,mosquito,weak,review,Europe,Ferraguti 2024,natural infection; debated,lit_review
+West Nile virus,Culex modestus,mosquito,confirmed,review,Europe,Ferraguti 2024,primary vector in Europe,lit_review
+West Nile virus,Culex perexiguus,mosquito,confirmed,review,Europe,Ferraguti 2024,primary vector in Europe,lit_review
+West Nile virus,Culex pipiens,mosquito,confirmed,review,Europe,Ferraguti 2024,primary vector in Europe,lit_review
+West Nile virus,Culex tarsalis,mosquito,probable,lab,California USA,Goddard et al. 2002,primary role,lit_review
+West Nile virus,Culex pipiens pipiens,mosquito,probable,lab,California USA,Goddard et al. 2002,enzootic vector candidate,lit_review
+West Nile virus,Culex pipiens quinquefasciatus,mosquito,candidate,lab,California USA,Goddard et al. 2002,variable populations,lit_review
+West Nile virus,Culex stigmatosoma,mosquito,probable,lab,California USA,Goddard et al. 2002,urban settings,lit_review
+West Nile virus,Culex erythrothorax,mosquito,probable,lab,California USA,Goddard et al. 2002,bridge potential,lit_review
+West Nile virus,Ochlerotatus dorsalis,mosquito,candidate,lab,California USA,Goddard et al. 2002,secondary role questioned,lit_review
+West Nile virus,Ochlerotatus melanimon,mosquito,candidate,lab,California USA,Goddard et al. 2002,secondary role questioned,lit_review
+West Nile virus,Ochlerotatus sierrensis,mosquito,weak,lab,California USA,Goddard et al. 2002,probably not vector,lit_review
+West Nile virus,Aedes vexans,mosquito,candidate,lab,California USA,Goddard et al. 2002,mammal-feeding,lit_review
+West Nile virus,Culiseta inornata,mosquito,candidate,lab,California USA,Goddard et al. 2002,minor role,lit_review
+West Nile virus,Culex spp.,mosquito,confirmed,review,global,Gray and Webb 2014,primary vectors,lit_review
+West Nile virus,Aedes spp.,mosquito,candidate,review,,Gray and Webb 2014,lab only,lit_review
+West Nile virus,Culex tarsalis,mosquito,confirmed,review,North America,Gray and Webb 2014,major vector,lit_review
+West Nile virus,Culex modestus,mosquito,probable,review,Europe,Gray and Webb 2014,locally important vector,lit_review
+West Nile virus,Culex pipiens,mosquito,candidate,field,Italy; Greece,Hernandez-Triana et al. 2014,WNV-positive pools,lit_review
+West Nile virus,Culex modestus,mosquito,weak,field,Italy; Greece,Hernandez-Triana et al. 2014,to a lesser extent,lit_review
+West Nile virus,Aedes albopictus,mosquito,probable,lab,Europe,Hernandez-Triana et al. 2014,competent vector,lit_review
+West Nile virus,Culex annulirostris,mosquito,confirmed,field+lab,Australia,Jansen et al. 2013,principal vector,lit_review
+West Nile virus,Culex quinquefasciatus,mosquito,probable,field+lab,Australia,Jansen et al. 2013,primary enzootic candidate,lit_review
+West Nile virus,Culex gelidus,mosquito,candidate,lab,northern Australia,Jansen et al. 2013,introduced lab vector,lit_review
+West Nile virus,Culex squamosus,mosquito,candidate,field,northern Queensland,Jansen et al. 2013,regional candidate,lit_review
+West Nile virus,Culex sitiens,mosquito,weak,field+lab,coastal Australia,Jansen et al. 2013,poor lab vector; regional candidate,lit_review
+West Nile virus,Culex australicus,mosquito,candidate,field,Australia,Jansen et al. 2013,field isolate; secondary vector,lit_review
+West Nile virus,Culex molestus,mosquito,candidate,review,Australia,Jansen et al. 2013,potential vector,lit_review
+West Nile virus,Aedes vigilax,mosquito,candidate,review,Australia,Jansen et al. 2013,bridge vector candidate,lit_review
+West Nile virus,Aedes notoscriptus,mosquito,candidate,review,Australia,Jansen et al. 2013,bridge vector candidate,lit_review
+West Nile virus,Aedes alternans,mosquito,candidate,field,Australia,Jansen et al. 2013,field isolate; secondary vector,lit_review
+West Nile virus,Aedes normanensis,mosquito,candidate,field,Australia,Jansen et al. 2013,field isolate; secondary vector,lit_review
+West Nile virus,Aedes tremulus,mosquito,candidate,field,Australia,Jansen et al. 2013,field isolate; secondary vector,lit_review
+West Nile virus,Anopheles amictus,mosquito,weak,field,Australia,Jansen et al. 2013,field isolate,lit_review
+West Nile virus,Culex modestus,mosquito,confirmed,review,France,Martinet et al. 2019,historical vector in France,lit_review
+West Nile virus,Culex pipiens biotype pipiens,mosquito,probable,review,France; The Netherlands; Switzerland; Germany,Martinet et al. 2019,competent for lineages 1 and 2,lit_review
+West Nile virus,Culex pipiens biotype molestus,mosquito,probable,review,France; The Netherlands; Switzerland; Germany,Martinet et al. 2019,competent for lineages 1 and 2,lit_review
+West Nile virus,Culex torrentium,mosquito,probable,review,France; The Netherlands; Switzerland; Germany,Martinet et al. 2019,competent for lineages 1 and 2,lit_review
+West Nile virus,Aedes detritus,mosquito,probable,review,United Kingdom,Martinet et al. 2019,competence demonstrated,lit_review
+West Nile virus,Anopheles plumbeus,mosquito,candidate,review,,Martinet et al. 2019,tested competent; role uncertain,lit_review
+West Nile virus,Aedes geniculatus,mosquito,candidate,review,,Martinet et al. 2019,tested competent; role uncertain,lit_review
+West Nile virus,Culex pipiens,mosquito,probable,lab,northeastern France (Machault; Maine; Verzy),Martinet et al. 2023,main vector,lit_review
+West Nile virus,Aedes rusticus,mosquito,probable,lab,northeastern France (Berru),Martinet et al. 2023,new putative vector,lit_review
+West Nile virus,Aedes albopictus,mosquito,probable,lab,northeastern France (Strasbourg),Martinet et al. 2023,new putative vector,lit_review
+West Nile virus,Anopheles plumbeus,mosquito,weak,lab,northeastern France (Beaumont),Martinet et al. 2023,infected but did not transmit,lit_review
+West Nile virus,Aedes albopictus,mosquito,confirmed,review,Spain; Italy,Vogels et al. 2017,competent,lit_review
+West Nile virus,Aedes caspius,mosquito,weak,review,France,Vogels et al. 2017,not competent,lit_review
+West Nile virus,Aedes detritus,mosquito,confirmed,review,United Kingdom,Vogels et al. 2017,competent,lit_review
+West Nile virus,Aedes japonicus japonicus,mosquito,weak,review,Germany,Vogels et al. 2017,not competent,lit_review
+West Nile virus,Culex modestus,mosquito,confirmed,review,France,Vogels et al. 2017,efficient vector,lit_review
+West Nile virus,Culex torrentium,mosquito,candidate,review,Germany,Vogels et al. 2017,infection and dissemination only,lit_review
+West Nile virus,Culex pipiens,mosquito,confirmed,review,Europe,Vogels et al. 2017,most important vector,lit_review
+yellow fever,Haemagogus janthinomys,mosquito,confirmed,field,southeastern Brazil,"(Abreu et al., 2019)",primary vector,lit_review
+yellow fever,Haemagogus leucocelaenus,mosquito,confirmed,field,southeastern Brazil,"(Abreu et al., 2019)",primary vector,lit_review
+yellow fever,Sabethes chloropterus,mosquito,candidate,field,southeastern Brazil,"(Abreu et al., 2019)",potential local/secondary role,lit_review
+yellow fever,Aedes scapularis,mosquito,candidate,field,southeastern Brazil,"(Abreu et al., 2019)",potential local/secondary role,lit_review
+yellow fever,Aedes taeniorhynchus,mosquito,candidate,field,"coastal lowlands, southeastern Brazil","(Abreu et al., 2019)",first natural infection; local role,lit_review
+yellow fever,Aedes aegypti,mosquito,confirmed,review,Africa; Caribbean; South America,"(Braack et al., 2018)",urban vector,lit_review
+yellow fever,Aedes africanus,mosquito,confirmed,review,Africa,"(Braack et al., 2018)",primary sylvatic vector,lit_review
+yellow fever,Aedes furcifer/taylori,mosquito,confirmed,review,Africa,"(Braack et al., 2018)",primary sylvatic vector,lit_review
+yellow fever,Aedes luteocephalus,mosquito,confirmed,review,Africa,"(Braack et al., 2018)",primary sylvatic vector,lit_review
+yellow fever,Aedes metallicus,mosquito,confirmed,review,Africa,"(Braack et al., 2018)",primary sylvatic vector,lit_review
+yellow fever,Aedes vittatus,mosquito,confirmed,review,Africa,"(Braack et al., 2018)",primary sylvatic vector,lit_review
+yellow fever,Aedes opok,mosquito,confirmed,review,Africa,"(Braack et al., 2018)",primary sylvatic vector,lit_review
+yellow fever,Aedes albopictus,mosquito,candidate,review,,"(Braack et al., 2018)",table-listed,lit_review
+yellow fever,Aedes simpsoni complex,mosquito,candidate,review,Africa,"(Braack et al., 2018)",table-listed,lit_review
+yellow fever,Haemagogus capricorni,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Haemagogus equines,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Haemagogus janthinomys,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Haemagogus leucocelaenus,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Haemagogus mesodentatus,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Haemagogus spegazzinii,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Sabethes chloropterus,mosquito,probable,review,South America; Caribbean,"(Braack et al., 2018)",sylvatic cycle,lit_review
+yellow fever,Aedes albopictus,mosquito,confirmed,lab,"Ananindeua, Para, Brazil","(Damasceno-Caldeira et al., 2023)",experimental transmission,lit_review
+yellow fever,Aedes aegypti,mosquito,confirmed,review,global,"(Gabiane, Yen and Failloux, 2022)",principal urban vector,lit_review
+yellow fever,Aedes albopictus,mosquito,probable,review,global,"(Gabiane, Yen and Failloux, 2022)",potential bridge vector; experimental transmission,lit_review
+yellow fever,Aedes africanus,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",major sylvatic vector,lit_review
+yellow fever,Aedes furcifer,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",major sylvatic/bridge vector,lit_review
+yellow fever,Aedes taylori,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",major sylvatic vector,lit_review
+yellow fever,Aedes luteocephalus,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",major sylvatic vector,lit_review
+yellow fever,Aedes opok,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",major sylvatic vector,lit_review
+yellow fever,Aedes vittatus,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",bridge vector,lit_review
+yellow fever,Aedes bromeliae,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",bridge vector,lit_review
+yellow fever,Aedes keniensis,mosquito,confirmed,review,Africa,"(Gabiane, Yen and Failloux, 2022)",bridge vector,lit_review
+yellow fever,Haemagogus janthinomys,mosquito,confirmed,review,Trinidad,"(Gabiane, Yen and Failloux, 2022)",sylvatic cycle,lit_review
+yellow fever,Sabethes chloropterus,mosquito,confirmed,review,Trinidad,"(Gabiane, Yen and Failloux, 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes aegypti,mosquito,confirmed,lab,Caribbean,"(Gabiane et al., 2024)",main urban vector; lab competence,lit_review
+yellow fever,Aedes aegypti,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",urban cycle,lit_review
+yellow fever,Aedes albopictus,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",bridge vector,lit_review
+yellow fever,Aedes africanus,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes opok,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes simpsoni,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes luteocephalus,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes taylori,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes vittatus,mosquito,confirmed,review,sub-Saharan Africa,"(Oyono et al., 2022)",sylvatic cycle,lit_review
+yellow fever,Aedes furcifer,mosquito,candidate,review,sub-Saharan Africa,"(Oyono et al., 2022)",positive only,lit_review
+yellow fever,Aedes centropunctatus,mosquito,candidate,review,sub-Saharan Africa,"(Oyono et al., 2022)",positive only,lit_review
+yellow fever,Aedes dalzieli,mosquito,candidate,review,sub-Saharan Africa,"(Oyono et al., 2022)",positive only,lit_review
+yellow fever,Aedes mcintoshi,mosquito,candidate,review,sub-Saharan Africa,"(Oyono et al., 2022)",positive only,lit_review
+yellow fever,Anopheles funestus,mosquito,candidate,review,sub-Saharan Africa,"(Oyono et al., 2022)",positive only,lit_review
+yellow fever,Aedes aegypti,mosquito,confirmed,review,global,"(Shinde et al., 2022)",urban vector,lit_review
+yellow fever,Aedes africanus,mosquito,confirmed,review,tropical Africa,"(Shinde et al., 2022)",principal sylvatic vector,lit_review
+yellow fever,Aedes furcifer,mosquito,confirmed,review,Africa,"(Shinde et al., 2022)",semi-domestic vector,lit_review
+yellow fever,Aedes bromeliae,mosquito,confirmed,review,Africa,"(Shinde et al., 2022)",semi-domestic vector,lit_review
+yellow fever,Aedes luteocephalis,mosquito,confirmed,review,Africa,"(Shinde et al., 2022)",semi-domestic vector,lit_review
+yellow fever,Aedes furcifer-taylori,mosquito,probable,review,tropical Africa,"(Shinde et al., 2022)",implicated,lit_review
+yellow fever,Aedes vittatus,mosquito,probable,review,tropical Africa,"(Shinde et al., 2022)",implicated,lit_review
+yellow fever,Aedes simpsoni,mosquito,probable,review,tropical Africa,"(Shinde et al., 2022)",implicated,lit_review
+yellow fever,Haemagogus janthinomys,mosquito,confirmed,review,South America,"(Shinde et al., 2022)",sylvatic vector,lit_review
+yellow fever,Haemagogus spegazzinni,mosquito,probable,review,South America,"(Shinde et al., 2022)",sylvatic vector,lit_review
+yellow fever,Haemagogus leucocelaenus,mosquito,confirmed,review,South America,"(Shinde et al., 2022)",sylvatic vector,lit_review
+yellow fever,Sabethes chloropterus,mosquito,probable,review,South America,"(Shinde et al., 2022)",sylvatic vector,lit_review
+yellow fever,Sabethes albipivus,mosquito,confirmed,review,South America,"(Shinde et al., 2022)",experimental competence,lit_review
+yellow fever,Sabethes soperi,mosquito,probable,review,South America,"(Shinde et al., 2022)",sylvatic vector,lit_review
+yellow fever,Sabethes cyaneus,mosquito,probable,review,South America,"(Shinde et al., 2022)",sylvatic vector,lit_review
+zika,Aedes hensilli,mosquito,probable,field+lab,"Yap Island, Federated States of Micronesia","(Ledermann et al., 2014)",probable outbreak vector,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,global,"(Delrieu et al., 2023)",,lit_review
+zika,Aedes albopictus,mosquito,confirmed,review,global,"(Delrieu et al., 2023)",,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,worldwide,Bisia et al. 2023,primary vector,lit_review
+zika,Aedes albopictus,mosquito,confirmed,review,worldwide,Bisia et al. 2023,secondary vector,lit_review
+zika,Aedes japonicus,mosquito,probable,review,temperate regions,Bisia et al. 2023,secondary vector at higher temperature,lit_review
+zika,Aedes detritus,mosquito,probable,review,temperate regions,Bisia et al. 2023,secondary vector at higher temperature,lit_review
+zika,Aedes vexans,mosquito,probable,review,temperate regions,Bisia et al. 2023,secondary vector at higher temperature,lit_review
+zika,Aedes notoscriptus,mosquito,candidate,review,Australia,Bisia et al. 2023,local secondary vector,lit_review
+zika,Aedes camptorhynchus,mosquito,candidate,review,Australia,Bisia et al. 2023,local secondary vector,lit_review
+zika,Culex quinquefasciatus,mosquito,weak,review,,Bisia et al. 2023,not an efficient vector,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,,Delrieu et al. 2023,one of two species covered,lit_review
+zika,Aedes albopictus,mosquito,probable,review,,Delrieu et al. 2023,mixed experimental findings,lit_review
+zika,Aedes aegypti,mosquito,confirmed,lab,,Dodson et al. 2018,positive control; transmitted,lit_review
+zika,Anopheles freeborni,mosquito,weak,lab,United States,Dodson et al. 2018,not competent,lit_review
+zika,Anopheles quadrimaculatus,mosquito,weak,lab,United States,Dodson et al. 2018,not competent,lit_review
+zika,Culex tarsalis,mosquito,weak,lab,United States,Dodson et al. 2018,not competent,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,,Epelboin et al. 2017,main vector,lit_review
+zika,Aedes albopictus,mosquito,probable,review,,Epelboin et al. 2017,competent; field isolate,lit_review
+zika,Aedes africanus,mosquito,candidate,review,Uganda; Central African Republic,Epelboin et al. 2017,sylvatic cycle,lit_review
+zika,Aedes apicoargenteus,mosquito,candidate,review,,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes camptorhynchus,mosquito,probable,review,Australia,Epelboin et al. 2017,secondary cases,lit_review
+zika,Aedes dalzieli,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes fowleri,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes furcifer,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes hensilli,mosquito,probable,review,Yap,Epelboin et al. 2017,probable vector,lit_review
+zika,Aedes hirsutus,mosquito,candidate,review,,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes luteocephalus,mosquito,probable,review,Senegal,Epelboin et al. 2017,saliva positive,lit_review
+zika,Aedes metallicus,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes minutus,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes neoafricanus,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes notoscriptus,mosquito,probable,review,Australia,Epelboin et al. 2017,secondary cases,lit_review
+zika,Aedes opok,mosquito,candidate,review,Central African Republic,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes taylori,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field infection,lit_review
+zika,Aedes triseriatus,mosquito,weak,review,North America,Epelboin et al. 2017,infection only; no transmission,lit_review
+zika,Aedes unilineatus,mosquito,weak,review,Senegal,Epelboin et al. 2017,low infection; no transmission,lit_review
+zika,Aedes vexans,mosquito,probable,review,northern United States,Epelboin et al. 2017,potential vector,lit_review
+zika,Aedes vittatus,mosquito,probable,review,Senegal,Epelboin et al. 2017,saliva positive,lit_review
+zika,Anopheles coustani,mosquito,candidate,review,Africa,Epelboin et al. 2017,field isolate,lit_review
+zika,Anopheles gambiae,mosquito,weak,review,Africa,Epelboin et al. 2017,field isolate; not competent,lit_review
+zika,Culex perfuscus,mosquito,candidate,review,Senegal,Epelboin et al. 2017,field isolate,lit_review
+zika,Culex quinquefasciatus,mosquito,weak,review,,Epelboin et al. 2017,controversial,lit_review
+zika,Mansonia uniformis,mosquito,candidate,review,Africa,Epelboin et al. 2017,field isolate,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Aedes albopictus,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Culex quinquefasciatus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes polynesiensis,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes scutellaris,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes africanus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes furcifer,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Aedes vittatus,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Aedes taylori,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Aedes luteocephalus,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Aedes metallicus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes minutus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes opok,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes bromeliae,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes scapularis,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Culex pipiens,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes hensilli,mosquito,confirmed,review,,Evans et al. 2017 Table 1,known vector,lit_review
+zika,Aedes vigilax,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Culex annulirostris,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Psorophora ferox,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Culex rubinotus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Culex tarsalis,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes occidentalis,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes flavicolis,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes serratus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Culex pipiens molestus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes vexans,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Culex neavei,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Runchomyia frontosa,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes neoafricanus,mosquito,candidate,review,,Evans et al. 2017 Table 1,model predicted,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,,Gardner et al. 2017,primary vector,lit_review
+zika,Aedes albopictus,mosquito,probable,review,,Gardner et al. 2017,secondary vector,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,global,Gutierrez-Bugallo et al. 2019,urban cycle,lit_review
+zika,Aedes albopictus,mosquito,probable,review,global,Gutierrez-Bugallo et al. 2019,potential major vector,lit_review
+zika,Aedes africanus,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes furcifer,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes luteocephalus,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes vittatus,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes dalzieli,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes taylori,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes vexans,mosquito,candidate,review,Mexico,Gutierrez-Bugallo et al. 2019,field detection and lab transmission,lit_review
+zika,Aedes notoscriptus,mosquito,candidate,review,,Gutierrez-Bugallo et al. 2019,lab transmission,lit_review
+zika,Aedes camptorhynchus,mosquito,candidate,review,,Gutierrez-Bugallo et al. 2019,lab transmission,lit_review
+zika,Aedes hensilli,mosquito,candidate,review,Yap Island,Gutierrez-Bugallo et al. 2019,outbreak-associated; no confirmed transmission,lit_review
+zika,Aedes polynesiensis,mosquito,candidate,review,French Polynesia,Gutierrez-Bugallo et al. 2019,outbreak-associated; no confirmed transmission,lit_review
+zika,Culex quinquefasciatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,debated,lit_review
+zika,Culex coronator,mosquito,weak,review,Mexico,Gutierrez-Bugallo et al. 2019,field detection only,lit_review
+zika,Culex tarsalis,mosquito,weak,review,Mexico,Gutierrez-Bugallo et al. 2019,field detection only,lit_review
+zika,Anopheles gambiae s.l.,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes apicoargenteus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes flavicollis,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes taeniarostris,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Eretmapodites inornatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Eretmapodites quinquevittatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes jamoti,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes grahamii,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes hirsutus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Culex perfuscus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes unilineatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Mansonia uniformis,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Culex pipiens,mosquito,weak,lab,"California; New Jersey, USA",Huang et al. 2016,refractory,lit_review
+zika,Culex quinquefasciatus,mosquito,weak,lab,"Florida, USA",Huang et al. 2016,refractory,lit_review
+zika,Aedes hensilli,mosquito,probable,field+lab,"Yap Island, Federated States of Micronesia",Ledermann et al. 2014,probable vector; no field isolate,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,global,Lourenco-de-Oliveira and Failloux 2017,main vector,lit_review
+zika,Culex pipiens,mosquito,weak,review,global,Lourenco-de-Oliveira and Failloux 2017,debated,lit_review
+zika,Culex quinquefasciatus,mosquito,weak,review,global,Lourenco-de-Oliveira and Failloux 2017,debated,lit_review
+zika,Aedes aegypti,mosquito,probable,lab,French Polynesia,Richard et al. 2016,late transmission,lit_review
+zika,Aedes polynesiensis,mosquito,weak,lab,French Polynesia,Richard et al. 2016,no infectious saliva,lit_review
+zika,Aedes albopictus,mosquito,probable,review,Europe,Schulz and Becker 2018,competent at 26-28 C only,lit_review
+zika,Culex pipiens,mosquito,weak,review,Italy,Schulz and Becker 2018,not competent,lit_review
+zika,Culex pipiens biotype pipiens,mosquito,weak,review,Germany,Schulz and Becker 2018,not competent,lit_review
+zika,Culex pipiens biotype molestus,mosquito,weak,review,Germany,Schulz and Becker 2018,not competent,lit_review
+zika,Culex torrentium,mosquito,weak,review,Germany,Schulz and Becker 2018,not competent,lit_review
+zika,Aedes aegypti,mosquito,confirmed,review,global,Gutierrez-Bugallo et al. 2019,urban cycle,lit_review
+zika,Aedes albopictus,mosquito,probable,review,global,Gutierrez-Bugallo et al. 2019,potential major vector,lit_review
+zika,Aedes africanus,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes furcifer,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes luteocephalus,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes vittatus,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes dalzieli,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes taylori,mosquito,probable,review,Africa,Gutierrez-Bugallo et al. 2019,sylvatic cycle,lit_review
+zika,Aedes vexans,mosquito,candidate,review,Mexico,Gutierrez-Bugallo et al. 2019,field detection and lab transmission,lit_review
+zika,Aedes notoscriptus,mosquito,candidate,review,,Gutierrez-Bugallo et al. 2019,lab transmission,lit_review
+zika,Aedes camptorhynchus,mosquito,candidate,review,,Gutierrez-Bugallo et al. 2019,lab transmission,lit_review
+zika,Aedes hensilli,mosquito,candidate,review,Yap Island,Gutierrez-Bugallo et al. 2019,outbreak-associated; no confirmed transmission,lit_review
+zika,Aedes polynesiensis,mosquito,candidate,review,French Polynesia,Gutierrez-Bugallo et al. 2019,outbreak-associated; no confirmed transmission,lit_review
+zika,Culex quinquefasciatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,debated,lit_review
+zika,Culex coronator,mosquito,weak,review,Mexico,Gutierrez-Bugallo et al. 2019,field detection only,lit_review
+zika,Culex tarsalis,mosquito,weak,review,Mexico,Gutierrez-Bugallo et al. 2019,field detection only,lit_review
+zika,Anopheles gambiae s.l.,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes apicoargenteus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes flavicollis,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes taeniarostris,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Eretmapodites inornatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Eretmapodites quinquevittatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes jamoti,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes grahamii,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes hirsutus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Culex perfuscus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Aedes unilineatus,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+zika,Mansonia uniformis,mosquito,weak,review,,Gutierrez-Bugallo et al. 2019,infected only once,lit_review
+African horse sickness virus,Culicoides obsoletus s.l.,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=African horse sickness virus; match_confidence=unmatched; match_method=unmatched,EFSA
+African horse sickness virus,Culicoides scoticus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=African horse sickness virus; match_confidence=unmatched; match_method=unmatched,EFSA
+African swine fever virus,Ornithodoros erraticus,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=African swine fever virus; match_confidence=unmatched; match_method=unmatched,EFSA
+African swine fever virus,Ornithodoros moubata,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=African swine fever virus; match_confidence=unmatched; match_method=unmatched,EFSA
+African swine fever virus,Ornithodoros moubata s.l.,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=African swine fever virus; match_confidence=unmatched; match_method=unmatched,EFSA
+African swine fever virus,Ornithodoros porcinus porcinus,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=African swine fever virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Akabane virus,Culicoides imicola,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Akabane virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Akabane virus,Culicoides oxystoma,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Akabane virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Akabane virus,Culicoides tainanus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Akabane virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides fulvus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides imicola,biting midge,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides obsoletus complex,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides obsoletus s.l.,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides orientalis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides oxystoma,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides pulicaris,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides scoticus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides sonorensis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bluetongue virus,Culicoides tainanus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bluetongue virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Bovine ephemeral fever virus,Culicoides sonorensis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Bovine ephemeral fever virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Aedes aegypti,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Aedes albopictus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Aedes japonicus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Aedes triseriatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Anopheles gambiae,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Anopheles quadrimaculatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Culex tarsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Cache Valley virus,Culex univittatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Cache Valley virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Crimean-Congo hemorrhagic fever,Hyalomma aegyptium,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Crimean-Congo haemorrhagic fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Crimean-Congo hemorrhagic fever,Hyalomma anatolicum,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Crimean-Congo haemorrhagic fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Crimean-Congo hemorrhagic fever,Hyalomma asiaticum,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Crimean-Congo haemorrhagic fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Crimean-Congo hemorrhagic fever,Hyalomma marginatum,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Crimean-Congo haemorrhagic fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Eastern equine encephalitis virus,Culiseta melanura,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Eastern equine encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Ehrlichia ruminantium,Amblyomma hebraeum,tick,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Ehrlichia ruminantium; match_confidence=unmatched; match_method=unmatched,EFSA
+Ehrlichia ruminantium,Amblyomma variegatum,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Ehrlichia ruminantium; match_confidence=unmatched; match_method=unmatched,EFSA
+Epizootic hemorrhagic disease virus,Culicoldes insignis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Epizootic hemorrhagic disease virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Epizootic hemorrhagic disease virus,Culicoldes obsoletus s.l.,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Epizootic hemorrhagic disease virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Epizootic hemorrhagic disease virus,Culicoldes scoticus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Epizootic hemorrhagic disease virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Epizootic hemorrhagic disease virus,Culicoldes sonorensis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Epizootic hemorrhagic disease virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Getah virus,Aedes vexans nipponii,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Getah virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Getah virus,Anopheles sinensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Getah virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Getah virus,Culex tritaeniorhynchus,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Getah virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Hepatozoon canis,Rhipicephalus sanguineus,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Hepatozoon canis; match_confidence=unmatched; match_method=unmatched,EFSA
+Highlands J virus,Culex tarsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Highlands J virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Aedes aegypti,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Aedes albopictus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Aedes japonicus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Aedes notoscriptus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Aedes purpureus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Aedes vigilax,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Anopheles sinensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex annulirostris,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex annulus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex gelidus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex pipiens,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex pipiens biotype pipiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex quinquefasciatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex sitiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex sitiens group,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex tritaeniorhynchus,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culex vishnui,,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Culiseta annulata,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Mansonia septempunctata,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Japanese encephalitis virus,Mansonia uniformis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Japanese encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Evandromyia cortelezii,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Evandromyia edwardsi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Expapillata firmatoi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia cavernicola,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia cortelezzii s.l.,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia cruzi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia lloydi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia longipalpis,sand fly,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia migonei,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Lutzomyia renei,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Micropygomyia quinquefer,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Nyssomyla whitmani,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus longicuspis,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus mascittii,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus neglectus,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus papatasi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus perfiliewi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus perniciosus,sand fly,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Phlebotomus tobbi,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Pintomyia fischeri,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Psathyromyia lutziana,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Leishmania infantum,Sergentomyia minuta,sand fly,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Leishmania infantum; match_confidence=unmatched; match_method=unmatched,EFSA
+Rift Valley fever,Aedes aegypti,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Aedes albopictus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Aedes caspius,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Aedes detritus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Aedes durbanensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Aedes melanimon,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Aedes vexans,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Anopheles coustani,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex antennatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex erraticus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex erythrothorax,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex nigripalpus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex pipiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex pipiens biotype molestus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex pipiens biotype pipiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex pipiens biotype pipiens x biotype molestus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex pipiens s.l.,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex poicilipes,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex quinquefasciatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex tarsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex tritaeniorhynchus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culex zombaensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Rift Valley fever,Culiseta inornata,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Rift Valley fever virus; match_confidence=exact; match_method=exact_disease,EFSA
+Schmallenberg virus,Culicoides chiopterus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides imicola,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides nubeculosus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides obsoletus,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides obsoletus complex,biting midge,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides obsoletus group,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides pulicaris,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Schmallenberg virus,Culicoides sonorensis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Schmallenberg virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex interfor,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex nigripalpus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex pipiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex quinquefasciatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex saltanensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex stigmatosoma,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+St. Louis encephalitis virus,Culex tarsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=St. Louis encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Thogoto virus,Haemaphysalis longicornis,tick,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Thogoto virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Venezuelan equine encephalitis,Aedes detritus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Venezuelan equine encephalitis virus; match_confidence=exact; match_method=exact_alias_pathogen,EFSA
+Venezuelan equine encephalitis,Culex gnomatos,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Venezuelan equine encephalitis virus; match_confidence=exact; match_method=exact_alias_pathogen,EFSA
+Venezuelan equine encephalitis,Culex gnomatos/vomerifer,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Venezuelan equine encephalitis virus; match_confidence=exact; match_method=exact_alias_pathogen,EFSA
+Venezuelan equine encephalitis,Culex taeniopus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Venezuelan equine encephalitis virus; match_confidence=exact; match_method=exact_alias_pathogen,EFSA
+Venezuelan equine encephalitis,Psorophora columbiae,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Venezuelan equine encephalitis virus; match_confidence=exact; match_method=exact_alias_pathogen,EFSA
+Vesicular stomatitis - Alagoas virus,Culicoides sonorensis,biting midge,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Vesicular stomatitis - Alagoas virus; match_confidence=unmatched; match_method=unmatched,EFSA
+West Nile fever,Aedes albopictus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes australis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes canadensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes detritus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes dorsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes japonicus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes kochi,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes melanimon,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes notoscriptus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes procax,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes sierrensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes taeniorhynchus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes triseriatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes vexans,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Aedes vigilax,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Coquillettidia linealis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Coquillettidia perturbans,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex annulirostris,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex bitaeniorhynchus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex erythrothorax,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex gelidus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex incidens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex modestus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex neavei group,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex nigripalpus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pervigilans,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens biotype molestus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens biotype molestus x Culex quinquefasciatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens biotype pipiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens biotype pipiens x Culex quinquefasciatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens biotype pipiens x biotype molestus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens s.l.,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex pipiens/restuans,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex quinquefasciatus,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex restuans,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex salinarius,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex sitiens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex stigmatosoma,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex tarsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex thriambus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex torrentium,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex univittatus,mosquito,probable,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culex vansomereni,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culiseta inornata,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Culiseta melanura,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Verrallina carmenti,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Verrallina funerea,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+West Nile fever,Verrallina lineato,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=West Nile virus; match_confidence=manual; match_method=manual_synonym,EFSA
+Western equine encephalitis virus,Aedes aegypti,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Western equine encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Western equine encephalitis virus,Aedes albopictus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Western equine encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Western equine encephalitis virus,Culex pipiens pallens,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Western equine encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Western equine encephalitis virus,Culex quinquefasciatus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Western equine encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Western equine encephalitis virus,Culex tarsalis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Western equine encephalitis virus; match_confidence=unmatched; match_method=unmatched,EFSA
+Yunnan orbivirus,Anopheles sinensis,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Yunnan orbivirus; match_confidence=unmatched; match_method=unmatched,EFSA
+Yunnan orbivirus,Culex tritaeniorhynchus,mosquito,candidate,efsa_appendix_g,not specified,EFSA Appendix G,efsa_pathogen=Yunnan orbivirus; match_confidence=unmatched; match_method=unmatched,EFSA

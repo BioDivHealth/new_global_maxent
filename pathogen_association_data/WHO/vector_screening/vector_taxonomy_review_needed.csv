@@ -1,0 +1,3 @@
+vector_species_original,vector_species_clean,vector_species_taxonomy_cleaned,vector_taxon_rank,taxonomy_cleanup_method,review_note,disease_examples
+Hyalomma onatoli,hyalomma onatoli,hyalomma onatoli,species,no_change,Likely spelling or taxonomy issue; manual decision needed.,Crimean-Congo hemorrhagic fever
+Verrallina lineato,verrallina lineato,verrallina lineato,species,no_change,Likely spelling or taxonomy issue; manual decision needed.,West Nile fever

@@ -2,24 +2,17 @@
 # Build the first pathogen_vector_links scaffold from disease-level screening
 # ------------------------------------------------------------------------------
 
-get_repo_root <- function() {
-  args <- commandArgs(trailingOnly = FALSE)
-  file_arg <- grep("^--file=", args, value = TRUE)
+library(pacman)
+p_load(here, readr)
 
-  if (length(file_arg) == 0) {
-    return(normalizePath(getwd()))
-  }
-
-  script_path <- normalizePath(sub("^--file=", "", file_arg[1]))
-  normalizePath(file.path(dirname(script_path), "..", ".."))
-}
-
+# Normalize disease labels before joining to the screening table.
 clean_disease_name <- function(x) {
   x <- trimws(x)
   x <- gsub("\\s+", " ", x)
   x
 }
 
+# Preserve the first populated taxonomy field when duplicate network rows disagree.
 first_non_empty <- function(x) {
   x <- x[!is.na(x) & trimws(x) != ""]
 
@@ -30,32 +23,28 @@ first_non_empty <- function(x) {
   x[1]
 }
 
-repo_root <- get_repo_root()
+who_path <- here("pathogen_association_data", "WHO")
 
-combined_network_path <- file.path(
-  repo_root, "pathogen_association_data", "WHO", "networks", "combined_who_network.csv"
-)
-screening_path <- file.path(
-  repo_root, "pathogen_association_data", "WHO", "vector_screening", "disease_vector_screening.csv"
-)
-output_dir <- file.path(
-  repo_root, "pathogen_association_data", "WHO", "vector_screening"
-)
-output_path <- file.path(output_dir, "pathogen_vector_links.csv")
+network_dir <- here(who_path, "networks")
+vector_screening_dir <- here(who_path, "vector_screening")
+combined_network_path <- here(who_path, "networks", "combined_who_network.csv")
+screening_path <- here(who_path, "vector_screening", "disease_vector_screening.csv")
+output_dir <- here(who_path, "vector_screening")
+output_path <- here(who_path, "vector_screening", "pathogen_vector_links.csv")
 
-combined_network <- read.csv(
+# Load the combined host-pathogen network and the disease-level vector screen.
+combined_network <- read_csv(
   combined_network_path,
-  stringsAsFactors = FALSE,
-  check.names = FALSE,
-  na.strings = c("", "NA")
+  show_col_types = FALSE,
+  na = c("", "NA")
 )
 
-screening <- read.csv(
+screening <- read_csv(
   screening_path,
-  stringsAsFactors = FALSE,
-  check.names = FALSE
+  show_col_types = FALSE
 )
 
+# Standardize disease labels so small whitespace differences do not break joins.
 combined_network$disease_name_clean <- clean_disease_name(combined_network$Disease_name)
 screening$disease_name_clean <- clean_disease_name(screening$disease_name_clean)
 
@@ -84,6 +73,7 @@ if (length(missing_in_screening) > 0) {
   )
 }
 
+# Use disease + pathogen + taxid as the seed unit for vector curation.
 combined_keys <- paste(
   combined_network$disease_name_clean,
   combined_network$Pathogen,
@@ -116,6 +106,7 @@ names(pair_seed)[names(pair_seed) == "PHEIC risk"] <- "pheic_risk"
 names(pair_seed)[names(pair_seed) == "PathogenFamily"] <- "pathogen_family"
 names(pair_seed)[names(pair_seed) == "PathogenGenus"] <- "pathogen_genus"
 
+# Add context from the existing network so high-yield rows can be prioritised first.
 pair_seed$key <- paste(
   pair_seed$disease_name_clean,
   pair_seed$pathogen,
@@ -143,6 +134,7 @@ pair_seed <- merge(
   suffixes = c("", "_screen")
 )
 
+# Only carry forward diseases that are clear vector-borne candidates or review cases.
 eligible <- pair_seed[
   pair_seed$screen_status %in% c("clear", "review"),
 ]
@@ -151,6 +143,7 @@ eligible <- eligible[
   order(eligible$priority_tier, eligible$disease_name_clean, eligible$pathogen),
 ]
 
+# Create the first pathogen-level template with blank fields ready for manual curation.
 pathogen_vector_links <- data.frame(
   disease_name = eligible$disease_name,
   disease_name_clean = eligible$disease_name_clean,
@@ -183,8 +176,9 @@ pathogen_vector_links <- data.frame(
   stringsAsFactors = FALSE
 )
 
+# Write the scaffold CSV that will be populated with vector evidence next.
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
-write.csv(pathogen_vector_links, output_path, row.names = FALSE, na = "")
+write_csv(pathogen_vector_links, output_path, na = "")
 
 cat("Wrote", nrow(pathogen_vector_links), "pathogen-level rows to", output_path, "\n")
 cat("Diseases in scope:", length(unique(pathogen_vector_links$disease_name_clean)), "\n")
