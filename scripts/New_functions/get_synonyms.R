@@ -119,23 +119,22 @@ rl_species_latest <- function(genus, species, infra = NULL,
 
 # IUCN_get_data function
 IUCN_get_data <- function(g, b, genus, species, infra = NULL, n_times = 3) {
+    IUCN_id <- NA
+    IUCN_name <- NA
+    IUCN_Phylum <- NA
+    IUCN_Class <- NA
+    IUCN_Order <- NA
+    IUCN_Family <- NA
+    IUCN_Category <- NA
+    IUCN_Present <- "No"
+    IUCN_latest <- NA
+    IUCN_date <- NA
+    IUCN_N_syn <- NA
+    IUCN_status <- NA
+    IUCN_syn <- NA
+
     if (length(g) == 0 & length(b) == 0) {
-        IUCN_id <- NA
-        IUCN_name <- NA
-        IUCN_Phylum <- NA
-        IUCN_Class <- NA
-        IUCN_Order <- NA
-        IUCN_Family <- NA
-
-        IUCN_Category <- NA
-        IUCN_Present <- "No"
-        IUCN_latest <- NA
-        IUCN_date <- NA
-        IUCN_Category <- NA
-
-        IUCN_N_syn <- NA
-        IUCN_status <- NA
-        IUCN_syn <- NA
+        NULL
     } else {
         # if the name of the species correspond to a synonim in the IUCN-red list,
         # use the accepted name to retrieve the species information
@@ -185,11 +184,13 @@ IUCN_get_data <- function(g, b, genus, species, infra = NULL, n_times = 3) {
                 IUCN_Family <- unique(g$taxon$family_name)
             }
 
-            if (!is.null(g$assessments$latest)) {
+            if (!is.null(g$assessments) && !is.null(g$assessments$latest)) {
                 latest <- g$assessments %>% filter(latest == TRUE)
-                IUCN_Category <- latest$red_list_category_code
-                IUCN_latest <- latest$latest
-                IUCN_date <- latest$year_published
+                if (nrow(latest) > 0) {
+                    IUCN_Category <- latest$red_list_category_code
+                    IUCN_latest <- latest$latest
+                    IUCN_date <- latest$year_published
+                }
             }
             IUCN_Present <- "Yes"
         }
@@ -597,6 +598,22 @@ if (is.null(TSN[[1]])) {
     return(ITIS_data)
 }
 
+empty_itis_data <- function() {
+    data.frame(
+        ITIS_Present = "Skipped",
+        ITIS_is_valid = NA,
+        ITIS_id = NA,
+        ITIS_name = NA,
+        ITIS_Phylum = NA,
+        ITIS_N_syn = NA,
+        ITIS_syn = NA,
+        ITIS_Class = NA,
+        ITIS_Order = NA,
+        ITIS_Family = NA,
+        ITIS_species_in_genus = NA
+    )
+}
+
 # GBIF_get_data function
 GBIF_get_data <- function(spp.x, species, n_times = 3) {
     
@@ -759,7 +776,8 @@ CapSp <- function(x) {
 
 retrieve_syns_new <- function(spp_name, # [Character] The species name from which to collect taxonomic information
                           n_times = 3, # [Numeric] Number of times the search is repeated until a data is found,default value = 1
-                          Gbif = FALSE # [Logical] Should we check Gbif for a taxonomic macthing of the species
+                          Gbif = FALSE, # [Logical] Should we check Gbif for a taxonomic macthing of the species
+                          Skip_ITIS = FALSE # [Logical] Skip ITIS lookups for batch runs when the service is slow/unavailable
 ) {
     # 0. Load the packages
     list.of.packages <- c(
@@ -915,7 +933,11 @@ retrieve_syns_new <- function(spp_name, # [Character] The species name from whic
         IUCN_data <- IUCN_get_data(g = g, b = b, genus = genus, species = species, infra = infra, n_times = n_times)
 
         # b.3. Get ITIS data using the dedicated function----
-        ITIS_data <- ITIS_get_species_data(spp.x = spp.x, n_times = n_times)
+        if (Skip_ITIS) {
+            ITIS_data <- empty_itis_data()
+        } else {
+            ITIS_data <- ITIS_get_species_data(spp.x = spp.x, n_times = n_times)
+        }
 
         # Should we retrieve synonim information from GBIF?
         if (Gbif == TRUE) {
@@ -1045,7 +1067,11 @@ retrieve_syns_new <- function(spp_name, # [Character] The species name from whic
         IUCN_Order, IUCN_Family))
         
         #Extract the ITIS data for the genus
-        ITIS_data <- ITIS_get_genus_data(genus = genus, n_times = n_times)
+        if (Skip_ITIS) {
+            ITIS_data <- empty_itis_data()
+        } else {
+            ITIS_data <- ITIS_get_genus_data(genus = genus, n_times = n_times)
+        }
         
         # GBIF DATA
         if (Gbif == TRUE) {

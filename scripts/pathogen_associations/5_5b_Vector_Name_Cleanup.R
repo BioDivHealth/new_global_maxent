@@ -270,3 +270,24 @@ cat(
 cat("Wrote cleaned table to", output_path, "\n")
 cat("Wrote review table to", review_path, "\n")
 cat("Manual map path:", manual_map_path, "\n")
+
+# Check with taxonomic packages----------------------
+sp = taxonomy_cleaned$vector_species[1]
+
+p_load(here, rgbif, taxize, raster, dismo, 
+       doParallel, rJava, XML, rgbif, Hmisc, readr, 
+       stringr, purrr, dplyr, tidyr, magrittr, tidyverse)
+
+source("scripts/New_functions/get_synonyms.R")
+options(iucn_redlist_key="tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
+
+# Helper function from 0_SpList.R -----------------------------------------
+collapse_vals <- function(x, sep = "; ") {
+  x <- unique(x[!is.na(x)])
+  paste(x, collapse = sep)
+}
+retrieve_syns_new(sp,  
+                  n_times=10,
+                  Gbif=TRUE)
+
+
