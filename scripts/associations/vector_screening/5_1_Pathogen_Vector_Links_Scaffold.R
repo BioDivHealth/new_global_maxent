@@ -5,6 +5,8 @@
 library(pacman)
 p_load(here, readr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # Normalize disease labels before joining to the screening table.
 clean_disease_name <- function(x) {
   x <- trimws(x)
@@ -29,7 +31,7 @@ network_dir <- here(who_path, "networks")
 vector_screening_dir <- here(who_path, "vector_screening")
 screening_input_dir <- file.path(vector_screening_dir, "inputs")
 vector_output_dir <- file.path(vector_screening_dir, "outputs")
-combined_network_path <- here(who_path, "networks", "combined_who_network.csv")
+combined_network_path <- who_working_network_path()
 screening_path <- file.path(screening_input_dir, "disease_vector_screening.csv")
 output_dir <- vector_output_dir
 output_path <- file.path(vector_output_dir, "pathogen_vector_links.csv")
@@ -70,7 +72,7 @@ missing_in_screening <- setdiff(
 
 if (length(missing_in_screening) > 0) {
   stop(
-    "The screening table is missing diseases from combined_who_network.csv: ",
+    "The screening table is missing diseases from the canonical zoonotic WHO network: ",
     paste(missing_in_screening, collapse = ", ")
   )
 }

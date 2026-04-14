@@ -115,7 +115,7 @@ canonical_joinable <- canonical_vectors %>%
 matched_rows <- scaffold_joinable %>%
   inner_join(
     canonical_joinable %>%
-      select(
+      dplyr::select(
         disease_name_join,
         vector_species,
         vector_group,
@@ -140,7 +140,7 @@ matched_rows <- scaffold_joinable %>%
     vector_record_sources = record_sources,
     vector_supporting_row_count = supporting_row_count
   ) %>%
-  select(-disease_name_join, -vector_species, -vector_group, -best_evidence_level,
+  dplyr::select(-disease_name_join, -vector_species, -vector_group, -best_evidence_level,
          -best_evidence_basis, -record_sources, -supporting_row_count)
 
 unmatched_rows <- scaffold_joinable %>%
@@ -161,7 +161,7 @@ unmatched_rows <- scaffold_joinable %>%
     vector_record_sources = NA_character_,
     vector_supporting_row_count = NA_integer_
   ) %>%
-  select(-disease_name_join)
+  dplyr::select(-disease_name_join)
 
 pathogen_vector_links_filled <- bind_rows(matched_rows, unmatched_rows) %>%
   arrange(disease_name, pathogen, candidate_vector_group, candidate_vector_species)

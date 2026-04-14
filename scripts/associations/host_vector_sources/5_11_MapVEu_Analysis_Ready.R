@@ -6,7 +6,8 @@
 #
 # Input  : pathogen_association_data/mapveu/outputs/
 #          mapveu_vector_host_links_raw.csv
-#          pathogen_association_data/WHO/networks/combined_who_network.csv
+#          pathogen_association_data/WHO/networks/
+#          combined_who_network_canonical_zoonotic.csv
 # Outputs: pathogen_association_data/mapveu/outputs/
 #          mapveu_vector_host_links_analysis_ready.csv
 #          pathogen_association_data/mapveu/outputs/
@@ -17,6 +18,8 @@
 
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -186,7 +189,7 @@ outputs_dir <- file.path(mapveu_dir, "outputs")
 manual_dir <- file.path(mapveu_dir, "manual")
 
 input_path <- file.path(outputs_dir, "mapveu_vector_host_links_raw.csv")
-who_path <- file.path(who_dir, "networks", "combined_who_network.csv")
+who_path <- who_working_network_path()
 host_crosswalk_path <- file.path(manual_dir, "mapveu_host_manual_crosswalk.csv")
 analysis_ready_path <- file.path(outputs_dir, "mapveu_vector_host_links_analysis_ready.csv")
 analysis_summary_path <- file.path(outputs_dir, "mapveu_vector_host_links_analysis_summary.csv")
@@ -367,7 +370,7 @@ analysis_ready <- vector_cleaned %>%
   )
 
 if (any(!analysis_ready$matched_who_host %in% who_hosts$matched_who_host)) {
-  stop("analysis_ready contains hosts not present in combined_who_network.csv")
+  stop("analysis_ready contains hosts not present in the canonical zoonotic WHO network")
 }
 
 analysis_summary <- analysis_ready %>%

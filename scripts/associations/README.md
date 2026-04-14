@@ -53,6 +53,24 @@ association data, with a focus on WHO priority pathogens.
     -   `network_building/3_5_VIRION_Visualise_Networks.R`: Reads `virion_who_network.csv` and generates static (`.png`) and interactive (`.html`) visualizations, with outputs saved under `figures/network_plots/` (and related subfolders).
     -   `network_building/4_CombineNetworks.R`: Merges the processed network data from CLOVER (bacteria) and VIRION (viruses) into a single, comprehensive dataset for combined analysis.
 
+### Working Input Layers
+
+- Raw source artifacts remain in place for provenance and matching:
+  - `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases.csv`
+  - `pathogen_association_data/WHO/networks/combined_who_network.csv`
+- Derived review artifact with canonical pathogen labels:
+  - `pathogen_association_data/WHO/networks/combined_who_network_canonical.csv`
+- Default downstream working layer for the rest of `scripts/associations/`:
+  - `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases_zoonotic.csv`
+  - `pathogen_association_data/WHO/networks/combined_who_network_canonical_zoonotic.csv`
+- Shared path helpers for these layers live in `scripts/associations/working_inputs.R`.
+
+The intended workflow is:
+
+- keep `network_building/` scripts pointed at the raw WHO files
+- use the canonical zoonotic working layer for downstream vector-screening,
+  host-vector integration, host-vector source filtering, and GenBank scripts
+
 5.  **Vector Screening (`vector_screening/5_1_*` to `vector_screening/5_6_*`):**
     -   `vector_screening/5_1_Pathogen_Vector_Links_Scaffold.R` to `vector_screening/5_6_Backfill_Pathogen_Vector_Links.R`: Build, standardize, and backfill the WHO disease-pathogen-vector tables.
     -   `vector_screening/5_5b_Vector_Name_Cleanup.R` and `vector_screening/5_5c_Vector_Taxonomy_Package_Review.R`: Add conservative vector-name normalization and taxonomy-review outputs.

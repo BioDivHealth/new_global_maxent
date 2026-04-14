@@ -18,6 +18,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -68,12 +70,7 @@ vectormap_path <- here(
   "outputs",
   "vectormap_vector_host_links_analysis_ready.csv"
 )
-who_path <- here(
-  "pathogen_association_data",
-  "WHO",
-  "networks",
-  "combined_who_network.csv"
-)
+who_network_path <- who_working_network_path()
 mapveu_path <- here(
   "pathogen_association_data",
   "mapveu",
@@ -88,7 +85,7 @@ combined_ready_path <- file.path(output_dir, "vector_host_links_analysis_ready.c
 combined_summary_path <- file.path(output_dir, "vector_host_links_analysis_summary.csv")
 
 who_hosts <- read_csv(
-  who_path,
+  who_network_path,
   show_col_types = FALSE,
   progress = FALSE,
   na = c("", "NA")

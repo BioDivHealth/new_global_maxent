@@ -8,6 +8,8 @@ suppressPackageStartupMessages({
   library(tidyr)
 })
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------
 # Clean EFSA appendices A and G, then crosswalk EFSA pathogens to the combined
 # WHO host-pathogen network using conservative, auditable matching rules.
@@ -260,7 +262,7 @@ output_dir <- file.path(efsa_dir, "outputs")
 
 appendix_a_path <- file.path(efsa_input_dir, "efsa_report_appendix_a.xlsx")
 appendix_g_path <- file.path(efsa_input_dir, "efsa_report_appendix_g.xlsx")
-combined_network_path <- file.path(who_dir, "networks", "combined_who_network.csv")
+combined_network_path <- who_working_network_path()
 screening_path <- file.path(vector_input_dir, "disease_vector_screening.csv")
 manual_map_path <- file.path(efsa_manual_dir, "efsa_name_manual_map.csv")
 

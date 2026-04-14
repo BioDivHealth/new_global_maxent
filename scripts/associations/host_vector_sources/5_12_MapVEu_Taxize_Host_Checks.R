@@ -9,7 +9,8 @@
 #          mapveu_vector_host_links_raw.csv
 #          pathogen_association_data/mapveu/manual/
 #          mapveu_host_manual_crosswalk.csv
-#          pathogen_association_data/WHO/networks/combined_who_network.csv
+#          pathogen_association_data/WHO/networks/
+#          combined_who_network_canonical_zoonotic.csv
 # Outputs: pathogen_association_data/mapveu/outputs/
 #          mapveu_host_taxize_candidates.csv
 #          pathogen_association_data/mapveu/outputs/
@@ -20,6 +21,8 @@
 
 library(pacman)
 p_load(dplyr, here, readr, stringr, taxize, tibble)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -136,7 +139,7 @@ manual_dir <- here(mapveu_path, "manual")
 
 raw_links_path <- here(outputs_dir, "mapveu_vector_host_links_raw.csv")
 host_crosswalk_path <- here(manual_dir, "mapveu_host_manual_crosswalk.csv")
-combined_network_path <- here(who_path, "networks", "combined_who_network.csv")
+combined_network_path <- who_working_network_path()
 
 candidate_path <- here(outputs_dir, "mapveu_host_taxize_candidates.csv")
 taxize_review_path <- here(outputs_dir, "mapveu_host_taxize_review.csv")

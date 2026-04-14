@@ -5,7 +5,8 @@
 #          pathogen-host network to the pathogen-vector backfill output and the
 #          observational host-vector join table.
 #
-# Inputs : pathogen_association_data/WHO/networks/combined_who_network.csv
+# Inputs : pathogen_association_data/WHO/networks/
+#          combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/
 #          pathogen_vector_links_filled.csv
 #          pathogen_association_data/vector_host/outputs/
@@ -16,6 +17,8 @@
 
 library(pacman)
 p_load(dplyr, here, readr, stringr)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -77,7 +80,7 @@ vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
 host_vector_dir <- here("pathogen_association_data", "vector_host", "outputs")
 vector_output_dir <- file.path(vector_dir, "outputs")
 
-who_path <- file.path(networks_dir, "combined_who_network.csv")
+who_path <- who_working_network_path()
 pathogen_vector_path <- file.path(vector_output_dir, "pathogen_vector_links_filled.csv")
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 output_path <- file.path(networks_dir, "pathogen_host_vector_links.csv")
@@ -152,7 +155,7 @@ pathogen_vector_joinable <- pathogen_vectors %>%
     disease_name_join = normalize_name_for_match(disease_name),
     vector_join_key = normalize_vector_key(candidate_vector_species)
   ) %>%
-  select(
+  dplyr::select(
     pv_disease_name = disease_name,
     pv_disease_name_clean = disease_name_clean,
     disease_name_join,

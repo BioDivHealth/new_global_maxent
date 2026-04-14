@@ -7,7 +7,7 @@
 #
 # Inputs : vector_table_with_efsa.csv
 #          (from 5_3_Combine_LitReview_EFSA_Vector_Table.R)
-#          combined_who_network.csv
+#          combined_who_network_canonical_zoonotic.csv
 #
 # Output : vector_table_with_efsa_standardized.csv
 #          vector_table_with_efsa_unmatched_diseases.csv
@@ -16,6 +16,8 @@
 # ------------------------------| Load libraries |------------------------------
 library(pacman)
 p_load(dplyr, here, readr, stringr)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------| Helper functions |----------------------------
 clean_text <- function(x) {
@@ -77,7 +79,7 @@ normalize_vector_group <- function(x) {
 
 # ------------------------------| Define paths |--------------------------------
 who_dir <- here("pathogen_association_data", "WHO")
-network_path <- file.path(who_dir, "networks", "combined_who_network.csv")
+network_path <- who_working_network_path()
 vector_output_dir <- file.path(who_dir, "vector_screening", "efsa", "outputs")
 vector_input_path <- file.path(vector_output_dir, "vector_table_with_efsa.csv")
 
@@ -116,7 +118,7 @@ if (length(missing_vector_cols) > 0) {
 }
 
 if (!("Disease_name" %in% names(combined_network))) {
-  stop("combined_who_network.csv is missing required column: Disease_name")
+  stop("The canonical zoonotic WHO network is missing required column: Disease_name")
 }
 
 # ------------------------------| Prepare disease mapping |----------------------

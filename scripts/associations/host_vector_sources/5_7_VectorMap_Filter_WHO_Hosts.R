@@ -5,6 +5,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # Clean text while keeping raw source values as intact as possible.
 clean_text <- function(x) {
   x <- as.character(x)
@@ -249,7 +251,7 @@ dir.create(outputs_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(manual_dir, recursive = TRUE, showWarnings = FALSE)
 
 raw_links_path <- here(outputs_dir, "vectormap_vector_host_links_raw.csv")
-combined_network_path <- here(who_path, "networks", "combined_who_network.csv")
+combined_network_path <- who_working_network_path()
 manual_crosswalk_path <- here(manual_dir, "vectormap_host_manual_crosswalk.csv")
 
 exact_output_path <- here(outputs_dir, "vectormap_vector_host_links_who_exact.csv")
@@ -400,7 +402,7 @@ invalid_manual_targets <- manual_crosswalk %>%
   anti_join(who_hosts %>% select(matched_who_host), by = "matched_who_host")
 
 if (nrow(invalid_manual_targets) > 0) {
-  stop("Manual crosswalk contains matched_who_host values not present in combined_who_network.csv.")
+  stop("Manual crosswalk contains matched_who_host values not present in the canonical zoonotic WHO network.")
 }
 
 remaining_after_exact <- vectormap_raw %>%

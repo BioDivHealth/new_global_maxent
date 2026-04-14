@@ -5,7 +5,8 @@
 #          subset by keeping all observed host-vector combinations for WHO hosts
 #          and then marking whether curated disease-vector evidence is present.
 #
-# Inputs : pathogen_association_data/WHO/networks/combined_who_network.csv
+# Inputs : pathogen_association_data/WHO/networks/
+#          combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/
 #          disease_vector_links_taxonomy_cleaned.csv
 #          pathogen_association_data/vector_host/outputs/
@@ -17,6 +18,8 @@
 
 library(pacman)
 p_load(dplyr, here, readr, stringr)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -78,7 +81,7 @@ vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
 host_vector_dir <- here("pathogen_association_data", "vector_host", "outputs")
 vector_output_dir <- file.path(vector_dir, "outputs")
 
-who_path <- file.path(networks_dir, "combined_who_network.csv")
+who_path <- who_working_network_path()
 disease_vector_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 expanded_path <- file.path(networks_dir, "disease_host_vector_links_expanded.csv")

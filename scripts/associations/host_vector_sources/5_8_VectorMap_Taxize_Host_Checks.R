@@ -5,6 +5,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, taxize, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # Clean text fields while preserving the original review tables on disk.
 clean_text <- function(x) {
   x <- as.character(x)
@@ -103,7 +105,7 @@ who_path <- here("pathogen_association_data", "WHO")
 outputs_dir <- here(vectormap_path, "outputs")
 
 candidate_path <- here(outputs_dir, "vectormap_host_package_candidates.csv")
-combined_network_path <- here(who_path, "networks", "combined_who_network.csv")
+combined_network_path <- who_working_network_path()
 
 taxize_review_path <- here(outputs_dir, "vectormap_host_taxize_review.csv")
 taxize_who_hits_path <- here(outputs_dir, "vectormap_host_taxize_who_hits.csv")

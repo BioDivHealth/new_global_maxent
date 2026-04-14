@@ -4,7 +4,7 @@
 # Purpose: Diagnose which GenBank/NCBI search queries succeed or fail for WHO
 #          pathogens before attempting accession-level metadata fetching.
 #
-# Inputs : who_pathogens_diseases.csv
+# Inputs : who_pathogens_diseases_zoonotic.csv
 #          who_pathogens_virion_taxid.csv
 #          who_bacteria_clover_taxid.csv
 # Outputs: genbank_search_diagnostic_manifest.csv
@@ -18,6 +18,8 @@
 
 library(pacman)
 p_load(dplyr, here, purrr, readr, rentrez, stringr, tibble, xml2)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------------------------------------------------------
 # Shared helpers ---------------------------------------------------------------
@@ -187,7 +189,7 @@ who_dir <- here("pathogen_association_data", "WHO")
 genbank_dir <- file.path(who_dir, "genbank")
 dir.create(genbank_dir, recursive = TRUE, showWarnings = FALSE)
 
-who_path <- file.path(who_dir, "who_diseases", "who_pathogens_diseases.csv")
+who_path <- who_working_pathogens_path()
 virion_path <- file.path(who_dir, "virion", "who_pathogens_virion_taxid.csv")
 clover_path <- file.path(who_dir, "clover", "who_bacteria_clover_taxid.csv")
 
