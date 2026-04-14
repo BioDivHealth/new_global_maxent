@@ -253,13 +253,16 @@ build_best_fuzzy_candidate <- function(efsa_clean, combined_reference) {
 who_dir <- here("pathogen_association_data", "WHO")
 vector_dir <- file.path(who_dir, "vector_screening")
 efsa_dir <- file.path(vector_dir, "efsa")
+vector_input_dir <- file.path(vector_dir, "inputs")
+efsa_input_dir <- file.path(efsa_dir, "inputs")
+efsa_manual_dir <- file.path(efsa_dir, "manual")
 output_dir <- file.path(efsa_dir, "outputs")
 
-appendix_a_path <- file.path(efsa_dir, "efsa_report_appendix_a.xlsx")
-appendix_g_path <- file.path(efsa_dir, "efsa_report_appendix_g.xlsx")
+appendix_a_path <- file.path(efsa_input_dir, "efsa_report_appendix_a.xlsx")
+appendix_g_path <- file.path(efsa_input_dir, "efsa_report_appendix_g.xlsx")
 combined_network_path <- file.path(who_dir, "networks", "combined_who_network.csv")
-screening_path <- file.path(vector_dir, "disease_vector_screening.csv")
-manual_map_path <- file.path(efsa_dir, "efsa_name_manual_map.csv")
+screening_path <- file.path(vector_input_dir, "disease_vector_screening.csv")
+manual_map_path <- file.path(efsa_manual_dir, "efsa_name_manual_map.csv")
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 

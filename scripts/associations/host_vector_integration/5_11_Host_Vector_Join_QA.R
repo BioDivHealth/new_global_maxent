@@ -1,0 +1,186 @@
+# ------------------------------------------------------------------------------
+# 5_11_Host_Vector_Join_QA.R
+# ------------------------------------------------------------------------------
+# Purpose: Audit host-vector join readiness, integrated row coverage, blocked
+#          rows, and taxonomy cautions across the disease-level and
+#          pathogen-level host-vector-pathogen outputs.
+#
+# Inputs : pathogen_association_data/WHO/networks/combined_who_network.csv
+#          pathogen_association_data/WHO/vector_screening/
+#          disease_vector_links_taxonomy_cleaned.csv
+#          pathogen_vector_links_filled.csv
+#          pathogen_association_data/vector_host/outputs/
+#          vector_host_links_join_ready.csv
+#          vector_host_links_join_blocked.csv
+#          pathogen_association_data/WHO/networks/
+#          disease_host_vector_links.csv
+#          pathogen_host_vector_links.csv
+# Outputs: pathogen_association_data/WHO/networks/
+#          host_vector_join_qa_summary.csv
+#          host_vector_join_missing_host_tax_id.csv
+#          host_vector_join_unmatched_disease_vectors.csv
+#          host_vector_join_unmatched_pathogen_vectors.csv
+#          host_vector_join_taxonomy_caution_rows.csv
+#          host_vector_join_disease_coverage.csv
+# ------------------------------------------------------------------------------
+
+library(pacman)
+p_load(dplyr, here, readr, stringr, tibble)
+
+clean_text <- function(x) {
+  x <- as.character(x)
+  x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
+  x <- stringr::str_replace_all(x, "\u00A0", " ")
+  x <- stringr::str_replace_all(x, "[\r\n\t]+", " ")
+  x <- stringr::str_squish(x)
+  x[x == ""] <- NA_character_
+  x
+}
+
+normalize_vector_key <- function(x) {
+  x <- clean_text(x)
+  x <- stringr::str_to_lower(x)
+  x <- stringr::str_squish(x)
+  x[x == ""] <- NA_character_
+  x
+}
+
+collapse_unique <- function(x) {
+  x <- clean_text(x)
+  x <- sort(unique(stats::na.omit(x)))
+
+  if (length(x) == 0) {
+    return(NA_character_)
+  }
+
+  paste(x, collapse = "; ")
+}
+
+networks_dir <- here("pathogen_association_data", "WHO", "networks")
+vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
+host_vector_dir <- here("pathogen_association_data", "vector_host", "outputs")
+vector_output_dir <- file.path(vector_dir, "outputs")
+
+who_path <- file.path(networks_dir, "combined_who_network.csv")
+disease_vector_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
+pathogen_vector_path <- file.path(vector_output_dir, "pathogen_vector_links_filled.csv")
+host_vector_join_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
+host_vector_blocked_path <- file.path(host_vector_dir, "vector_host_links_join_blocked.csv")
+disease_output_path <- file.path(networks_dir, "disease_host_vector_links.csv")
+pathogen_output_path <- file.path(networks_dir, "pathogen_host_vector_links.csv")
+
+summary_path <- file.path(networks_dir, "host_vector_join_qa_summary.csv")
+missing_taxid_path <- file.path(networks_dir, "host_vector_join_missing_host_tax_id.csv")
+unmatched_disease_path <- file.path(networks_dir, "host_vector_join_unmatched_disease_vectors.csv")
+unmatched_pathogen_path <- file.path(networks_dir, "host_vector_join_unmatched_pathogen_vectors.csv")
+taxonomy_caution_path <- file.path(networks_dir, "host_vector_join_taxonomy_caution_rows.csv")
+disease_coverage_path <- file.path(networks_dir, "host_vector_join_disease_coverage.csv")
+
+who_network <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text))
+disease_vectors <- read_csv(disease_vector_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text))
+pathogen_vectors <- read_csv(pathogen_vector_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text))
+host_vector_join <- read_csv(host_vector_join_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text))
+host_vector_blocked <- read_csv(host_vector_blocked_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text))
+disease_output <- read_csv(disease_output_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text))
+pathogen_output <- read_csv(
+  pathogen_output_path,
+  show_col_types = FALSE,
+  na = c("", "NA"),
+  col_types = cols(
+    review_reason_examples = col_character()
+  )
+) %>%
+  mutate(across(where(is.character), clean_text))
+
+host_vector_keys <- host_vector_join %>%
+  filter(!is.na(vector_join_key)) %>%
+  distinct(vector_join_key)
+
+missing_host_tax_id <- host_vector_blocked %>%
+  filter(stringr::str_detect(coalesce(block_reason, ""), "missing_host_tax_id"))
+
+unmatched_disease_vectors <- disease_vectors %>%
+  mutate(vector_join_key = normalize_vector_key(vector_species_taxonomy_cleaned)) %>%
+  filter(!is.na(vector_join_key)) %>%
+  anti_join(host_vector_keys, by = "vector_join_key") %>%
+  arrange(disease_name, vector_species_taxonomy_cleaned)
+
+unmatched_pathogen_vectors <- pathogen_vectors %>%
+  mutate(vector_join_key = normalize_vector_key(candidate_vector_species)) %>%
+  filter(!is.na(vector_join_key), assignment_basis != "no_disease_vector_match") %>%
+  anti_join(host_vector_keys, by = "vector_join_key") %>%
+  arrange(disease_name, pathogen, candidate_vector_species)
+
+taxonomy_caution_rows <- bind_rows(
+  disease_output %>% mutate(output_level = "disease"),
+  pathogen_output %>% mutate(output_level = "pathogen")
+) %>%
+  filter(taxonomy_caution %in% TRUE)
+
+disease_vector_coverage <- disease_vectors %>%
+  mutate(vector_join_key = normalize_vector_key(vector_species_taxonomy_cleaned)) %>%
+  group_by(disease_name) %>%
+  summarise(
+    total_disease_vector_rows = n(),
+    total_distinct_disease_vectors = n_distinct(vector_join_key),
+    disease_vectors_with_host_overlap = n_distinct(vector_join_key[vector_join_key %in% host_vector_keys$vector_join_key]),
+    .groups = "drop"
+  ) %>%
+  left_join(
+    disease_output %>%
+      group_by(disease_name) %>%
+      summarise(
+        final_disease_host_vector_rows = n(),
+        final_distinct_hosts = n_distinct(host_tax_id),
+        final_distinct_vectors = n_distinct(vector_join_key),
+        taxonomy_caution_rows = sum(taxonomy_caution %in% TRUE),
+        .groups = "drop"
+      ),
+    by = "disease_name"
+  ) %>%
+  mutate(across(starts_with("final_"), ~ coalesce(.x, 0L))) %>%
+  mutate(taxonomy_caution_rows = coalesce(taxonomy_caution_rows, 0L)) %>%
+  arrange(desc(final_disease_host_vector_rows), disease_name)
+
+qa_summary <- tibble::tribble(
+  ~metric, ~value,
+  "who_network_rows", as.character(nrow(who_network)),
+  "who_distinct_diseases", as.character(n_distinct(who_network$Disease_name)),
+  "who_distinct_pathogens", as.character(n_distinct(who_network$PathogenTaxID)),
+  "who_distinct_hosts", as.character(n_distinct(who_network$HostTaxID)),
+  "host_vector_join_ready_rows", as.character(nrow(host_vector_join)),
+  "host_vector_join_blocked_rows", as.character(nrow(host_vector_blocked)),
+  "host_vector_blocked_missing_host_tax_id_rows", as.character(nrow(missing_host_tax_id)),
+  "host_vector_join_distinct_hosts", as.character(n_distinct(host_vector_join$host_tax_id)),
+  "host_vector_join_distinct_vectors", as.character(n_distinct(host_vector_join$vector_join_key)),
+  "disease_vector_rows", as.character(nrow(disease_vectors)),
+  "disease_vector_unmatched_rows", as.character(nrow(unmatched_disease_vectors)),
+  "pathogen_vector_rows", as.character(nrow(pathogen_vectors)),
+  "pathogen_vector_unmatched_rows", as.character(nrow(unmatched_pathogen_vectors)),
+  "disease_host_vector_rows", as.character(nrow(disease_output)),
+  "pathogen_host_vector_rows", as.character(nrow(pathogen_output)),
+  "diseases_with_disease_level_matches", as.character(n_distinct(disease_output$disease_name)),
+  "diseases_with_pathogen_level_matches", as.character(n_distinct(pathogen_output$disease_name)),
+  "taxonomy_caution_rows_total", as.character(nrow(taxonomy_caution_rows))
+)
+
+write_csv(qa_summary, summary_path, na = "")
+write_csv(missing_host_tax_id, missing_taxid_path, na = "")
+write_csv(unmatched_disease_vectors, unmatched_disease_path, na = "")
+write_csv(unmatched_pathogen_vectors, unmatched_pathogen_path, na = "")
+write_csv(taxonomy_caution_rows, taxonomy_caution_path, na = "")
+write_csv(disease_vector_coverage, disease_coverage_path, na = "")
+
+cat("QA summary rows written:", nrow(qa_summary), "\n")
+cat("Missing host-taxid blocked rows:", nrow(missing_host_tax_id), "\n")
+cat("Unmatched disease-vector rows:", nrow(unmatched_disease_vectors), "\n")
+cat("Unmatched pathogen-vector rows:", nrow(unmatched_pathogen_vectors), "\n")
+cat("Taxonomy caution rows:", nrow(taxonomy_caution_rows), "\n")
+cat("Disease coverage rows:", nrow(disease_vector_coverage), "\n")
+cat("Wrote QA summary to", summary_path, "\n")

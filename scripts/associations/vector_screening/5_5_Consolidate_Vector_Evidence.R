@@ -76,14 +76,15 @@ rank_evidence_level <- function(x) {
 
 vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
 efsa_output_dir <- file.path(vector_dir, "efsa", "outputs")
+vector_output_dir <- file.path(vector_dir, "outputs")
 
 input_path <- file.path(
   efsa_output_dir,
   "vector_table_with_efsa_standardized.csv"
 )
-scaffold_path <- file.path(vector_dir, "pathogen_vector_links.csv")
-output_path <- file.path(vector_dir, "disease_vector_links.csv")
-gap_output_path <- file.path(vector_dir, "disease_vector_link_gaps.csv")
+scaffold_path <- file.path(vector_output_dir, "pathogen_vector_links.csv")
+output_path <- file.path(vector_output_dir, "disease_vector_links.csv")
+gap_output_path <- file.path(vector_output_dir, "disease_vector_link_gaps.csv")
 
 vector_table <- read_csv(
   input_path,

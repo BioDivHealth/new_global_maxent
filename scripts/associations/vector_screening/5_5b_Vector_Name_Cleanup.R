@@ -109,11 +109,13 @@ seed_manual_map <- function(path) {
 }
 
 vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
+vector_output_dir <- file.path(vector_dir, "outputs")
+taxonomy_review_dir <- file.path(vector_dir, "taxonomy_review")
 
-input_path <- file.path(vector_dir, "disease_vector_links.csv")
-output_path <- file.path(vector_dir, "disease_vector_links_taxonomy_cleaned.csv")
-review_path <- file.path(vector_dir, "vector_taxonomy_review_needed.csv")
-manual_map_path <- file.path(vector_dir, "vector_taxonomy_manual_map.csv")
+input_path <- file.path(vector_output_dir, "disease_vector_links.csv")
+output_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
+review_path <- file.path(taxonomy_review_dir, "vector_taxonomy_review_needed.csv")
+manual_map_path <- file.path(taxonomy_review_dir, "vector_taxonomy_manual_map.csv")
 
 if (!file.exists(manual_map_path)) {
   seed_manual_map(manual_map_path)
@@ -278,7 +280,7 @@ p_load(here, rgbif, taxize, raster, dismo,
        doParallel, rJava, XML, rgbif, Hmisc, readr, 
        stringr, purrr, dplyr, tidyr, magrittr, tidyverse)
 
-source("scripts/New_functions/get_synonyms.R")
+source(here("scripts", "New_functions", "get_synonyms.R"))
 options(iucn_redlist_key="tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
 
 # Helper function from 0_SpList.R -----------------------------------------

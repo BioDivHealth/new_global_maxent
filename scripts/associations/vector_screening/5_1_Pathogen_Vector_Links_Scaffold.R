@@ -27,10 +27,12 @@ who_path <- here("pathogen_association_data", "WHO")
 
 network_dir <- here(who_path, "networks")
 vector_screening_dir <- here(who_path, "vector_screening")
+screening_input_dir <- file.path(vector_screening_dir, "inputs")
+vector_output_dir <- file.path(vector_screening_dir, "outputs")
 combined_network_path <- here(who_path, "networks", "combined_who_network.csv")
-screening_path <- here(who_path, "vector_screening", "disease_vector_screening.csv")
-output_dir <- here(who_path, "vector_screening")
-output_path <- here(who_path, "vector_screening", "pathogen_vector_links.csv")
+screening_path <- file.path(screening_input_dir, "disease_vector_screening.csv")
+output_dir <- vector_output_dir
+output_path <- file.path(vector_output_dir, "pathogen_vector_links.csv")
 
 # Load the combined host-pathogen network and the disease-level vector screen.
 combined_network <- read_csv(

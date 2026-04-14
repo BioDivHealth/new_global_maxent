@@ -47,10 +47,11 @@ extract_vector_genus <- function(x) {
 }
 
 vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
+vector_output_dir <- file.path(vector_dir, "outputs")
 
-scaffold_path <- file.path(vector_dir, "pathogen_vector_links.csv")
-canonical_path <- file.path(vector_dir, "disease_vector_links.csv")
-output_path <- file.path(vector_dir, "pathogen_vector_links_filled.csv")
+scaffold_path <- file.path(vector_output_dir, "pathogen_vector_links.csv")
+canonical_path <- file.path(vector_output_dir, "disease_vector_links.csv")
+output_path <- file.path(vector_output_dir, "pathogen_vector_links_filled.csv")
 
 scaffold <- read_csv(
   scaffold_path,
