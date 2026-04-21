@@ -1,0 +1,36 @@
+raw_host_label,source_field,matched_who_host,include_in_final,note
+Canis familiaris,host_binomial,Canis lupus,TRUE,Conservative domestic synonym mapped to WHO host.
+Sus domesticus,host_binomial,Sus scrofa,TRUE,Conservative domestic synonym mapped to WHO host.
+Canius lupus,host_binomial,Canis lupus,TRUE,Obvious misspelling of WHO host binomial extracted from Canius lupus familiaris.
+Canus lupus,host_binomial,Canis lupus,TRUE,Obvious misspelling of WHO host binomial.
+Bos bos taurus,host_scientific_name_clean,Bos taurus,TRUE,Conservative repeated-genus typo mapped to WHO host via cleaned scientific label.
+Lutra canadensis,host_scientific_name_clean,Lontra canadensis,FALSE,Removed from the canonical zoonotic WHO host universe.
+Oryzomys subflavus,host_scientific_name_clean,Cerradomys subflavus,TRUE,Taxize-supported accepted-name update to WHO host.
+Neovison vison,host_scientific_name_clean,Neogale vison,TRUE,Taxize-supported accepted-name update to WHO host.
+Seiurus noveboracensis,host_scientific_name_clean,Parkesia noveboracensis,TRUE,Taxize-supported accepted-name update to WHO host.
+Taxostoma rufum,host_scientific_name_clean,Toxostoma rufum,TRUE,Taxize-supported spelling correction to WHO host.
+Parus atricapillus,host_scientific_name_clean,Poecile atricapillus,TRUE,Taxize-supported accepted-name update to WHO host.
+Philander frenatus,host_scientific_name_clean,Philander opossum,TRUE,Taxize-supported accepted-name update to WHO host.
+Baelophus bicolor,host_scientific_name_clean,Baeolophus bicolor,TRUE,Taxize-supported spelling correction to WHO host.
+Carpodacus mexicanus,host_scientific_name_clean,Haemorhous mexicanus,TRUE,Taxize-supported accepted-name update to WHO host.
+Herpestes javanicus,host_scientific_name_clean,Urva javanica,TRUE,Taxize-supported accepted-name update to WHO host.
+Memphitis mephitis,host_scientific_name_clean,Mephitis mephitis,TRUE,Taxize-supported spelling correction to WHO host.
+Carduelis tristis,host_scientific_name_clean,Spinus tristis,TRUE,Taxize-supported accepted-name update to WHO host.
+Martes penanti,host_scientific_name_clean,Pekania pennanti,TRUE,Taxize-supported spelling and accepted-name update to WHO host.
+Melospize melodia,host_scientific_name_clean,Melospiza melodia,TRUE,Taxize-supported spelling correction to WHO host.
+Motothrus ater,host_scientific_name_clean,Molothrus ater,TRUE,Taxize-supported spelling correction to WHO host.
+Vulppes velox,host_scientific_name_clean,Vulpes velox,FALSE,Removed from the canonical zoonotic WHO host universe.
+Oryzomys megacephalus,host_scientific_name_clean,Hylaeamys megacephalus,TRUE,Taxize-supported accepted-name update to WHO host.
+Phalacrocorax auritus,host_scientific_name_clean,Nannopterum auritum,TRUE,Taxize-supported accepted-name update to WHO host.
+Carduelis chloris,host_scientific_name_clean,Chloris chloris,TRUE,Taxize-supported accepted-name update to WHO host.
+Herpestes urva,host_scientific_name_clean,Urva urva,FALSE,Removed from the canonical zoonotic WHO host universe.
+Leptoptilos crumeniferus,host_scientific_name_clean,Leptoptilos crumenifer,TRUE,Taxize-supported accepted-name update to WHO host.
+Toxostoma rufum,verbatim_binomial,Toxostoma rufum,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Mephitis mephitis,verbatim_binomial,Mephitis mephitis,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Herpestes javinicus,verbatim_binomial,Urva javanica,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Martes pennanti,verbatim_binomial,Pekania pennanti,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Mustela vison,verbatim_binomial,Neogale vison,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Parkesia noveboracensis,verbatim_binomial,Parkesia noveboracensis,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Mustella vison,verbatim_binomial,Neogale vison,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Boaedon olivaceus,verbatim_binomial,Boaedon olivaceus,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.
+Leggada bella,verbatim_binomial,Mus musculoides,TRUE,Taxize-supported reviewed verbatim binomial mapped to WHO host.

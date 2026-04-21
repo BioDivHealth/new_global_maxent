@@ -1,0 +1,205 @@
+matched_who_host,matched_who_host_tax_id,matched_who_host_class,matched_who_host_order,matched_who_host_family,vector_species_analysis,vector_species_needs_review,vector_name_taxonomy_examples,source_dataset_examples,country_examples,review_reason_examples,record_count
+Ardea cinerea,30390,aves,pelecaniformes,ardeidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,3
+Asio otus,111810,aves,strigiformes,strigidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Aedes notoscriptus,FALSE,Aedes notoscriptus,MapVEu,Australia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles aconitus,FALSE,Anopheles aconitus,MapVEu,Cambodia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles annularis,FALSE,Anopheles annularis,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles arabiensis,FALSE,Anopheles arabiensis,MapVEu,Ethiopia; Ghana; Kenya; Madagascar,,61
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles argyropus,FALSE,Anopheles argyropus,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles barbirostris sensu lato 245,TRUE,Anopheles barbirostris sensu lato 245,MapVEu,Cambodia,vector_sensu_lato,3
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles barbirostris subgroup clade III,TRUE,Anopheles barbirostris subgroup clade III,MapVEu,Cambodia,vector_group,4
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles campestris,FALSE,Anopheles campestris,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles coluzzii,FALSE,Anopheles coluzzii,MapVEu,Ghana,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles coustani,FALSE,Anopheles coustani,MapVEu,Ethiopia; Kenya; Madagascar,,365
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles crawfordi,FALSE,Anopheles crawfordi,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles darlingi,FALSE,Anopheles darlingi,MapVEu,Peru,,4416
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles dirus,FALSE,Anopheles dirus,MapVEu,Cambodia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles flavicosta,FALSE,Anopheles flavicosta,MapVEu,Madagascar,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles funestus,FALSE,Anopheles funestus,MapVEu,Kenya; Madagascar,,25
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles gambiae,FALSE,Anopheles gambiae,MapVEu,Ghana; Kenya; Madagascar,,18
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles hyrcanus,FALSE,Anopheles hyrcanus,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles jeyporiensis,FALSE,Anopheles jeyporiensis,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles karwari,FALSE,Anopheles karwari,MapVEu,Cambodia,,4
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles kochi,FALSE,Anopheles kochi,MapVEu,Cambodia,,3
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles maculatus sensu lato 4821,TRUE,Anopheles maculatus sensu lato 4821,MapVEu,Cambodia,vector_sensu_lato,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles maculipalpis,FALSE,Anopheles maculipalpis,MapVEu,Madagascar,,241
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles mascarensis,FALSE,Anopheles mascarensis,MapVEu,Madagascar,,31
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles minimus sensu lato 1775,TRUE,Anopheles minimus sensu lato 1775,MapVEu,Cambodia,vector_sensu_lato,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles nigerrimus,FALSE,Anopheles nigerrimus,MapVEu,Cambodia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles nitidus,FALSE,Anopheles nitidus,MapVEu,Cambodia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles pampanai,FALSE,Anopheles pampanai,MapVEu,Cambodia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles peditaeniatus,FALSE,Anopheles peditaeniatus,MapVEu,Cambodia,,4
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles pharoensis,FALSE,Anopheles pharoensis,MapVEu,Ethiopia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles philippinensis,FALSE,Anopheles philippinensis,MapVEu,Cambodia,,6
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles pretoriensis,FALSE,Anopheles pretoriensis,MapVEu,Madagascar,,5
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles rampae,FALSE,Anopheles rampae,MapVEu,Cambodia,,3
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles rufipes,FALSE,Anopheles rufipes,MapVEu,Madagascar,,139
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles saeungae,FALSE,Anopheles saeungae,MapVEu,Cambodia,,5
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles sawadwongporni,FALSE,Anopheles sawadwongporni,MapVEu,Cambodia,,4
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles splendidus,FALSE,Anopheles splendidus,MapVEu,Cambodia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles squamosus,FALSE,Anopheles squamosus,MapVEu,Madagascar,,217
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles tessellatus,FALSE,Anopheles tessellatus,MapVEu,Cambodia,,3
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles vagus,FALSE,Anopheles vagus,MapVEu,Cambodia,,6
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Anopheles wejchoochotei,FALSE,Anopheles wejchoochotei,MapVEu,Cambodia,,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Culex annulirostris,FALSE,Culex annulirostris,MapVEu,Australia,,6
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Culex globocoxitus,FALSE,Culex globocoxitus,MapVEu,Australia,,1
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Culex pipiens molestus,TRUE,Culex pipiens molestus,MapVEu,Australia,vector_infraspecific,3
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia,,3
+Bos taurus,9913,mammalia,artiodactyla,bovidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,81
+Bos taurus,9913,mammalia,artiodactyla,bovidae,gambiae species complex,TRUE,gambiae species complex,MapVEu,Tanzania,vector_complex,2
+Bos taurus,9913,mammalia,artiodactyla,bovidae,nivipes species complex,TRUE,nivipes species complex,MapVEu,Cambodia,vector_complex,9
+Butorides virescens,110671,,,,Culex erraticus,FALSE,Culex erraticus,MapVEu,United States,,1
+Canis lupus,9615,mammalia,carnivora,canidae,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles annulipes,FALSE,Anopheles annulipes,MapVEu,Australia,,1
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles arabiensis,FALSE,Anopheles arabiensis,MapVEu,Ethiopia; Ghana; Kenya; Madagascar,,18
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles bancroftii,FALSE,Anopheles bancroftii,MapVEu,Papua New Guinea,,3
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles coluzzii,FALSE,Anopheles coluzzii,MapVEu,Ghana,,5
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles coustani,FALSE,Anopheles coustani,MapVEu,Ethiopia; Kenya; Madagascar,,34
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles darlingi,FALSE,Anopheles darlingi,MapVEu,Peru,,4416
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles farauti,FALSE,Anopheles farauti,MapVEu,Papua New Guinea,,128
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles farauti No. 4,TRUE,Anopheles farauti No. 4,MapVEu,Papua New Guinea,vector_infraspecific,44
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles funestus,FALSE,Anopheles funestus,MapVEu,Kenya; Madagascar,,4
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles gambiae,FALSE,Anopheles gambiae,MapVEu,Ghana; Kenya,,9
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles hinesorum,FALSE,Anopheles hinesorum,MapVEu,Papua New Guinea,,1
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles koliensis,FALSE,Anopheles koliensis,MapVEu,Papua New Guinea,,2
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles longirostris,FALSE,Anopheles longirostris,MapVEu,Papua New Guinea,,7
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles maculipalpis,FALSE,Anopheles maculipalpis,MapVEu,Madagascar,,11
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles mascarensis,FALSE,Anopheles mascarensis,MapVEu,Madagascar,,3
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles pharoensis,FALSE,Anopheles pharoensis,MapVEu,Ethiopia,,2
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles pretoriensis,FALSE,Anopheles pretoriensis,MapVEu,Madagascar,,1
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles punctulatus,FALSE,Anopheles punctulatus,MapVEu,Papua New Guinea,,30
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles rufipes,FALSE,Anopheles rufipes,MapVEu,Madagascar,,2
+Canis lupus,9615,mammalia,carnivora,canidae,Anopheles squamosus,FALSE,Anopheles squamosus,MapVEu,Madagascar,,9
+Canis lupus,9615,mammalia,carnivora,canidae,Culex annulirostris,FALSE,Culex annulirostris,MapVEu,Australia,,5
+Canis lupus,9615,mammalia,carnivora,canidae,Culex pipiens molestus,TRUE,Culex pipiens molestus,MapVEu,Australia,vector_infraspecific,1
+Canis lupus,9615,mammalia,carnivora,canidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia; Grenada,,39
+Canis lupus,9615,mammalia,carnivora,canidae,gambiae species complex,TRUE,gambiae species complex,MapVEu,Tanzania,vector_complex,2
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles arabiensis,FALSE,Anopheles arabiensis,MapVEu,Ethiopia; Ghana; Kenya,,16
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles coluzzii,FALSE,Anopheles coluzzii,MapVEu,Ghana,,8
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles coustani,FALSE,Anopheles coustani,MapVEu,Ethiopia; Kenya,,3
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles darlingi,FALSE,Anopheles darlingi,MapVEu,Peru,,4416
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles funestus,FALSE,Anopheles funestus,MapVEu,Kenya,,3
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles gambiae,FALSE,Anopheles gambiae,MapVEu,Ghana; Kenya; Madagascar,,12
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Anopheles pharoensis,FALSE,Anopheles pharoensis,MapVEu,Ethiopia,,2
+Capra hircus,9925,mammalia,artiodactyla,bovidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,2
+Capra hircus,9925,mammalia,artiodactyla,bovidae,gambiae species complex,TRUE,gambiae species complex,MapVEu,Tanzania,vector_complex,2
+Cardinalis cardinalis,98964,aves,passeriformes,cardinalidae,Culiseta melanura,FALSE,Culiseta melanura,MapVEu,United States,,1
+Columba livia,8932,aves,columbiformes,columbidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,1
+Columba palumbus,8934,aves,columbiformes,columbidae,Culex <subgenus>,FALSE,Culex <subgenus>,MapVEu,United Kingdom,,2
+Columba palumbus,8934,aves,columbiformes,columbidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,42
+Cygnus olor,8869,aves,anseriformes,anatidae,Culex modestus,FALSE,Culex modestus,MapVEu,United Kingdom,,1
+Equus caballus,9796,mammalia,perissodactyla,equidae,Culex annulirostris,FALSE,Culex annulirostris,MapVEu,Australia,,5
+Gallus gallus,9031,aves,galliformes,phasianidae,Aedes notoscriptus,FALSE,Aedes notoscriptus,MapVEu,Australia,,1
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles annulipes,FALSE,Anopheles annulipes,MapVEu,Australia,,1
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles arabiensis,FALSE,Anopheles arabiensis,MapVEu,Ethiopia; Kenya,,5
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,16
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles coustani,FALSE,Anopheles coustani,MapVEu,Ethiopia; Kenya,,3
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles funestus,FALSE,Anopheles funestus,MapVEu,Kenya,,3
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles gambiae,FALSE,Anopheles gambiae,MapVEu,Kenya,,3
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles maculipennis sensu lato BTLHVDV-2014,TRUE,Anopheles maculipennis sensu lato BTLHVDV-2014,MapVEu,United Kingdom,vector_sensu_lato,21
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles messeae x Anopheles daciae,TRUE,Anopheles messeae x Anopheles daciae,MapVEu,United Kingdom,vector_hybrid,23
+Gallus gallus,9031,aves,galliformes,phasianidae,Anopheles pharoensis,FALSE,Anopheles pharoensis,MapVEu,Ethiopia,,2
+Gallus gallus,9031,aves,galliformes,phasianidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,1
+Gallus gallus,9031,aves,galliformes,phasianidae,Culex pipiens molestus,TRUE,Culex pipiens molestus,MapVEu,Australia,vector_infraspecific,1
+Gallus gallus,9031,aves,galliformes,phasianidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia,,2
+Gallus gallus,9031,aves,galliformes,phasianidae,gambiae species complex,TRUE,gambiae species complex,MapVEu,Tanzania,vector_complex,2
+Hirundo rustica,43150,aves,passeriformes,hirundinidae,Culex modestus,FALSE,Culex modestus,MapVEu,United Kingdom,,3
+Hirundo rustica,43150,aves,passeriformes,hirundinidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,9
+Homo sapiens,9606,,,,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
+Homo sapiens,9606,,,,Aedes notoscriptus,FALSE,Aedes notoscriptus,MapVEu,Australia,,1
+Homo sapiens,9606,,,,Anopheles <genus>,FALSE,Anopheles <genus>,MapVEu,Botswana,,7
+Homo sapiens,9606,,,,Anopheles annularis,FALSE,Anopheles annularis,MapVEu,Cambodia,,1
+Homo sapiens,9606,,,,Anopheles arabiensis,FALSE,Anopheles arabiensis,MapVEu,Botswana; Ethiopia; Ghana; Kenya; Madagascar; Namibia; Zambia,,196
+Homo sapiens,9606,,,,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,28
+Homo sapiens,9606,,,,Anopheles bancroftii,FALSE,Anopheles bancroftii,MapVEu,Papua New Guinea,,6
+Homo sapiens,9606,,,,Anopheles claviger,FALSE,Anopheles claviger,MapVEu,United Kingdom,,1
+Homo sapiens,9606,,,,Anopheles coluzzii,FALSE,Anopheles coluzzii,MapVEu,Ghana,,9
+Homo sapiens,9606,,,,Anopheles coustani,FALSE,Anopheles coustani,MapVEu,Ethiopia; Kenya; Madagascar,,229
+Homo sapiens,9606,,,,Anopheles crawfordi,FALSE,Anopheles crawfordi,MapVEu,Cambodia,,1
+Homo sapiens,9606,,,,Anopheles darlingi,FALSE,Anopheles darlingi,MapVEu,Peru,,4416
+Homo sapiens,9606,,,,Anopheles dirus,FALSE,Anopheles dirus,MapVEu,Cambodia,,2
+Homo sapiens,9606,,,,Anopheles farauti,FALSE,Anopheles farauti,MapVEu,Papua New Guinea,,631
+Homo sapiens,9606,,,,Anopheles farauti No. 4,TRUE,Anopheles farauti No. 4,MapVEu,Papua New Guinea,vector_infraspecific,238
+Homo sapiens,9606,,,,Anopheles funestus,FALSE,Anopheles funestus,MapVEu,Central African Republic; Kenya; Madagascar; Zambia; Zimbabwe,,25
+Homo sapiens,9606,,,,Anopheles gambiae,FALSE,Anopheles gambiae,MapVEu,Ghana; Kenya; Zambia,,14
+Homo sapiens,9606,,,,Anopheles hinesorum,FALSE,Anopheles hinesorum,MapVEu,Papua New Guinea,,6
+Homo sapiens,9606,,,,Anopheles koliensis,FALSE,Anopheles koliensis,MapVEu,Papua New Guinea,,39
+Homo sapiens,9606,,,,Anopheles leesoni,FALSE,Anopheles leesoni,MapVEu,Zambia,,1
+Homo sapiens,9606,,,,Anopheles longipalpis,FALSE,Anopheles longipalpis,MapVEu,Botswana,,31
+Homo sapiens,9606,,,,Anopheles longirostris,FALSE,Anopheles longirostris,MapVEu,Papua New Guinea,,75
+Homo sapiens,9606,,,,Anopheles maculipalpis,FALSE,Anopheles maculipalpis,MapVEu,Madagascar,,68
+Homo sapiens,9606,,,,Anopheles maculipennis sensu lato BTLHVDV-2014,TRUE,Anopheles maculipennis sensu lato BTLHVDV-2014,MapVEu,United Kingdom,vector_sensu_lato,281
+Homo sapiens,9606,,,,Anopheles mascarensis,FALSE,Anopheles mascarensis,MapVEu,Madagascar,,23
+Homo sapiens,9606,,,,Anopheles messeae x Anopheles daciae,TRUE,Anopheles messeae x Anopheles daciae,MapVEu,United Kingdom,vector_hybrid,35
+Homo sapiens,9606,,,,Anopheles parensis,FALSE,Anopheles parensis,MapVEu,Botswana,,16
+Homo sapiens,9606,,,,Anopheles pharoensis,FALSE,Anopheles pharoensis,MapVEu,Ethiopia,,2
+Homo sapiens,9606,,,,Anopheles pretoriensis,FALSE,Anopheles pretoriensis,MapVEu,Madagascar,,2
+Homo sapiens,9606,,,,Anopheles punctulatus,FALSE,Anopheles punctulatus,MapVEu,Papua New Guinea,,110
+Homo sapiens,9606,,,,Anopheles quadriannulatus,FALSE,Anopheles quadriannulatus,MapVEu,Botswana; Namibia,,5
+Homo sapiens,9606,,,,Anopheles rampae,FALSE,Anopheles rampae,MapVEu,Cambodia,,1
+Homo sapiens,9606,,,,Anopheles rufipes,FALSE,Anopheles rufipes,MapVEu,Madagascar,,44
+Homo sapiens,9606,,,,Anopheles squamosus,FALSE,Anopheles squamosus,MapVEu,Madagascar,,72
+Homo sapiens,9606,,,,Anopheles vagus,FALSE,Anopheles vagus,MapVEu,Cambodia,,1
+Homo sapiens,9606,,,,Coquillettidia linealis,FALSE,Coquillettidia linealis,MapVEu,Australia,,1
+Homo sapiens,9606,,,,Coquillettidia richiardii,FALSE,Coquillettidia richiardii,MapVEu,United Kingdom,,3
+Homo sapiens,9606,,,,Culex <subgenus>,FALSE,Culex <subgenus>,MapVEu,United Kingdom,,1
+Homo sapiens,9606,,,,Culex annulirostris,FALSE,Culex annulirostris,MapVEu,Australia,,5
+Homo sapiens,9606,,,,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+Homo sapiens,9606,,,,Culex globocoxitus,FALSE,Culex globocoxitus,MapVEu,Australia,,1
+Homo sapiens,9606,,,,Culex pipiens molestus,TRUE,Culex pipiens molestus,MapVEu,Australia,vector_infraspecific,2
+Homo sapiens,9606,,,,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia; Grenada,,41
+Homo sapiens,9606,,,,Culiseta annulata,FALSE,Culiseta annulata,MapVEu,United Kingdom,,187
+Homo sapiens,9606,,,,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,5
+Homo sapiens,9606,,,,Ochlerotatus detritus,FALSE,Ochlerotatus detritus,MapVEu,United Kingdom,,2
+Homo sapiens,9606,,,,funestus group,TRUE,funestus group,MapVEu,Burkina Faso,vector_group,2
+Homo sapiens,9606,,,,gambiae species complex,TRUE,gambiae species complex,MapVEu,Burkina Faso; Central African Republic; Tanzania,vector_complex,18
+Iguana iguana,8517,reptilia,squamata,iguanidae,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
+Iguana iguana,8517,reptilia,squamata,iguanidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Grenada,,37
+Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,1
+Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Anopheles messeae x Anopheles daciae,TRUE,Anopheles messeae x Anopheles daciae,MapVEu,United Kingdom,vector_hybrid,1
+Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Coquillettidia linealis,FALSE,Coquillettidia linealis,MapVEu,Australia,,1
+Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,1
+Nycticorax nycticorax,8901,aves,pelecaniformes,ardeidae,Culex annulirostris,FALSE,Culex annulirostris,MapVEu,Australia,,1
+Nycticorax nycticorax,8901,aves,pelecaniformes,ardeidae,Culex erraticus,FALSE,Culex erraticus,MapVEu,United States,,2
+Odocoileus virginianus,9874,mammalia,artiodactyla,cervidae,Anopheles crucians,FALSE,Anopheles crucians,MapVEu,United States,,1
+Odocoileus virginianus,9874,mammalia,artiodactyla,cervidae,Coquillettidia perturbans,FALSE,Coquillettidia perturbans,MapVEu,United States,,4
+Odocoileus virginianus,9874,mammalia,artiodactyla,cervidae,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+Odocoileus virginianus,9874,mammalia,artiodactyla,cervidae,Ochlerotatus infirmatus,FALSE,Ochlerotatus infirmatus,MapVEu,United States,,10
+Oryctolagus cuniculus,9986,mammalia,lagomorpha,leporidae,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,22
+Oryctolagus cuniculus,9986,mammalia,lagomorpha,leporidae,Anopheles maculipennis sensu lato BTLHVDV-2014,TRUE,Anopheles maculipennis sensu lato BTLHVDV-2014,MapVEu,United Kingdom,vector_sensu_lato,206
+Oryctolagus cuniculus,9986,mammalia,lagomorpha,leporidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,1
+Oryctolagus cuniculus,9986,mammalia,lagomorpha,leporidae,Culiseta annulata,FALSE,Culiseta annulata,MapVEu,United Kingdom,,4
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles arabiensis,FALSE,Anopheles arabiensis,MapVEu,Kenya,,3
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,2
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles coustani,FALSE,Anopheles coustani,MapVEu,Kenya,,2
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles funestus,FALSE,Anopheles funestus,MapVEu,Kenya,,3
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles gambiae,FALSE,Anopheles gambiae,MapVEu,Kenya,,3
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles maculipennis sensu lato BTLHVDV-2014,TRUE,Anopheles maculipennis sensu lato BTLHVDV-2014,MapVEu,United Kingdom,vector_sensu_lato,1
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Anopheles messeae x Anopheles daciae,TRUE,Anopheles messeae x Anopheles daciae,MapVEu,United Kingdom,vector_hybrid,3
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Culiseta annulata,FALSE,Culiseta annulata,MapVEu,United Kingdom,,5
+Ovis aries,9940,mammalia,artiodactyla,bovidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,21
+Passer domesticus,48849,aves,passeriformes,passeridae,Culex <subgenus>,FALSE,Culex <subgenus>,MapVEu,United Kingdom,,1
+Passer domesticus,48849,aves,passeriformes,passeridae,Culex globocoxitus,FALSE,Culex globocoxitus,MapVEu,Australia,,6
+Passer domesticus,48849,aves,passeriformes,passeridae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,12
+Passer domesticus,48849,aves,passeriformes,passeridae,Culex pipiens molestus,TRUE,Culex pipiens molestus,MapVEu,Australia,vector_infraspecific,1
+Passer domesticus,48849,aves,passeriformes,passeridae,Culiseta morsitans,FALSE,Culiseta morsitans,MapVEu,United Kingdom,,1
+Passer domesticus,48849,aves,passeriformes,passeridae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,2
+Procyon lotor,9654,mammalia,carnivora,procyonidae,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+Rattus norvegicus,10116,mammalia,rodentia,muridae,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,2
+Rattus rattus,10117,mammalia,rodentia,muridae,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
+Rattus rattus,10117,mammalia,rodentia,muridae,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+Rattus rattus,10117,mammalia,rodentia,muridae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Grenada,,37
+Rattus tanezumi,35732,mammalia,rodentia,muridae,Aedes notoscriptus,FALSE,Aedes notoscriptus,MapVEu,Australia,,1
+Rattus tanezumi,35732,mammalia,rodentia,muridae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,1
+Sigmodon hispidus,42415,mammalia,rodentia,cricetidae,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+Sylvilagus floridanus,9988,mammalia,lagomorpha,leporidae,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+Toxostoma rufum,58210,aves,passeriformes,mimidae,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
+Toxostoma rufum,58210,aves,passeriformes,mimidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Grenada,,37
+Trichoglossus moluccanus,1549204,aves,psittaciformes,psittacidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia,,1
+Turdus merula,9187,aves,passeriformes,turdidae,Culex <subgenus>,FALSE,Culex <subgenus>,MapVEu,United Kingdom,,1
+Turdus merula,9187,aves,passeriformes,turdidae,Culex globocoxitus,FALSE,Culex globocoxitus,MapVEu,Australia,,2
+Turdus merula,9187,aves,passeriformes,turdidae,Culex pipiens,FALSE,Culex pipiens,MapVEu,United Kingdom,,19
+Turdus merula,9187,aves,passeriformes,turdidae,Culex pipiens molestus,TRUE,Culex pipiens molestus,MapVEu,Australia,vector_infraspecific,3
+Turdus merula,9187,aves,passeriformes,turdidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia,,6
+Turdus merula,9187,aves,passeriformes,turdidae,Culiseta morsitans,FALSE,Culiseta morsitans,MapVEu,United Kingdom,,2
+Vulpes vulpes,9627,mammalia,carnivora,canidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,2

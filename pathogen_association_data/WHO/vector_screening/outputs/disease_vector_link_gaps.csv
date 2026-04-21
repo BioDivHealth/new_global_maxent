@@ -1,0 +1,13 @@
+disease_name,in_scaffold,in_canonical_vectors,n_pathogen_rows,n_vector_rows,gap_status
+Chikungunya fever,TRUE,TRUE,2,21,matched
+Crimean-Congo hemorrhagic fever,TRUE,TRUE,1,49,matched
+Dengue,TRUE,TRUE,2,16,matched
+Oropouche fever,TRUE,TRUE,1,16,matched
+Plague,TRUE,TRUE,1,47,matched
+Rift Valley fever,TRUE,TRUE,1,88,matched
+Severe fever with thrombocytopenia syndrome (SFTS),TRUE,TRUE,2,15,matched
+Tick-borne encephalitis,TRUE,TRUE,2,11,matched
+Venezuelan equine encephalitis,TRUE,TRUE,1,43,matched
+West Nile fever,TRUE,TRUE,2,75,matched
+Yellow fever,TRUE,TRUE,2,32,matched
+Zika virus disease,TRUE,TRUE,2,57,matched

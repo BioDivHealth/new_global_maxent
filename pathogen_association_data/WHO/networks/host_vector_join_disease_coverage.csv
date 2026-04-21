@@ -1,0 +1,13 @@
+disease_name,total_disease_vector_rows,total_distinct_disease_vectors,disease_vectors_with_host_overlap,final_disease_host_vector_rows,final_distinct_hosts,final_distinct_vectors,taxonomy_caution_rows
+West Nile fever,75,75,47,439,78,47,0
+Rift Valley fever,88,78,46,132,8,45,4
+Crimean-Congo hemorrhagic fever,49,49,35,116,8,35,3
+Venezuelan equine encephalitis,43,35,22,37,5,21,0
+Zika virus disease,57,56,30,35,4,29,2
+Plague,47,47,12,21,9,11,3
+Severe fever with thrombocytopenia syndrome (SFTS),15,15,7,19,6,7,0
+Tick-borne encephalitis,11,11,7,19,5,6,0
+Chikungunya fever,21,21,13,12,1,12,0
+Yellow fever,32,30,13,12,1,12,0
+Oropouche fever,16,15,10,10,1,10,0
+Dengue,16,16,7,7,2,6,0

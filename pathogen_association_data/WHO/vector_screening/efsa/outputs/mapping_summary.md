@@ -5,8 +5,8 @@
 - Appendix G header row detected: 1
 - Appendix G rows read: 187
 - Unique EFSA pathogens represented in Appendix G: 24
-- Unique pathogens in combined WHO network: 52
-- Unique diseases in combined WHO network: 42
+- Unique pathogens in combined WHO network: 29
+- Unique diseases in combined WHO network: 30
 - EFSA Appendix A pathogens matched to combined WHO network: 4
 - Exact matches: 3
 - Manual matches: 1

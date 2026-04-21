@@ -64,6 +64,14 @@ association data, with a focus on WHO priority pathogens.
   - `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases_zoonotic.csv`
   - `pathogen_association_data/WHO/networks/combined_who_network_canonical_zoonotic.csv`
 - Shared path helpers for these layers live in `scripts/associations/working_inputs.R`.
+- A separate curation layer for splitting broad pathogen taxa into narrower
+  host/vector/amplifier analysis units can be generated with:
+  - `scripts/associations/network_building/1_2_WHO_Pathogen_Analysis_Units.R`
+  - output: `pathogen_association_data/WHO/who_diseases/who_pathogen_analysis_units.csv`
+- A candidate strain inventory for ICTV-backed Sarbecovirus, Merbecovirus,
+  and Vesiculovirus rows can be generated with:
+  - `scripts/associations/network_building/1_3_WHO_Broad_Taxa_Candidate_Strains.R`
+  - output: `pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains.csv`
 
 The intended workflow is:
 

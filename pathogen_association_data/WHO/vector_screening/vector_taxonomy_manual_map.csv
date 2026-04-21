@@ -1,5 +1,0 @@
-source_name,canonical_name,vector_taxon_rank,cleanup_method,notes
-stegomyia albopicta,aedes albopictus,species,manual_map,Old genus usage normalized to the Aedes spelling used elsewhere in the table.
-aedes flavicolis,aedes flavicollis,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
-aedes luteocephalis,aedes luteocephalus,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
-haemagogus spegazzinni,haemagogus spegazzinii,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.

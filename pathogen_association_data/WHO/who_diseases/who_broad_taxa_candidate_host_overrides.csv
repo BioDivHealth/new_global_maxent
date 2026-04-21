@@ -1,0 +1,4 @@
+accession_base,host_name_record,host_name_current_override,host_override_note
+EF065509,Pipistrellus abramus,,GenBank nuccore record shows /host="Pipistrellus abramus" while NCBI Datasets summary returns the broader host label Chiroptera.
+EF065505,Tylonycteris pachypus,,GenBank nuccore record shows /host="Tylonycteris pachypus" while NCBI Datasets summary returns the broader host label Chiroptera.
+KC869678,Neoromicia capensis,Laephotis capensis,GenBank nuccore record shows /host="Neoromicia capensis"; NCBI Datasets normalizes this to the current taxonomy Laephotis capensis.

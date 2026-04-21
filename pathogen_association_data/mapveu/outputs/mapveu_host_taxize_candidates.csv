@@ -1,0 +1,33 @@
+candidate_query,candidate_query_key,total_row_count,source_fields,example_reason_flags
+Anolis sagrei,anolis sagrei,451,host_organism_raw,specific_unmatched
+Lontra canadensis,lontra canadensis,451,host_organism_raw,specific_unmatched
+Neotoma floridana,neotoma floridana,451,host_organism_raw,specific_unmatched
+Oryzomys palustris,oryzomys palustris,451,host_organism_raw,specific_unmatched
+Peromyscus gossypinus,peromyscus gossypinus,451,host_organism_raw,specific_unmatched
+Coereba flaveola,coereba flaveola,69,host_organism_raw,specific_unmatched
+Loxigilla noctis,loxigilla noctis,69,host_organism_raw,specific_unmatched
+Melanospiza bicolor,melanospiza bicolor,69,host_organism_raw,specific_unmatched
+Melopsittacus undulatus,melopsittacus undulatus,69,host_organism_raw,specific_unmatched
+Setophaga striata,setophaga striata,69,host_organism_raw,specific_unmatched
+Toxostoma curvirostre,toxostoma curvirostre,69,host_organism_raw,specific_unmatched
+Urva auropunctata,urva auropunctata,69,host_organism_raw,specific_unmatched
+Zenaida auriculata,zenaida auriculata,69,host_organism_raw,specific_unmatched
+Anolis carolinensis,anolis carolinensis,27,host_organism_raw,specific_unmatched
+Columba oenas,columba oenas,11,host_organism_raw,specific_unmatched
+Dryophytes cinereus,dryophytes cinereus,10,host_organism_raw,specific_unmatched
+Ptilotula penicillata,ptilotula penicillata,5,host_organism_raw,specific_unmatched
+Manorina melanocephala,manorina melanocephala,4,host_organism_raw,specific_unmatched
+Tyto alba guttata,tyto alba guttata,4,host_organism_raw,specific_unmatched
+Phylidonyris novaehollandiae,phylidonyris novaehollandiae,3,host_organism_raw,specific_unmatched
+Alauda arvensis,alauda arvensis,2,host_organism_raw,specific_unmatched
+Anthochaera chrysoptera,anthochaera chrysoptera,2,host_organism_raw,specific_unmatched
+Anthus pratensis,anthus pratensis,2,host_organism_raw,specific_unmatched
+Dasypus novemcinctus,dasypus novemcinctus,2,host_organism_raw,specific_unmatched
+Sylvilagus palustris,sylvilagus palustris,2,host_organism_raw,specific_unmatched
+Anthochaera carunculata,anthochaera carunculata,1,host_organism_raw,specific_unmatched
+Gymnorhina tibicen,gymnorhina tibicen,1,host_organism_raw,specific_unmatched
+Motacilla flava,motacilla flava,1,host_organism_raw,specific_unmatched
+Nycticorax caledonicus,nycticorax caledonicus,1,host_organism_raw,specific_unmatched
+Pardalotus striatus,pardalotus striatus,1,host_organism_raw,specific_unmatched
+Platycercus elegans,platycercus elegans,1,host_organism_raw,specific_unmatched
+Rusa timorensis,rusa timorensis,1,host_organism_raw,specific_unmatched

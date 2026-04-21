@@ -1,0 +1,2 @@
+raw_host_label,source_field,matched_who_host,include_in_final,note
+Canis lupus familiaris,host_organism_raw,Canis lupus,TRUE,Conservative domestic synonym mapped to WHO host.

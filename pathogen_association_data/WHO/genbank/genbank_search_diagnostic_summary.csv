@@ -1,0 +1,3 @@
+Pathogens,Disease_name,Family,query_strategy,any_success,successful_queries,failed_queries,best_query_label,best_records_found,representative_error
+Alphainfluenzavirus influenzae (H2N1),Influenza (H2N1),Orthomyxoviridae,taxid,FALSE,,manual_query_1; manual_query_2; manual_query_3; name_geo_query; name_query; taxid_geo_query; taxid_query,,,Search Backend failed: Database is not supported: nuccore
+Orthoflavivirus encephalitidis,Tick-borne encephalitis,Flaviviridae,taxid,FALSE,,manual_query_1; manual_query_2; manual_query_3; manual_query_4; manual_query_5; manual_query_6; manual_query_7; name_geo_query; name_query; taxid_geo_query; taxid_query,,,Search Backend failed: Database is not supported: nuccore
