@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Prepare and run OpenAI Batch workflows for WHO DON country extraction or
-adjudication, then parse the resulting country candidates back into repo
-artifacts.
+Prepare and run OpenAI Batch workflows for WHO DON country extraction,
+adjudication, third-pass review, or event-country role adjudication, then parse
+the resulting candidates back into repo artifacts.
 
 Default workflow:
   1. prepare  -> build Batch API JSONL requests from WHO DON input
@@ -22,6 +22,7 @@ import csv
 import json
 import mimetypes
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -42,6 +43,40 @@ DEFAULT_MODEL = "gpt-5.4-mini-2026-03-17"
 DEFAULT_COMPLETION_WINDOW = "24h"
 DEFAULT_ENDPOINT = "/v1/responses"
 API_BASE = "https://api.openai.com/v1"
+COUNTRY_EXTRACTION_WORKFLOWS = {"extract", "adjudicate", "third_pass_review"}
+EVENT_COUNTRY_WORKFLOW = "event_country_adjudication"
+WORKFLOW_CHOICES = ["extract", "adjudicate", "third_pass_review", EVENT_COUNTRY_WORKFLOW]
+
+EVENT_COUNTRY_ROLES = [
+    "event_country",
+    "reporting_country",
+    "exposure_source_country",
+    "travel_country",
+    "background_country",
+    "lab_or_partner_country",
+    "regional_or_global_context",
+    "uncertain",
+]
+EVENT_REASONING_LABELS = [
+    "explicit_event_country",
+    "administrative_reporting_country",
+    "imported_case_reporting_country",
+    "exposure_or_source_country",
+    "travel_history_only",
+    "background_or_historical_context",
+    "lab_or_partner_context",
+    "regional_or_global_summary",
+    "insufficient_evidence",
+]
+
+SAFE_SPAN_ONLY_ALIASES = {
+    "United States": {"US", "USA", "U.S.", "U.S.A."},
+    "United Kingdom": {"UK", "U.K."},
+    "Uganda": {"Ugandan"},
+    "Kenya": {"Kenyan"},
+    "China": {"Chinese"},
+    "Laos": {"Lao PDR"},
+}
 
 
 def ensure_batch_dir() -> Path:
@@ -149,6 +184,62 @@ def load_country_allowlist() -> list[str]:
     return sorted(countries)
 
 
+def normalize_match_text(text: str) -> str:
+    text = (text or "").lower()
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def load_country_alias_lookup() -> dict[str, list[str]]:
+    alias_map: dict[str, set[str]] = {}
+
+    with COUNTRY_ALIAS_CSV.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            geography_type = (row.get("geography_type") or "").strip()
+            country_standard = (row.get("country_standard") or "").strip()
+            alias = (row.get("alias") or "").strip()
+            is_ambiguous = (row.get("is_ambiguous") or "").strip().lower()
+
+            if geography_type != "country" or not country_standard or is_ambiguous == "true":
+                continue
+
+            alias_map.setdefault(country_standard, set()).add(country_standard)
+            if alias:
+                alias_map[country_standard].add(alias)
+
+    for country in load_country_allowlist():
+        alias_map.setdefault(country, set()).add(country)
+        for extra_alias in SAFE_SPAN_ONLY_ALIASES.get(country, set()):
+            alias_map[country].add(extra_alias)
+
+    return {
+        country: sorted(
+            {alias for alias in aliases if normalize_match_text(alias)},
+            key=lambda item: (-len(normalize_match_text(item)), normalize_match_text(item)),
+        )
+        for country, aliases in alias_map.items()
+    }
+
+
+def span_supports_country(country_standard: str, evidence_span: str, alias_lookup: dict[str, list[str]]) -> tuple[bool, str]:
+    aliases = alias_lookup.get(country_standard, [country_standard])
+    span_key = normalize_match_text(evidence_span)
+
+    if not span_key:
+        return False, "Evidence span is empty after normalization."
+
+    for alias in aliases:
+        alias_key = normalize_match_text(alias)
+        if not alias_key:
+            continue
+        pattern = rf"(?<![a-z0-9]){re.escape(alias_key)}(?![a-z0-9])"
+        if re.search(pattern, span_key):
+            return True, ""
+
+    return False, "Evidence span does not explicitly mention the adjudicated country or a known non-ambiguous alias."
+
+
 def extraction_schema(country_allowlist: list[str]) -> dict[str, Any]:
     return {
         "name": "who_don_country_extraction",
@@ -196,7 +287,91 @@ def extraction_schema(country_allowlist: list[str]) -> dict[str, Any]:
     }
 
 
+def event_country_adjudication_schema() -> dict[str, Any]:
+    return {
+        "name": "who_don_event_country_adjudication",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": [
+                "record_key",
+                "country_standard",
+                "disease_label_clean",
+                "country_role",
+                "event_country_flag",
+                "confidence",
+                "evidence_span",
+                "reasoning_label",
+                "needs_manual_review",
+            ],
+            "properties": {
+                "record_key": {"type": "string"},
+                "country_standard": {"type": "string"},
+                "disease_label_clean": {"type": "string"},
+                "country_role": {"type": "string", "enum": EVENT_COUNTRY_ROLES},
+                "event_country_flag": {"type": "boolean"},
+                "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+                "evidence_span": {"type": "string"},
+                "reasoning_label": {"type": "string", "enum": EVENT_REASONING_LABELS},
+                "needs_manual_review": {"type": "boolean"},
+            },
+        },
+    }
+
+
+def response_format_schema(country_allowlist: list[str], workflow: str) -> dict[str, Any]:
+    if workflow == EVENT_COUNTRY_WORKFLOW:
+        return event_country_adjudication_schema()
+    return extraction_schema(country_allowlist)
+
+
 def system_prompt(workflow: str) -> str:
+    if workflow == EVENT_COUNTRY_WORKFLOW:
+        return (
+            "You adjudicate row-level country roles for WHO Disease Outbreak News disease-country candidates. "
+            "Return only structured JSON matching the schema. "
+            "This is not a broad extraction task: evaluate only the supplied record, country, and disease/event label. "
+            "Classify the role of the supplied country for the supplied disease/event label using the allowed enum. "
+            "Use event_country only when disease/event occurrence, detection, confirmation, reporting, samples, cases, or deaths are tied to that country. "
+            "Use reporting_country when a national authority notified WHO or administratively reported the event. "
+            "Use exposure_source_country for a likely infection or exposure source country that is different from the reporting/detection country. "
+            "Use travel_country when the country appears only in travel history, itinerary, transit, or return route. "
+            "Use background_country for historical, endemicity, neighbouring-country, comparison, or broad epidemiology context. "
+            "Use lab_or_partner_country only for reference labs, donors, collaborators, agencies, or WHO offices. "
+            "Use regional_or_global_context when a country appears only inside a regional/global summary and individual country-event support is unclear. "
+            "Use uncertain when the supplied text is insufficient or ambiguous. "
+            "Set event_country_flag=true only for event_country or reporting_country with high or medium confidence. "
+            "Cite one short verbatim evidence_span from the supplied DON text. "
+            "The evidence_span must explicitly mention the supplied country_standard or a clear official alias for the same country. "
+            "Do not cite a span that only mentions a different country, a region, or a subnational place in another country. "
+            "If you cannot find a short span that explicitly names the supplied country_standard or a clear official alias, do not keep a confident role. "
+            "Instead return country_role='uncertain' or set needs_manual_review=true. "
+            "If the role is uncertain and no good span exists, use the shortest span explaining the ambiguity."
+        )
+
+    if workflow == "third_pass_review":
+        return (
+            "You perform a third-pass review of country evidence from WHO Disease Outbreak News records. "
+            "Return only structured JSON matching the schema. "
+            "This is a targeted dispute-resolution pass for records where earlier extraction and adjudication disagreed "
+            "or where geography aliases may have caused errors. "
+            "The prompt may include first-pass countries and adjudication countries as competing hypotheses; treat both as hints only, not truth. "
+            "Use the record text itself as the source of truth. "
+            "Retain only countries explicitly supported by the text. "
+            "Return at most one strongest evidence_span per retained country. "
+            "Prefer short verbatim spans that explicitly contain the country name. "
+            "If the text uses a territory or alias label such as Gaza Strip, West Bank, Hong Kong, Macao, Republic of Korea, Viet Nam, or Cabo Verde, "
+            "you may map it to the canonical country allowlist only when the label clearly refers to that geography in the record. "
+            "Do not force no_country just because the canonical country name is absent if the explicit alias or territory label clearly supports a mapped country. "
+            "Do not infer countries from disease history, travel assumptions, subnational geography knowledge, or regional labels. "
+            "Do not turn regions such as West Africa or Region of the Americas into country lists. "
+            "If support is weak, background-only, or ambiguous, drop the country or return no_country. "
+            "If no explicit country evidence is present, return has_country_evidence=false, "
+            "country_evidence=[], reasoning_label='no_country'. "
+            "Evidence spans must be short verbatim snippets from the record."
+        )
+
     if workflow == "adjudicate":
         return (
             "You validate country evidence from WHO Disease Outbreak News records. "
@@ -239,6 +414,48 @@ def render_prompt_value(value: Any) -> str:
 
 def build_user_prompt(payload: dict[str, Any], workflow: str) -> str:
     input_obj = payload.get("input", {})
+    if workflow == EVENT_COUNTRY_WORKFLOW:
+        optional_fields = [
+            "current_classification",
+            "evidence_section",
+            "evidence_sentence",
+            "trigger_phrase",
+            "exclusion_phrase",
+            "record_country_count",
+            "record_disease_count",
+            "adjudication_reason",
+            "allowed_country_roles",
+            "instructions",
+        ]
+        parts = [
+            f"record_key: {payload.get('record_key', '')}",
+            f"country_standard: {input_obj.get('country_standard', '')}",
+            f"disease_label_clean: {input_obj.get('disease_label_clean', '')}",
+            f"disease_label_raw: {input_obj.get('disease_label_raw', '')}",
+            f"disease_label_type: {input_obj.get('disease_label_type', '')}",
+            f"Title: {input_obj.get('Title', '')}",
+            f"article_url: {input_obj.get('article_url', '')}",
+            f"publication_datetime_utc: {input_obj.get('publication_datetime_utc', '')}",
+            "",
+            "summary_text:",
+            input_obj.get("summary_text", "") or "",
+            "",
+            "overview_text:",
+            input_obj.get("overview_text", "") or "",
+            "",
+            "epidemiology_text:",
+            input_obj.get("epidemiology_text", "") or "",
+            "",
+            "response_text:",
+            input_obj.get("response_text", "") or "",
+        ]
+
+        for field_name in optional_fields:
+            if field_name in input_obj:
+                parts.extend(["", f"{field_name}:", render_prompt_value(input_obj.get(field_name))])
+
+        return "\n".join(parts).strip()
+
     parts = [
         f"record_key: {payload.get('record_key', '')}",
         f"Title: {input_obj.get('Title', '')}",
@@ -267,9 +484,24 @@ def build_user_prompt(payload: dict[str, Any], workflow: str) -> str:
         "adjudication_reason",
         "adjudication_notes",
         "llm_country_count",
+        "first_country_count",
+        "first_country_list",
+        "adjudication_country_count",
+        "adjudication_country_list",
+        "dropped_country_count",
+        "dropped_country_list",
+        "added_country_count",
+        "added_country_list",
+        "zeroed_out_vs_first",
+        "expanded_vs_first",
+        "geography_alias_edge_case",
+        "third_pass_reason",
+        "first_country_rows",
+        "adjudication_country_rows",
+        "third_pass_notes",
     ]
 
-    if workflow == "adjudicate":
+    if workflow in {"adjudicate", "third_pass_review"}:
         for field_name in optional_fields:
             if field_name in input_obj:
                 parts.extend(
@@ -297,7 +529,7 @@ def build_responses_body(
         "text": {
             "format": {
                 "type": "json_schema",
-                **extraction_schema(country_allowlist),
+                **response_format_schema(country_allowlist, workflow),
             }
         },
     }
@@ -322,7 +554,7 @@ def build_chat_completions_body(
         ],
         "response_format": {
             "type": "json_schema",
-            "json_schema": extraction_schema(country_allowlist),
+            "json_schema": response_format_schema(country_allowlist, workflow),
         },
     }
     if reasoning_effort and reasoning_effort != "none":
@@ -358,7 +590,7 @@ def batch_request_row(
         raise ValueError(f"Unsupported endpoint for batch requests: {endpoint}")
 
     return {
-        "custom_id": str(payload.get("record_key", "")),
+        "custom_id": str(payload.get("custom_id") or payload.get("record_key", "")),
         "method": "POST",
         "url": endpoint,
         "body": body,
@@ -487,6 +719,9 @@ def prepare_requests(args: argparse.Namespace) -> None:
         wanted = {key.strip() for key in args.record_keys.split(",") if key.strip()}
         rows = [row for row in rows if str(row.get("record_key", "")).strip() in wanted]
 
+    if args.offset is not None and args.offset > 0:
+        rows = rows[args.offset :]
+
     if args.limit is not None:
         rows = rows[: args.limit]
 
@@ -519,6 +754,7 @@ def prepare_requests(args: argparse.Namespace) -> None:
         "workflow": args.workflow,
         "reasoning_effort": args.reasoning_effort,
         "n_requests": len(batch_rows),
+        "offset": args.offset,
         "limit": args.limit,
         "record_keys": args.record_keys,
     }
@@ -533,6 +769,11 @@ def submit_batch(args: argparse.Namespace) -> None:
     api_key = load_api_key()
     ensure_batch_dir()
     requests_path = Path(args.requests_jsonl)
+    workflow_metadata = {
+        "third_pass_review": "who_don_country_third_pass_review",
+        "adjudicate": "who_don_country_adjudication",
+        EVENT_COUNTRY_WORKFLOW: "who_don_event_country_adjudication",
+    }.get(args.workflow, "who_don_country_extraction")
     upload_result = upload_file(requests_path, api_key=api_key, purpose="batch")
     batch_result = api_request(
         method="POST",
@@ -543,11 +784,7 @@ def submit_batch(args: argparse.Namespace) -> None:
             "endpoint": args.endpoint,
             "completion_window": args.completion_window,
             "metadata": {
-                "workflow": (
-                    "who_don_country_adjudication"
-                    if args.workflow == "adjudicate"
-                    else "who_don_country_extraction"
-                ),
+                "workflow": workflow_metadata,
                 "requests_file": requests_path.name,
                 "model": args.model,
                 "endpoint": args.endpoint,
@@ -688,11 +925,67 @@ def validate_extraction_row(
     return True, ""
 
 
+def validate_event_country_adjudication_row(
+    row: dict[str, Any],
+    alias_lookup: dict[str, list[str]],
+) -> tuple[bool, str, bool, str]:
+    required = {
+        "record_key",
+        "country_standard",
+        "disease_label_clean",
+        "country_role",
+        "event_country_flag",
+        "confidence",
+        "evidence_span",
+        "reasoning_label",
+        "needs_manual_review",
+    }
+    missing = required.difference(row.keys())
+    if missing:
+        return False, f"Missing required keys: {sorted(missing)}", False, ""
+    if row["country_role"] not in EVENT_COUNTRY_ROLES:
+        return False, "country_role is outside the allowed enum.", False, ""
+    if row["confidence"] not in {"high", "medium", "low"}:
+        return False, "confidence is outside the allowed enum.", False, ""
+    if row["reasoning_label"] not in EVENT_REASONING_LABELS:
+        return False, "reasoning_label is outside the allowed enum.", False, ""
+    if not isinstance(row["event_country_flag"], bool):
+        return False, "event_country_flag must be boolean.", False, ""
+    if not isinstance(row["needs_manual_review"], bool):
+        return False, "needs_manual_review must be boolean.", False, ""
+    if not isinstance(row["evidence_span"], str):
+        return False, "evidence_span must be a string.", False, ""
+    if row["event_country_flag"] and row["country_role"] not in {"event_country", "reporting_country"}:
+        return False, "event_country_flag=true is only valid for event_country/reporting_country.", False, ""
+    if row["event_country_flag"] and row["confidence"] == "low":
+        return False, "event_country_flag=true is not valid with low confidence.", False, ""
+
+    span_ok, span_message = span_supports_country(
+        country_standard=row["country_standard"],
+        evidence_span=row["evidence_span"],
+        alias_lookup=alias_lookup,
+    )
+
+    if not span_ok and row["country_role"] != "uncertain" and not row["needs_manual_review"]:
+        return (
+            False,
+            f"{span_message} Non-uncertain rows without direct country mention must set needs_manual_review=true or downgrade to uncertain.",
+            False,
+            span_message,
+        )
+
+    return True, "", span_ok, span_message
+
+
 def parse_batch_outputs(args: argparse.Namespace) -> None:
     ensure_batch_dir()
-    input_rows = {row.get("record_key"): row for row in read_jsonl(Path(args.input_jsonl))}
+    input_rows = {
+        (row.get("custom_id") or row.get("record_key")): row
+        for row in read_jsonl(Path(args.input_jsonl))
+    }
     output_rows = read_jsonl(Path(args.output_jsonl))
     country_allowlist = set(load_country_allowlist())
+    country_alias_lookup = load_country_alias_lookup()
 
     parsed_records: list[dict[str, Any]] = []
     flattened_rows: list[dict[str, Any]] = []
@@ -727,7 +1020,15 @@ def parse_batch_outputs(args: argparse.Namespace) -> None:
             )
             continue
 
-        is_valid, validation_message = validate_extraction_row(parsed, country_allowlist)
+        if args.workflow == EVENT_COUNTRY_WORKFLOW:
+            is_valid, validation_message, span_ok, span_message = validate_event_country_adjudication_row(
+                parsed,
+                alias_lookup=country_alias_lookup,
+            )
+        else:
+            is_valid, validation_message = validate_extraction_row(parsed, country_allowlist)
+            span_ok = True
+            span_message = ""
         if not is_valid:
             invalid_rows.append(
                 {
@@ -740,6 +1041,32 @@ def parse_batch_outputs(args: argparse.Namespace) -> None:
 
         source_row = input_rows.get(custom_id, {})
         parsed_records.append(parsed)
+
+        if args.workflow == EVENT_COUNTRY_WORKFLOW:
+            source_input = source_row.get("input", {})
+            flattened_rows.append(
+                {
+                    "adjudication_task_id": custom_id,
+                    "record_key": parsed.get("record_key", custom_id),
+                    "Title": source_input.get("Title", ""),
+                    "article_url": source_input.get("article_url", ""),
+                    "country_standard": parsed.get("country_standard", ""),
+                    "disease_label_clean": parsed.get("disease_label_clean", ""),
+                    "adjudicated_country_role": parsed.get("country_role", ""),
+                    "adjudicated_event_country_flag": parsed.get("event_country_flag", ""),
+                    "adjudicated_event_confidence": parsed.get("confidence", ""),
+                    "adjudicated_evidence_span": parsed.get("evidence_span", ""),
+                    "span_mentions_country_or_alias": span_ok,
+                    "span_validation_message": span_message,
+                    "adjudicated_reasoning_label": parsed.get("reasoning_label", ""),
+                    "adjudicated_needs_manual_review": parsed.get("needs_manual_review", ""),
+                    "current_country_role": source_input.get("current_classification", {}).get("country_role", ""),
+                    "current_event_country_flag": source_input.get("current_classification", {}).get("event_country_flag", ""),
+                    "current_event_confidence": source_input.get("current_classification", {}).get("event_confidence", ""),
+                    "llm_source": args.llm_source,
+                }
+            )
+            continue
 
         country_evidence = parsed.get("country_evidence", [])
         if country_evidence:
@@ -777,9 +1104,29 @@ def parse_batch_outputs(args: argparse.Namespace) -> None:
     write_jsonl(parsed_jsonl_path, parsed_records)
 
     with candidates_csv_path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(
-            handle,
-            fieldnames=[
+        if args.workflow == EVENT_COUNTRY_WORKFLOW:
+            fieldnames = [
+                "adjudication_task_id",
+                "record_key",
+                "Title",
+                "article_url",
+                "country_standard",
+                "disease_label_clean",
+                "adjudicated_country_role",
+                "adjudicated_event_country_flag",
+                "adjudicated_event_confidence",
+                "adjudicated_evidence_span",
+                "span_mentions_country_or_alias",
+                "span_validation_message",
+                "adjudicated_reasoning_label",
+                "adjudicated_needs_manual_review",
+                "current_country_role",
+                "current_event_country_flag",
+                "current_event_confidence",
+                "llm_source",
+            ]
+        else:
+            fieldnames = [
                 "record_key",
                 "Title",
                 "article_url",
@@ -788,7 +1135,10 @@ def parse_batch_outputs(args: argparse.Namespace) -> None:
                 "reasoning_label",
                 "confidence",
                 "llm_source",
-            ],
+            ]
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
         )
         writer.writeheader()
         writer.writerows(flattened_rows)
@@ -823,7 +1173,7 @@ def build_parser() -> argparse.ArgumentParser:
     prepare.add_argument(
         "--workflow",
         default="extract",
-        choices=["extract", "adjudicate"],
+        choices=WORKFLOW_CHOICES,
     )
     prepare.add_argument(
         "--endpoint",
@@ -836,6 +1186,12 @@ def build_parser() -> argparse.ArgumentParser:
         choices=["none", "low", "medium", "high", "xhigh"],
     )
     prepare.add_argument("--limit", type=int, default=None)
+    prepare.add_argument(
+        "--offset",
+        type=int,
+        default=0,
+        help="Skip the first N input rows before applying --limit.",
+    )
     prepare.add_argument(
         "--record-keys",
         default=None,
@@ -853,7 +1209,7 @@ def build_parser() -> argparse.ArgumentParser:
     submit.add_argument(
         "--workflow",
         default="extract",
-        choices=["extract", "adjudicate"],
+        choices=WORKFLOW_CHOICES,
     )
     submit.add_argument(
         "--endpoint",
@@ -912,6 +1268,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=str(batch_dir / "who_don_openai_invalid_outputs.csv"),
     )
     parse.add_argument("--llm-source", default="openai_batch")
+    parse.add_argument(
+        "--workflow",
+        default="extract",
+        choices=WORKFLOW_CHOICES,
+        help="Use event_country_adjudication when parsing row-level role adjudication outputs.",
+    )
     parse.set_defaults(func=parse_batch_outputs)
 
     return parser

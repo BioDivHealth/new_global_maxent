@@ -27,6 +27,30 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, readr, stringr)
 
+character_cols <- c(
+  "Family",
+  "PHEIC risk",
+  "Pathogens",
+  "previous_name",
+  "msl39_viral_name",
+  "Disease_name",
+  "priority_prototype_status"
+)
+
+provenance_cols <- c(
+  "is_priority_pathogen",
+  "is_prototype_pathogen",
+  "in_gibb_etal",
+  "in_empres_i",
+  "priority_prototype_status",
+  "region_africa",
+  "region_americas",
+  "region_europe",
+  "region_mediterranean",
+  "region_se_asia",
+  "region_western_pacific"
+)
+
 # ------------------------------------------------------------------------------|
 #      Paths and lookup tables -------------------------------------------------|
 # ------------------------------------------------------------------------------|
@@ -92,14 +116,8 @@ disease_lookup <- readr::read_csv(disease_lookup_path, show_col_types = FALSE) %
 who_pathogens_zoonotic <- readr::read_csv(source_path, show_col_types = FALSE) %>%
   mutate(
     source_row = row_number(),
-    across(
-      c(Family, `PHEIC risk`, Pathogens, previous_name, msl39_viral_name, Disease_name),
-      ~na_if(.x, "NA")
-    ),
-    across(
-      c(Family, `PHEIC risk`, Pathogens, previous_name, msl39_viral_name, Disease_name),
-      ~ifelse(is.na(.x), NA_character_, str_squish(.x))
-    ),
+    across(any_of(character_cols), ~na_if(.x, "NA")),
+    across(any_of(character_cols), ~ifelse(is.na(.x), NA_character_, str_squish(.x))),
     Pathogens = case_when(
       str_to_lower(Pathogens) == "subgenus sarbecovirus" ~ "Subgenus Sarbecovirus",
       str_to_lower(Pathogens) == "subgenus merbecovirus" ~ "Subgenus Merbecovirus",
@@ -127,7 +145,15 @@ who_pathogens_zoonotic <- readr::read_csv(source_path, show_col_types = FALSE) %
   slice(1) %>%
   ungroup() %>%
   arrange(source_row) %>%
-  select(Family, `PHEIC risk`, Pathogens, previous_name, msl39_viral_name, Disease_name)
+  select(
+    Family,
+    `PHEIC risk`,
+    Pathogens,
+    previous_name,
+    msl39_viral_name,
+    Disease_name,
+    any_of(provenance_cols)
+  )
 
 # ------------------------------------------------------------------------------|
 #      QA checks ----------------------------------------------------------------|

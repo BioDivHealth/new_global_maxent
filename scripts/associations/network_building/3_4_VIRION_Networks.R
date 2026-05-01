@@ -24,15 +24,6 @@ library(magrittr)
 cat("Loading pathogen-host association data...\n")
 # Load the main association data
 host_associations <- read_csv(here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv"))
-host_associations_long <- read_csv(here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_long.csv"))
-disease_names = host_associations_long %>% select(Disease_name, Virion_VirusName) %>% distinct() %>% filter(!is.na(Virion_VirusName) & !is.na(Disease_name))
-disease_names$Virus = disease_names$Virion_VirusName
-disease_names$Disease_name[disease_names$Virus=="alphainfluenzavirus influenzae"] = "Influenza"
-disease_names = unique(disease_names)
-
-host_associations = host_associations %>%
-  left_join(disease_names %>% select(Virus, Disease_name), by = "Virus")
-
 
 # Harmonize Virus names to standardized taxonomy
 synonyms <- c(
@@ -69,8 +60,7 @@ network_data <- host_associations %>%
   mutate(
     # Use standardized name if available, otherwise original
     Host_clean = coalesce(correct_name, Host.x),  # Host.x is from host_associations
-    # Simplify virus names for better visualization
-    Virus_clean = str_remove(Virus, " sp\\.$|strain.*$"),
+    Pathogen_clean = Pathogens,
     # Create risk categories
     Risk_category = case_when(
       str_detect(`PHEIC risk`, "High") ~ "High Risk",
@@ -83,10 +73,11 @@ network_data <- host_associations %>%
   #filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
   # Remove uncertain host identifications if desired
   filter(!HostFlagID | is.na(HostFlagID)) %>%
-  select(Pathogen = Virus_clean, Host_clean, Disease_name, HostTaxID, PathogenTaxID = VirusTaxID, 
+  select(Pathogen = Pathogen_clean, Host_clean, Disease_name, HostTaxID, PathogenTaxID = VirusTaxID, 
          PathogenGenus = VirusGenus, PathogenFamily = VirusFamily, 
          PathogenOrder = VirusOrder, PathogenClass = VirusClass, HostPhylum = Phylum,
          HostClass = Class, HostFamily = Family, HostOrder = Order, DetectionMethod,
+         in_gibb_etal, in_empres_i,
          `PHEIC risk`) %>%
   distinct() %>%
   mutate(MainSource = "VIRION") %>%

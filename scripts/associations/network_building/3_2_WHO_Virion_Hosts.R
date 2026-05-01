@@ -36,8 +36,8 @@ if (!exists("virion_data")) {
   source(here("scripts", "associations", "network_building", "virion_data.R"))
 }
 
-dictionaries = virionData::get_data_dictionary(datapackage_json = here("pathogen_association_data","virion_download",
-                                                                       "15896981","datapackage.json"))
+dictionaries = virionData::get_data_dictionary(datapackage_json = here("data","virion_download",
+                                                                       "19502921","datapackage.json"))
 
 print(dictionaries)
 dictionaries$virion_csv
@@ -98,6 +98,7 @@ virion_who_taxa = virion %>%
 virion_who_taxa_detailed = virion %>% 
   filter(VirusTaxID %in% unique(who_virion_long$VirusTaxID)) %>%
   filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
+  mutate(NCBIAccession = if ("NCBIAccession" %in% names(.)) NCBIAccession else NA_character_) %>%
   select(VirusTaxID, HostTaxID, Host, Virus, 
          HostGenus, HostFamily, HostOrder, HostClass, 
          VirusGenus, VirusFamily, VirusOrder, VirusClass,
@@ -135,6 +136,7 @@ who_virion_hosts_complete <- who_virion_long %>%
   select(
     # WHO pathogen information
     ID, Family, `PHEIC risk`, Pathogens, Disease_name, previous_name, msl39_viral_name,
+    in_gibb_etal, in_empres_i,
     # VIRION virus information
     VirusTaxID, Virion_VirusName, Virion_VirusFamily, Virion_Database,
     # Host information  
@@ -159,23 +161,33 @@ cat("With", n_distinct(who_virion_hosts_complete$Host), "unique host species\n")
 write_csv(who_virion_hosts_complete, output_long_path)
 
 # ----------------------------- Summarise host associations -------------------
-who_virion_hosts_short = who_virion_hosts_complete %>% select(Host, 
-                                                              Virus, 
-                                                              `PHEIC risk`, 
-                                                              #Pathogens, 
-                                                              #Disease_name,
-                                                              HostTaxID,
-                                                              HostGenus, 
-                                                              HostFamily, 
-                                                              HostOrder, 
-                                                              HostClass, 
-                                                              VirusTaxID,
-                                                              VirusGenus,
-                                                              VirusFamily,
-                                                              VirusOrder,
-                                                              VirusClass,
-                                                              DetectionMethod,
-                                                              HostFlagID) %>% filter(!is.na(Host)) %>% distinct()
+who_virion_hosts_short = who_virion_hosts_complete %>%
+  select(
+    Host,
+    Virus,
+    `PHEIC risk`,
+    Pathogens,
+    Disease_name,
+    previous_name,
+    msl39_viral_name,
+    in_gibb_etal,
+    in_empres_i,
+    Virion_VirusName,
+    HostTaxID,
+    HostGenus,
+    HostFamily,
+    HostOrder,
+    HostClass,
+    VirusTaxID,
+    VirusGenus,
+    VirusFamily,
+    VirusOrder,
+    VirusClass,
+    DetectionMethod,
+    HostFlagID
+  ) %>%
+  filter(!is.na(Host)) %>%
+  distinct()
 
 write_csv(who_virion_hosts_short, output_summary_path)
 
@@ -207,7 +219,7 @@ if (nrow(unmatched_pathogens) > 0) {
 }
 
 # Check for uncertain host identifications
-uncertain_hosts <- virus_host_final %>%
+uncertain_hosts <- who_virion_hosts_complete %>%
   filter(HostFlagID == TRUE) %>%
   distinct(Pathogens, Host) %>%
   group_by(Pathogens) %>%
@@ -217,19 +229,30 @@ cat("Pathogens with uncertain host IDs:", nrow(uncertain_hosts), "\n")
 
 # Summary statistics
 cat("\n=== FINAL SUMMARY ===\n")
-cat("Total WHO pathogens processed:", n_distinct(virus_host_final$Pathogens), "\n")
-cat("Total unique hosts found:", n_distinct(virus_host_final$Host), "\n")
-cat("Total pathogen-host interactions:", nrow(virus_host_final), "\n")
-cat("Host classes represented:", n_distinct(virus_host_final$HostClass, na.rm = TRUE), "\n")
-cat("Detection methods available:", n_distinct(virus_host_final$DetectionMethod, na.rm = TRUE), "\n")
+cat("Total WHO pathogens processed:", n_distinct(who_virion_hosts_complete$Pathogens), "\n")
+cat("Total unique hosts found:", n_distinct(who_virion_hosts_complete$Host), "\n")
+cat("Total pathogen-host interactions:", nrow(who_virion_hosts_complete), "\n")
+cat("Host classes represented:", n_distinct(who_virion_hosts_complete$HostClass, na.rm = TRUE), "\n")
+cat("Detection methods available:", n_distinct(who_virion_hosts_complete$DetectionMethod, na.rm = TRUE), "\n")
 
 # Show top 10 pathogens by host diversity
 cat("\nTop 10 pathogens by host diversity:\n")
-print(hosts_per_pathogen %>% 
-      select(Pathogens, n_unique_hosts, n_host_families) %>% 
-      head(10))
+hosts_per_pathogen <- who_virion_hosts_complete %>%
+  group_by(Pathogens) %>%
+  summarise(
+    n_unique_hosts = n_distinct(Host),
+    n_host_families = n_distinct(HostFamily, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(n_unique_hosts))
+
+print(hosts_per_pathogen %>%
+  select(Pathogens, n_unique_hosts, n_host_families) %>%
+  head(10))
 
 cat("\nHost class distribution:\n")
+host_class_summary <- who_virion_hosts_complete %>%
+  count(HostClass, sort = TRUE)
 print(host_class_summary)
 
 cat("\nProcessing complete!\n") 

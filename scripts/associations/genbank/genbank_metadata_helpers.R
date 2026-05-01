@@ -890,6 +890,8 @@ resolve_network_target_candidates <- function(network_pathogen, network_disease_
     PHEIC_risk = collapse_unique(matched_rows$PHEIC_risk),
     previous_name = collapse_unique(matched_rows$previous_name),
     msl39_viral_name = collapse_unique(matched_rows$msl39_viral_name),
+    in_gibb_etal = any(matched_rows$in_gibb_etal, na.rm = TRUE),
+    in_empres_i = any(matched_rows$in_empres_i, na.rm = TRUE),
     virion_tax_ids = collapse_unique(matched_rows$virion_tax_ids),
     virion_names = collapse_unique(matched_rows$virion_names),
     matched_name_types = collapse_unique(matched_rows$matched_name_types),

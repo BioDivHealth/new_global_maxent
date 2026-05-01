@@ -1,0 +1,133 @@
+# ------------------------------------------------------------------------------
+# 04_quality_checks.R
+# ------------------------------------------------------------------------------
+# Purpose: Write a compact QA summary for GenBank-simple manifest and retrieved
+#          checkpoint outputs.
+# Inputs : genbank_simple_manifest.csv
+#          excluded_targets.csv
+#          genbank_search_logs.csv
+#          genbank_country_records.csv
+# Outputs: genbank_simple_qa_summary.csv
+#          genbank_simple_target_qa.csv
+# ------------------------------------------------------------------------------
+
+library(pacman)
+p_load(dplyr, here, readr, stringr, tibble, tidyr)
+
+source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+
+output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
+
+read_optional_csv <- function(path) {
+  if (!file.exists(path)) {
+    return(tibble())
+  }
+
+  read_csv(path, show_col_types = FALSE, na = c("", "NA"))
+}
+
+manifest <- read_optional_csv(file.path(output_dir, "genbank_simple_manifest.csv"))
+excluded_targets <- read_optional_csv(file.path(output_dir, "excluded_targets.csv"))
+search_logs <- read_optional_csv(file.path(output_dir, "genbank_search_logs.csv"))
+country_records <- read_optional_csv(file.path(output_dir, "genbank_country_records.csv"))
+
+empty_log_cols <- c(
+  "target_id",
+  "status",
+  "records_found",
+  "ids_collected",
+  "records_parsed",
+  "countries_observed",
+  "note"
+)
+
+if (!all(empty_log_cols %in% names(search_logs))) {
+  search_logs <- tibble(
+    target_id = character(),
+    status = character(),
+    records_found = integer(),
+    ids_collected = integer(),
+    records_parsed = integer(),
+    countries_observed = integer(),
+    note = character()
+  )
+}
+
+target_qa <- manifest %>%
+  select(target_id, Pathogens, Disease_name, query_used, in_gibb_etal, in_empres_i) %>%
+  left_join(
+    search_logs %>%
+      select(
+        target_id,
+      status,
+      records_found,
+        ids_collected,
+        records_parsed,
+        countries_observed,
+        note
+      ),
+    by = "target_id"
+  ) %>%
+  mutate(
+    has_retrieval_log = !is.na(status),
+    records_found = suppressWarnings(as.integer(records_found)),
+    records_parsed = suppressWarnings(as.integer(records_parsed)),
+    countries_observed = suppressWarnings(as.integer(countries_observed)),
+    qa_flag = case_when(
+      !has_retrieval_log ~ "not_run",
+      status == "no_records" | dplyr::coalesce(records_found, 0L) == 0L ~ "zero_records",
+      status != "success" ~ "retrieval_failed",
+      dplyr::coalesce(records_parsed, 0L) > 0L & dplyr::coalesce(countries_observed, 0L) == 0L ~ "records_without_country",
+      TRUE ~ "ok"
+    )
+  ) %>%
+  arrange(qa_flag, Pathogens, Disease_name)
+
+country_record_rows <- nrow(country_records)
+unique_countries <- if ("country" %in% names(country_records)) {
+  dplyr::n_distinct(country_records$country, na.rm = TRUE)
+} else {
+  0L
+}
+unique_pathogens_with_country <- if (all(c("Pathogens", "country") %in% names(country_records))) {
+  dplyr::n_distinct(country_records$Pathogens[!is.na(country_records$country)], na.rm = TRUE)
+} else {
+  0L
+}
+
+qa_summary <- tibble(
+  metric = c(
+    "manifest_targets",
+    "excluded_targets",
+    "excluded_coronavirus_scope_deferred",
+    "excluded_broad_or_unwanted_influenza",
+    "targets_not_run",
+    "targets_zero_records",
+    "targets_retrieval_failed",
+    "targets_records_without_country",
+    "targets_ok",
+    "country_record_rows",
+    "unique_countries",
+    "unique_pathogens_with_country"
+  ),
+  value = c(
+    nrow(manifest),
+    nrow(excluded_targets),
+    sum(excluded_targets$exclusion_reason == "coronavirus_scope_deferred", na.rm = TRUE),
+    sum(excluded_targets$exclusion_reason == "broad_or_unwanted_influenza", na.rm = TRUE),
+    sum(target_qa$qa_flag == "not_run", na.rm = TRUE),
+    sum(target_qa$qa_flag == "zero_records", na.rm = TRUE),
+    sum(target_qa$qa_flag == "retrieval_failed", na.rm = TRUE),
+    sum(target_qa$qa_flag == "records_without_country", na.rm = TRUE),
+    sum(target_qa$qa_flag == "ok", na.rm = TRUE),
+    country_record_rows,
+    unique_countries,
+    unique_pathogens_with_country
+  )
+)
+
+write_csv(qa_summary, file.path(output_dir, "genbank_simple_qa_summary.csv"))
+write_csv(target_qa, file.path(output_dir, "genbank_simple_target_qa.csv"))
+
+message("Wrote QA summary rows: ", nrow(qa_summary))
+message("Wrote target QA rows: ", nrow(target_qa))

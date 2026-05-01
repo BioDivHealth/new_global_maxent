@@ -4,7 +4,7 @@
 # Purpose: Diagnose which GenBank/NCBI search queries succeed or fail for WHO
 #          pathogens before attempting accession-level metadata fetching.
 #
-# Inputs : who_pathogens_diseases_zoonotic.csv
+# Inputs : who_pathogen_analysis_units_keep.csv
 #          who_pathogens_virion_taxid.csv
 #          who_bacteria_clover_taxid.csv
 # Outputs: genbank_search_diagnostic_manifest.csv
@@ -25,6 +25,27 @@ source(here("scripts", "associations", "working_inputs.R"))
 # Shared helpers ---------------------------------------------------------------
 # ------------------------------------------------------------------------------
 source(here("scripts", "associations", "genbank", "genbank_metadata_helpers.R"))
+
+normalize_who_pathogen_input <- function(who_pathogens) {
+  if ("analysis_unit" %in% names(who_pathogens)) {
+    who_pathogens %>%
+      transmute(
+        Family = family,
+        Pathogens = analysis_unit,
+        previous_name = source_previous_name,
+        msl39_viral_name = source_msl39_viral_name,
+        Disease_name = source_disease_name,
+        in_gibb_etal = in_gibb_etal,
+        in_empres_i = in_empres_i
+      )
+  } else {
+    who_pathogens %>%
+      mutate(
+        in_gibb_etal = if ("in_gibb_etal" %in% names(.)) in_gibb_etal else FALSE,
+        in_empres_i = if ("in_empres_i" %in% names(.)) in_empres_i else FALSE
+      )
+  }
+}
 
 run_esearch_diagnostic_http <- function(query, retmax = 20L, db = "nucleotide") {
   request_url <- build_esearch_url(query = query, retmax = retmax, db = db)
@@ -205,7 +226,8 @@ who_pathogens <- read_csv(
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), clean_text)) %>%
+  normalize_who_pathogen_input()
 
 virion_taxids <- read_csv(
   virion_path,
@@ -227,6 +249,8 @@ who_manifest <- who_pathogens %>%
     Family = collapse_unique(Family),
     previous_name = collapse_unique(previous_name),
     msl39_viral_name = collapse_unique(msl39_viral_name),
+    in_gibb_etal = any(in_gibb_etal, na.rm = TRUE),
+    in_empres_i = any(in_empres_i, na.rm = TRUE),
     .groups = "drop"
   )
 

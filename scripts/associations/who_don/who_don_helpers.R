@@ -145,6 +145,65 @@ normalize_match_text <- function(x) {
   x
 }
 
+split_semicolon_values <- function(x) {
+  x <- clean_scalar_text(x)
+
+  purrr::map(
+    x,
+    function(one_value) {
+      if (is.na(one_value)) {
+        return(character(0))
+      }
+
+      parts <- stringr::str_split(one_value, "\\s*;\\s*")[[1]]
+      parts <- clean_scalar_text(parts)
+      stats::na.omit(parts)
+    }
+  )
+}
+
+expand_semicolon_rows <- function(df, column) {
+  column <- rlang::ensym(column)
+  split_col <- paste0(rlang::as_string(column), "_split")
+
+  df %>%
+    dplyr::mutate(!!split_col := split_semicolon_values(!!column)) %>%
+    tidyr::unnest(!!rlang::sym(split_col), keep_empty = FALSE) %>%
+    dplyr::mutate(!!column := !!rlang::sym(split_col)) %>%
+    dplyr::select(-!!rlang::sym(split_col))
+}
+
+build_phrase_boundary_pattern <- function(phrase_key) {
+  if (is.na(phrase_key) || phrase_key == "") {
+    return(NA_character_)
+  }
+
+  paste0("(?<![a-z0-9])", escape_regex(phrase_key), "(?![a-z0-9])")
+}
+
+detect_phrase_hits <- function(text, phrase_tbl, text_col = "alias_key") {
+  text <- clean_scalar_text(text)
+
+  if (is.na(text) || !nrow(phrase_tbl)) {
+    return(phrase_tbl[0, , drop = FALSE])
+  }
+
+  text_key <- normalize_match_text(text)
+
+  if (is.na(text_key) || text_key == "") {
+    return(phrase_tbl[0, , drop = FALSE])
+  }
+
+  phrase_tbl %>%
+    dplyr::filter(!is.na(.data[[text_col]]), .data[[text_col]] != "") %>%
+    dplyr::mutate(
+      pattern = vapply(.data[[text_col]], build_phrase_boundary_pattern, character(1)),
+      is_match = stringr::str_detect(text_key, stringr::regex(pattern))
+    ) %>%
+    dplyr::filter(is_match) %>%
+    dplyr::select(-pattern, -is_match)
+}
+
 who_don_base_countries <- function() {
   strsplit(
     paste(

@@ -18,6 +18,20 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
+who_provenance_cols <- c(
+  "is_priority_pathogen",
+  "is_prototype_pathogen",
+  "in_gibb_etal",
+  "in_empres_i",
+  "priority_prototype_status",
+  "region_africa",
+  "region_americas",
+  "region_europe",
+  "region_mediterranean",
+  "region_se_asia",
+  "region_western_pacific"
+)
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -116,6 +130,17 @@ base_units <- who_zoonotic %>%
     source_previous_name = previous_name,
     source_msl39_viral_name = msl39_viral_name,
     source_disease_name = Disease_name,
+    is_priority_pathogen,
+    is_prototype_pathogen,
+    in_gibb_etal,
+    in_empres_i,
+    priority_prototype_status,
+    region_africa,
+    region_americas,
+    region_europe,
+    region_mediterranean,
+    region_se_asia,
+    region_western_pacific,
     source_unit_scope = classify_source_scope(Pathogens),
     analysis_unit = Pathogens,
     analysis_unit_label = dplyr::coalesce(previous_name, msl39_viral_name, Pathogens),
@@ -193,6 +218,17 @@ expanded_units <- who_zoonotic %>%
     source_previous_name = previous_name,
     source_msl39_viral_name = msl39_viral_name,
     source_disease_name = Disease_name,
+    is_priority_pathogen,
+    is_prototype_pathogen,
+    in_gibb_etal,
+    in_empres_i,
+    priority_prototype_status,
+    region_africa,
+    region_americas,
+    region_europe,
+    region_mediterranean,
+    region_se_asia,
+    region_western_pacific,
     source_unit_scope = classify_source_scope(Pathogens)
   ) %>%
   inner_join(split_candidates, by = "source_pathogen") %>%
@@ -205,6 +241,7 @@ expanded_units <- who_zoonotic %>%
     source_previous_name,
     source_msl39_viral_name,
     source_disease_name,
+    all_of(who_provenance_cols),
     source_unit_scope,
     analysis_unit,
     analysis_unit_label,
@@ -222,8 +259,8 @@ expanded_units <- who_zoonotic %>%
   )
 
 manual_additions <- tibble::tribble(
-  ~row_type, ~family, ~pheic_risk, ~source_pathogen, ~source_previous_name, ~source_msl39_viral_name, ~source_disease_name, ~source_unit_scope, ~analysis_unit, ~analysis_unit_label, ~analysis_unit_rank, ~analysis_decision, ~decision_rule_trigger, ~transmission_context, ~human_infection_status, ~host_link_status, ~vector_data_status, ~amplifier_data_status, ~example_members, ~rationale, ~notes,
-  "manual_addition", "Orthomyxoviridae", "High", "Alphainfluenzavirus influenzae (H7N9)", "Influenza A", "Alphainfluenzavirus influenzae", "Influenza (H7N9 avian influenza)", "subtype_level", "Alphainfluenzavirus influenzae (H7N9)", "Influenza A (H7N9)", "subtype", "keep", "manual_addition_from_decision_framework", "host_linked_non_vector", "yes", "yes_or_expected_from_source", "not_central_or_unknown", "unknown", NA_character_, "Added as an active influenza analysis unit following the decision to keep H5N1 and add H7N9 while dropping the other current influenza subtype rows.", "Manual addition requested in the decision framework even though H7N9 is not present as a source row in the current WHO zoonotic shortlist."
+  ~row_type, ~family, ~pheic_risk, ~source_pathogen, ~source_previous_name, ~source_msl39_viral_name, ~source_disease_name, ~is_priority_pathogen, ~is_prototype_pathogen, ~in_gibb_etal, ~in_empres_i, ~priority_prototype_status, ~region_africa, ~region_americas, ~region_europe, ~region_mediterranean, ~region_se_asia, ~region_western_pacific, ~source_unit_scope, ~analysis_unit, ~analysis_unit_label, ~analysis_unit_rank, ~analysis_decision, ~decision_rule_trigger, ~transmission_context, ~human_infection_status, ~host_link_status, ~vector_data_status, ~amplifier_data_status, ~example_members, ~rationale, ~notes,
+  "manual_addition", "Orthomyxoviridae", "High", "Alphainfluenzavirus influenzae (H7N9)", "Influenza A", "Alphainfluenzavirus influenzae", "Influenza (H7N9 avian influenza)", TRUE, FALSE, FALSE, FALSE, "priority", "none", "none", "none", "none", "none", "none", "subtype_level", "Alphainfluenzavirus influenzae (H7N9)", "Influenza A (H7N9)", "subtype", "keep", "manual_addition_from_decision_framework", "host_linked_non_vector", "yes", "yes_or_expected_from_source", "not_central_or_unknown", "unknown", NA_character_, "Added as an active influenza analysis unit following the decision to keep H5N1 and add H7N9 while dropping the other current influenza subtype rows.", "Manual addition requested in the decision framework even though H7N9 is not present as a source row in the current WHO zoonotic shortlist."
 )
 
 analysis_units <- bind_rows(base_units, expanded_units, manual_additions) %>%
@@ -255,6 +292,17 @@ analysis_units_keep <- analysis_units %>%
     source_previous_name,
     source_msl39_viral_name,
     source_disease_name,
+    is_priority_pathogen,
+    is_prototype_pathogen,
+    in_gibb_etal,
+    in_empres_i,
+    priority_prototype_status,
+    region_africa,
+    region_americas,
+    region_europe,
+    region_mediterranean,
+    region_se_asia,
+    region_western_pacific,
     analysis_unit,
     analysis_unit_label,
     analysis_unit_rank,

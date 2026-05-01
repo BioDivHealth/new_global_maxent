@@ -12,11 +12,17 @@ virion_network = read_csv(here("pathogen_association_data",
 clover_network$PathogenType = "bacteria"
 virion_network$PathogenType = "virus"
 
+clover_network <- clover_network %>%
+  mutate(
+    in_gibb_etal = if ("in_gibb_etal" %in% names(.)) in_gibb_etal else NA,
+    in_empres_i = if ("in_empres_i" %in% names(.)) in_empres_i else NA
+  )
+
 names(clover_network)[which(!(names(clover_network) %in% names(virion_network)))]
 names(virion_network)[which(!(names(virion_network) %in% names(clover_network)))]
-clover_network %<>% select(-ID)
+clover_network %<>% select(-any_of("ID"))
 
-combined_network = rbind(clover_network, virion_network)
+combined_network = bind_rows(clover_network, virion_network)
 
 combined_network %<>% rename(Host = Host_clean) %>%
   mutate(
@@ -30,7 +36,6 @@ combined_network %<>% rename(Host = Host_clean) %>%
     HostOrder = tolower(HostOrder)
     )
 
-combined_network$Pathogen = str_to_sentence(combined_network$Pathogen)
 write_csv(combined_network, here("pathogen_association_data", "WHO", "networks", "combined_who_network.csv"))
 
 unique_pairs = combined_network %>% select(Host, Pathogen) %>% distinct()

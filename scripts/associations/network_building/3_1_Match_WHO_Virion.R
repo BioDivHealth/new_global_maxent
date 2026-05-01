@@ -15,12 +15,22 @@ library(fuzzyjoin)
 library(magrittr)
 
 # ------------------------------| Helper paths  |------------------------------
-who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogens_diseases.csv")
+who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogen_analysis_units_keep.csv")
 output_csv_path <- file.path("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_taxid.csv")
 
 # ------------------------------| Load datasets |------------------------------
 # 1. WHO pathogen list ---------------------------------------------------------
-who_df <- read_csv(who_csv_path, show_col_types = FALSE)
+who_df <- read_csv(who_csv_path, show_col_types = FALSE) %>%
+  transmute(
+    Family = family,
+    `PHEIC risk` = pheic_risk,
+    Pathogens = analysis_unit,
+    previous_name = source_previous_name,
+    msl39_viral_name = source_msl39_viral_name,
+    Disease_name = source_disease_name,
+    in_gibb_etal,
+    in_empres_i
+  )
 who_df %<>% filter(Family!="Bacteria") # Exclude bacteria as per original script
 who_df$ID = 1:nrow(who_df)
 

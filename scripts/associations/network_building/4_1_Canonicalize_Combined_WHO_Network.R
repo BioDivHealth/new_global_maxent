@@ -8,7 +8,7 @@
 # Inputs : pathogen_association_data/WHO/networks/combined_who_network.csv
 #          pathogen_association_data/WHO/who_diseases/who_pathogens_diseases.csv
 #          pathogen_association_data/WHO/who_diseases/disease_names.csv
-#          pathogen_association_data/WHO/who_diseases/who_pathogens_diseases_zoonotic.csv
+#          pathogen_association_data/WHO/who_diseases/who_pathogen_analysis_units_keep.csv
 #
 # Outputs: pathogen_association_data/WHO/networks/combined_who_pathogen_canonical_lookup.csv
 #          pathogen_association_data/WHO/networks/combined_who_network_canonical.csv
@@ -78,7 +78,7 @@ who_dir <- here::here("pathogen_association_data", "WHO")
 network_path <- file.path(who_dir, "networks", "combined_who_network.csv")
 who_path <- file.path(who_dir, "who_diseases", "who_pathogens_diseases.csv")
 disease_names_path <- file.path(who_dir, "who_diseases", "disease_names.csv")
-zoonotic_path <- file.path(who_dir, "who_diseases", "who_pathogens_diseases_zoonotic.csv")
+analysis_units_keep_path <- file.path(who_dir, "who_diseases", "who_pathogen_analysis_units_keep.csv")
 
 lookup_output_path <- file.path(who_dir, "networks", "combined_who_pathogen_canonical_lookup.csv")
 canonical_output_path <- file.path(who_dir, "networks", "combined_who_network_canonical.csv")
@@ -139,7 +139,25 @@ who_pathogens <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>
   mutate(Disease_name = coalesce(Disease_name, disease_name_lookup)) %>%
   select(-disease_name_lookup)
 
-who_canonical <- who_pathogens %>%
+analysis_units_keep <- read_csv(analysis_units_keep_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  mutate(across(where(is.character), clean_text)) %>%
+  transmute(
+    Family = family,
+    `PHEIC risk` = pheic_risk,
+    Pathogens = normalize_who_pathogen(analysis_unit),
+    previous_name = source_previous_name,
+    msl39_viral_name = source_msl39_viral_name,
+    Disease_name = source_disease_name
+  )
+
+who_canonical_source <- bind_rows(
+  who_pathogens %>%
+    select(Family, `PHEIC risk`, Pathogens, previous_name, msl39_viral_name, Disease_name),
+  analysis_units_keep
+) %>%
+  distinct()
+
+who_canonical <- who_canonical_source %>%
   transmute(
     Pathogen_canonical = Pathogens,
     pathogen_canonical_key = safe_lower(Pathogens),
@@ -163,7 +181,7 @@ who_canonical <- who_pathogens %>%
     .groups = "drop"
   )
 
-who_alias_lookup <- who_pathogens %>%
+who_alias_lookup <- who_canonical_source %>%
   transmute(
     Pathogen_canonical = Pathogens,
     Disease_name_canonical = Disease_name,
@@ -190,7 +208,7 @@ who_alias_resolved <- who_alias_lookup %>%
     .groups = "drop"
   )
 
-zoonotic_lookup <- read_csv(zoonotic_path, show_col_types = FALSE, na = c("", "NA")) %>%
+zoonotic_lookup <- analysis_units_keep %>%
   mutate(
     Pathogens = normalize_who_pathogen(Pathogens),
     pathogen_canonical_key = safe_lower(Pathogens)

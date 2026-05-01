@@ -61,7 +61,7 @@ who_zoonotic_pathogens_path <- function() {
     "pathogen_association_data",
     "WHO",
     "who_diseases",
-    "who_pathogens_diseases_zoonotic.csv"
+    "who_pathogen_analysis_units_keep.csv"
   )
 }
 

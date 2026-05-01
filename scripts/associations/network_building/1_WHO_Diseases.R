@@ -6,6 +6,15 @@ library(here)
 library(pacman)
 p_load(fuzzyjoin, stringdist)
 
+region_levels <- c(
+  "africa",
+  "americas",
+  "europe",
+  "mediterranean",
+  "se_asia",
+  "western_pacific"
+)
+
 # ------------------------------------------------------------------------------|
 #      Load and combine WHO disease data --------------------------------------
 # ------------------------------------------------------------------------------|
@@ -26,8 +35,8 @@ document_tables <- csv_files %>%
     df
   })
 
-# Combine all tables and add region column
-who_diseases_all <- imap_dfr(document_tables, ~mutate(.x, Region = str_remove(.y, "_table$"))) %>%
+# Combine all tables and add source-region column
+who_diseases_all <- imap_dfr(document_tables, ~mutate(.x, source_region = str_remove(.y, "_table$"))) %>%
   # Remove rows where both pathogen columns are empty
   filter(
     !(is.na(`Priority Pathogens`) | `Priority Pathogens` == "") |
@@ -71,6 +80,32 @@ standardize_pathogen_name <- function(x) {
     {ifelse(tolower(.) == "encephalitidis", NA, .)}
 }
 
+first_non_missing <- function(x) {
+  x <- x[!is.na(x) & x != ""]
+  if (length(x) == 0) {
+    return(NA_character_)
+  }
+  x[[1]]
+}
+
+region_status_for <- function(source_region, source_pathogen_type, region_name) {
+  has_priority <- any(
+    source_region == region_name & source_pathogen_type == "priority",
+    na.rm = TRUE
+  )
+  has_prototype <- any(
+    source_region == region_name & source_pathogen_type == "prototype",
+    na.rm = TRUE
+  )
+
+  case_when(
+    has_priority & has_prototype ~ "both",
+    has_priority ~ "priority",
+    has_prototype ~ "prototype",
+    TRUE ~ "none"
+  )
+}
+
 # Apply standardization to pathogen columns
 who_diseases_all <- who_diseases_all %>%
   mutate(
@@ -78,24 +113,65 @@ who_diseases_all <- who_diseases_all %>%
     `Prototype Pathogens` = ifelse(!is.na(`Prototype Pathogens`), standardize_pathogen_name(`Prototype Pathogens`), NA)
   )
 
-# Create list of all unique pathogens
-pathogens_all <- who_diseases_all %>%
-  select(`Priority Pathogens`, `Prototype Pathogens`) %>%
-  pivot_longer(everything(), values_to = "Pathogens") %>%
-  filter(!is.na(Pathogens) & Pathogens != "") %>%
-  pull(Pathogens) %>%
-  unique()
-
-# Create pathogen-family-risk mapping
-pathogens_with_family_risk <- who_diseases_all %>%
+who_diseases_long <- who_diseases_all %>%
   pivot_longer(
     cols = c(`Priority Pathogens`, `Prototype Pathogens`),
-    names_to = "Pathogen_Type",
+    names_to = "source_pathogen_type",
     values_to = "Pathogens"
   ) %>%
   filter(!is.na(Pathogens) & Pathogens != "") %>%
-  select(Family, `PHEIC risk`, Pathogens) %>%
-  distinct()
+  mutate(
+    source_pathogen_type = recode(
+      source_pathogen_type,
+      `Priority Pathogens` = "priority",
+      `Prototype Pathogens` = "prototype"
+    ),
+    source_region = factor(source_region, levels = region_levels)
+  )
+
+# Create list of all unique pathogens
+pathogens_all <- who_diseases_long %>%
+  pull(Pathogens) %>%
+  unique()
+
+# Create pathogen-family-risk mapping plus provenance
+pathogens_with_family_risk <- who_diseases_long %>%
+  group_by(Pathogens) %>%
+  summarise(
+    Family = first_non_missing(Family),
+    `PHEIC risk` = first_non_missing(`PHEIC risk`),
+    is_priority_pathogen = any(source_pathogen_type == "priority"),
+    is_prototype_pathogen = any(source_pathogen_type == "prototype"),
+    region_africa = region_status_for(source_region, source_pathogen_type, "africa"),
+    region_americas = region_status_for(source_region, source_pathogen_type, "americas"),
+    region_europe = region_status_for(source_region, source_pathogen_type, "europe"),
+    region_mediterranean = region_status_for(source_region, source_pathogen_type, "mediterranean"),
+    region_se_asia = region_status_for(source_region, source_pathogen_type, "se_asia"),
+    region_western_pacific = region_status_for(source_region, source_pathogen_type, "western_pacific"),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    priority_prototype_status = case_when(
+      is_priority_pathogen & is_prototype_pathogen ~ "both",
+      is_priority_pathogen ~ "priority",
+      is_prototype_pathogen ~ "prototype",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  select(
+    Family,
+    `PHEIC risk`,
+    Pathogens,
+    is_priority_pathogen,
+    is_prototype_pathogen,
+    priority_prototype_status,
+    region_africa,
+    region_americas,
+    region_europe,
+    region_mediterranean,
+    region_se_asia,
+    region_western_pacific
+  )
 
 # ------------------------------------------------------------------------------|
 #      Load translation data and create mapping -------------------------------
@@ -213,14 +289,53 @@ final_pathogen_data = read_csv(here("pathogen_association_data","WHO","who_disea
 # Read disease names
 diseases = read_csv(here("pathogen_association_data","WHO","who_diseases","disease_names.csv"))
 diseases = diseases %>% distinct()
+
+point_data_lookup <- read_csv(
+  here("pathogen_association_data", "WHO", "who_diseases", "diseases_in_gibb_etal.csv"),
+  show_col_types = FALSE,
+  na = c("", "NA")
+) %>%
+  transmute(
+    Disease_name = source_disease_name,
+    in_gibb_etal = coalesce(in_gibb_etal, FALSE),
+    in_empres_i = coalesce(in_empres_i, FALSE)
+  ) %>%
+  distinct(Disease_name, .keep_all = TRUE)
+
 # Check which missing pathogens are in the disease names
 missing_pathogens = diseases$Pathogens[!diseases$Pathogens %in% final_pathogen_data$Pathogens]
 
 # Add disease names to final_pathogen_data
 final_pathogen_data = final_pathogen_data %>%
-  left_join(diseases, by = c("Pathogens" = "Pathogens"))
+  left_join(diseases, by = c("Pathogens" = "Pathogens")) %>%
+  left_join(point_data_lookup, by = "Disease_name") %>%
+  mutate(
+    in_gibb_etal = coalesce(in_gibb_etal, FALSE),
+    in_empres_i = coalesce(in_empres_i, FALSE)
+  )
 
 dim(final_pathogen_data)
+
+final_pathogen_data <- final_pathogen_data %>%
+  select(
+    Family,
+    `PHEIC risk`,
+    Pathogens,
+    previous_name,
+    msl39_viral_name,
+    Disease_name,
+    in_gibb_etal,
+    in_empres_i,
+    is_priority_pathogen,
+    is_prototype_pathogen,
+    priority_prototype_status,
+    region_africa,
+    region_americas,
+    region_europe,
+    region_mediterranean,
+    region_se_asia,
+    region_western_pacific
+  )
 
 # Save final_pathogen_data to csv
 write_csv(final_pathogen_data, here("pathogen_association_data","WHO","who_diseases","who_pathogens_diseases.csv"))
