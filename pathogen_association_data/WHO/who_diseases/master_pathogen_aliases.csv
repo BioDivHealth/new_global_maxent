@@ -1,0 +1,42 @@
+resolved_pathogen_name,alias_source,alias_name,alias_type,alias_notes
+Eastern equine encephalitis virus,virion,Alphavirus eastern,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Western equine encephalitis virus,virion,Alphavirus western,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Hendra henipavirus,virion,Henipavirus hendraense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Japanese encephalitis virus,virion,Orthoflavivirus japonicum,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Powassan virus,virion,Orthoflavivirus powassanense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+La Crosse virus,virion,Orthobunyavirus lacrosseense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Jamestown Canyon virus,virion,Orthobunyavirus jamestownense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Saint Louis encephalitis virus,virion,Orthoflavivirus louisense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Mayaro virus,virion,Alphavirus mayaro,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Ross River virus,virion,Alphavirus rossriver,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Barmah Forest virus,virion,Alphavirus barmah,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Everglades virus,virion,Alphavirus everglades,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+O'nyong-nyong virus,virion,Onyong-nyong virus,spelling_variant,Local VIRION spelling omits the apostrophe.
+Bluetongue virus,virion,Orbivirus caerulinguae,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Epizootic hemorrhagic disease virus,virion,Orbivirus ruminantium,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+African horse sickness virus,virion,Orbivirus alphaequi,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Schmallenberg virus,virion,Orthobunyavirus schmallenbergense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Sin Nombre orthohantavirus,virion,Orthohantavirus sinnombreense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Andes orthohantavirus,virion,Orthohantavirus andesense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Prospect Hill orthohantavirus,virion,Orthohantavirus prospectense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Bayou orthohantavirus,virion,Orthohantavirus bayoui,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Machupo mammarenavirus,virion,Mammarenavirus machupoense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Guanarito mammarenavirus,virion,Mammarenavirus guanaritoense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Irkut lyssavirus,virion,Lyssavirus irkut,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Bokeloh bat lyssavirus,virion,Lyssavirus bokeloh,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Duvenhage lyssavirus,virion,Lyssavirus duvenhage,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Australian bat lyssavirus,virion,Lyssavirus australis,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Murray Valley encephalitis virus,virion,Orthoflavivirus murrayense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Rocio virus,virion,Orthoflavivirus ilheusense,shared_species_proxy,Taxonomic species shared with Ilheus virus; do not treat this as Rocio-specific host evidence without review.
+Rocio virus,clover,Ilheus virus,shared_species_proxy,Local CLOVER match at the Ilheus virus/species proxy level; do not treat this as Rocio-specific host evidence without review.
+Kyasanur Forest disease virus,virion,Orthoflavivirus kyasanurense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Omsk hemorrhagic fever virus,virion,Orthoflavivirus omskense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Colorado tick fever virus,virion,Coltivirus dermacentoris,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Rabies lyssavirus,virion,Lyssavirus rabies,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Lumpy skin disease virus,virion,Capripoxvirus lumpyskinpox,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Apeu virus,virion,Orthobunyavirus apeuense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Menangle virus,virion,Pararubulavirus menangleense,taxonomy_name,ICTV/NCBI-style species name used in local VIRION taxonomy.
+Alkhumra hemorrhagic fever virus,virion,Orthoflavivirus kyasanurense,shared_species_proxy,Taxonomic species shared with Kyasanur Forest disease virus; do not treat this as Alkhumra-specific host evidence without review.
+Borrelia burgdorferi sensu lato,clover,Borreliella burgdorferi,narrow_local_match,CLOVER local match is narrower than the intended sensu lato complex.
+Trypanosoma brucei species complex,clover,Trypanosoma brucei,narrow_local_match,CLOVER local match is narrower than the intended species-complex analysis unit.
+Rickettsia conorii subsp. indica,clover,Rickettsia conorii,parent_species_match,CLOVER local match is at parent species level.

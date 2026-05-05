@@ -1,0 +1,349 @@
+# ------------------------------------------------------------------------------
+# 1_2c_Master_Virion_Clover_Matches.R
+# ------------------------------------------------------------------------------
+# Purpose: Match active, concrete disease-master analysis units to local VIRION
+#          and CLOVER pathogen taxonomies.
+#
+# Inputs : pathogen_association_data/WHO/who_diseases/
+#            master_disease_name_resolution_manual.csv
+#          local VIRION and CLOVER source tables
+#
+# Outputs: pathogen_association_data/WHO/who_diseases/
+#            master_pathogen_virion_clover_candidates.csv
+#            master_pathogen_virion_clover_matches.csv
+# ------------------------------------------------------------------------------
+
+# ------------------------------| Load libraries |------------------------------
+library(tidyverse)
+library(here)
+library(stringdist)
+library(magrittr)
+
+# ------------------------------| Helper paths |-------------------------------
+who_dir <- file.path("pathogen_association_data", "WHO", "who_diseases")
+
+manual_path <- file.path(who_dir, "master_disease_name_resolution_manual.csv")
+alias_path <- file.path(who_dir, "master_pathogen_aliases.csv")
+candidate_output_path <- file.path(who_dir, "master_pathogen_virion_clover_candidates.csv")
+match_output_path <- file.path(who_dir, "master_pathogen_virion_clover_matches.csv")
+external_review_output_path <- file.path(who_dir, "master_pathogen_external_taxonomy_review.csv")
+
+clover_dir <- here(
+  "pathogen_association_data", "viralemergence-clover-2604d22",
+  "clover", "clover_1.0_allpathogens"
+)
+
+clover_paths <- file.path(
+  clover_dir,
+  c(
+    "CLOVER_1.0_Bacteria_AssociationsFlatFile.csv",
+    "CLOVER_1.0_Viruses_AssociationsFlatFile.csv",
+    "CLOVER_1.0_HelminthProtozoaFungi_AssociationsFlatFile.csv"
+  )
+)
+
+# ------------------------------| Helpers |------------------------------------
+normalize_name <- function(x) {
+  x %>%
+    str_to_lower() %>%
+    str_replace_all("&", " and ") %>%
+    str_replace_all("[[:punct:]]+", " ") %>%
+    str_squish()
+}
+
+collapse_unique <- function(x) {
+  x <- unique(na.omit(as.character(x)))
+  x <- x[x != ""]
+  if (length(x) == 0) {
+    NA_character_
+  } else {
+    paste(x, collapse = "; ")
+  }
+}
+
+rank_in_scope <- c("species", "species_complex", "subspecies")
+include_states_in_scope <- "yes"
+
+external_taxonomy_review <- tribble(
+  ~resolved_pathogen_name, ~external_source, ~external_taxid, ~external_taxon_name, ~external_rank, ~external_parent_taxon, ~external_source_url, ~external_review_notes,
+  "Alkhumra hemorrhagic fever virus", "NCBI Taxonomy", "172148", "Alkhumra hemorrhagic fever virus", "no rank", "Orthoflavivirus kyasanurense / Kyasanur Forest disease virus", "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=172148&mode=Info", "Found in NCBI but not in the local VIRION/CLOVER tables used here. Also standardizes spelling from Alkhurma to Alkhumra.",
+  "Rocio virus", "NCBI Taxonomy", "64315", "Rocio virus", "no rank", "Orthoflavivirus ilheusense / Ilheus virus", "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=64315&mode=Info", "Found in NCBI but not in the local VIRION/CLOVER tables used here; NCBI places it under Orthoflavivirus ilheusense."
+) %>%
+  mutate(query_key = normalize_name(resolved_pathogen_name))
+
+manual_aliases <- read_csv(alias_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  rename(
+    source = alias_source,
+    source_name = alias_name
+  ) %>%
+  filter(!is.na(resolved_pathogen_name), !is.na(source), !is.na(source_name)) %>%
+  mutate(
+    source = str_to_lower(source),
+    query_key = normalize_name(resolved_pathogen_name),
+    source_key = normalize_name(source_name),
+    alias_review_flag = alias_type %in% c(
+      "shared_species_proxy",
+      "species_proxy",
+      "narrow_local_match",
+      "parent_species_match"
+    )
+  )
+
+unexpected_alias_sources <- setdiff(unique(manual_aliases$source), c("virion", "clover"))
+if (length(unexpected_alias_sources) > 0) {
+  stop(
+    "Unexpected alias_source values in ",
+    alias_path,
+    ": ",
+    paste(unexpected_alias_sources, collapse = ", ")
+  )
+}
+
+make_matches <- function(query, source_table, source_name, max_dist = 0.08) {
+  source_proc <- source_table %>%
+    filter(!is.na(source_pathogen_name), source_pathogen_name != "") %>%
+    mutate(source_key = normalize_name(source_pathogen_name)) %>%
+    distinct(source, source_pathogen_name, source_taxid, source_family, source_type, source_key)
+
+  exact_matches <- query %>%
+    inner_join(source_proc, by = c("query_key" = "source_key")) %>%
+    mutate(match_type = "exact", match_distance = 0)
+
+  alias_matches <- query %>%
+    inner_join(
+      manual_aliases %>%
+        filter(source == .env$source_name) %>%
+        select(query_key, source_key, alias_source_name = source_name, alias_type, alias_notes, alias_review_flag),
+      by = "query_key"
+    ) %>%
+    inner_join(source_proc, by = "source_key", relationship = "many-to-many") %>%
+    mutate(match_type = "manual_alias", match_distance = 0)
+
+  unmatched <- query %>%
+    filter(!analysis_unit_id %in% c(exact_matches$analysis_unit_id, alias_matches$analysis_unit_id))
+
+  fuzzy_matches <- tibble()
+  if (nrow(unmatched) > 0 && nrow(source_proc) > 0) {
+    fuzzy_matches <- map_dfr(seq_len(nrow(unmatched)), function(i) {
+      query_row <- unmatched[i, ]
+      distances <- stringdist::stringdist(
+        query_row$query_key,
+        source_proc$source_key,
+        method = "jw"
+      )
+      keep <- which(distances <= max_dist)
+      if (length(keep) == 0) {
+        return(tibble())
+      }
+      keep <- keep[order(distances[keep], source_proc$source_pathogen_name[keep])]
+      keep <- head(keep, 5)
+
+      bind_cols(
+        query_row[rep(1, length(keep)), ],
+        source_proc[keep, ] %>% select(-source)
+      ) %>%
+        mutate(
+          match_distance = distances[keep],
+          match_type = "fuzzy_candidate"
+        )
+    })
+  }
+
+  bind_rows(exact_matches, alias_matches, fuzzy_matches) %>%
+    mutate(source = source_name) %>%
+    select(
+      analysis_unit_id, master_row, disease_master_name, resolved_disease_name,
+      resolved_pathogen_name, resolved_pathogen_rank, include_as_analysis_unit,
+      split_group, source, source_pathogen_name, source_taxid, source_family,
+      source_type, match_type, match_distance, alias_type, alias_notes, alias_review_flag
+    ) %>%
+    distinct()
+}
+
+# ------------------------------| Load query rows |----------------------------
+manual_units <- read_csv(manual_path, show_col_types = FALSE, na = c("", "NA")) %>%
+  filter(
+    resolved_pathogen_rank %in% rank_in_scope,
+    include_as_analysis_unit %in% include_states_in_scope
+  ) %>%
+  mutate(
+    analysis_unit_id = paste0("master_", master_row),
+    query_key = normalize_name(resolved_pathogen_name),
+    preferred_match_source = if_else(
+      str_detect(str_to_lower(pathogen_family_master), "viridae$|virus|lyssa|hanta|arena|flavi|toga|paramyxo|peribunya|reo|pox"),
+      "virion",
+      "clover"
+    )
+  )
+
+stopifnot(nrow(manual_units) > 0)
+
+# ------------------------------| Load VIRION taxonomy |-----------------------
+if (!exists("virion_data")) {
+  source(file.path("scripts", "associations", "network_building", "virion_data.R"))
+}
+
+virion_taxonomy <- virion_data$taxonomy_virus %>%
+  transmute(
+    source = "virion",
+    source_pathogen_name = Virus,
+    source_taxid = VirusTaxID,
+    source_family = VirusFamily,
+    source_type = "virus"
+  ) %>%
+  distinct()
+
+# ------------------------------| Load CLOVER taxonomy |-----------------------
+missing_clover_files <- clover_paths[!file.exists(clover_paths)]
+if (length(missing_clover_files) > 0) {
+  stop(
+    "Missing CLOVER input files: ",
+    paste(missing_clover_files, collapse = "; ")
+  )
+}
+
+clover_taxonomy <- map_dfr(
+  clover_paths,
+  ~ read_csv(.x, show_col_types = FALSE, na = c("", "NA"))
+) %>%
+  filter(!is.na(Pathogen), Pathogen != "") %>%
+  transmute(
+    source = "clover",
+    source_pathogen_name = Pathogen,
+    source_taxid = PathogenTaxID,
+    source_family = PathogenFamily,
+    source_type = PathogenType
+  ) %>%
+  distinct()
+
+# ------------------------------| Match |--------------------------------------
+virion_candidates <- make_matches(
+  manual_units,
+  virion_taxonomy,
+  source_name = "virion",
+  max_dist = 0.08
+)
+
+clover_candidates <- make_matches(
+  manual_units,
+  clover_taxonomy,
+  source_name = "clover",
+  max_dist = 0.08
+)
+
+all_candidates <- bind_rows(virion_candidates, clover_candidates) %>%
+  mutate(
+    match_status = case_when(
+      match_type %in% c("exact", "manual_alias") ~ "accepted_candidate",
+      match_type == "fuzzy_candidate" & match_distance <= 0.03 ~ "strong_review_candidate",
+      match_type == "fuzzy_candidate" ~ "review_candidate",
+      TRUE ~ "review_candidate"
+    )
+  ) %>%
+  arrange(master_row, source, match_status, match_distance, source_pathogen_name)
+
+best_matches <- all_candidates %>%
+  group_by(analysis_unit_id, source) %>%
+  arrange(
+    match(match_type, c("exact", "manual_alias", "fuzzy_candidate")),
+    match_distance,
+    source_pathogen_name,
+    .by_group = TRUE
+  ) %>%
+  summarise(
+    master_row = first(master_row),
+    disease_master_name = first(disease_master_name),
+    resolved_disease_name = first(resolved_disease_name),
+    resolved_pathogen_name = first(resolved_pathogen_name),
+    resolved_pathogen_rank = first(resolved_pathogen_rank),
+    include_as_analysis_unit = first(include_as_analysis_unit),
+    split_group = first(split_group),
+    matched_pathogen_names = collapse_unique(source_pathogen_name),
+    matched_taxids = collapse_unique(source_taxid),
+    matched_families = collapse_unique(source_family),
+    matched_source_types = collapse_unique(source_type),
+    alias_types = collapse_unique(alias_type),
+    alias_notes = collapse_unique(alias_notes),
+    alias_review_flag = any(alias_review_flag, na.rm = TRUE),
+    best_match_type = first(match_type),
+    best_match_distance = first(match_distance),
+    match_status = first(match_status),
+    candidate_count = n(),
+    .groups = "drop"
+  ) %>%
+  pivot_wider(
+    names_from = source,
+    values_from = c(
+      matched_pathogen_names, matched_taxids, matched_families,
+      matched_source_types, best_match_type, best_match_distance,
+      match_status, candidate_count, alias_types, alias_notes,
+      alias_review_flag
+    ),
+    names_glue = "{source}_{.value}"
+  ) %>%
+  right_join(
+    manual_units %>%
+      select(
+        analysis_unit_id, master_row, disease_master_name, resolved_disease_name,
+        resolved_pathogen_name, resolved_pathogen_rank, include_as_analysis_unit,
+        split_group, preferred_match_source
+      ),
+    by = c(
+      "analysis_unit_id", "master_row", "disease_master_name",
+      "resolved_disease_name", "resolved_pathogen_name",
+      "resolved_pathogen_rank", "include_as_analysis_unit", "split_group"
+    )
+  ) %>%
+  mutate(
+    overall_match_status = case_when(
+      !is.na(virion_matched_taxids) | !is.na(clover_matched_taxids) ~ "matched_or_candidate",
+      TRUE ~ "unmatched"
+    ),
+    preferred_source_match_status = case_when(
+      preferred_match_source == "virion" & !is.na(virion_matched_taxids) ~ "preferred_source_matched",
+      preferred_match_source == "clover" & !is.na(clover_matched_taxids) ~ "preferred_source_matched",
+      overall_match_status == "matched_or_candidate" ~ "fallback_source_matched",
+      TRUE ~ "unmatched"
+    ),
+    match_review_flag = coalesce(virion_alias_review_flag, FALSE) | coalesce(clover_alias_review_flag, FALSE),
+    shared_species_proxy_flag = str_detect(
+      coalesce(paste(virion_alias_types, clover_alias_types, sep = "; "), ""),
+      "shared_species_proxy"
+    )
+  ) %>%
+  rowwise() %>%
+  mutate(
+    match_review_notes = collapse_unique(c(virion_alias_notes, clover_alias_notes))
+  ) %>%
+  ungroup() %>%
+  arrange(master_row)
+
+# ------------------------------| Save outputs |-------------------------------
+write_csv(all_candidates, candidate_output_path, na = "")
+write_csv(best_matches, match_output_path, na = "")
+
+external_review <- best_matches %>%
+  filter(overall_match_status == "unmatched") %>%
+  mutate(query_key = normalize_name(resolved_pathogen_name)) %>%
+  left_join(
+    external_taxonomy_review %>% select(-resolved_pathogen_name),
+    by = "query_key"
+  ) %>%
+  select(
+    master_row, disease_master_name, resolved_disease_name, resolved_pathogen_name,
+    resolved_pathogen_rank, include_as_analysis_unit, split_group,
+    external_source, external_taxid, external_taxon_name, external_rank,
+    external_parent_taxon, external_source_url, external_review_notes
+  )
+
+write_csv(external_review, external_review_output_path, na = "")
+
+# ------------------------------| Console summary |----------------------------
+cat("Master units in scope:", nrow(manual_units), "\n")
+cat("Candidate rows written:", nrow(all_candidates), "\n")
+cat("Units with VIRION candidates:", sum(!is.na(best_matches$virion_matched_taxids)), "\n")
+cat("Units with CLOVER candidates:", sum(!is.na(best_matches$clover_matched_taxids)), "\n")
+cat("Units still unmatched:", sum(best_matches$overall_match_status == "unmatched"), "\n")
+cat("Candidate output:", candidate_output_path, "\n")
+cat("Best-match output:", match_output_path, "\n")
+cat("External review output:", external_review_output_path, "\n")

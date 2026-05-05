@@ -1,69 +1,68 @@
-Family,PHEIC risk,Pathogens,previous_name,msl39_viral_name,Disease_name
-Arenaviridae,High,Mammarenavirus lassaense,Lassa Fever virus,Mammarenavirus lassaense,Lassa fever
-Arenaviridae,High,Mammarenavirus lujoense,Lujo virus,Mammarenavirus lujoense,Lujo hemorrhagic fever
-Bacteria,High,Klebsiella pneumoniae,NA,NA,Klebsiella infection (pneumonia sepsis)
-Bacteria,High,Salmonella enterica non typhoidal serovars,NA,NA,Non-typhoidal salmonellosis
-Bacteria,High,Shigella dysenteriae serotype 1,NA,NA,Shigellosis (bacillary dysentery)
-Bacteria,High,Vibrio cholerae serogroup 0139,NA,NA,Cholera
-Bacteria,High,Yersinia pestis,NA,NA,Plague
-Coronaviridae,High,Subgenus Sarbecovirus,NA,NA,Severe Acute Respiratory Syndrome (SARS); COVID-19
-Filoviridae,High,Orthoebolavirus sudanense,Sudan ebolavirus,Orthoebolavirus sudanense,Sudan virus disease (Ebola virus disease)
-Filoviridae,High,Orthoebolavirus zairense,Ebola virus,Orthoebolavirus zairense,Ebola virus disease
-Filoviridae,High,Orthomarburgvirus marburgense,Marburg virus,Orthomarburgvirus marburgense,Marburg virus disease
-Flaviviridae,High,Orthoflavivirus denguei,Dengue virus,Orthoflavivirus denguei,Dengue
-Flaviviridae,High,Orthoflavivirus flavi,Yellow fever virus,Orthoflavivirus flavi,Yellow fever
-Flaviviridae,High,Orthoflavivirus zikaense,Zika virus,Orthoflavivirus zikaense,Zika virus disease
-Flaviviridae,High,Orthoflavivirus nilense,West Nile virus,Orthoflavivirus nilense,West Nile fever
-Nairoviridae,High,Orthonairovirus haemorrhagiae,NA,NA,Crimean-Congo hemorrhagic fever
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H1N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H1N1)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H2N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H2N1)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H3N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H3N1)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H5N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H5N1 avian influenza)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H6N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H6N1)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H7N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H7N1)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H10N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H10N1)
-Phenuiviridae,High,Phlebovirus riftense,Rift Valley Fever virus,Phlebovirus riftense,Rift Valley fever
-Poxviridae,High,Orthopoxvirus monkeypox,Monkeypox virus,Orthopoxvirus monkeypox,Mpox (Monkeypox)
-Togaviridae,High,Alphavirus chikungunya,Chikungunya virus,Alphavirus chikungunya,Chikungunya fever
-Picornaviridae,Medium,Enterovirus coxsackiepol,Polio virus,Enterovirus coxsackiepol,Poliomyelitis
-Picornaviridae,Medium,Enterovirus alphacoxsackie 71,Enterovirus A71 (EV-A71),Enterovirus alphacoxsackie 71,Hand  foot and mouth disease
-Picornaviridae,Medium,Enterovirus deconjucti 68,Enterovirus D68 (EV-D68),Enterovirus deconjucti 68,Enterovirus D68 respiratory disease
-Retroviridae,Medium,Lentivirus humimdef1,Human immunodeficiency virus 1 (HIV-1),Lentivirus humimdef1,HIV infection / AIDS
-Adenoviridae,Low-Medium,Recombinant mastadenovirus,NA,NA,Adenovirus acute respiratory disease
-Pneumoviridae,Low-Medium,Metapneumovirus hominis,Human metapneumovirus,Metapneumovirus hominis,Human metapneumovirus infection
-Astroviridae,Low,Mamastrovirus virginiaense,Mamastrovirus 9,Mamastrovirus virginiaense,Astrovirus gastroenteritis
-Hepeviridae,Low,Paslahepevirus balayani genotype 3,Hepatitis E virus,Paslahepevirus balayani,Hepatitis E
-Parvoviridae,Low,Protoparvovirus carnivoran,Carnivore protoparvoviruses,Protoparvovirus carnivoran,No known human disease
-Picobirnaviridae,Low,Orthopicobirnavirus hominis,Human picobirnavirus,Orthopicobirnavirus hominis,Picobirnavirus gastroenteritis
-Rhabdoviridae,Low,Genus Vesiculovirus,Genus Vesiculovirus,Genus Vesiculovirus,Vesicular stomatitis
-Sedoreoviridae,Low,Genus Rotavirus,NA,NA,Rotavirus gastroenteritis
-Spinareoviridae,Low,Orthoreovirus mammalis,Mammalian orthoreovirus,Orthoreovirus mammalis,Reovirus infection (usually mild)
-Arenaviridae,High,Mammarenavirus juninense,Junin virus,Mammarenavirus juninense,Argentine hemorrhagic fever
-Coronaviridae,High,subgenus Sarbecovirus,Severe Acute Respiratory Syndrome coronavirus,subgenus Sarbecovirus,NA
-Flaviviridae,High,Orthoflavivirus encephalitidis,Tick-borne encephalitis virus,Orthoflavivirus encephalitidis,Tick-borne encephalitis
-Hantaviridae,High,Orthohantavirus sinnombreense,Sinnombre virus,Orthohantavirus sinnombreense,Hantavirus pulmonary syndrome
-Poxviridae,High,Orthopoxvirus vaccinia,Vaccinia virus,Orthopoxvirus vaccinia,Vaccinia (vaccinia virus infection)
-Togaviridae,High,Alphavirus venezuelan,Venezuelan equine encephalitis virus,Alphavirus venezuelan,Venezuelan equine encephalitis
-Adenoviridae,Low-Medium,Mastadenovirus blackbeardi serotype 14,Adenovirus B,Mastadenovirus blackbeardi,Adenovirus acute respiratory disease
-Peribunyaviridae,Low,Orthobunyavirus oropoucheense,Oropouche virus,Orthobunyavirus oropoucheense,Oropouche fever
-Hantaviridae,High,Orthohantavirus hantanense,Hantaan orthohantavirus,Orthohantavirus hantanense,Hemorrhagic fever with renal syndrome (Hantaan virus)
-Bornaviridae,Low,Orthobornavirus bornaense,Mammalian Bornavirus 1 (BoDV-1),Orthobornavirus bornaense,Borna disease (encephalitis)
-Coronaviridae,High,subgenus Merbecovirus,Middle East Respiratory Syndrome Coronavirus,subgenus Merbecovirus,NA
-Paramyxoviridae,High,Henipavirus nipahense,Nipah virus,Henipavirus nipahense,Nipah virus disease
-Phenuiviridae,High,Bandavirus dabieense,SFTS virus,Bandavirus dabieense,Severe fever with thrombocytopenia syndrome (SFTS)
-Hepadnaviridae,Low,Orthohepadnavirus hominoidei,NA,NA,NA
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H2Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H2 subtype)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H3N2),Influenza A,Alphainfluenzavirus influenzae,Influenza (H3N2)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H5Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H5 subtype)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H6Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H6 subtype)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H7Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H7 subtype)
-Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H10Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H10 subtype)
-Paramyxoviridae,High,Orthopoxvirus vaccinia,Vaccinia virus,Orthopoxvirus vaccinia,Vaccinia (vaccinia virus infection)
-Picornaviridae,Medium,Human polioviruses,NA,NA,Poliomyelitis
-Picornaviridae,Medium,Enterovirus D68 (EV-D68),Enterovirus D68 (EV-D68),Enterovirus deconjucti 68,Enterovirus D68 respiratory disease
-Picornaviridae,Medium,Enterovirus A71 (EV-A71),Enterovirus A71 (EV-A71),Enterovirus alphacoxsackie 71,Hand  foot and mouth disease
-Retroviridae,Medium,Human immunodeficiency virus 1 (HIV-1),Human immunodeficiency virus 1 (HIV-1),Lentivirus humimdef1,HIV infection / AIDS
-Adenoviridae,Low-Medium,Human mastadenovirus B,NA,NA,Adenovirus acute respiratory disease
-Astroviridae,Low,Mamastrovirus 9 (GII.B-human),NA,NA,NA
-Parvoviridae,Low,Carivore protoparvoviruses (CPV),NA,NA,NA
-Picobirnaviridae,Low,Human picobirnavirus,Human picobirnavirus,Orthopicobirnavirus hominis,Picobirnavirus gastroenteritis
+Family,PHEIC risk,Pathogens,previous_name,msl39_viral_name,Disease_name,in_gibb_etal,in_empres_i,is_priority_pathogen,is_prototype_pathogen,priority_prototype_status,region_africa,region_americas,region_europe,region_mediterranean,region_se_asia,region_western_pacific
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H10N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H10N1),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,none
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H10Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H10 subtype),FALSE,FALSE,TRUE,FALSE,priority,none,none,none,none,none,priority
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H1N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H1N1),FALSE,FALSE,TRUE,TRUE,both,both,both,both,both,both,both
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H2N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H2N1),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,none
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H2Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H2 subtype),FALSE,FALSE,TRUE,FALSE,priority,none,none,none,none,none,priority
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H3N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H3N1),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,none
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H3N2),Influenza A,Alphainfluenzavirus influenzae,Influenza (H3N2),FALSE,FALSE,TRUE,FALSE,priority,none,none,none,none,none,priority
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H5N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H5N1 avian influenza),TRUE,TRUE,TRUE,TRUE,both,both,both,both,both,both,none
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H5Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H5 subtype),FALSE,FALSE,TRUE,TRUE,both,none,none,none,none,none,both
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H6N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H6N1),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,none
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H6Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H6 subtype),FALSE,FALSE,TRUE,FALSE,priority,none,none,none,none,none,priority
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H7N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H7N1),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,none
+Orthomyxoviridae,High,Alphainfluenzavirus influenzae (H7Nx),Influenza A,Alphainfluenzavirus influenzae,Influenza (H7 subtype),FALSE,FALSE,TRUE,FALSE,priority,none,none,none,none,none,priority
+Togaviridae,High,Alphavirus chikungunya,Chikungunya virus,Alphavirus chikungunya,Chikungunya fever,TRUE,FALSE,TRUE,TRUE,both,both,both,none,none,both,both
+Togaviridae,High,Alphavirus venezuelan,Venezuelan equine encephalitis virus,Alphavirus venezuelan,Venezuelan equine encephalitis,FALSE,TRUE,TRUE,TRUE,both,none,both,none,none,none,none
+Phenuiviridae,High,Bandavirus dabieense,SFTS virus,Bandavirus dabieense,Severe fever with thrombocytopenia syndrome (SFTS),FALSE,FALSE,TRUE,TRUE,both,none,none,none,none,both,both
+Parvoviridae,Low,Carivore protoparvoviruses (CPV),NA,NA,NA,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,none,prototype
+Picornaviridae,Medium,Enterovirus A71 (EV-A71),Enterovirus A71 (EV-A71),Enterovirus alphacoxsackie 71,Hand  foot and mouth disease,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,none,prototype
+Picornaviridae,Medium,Enterovirus D68 (EV-D68),Enterovirus D68 (EV-D68),Enterovirus deconjucti 68,Enterovirus D68 respiratory disease,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,none,prototype
+Picornaviridae,Medium,Enterovirus alphacoxsackie 71,Enterovirus A71 (EV-A71),Enterovirus alphacoxsackie 71,Hand  foot and mouth disease,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,none
+Picornaviridae,Medium,Enterovirus coxsackiepol,Polio virus,Enterovirus coxsackiepol,Poliomyelitis,FALSE,FALSE,TRUE,FALSE,priority,priority,none,none,priority,priority,none
+Picornaviridae,Medium,Enterovirus deconjucti 68,Enterovirus D68 (EV-D68),Enterovirus deconjucti 68,Enterovirus D68 respiratory disease,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,none
+Sedoreoviridae,Low,Genus Rotavirus,NA,NA,Rotavirus gastroenteritis,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,prototype
+Rhabdoviridae,Low,Genus Vesiculovirus,Genus Vesiculovirus,Genus Vesiculovirus,Vesicular stomatitis,FALSE,TRUE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,prototype
+Paramyxoviridae,High,Henipavirus nipahense,Nipah virus,Henipavirus nipahense,Nipah virus disease,TRUE,TRUE,TRUE,TRUE,both,none,none,none,none,both,both
+Retroviridae,Medium,Human immunodeficiency virus 1 (HIV-1),Human immunodeficiency virus 1 (HIV-1),Lentivirus humimdef1,HIV infection / AIDS,FALSE,FALSE,TRUE,TRUE,both,none,none,none,none,none,both
+Adenoviridae,Low-Medium,Human mastadenovirus B,NA,NA,Adenovirus acute respiratory disease,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,none,prototype
+Picobirnaviridae,Low,Human picobirnavirus,Human picobirnavirus,Orthopicobirnavirus hominis,Picobirnavirus gastroenteritis,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,none,prototype
+Picornaviridae,Medium,Human polioviruses,NA,NA,Poliomyelitis,FALSE,FALSE,TRUE,FALSE,priority,none,none,none,none,none,priority
+Bacteria,High,Klebsiella pneumoniae,NA,NA,Klebsiella infection (pneumonia sepsis),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,priority
+Retroviridae,Medium,Lentivirus humimdef1,Human immunodeficiency virus 1 (HIV-1),Lentivirus humimdef1,HIV infection / AIDS,FALSE,FALSE,TRUE,TRUE,both,both,both,both,both,both,none
+Astroviridae,Low,Mamastrovirus 9 (GII.B-human),NA,NA,NA,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,none,prototype
+Astroviridae,Low,Mamastrovirus virginiaense,Mamastrovirus 9,Mamastrovirus virginiaense,Astrovirus gastroenteritis,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,none
+Arenaviridae,High,Mammarenavirus juninense,Junin virus,Mammarenavirus juninense,Argentine hemorrhagic fever,TRUE,FALSE,FALSE,TRUE,prototype,none,prototype,none,none,none,none
+Arenaviridae,High,Mammarenavirus lassaense,Lassa Fever virus,Mammarenavirus lassaense,Lassa fever,TRUE,FALSE,TRUE,TRUE,both,both,none,none,none,none,none
+Arenaviridae,High,Mammarenavirus lujoense,Lujo virus,Mammarenavirus lujoense,Lujo hemorrhagic fever,FALSE,FALSE,FALSE,TRUE,prototype,prototype,none,none,none,none,none
+Adenoviridae,Low-Medium,Mastadenovirus blackbeardi serotype 14,Adenovirus B,Mastadenovirus blackbeardi,Adenovirus acute respiratory disease,FALSE,FALSE,FALSE,TRUE,prototype,none,prototype,none,none,none,none
+Pneumoviridae,Low-Medium,Metapneumovirus hominis,Human metapneumovirus,Metapneumovirus hominis,Human metapneumovirus infection,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,prototype
+Bornaviridae,Low,Orthobornavirus bornaense,Mammalian Bornavirus 1 (BoDV-1),Orthobornavirus bornaense,Borna disease (encephalitis),FALSE,FALSE,FALSE,TRUE,prototype,none,none,prototype,none,none,none
+Peribunyaviridae,Low,Orthobunyavirus oropoucheense,Oropouche virus,Orthobunyavirus oropoucheense,Oropouche fever,TRUE,TRUE,FALSE,TRUE,prototype,none,prototype,none,none,none,none
+Filoviridae,High,Orthoebolavirus sudanense,Sudan ebolavirus,Orthoebolavirus sudanense,Sudan virus disease (Ebola virus disease),TRUE,FALSE,TRUE,FALSE,priority,priority,none,none,priority,none,none
+Filoviridae,High,Orthoebolavirus zairense,Ebola virus,Orthoebolavirus zairense,Ebola virus disease,TRUE,TRUE,TRUE,TRUE,both,both,none,none,none,none,none
+Flaviviridae,High,Orthoflavivirus denguei,Dengue virus,Orthoflavivirus denguei,Dengue,TRUE,FALSE,TRUE,TRUE,both,both,both,both,both,both,both
+Flaviviridae,High,Orthoflavivirus encephalitidis,Tick-borne encephalitis virus,Orthoflavivirus encephalitidis,Tick-borne encephalitis,FALSE,FALSE,FALSE,TRUE,prototype,none,prototype,prototype,none,none,none
+Flaviviridae,High,Orthoflavivirus flavi,Yellow fever virus,Orthoflavivirus flavi,Yellow fever,TRUE,FALSE,TRUE,FALSE,priority,priority,priority,none,none,none,none
+Flaviviridae,High,Orthoflavivirus nilense,West Nile virus,Orthoflavivirus nilense,West Nile fever,TRUE,TRUE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,prototype
+Flaviviridae,High,Orthoflavivirus zikaense,Zika virus,Orthoflavivirus zikaense,Zika virus disease,TRUE,FALSE,TRUE,TRUE,both,both,both,none,none,both,both
+Hantaviridae,High,Orthohantavirus hantanense,Hantaan orthohantavirus,Orthohantavirus hantanense,Hemorrhagic fever with renal syndrome (Hantaan virus),TRUE,FALSE,TRUE,FALSE,priority,none,none,priority,none,none,priority
+Hantaviridae,High,Orthohantavirus sinnombreense,Sinnombre virus,Orthohantavirus sinnombreense,Hantavirus pulmonary syndrome,FALSE,FALSE,TRUE,TRUE,both,none,both,none,none,none,none
+Hepadnaviridae,Low,Orthohepadnavirus hominoidei,NA,NA,NA,FALSE,FALSE,FALSE,TRUE,prototype,none,none,none,none,prototype,none
+Filoviridae,High,Orthomarburgvirus marburgense,Marburg virus,Orthomarburgvirus marburgense,Marburg virus disease,TRUE,TRUE,TRUE,FALSE,priority,priority,none,none,none,none,none
+Nairoviridae,High,Orthonairovirus haemorrhagiae,NA,NA,Crimean-Congo hemorrhagic fever,TRUE,TRUE,TRUE,TRUE,both,both,none,both,both,none,both
+Picobirnaviridae,Low,Orthopicobirnavirus hominis,Human picobirnavirus,Orthopicobirnavirus hominis,Picobirnavirus gastroenteritis,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,none
+Poxviridae,High,Orthopoxvirus monkeypox,Monkeypox virus,Orthopoxvirus monkeypox,Mpox (Monkeypox),TRUE,TRUE,TRUE,TRUE,both,both,both,both,both,both,both
+Poxviridae,High,Orthopoxvirus vaccinia,Vaccinia virus,Orthopoxvirus vaccinia,Vaccinia (vaccinia virus infection),FALSE,FALSE,TRUE,TRUE,both,none,prototype,none,prototype,prototype,both
+Spinareoviridae,Low,Orthoreovirus mammalis,Mammalian orthoreovirus,Orthoreovirus mammalis,Reovirus infection (usually mild),FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,prototype
+Hepeviridae,Low,Paslahepevirus balayani genotype 3,Hepatitis E virus,Paslahepevirus balayani,Hepatitis E,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,prototype
+Phenuiviridae,High,Phlebovirus riftense,Rift Valley Fever virus,Phlebovirus riftense,Rift Valley fever,TRUE,TRUE,FALSE,TRUE,prototype,prototype,none,none,none,none,none
+Parvoviridae,Low,Protoparvovirus carnivoran,Carnivore protoparvoviruses,Protoparvovirus carnivoran,No known human disease,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,none
+Adenoviridae,Low-Medium,Recombinant mastadenovirus,NA,NA,Adenovirus acute respiratory disease,FALSE,FALSE,FALSE,TRUE,prototype,prototype,prototype,prototype,prototype,prototype,none
+Bacteria,High,Salmonella enterica non typhoidal serovars,NA,NA,Non-typhoidal salmonellosis,FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,priority
+Bacteria,High,Shigella dysenteriae serotype 1,NA,NA,Shigellosis (bacillary dysentery),FALSE,FALSE,TRUE,FALSE,priority,priority,none,none,priority,priority,none
+Coronaviridae,High,Subgenus Sarbecovirus,NA,NA,Severe Acute Respiratory Syndrome (SARS); COVID-19,FALSE,FALSE,TRUE,TRUE,both,both,none,both,none,prototype,both
+Bacteria,High,Vibrio cholerae serogroup 0139,NA,NA,Cholera,FALSE,FALSE,TRUE,FALSE,priority,priority,none,none,priority,priority,priority
+Bacteria,High,Yersinia pestis,NA,NA,Plague,TRUE,FALSE,TRUE,FALSE,priority,priority,priority,none,none,none,none
+Coronaviridae,High,subgenus Merbecovirus,Middle East Respiratory Syndrome Coronavirus,subgenus Merbecovirus,NA,FALSE,FALSE,TRUE,TRUE,both,none,none,none,both,none,none
+Coronaviridae,High,subgenus Sarbecovirus,Severe Acute Respiratory Syndrome coronavirus,subgenus Sarbecovirus,NA,FALSE,FALSE,TRUE,TRUE,both,none,both,none,both,priority,none

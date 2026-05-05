@@ -17,6 +17,9 @@ association data, with a focus on WHO priority pathogens.
 - `host_vector_integration/`
   Joins the WHO disease/pathogen network to observational host-vector evidence
   and writes disease-level, pathogen-level, and expanded host-vector outputs.
+- `role_annotation/`
+  Builds conservative host/vector role candidate scaffolds and keeps final
+  biological role review separate from the core network evidence tables.
 - `genbank/`
   Adds pathogen-country enrichment from GenBank/NCBI and contains the shared
   helper layer plus source-routing rules.
@@ -35,6 +38,7 @@ association data, with a focus on WHO priority pathogens.
     -   Loads and standardizes WHO priority pathogen lists from various regional documents.
     -   Maps pathogens to standardized names using a translation table and fuzzy matching.
     -   Assigns risk categories and family information.
+    -   Preserves whether each final pathogen is priority, prototype, or both, plus per-region WHO source status (`priority`, `prototype`, `both`, or `none`) across the WHO regions.
     -   Outputs a cleaned and consolidated pathogen list (`who_pathogens_diseases.csv`).
 
 2.  **CLOVER Integration (Bacteria) (`network_building/2_1_CLOVER.R`, `network_building/2_2_CLOVER_Host_Clean.R`, `network_building/2_3_CLOVER_Network.R`):**
@@ -91,6 +95,11 @@ The intended workflow is:
     -   `genbank/5_7a_GenBank_Search_Diagnostics.R`: Runs lightweight NCBI ESearch diagnostics for the same WHO pathogen manifest and writes per-query success/failure tables before any accession fetching.
     -   `genbank/genbank_metadata_helpers.R`: Shared helper layer for query building, NCBI search/fetch plumbing, taxonomy-link fallback, and metadata-source routing.
     -   `genbank/GENBANK_METADATA_SOURCE_RULES.md`: Exact routing rules for deciding when a pathogen should start in `nuccore` versus `biosample`, plus when a weak `nuccore` result should be escalated to `biosample` review.
+
+8.  **Role Annotation (`role_annotation/6_1_*`):**
+    -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the canonical WHO disease-pathogen-host backbone for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/WHO/role_annotation/`.
+    -   `role_annotation/6_2_Derive_Species_Host_Vector_Roster.R`: Builds a collaborator-facing disease-species roster that covers both vectored and non-vectored diseases by combining host rows from the canonical WHO backbone with vector rows from the curated disease-vector table, plus host-vector observation and competence flags where available.
+    -   Role annotation files are an interpretation layer. Do not treat candidate rows as final reservoir, amplifier, incidental, dead-end, or vector-role assignments without source-backed evidence review.
 
 ### Outputs
 

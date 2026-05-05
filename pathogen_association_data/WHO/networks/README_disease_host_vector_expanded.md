@@ -212,3 +212,33 @@ When reading `disease_host_vector_links_expanded.csv`, remember that each row de
 So the expanded table is not a simple vector table and not a simple VectorMap or MapVEu extract. It is a joined, screened, disease-host-vector integration output.
 
 If you only want disease-level counts derived from this table, use `disease_host_vector_links_expanded_summary.csv`.
+
+## Vector Competence Annotation Layer
+
+The extracted vector competence evidence in `diseases/vector_competence.csv` is a newer mechanistic annotation layer. It comes largely from the same disease-specific literature base as the curated literature-review vector table, but it answers a different question:
+
+-   the curated disease-vector branch asks whether a vector is implicated for a disease/pathogen
+-   the competence layer asks what kind of evidence exists for infection, transmission, mixed results, or non-competence
+
+This means vector competence evidence is not currently used as the row-inclusion gate for `disease_host_vector_links.csv` or `disease_host_vector_links_expanded.csv`. The row-inclusion gate remains the curated disease-vector table plus the host-vector evidence described above.
+
+Instead, `scripts/associations/vector_screening/5_6c_Join_Vector_Competence_Evidence.R` collapses the competence evidence to disease-vector grain and writes competence-annotated companion files:
+
+-   `pathogen_association_data/WHO/vector_screening/outputs/vector_competence_collapsed.csv`
+-   `pathogen_association_data/WHO/vector_screening/outputs/vector_competence_join_unmatched.csv`
+-   `pathogen_association_data/WHO/vector_screening/outputs/disease_vector_links_taxonomy_cleaned_competence_annotated.csv`
+-   `pathogen_association_data/WHO/networks/disease_host_vector_links_competence_annotated.csv`
+-   `pathogen_association_data/WHO/networks/disease_host_vector_links_expanded_competence_annotated.csv`
+
+Important added fields include:
+
+-   `vector_competence_status`
+-   `competence_statuses`
+-   `vector_competence_evidence_types`
+-   `transmission_demonstrated`
+-   `natural_infection_reported`
+-   `vector_role_hint`
+-   `uncertainty_reason`
+-   `competence_source_examples`
+
+These fields should be interpreted as evidence annotations, not final ecological role labels. They are useful for prioritising rows for bridge-vector, enzootic-vector, or role-candidate review, but they should not by themselves be treated as definitive proof of transmission-cycle role.

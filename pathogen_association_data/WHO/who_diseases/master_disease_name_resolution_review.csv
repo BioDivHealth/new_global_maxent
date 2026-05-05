@@ -1,0 +1,62 @@
+master_row,disease_master_name,pathogen_family_master,in_master_who,in_master_gibb,in_master_empres_i,in_master_atlas,master_guild,master_livestock_amplified,master_tier,master_key_host_vector,master_notes,suggested_next_step
+30,Lyme disease,Borrelia,FALSE,TRUE,FALSE,TRUE,E,FALSE,1,Ixodes ticks; rodent/deer,Highest n. High filling,master_list_new_or_unmatched
+31,Japanese encephalitis,Flaviviridae,FALSE,TRUE,TRUE,FALSE,E,TRUE,1,Culex tritaeniorhynchus; pigs; wading birds,Pig amplification essential. Vaccination flag.,master_list_new_or_unmatched
+32,Chagas (acute),Trypanosoma,FALSE,TRUE,FALSE,FALSE,E,FALSE,1,Triatomine bugs,"GBIF adds ~2,500 T. cruzi records",master_list_new_or_unmatched
+33,Melioidosis,Burkholderia,FALSE,TRUE,FALSE,FALSE,env,FALSE,1,Environmental (B. pseudomallei),No animal reservoir,master_list_new_or_unmatched
+34,Brazilian spotted fever,Rickettsia,FALSE,TRUE,FALSE,FALSE,E,FALSE,1,Amblyomma ticks,,master_list_new_or_unmatched
+35,La Crosse encephalitis,Peribunyaviridae,FALSE,TRUE,FALSE,TRUE,E,FALSE,1,Aedes treehole mosquitoes,,master_list_new_or_unmatched
+36,Powassan,Flaviviridae,FALSE,TRUE,FALSE,TRUE,E,FALSE,1,Ixodes ticks,,master_list_new_or_unmatched
+37,EEE,Togaviridae,FALSE,TRUE,TRUE,FALSE,E,TRUE,1,Mosquitoes; wild birds,Equine amplification,master_list_new_or_unmatched
+38,WEE,Togaviridae,FALSE,TRUE,TRUE,FALSE,E,TRUE,1,Mosquitoes; wild birds,Equine amplification,master_list_new_or_unmatched
+39,Jamestown Canyon,Peribunyaviridae,FALSE,TRUE,FALSE,TRUE,E,FALSE,1,Mosquitoes; deer,,master_list_new_or_unmatched
+40,St. Louis encephalitis,Flaviviridae,FALSE,TRUE,FALSE,FALSE,E,FALSE,1,Culex; wild birds,,master_list_new_or_unmatched
+41,Mayaro,Togaviridae,FALSE,TRUE,FALSE,FALSE,E,FALSE,1,Haemagogus mosquitoes; NHP,,master_list_new_or_unmatched
+42,Zoonotic malaria (P. knowlesi),Plasmodium,FALSE,TRUE,FALSE,FALSE,E,FALSE,1,Anopheles; macaque reservoir,,master_list_new_or_unmatched
+43,Anthrax,Bacillus,FALSE,TRUE,TRUE,FALSE,B/env,TRUE,1,Soil spores; wildlife cycle,Livestock amplify outbreaks,master_list_new_or_unmatched
+52,Bluetongue,Reoviridae,FALSE,FALSE,TRUE,FALSE,E,TRUE,1,Culicoides midges,"Best livestock addition. 19,467 records",master_list_new_or_unmatched
+53,Rabies,Lyssaviridae,FALSE,FALSE,TRUE,FALSE,B,FALSE,1,Multiple wildlife reservoirs,"3,788 records",master_list_new_or_unmatched
+54,Lumpy skin disease,Poxviridae,FALSE,FALSE,TRUE,FALSE,E,TRUE,1,Culicoides/mosquitoes,"5,296 records. Partly trade-mediated",master_list_new_or_unmatched
+55,Epizootic haemorrhagic disease,Reoviridae,FALSE,FALSE,TRUE,FALSE,E,FALSE,1,Culicoides; wild deer,383 records,master_list_new_or_unmatched
+63,Schmallenberg,Peribunyaviridae,FALSE,FALSE,TRUE,FALSE,E,TRUE,1,Culicoides midges,Recent European emergence,master_list_new_or_unmatched
+56,African horse sickness,Reoviridae,FALSE,FALSE,TRUE,FALSE,E,FALSE,1/2,Culicoides midges,237 records,master_list_new_or_unmatched
+60,Tularemia,Francisella,FALSE,FALSE,TRUE,TRUE,E,FALSE,1/2,Ticks; lagomorphs/rodents,,master_list_new_or_unmatched
+61,Leishmaniasis,Leishmania,FALSE,FALSE,TRUE,TRUE,E,FALSE,1/2,Sand flies (Phlebotomus/Lutzomyia),,master_list_new_or_unmatched
+62,Q fever,Coxiella,FALSE,FALSE,TRUE,FALSE,E,TRUE,1/2,Ticks; wildlife reservoir,Livestock amplify environmental contamination,master_list_new_or_unmatched
+65,Sin Nombre,Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,1/2,Peromyscus maniculatus,23 Atlas points,master_list_new_or_unmatched
+46,Scrub typhus,Orientia,FALSE,FALSE,FALSE,FALSE,E,FALSE,1?,Leptotrombidium mites (chiggers),VectorMap data. ~1M cases/yr. Unique vector type,master_list_new_or_unmatched
+45,O'nyong-nyong,Togaviridae,FALSE,FALSE,FALSE,FALSE,E,FALSE,2,Anopheles funestus/gambiae,Only alphavirus using malaria vectors. Pezzi et al. 2019,master_list_new_or_unmatched
+47,Ross River virus,Togaviridae,FALSE,FALSE,FALSE,FALSE,E,FALSE,2,Aedes/Culex; macropod reservoir,Australian. ~5000 cases/yr,master_list_new_or_unmatched
+48,Barmah Forest virus,Togaviridae,FALSE,FALSE,FALSE,FALSE,E,FALSE,2,Aedes/Culex,Australian companion to Ross River,master_list_new_or_unmatched
+49,Bartonellosis,Bartonella,FALSE,FALSE,FALSE,FALSE,E,FALSE,2,Lutzomyia sand flies,Peru/Ecuador/Colombia,master_list_new_or_unmatched
+50,Murine typhus,Rickettsia,FALSE,FALSE,FALSE,FALSE,A,FALSE,2,Xenopsylla cheopis (rat flea); Rattus,Flea-vectored. Cosmopolitan Rattus host,master_list_new_or_unmatched
+59,Theileriosis,Theileria,FALSE,FALSE,FALSE,FALSE,E,TRUE,2,Rhipicephalus/Hyalomma ticks,Not in EMPRES-i. Check other sources,master_list_new_or_unmatched
+66,Andes,Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,2,Oligoryzomys longicaudatus,13 points,master_list_new_or_unmatched
+67,Prospect Hill,Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,2,Microtus pennsylvanicus,6 points,master_list_new_or_unmatched
+68,Lee/Seoul variants,Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,2,Rattus/Apodemus,9 points,master_list_new_or_unmatched
+72,Machupo,Arenaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,2,Calomys callosus,4 points,master_list_new_or_unmatched
+81,Alkhurma,Flaviviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Ornithodoros/Hyalomma ticks,8 points,master_list_new_or_unmatched
+84,Colorado tick fever,Reoviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Dermacentor andersoni,14 points,master_list_new_or_unmatched
+85,Babesia microti,Babesia,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Ixodes ticks,9 points,master_list_new_or_unmatched
+86,Ehrlichia chaffeensis,Ehrlichia,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Amblyomma americanum,13 points,master_list_new_or_unmatched
+87,Rickettsia conorii indica,Rickettsia,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Rhipicephalus ticks,19 points,master_list_new_or_unmatched
+89,Apeu,Peribunyaviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Culex mosquitoes,12 points,master_list_new_or_unmatched
+90,Barmah Forest,Togaviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Culex/Aedes,5 points. Australia,master_list_new_or_unmatched
+91,Murray Valley encephalitis,Flaviviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Culex annulirostris; waterbirds,5 points,master_list_new_or_unmatched
+95,Baylisascaris procyonis,Nematoda,FALSE,FALSE,FALSE,TRUE,B,FALSE,2,Procyon lotor (raccoon),11 points,master_list_new_or_unmatched
+96,Leishmania aethiopica,Leishmania,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Phlebotomus; rock hyrax,10 points,master_list_new_or_unmatched
+97,Borrelia hermsii,Borrelia,FALSE,FALSE,FALSE,TRUE,E,FALSE,2,Ornithodoros ticks; rodents,8 points. Relapsing fever,master_list_new_or_unmatched
+58,Trypanosomosis (tsetse),Trypanosoma,FALSE,FALSE,TRUE,FALSE,E,TRUE,2/3,Glossina (tsetse),9 EMPRES-i records. Livestock key host,master_list_new_or_unmatched
+13,Hendra,Paramyxoviridae,TRUE,TRUE,TRUE,FALSE,B,TRUE,3,Pteropus bats,Horse amplification. n=11,master_list_new_or_unmatched
+69,Bayou,Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Oryzomys palustris,3 points,master_list_new_or_unmatched
+70,Other hantaviruses (n=1-2),Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Various rodents,"~15 viruses, ~20 points total",master_list_new_or_unmatched
+73,Guanarito,Arenaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Zygodontomys brevicauda,2 points,master_list_new_or_unmatched
+74,Other arenaviruses (n=1),Arenaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Various rodents,"Allpahuayo, Sangassou, Magboi, etc.",master_list_new_or_unmatched
+76,Irkut,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Murina leucogaster (bat),5 points,master_list_new_or_unmatched
+77,Bokeloh bat lyssavirus,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Myotis nattereri,2 points,master_list_new_or_unmatched
+78,Duvenhage,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Insectivorous bats,1 point,master_list_new_or_unmatched
+79,Australian bat lyssavirus,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Pteropus/Saccolaimus,1 point,master_list_new_or_unmatched
+82,Kyasanur Forest disease,Flaviviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,3,Haemaphysalis ticks,3 points,master_list_new_or_unmatched
+83,Omsk HF,Flaviviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,3,Dermacentor ticks; muskrat,4 points,master_list_new_or_unmatched
+92,Rocio,Flaviviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,3,Psorophora/Aedes,4 points,master_list_new_or_unmatched
+93,Everglades,Togaviridae,FALSE,FALSE,FALSE,TRUE,E,FALSE,3,Culex; rodents,1 point,master_list_new_or_unmatched
+98,Menangle,Paramyxoviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Pteropus bats,1 point,master_list_new_or_unmatched

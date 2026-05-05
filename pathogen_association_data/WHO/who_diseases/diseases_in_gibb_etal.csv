@@ -1,0 +1,34 @@
+family,source_pathogen,source_previous_name,source_msl39_viral_name,source_disease_name,analysis_unit,analysis_unit_label,analysis_unit_rank,in_gibb_etal,in_empres_i
+Arenaviridae,Mammarenavirus juninense,Junin virus,Mammarenavirus juninense,Argentine hemorrhagic fever,Mammarenavirus juninense,Junin virus,species_or_equivalent,TRUE,
+Arenaviridae,Mammarenavirus lassaense,Lassa Fever virus,Mammarenavirus lassaense,Lassa fever,Mammarenavirus lassaense,Lassa Fever virus,species_or_equivalent,TRUE,
+Arenaviridae,Mammarenavirus lujoense,Lujo virus,Mammarenavirus lujoense,Lujo hemorrhagic fever,Mammarenavirus lujoense,Lujo virus,species_or_equivalent,,
+Bacteria,Yersinia pestis,,,Plague,Yersinia pestis,Yersinia pestis,species_or_equivalent,TRUE,
+Bornaviridae,Orthobornavirus bornaense,Mammalian Bornavirus 1 (BoDV-1),Orthobornavirus bornaense,Borna disease (encephalitis),Orthobornavirus bornaense,Mammalian Bornavirus 1 (BoDV-1),species_or_equivalent,,
+Coronaviridae,Subgenus Merbecovirus,Middle East Respiratory Syndrome Coronavirus,subgenus Merbecovirus,Middle East Respiratory Syndrome (MERS),MERS-like bat merbecoviruses,MERS-like bat merbecoviruses,species_group,TRUE,TRUE
+Coronaviridae,Subgenus Merbecovirus,Middle East Respiratory Syndrome Coronavirus,subgenus Merbecovirus,Middle East Respiratory Syndrome (MERS),Middle East respiratory syndrome-related coronavirus (MERS-CoV),MERS-CoV,species,TRUE,TRUE
+Coronaviridae,Subgenus Sarbecovirus,Severe Acute Respiratory Syndrome coronavirus,subgenus Sarbecovirus,Severe Acute Respiratory Syndrome (SARS); COVID-19,SARS-like bat sarbecoviruses,SARS-like bat sarbecoviruses,species_group,,
+Coronaviridae,Subgenus Sarbecovirus,Severe Acute Respiratory Syndrome coronavirus,subgenus Sarbecovirus,Severe Acute Respiratory Syndrome (SARS); COVID-19,Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),SARS-CoV-2,species,,
+Coronaviridae,Subgenus Sarbecovirus,Severe Acute Respiratory Syndrome coronavirus,subgenus Sarbecovirus,Severe Acute Respiratory Syndrome (SARS); COVID-19,Severe acute respiratory syndrome-related coronavirus (SARS-CoV-1),SARS-CoV-1,species,,
+Filoviridae,Orthoebolavirus zairense,Ebola virus,Orthoebolavirus zairense,Ebola virus disease,Orthoebolavirus zairense,Ebola virus,species_or_equivalent,TRUE,TRUE
+Filoviridae,Orthomarburgvirus marburgense,Marburg virus,Orthomarburgvirus marburgense,Marburg virus disease,Orthomarburgvirus marburgense,Marburg virus,species_or_equivalent,TRUE,TRUE
+Filoviridae,Orthoebolavirus sudanense,Sudan ebolavirus,Orthoebolavirus sudanense,Sudan virus disease (Ebola virus disease),Orthoebolavirus sudanense,Sudan ebolavirus,species_or_equivalent,TRUE,
+Flaviviridae,Orthoflavivirus denguei,Dengue virus,Orthoflavivirus denguei,Dengue,Orthoflavivirus denguei,Dengue virus,species_or_equivalent,TRUE,
+Flaviviridae,Orthoflavivirus encephalitidis,Tick-borne encephalitis virus,Orthoflavivirus encephalitidis,Tick-borne encephalitis,Orthoflavivirus encephalitidis,Tick-borne encephalitis virus,species_or_equivalent,,
+Flaviviridae,Orthoflavivirus nilense,West Nile virus,Orthoflavivirus nilense,West Nile fever,Orthoflavivirus nilense,West Nile virus,species_or_equivalent,TRUE,TRUE
+Flaviviridae,Orthoflavivirus flavi,Yellow fever virus,Orthoflavivirus flavi,Yellow fever,Orthoflavivirus flavi,Yellow fever virus,species_or_equivalent,TRUE,
+Flaviviridae,Orthoflavivirus zikaense,Zika virus,Orthoflavivirus zikaense,Zika virus disease,Orthoflavivirus zikaense,Zika virus,species_or_equivalent,TRUE,
+Hantaviridae,Orthohantavirus sinnombreense,Sinnombre virus,Orthohantavirus sinnombreense,Hantavirus pulmonary syndrome,Orthohantavirus sinnombreense,Sinnombre virus,species_or_equivalent,,
+Hantaviridae,Orthohantavirus hantanense,Hantaan orthohantavirus,Orthohantavirus hantanense,Hemorrhagic fever with renal syndrome (Hantaan virus),Orthohantavirus hantanense,Hantaan orthohantavirus,species_or_equivalent,TRUE,
+Hepeviridae,Paslahepevirus balayani genotype 3,Hepatitis E virus,Paslahepevirus balayani,Hepatitis E,Paslahepevirus balayani genotype 3,Hepatitis E virus,species_or_equivalent,,
+Nairoviridae,Orthonairovirus haemorrhagiae,,,Crimean-Congo hemorrhagic fever,Orthonairovirus haemorrhagiae,Orthonairovirus haemorrhagiae,species_or_equivalent,TRUE,TRUE
+Orthomyxoviridae,Alphainfluenzavirus influenzae (H5N1),Influenza A,Alphainfluenzavirus influenzae,Influenza (H5N1 avian influenza),Alphainfluenzavirus influenzae (H5N1),Influenza A,subtype,TRUE,TRUE
+Orthomyxoviridae,Alphainfluenzavirus influenzae (H7N9),Influenza A,Alphainfluenzavirus influenzae,Influenza (H7N9 avian influenza),Alphainfluenzavirus influenzae (H7N9),Influenza A (H7N9),subtype,,
+Paramyxoviridae,Henipavirus nipahense,Nipah virus,Henipavirus nipahense,Nipah virus disease,Henipavirus nipahense,Nipah virus,species_or_equivalent,TRUE,TRUE
+Peribunyaviridae,Orthobunyavirus oropoucheense,Oropouche virus,Orthobunyavirus oropoucheense,Oropouche fever,Orthobunyavirus oropoucheense,Oropouche virus,species_or_equivalent,TRUE,TRUE
+Phenuiviridae,Phlebovirus riftense,Rift Valley Fever virus,Phlebovirus riftense,Rift Valley fever,Phlebovirus riftense,Rift Valley Fever virus,species_or_equivalent,TRUE,TRUE
+Phenuiviridae,Bandavirus dabieense,SFTS virus,Bandavirus dabieense,Severe fever with thrombocytopenia syndrome (SFTS),Bandavirus dabieense,SFTS virus,species_or_equivalent,,
+Poxviridae,Orthopoxvirus monkeypox,Monkeypox virus,Orthopoxvirus monkeypox,Mpox (Monkeypox),Orthopoxvirus monkeypox,Monkeypox virus,species_or_equivalent,TRUE,TRUE
+Rhabdoviridae,Genus Vesiculovirus,Genus Vesiculovirus,Genus Vesiculovirus,Vesicular stomatitis,Vesicular stomatitis Indiana virus,VSIV,species,,TRUE
+Rhabdoviridae,Genus Vesiculovirus,Genus Vesiculovirus,Genus Vesiculovirus,Vesicular stomatitis,Vesicular stomatitis New Jersey virus,VSNJV,species,,TRUE
+Togaviridae,Alphavirus chikungunya,Chikungunya virus,Alphavirus chikungunya,Chikungunya fever,Alphavirus chikungunya,Chikungunya virus,species_or_equivalent,TRUE,
+Togaviridae,Alphavirus venezuelan,Venezuelan equine encephalitis virus,Alphavirus venezuelan,Venezuelan equine encephalitis,Alphavirus venezuelan,Venezuelan equine encephalitis virus,species_or_equivalent,,TRUE

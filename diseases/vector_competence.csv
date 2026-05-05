@@ -675,3 +675,21 @@ Crimean-Congo haemorrhagic fever,Hyalomma rufipes,tick,competent,narrative_revie
 Crimean-Congo haemorrhagic fever,Hyalomma truncatum,tick,competent,narrative_review,,,Africa; Middle East; Asia; Southern and Eastern Europe,de la Fuente et al. 2024,principal tick vector,primary_vector,
 Crimean-Congo haemorrhagic fever,Hyalomma turanicum,tick,competent,narrative_review,,,Africa; Middle East; Asia; Southern and Eastern Europe,de la Fuente et al. 2024,principal tick vector,primary_vector,
 Crimean-Congo haemorrhagic fever,Hyalomma impeltatum,tick,competent,narrative_review,,,Africa; Middle East; Asia; Southern and Eastern Europe,de la Fuente et al. 2024,principal tick vector,primary_vector,
+Chikungunya virus,Aedes aegypti,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,efficient laboratory vector; transmission 64%,,
+Chikungunya virus,Ae. albopictus,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,efficient laboratory vector; transmission 32%,,
+Chikungunya virus,Ae. notoscriptus,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,midgut escape barrier; transmission 20%,,
+Chikungunya virus,Ae. procax,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,highly susceptible; transmission 64%,,
+Chikungunya virus,Ae. vigilax,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,highest transmission in study; 76%,,
+Chikungunya virus,Coquillettidia linealis,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,transmission 75%; efficient laboratory vector,,
+Chikungunya virus,Culex annulirostris,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,poor laboratory vector but transmission observed; 12%,,low_competence_or_efficiency
+Chikungunya virus,Cx. quinquefasciatus,mosquito,not_competent,lab_experiment,no,,"Queensland, Australia",van den Hurk et al. 2010,refractory to infection,,
+Chikungunya virus,Cx. sitiens,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,poor laboratory vector; low infection/dissemination/transmission; 4%,,low_competence_or_efficiency
+Chikungunya virus,Verrallina funerea,mosquito,competent,lab_experiment,yes,,"Queensland, Australia",van den Hurk et al. 2010,transmission 12%; dissemination 28%,,
+Chikungunya virus,Aedes hensilli,mosquito,unclear,field_plus_lab,,no,"Yap Island, Federated States of Micronesia",Ledermann et al. 2014,"field surveys were negative; lab infection 62% and dissemination 80%, but no transmission assay",,no_transmission_demonstrated
+Chikungunya virus,Aedes furcifer,mosquito,competent,narrative_review,yes,,Africa,Coffey et al. 2014,sylvatic vector; transmission shown in the reviewed studies,sylvatic_vector,
+Chikungunya virus,Aedes fulgens,mosquito,competent,narrative_review,yes,,South Africa,Coffey et al. 2014,review table reports transmission,,
+Chikungunya virus,Aedes vittatus,mosquito,competent,narrative_review,yes,,Senegal,Coffey et al. 2014,review table reports experimental transmission,,
+Chikungunya virus,Eretmapodites chrysogaster,mosquito,competent,narrative_review,yes,,not stated,Coffey et al. 2014,review table reports transmission,,
+Chikungunya virus,Opifex fuscus,mosquito,competent,narrative_review,yes,,New Zealand,Coffey et al. 2014,highly competent at transmitting CHIKV from India,,
+Chikungunya virus,Culex pipiens,mosquito,not_competent,narrative_review,no,,France,Coffey et al. 2014,review table reports 0 infection and 0 transmission,,
+Chikungunya virus,Ornithodoros savignyi,tick,not_competent,narrative_review,no,,South Africa,Coffey et al. 2014,review table reports 0 infection and no transmission,,no_transmission_demonstrated
