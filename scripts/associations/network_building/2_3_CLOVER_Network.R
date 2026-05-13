@@ -22,6 +22,7 @@ unique(host_taxonomy$host_species)
 
 disease_names = read_csv(file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_taxid.csv"))
 host_associations = read_csv(file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv"))
+host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 names(host_associations)
 #  [1] "ID"                      "bacteria_name"           "name_type"               "match_source"            "dist"                    "PathogenTaxID"          
 #  [7] "Pathogen"                "PathogenType"            "PathogenClass"           "PathogenOrder"           "PathogenFamily"          "PathogenGenus"          
@@ -50,12 +51,29 @@ network_data <- host_associations %>%
             by = "Host_lower") %>%
   mutate(
     # Use standardized name if available, otherwise original
-    Host_clean = coalesce(correct_name, Host.x)  # Host.x is from host_associations
+    Host_clean = coalesce(correct_name, Host.x),  # Host.x is from host_associations
+    high_quality_detection = if ("high_quality_detection" %in% names(.)) {
+      coalesce(high_quality_detection, FALSE)
+    } else {
+      DetectionMethod %in% host_detection_methods_keep
+    },
+    host_taxonomy_ready = !is.na(Host_clean) & !is.na(HostTaxID.x),
+    downstream_default_include = if ("downstream_default_include" %in% names(.)) {
+      coalesce(downstream_default_include, FALSE)
+    } else {
+      high_quality_detection & host_taxonomy_ready
+    },
+    downstream_review_reason = case_when(
+      downstream_default_include ~ NA_character_,
+      !high_quality_detection ~ paste0("detection_method=", DetectionMethod),
+      !host_taxonomy_ready ~ "host_taxonomy_not_ready",
+      TRUE ~ "manual_review"
+    )
   ) %>%
   # Filter for high-quality detections
   #filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
   # Remove uncertain host identifications if desired
-  select(ID, Pathogen, PathogenTaxID, `PHEIC risk`, Disease_name, HostTaxID = HostTaxID.x,-HostTaxID.y,Host_clean, PathogenClass,PathogenOrder,PathogenFamily, PathogenGenus, HostPhylum = Phylum, HostClass = Class, HostFamily = Family, HostOrder = Order, DetectionMethod) %>%
+  select(ID, Pathogen, PathogenTaxID, `PHEIC risk`, Disease_name, HostTaxID = HostTaxID.x,-HostTaxID.y,Host_clean, PathogenClass,PathogenOrder,PathogenFamily, PathogenGenus, HostPhylum = Phylum, HostClass = Class, HostFamily = Family, HostOrder = Order, DetectionMethod, high_quality_detection, downstream_default_include, downstream_review_reason) %>%
   distinct() %>%
   filter(!is.na(Host_clean)) %>% 
   mutate(MainSource = "CLOVER")
@@ -64,6 +82,5 @@ cat("Prepared", nrow(network_data), "pathogen-host associations for visualizatio
 
 dir.create(here("pathogen_association_data", "WHO", "networks"), showWarnings = FALSE)
 write_csv(network_data, here("pathogen_association_data", "WHO", "networks", "clover_who_network.csv"))
-
 
 

@@ -1,0 +1,153 @@
+alias,disease_standard,disease_group,alias_type,priority,is_generic_label,requires_subtype_evidence,allowed_without_subtype,notes
+Acute diarrhoea,Acute diarrhoea,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute encephalitis syndrome due to Chandipura virus,Acute encephalitis syndrome due to Chandipura virus,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute febrile illness,Acute febrile illness,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute fever and rash syndrome,Acute fever and rash syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute haemorrhagic fever syndrome,Acute haemorrhagic fever syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute neurological syndrome,Acute neurological syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute respiratory infection,Acute respiratory infection,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute respiratory infections complicated by malaria,Acute respiratory infections complicated by malaria,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute respiratory syndrome,Acute respiratory syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Acute watery diarrhoea,Acute watery diarrhoea,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Anthrax,Anthrax,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Bloody diarrhoea,Bloody diarrhoea,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Botulism,Botulism,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Bovine spongiform encephalopathy,Bovine spongiform encephalopathy,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Buffalopox,Buffalopox,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+COVID-19,COVID-19,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Cereulide toxin contamination,Cereulide toxin contamination,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Chapare haemorrhagic fever,Chapare haemorrhagic fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Chikungunya,Chikungunya,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Cholera,Cholera,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Circulating vaccine-derived poliovirus type 1,Circulating vaccine-derived poliovirus type 1,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Circulating vaccine-derived poliovirus type 2,Circulating vaccine-derived poliovirus type 2,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Cluster of unexplained community deaths,Cluster of unexplained community deaths,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Coccidioidomycosis,Coccidioidomycosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Creutzfeldt-Jakob disease,Creutzfeldt-Jakob disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Crimean-Congo hemorrhagic fever,Crimean-Congo hemorrhagic fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Dengue,Dengue,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Diarrhoeal disease,Diarrhoeal disease,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Diphtheria,Diphtheria,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Dracunculiasis,Dracunculiasis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Dysentery,Dysentery,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+E. coli O157 infection,E. coli O157 infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Ebola virus disease,Ebola virus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Elizabethkingia infection,Elizabethkingia infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Encephalitis,Encephalitis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Enterohaemorrhagic Escherichia coli infection,Enterohaemorrhagic Escherichia coli infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Enterovirus D68 respiratory disease,Enterovirus D68 respiratory disease,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Enterovirus infection,Enterovirus infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Enterovirus-Echovirus 11 infection,Enterovirus-Echovirus 11 infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Extensively drug-resistant tuberculosis,Extensively drug-resistant tuberculosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Guillain-Barre Syndrome,Guillain-Barre Syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+HIV,HIV,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Haemolytic uraemic syndrome,Haemolytic uraemic syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Haemorrhagic fever syndrome,Haemorrhagic fever syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hand foot and mouth disease,Hand foot and mouth disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hantavirus disease,Hantavirus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hantavirus pulmonary syndrome,Hantavirus pulmonary syndrome,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hemorrhagic fever with renal syndrome (Hantaan virus),Hemorrhagic fever with renal syndrome (Hantaan virus),,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hendra virus infection,Hendra virus infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hepatitis A,Hepatitis A,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Hepatitis E,Hepatitis E,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Invasive meningococcal disease,Invasive meningococcal disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Japanese encephalitis,Japanese encephalitis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Klebsiella infection (pneumonia sepsis),Klebsiella infection (pneumonia sepsis),,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Lassa fever,Lassa fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Lead intoxication,Lead intoxication,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Legionellosis,Legionellosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Leishmaniasis,Leishmaniasis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Leptospirosis,Leptospirosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Listeriosis,Listeriosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Louse-borne typhus,Louse-borne typhus,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Malaria,Malaria,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Marburg virus disease,Marburg virus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Mayaro virus disease,Mayaro virus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Measles,Measles,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Melamine contamination,Melamine contamination,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Meningococcal disease,Meningococcal disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Microcephaly,Microcephaly,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Middle East Respiratory Syndrome (MERS),Middle East Respiratory Syndrome (MERS),,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Mpox (Monkeypox),Mpox (Monkeypox),,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Myocarditis associated with enterovirus infection,Myocarditis associated with enterovirus infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Nipah virus disease,Nipah virus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Oropouche fever,Oropouche fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Pertussis,Pertussis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Plague,Plague,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Pneumonia of unknown cause,Pneumonia of unknown cause,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Poliomyelitis,Poliomyelitis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Psittacosis,Psittacosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Rabies,Rabies,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Respiratory illness,Respiratory illness,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Rift Valley fever,Rift Valley fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Salmonellosis,Salmonellosis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Scarlet fever,Scarlet fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Seoul virus disease,Seoul virus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Severe Acute Respiratory Syndrome (SARS),Severe Acute Respiratory Syndrome (SARS),,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Severe acute hepatitis of unknown aetiology,Severe acute hepatitis of unknown aetiology,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Shigellosis (bacillary dysentery),Shigellosis (bacillary dysentery),,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Smallpox vaccine exposure,Smallpox vaccine exposure,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Streptococcus suis infection,Streptococcus suis infection,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Sudan virus disease (Ebola virus disease),Sudan virus disease (Ebola virus disease),,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Suspected fungal meningitis,Suspected fungal meningitis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Tularemia,Tularemia,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Typhoid fever,Typhoid fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Undiagnosed disease,Undiagnosed disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Undiagnosed febrile illness,Undiagnosed febrile illness,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Undiagnosed illness,Undiagnosed illness,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Unknown illness,Unknown illness,,exact_label,10,TRUE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Vaccine-derived poliovirus,Vaccine-derived poliovirus,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Venezuelan equine encephalitis,Venezuelan equine encephalitis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+West Nile fever,West Nile fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Western equine encephalitis,Western equine encephalitis,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Wild poliovirus,Wild poliovirus,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Yellow fever,Yellow fever,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Zika virus disease,Zika virus disease,,exact_label,10,FALSE,FALSE,TRUE,Safe native disease alias derived from accepted clean disease candidates.
+Influenza (H1N1),Influenza (H1N1),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
+Influenza (H3N2),Influenza (H3N2),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
+Influenza (H5 subtype),Influenza (H5 subtype),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
+Influenza (H5N1 avian influenza),Influenza (H5N1),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
+Influenza (H7 subtype),Influenza (H7 subtype),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
+Acute hemorrhagic fever syndrome,Acute haemorrhagic fever syndrome,,synonym,25,TRUE,FALSE,TRUE,US spelling variant for broad haemorrhagic fever syndrome.
+Crimean-Congo haemorrhagic fever,Crimean-Congo hemorrhagic fever,,synonym,25,FALSE,FALSE,TRUE,British spelling variant for CCHF.
+E. coli O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+E. coli serotype O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+E.coli O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+E.coli serotype O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+Ebola haemorrhagic fever,Ebola virus disease,,synonym,25,FALSE,FALSE,TRUE,Older DON wording for Ebola virus disease.
+Ebola hemorrhagic fever,Ebola virus disease,,synonym,25,FALSE,FALSE,TRUE,US spelling variant for older DON Ebola wording.
+Enterovirus D68,Enterovirus D68 respiratory disease,,synonym,25,FALSE,FALSE,TRUE,DON pathogen wording for enterovirus D68 respiratory disease.
+Hemorrhagic fever syndrome,Haemorrhagic fever syndrome,,synonym,25,TRUE,FALSE,TRUE,US spelling variant for broad haemorrhagic fever syndrome.
+MERS-CoV,Middle East Respiratory Syndrome (MERS),,abbreviation,25,TRUE,FALSE,TRUE,Safe DON wording variant for MERS; keep syndrome-level and reviewable.
+Marburg haemorrhagic fever,Marburg virus disease,,synonym,25,FALSE,FALSE,TRUE,Older DON wording for Marburg virus disease.
+Marburg hemorrhagic fever,Marburg virus disease,,synonym,25,FALSE,FALSE,TRUE,US spelling variant for older DON Marburg wording.
+Meningococcal meningitidis,Meningococcal disease,,synonym,25,FALSE,FALSE,TRUE,Older DON title wording for meningococcal disease.
+Meningooccal disease,Meningococcal disease,,synonym,25,FALSE,FALSE,TRUE,DON typo for meningococcal disease.
+Middle East respiratory syndrome coronavirus,Middle East Respiratory Syndrome (MERS),,synonym,25,TRUE,FALSE,TRUE,Safe DON wording variant for MERS.
+Middle East respiratory syndrome coronavirus (MERS-CoV),Middle East Respiratory Syndrome (MERS),,synonym,25,TRUE,FALSE,TRUE,Safe DON wording variant for MERS.
+Nipah virus,Nipah virus disease,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for Nipah virus disease.
+Oropouche virus,Oropouche fever,,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for Oropouche fever.
+Shigella dysenteriae,Shigellosis (bacillary dysentery),,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for bacillary dysentery.
+West Nile virus,West Nile fever,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for West Nile fever.
+West Nile virus infection,West Nile fever,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for West Nile fever.
+Zika virus infection,Zika virus disease,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for Zika virus disease.
+"hand, foot and mouth disease",Hand foot and mouth disease,,synonym,25,FALSE,FALSE,TRUE,Punctuated DON wording for hand foot and mouth disease.
+meningococcal meningitis,Meningococcal disease,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for meningococcal disease.
+monkeypox,Mpox (Monkeypox),,synonym,25,FALSE,FALSE,TRUE,Older DON wording for mpox.
+severe acute respiratory syndrome,Severe Acute Respiratory Syndrome (SARS),,synonym,25,TRUE,FALSE,TRUE,Expanded SARS wording; abbreviation-only matching is avoided to prevent SARS-CoV-2 false positives.
+E. coli O157,E. coli O157 infection,,synonym,30,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+E.coli O157,E. coli O157 infection,,synonym,30,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+Zika virus,Zika virus disease,,synonym,30,FALSE,FALSE,TRUE,Common DON wording for Zika virus disease.
+acute infective myocarditis,Myocarditis associated with enterovirus infection,,synonym,30,FALSE,FALSE,TRUE,DON title wording for myocarditis associated with enterovirus infection.
+EV-D68,Enterovirus D68 respiratory disease,,abbreviation,35,FALSE,FALSE,TRUE,Standard abbreviation for enterovirus D68.
+HFMD,Hand foot and mouth disease,,abbreviation,35,FALSE,FALSE,TRUE,Standard abbreviation for hand foot and mouth disease.
+OROV,Oropouche fever,,abbreviation,35,FALSE,FALSE,TRUE,Standard abbreviation for Oropouche virus/febrile disease in DON reports.
+Shiga bacillus,Shigellosis (bacillary dysentery),,synonym,35,FALSE,FALSE,TRUE,DON pathogen wording for bacillary dysentery.
+viral haemorrhagic fever,Haemorrhagic fever syndrome,,syndrome,35,TRUE,FALSE,TRUE,Broad DON syndrome wording; keep reviewable.
+viral hemorrhagic fever,Haemorrhagic fever syndrome,,syndrome,35,TRUE,FALSE,TRUE,US spelling variant for broad DON syndrome wording.
+CCHF,Crimean-Congo hemorrhagic fever,,abbreviation,40,FALSE,FALSE,TRUE,Standard abbreviation for Crimean-Congo hemorrhagic fever.
+SARS,Severe Acute Respiratory Syndrome (SARS),,abbreviation,40,TRUE,FALSE,TRUE,Historical SARS abbreviation; alias regex blocks SARS-CoV hyphenated matches.
+Novel coronavirus infection,Middle East Respiratory Syndrome (MERS),,synonym,80,TRUE,FALSE,TRUE,Review-only MERS-era wording; event anchoring prevents COVID-era promotion.
+haemorrhagic fever,Haemorrhagic fever syndrome,,syndrome,80,TRUE,FALSE,TRUE,Generic broad DON syndrome wording; keep reviewable.
+hemorrhagic fever,Haemorrhagic fever syndrome,,syndrome,80,TRUE,FALSE,TRUE,US spelling variant for generic broad DON syndrome wording.
+Influenza,Influenza,influenza,influenza_generic,90,TRUE,FALSE,TRUE,Safe generic influenza alias; subtype must be resolved by explicit subtype evidence.

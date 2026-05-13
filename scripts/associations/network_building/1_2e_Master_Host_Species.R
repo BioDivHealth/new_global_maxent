@@ -11,7 +11,6 @@
 #
 # Outputs: pathogen_association_data/WHO/who_diseases/
 #            master_pathogen_host_species.csv
-#            master_pathogen_host_species_review.csv
 #            master_pathogen_host_species_summary.csv
 # ------------------------------------------------------------------------------
 
@@ -22,7 +21,6 @@ who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
 host_query_path <- file.path(who_dir, "master_pathogen_host_query_units.csv")
 
 host_output_path <- file.path(who_dir, "master_pathogen_host_species.csv")
-host_review_output_path <- file.path(who_dir, "master_pathogen_host_species_review.csv")
 summary_output_path <- file.path(who_dir, "master_pathogen_host_species_summary.csv")
 
 clover_dir <- here(
@@ -175,7 +173,10 @@ clover_links <- map_dfr(clover_paths, ~ read_csv(.x, show_col_types = FALSE, na 
   )
 
 all_source_links <- bind_rows(virion_links, clover_links) %>%
-  filter(!is.na(source_pathogen_name), !is.na(source_host_name))
+  filter(
+    !is.na(source_pathogen_name),
+    !is.na(source_host_name)
+  )
 
 match_one_query <- function(row_df, source_links) {
   source_name <- row_df$host_query_source[[1]]
@@ -239,6 +240,7 @@ matched_rows <- matched_rows %>%
       source_pathogen_name,
       source_host_taxid,
       source_host_name,
+      source_detection_method,
       sep = "|"
     )
   ) %>%
@@ -284,6 +286,40 @@ default_output <- matched_rows %>%
 
 review_output <- matched_rows %>%
   filter(host_query_bucket != "default_clean" | !host_query_include_default)
+
+host_species_output <- matched_rows %>%
+  transmute(
+    Pathogen = source_pathogen_name,
+    PathogenTaxID = source_pathogen_taxid,
+    Disease_name = resolved_disease_name,
+    HostTaxID = source_host_taxid,
+    Host = source_host_name,
+    PathogenClass = source_pathogen_class,
+    PathogenOrder = source_pathogen_order,
+    PathogenFamily = source_pathogen_family,
+    HostClass = source_host_class,
+    HostFamily = source_host_family,
+    HostOrder = source_host_order,
+    DetectionMethod = source_detection_method,
+    MainSource = str_to_upper(host_query_source),
+    PathogenType = source_pathogen_type,
+    analysis_unit_id,
+    master_row,
+    disease_master_name,
+    resolved_pathogen_name,
+    host_query_bucket,
+    host_query_include_default,
+    match_review_flag,
+    shared_species_proxy_flag,
+    match_review_notes,
+    match_method,
+    source_database,
+    source_assoc_id,
+    source_host_flag_id,
+    host_query_pathogen_names,
+    host_query_taxids
+  ) %>%
+  arrange(master_row, Pathogen, Host)
 
 default_query_keys <- active_queries %>%
   filter(host_query_bucket == "default_clean", host_query_include_default) %>%
@@ -408,16 +444,15 @@ summary_output <- summary_counts %>%
   ) %>%
   select(names(summary_zero_match))
 
-write_csv(default_output, host_output_path, na = "")
-write_csv(review_output, host_review_output_path, na = "")
+write_csv(host_species_output, host_output_path, na = "")
 write_csv(summary_output, summary_output_path, na = "")
 
 cat("Active host-query rows:", nrow(active_queries), "\n")
 cat("Default-clean query rows:", nrow(default_query_keys), "\n")
-cat("Default host-species rows written:", nrow(default_output), "\n")
-cat("Review host-species rows written:", nrow(review_output), "\n")
+cat("Host-species rows written:", nrow(host_species_output), "\n")
+cat("Default host-species rows:", nrow(default_output), "\n")
+cat("Review host-species rows retained:", nrow(review_output), "\n")
 cat("Distinct default-clean diseases with host matches:", n_distinct(default_output$disease_master_name), "\n")
 cat("Default-clean diseases with zero matches:", nrow(default_zero_match_diseases), "\n")
 cat("Wrote:", host_output_path, "\n")
-cat("Wrote:", host_review_output_path, "\n")
 cat("Wrote:", summary_output_path, "\n")

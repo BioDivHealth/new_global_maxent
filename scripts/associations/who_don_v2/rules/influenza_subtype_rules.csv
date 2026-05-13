@@ -1,0 +1,20 @@
+rule_id,pattern,influenza_type,influenza_subtype,specificity,priority,notes
+flu_h5n1,\bA?\(?H5N1\)?\b,A,H5N1,subtype,1,Subtype evidence in label or evidence span.
+flu_h5n2,\bA?\(?H5N2\)?\b,A,H5N2,subtype,2,Subtype evidence in label or evidence span.
+flu_h5n5,\bA?\(?H5N5\)?\b,A,H5N5,subtype,3,Subtype evidence in label or evidence span.
+flu_h5n6,\bA?\(?H5N6\)?\b,A,H5N6,subtype,4,Subtype evidence in label or evidence span.
+flu_h5n8,\bA?\(?H5N8\)?\b,A,H5N8,subtype,5,Subtype evidence in label or evidence span.
+flu_h7n2,\bA?\(?H7N2\)?\b,A,H7N2,subtype,6,Subtype evidence in label or evidence span.
+flu_h7n4,\bA?\(?H7N4\)?\b,A,H7N4,subtype,7,Subtype evidence in label or evidence span.
+flu_h7n7,\bA?\(?H7N7\)?\b,A,H7N7,subtype,8,Subtype evidence in label or evidence span.
+flu_h7n9,\bA?\(?H7N9\)?\b,A,H7N9,subtype,9,Subtype evidence in label or evidence span.
+flu_h9n2,\bA?\(?H9N2\)?\b,A,H9N2,subtype,10,Subtype evidence in label or evidence span.
+flu_h1n1,\bA?\(?H1N1\)?\b,influenza,H1N1,subtype,11,Subtype evidence in label or evidence span.
+flu_h1n2,\bA?\(?H1N2\)?\b,influenza,H1N2,subtype,12,Subtype evidence in label or evidence span.
+flu_h3n2,\bA?\(?H3N2\)?\b,influenza,H3N2,subtype,13,Subtype evidence in label or evidence span.
+flu_h3n8,\bA?\(?H3N8\)?\b,A,H3N8,subtype,14,Subtype evidence in label or evidence span.
+flu_h10n3,\bA?\(?H10N3\)?\b,A,H10N3,subtype,15,Subtype evidence in label or evidence span.
+flu_h10n5,\bA?\(?H10N5\)?\b,A,H10N5,subtype,16,Subtype evidence in label or evidence span.
+flu_h1,\bH1\b,A,H1,subtype_family,48,H1 family evidence without explicit N subtype.
+flu_h5,\bH5\b,A,H5,subtype_family,50,H5 family evidence without explicit N subtype.
+flu_generic,influenza,influenza,,generic,100,Generic influenza mention.

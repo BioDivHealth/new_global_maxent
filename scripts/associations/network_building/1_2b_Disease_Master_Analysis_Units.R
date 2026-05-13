@@ -190,8 +190,15 @@ review_path <- file.path(who_dir, "master_disease_name_resolution_review.csv")
 master <- readxl::read_excel(input_master_path, sheet = "Disease Master List") %>%
   standardize_master_cols()
 
+other_disease_rows <- master %>%
+  filter(
+    !is_section_header,
+    str_detect(disease_master_name, regex("\\bOther\\b", ignore_case = TRUE))
+  )
+
 master_disease_rows <- master %>%
   filter(!is_section_header) %>%
+  filter(!str_detect(disease_master_name, regex("\\bOther\\b", ignore_case = TRUE))) %>%
   select(
     master_row,
     disease_master_name,
@@ -361,6 +368,10 @@ readr::write_csv(combined_units, output_path, na = "")
 readr::write_csv(review_rows, review_path, na = "")
 
 cat("Disease master rows:", nrow(master_disease_rows), "\n")
+cat("Dropped ambiguous 'Other' disease rows:", nrow(other_disease_rows), "\n")
+if (nrow(other_disease_rows) > 0) {
+  print(other_disease_rows %>% select(master_row, disease_master_name), n = Inf)
+}
 cat("Rows matched to existing WHO analysis units:", sum(combined_units$combined_row_type == "existing_who_analysis_unit"), "\n")
 cat("Rows needing pathogen-name resolution:", nrow(review_rows), "\n")
 cat("Wrote combined master analysis-unit scaffold to:\n")

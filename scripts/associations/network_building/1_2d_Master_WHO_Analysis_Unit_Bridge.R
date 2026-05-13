@@ -1,17 +1,17 @@
 # ------------------------------------------------------------------------------
 # 1_2d_Master_WHO_Analysis_Unit_Bridge.R
 # ------------------------------------------------------------------------------
-# Purpose: Build additive bridge tables that let disease-master analysis units be
-#          used alongside the existing WHO analysis-unit tables.
+# Purpose: Build compact additive tables that let disease-master analysis units
+#          be used alongside the existing WHO analysis-unit tables.
 #
 # Inputs : pathogen_association_data/WHO/who_diseases/
 #            master_disease_analysis_units.csv
 #            master_disease_name_resolution_manual.csv
 #            master_pathogen_virion_clover_matches.csv
+#            master_plus_who_transmission_rules_manual.csv (optional)
 #            who_pathogen_analysis_units.csv
 #
 # Outputs: pathogen_association_data/WHO/who_diseases/
-#            master_who_pathogen_bridge.csv
 #            master_plus_who_analysis_units.csv
 #            master_pathogen_host_query_units.csv
 # ------------------------------------------------------------------------------
@@ -25,8 +25,8 @@ master_units_path <- file.path(who_dir, "master_disease_analysis_units.csv")
 manual_path <- file.path(who_dir, "master_disease_name_resolution_manual.csv")
 matches_path <- file.path(who_dir, "master_pathogen_virion_clover_matches.csv")
 who_units_path <- file.path(who_dir, "who_pathogen_analysis_units.csv")
+transmission_rules_path <- file.path(who_dir, "master_plus_who_transmission_rules_manual.csv")
 
-bridge_output_path <- file.path(who_dir, "master_who_pathogen_bridge.csv")
 combined_output_path <- file.path(who_dir, "master_plus_who_analysis_units.csv")
 host_query_output_path <- file.path(who_dir, "master_pathogen_host_query_units.csv")
 
@@ -60,6 +60,23 @@ pick_preferred <- function(preferred_source, virion_value, clover_value) {
     TRUE ~ NA_character_
   )
 }
+
+transmission_rule_columns <- c(
+  "analysis_unit_id",
+  "vectored_status",
+  "generalist_status",
+  "transmission_complexity",
+  "guild",
+  "host_sdm_needed",
+  "vector_sdm_needed",
+  "host_range_rule",
+  "vector_range_rule",
+  "range_limiting_layer",
+  "transmission_rule_notes",
+  "transmission_rule_review_status",
+  "modelling_scope_status",
+  "modelling_scope_reason"
+)
 
 required_paths <- c(master_units_path, manual_path, matches_path, who_units_path)
 missing_paths <- required_paths[!file.exists(required_paths)]
@@ -143,6 +160,40 @@ who_units <- read_csv(who_units_path, show_col_types = FALSE, na = c("", "NA")) 
     who_source_disease_key = clean_key(source_disease_name),
     who_source_pathogen_key = clean_key(source_pathogen)
   )
+
+transmission_rules <- tibble(
+  analysis_unit_id = character(),
+  vectored_status = character(),
+  generalist_status = character(),
+  transmission_complexity = character(),
+  guild = character(),
+  host_sdm_needed = character(),
+  vector_sdm_needed = character(),
+  host_range_rule = character(),
+  vector_range_rule = character(),
+  range_limiting_layer = character(),
+  transmission_rule_notes = character(),
+  transmission_rule_review_status = character(),
+  modelling_scope_status = character(),
+  modelling_scope_reason = character()
+)
+
+if (file.exists(transmission_rules_path)) {
+  transmission_rules_raw <- read_csv(transmission_rules_path, show_col_types = FALSE, na = c("", "NA")) %>%
+    mutate(across(where(is.character), clean_text))
+
+  missing_transmission_cols <- setdiff(transmission_rule_columns, names(transmission_rules_raw))
+  if (length(missing_transmission_cols) > 0) {
+    stop(
+      "master_plus_who_transmission_rules_manual.csv missing required columns: ",
+      paste(missing_transmission_cols, collapse = ", ")
+    )
+  }
+
+  transmission_rules <- transmission_rules_raw %>%
+    select(all_of(transmission_rule_columns)) %>%
+    distinct(analysis_unit_id, .keep_all = TRUE)
+}
 
 bridge <- master_units %>%
   left_join(manual_units, by = "master_row") %>%
@@ -398,10 +449,75 @@ who_only_units <- who_units %>%
   )
 
 combined_units <- bind_rows(bridge, who_only_units) %>%
+  left_join(transmission_rules, by = "analysis_unit_id") %>%
   arrange(
     bridge_source != "disease_master_list",
     master_row,
     resolved_pathogen_name_final
+  )
+
+combined_units_compact <- combined_units %>%
+  transmute(
+    row_type,
+    family,
+    pheic_risk,
+    source_pathogen,
+    source_previous_name,
+    source_msl39_viral_name,
+    source_disease_name,
+    is_priority_pathogen,
+    is_prototype_pathogen,
+    in_gibb_etal,
+    in_empres_i,
+    priority_prototype_status,
+    region_africa,
+    region_americas,
+    region_europe,
+    region_mediterranean,
+    region_se_asia,
+    region_western_pacific,
+    source_unit_scope,
+    analysis_unit,
+    analysis_unit_label,
+    analysis_unit_rank,
+    analysis_decision,
+    decision_rule_trigger,
+    transmission_context,
+    human_infection_status,
+    host_link_status,
+    vector_data_status,
+    amplifier_data_status,
+    example_members,
+    rationale,
+    notes,
+    vectored_status,
+    generalist_status,
+    transmission_complexity,
+    guild,
+    host_sdm_needed,
+    vector_sdm_needed,
+    host_range_rule,
+    vector_range_rule,
+    range_limiting_layer,
+    transmission_rule_notes,
+    transmission_rule_review_status,
+    modelling_scope_status,
+    modelling_scope_reason,
+    analysis_unit_id,
+    master_row,
+    disease_master_name,
+    master_tier,
+    master_guild,
+    master_livestock_amplified,
+    master_key_host_vector,
+    include_as_analysis_unit = include_status_final,
+    preferred_match_source,
+    matched_pathogen_names = host_query_pathogen_names,
+    matched_taxids = host_query_taxids,
+    match_review_flag = coalesce(match_review_flag, FALSE),
+    shared_species_proxy_flag = coalesce(shared_species_proxy_flag, FALSE),
+    match_review_notes,
+    host_query_bucket
   )
 
 host_query_units <- combined_units %>%
@@ -437,18 +553,18 @@ host_query_units <- combined_units %>%
 stopifnot(nrow(bridge) == nrow(master_units))
 stopifnot(!anyDuplicated(bridge$analysis_unit_id))
 stopifnot(nrow(host_query_units) == sum(bridge$include_status_final == "yes", na.rm = TRUE))
+stopifnot(nrow(combined_units_compact) == nrow(combined_units))
 
-write_csv(bridge, bridge_output_path, na = "")
-write_csv(combined_units, combined_output_path, na = "")
+write_csv(combined_units_compact, combined_output_path, na = "")
 write_csv(host_query_units, host_query_output_path, na = "")
 
-cat("Disease-master bridge rows:", nrow(bridge), "\n")
+cat("Disease-master rows:", nrow(bridge), "\n")
 cat("WHO-only rows appended:", nrow(who_only_units), "\n")
-cat("Combined master + WHO rows:", nrow(combined_units), "\n")
+cat("Compact combined master + WHO rows:", nrow(combined_units_compact), "\n")
 cat("Host-query rows:", nrow(host_query_units), "\n")
 cat("Default clean host-query rows:", sum(host_query_units$host_query_include_default), "\n")
 cat("Host-query buckets:\n")
 print(count(host_query_units, host_query_bucket), n = Inf)
-cat("Wrote bridge output:", bridge_output_path, "\n")
+cat("Transmission rule rows joined:", nrow(transmission_rules), "\n")
 cat("Wrote combined output:", combined_output_path, "\n")
 cat("Wrote host-query output:", host_query_output_path, "\n")

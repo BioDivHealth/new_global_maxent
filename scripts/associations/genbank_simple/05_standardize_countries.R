@@ -116,6 +116,7 @@ standardize_country_value <- function(country) {
     country == "LAO PEOPLE'S DEMOCRATIC REPUBLIC" ~ "Laos",
     country == "Tanzania, United Republic of" ~ "Tanzania",
     country == "Virgin Islands, U.S" ~ "U.S. Virgin Islands",
+    country == "Zaire" ~ "Democratic Republic of the Congo",
     TRUE ~ country
   )
 }
@@ -145,12 +146,14 @@ territory_values <- c(
   "Saint Barthelemy",
   "Saint Martin",
   "Sint Maarten",
+  "South Georgia and the South Sandwich Islands",
+  "Tokelau",
   "U.S. Virgin Islands",
   "Wallis and Futuna"
 )
 
 ocean_values <- c("Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Southern Ocean", "Arctic Ocean")
-historical_values <- c("USSR", "Yugoslavia", "Czechoslovakia")
+historical_values <- c("USSR", "Yugoslavia", "Czechoslovakia", "Netherlands Antilles")
 review_values <- c("Borneo")
 
 records_with_keys <- records %>%

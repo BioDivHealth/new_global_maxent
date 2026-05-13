@@ -1,0 +1,6 @@
+record_key,disease_standard,influenza_subtype,policy_decision,policy_diff_category,policy_review_priority,policy_note
+2022-DON429,COVID-19,,reject_native_context,rejected_native_context_policy,low,COVID-19 appears only as pandemic context for post-restriction GAS circulation rather than the DON event disease.
+2023-DON490,Acute respiratory infection,,reject_native_context,rejected_native_context_policy,low,Acute respiratory infection is described as a possible severe manifestation of Nipah virus infection rather than a separate event disease.
+2024-DON546,COVID-19,,defer_native_differential_diagnosis,deferred_native_differential_policy,low,COVID-19 is listed among possible causal factors for an undiagnosed disease event; do not adopt as confirmed event disease without later diagnostic confirmation.
+2024-DON546,Malaria,,defer_native_differential_diagnosis,deferred_native_differential_policy,low,Malaria is listed as a possible cause or contributor for an undiagnosed disease event; do not adopt as confirmed event disease without later diagnostic confirmation.
+2025-DON586,Acute respiratory infection,,reject_native_context,rejected_native_context_policy,low,Acute respiratory infection is a syndrome description for seasonal influenza activity rather than a separate event disease label.

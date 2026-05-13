@@ -1,0 +1,19 @@
+influenza_subtype,canonical_disease_standard,canonical_influenza_type,canonical_influenza_subtype,notes
+H1N1,Influenza (H1N1),influenza,H1N1,Keep established seasonal/pandemic H1N1 label convention.
+H1N2,Influenza (H1N2),influenza,H1N2,Keep established H1N2 label convention.
+H1,Influenza A(H1),A,H1,Keep H1 family label when N subtype is not available.
+H3N2,Influenza (H3N2),influenza,H3N2,Keep established H3N2 label convention.
+H5,Influenza (H5 subtype),A,H5,Keep H5 family label when N subtype is not available.
+H5N1,Influenza A(H5N1),A,H5N1,Use Influenza A(...) for avian/specific A subtypes.
+H5N2,Influenza A(H5N2),A,H5N2,Use Influenza A(...) for avian/specific A subtypes.
+H5N5,Influenza A(H5N5),A,H5N5,Use Influenza A(...) for avian/specific A subtypes.
+H5N6,Influenza A(H5N6),A,H5N6,Use Influenza A(...) for avian/specific A subtypes.
+H5N8,Influenza A(H5N8),A,H5N8,Use Influenza A(...) for avian/specific A subtypes.
+H7,Influenza (H7 subtype),A,H7,Keep H7 family label when N subtype is not available.
+H7N2,Influenza A(H7N2),A,H7N2,Use Influenza A(...) for avian/specific A subtypes.
+H7N4,Influenza A(H7N4),A,H7N4,Use Influenza A(...) for avian/specific A subtypes.
+H7N7,Influenza A(H7N7),A,H7N7,Use Influenza A(...) for avian/specific A subtypes.
+H7N9,Influenza A(H7N9),A,H7N9,Use Influenza A(...) for avian/specific A subtypes.
+H9N2,Influenza A(H9N2),A,H9N2,Use Influenza A(...) for avian/specific A subtypes.
+H10N3,Influenza A(H10N3),A,H10N3,Use Influenza A(...) for avian/specific A subtypes.
+H10N5,Influenza A(H10N5),A,H10N5,Use Influenza A(...) for avian/specific A subtypes.

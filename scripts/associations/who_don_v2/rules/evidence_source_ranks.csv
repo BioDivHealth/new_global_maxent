@@ -1,0 +1,6 @@
+source_method,rank,confidence,notes
+accepted_review,1,high,Manual or LLM decision accepted as sidecar input.
+clean_final,2,high,Accepted clean final evidence used to seed v2.
+title_rule,3,high,Reserved for native v2 country/disease extraction.
+body_rule,4,medium,Reserved for native v2 country/disease extraction.
+record_level,5,low,Reserved for weak record-level association evidence.

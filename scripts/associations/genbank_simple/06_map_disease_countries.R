@@ -56,10 +56,12 @@ country_name_overrides <- tibble::tribble(
   ~country_standardized, ~map_country,
   "Brunei", "Brunei Darussalam",
   "Cape Verde", "Cabo Verde",
+  "Curacao", "Curaçao",
   "Cote d'Ivoire", "Côte d'Ivoire",
   "Eswatini", "eSwatini",
   "Micronesia", "Federated States of Micronesia",
   "Laos", "Lao PDR",
+  "South Georgia and the South Sandwich Islands", "South Georgia and the Islands",
   "United States", "United States of America",
   "Virgin Islands", "United States Virgin Islands"
 )

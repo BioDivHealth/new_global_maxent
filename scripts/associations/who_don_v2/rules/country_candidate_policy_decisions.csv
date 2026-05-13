@@ -1,0 +1,4 @@
+diff_category,policy_decision,policy_review_priority,policy_note
+exact_record_country_match,accept_native,low,Record-country pair matches the accepted country layer and has native evidence.
+accepted_missing_native,accept_legacy_exception,medium,Accepted country was not recovered by native extraction; retain as explicit legacy exception.
+native_new_country_candidate,reject_native_unreviewed,high,Native-only country candidate is not adopted until reviewed or covered by policy.

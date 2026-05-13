@@ -30,7 +30,7 @@ library(rlang)  # For dynamic column references
 # DATA LOADING FUNCTIONS
 # =============================================================================
 # library(remotes)
-remotes::install_github("viralemergence/virionData", force = TRUE)
+# remotes::install_github("viralemergence/virionData", force = TRUE)
 
 #' Load VIRION data from local files
 #' @param data_path Path to VIRION data directory

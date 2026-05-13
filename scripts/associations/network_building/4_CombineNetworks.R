@@ -15,7 +15,17 @@ virion_network$PathogenType = "virus"
 clover_network <- clover_network %>%
   mutate(
     in_gibb_etal = if ("in_gibb_etal" %in% names(.)) in_gibb_etal else NA,
-    in_empres_i = if ("in_empres_i" %in% names(.)) in_empres_i else NA
+    in_empres_i = if ("in_empres_i" %in% names(.)) in_empres_i else NA,
+    high_quality_detection = if ("high_quality_detection" %in% names(.)) high_quality_detection else DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing"),
+    downstream_default_include = if ("downstream_default_include" %in% names(.)) downstream_default_include else high_quality_detection,
+    downstream_review_reason = if ("downstream_review_reason" %in% names(.)) downstream_review_reason else NA_character_
+  )
+
+virion_network <- virion_network %>%
+  mutate(
+    high_quality_detection = if ("high_quality_detection" %in% names(.)) high_quality_detection else DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing"),
+    downstream_default_include = if ("downstream_default_include" %in% names(.)) downstream_default_include else high_quality_detection,
+    downstream_review_reason = if ("downstream_review_reason" %in% names(.)) downstream_review_reason else NA_character_
   )
 
 names(clover_network)[which(!(names(clover_network) %in% names(virion_network)))]

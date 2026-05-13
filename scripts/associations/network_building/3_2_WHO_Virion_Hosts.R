@@ -24,6 +24,7 @@ library(frictionless)
 input_csv_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_taxid.csv")
 output_long_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_long.csv")
 output_summary_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv")
+host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
 # ----------------------------- Load datasets ------------------------------
 ## 1. WHO pathogen-virion matches -----------------------------------------------
@@ -86,7 +87,6 @@ cat("  - Expanded to", nrow(who_virion_long), "WHO pathogen-VirusTaxID pairs\n")
 # Filter selected viruses from Virion  ----------------------------
 virion_who_taxa = virion %>% 
   filter(VirusTaxID %in% unique(who_virion_long$VirusTaxID)) %>%
-  filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
   select(Host, Virus, 
          HostTaxID,HostGenus, HostFamily, HostOrder, HostClass, 
          VirusTaxID,VirusGenus,VirusFamily,VirusOrder,VirusClass,
@@ -97,7 +97,6 @@ virion_who_taxa = virion %>%
 # This includes all types fo risk + all a lot of metadata
 virion_who_taxa_detailed = virion %>% 
   filter(VirusTaxID %in% unique(who_virion_long$VirusTaxID)) %>%
-  filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
   mutate(NCBIAccession = if ("NCBIAccession" %in% names(.)) NCBIAccession else NA_character_) %>%
   select(VirusTaxID, HostTaxID, Host, Virus, 
          HostGenus, HostFamily, HostOrder, HostClass, 
@@ -132,6 +131,21 @@ who_virion_hosts_complete <- who_virion_long %>%
   left_join(virion_who_taxa_detailed, by = "VirusTaxID", relationship = "many-to-many", suffix = c("_WHO", "_VIRION")) %>%
   # Filter to only include rows where host data was found
   filter(!is.na(Host)) %>%
+  mutate(
+    high_quality_detection = DetectionMethod %in% host_detection_methods_keep,
+    host_taxonomy_ready = !is.na(Host) & !is.na(HostTaxID),
+    host_flag_review = coalesce(HostFlagID, FALSE),
+    downstream_default_include = high_quality_detection &
+      host_taxonomy_ready &
+      !host_flag_review,
+    downstream_review_reason = case_when(
+      downstream_default_include ~ NA_character_,
+      !high_quality_detection ~ paste0("detection_method=", DetectionMethod),
+      host_flag_review ~ "virion_host_flag_review",
+      !host_taxonomy_ready ~ "host_taxonomy_not_ready",
+      TRUE ~ "manual_review"
+    )
+  ) %>%
   # Reorder columns for better readability
   select(
     # WHO pathogen information
@@ -145,6 +159,7 @@ who_virion_hosts_complete <- who_virion_long %>%
     Virus, VirusGenus, VirusFamily, VirusOrder, VirusClass,
     # Detection evidence and quality
     DetectionMethod, DetectionOriginal, HostFlagID,
+    high_quality_detection, downstream_default_include, downstream_review_reason,
     # Provenance and metadata
     Databases, DatabaseVersions, PublicationYears, ReferenceTexts, PMIDs,
     ReleaseYears, CollectionYears, AssocIDs, NCBIAccessions, n_records,
@@ -184,7 +199,10 @@ who_virion_hosts_short = who_virion_hosts_complete %>%
     VirusOrder,
     VirusClass,
     DetectionMethod,
-    HostFlagID
+    HostFlagID,
+    high_quality_detection,
+    downstream_default_include,
+    downstream_review_reason
   ) %>%
   filter(!is.na(Host)) %>%
   distinct()

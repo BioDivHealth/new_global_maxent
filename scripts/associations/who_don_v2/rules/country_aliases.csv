@@ -1,0 +1,377 @@
+alias_type,alias,country_standard,is_ambiguous,priority,notes
+countrycode_country.name.en,United States Minor Outlying Islands (the),United States Minor Outlying Islands (the),FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,South Georgia & South Sandwich Islands,South Georgia & South Sandwich Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Democratic Republic of the Congo,Democratic Republic of the Congo,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,British Indian Ocean Territory,British Indian Ocean Territory,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,French Southern Territories,French Southern Territories,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Saint Martin (French part),Saint Martin (French part),FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Central African Republic,Central African Republic,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Heard & McDonald Islands,Heard & McDonald Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Northern Mariana Islands,Northern Mariana Islands,FALSE,10,Generated from countrycode English country-name fields.
+who_variant,United States of America,United States,FALSE,10,WHO standard spelling mapped to current accepted layer.
+countrycode_country.name.en,Cocos (Keeling) Islands,Cocos (Keeling) Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Bosnia and Herzegovina,Bosnia and Herzegovina,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,British Virgin Islands,British Virgin Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Turks & Caicos Islands,Turks & Caicos Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Caribbean Netherlands,Caribbean Netherlands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_vdem.name,Republic of the Congo,Republic of the Congo,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Saint Kitts and Nevis,Saint Kitts and Nevis,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,St. Pierre & Miquelon,St. Pierre & Miquelon,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Svalbard & Jan Mayen,Svalbard & Jan Mayen,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,United Arab Emirates,United Arab Emirates,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Antigua and Barbuda,Antigua and Barbuda,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Trinidad and Tobago,Trinidad and Tobago,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,U.S. Virgin Islands,U.S. Virgin Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Dominican Republic,Dominican Republic,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Equatorial Guinea,Equatorial Guinea,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Christmas Island,Christmas Island,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Falkland Islands,Falkland Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,French Polynesia,French Polynesia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Marshall Islands,Marshall Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Papua New Guinea,Papua New Guinea,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Pitcairn Islands,Pitcairn Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Macao SAR China,Macao SAR China,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,North Macedonia,North Macedonia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Solomon Islands,Solomon Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Wallis & Futuna,Wallis & Futuna,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,American Samoa,American Samoa,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Cayman Islands,Cayman Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Norfolk Island,Norfolk Island,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,St. Barthélemy,St. Barthélemy,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,United Kingdom,United Kingdom,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Western Sahara,Western Sahara,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bouvet Island,Bouvet Island,FALSE,10,Generated from countrycode English country-name fields.
+ascii_variant,Cote d'Ivoire,Cote d'Ivoire,FALSE,10,ASCII spelling used in current clean layer.
+countrycode_country.name.en,Faroe Islands,Faroe Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,French Guiana,French Guiana,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guinea-Bissau,Guinea-Bissau,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Liechtenstein,Liechtenstein,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,New Caledonia,New Caledonia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,United States,United States,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Åland Islands,Åland Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Burkina Faso,Burkina Faso,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Cook Islands,Cook Islands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Saudi Arabia,Saudi Arabia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Sierra Leone,Sierra Leone,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Sint Maarten,Sint Maarten,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,South Africa,South Africa,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Turkmenistan,Turkmenistan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Vatican City,Vatican City,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Afghanistan,Afghanistan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,El Salvador,El Salvador,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Isle of Man,Isle of Man,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Netherlands,Netherlands,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,New Zealand,New Zealand,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,North Korea,North Korea,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Philippines,Philippines,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Puerto Rico,Puerto Rico,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,South Korea,South Korea,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,South Sudan,South Sudan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Switzerland,Switzerland,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Timor-Leste,Timor-Leste,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Azerbaijan,Azerbaijan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bangladesh,Bangladesh,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Cabo Verde,Cabo Verde,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Costa Rica,Costa Rica,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guadeloupe,Guadeloupe,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Kazakhstan,Kazakhstan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Kyrgyzstan,Kyrgyzstan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Luxembourg,Luxembourg,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Madagascar,Madagascar,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Martinique,Martinique,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mauritania,Mauritania,FALSE,10,Generated from countrycode English country-name fields.
+common_variant,Micronesia,Micronesia,FALSE,10,Short common form used in current accepted layer.
+countrycode_country.name.en,Montenegro,Montenegro,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Montserrat,Montserrat,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mozambique,Mozambique,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,San Marino,San Marino,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Seychelles,Seychelles,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,St. Helena,St. Helena,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Tajikistan,Tajikistan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Uzbekistan,Uzbekistan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Argentina,Argentina,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Australia,Australia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Gibraltar,Gibraltar,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Greenland,Greenland,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guatemala,Guatemala,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Indonesia,Indonesia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Lithuania,Lithuania,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mauritius,Mauritius,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Nicaragua,Nicaragua,FALSE,10,Generated from countrycode English country-name fields.
+common_variant,Palestine,Palestine,FALSE,10,Short common form used in current accepted layer.
+countrycode_country.name.en,Singapore,Singapore,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Sri Lanka,Sri Lanka,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Venezuela,Venezuela,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Anguilla,Anguilla,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Barbados,Barbados,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Botswana,Botswana,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bulgaria,Bulgaria,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Cambodia,Cambodia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Cameroon,Cameroon,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Colombia,Colombia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Djibouti,Djibouti,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Dominica,Dominica,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Eswatini,Eswatini,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Ethiopia,Ethiopia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guernsey,Guernsey,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Honduras,Honduras,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Kiribati,Kiribati,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Malaysia,Malaysia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Maldives,Maldives,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mongolia,Mongolia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Pakistan,Pakistan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Paraguay,Paraguay,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Portugal,Portugal,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Slovakia,Slovakia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Slovenia,Slovenia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Suriname,Suriname,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Tanzania,Tanzania,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Thailand,Thailand,FALSE,10,Generated from countrycode English country-name fields.
+who_variant,Viet Nam,Vietnam,FALSE,10,WHO spelling mapped to current accepted layer.
+countrycode_country.name.en,Zimbabwe,Zimbabwe,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Albania,Albania,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Algeria,Algeria,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Andorra,Andorra,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Armenia,Armenia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Austria,Austria,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bahamas,Bahamas,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bahrain,Bahrain,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Belarus,Belarus,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Belgium,Belgium,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bermuda,Bermuda,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bolivia,Bolivia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Burundi,Burundi,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Comoros,Comoros,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Croatia,Croatia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Curaçao,Curaçao,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Czechia,Czechia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Denmark,Denmark,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Ecuador,Ecuador,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Eritrea,Eritrea,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Estonia,Estonia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Finland,Finland,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Georgia,Georgia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Germany,Germany,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Grenada,Grenada,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Hungary,Hungary,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Iceland,Iceland,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Ireland,Ireland,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Jamaica,Jamaica,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Lebanon,Lebanon,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Lesotho,Lesotho,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Liberia,Liberia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mayotte,Mayotte,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Moldova,Moldova,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Morocco,Morocco,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Myanmar,Myanmar,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Namibia,Namibia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Nigeria,Nigeria,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Romania,Romania,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Réunion,Réunion,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Senegal,Senegal,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Somalia,Somalia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Tokelau,Tokelau,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Tunisia,Tunisia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Ukraine,Ukraine,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Uruguay,Uruguay,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Vanuatu,Vanuatu,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Vietnam,Vietnam,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Angola,Angola,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Belize,Belize,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bhutan,Bhutan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Brazil,Brazil,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Brunei,Brunei,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Canada,Canada,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Cyprus,Cyprus,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,France,France,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Gambia,Gambia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Greece,Greece,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guinea,Guinea,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guyana,Guyana,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Israel,Israel,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Jersey,Jersey,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Jordan,Jordan,FALSE,10,Generated from countrycode English country-name fields.
+who_variant,Kosovo,Kosovo,FALSE,10,Current accepted layer country label.
+countrycode_country.name.en,Kuwait,Kuwait,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Latvia,Latvia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Malawi,Malawi,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mexico,Mexico,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Monaco,Monaco,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Norway,Norway,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Panama,Panama,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Poland,Poland,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Russia,Russia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Rwanda,Rwanda,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Serbia,Serbia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Sweden,Sweden,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Turkey,Turkey,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Tuvalu,Tuvalu,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Uganda,Uganda,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Zambia,Zambia,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Aruba,Aruba,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Benin,Benin,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Chile,Chile,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,China,China,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Egypt,Egypt,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Gabon,Gabon,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Ghana,Ghana,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Haiti,Haiti,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,India,India,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Italy,Italy,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Japan,Japan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Kenya,Kenya,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Libya,Libya,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Malta,Malta,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Nauru,Nauru,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Nepal,Nepal,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Niger,Niger,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Palau,Palau,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Qatar,Qatar,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Samoa,Samoa,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Spain,Spain,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Sudan,Sudan,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Syria,Syria,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Tonga,Tonga,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Yemen,Yemen,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Chad,Chad,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Cuba,Cuba,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Fiji,Fiji,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Guam,Guam,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Iran,Iran,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Iraq,Iraq,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Laos,Laos,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Mali,Mali,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Niue,Niue,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Oman,Oman,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Peru,Peru,FALSE,10,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Togo,Togo,FALSE,10,Generated from countrycode English country-name fields.
+who_variant,United Kingdom of Great Britain and Northern Ireland,United Kingdom,FALSE,20,WHO/UN style country name.
+who_variant,Democratic People's Republic of Korea,North Korea,FALSE,20,WHO/UN style country name.
+who_variant,Venezuela (Bolivarian Republic of),Venezuela,FALSE,20,WHO/UN style country name.
+who_variant,Bolivia (Plurinational State of),Bolivia,FALSE,20,WHO/UN style country name.
+who_variant,Lao People's Democratic Republic,Laos,FALSE,20,WHO/UN style country name.
+who_variant,Micronesia (Federated States of),Micronesia,FALSE,20,WHO/UN style country name.
+common_variant,Democratic Republic of Congo,Democratic Republic of the Congo,FALSE,20,Common shortened form.
+who_variant,United Republic of Tanzania,Tanzania,FALSE,20,WHO/UN style country name.
+who_variant,Iran (Islamic Republic of),Iran,FALSE,20,WHO/UN style country name.
+who_variant,Islamic Republic of Iran,Iran,FALSE,20,WHO/UN style country name.
+who_variant,"Moldova, Republic of",Moldova,FALSE,20,WHO/UN style country name.
+who_variant,Syrian Arab Republic,Syria,FALSE,20,WHO/UN style country name.
+who_variant,"Korea, Republic of",South Korea,FALSE,20,WHO/UN style country name seen in accepted evidence.
+who_variant,Russian Federation,Russia,FALSE,20,WHO/UN style country name.
+who_variant,State of Palestine,Palestine,FALSE,20,WHO/UN style country name.
+who_variant,Brunei Darussalam,Brunei,FALSE,20,WHO/UN style country name.
+accepted_variant,Republic of Congo,Republic of the Congo,FALSE,20,Accepted WHO DON evidence sometimes omits 'the'.
+who_variant,Republic of Korea,South Korea,FALSE,20,WHO/UN style country name.
+ascii_variant,Cote d`Ivoire,Cote d'Ivoire,FALSE,20,Backtick spelling seen in accepted WHO DON evidence.
+unicode_variant,Cote d’Ivoire,Cote d'Ivoire,FALSE,20,ASCII Cote with curly apostrophe seen in accepted WHO DON evidence.
+unicode_variant,Côte d'Ivoire,Cote d'Ivoire,FALSE,20,Unicode spelling with straight apostrophe.
+unicode_variant,Côte d’Ivoire,Cote d'Ivoire,FALSE,20,Unicode spelling with curly apostrophe.
+who_variant,DPR Korea,North Korea,FALSE,25,WHO short form seen in accepted evidence.
+historical_variant,Libyan Arab Jamahiriya,Libya,FALSE,30,Historical WHO country name seen in accepted evidence.
+accepted_typo_variant,Bosnia and Hezegovina,Bosnia and Herzegovina,FALSE,30,Typo seen in accepted WHO DON evidence.
+slash_variant,St Vincent/Grenadines,Saint Vincent and the Grenadines,FALSE,30,Slash form seen in accepted H1N1 map/table evidence.
+slash_variant,Antigua/Barbuda,Antigua and Barbuda,FALSE,30,Slash form seen in accepted H1N1 map/table evidence.
+slash_variant,Trinidad/Tobago,Trinidad and Tobago,FALSE,30,Slash form seen in accepted H1N1 map/table evidence.
+slash_variant,St Kitts/Nevis,Saint Kitts and Nevis,FALSE,30,Slash form seen in accepted H1N1 map/table evidence.
+accepted_typo_variant,Côte d'Ivoir,Cote d'Ivoire,FALSE,30,Truncated spelling seen in accepted WHO DON evidence.
+accepted_typo_variant,Tadjikistan,Tajikistan,FALSE,30,Historical spelling seen in accepted WHO DON evidence.
+common_variant,Cape Verde,Cabo Verde,FALSE,30,Common historical spelling.
+historical_variant,Cap Verde,Cabo Verde,FALSE,30,Historical spelling seen in accepted WHO DON evidence.
+accepted_typo_variant,Luxemburg,Luxembourg,FALSE,30,Historical spelling seen in accepted WHO DON evidence.
+historical_common_variant,Holland,Netherlands,FALSE,30,Historical/common name seen in accepted WHO DON evidence.
+historical_variant,Burma,Myanmar,FALSE,30,Historical country name.
+historical_variant,Zaire,Democratic Republic of the Congo,FALSE,30,Historical country name seen in accepted WHO DON evidence.
+subnational_clean_compat,West Bank and Gaza Strip,Palestine,FALSE,35,Accepted clean layer maps West Bank and Gaza Strip evidence to Palestine.
+subnational_clean_compat,Hong Kong SAR,China,FALSE,35,Accepted clean layer maps Hong Kong evidence to China.
+subnational_clean_compat,Gaza Strip,Palestine,FALSE,35,Accepted clean layer maps Gaza Strip event evidence to Palestine.
+subnational_clean_compat,Hong Kong,China,FALSE,35,Accepted clean layer maps Hong Kong evidence to China.
+common_variant,Congo-Brazzaville,Republic of the Congo,FALSE,40,Common disambiguating form.
+common_variant,Congo-Kinshasa,Democratic Republic of the Congo,FALSE,40,Common disambiguating form.
+demonym_event_context,Gabonese,Gabon,FALSE,45,Demonym seen in accepted Ministry of Health event evidence.
+countrycode_iso.name.en,"Saint Helena, Ascension and Tristan da Cunha",St. Helena,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,South Georgia and the South Sandwich Islands,South Georgia & South Sandwich Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Korea (the Democratic People's Republic of),North Korea,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Congo (the Democratic Republic of the),Democratic Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Lao People's Democratic Republic (the),Laos,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Democratic People’s Republic of Korea,North Korea,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,British Indian Ocean Territory (the),British Indian Ocean Territory,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,Falkland Islands (Islas Malvinas),Falkland Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Falkland Islands (the) [Malvinas],Falkland Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,French Southern Territories (the),French Southern Territories,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Heard Island and McDonald Islands,Heard & McDonald Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,"Bonaire, Sint Eustatius and Saba",Caribbean Netherlands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,China (the People's Republic of),China,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Lao People’s Democratic Republic,Laos,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,"Tanzania, the United Republic of",Tanzania,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Central African Republic (the),Central African Republic,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cow.name,Federated States of Micronesia,Micronesia,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Northern Mariana Islands (the),Northern Mariana Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cow.name,St. Vincent and the Grenadines,Saint Vincent and the Grenadines,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Turks and Caicos Islands (the),Turks & Caicos Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,United States of America (the),United States,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Cocos (Keeling) Islands (the),Cocos (Keeling) Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Netherlands (Kingdom of the),Netherlands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Syrian Arab Republic (the),Syria,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,United Arab Emirates (the),United Arab Emirates,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Moldova (the Republic of),Moldova,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Saint Pierre and Miquelon,St. Pierre & Miquelon,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Sint Maarten (Dutch part),Sint Maarten,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Dominican Republic (the),Dominican Republic,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Russian Federation (the),Russia,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,St. Vincent & Grenadines,Saint Vincent and the Grenadines,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Virgin Islands (British),British Virgin Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Korea (the Republic of),South Korea,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Palestinian Territories,Palestine,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Marshall Islands (the),Marshall Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Svalbard and Jan Mayen,Svalbard & Jan Mayen,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Virgin Islands (U.S.),U.S. Virgin Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Bosnia & Herzegovina,Bosnia and Herzegovina,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Cayman Islands (the),Cayman Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Congo - Brazzaville,Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Faroe Islands (the),Faroe Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,"Palestine, State of",Palestine,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Republic of Moldova,Moldova,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cow.name,St. Kitts and Nevis,Saint Kitts and Nevis,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Cook Islands (the),Cook Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Antigua & Barbuda,Antigua and Barbuda,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Netherlands (the),Netherlands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Philippines (the),Philippines,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,St. Kitts & Nevis,Saint Kitts and Nevis,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Trinidad & Tobago,Trinidad and Tobago,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Wallis and Futuna,Wallis & Futuna,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,Congo (Republic),Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Congo - Kinshasa,Democratic Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Saint Barthélemy,St. Barthélemy,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_country.name.en,Myanmar (Burma),Myanmar,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,Czech Republic,Czechia,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Holy See (the),Vatican City,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_vdem.name,Palestine/Gaza,Palestine,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Bahamas (The),Bahamas,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Bahamas (the),Bahamas,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_vdem.name,Burma/Myanmar,Myanmar,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Comoros (the),Comoros,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Gambia (the),Gambia,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cow.name,Papal States,Vatican City,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,Congo (DRC),Democratic Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Congo (the),Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,Ivory Coast,Cote d'Ivoire,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Niger (the),Niger,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Sudan (the),Sudan,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,East Timor,Timor-Leste,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_vdem.name,The Gambia,Gambia,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cow.name,Macedonia,North Macedonia,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_cldr.variant.en,Swaziland,Eswatini,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Pitcairn,Pitcairn Islands,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Türkiye,Turkey,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_un.name.en,Congo,Republic of the Congo,FALSE,50,Generated from countrycode English country-name fields.
+countrycode_iso.name.en,Macao,Macao SAR China,FALSE,50,Generated from countrycode English country-name fields.
+institution_context,US Centers for Disease Control,United States,FALSE,60,US CDC wording appears in accepted legacy evidence.
+abbreviation,U.S.A.,United States,TRUE,80,Abbreviation can appear outside country evidence.
+abbreviation,U.S.,United States,TRUE,80,Abbreviation can appear outside country evidence.
+abbreviation,DRC,Democratic Republic of the Congo,TRUE,80,Abbreviation can be ambiguous; keep reviewable.
+abbreviation,KSA,Saudi Arabia,TRUE,80,Abbreviation seen in accepted evidence; keep reviewable outside strong context.
+abbreviation,USA,United States,TRUE,80,Abbreviation can appear outside country evidence.
+abbreviation,UK,United Kingdom,TRUE,80,Abbreviation can appear outside country evidence.
+accepted_spaced_abbreviation,U S,United States,TRUE,85,Spaced abbreviation appears in accepted legacy evidence; keep reviewable.

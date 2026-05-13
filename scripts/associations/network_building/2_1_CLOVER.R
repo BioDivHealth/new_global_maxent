@@ -19,6 +19,7 @@ who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", 
 output_csv_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_taxid.csv")
 output_hosts_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv")
 output_unique_hosts_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_unique_hosts.csv")
+host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
 # ------------------------------| Load datasets |------------------------------
 # 1. WHO pathogen list ---------------------------------------------------------
@@ -57,9 +58,8 @@ who_long <- who_df %>%
 
 # Process CLOVER bacteria data - keep all information including hosts
 clover_bacteria_proc <- clover_bacteria %>%
-  # Filter for bacteria and apply quality filters
+  # Filter for bacteria, but keep all detection methods and flag quality later.
   filter(PathogenType == "bacteria/rickettsia") %>%
-  filter(DetectionMethod %in% c("Isolation/Observation", "PCR/Sequencing")) %>%
   filter(!is.na(Host)) %>%
   mutate(bacteria_key = str_to_lower(str_trim(Pathogen))) %>%
   # Keep all relevant columns since each row is already a pathogen-host association
@@ -167,7 +167,7 @@ final_host_associations_raw <- all_host_associations %>%
 
 # Collapse to one row per pathogen/host association
 final_host_associations <- final_host_associations_raw %>%
-  group_by(ID, bacteria_name, Disease_name, PathogenTaxID, Pathogen, Host, HostTaxID) %>%
+  group_by(ID, bacteria_name, Disease_name, PathogenTaxID, Pathogen, Host, HostTaxID, DetectionMethod) %>%
   summarise(
     # Keep first values for pathogen info
     name_type = first(name_type),
@@ -186,7 +186,6 @@ final_host_associations <- final_host_associations_raw %>%
     HostClass = first(HostClass),
     HostNCBIResolved = first(HostNCBIResolved),
     # Collapse metadata columns with semicolons
-    DetectionMethod = paste(unique(DetectionMethod), collapse = "; "),
     DetectionMethodOriginal = paste(unique(DetectionMethodOriginal), collapse = "; "),
     ICTVRatified = paste(unique(ICTVRatified), collapse = "; "),
     Database = paste(unique(Database), collapse = "; "),
@@ -216,7 +215,20 @@ final_host_associations <- final_host_associations_raw %>%
   )
 
 final_host_associations <- final_host_associations %>%
-  left_join(who_df %>% dplyr::select(ID, `PHEIC risk`), by = "ID")
+  left_join(who_df %>% dplyr::select(ID, `PHEIC risk`), by = "ID") %>%
+  mutate(
+    high_quality_detection = DetectionMethod %in% host_detection_methods_keep,
+    downstream_default_include = high_quality_detection &
+      !is.na(Host) &
+      !is.na(HostTaxID),
+    downstream_review_reason = case_when(
+      downstream_default_include ~ NA_character_,
+      !high_quality_detection ~ paste0("detection_method=", DetectionMethod),
+      is.na(HostTaxID) ~ "missing_host_taxid",
+      is.na(Host) ~ "missing_host_name",
+      TRUE ~ "manual_review"
+    )
+  )
 
 # Join back with WHO metadata
 final_output <- who_df %>%

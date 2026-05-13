@@ -1,0 +1,8 @@
+scope_rule_id,scope,pattern,pattern_location,country_must_be_mentioned,disease_must_be_mentioned,priority,confidence,reason_label,notes
+manual_review_scope,manual_review_applied,,review,FALSE,FALSE,1,high,accepted review decision,Reserved for sidecar review decisions.
+strict_focal_flag,focal_event_country,,clean_final_field,FALSE,FALSE,10,high,strict focal flag from clean baseline,Compatibility seed from accepted clean final field.
+probable_focal_flag,focal_event_country,,clean_final_field,FALSE,FALSE,20,medium,probable focal flag from clean baseline,Compatibility seed from accepted clean final field.
+imported_scope,imported_case_country,imported|travel,clean_scope_or_reason,FALSE,FALSE,30,medium,import or travel context,Initial table-driven pattern for later native v2 classification.
+context_scope,historical_or_background_context_country,background|context|neighbour|neighbor|historic|surveillance,clean_scope_or_reason,FALSE,FALSE,40,medium,background or context country,Initial table-driven pattern for later native v2 classification.
+not_event_country,not_final_event_country,not.event|non.event|not final,clean_scope_or_reason,FALSE,FALSE,50,medium,not a final event country,Initial table-driven pattern for later native v2 classification.
+uncertain_scope,uncertain_focality,,fallback,FALSE,FALSE,999,review,uncertain scope,Fallback when no stronger rule is available.
