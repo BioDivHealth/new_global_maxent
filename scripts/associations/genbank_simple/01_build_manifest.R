@@ -32,12 +32,6 @@ network_path <- here(
   "networks",
   "combined_who_network_canonical_zoonotic.csv"
 )
-old_manifest_path <- here(
-  "pathogen_association_data",
-  "WHO",
-  "genbank",
-  "genbank_pathogen_query_manifest.csv"
-)
 output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -68,7 +62,7 @@ who_pathogens <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>
   )
 
 # ------------------------------------------------------------------------------|
-#      Load network taxonomy and old GenBank query hints ----------------------
+#      Load network taxonomy --------------------------------------------------
 # ------------------------------------------------------------------------------|
 network_targets <- read_csv(network_path, show_col_types = FALSE, na = c("", "NA")) %>%
   transmute(
@@ -80,30 +74,6 @@ network_targets <- read_csv(network_path, show_col_types = FALSE, na = c("", "NA
     network_canonicalization_status = clean_text(canonicalization_status)
   ) %>%
   distinct()
-
-old_query_lookup <- if (file.exists(old_manifest_path)) {
-  read_csv(old_manifest_path, show_col_types = FALSE, na = c("", "NA")) %>%
-    transmute(
-      Pathogens = clean_text(Pathogens),
-      Disease_name = clean_text(Disease_name),
-      old_query_strategy = clean_text(query_strategy),
-      old_query_profile = clean_text(query_profile),
-      old_search_query = clean_text(search_query),
-      old_taxid_query = clean_text(taxid_query),
-      old_organism_query = clean_text(organism_query)
-    ) %>%
-    distinct(Pathogens, Disease_name, .keep_all = TRUE)
-} else {
-  tibble(
-    Pathogens = character(),
-    Disease_name = character(),
-    old_query_strategy = character(),
-    old_query_profile = character(),
-    old_search_query = character(),
-    old_taxid_query = character(),
-    old_organism_query = character()
-  )
-}
 
 # ------------------------------------------------------------------------------|
 #      Join targets and apply scope guardrails --------------------------------
@@ -159,33 +129,26 @@ excluded_targets <- target_summary %>%
 # ------------------------------------------------------------------------------|
 manifest <- target_summary %>%
   filter(is.na(exclusion_reason)) %>%
-  left_join(
-    old_query_lookup,
-    by = c("Pathogens", "Disease_name")
-  ) %>%
   rowwise() %>%
   mutate(
     simple_query = build_simple_query(
       pathogen = Pathogens,
       tax_ids = unlist(strsplit(dplyr::coalesce(PathogenTaxID, ""), ";\\s*"))
     ),
-    query_used = case_when(
-      is_allowed_influenza_target(Pathogens) ~ simple_query,
-      !is.na(old_search_query) ~ old_search_query,
-      TRUE ~ simple_query
-    ),
+    query_used = simple_query,
     source_db = "nuccore",
     query_strategy = case_when(
       is_allowed_influenza_target(Pathogens) ~ "influenza_subtype_constrained_full_retrieval",
-      !is.na(old_search_query) ~ paste0("old_manifest_", dplyr::coalesce(old_query_strategy, "query"), "_full_retrieval"),
       !is.na(PathogenTaxID) ~ "taxid_full_retrieval",
       TRUE ~ "organism_name_full_retrieval"
     ),
     query_source = case_when(
       is_allowed_influenza_target(Pathogens) ~ "simple_subtype_guardrail",
-      !is.na(old_search_query) ~ "old_manifest_search_query",
       TRUE ~ "simple_generated_query"
     ),
+    old_query_profile = NA_character_,
+    old_taxid_query = NA_character_,
+    old_organism_query = NA_character_,
     retrieval_policy = "full_deterministic_pagination",
     allow_sampling = FALSE
   ) %>%
