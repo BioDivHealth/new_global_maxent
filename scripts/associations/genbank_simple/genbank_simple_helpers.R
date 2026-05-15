@@ -1,9 +1,12 @@
-# ------------------------------------------------------------------------------
-# genbank_simple_helpers.R
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
+#      genbank_simple_helpers.R ------------------------------------------------
+# ------------------------------------------------------------------------------|
 # Small helper set for the simplified GenBank pathogen-country workflow.
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
 
+# ------------------------------------------------------------------------------|
+#      Text, environment, and provenance helpers ------------------------------
+# ------------------------------------------------------------------------------|
 clean_text <- function(x) {
   x <- as.character(x)
   x <- stringr::str_squish(x)
@@ -93,6 +96,59 @@ collapse_unique <- function(x, sep = "; ") {
   paste(x, collapse = sep)
 }
 
+# ------------------------------------------------------------------------------|
+#      GenBank-simple output path helpers -------------------------------------
+# ------------------------------------------------------------------------------|
+genbank_simple_qa_files <- c(
+  "genbank_simple_readiness_manifest_qa.csv",
+  "genbank_readiness_search_logs.csv",
+  "genbank_readiness_qa_summary.csv",
+  "genbank_readiness_target_qa.csv",
+  "genbank_readiness_country_standardization_qa.csv"
+)
+
+genbank_simple_intermediate_files <- c(
+  "genbank_readiness_country_records.csv",
+  "genbank_readiness_country_records_standardized.csv",
+  "genbank_readiness_pathogen_country_summary.csv",
+  "genbank_readiness_pathogen_country_summary_standardized.csv",
+  "genbank_readiness_disease_country_summary.csv"
+)
+
+genbank_simple_file_path <- function(output_dir, file_name, create_parent = FALSE) {
+  subdir <- dplyr::case_when(
+    file_name %in% genbank_simple_qa_files ~ "qa",
+    file_name %in% genbank_simple_intermediate_files ~ "intermediate",
+    TRUE ~ NA_character_
+  )
+
+  path <- if (is.na(subdir)) {
+    file.path(output_dir, file_name)
+  } else {
+    file.path(output_dir, subdir, file_name)
+  }
+
+  if (create_parent) {
+    dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
+  }
+
+  path
+}
+
+genbank_simple_existing_file_path <- function(output_dir, file_name) {
+  preferred_path <- genbank_simple_file_path(output_dir, file_name)
+  legacy_path <- file.path(output_dir, file_name)
+
+  if (file.exists(preferred_path) || !file.exists(legacy_path)) {
+    return(preferred_path)
+  }
+
+  legacy_path
+}
+
+# ------------------------------------------------------------------------------|
+#      Manifest target and query helpers --------------------------------------
+# ------------------------------------------------------------------------------|
 as_logical_flag <- function(x) {
   if (is.logical(x)) {
     return(dplyr::coalesce(x, FALSE))
@@ -196,6 +252,9 @@ build_simple_query <- function(pathogen, tax_ids) {
   paste0("\"", pathogen, "\"[Organism]")
 }
 
+# ------------------------------------------------------------------------------|
+#      GenBank XML parsing helpers --------------------------------------------
+# ------------------------------------------------------------------------------|
 standardize_country_name <- function(country_raw, geo_loc_name_raw) {
   location_raw <- dplyr::coalesce(clean_text(country_raw), clean_text(geo_loc_name_raw))
 
@@ -311,6 +370,9 @@ parse_nuccore_records <- function(xml_text, manifest_row) {
   })
 }
 
+# ------------------------------------------------------------------------------|
+#      NCBI E-utilities search and fetch helpers ------------------------------
+# ------------------------------------------------------------------------------|
 build_esearch_url <- function(query, retmax = 0L, retstart = 0L, db = "nuccore") {
   url <- paste0(
     "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",

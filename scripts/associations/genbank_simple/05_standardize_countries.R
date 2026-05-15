@@ -1,8 +1,11 @@
-# ------------------------------------------------------------------------------
-# 05_standardize_countries.R
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
+#      05_standardize_countries.R ---------------------------------------------
+# ------------------------------------------------------------------------------|
 # Purpose: Add a conservative country cleanup layer to GenBank-simple records.
 # Inputs : genbank_country_records.csv
+#          Optional `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined` reads
+#          `intermediate/genbank_readiness_country_records.csv` and writes the
+#          final standardized disease-country table at the top level.
 # Outputs: genbank_country_records_standardized.csv
 #          genbank_pathogen_country_summary_standardized.csv
 #          genbank_disease_country_summary_standardized.csv
@@ -12,15 +15,40 @@
 #          are left untouched. The existing `country` column is treated as a
 #          first-pass parsed value. This script adds standardized companion
 #          fields rather than overwriting prior columns.
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
 
+# ------------------------------------------------------------------------------|
+#      Load required libraries -------------------------------------------------
+# ------------------------------------------------------------------------------|
 library(pacman)
 p_load(dplyr, here, purrr, readr, rnaturalearth, sf, stringr, tibble, tidyr)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
 
+# ------------------------------------------------------------------------------|
+#      Resolve run mode and input records -------------------------------------
+# ------------------------------------------------------------------------------|
 output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
-records_path <- file.path(output_dir, "genbank_country_records.csv")
+summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
+  clean_text() %>%
+  stringr::str_to_lower()
+
+summary_kind <- case_when(
+  summary_kind %in% c("standard", "simple", "current") ~ "standard",
+  summary_kind %in% c("readiness", "readiness_combined", "expanded_readiness") ~
+    "readiness_combined",
+  TRUE ~ NA_character_
+)
+
+if (is.na(summary_kind)) {
+  stop(
+    "GENBANK_SIMPLE_SUMMARY_KIND must be `standard` or `readiness_combined`.",
+    call. = FALSE
+  )
+}
+
+output_prefix <- if_else(summary_kind == "readiness_combined", "genbank_readiness_", "genbank_")
+records_path <- genbank_simple_existing_file_path(output_dir, paste0(output_prefix, "country_records.csv"))
 
 records <- read_csv(
   records_path,
@@ -28,6 +56,9 @@ records <- read_csv(
   na = c("", "NA")
 )
 
+# ------------------------------------------------------------------------------|
+#      Latitude/longitude country lookup helpers ------------------------------
+# ------------------------------------------------------------------------------|
 parse_lat_lon <- function(lat_lon) {
   lat_lon <- clean_text(lat_lon)
 
@@ -96,6 +127,9 @@ lookup_country_from_lat_lon <- function(records_to_lookup) {
     )
 }
 
+# ------------------------------------------------------------------------------|
+#      Country standardization rules ------------------------------------------
+# ------------------------------------------------------------------------------|
 standardize_country_value <- function(country) {
   country <- clean_text(country)
 
@@ -156,6 +190,9 @@ ocean_values <- c("Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Southern O
 historical_values <- c("USSR", "Yugoslavia", "Czechoslovakia", "Netherlands Antilles")
 review_values <- c("Borneo")
 
+# ------------------------------------------------------------------------------|
+#      Add standardized country fields ----------------------------------------
+# ------------------------------------------------------------------------------|
 records_with_keys <- records %>%
   mutate(
     accession_key = dplyr::coalesce(accession_key, accession_version, primary_accession),
@@ -196,6 +233,9 @@ standardized_records <- records_with_keys %>%
     country_from_lat_lon
   )
 
+# ------------------------------------------------------------------------------|
+#      Summarize standardized evidence ----------------------------------------
+# ------------------------------------------------------------------------------|
 standardized_records <- standardized_records %>%
   mutate(
     country_standardized = if_else(
@@ -252,11 +292,43 @@ qa_summary <- bind_rows(
   )
 )
 
-write_csv(standardized_records, file.path(output_dir, "genbank_country_records_standardized.csv"))
-write_csv(pathogen_country_summary, file.path(output_dir, "genbank_pathogen_country_summary_standardized.csv"))
-write_csv(disease_country_summary, file.path(output_dir, "genbank_disease_country_summary_standardized.csv"))
-write_csv(qa_summary, file.path(output_dir, "genbank_country_standardization_qa.csv"))
+# ------------------------------------------------------------------------------|
+#      Write outputs -----------------------------------------------------------
+# ------------------------------------------------------------------------------|
+write_csv(
+  standardized_records,
+  genbank_simple_file_path(
+    output_dir,
+    paste0(output_prefix, "country_records_standardized.csv"),
+    create_parent = TRUE
+  )
+)
+write_csv(
+  pathogen_country_summary,
+  genbank_simple_file_path(
+    output_dir,
+    paste0(output_prefix, "pathogen_country_summary_standardized.csv"),
+    create_parent = TRUE
+  )
+)
+write_csv(
+  disease_country_summary,
+  genbank_simple_file_path(
+    output_dir,
+    paste0(output_prefix, "disease_country_summary_standardized.csv"),
+    create_parent = TRUE
+  )
+)
+write_csv(
+  qa_summary,
+  genbank_simple_file_path(
+    output_dir,
+    paste0(output_prefix, "country_standardization_qa.csv"),
+    create_parent = TRUE
+  )
+)
 
+message("Summary kind: ", summary_kind)
 message("Wrote standardized records: ", nrow(standardized_records))
 message("Recovered country from lat_lon: ", sum(standardized_records$country_source == "lat_lon_polygon_lookup", na.rm = TRUE))
 message("Wrote standardized pathogen-country rows: ", nrow(pathogen_country_summary))

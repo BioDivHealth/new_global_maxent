@@ -1,27 +1,62 @@
-# ------------------------------------------------------------------------------
-# 06_map_disease_countries.R
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
+#      06_map_disease_countries.R ---------------------------------------------
+# ------------------------------------------------------------------------------|
 # Purpose: Map per-disease countries recovered by GenBank-simple country runs.
 # Inputs : genbank_disease_country_summary_standardized.csv
+#          Optional `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined` reads
+#          `genbank_readiness_disease_country_summary_standardized.csv` and
+#          writes maps under `maps_readiness/`.
 # Outputs: maps/disease_country_records/*.png
 #          maps/genbank_disease_country_map_countries.csv
 #          maps/genbank_disease_country_map_unmatched.csv
 #
 # Notes  : This script maps countries from the additive standardized country
 #          layer. It does not reinterpret raw GenBank locations.
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
 
+# ------------------------------------------------------------------------------|
+#      Load required libraries -------------------------------------------------
+# ------------------------------------------------------------------------------|
 library(pacman)
 p_load(dplyr, ggplot2, here, purrr, readr, rnaturalearth, sf, stringr, tibble, tidyr)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
 
+# ------------------------------------------------------------------------------|
+#      Resolve run mode and map paths -----------------------------------------
+# ------------------------------------------------------------------------------|
 output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
-map_dir <- file.path(output_dir, "maps")
+summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
+  clean_text() %>%
+  stringr::str_to_lower()
+
+summary_kind <- case_when(
+  summary_kind %in% c("standard", "simple", "current") ~ "standard",
+  summary_kind %in% c("readiness", "readiness_combined", "expanded_readiness") ~
+    "readiness_combined",
+  TRUE ~ NA_character_
+)
+
+if (is.na(summary_kind)) {
+  stop(
+    "GENBANK_SIMPLE_SUMMARY_KIND must be `standard` or `readiness_combined`.",
+    call. = FALSE
+  )
+}
+
+map_dir <- file.path(
+  output_dir,
+  if_else(summary_kind == "readiness_combined", "maps_readiness", "maps")
+)
 disease_map_dir <- file.path(map_dir, "disease_country_records")
 dir.create(disease_map_dir, recursive = TRUE, showWarnings = FALSE)
 
-summary_path <- file.path(output_dir, "genbank_disease_country_summary_standardized.csv")
+summary_file <- if_else(
+  summary_kind == "readiness_combined",
+  "genbank_readiness_disease_country_summary_standardized.csv",
+  "genbank_disease_country_summary_standardized.csv"
+)
+summary_path <- genbank_simple_existing_file_path(output_dir, summary_file)
 
 country_summary <- read_csv(
   summary_path,
@@ -52,6 +87,9 @@ if (nrow(country_summary) == 0) {
   stop("No disease-country rows available to map in: ", summary_path)
 }
 
+# ------------------------------------------------------------------------------|
+#      Prepare country-name map joins -----------------------------------------
+# ------------------------------------------------------------------------------|
 country_name_overrides <- tibble::tribble(
   ~country_standardized, ~map_country,
   "Brunei", "Brunei Darussalam",
@@ -79,6 +117,9 @@ plot_country_summary <- country_summary %>%
   left_join(country_name_overrides, by = "country_standardized") %>%
   mutate(map_country = dplyr::coalesce(map_country, country_standardized))
 
+# ------------------------------------------------------------------------------|
+#      Join GenBank countries to world geometry -------------------------------
+# ------------------------------------------------------------------------------|
 world <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf") %>%
   select(
     map_country = name_long,
@@ -115,6 +156,9 @@ unmatched_countries <- mapped_countries %>%
   ) %>%
   arrange(Disease_name, country_standardized)
 
+# ------------------------------------------------------------------------------|
+#      Write map tables and per-disease PNGs ----------------------------------
+# ------------------------------------------------------------------------------|
 map_country_records <- mapped_countries %>%
   filter(map_matched) %>%
   sf::st_drop_geometry() %>%
@@ -206,6 +250,7 @@ map_manifest <- purrr::map_dfr(
 
 write_csv(map_manifest, file.path(map_dir, "genbank_disease_country_map_manifest.csv"))
 
+message("Summary kind: ", summary_kind)
 message("Wrote disease maps: ", nrow(map_manifest))
 message("Wrote mapped country rows: ", nrow(map_country_records))
 message("Wrote unmatched country rows: ", nrow(unmatched_countries))

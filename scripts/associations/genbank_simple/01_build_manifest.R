@@ -1,19 +1,25 @@
-# ------------------------------------------------------------------------------
-# 01_build_manifest.R
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
+#      01_build_manifest.R -----------------------------------------------------
+# ------------------------------------------------------------------------------|
 # Purpose: Build the strict GenBank-simple manifest from current WHO/network
 #          zoonotic targets with Gibb et al. or EMPRES-i point-data support.
 # Inputs : who_pathogens_diseases_zoonotic.csv
 #          combined_who_network_canonical_zoonotic.csv
 # Outputs: genbank_simple_manifest.csv
 #          excluded_targets.csv
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
 
+# ------------------------------------------------------------------------------|
+#      Load required libraries -------------------------------------------------
+# ------------------------------------------------------------------------------|
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
 
+# ------------------------------------------------------------------------------|
+#      Define input and output paths ------------------------------------------
+# ------------------------------------------------------------------------------|
 who_path <- here(
   "pathogen_association_data",
   "WHO",
@@ -36,6 +42,11 @@ output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
+# ------------------------------------------------------------------------------|
+#      Load WHO point-supported targets ---------------------------------------
+# ------------------------------------------------------------------------------|
+# Limit the old 19-target manifest to zoonotic WHO rows with Gibb et al. or
+# EMPRES-i point-data support.
 who_pathogens <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
     Pathogens = clean_text(Pathogens),
@@ -56,6 +67,9 @@ who_pathogens <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>
     .keep_all = TRUE
   )
 
+# ------------------------------------------------------------------------------|
+#      Load network taxonomy and old GenBank query hints ----------------------
+# ------------------------------------------------------------------------------|
 network_targets <- read_csv(network_path, show_col_types = FALSE, na = c("", "NA")) %>%
   transmute(
     Pathogens = clean_text(Pathogen),
@@ -91,6 +105,9 @@ old_query_lookup <- if (file.exists(old_manifest_path)) {
   )
 }
 
+# ------------------------------------------------------------------------------|
+#      Join targets and apply scope guardrails --------------------------------
+# ------------------------------------------------------------------------------|
 joined_targets <- who_pathogens %>%
   inner_join(
     network_targets,
@@ -137,6 +154,9 @@ excluded_targets <- target_summary %>%
   ) %>%
   arrange(exclusion_reason, Pathogens, Disease_name)
 
+# ------------------------------------------------------------------------------|
+#      Build strict GenBank-simple manifest -----------------------------------
+# ------------------------------------------------------------------------------|
 manifest <- target_summary %>%
   filter(is.na(exclusion_reason)) %>%
   left_join(
@@ -197,6 +217,9 @@ manifest <- target_summary %>%
   ) %>%
   arrange(Pathogens, Disease_name)
 
+# ------------------------------------------------------------------------------|
+#      Write outputs -----------------------------------------------------------
+# ------------------------------------------------------------------------------|
 write_csv(manifest, file.path(output_dir, "genbank_simple_manifest.csv"))
 write_csv(excluded_targets, file.path(output_dir, "excluded_targets.csv"))
 

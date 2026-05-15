@@ -1,6 +1,6 @@
-# ------------------------------------------------------------------------------
-# 02_run_genbank_full_retrieval.R
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
+#      02_run_genbank_full_retrieval.R ----------------------------------------
+# ------------------------------------------------------------------------------|
 # Purpose: Retrieve all nuccore records for the approved GenBank-simple manifest
 #          through deterministic pagination and per-target checkpoints.
 # Inputs : genbank_simple_manifest.csv
@@ -13,13 +13,25 @@
 #          `GENBANK_SIMPLE_TARGET_FILTER`, `GENBANK_SIMPLE_MAX_TARGETS`,
 #          `GENBANK_SIMPLE_SEARCH_PAGE_SIZE`, `GENBANK_SIMPLE_FETCH_BATCH_SIZE`,
 #          `GENBANK_SIMPLE_RESUME`, `GENBANK_SIMPLE_FORCE_RERUN`.
+#          `GENBANK_SIMPLE_MANIFEST_KIND=readiness` reads the expanded readiness
+#          manifest and writes checkpoints under `pathogen_runs_readiness/`.
+#          In readiness mode, `GENBANK_SIMPLE_READINESS_ONLY_NEW` defaults to
+#          TRUE and skips exact matches already present in the 19-target manifest.
+#          `GENBANK_SIMPLE_DRY_RUN=TRUE` validates target selection without
+#          contacting NCBI.
+#          `GENBANK_SIMPLE_MAX_RECORDS_FOUND` skips targets above a count-only
+#          eSearch threshold before collecting IDs/fetching XML.
+#          Readiness mode always skips the broad Salmonella target for GenBank.
 #          `GENBANK_SIMPLE_MAX_RECORDS_PER_TARGET` is a smoke-test/debug cap;
 #          leave it unset for full retrieval.
 #          Large targets stream parsed rows to disk. Tune with
 #          `GENBANK_SIMPLE_STREAM_THRESHOLD` and
 #          `GENBANK_SIMPLE_RECORD_FLUSH_SIZE`.
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------|
 
+# ------------------------------------------------------------------------------|
+#      Load required libraries -------------------------------------------------
+# ------------------------------------------------------------------------------|
 library(pacman)
 p_load(dplyr, here, purrr, readr, rentrez, stringr, tibble, xml2)
 
@@ -27,33 +39,164 @@ source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers
 
 configure_entrez_key(here(".env"))
 
+# ------------------------------------------------------------------------------|
+#      Resolve manifest and run directories -----------------------------------
+# ------------------------------------------------------------------------------|
 output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
-manifest_path <- file.path(output_dir, "genbank_simple_manifest.csv")
-run_dir <- file.path(output_dir, "pathogen_runs")
+standard_manifest_path <- file.path(output_dir, "genbank_simple_manifest.csv")
+readiness_manifest_path <- file.path(output_dir, "genbank_simple_readiness_manifest.csv")
+
+manifest_kind <- Sys.getenv("GENBANK_SIMPLE_MANIFEST_KIND", unset = "standard") %>%
+  clean_text() %>%
+  stringr::str_to_lower()
+
+manifest_kind <- case_when(
+  manifest_kind %in% c("standard", "simple", "current", "19_target") ~ "standard",
+  manifest_kind %in% c("readiness", "expanded_readiness") ~ "readiness",
+  TRUE ~ NA_character_
+)
+
+if (is.na(manifest_kind)) {
+  stop(
+    "GENBANK_SIMPLE_MANIFEST_KIND must be `standard` or `readiness`.",
+    call. = FALSE
+  )
+}
+
+manifest_path_override <- clean_text(Sys.getenv("GENBANK_SIMPLE_MANIFEST_PATH", unset = NA_character_))
+manifest_path <- dplyr::coalesce(
+  manifest_path_override,
+  if_else(manifest_kind == "readiness", readiness_manifest_path, standard_manifest_path)
+)
+
+run_dir <- file.path(
+  output_dir,
+  if_else(manifest_kind == "readiness", "pathogen_runs_readiness", "pathogen_runs")
+)
 search_log_dir <- file.path(run_dir, "search_logs")
 country_record_dir <- file.path(run_dir, "country_records")
 
 dir.create(search_log_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(country_record_dir, recursive = TRUE, showWarnings = FALSE)
 
+# ------------------------------------------------------------------------------|
+#      Parse run controls ------------------------------------------------------
+# ------------------------------------------------------------------------------|
 search_page_size <- parse_env_integer("GENBANK_SIMPLE_SEARCH_PAGE_SIZE", default = 5000L)
 fetch_batch_size <- parse_env_integer("GENBANK_SIMPLE_FETCH_BATCH_SIZE", default = 200L)
 max_targets <- parse_env_integer("GENBANK_SIMPLE_MAX_TARGETS", default = NA_integer_)
 max_records_per_target <- parse_env_integer("GENBANK_SIMPLE_MAX_RECORDS_PER_TARGET", default = NA_integer_)
+max_records_found <- parse_env_integer("GENBANK_SIMPLE_MAX_RECORDS_FOUND", default = NA_integer_)
 stream_threshold <- parse_env_integer("GENBANK_SIMPLE_STREAM_THRESHOLD", default = 100000L)
 record_flush_size <- parse_env_integer("GENBANK_SIMPLE_RECORD_FLUSH_SIZE", default = 10000L)
 target_filter <- Sys.getenv("GENBANK_SIMPLE_TARGET_FILTER", unset = "")
 resume <- parse_env_flag("GENBANK_SIMPLE_RESUME", default = TRUE)
 force_rerun <- parse_env_flag("GENBANK_SIMPLE_FORCE_RERUN", default = FALSE)
+dry_run <- parse_env_flag("GENBANK_SIMPLE_DRY_RUN", default = FALSE)
+readiness_only_new <- parse_env_flag(
+  "GENBANK_SIMPLE_READINESS_ONLY_NEW",
+  default = manifest_kind == "readiness"
+)
 
-manifest <- read_csv(manifest_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(
-    target_id = clean_text(target_id),
-    Pathogens = clean_text(Pathogens),
-    Disease_name = clean_text(Disease_name),
-    query_used = clean_text(query_used),
-    source_db = dplyr::coalesce(clean_text(source_db), "nuccore")
+# ------------------------------------------------------------------------------|
+#      Manifest readers --------------------------------------------------------
+# ------------------------------------------------------------------------------|
+stop_if_missing <- function(data, cols, label) {
+  missing_cols <- setdiff(cols, names(data))
+
+  if (length(missing_cols) > 0) {
+    stop(
+      label,
+      " is missing required columns: ",
+      paste(missing_cols, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  invisible(data)
+}
+
+read_standard_manifest <- function(path) {
+  manifest <- read_csv(path, show_col_types = FALSE, na = c("", "NA")) %>%
+    mutate(across(where(is.character), clean_text))
+
+  stop_if_missing(
+    manifest,
+    c("target_id", "Pathogens", "Disease_name", "query_used", "source_db"),
+    basename(path)
   )
+
+  manifest %>%
+    mutate(
+      target_id = clean_text(target_id),
+      Pathogens = clean_text(Pathogens),
+      Disease_name = clean_text(Disease_name),
+      PathogenTaxID = clean_text(PathogenTaxID),
+      query_used = clean_text(query_used),
+      source_db = dplyr::coalesce(clean_text(source_db), "nuccore"),
+      current_target_id = NA_character_
+    )
+}
+
+read_readiness_manifest <- function(path) {
+  manifest <- read_csv(path, show_col_types = FALSE, na = c("", "NA")) %>%
+    mutate(across(where(is.character), clean_text))
+
+  stop_if_missing(
+    manifest,
+    c(
+      "target_id",
+      "query_pathogen_label",
+      "readiness_disease_names",
+      "pathogen_taxid",
+      "query_used",
+      "source_db",
+      "manifest_status",
+      "current_target_id"
+    ),
+    basename(path)
+  )
+
+  non_ready <- manifest %>%
+    filter(manifest_status != "ready_for_future_retrieval")
+
+  if (nrow(non_ready) > 0) {
+    stop(
+      "Readiness manifest contains non-ready rows: ",
+      paste(non_ready$target_id, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  manifest %>%
+    filter(!readiness_only_new | is.na(current_target_id)) %>%
+    transmute(
+      target_id = clean_text(target_id),
+      Pathogens = clean_text(query_pathogen_label),
+      Disease_name = clean_text(readiness_disease_names),
+      PathogenTaxID = clean_text(pathogen_taxid),
+      query_used = clean_text(query_used),
+      source_db = dplyr::coalesce(clean_text(source_db), "nuccore"),
+      current_target_id = clean_text(current_target_id)
+  )
+}
+
+# ------------------------------------------------------------------------------|
+#      Select targets ----------------------------------------------------------
+# ------------------------------------------------------------------------------|
+manifest <- if (manifest_kind == "readiness") {
+  read_readiness_manifest(manifest_path)
+} else {
+  read_standard_manifest(manifest_path)
+}
+
+if (manifest_kind == "readiness") {
+  manifest <- manifest %>%
+    filter(!str_detect(
+      paste(Pathogens, Disease_name, target_id, sep = " | "),
+      regex("Salmonella", ignore_case = TRUE)
+    ))
+}
 
 if (nzchar(target_filter)) {
   manifest <- manifest %>%
@@ -64,6 +207,18 @@ if (!is.na(max_targets) && max_targets > 0) {
   manifest <- manifest %>% slice_head(n = max_targets)
 }
 
+if (nrow(manifest) == 0) {
+  stop("No GenBank-simple retrieval targets selected.", call. = FALSE)
+}
+
+message("Manifest kind: ", manifest_kind)
+message("Manifest path: ", manifest_path)
+message("Run directory: ", run_dir)
+message("Targets selected: ", nrow(manifest))
+
+# ------------------------------------------------------------------------------|
+#      Empty checkpoint schemas ------------------------------------------------
+# ------------------------------------------------------------------------------|
 empty_records <- tibble(
   target_id = character(),
   Pathogens = character(),
@@ -105,6 +260,42 @@ empty_log <- tibble(
   note = character()
 )
 
+# ------------------------------------------------------------------------------|
+#      Checkpoint helpers ------------------------------------------------------
+# ------------------------------------------------------------------------------|
+write_skip_checkpoint <- function(manifest_row, status, records_found = NA_integer_, note = NA_character_) {
+  log_path <- file.path(search_log_dir, paste0(manifest_row$target_id, ".csv"))
+  records_path <- file.path(country_record_dir, paste0(manifest_row$target_id, ".csv"))
+
+  log_row <- empty_log %>%
+    add_row(
+      target_id = manifest_row$target_id,
+      Pathogens = manifest_row$Pathogens,
+      Disease_name = manifest_row$Disease_name,
+      source_db = manifest_row$source_db,
+      query_used = manifest_row$query_used,
+      status = status,
+      records_found = records_found,
+      ids_collected = 0L,
+      records_parsed = 0L,
+      countries_observed = 0L,
+      started_at = as.character(Sys.time()),
+      finished_at = as.character(Sys.time()),
+      note = note
+    )
+
+  write_csv(log_row, log_path)
+
+  if (!file.exists(records_path)) {
+    write_csv(empty_records, records_path)
+  }
+
+  invisible(NULL)
+}
+
+# ------------------------------------------------------------------------------|
+#      Retrieve one target -----------------------------------------------------
+# ------------------------------------------------------------------------------|
 run_target <- function(row_index) {
   manifest_row <- manifest[row_index, ]
   target_id <- manifest_row$target_id
@@ -138,6 +329,8 @@ run_target <- function(row_index) {
 
   message("Running target ", row_index, "/", nrow(manifest), ": ", manifest_row$Pathogens)
 
+  # Large targets are written in chunks so the script does not need to hold every
+  # parsed GenBank record in memory at once.
   flush_record_buffer <- function(force = FALSE) {
     if (length(record_buffer) == 0) {
       return(invisible(NULL))
@@ -173,6 +366,27 @@ run_target <- function(row_index) {
     )
 
     records_found <- first_page$count
+
+    if (!is.na(max_records_found) && records_found > max_records_found) {
+      status <- "skipped_records_found_exceeds_limit"
+      note <- paste0(
+        "records_found_exceeds_limit:",
+        records_found,
+        ">",
+        max_records_found
+      )
+
+      write_skip_checkpoint(
+        manifest_row = manifest_row,
+        status = status,
+        records_found = records_found,
+        note = note
+      )
+
+      message("  skipped: ", note)
+      return(invisible(NULL))
+    }
+
     ids <- first_page$ids[!is.na(first_page$ids)]
 
     target_id_count <- if (!is.na(max_records_per_target) && max_records_per_target > 0) {
@@ -323,6 +537,19 @@ run_target <- function(row_index) {
   invisible(try_result)
 }
 
-purrr::walk(seq_len(nrow(manifest)), run_target)
+# ------------------------------------------------------------------------------|
+#      Execute retrieval -------------------------------------------------------
+# ------------------------------------------------------------------------------|
+if (dry_run) {
+  message("Dry run requested; no NCBI search/fetch calls were made.")
+  print(
+    manifest %>%
+      select(target_id, Pathogens, Disease_name, PathogenTaxID, source_db, query_used) %>%
+      slice_head(n = 20),
+    n = 20
+  )
+} else {
+  purrr::walk(seq_len(nrow(manifest)), run_target)
 
-message("Finished GenBank-simple retrieval targets: ", nrow(manifest))
+  message("Finished GenBank-simple retrieval targets: ", nrow(manifest))
+}
