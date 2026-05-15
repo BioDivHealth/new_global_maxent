@@ -1,0 +1,48 @@
+Disease_name,country_standardized,country_status,records_with_country,pathogens,target_ids
+Anthrax,Korea,country,1,Bacillus anthracis,Bacillus_anthracis
+Anthrax,Mediterranean Sea,country,4,Bacillus anthracis,Bacillus_anthracis
+Bluetongue,French Guiana,territory,10,Orbivirus caerulinguae,Orbivirus_caerulinguae
+Bluetongue,Gibraltar,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae
+Bluetongue,Martinique,territory,13,Orbivirus caerulinguae,Orbivirus_caerulinguae
+Bluetongue,Serbia and Montenegro,country,1,Orbivirus caerulinguae,Orbivirus_caerulinguae
+Bluetongue,West Bank,country,1,Orbivirus caerulinguae,Orbivirus_caerulinguae
+Chikungunya fever,Borneo,review,1,Alphavirus chikungunya,Alphavirus_chikungunya
+Chikungunya fever,French Guiana,territory,1,Alphavirus chikungunya,Alphavirus_chikungunya
+Chikungunya fever,Guadeloupe,territory,13,Alphavirus chikungunya,Alphavirus_chikungunya
+Chikungunya fever,Martinique,territory,12,Alphavirus chikungunya,Alphavirus_chikungunya
+Chikungunya fever,Mayotte,territory,14,Alphavirus chikungunya,Alphavirus_chikungunya
+Chikungunya fever,Reunion,territory,3145,Alphavirus chikungunya,Alphavirus_chikungunya
+Chikungunya fever,Tokelau,territory,1,Alphavirus chikungunya,Alphavirus_chikungunya
+Crimean-Congo hemorrhagic fever,Yugoslavia,historical,4,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae
+Dengue,Borneo,review,4,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Dengue,French Guiana,territory,141,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Dengue,Guadeloupe,territory,34,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Dengue,Martinique,territory,46,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Dengue,Mayotte,territory,31,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Dengue,Netherlands Antilles,historical,2,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Dengue,Reunion,territory,996,Orthoflavivirus denguei,Orthoflavivirus_denguei
+Epizootic haemorrhagic disease,Reunion,territory,2,Orbivirus ruminantium,Orbivirus_ruminantium
+Japanese encephalitis,Korea,country,8,Orthoflavivirus japonicum,Orthoflavivirus_japonicum
+Japanese encephalitis,USSR,historical,1,Orthoflavivirus japonicum,Orthoflavivirus_japonicum
+Lumpy skin disease,Yugoslavia,historical,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox
+Mayaro,French Guiana,territory,28,Alphavirus mayaro,Alphavirus_mayaro
+Murine typhus,USSR,historical,4,Rickettsia typhi,Rickettsia_typhi
+Oropouche fever,French Guiana,territory,3,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense
+Plague,USSR,historical,1101,Yersinia pestis,Yersinia_pestis
+Q fever,French Guiana,territory,115,Coxiella burnetii,Coxiella_burnetii
+Q fever,USSR,historical,333,Coxiella burnetii,Coxiella_burnetii
+Rabies,Czechoslovakia,historical,1,Lyssavirus rabies,Lyssavirus_rabies
+Rabies,French Guiana,territory,29,Lyssavirus rabies,Lyssavirus_rabies
+Rabies,Macedonia,country,8,Lyssavirus rabies,Lyssavirus_rabies
+Rabies,Svalbard,country,7,Lyssavirus rabies,Lyssavirus_rabies
+Rabies,Swaziland,country,1,Lyssavirus rabies,Lyssavirus_rabies
+Rabies,West Bank,country,5,Lyssavirus rabies,Lyssavirus_rabies
+Rabies,Yugoslavia,historical,34,Lyssavirus rabies,Lyssavirus_rabies
+Rift Valley fever,Mayotte,territory,6,Phlebovirus riftense,Phlebovirus_riftense
+Tick-borne encephalitis,USSR,historical,1,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis
+Venezuelan equine encephalitis,French Guiana,territory,1,Alphavirus venezuelan,Alphavirus_venezuelan
+Yellow fever,French Guiana,territory,1,Orthoflavivirus flavi,Orthoflavivirus_flavi
+Zika virus disease,French Guiana,territory,11,Orthoflavivirus zikaense,Orthoflavivirus_zikaense
+Zika virus disease,Guadeloupe,territory,12,Orthoflavivirus zikaense,Orthoflavivirus_zikaense
+Zika virus disease,Martinique,territory,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense
+Zoonotic malaria (P. knowlesi),Borneo,review,18,Plasmodium knowlesi,Plasmodium_knowlesi

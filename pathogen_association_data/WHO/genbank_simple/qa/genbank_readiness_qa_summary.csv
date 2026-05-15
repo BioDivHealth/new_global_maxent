@@ -1,0 +1,14 @@
+metric,value
+manifest_targets,79
+excluded_targets,0
+excluded_coronavirus_scope_deferred,0
+excluded_broad_or_unwanted_influenza,0
+targets_not_run,1
+targets_zero_records,0
+targets_retrieval_failed,0
+targets_skipped_records_found_exceeds_limit,3
+targets_records_without_country,0
+targets_ok,75
+country_record_rows,1034758
+unique_countries,236
+unique_pathogens_with_country,75

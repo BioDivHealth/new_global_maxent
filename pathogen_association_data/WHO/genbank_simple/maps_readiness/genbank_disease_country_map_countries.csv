@@ -1,0 +1,1725 @@
+Disease_name,country_standardized,country_status,records_with_country,pathogens,target_ids,in_gibb_etal,in_empres_i
+African horse sickness,Chad,country,20,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Ethiopia,country,10,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,India,country,2,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Kenya,country,123,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Mozambique,country,10,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Namibia,country,168,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Nigeria,country,10,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Pakistan,country,7,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Senegal,country,1,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,South Africa,country,2296,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Spain,country,3,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Sudan,country,5,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Thailand,country,38,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+African horse sickness,Zimbabwe,country,54,Orbivirus alphaequi,Orbivirus_alphaequi,FALSE,FALSE
+Alkhurma,Egypt,country,12,Alkhumra hemorrhagic fever virus,Alkhumra_hemorrhagic_fever_virus,FALSE,FALSE
+Alkhurma,Saudi Arabia,country,64,Alkhumra hemorrhagic fever virus,Alkhumra_hemorrhagic_fever_virus,FALSE,FALSE
+Andes,Argentina,country,225,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Bolivia,country,10,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Brazil,country,114,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Chile,country,127,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Paraguay,country,5,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Peru,country,3,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Switzerland,country,12,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Andes,Uruguay,country,34,Orthohantavirus andesense,Orthohantavirus_andesense,FALSE,FALSE
+Anthrax,Albania,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Algeria,country,138,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Antarctica,territory,2,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Argentina,country,93,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Australia,country,210,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Austria,country,43,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Azerbaijan,country,4,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Bangladesh,country,180,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Belgium,country,30,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Benin,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Bolivia,country,66,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Botswana,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Brazil,country,906,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Bulgaria,country,57,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Burkina Faso,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Cameroon,country,71,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Canada,country,64,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Central African Republic,country,2,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Chile,country,119,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,China,country,2701,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Colombia,country,5,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Cote d'Ivoire,country,12,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Democratic Republic of the Congo,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Denmark,country,13,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Egypt,country,123,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Estonia,country,2,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Ethiopia,country,427,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Finland,country,125,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,France,country,254,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Georgia,country,1731,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Germany,country,1247,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Greece,country,4,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Hungary,country,22,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,India,country,1814,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Indonesia,country,276,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Iran,country,86,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Iraq,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Ireland,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Italy,country,3056,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Jamaica,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Japan,country,15,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Kazakhstan,country,473,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Kenya,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Kiribati,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Kyrgyzstan,country,7,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Malaysia,country,83,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Mexico,country,104,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Moldova,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Mongolia,country,14,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Morocco,country,8,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Mozambique,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Namibia,country,247,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Nepal,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Netherlands,country,6,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Nigeria,country,32,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Norway,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Oman,country,20,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Pakistan,country,844,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Peru,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Philippines,country,58,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Poland,country,104,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Puerto Rico,territory,126,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Qatar,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Republic of Korea,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Russia,country,257,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Saudi Arabia,country,4,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Senegal,country,16,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Singapore,country,2,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Slovakia,country,143,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,South Africa,country,9075,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,South Korea,country,49,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Spain,country,27,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Sri Lanka,country,4,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Sweden,country,4,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Switzerland,country,64,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Syria,country,2,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Tajikistan,country,8,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Tanzania,country,120,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Thailand,country,39,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Tunisia,country,1,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Turkey,country,881,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Turkmenistan,country,2,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Ukraine,country,13,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,United Kingdom,country,366,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,United States,country,7641,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Uzbekistan,country,3,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Vietnam,country,4656,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Zambia,country,232,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Anthrax,Zimbabwe,country,32,Bacillus anthracis,Bacillus_anthracis,FALSE,FALSE
+Argentine hemorrhagic fever,Argentina,country,161,Mammarenavirus juninense,Mammarenavirus_juninense,FALSE,FALSE
+Argentine hemorrhagic fever,Australia,country,6,Mammarenavirus juninense,Mammarenavirus_juninense,FALSE,FALSE
+Argentine hemorrhagic fever,United States,country,11,Mammarenavirus juninense,Mammarenavirus_juninense,FALSE,FALSE
+Australian bat lyssavirus,Australia,country,46,Lyssavirus australis,Lyssavirus_australis,FALSE,FALSE
+Babesia microti,Australia,country,2,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Austria,country,4,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Belarus,country,3,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Belgium,country,3,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Bolivia,country,18,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Cambodia,country,26,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Canada,country,6,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,China,country,190,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Czechia,country,3,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Democratic Republic of the Congo,country,2,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Denmark,country,1,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Egypt,country,9,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Estonia,country,8,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,France,country,1,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Germany,country,128,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Honduras,country,1,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Hungary,country,10,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,India,country,12,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Iraq,country,14,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Ireland,country,3,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Israel,country,1,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Italy,country,7,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Japan,country,86,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Laos,country,22,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Latvia,country,12,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Lithuania,country,15,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Luxembourg,country,13,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Mexico,country,11,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Mongolia,country,103,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Nigeria,country,4,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Pakistan,country,15,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Poland,country,57,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Romania,country,3,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Russia,country,48,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Serbia,country,4,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Singapore,country,2,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Slovakia,country,56,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Slovenia,country,4,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,South Africa,country,2,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,South Korea,country,17,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Spain,country,4,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Sweden,country,13,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Switzerland,country,7,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Taiwan,country,4,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Thailand,country,29,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Turkey,country,46,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,Ukraine,country,2,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,United Kingdom,country,3,Babesia microti,Babesia_microti,FALSE,FALSE
+Babesia microti,United States,country,134,Babesia microti,Babesia_microti,FALSE,FALSE
+Barmah Forest virus,Australia,country,118,Alphavirus barmah,Alphavirus_barmah,FALSE,FALSE
+Barmah Forest virus,Papua New Guinea,country,1,Alphavirus barmah,Alphavirus_barmah,FALSE,FALSE
+Bartonellosis,Ecuador,country,5,Bartonella bacilliformis,Bartonella_bacilliformis,FALSE,FALSE
+Bartonellosis,Peru,country,1462,Bartonella bacilliformis,Bartonella_bacilliformis,FALSE,FALSE
+Bartonellosis,South Korea,country,5,Bartonella bacilliformis,Bartonella_bacilliformis,FALSE,FALSE
+Bartonellosis,United States,country,2,Bartonella bacilliformis,Bartonella_bacilliformis,FALSE,FALSE
+Baylisascaris procyonis,China,country,97,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Czechia,country,2,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Denmark,country,2,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,France,country,4,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Germany,country,21,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Italy,country,1,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Japan,country,2,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Kazakhstan,country,1,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Luxembourg,country,5,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Mexico,country,2,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Netherlands,country,1,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Norway,country,5,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,Poland,country,1,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Baylisascaris procyonis,United States,country,22,Baylisascaris procyonis,Baylisascaris_procyonis,FALSE,FALSE
+Bayou,Honduras,country,3,Orthohantavirus bayoui,Orthohantavirus_bayoui,FALSE,FALSE
+Bayou,United States,country,12,Orthohantavirus bayoui,Orthohantavirus_bayoui,FALSE,FALSE
+Bluetongue,Algeria,country,37,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Argentina,country,33,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Australia,country,1231,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Barbados,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Belgium,country,80,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Bosnia and Herzegovina,country,13,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Brazil,country,31,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Bulgaria,country,13,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Cameroon,country,23,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Canada,country,1,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,China,country,224,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Costa Rica,country,11,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Croatia,country,18,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Cuba,country,170,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Cyprus,country,224,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Denmark,country,30,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Dominican Republic,country,2,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Ecuador,country,30,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Egypt,country,13,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,El Salvador,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,France,country,2402,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Germany,country,228,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Greece,country,257,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Guatemala,country,31,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Honduras,country,22,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Hungary,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,India,country,1305,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Indonesia,country,133,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Iran,country,2,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Israel,country,1136,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Italy,country,877,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Jamaica,country,21,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Japan,country,76,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Kazakhstan,country,30,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Kenya,country,2,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Kosovo,country,51,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Kuwait,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Libya,country,30,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Luxembourg,country,20,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Malaysia,country,1,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Mauritania,country,1,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Mongolia,country,30,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Morocco,country,166,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Netherlands,country,152,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Nigeria,country,18,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,North Macedonia,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Oman,country,13,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Pakistan,country,17,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Panama,country,40,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Papua New Guinea,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Peru,country,2,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Poland,country,19,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Portugal,country,34,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Puerto Rico,territory,2,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Romania,country,2,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Russia,country,13,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Senegal,country,1,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Serbia,country,20,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,South Africa,country,1487,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,South Korea,country,20,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Spain,country,276,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Sudan,country,35,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Sweden,country,30,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Switzerland,country,82,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Taiwan,country,19,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Trinidad and Tobago,country,21,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Tunisia,country,175,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Turkey,country,89,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,United Arab Emirates,country,10,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,United Kingdom,country,240,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,United States,country,588,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Zambia,country,20,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bluetongue,Zimbabwe,country,6,Orbivirus caerulinguae,Orbivirus_caerulinguae,FALSE,FALSE
+Bokeloh bat lyssavirus,France,country,3,Lyssavirus bokeloh,Lyssavirus_bokeloh,FALSE,FALSE
+Bokeloh bat lyssavirus,Germany,country,3,Lyssavirus bokeloh,Lyssavirus_bokeloh,FALSE,FALSE
+Bokeloh bat lyssavirus,Poland,country,1,Lyssavirus bokeloh,Lyssavirus_bokeloh,FALSE,FALSE
+Borna disease (encephalitis),Australia,country,4,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Austria,country,17,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Egypt,country,5,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),France,country,2,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Germany,country,247,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Iran,country,3,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Japan,country,7,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Liechtenstein,country,2,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Sweden,country,1,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borna disease (encephalitis),Switzerland,country,25,Orthobornavirus bornaense,Orthobornavirus_bornaense,FALSE,FALSE
+Borrelia hermsii,China,country,8,Borrelia hermsii,Borrelia_hermsii,FALSE,FALSE
+Borrelia hermsii,United States,country,527,Borrelia hermsii,Borrelia_hermsii,FALSE,FALSE
+Brazilian spotted fever,Brazil,country,340,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,China,country,6,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Colombia,country,23,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Costa Rica,country,5,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,India,country,5,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Kyrgyzstan,country,1,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Mexico,country,391,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Pakistan,country,22,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Panama,country,23,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,Thailand,country,1,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Brazilian spotted fever,United States,country,66,Rickettsia rickettsii,Rickettsia_rickettsii,FALSE,FALSE
+Chikungunya fever,Angola,country,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Anguilla,territory,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Antigua and Barbuda,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Argentina,country,59,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Aruba,territory,16,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Australia,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Bahamas,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Bangladesh,country,102,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Barbados,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Bhutan,country,6,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Bolivia,country,9,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Brazil,country,1553,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,British Virgin Islands,territory,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Cambodia,country,28,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Cameroon,country,9,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Cayman Islands,territory,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Central African Republic,country,35,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Chad,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,China,country,240,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Colombia,country,84,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Comoros,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Cook Islands,territory,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Cote d'Ivoire,country,9,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Cuba,country,10,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Curacao,territory,14,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Democratic Republic of the Congo,country,27,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Djibouti,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Dominica,country,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Dominican Republic,country,20,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,East Timor,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Ecuador,country,39,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,El Salvador,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Equatorial Guinea,country,11,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Fiji,country,13,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Finland,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,France,country,27,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,French Polynesia,territory,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Gabon,country,9,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Germany,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Grenada,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Guatemala,country,8,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Guyana,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Haiti,country,19,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Honduras,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Hong Kong,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,India,country,1594,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Indonesia,country,218,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Iran,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Ireland,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Israel,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Italy,country,70,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Jamaica,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Japan,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Kenya,country,66,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Kiribati,country,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Laos,country,62,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Madagascar,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Malaysia,country,180,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Maldives,country,51,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Mali,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Mauritius,country,14,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Mexico,country,133,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Micronesia,country,7,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Montserrat,territory,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Myanmar,country,67,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Nauru,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,New Caledonia,territory,12,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Nicaragua,country,154,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Nigeria,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Niue,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Pakistan,country,178,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Panama,country,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Papua New Guinea,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Paraguay,country,247,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Philippines,country,74,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Puerto Rico,territory,7,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Republic of the Congo,country,20,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Russia,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Saint Kitts and Nevis,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Saint Lucia,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Saint Martin,territory,6,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Saint Vincent and the Grenadines,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Samoa,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Saudi Arabia,country,10,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Senegal,country,90,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Seychelles,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Singapore,country,429,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,South Africa,country,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,South Korea,country,13,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Spain,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Sri Lanka,country,106,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Sudan,country,108,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Suriname,country,3,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Taiwan,country,8,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Tanzania,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Thailand,country,891,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Timor-Leste,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Tonga,country,5,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Trinidad and Tobago,country,13,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Turks and Caicos Islands,country,2,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Tuvalu,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Uganda,country,1,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,United States,country,139,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Uruguay,country,31,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Venezuela,country,13,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Vietnam,country,14,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Virgin Islands,country,4,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Chikungunya fever,Yemen,country,9,Alphavirus chikungunya,Alphavirus_chikungunya,FALSE,FALSE
+Colorado tick fever,China,country,13,Coltivirus dermacentoris,Coltivirus_dermacentoris,FALSE,FALSE
+Colorado tick fever,United States,country,358,Coltivirus dermacentoris,Coltivirus_dermacentoris,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Afghanistan,country,16,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Albania,country,11,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Algeria,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Armenia,country,45,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Bulgaria,country,54,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Cameroon,country,4,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Central African Republic,country,1,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,China,country,216,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Cote d'Ivoire,country,6,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Democratic Republic of the Congo,country,8,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Egypt,country,9,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,France,country,66,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Georgia,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Ghana,country,6,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Greece,country,29,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Guinea,country,40,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,India,country,237,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Indonesia,country,10,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Iran,country,177,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Iraq,country,6,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Italy,country,2,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Kazakhstan,country,57,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Kenya,country,13,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Kosovo,country,217,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Mali,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Mauritania,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Mongolia,country,4,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Morocco,country,1,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Namibia,country,16,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Nigeria,country,25,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,North Macedonia,country,15,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Oman,country,19,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Pakistan,country,278,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Portugal,country,1,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Republic of the Congo,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Russia,country,2234,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Saudi Arabia,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Senegal,country,48,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,South Africa,country,136,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Spain,country,57,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Sudan,country,18,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Syria,country,2,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Tajikistan,country,80,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Tunisia,country,5,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Turkey,country,996,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Turkmenistan,country,8,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Uganda,country,69,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,United Arab Emirates,country,34,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,United Kingdom,country,3,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,United States,country,14,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Uzbekistan,country,7,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Crimean-Congo hemorrhagic fever,Zambia,country,13,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,FALSE,FALSE
+Dengue,American Samoa,territory,14,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Angola,country,47,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Anguilla,territory,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Antigua and Barbuda,country,3,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Argentina,country,123,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Aruba,territory,4,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Australia,country,195,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Bahamas,country,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Bangladesh,country,637,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Barbados,country,27,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Belize,country,8,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Benin,country,8,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Bhutan,country,132,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Bolivia,country,40,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Brazil,country,5348,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,British Virgin Islands,territory,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Brunei,country,20,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Burkina Faso,country,55,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Cambodia,country,600,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Cameroon,country,44,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Cape Verde,country,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Chile,country,13,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,China,country,6513,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Colombia,country,1138,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Comoros,country,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Cook Islands,territory,8,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Costa Rica,country,218,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Cote d'Ivoire,country,78,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Croatia,country,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Cuba,country,425,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Democratic Republic of the Congo,country,16,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Djibouti,country,11,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Dominica,country,13,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Dominican Republic,country,145,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,East Timor,country,122,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Ecuador,country,121,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Egypt,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,El Salvador,country,18,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Equatorial Guinea,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Eritrea,country,8,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Ethiopia,country,49,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Fiji,country,56,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,France,country,126,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,French Polynesia,territory,324,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Gabon,country,29,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Gambia,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Germany,country,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Ghana,country,16,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Grenada,country,23,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Guam,territory,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Guatemala,country,11,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Guinea,country,3,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Guyana,country,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Haiti,country,39,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Honduras,country,66,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Hungary,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,India,country,5720,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Indonesia,country,1861,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Iran,country,5,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Ireland,country,5,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Israel,country,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Italy,country,60,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Jamaica,country,37,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Japan,country,142,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Kenya,country,189,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Kiribati,country,5,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Laos,country,551,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Madagascar,country,4,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Malaysia,country,1599,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Maldives,country,28,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Mali,country,114,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Marshall Islands,country,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Mauritania,country,12,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Mexico,country,587,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Micronesia,country,10,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Montserrat,territory,3,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Morocco,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Mozambique,country,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Myanmar,country,586,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Nauru,country,6,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Nepal,country,166,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,New Caledonia,territory,283,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Nicaragua,country,640,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Niger,country,4,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Nigeria,country,36,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Niue,country,4,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Pakistan,country,757,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Palau,country,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Panama,country,187,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Papua New Guinea,country,88,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Paraguay,country,281,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Peru,country,452,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Philippines,country,1550,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Portugal,country,73,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Puerto Rico,territory,379,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Qatar,country,5,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Republic of the Congo,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Russia,country,38,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Saint Barthelemy,territory,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Saint Kitts and Nevis,country,6,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Saint Lucia,country,11,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Saint Martin,territory,3,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Saint Vincent and the Grenadines,country,10,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Samoa,country,13,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Saudi Arabia,country,150,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Senegal,country,66,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Seychelles,country,8,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Singapore,country,3823,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Solomon Islands,country,80,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Somalia,country,57,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,South Africa,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,South Korea,country,23,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Spain,country,14,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Sri Lanka,country,593,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Sudan,country,7,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Suriname,country,32,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Sweden,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Switzerland,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Taiwan,country,1712,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Tanzania,country,402,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Thailand,country,5753,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Timor-Leste,country,13,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Togo,country,5,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Tonga,country,17,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Trinidad and Tobago,country,66,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Tuvalu,country,4,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Uganda,country,2,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,United Arab Emirates,country,1,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,United States,country,1219,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Uruguay,country,90,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Vanuatu,country,10,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Venezuela,country,525,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Vietnam,country,4303,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Virgin Islands,country,6,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Wallis and Futuna,territory,17,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Dengue,Yemen,country,19,Orthoflavivirus denguei,Orthoflavivirus_denguei,FALSE,FALSE
+Duvenhage,Netherlands,country,2,Lyssavirus duvenhage,Lyssavirus_duvenhage,FALSE,FALSE
+Duvenhage,South Africa,country,33,Lyssavirus duvenhage,Lyssavirus_duvenhage,FALSE,FALSE
+Duvenhage,Zimbabwe,country,3,Lyssavirus duvenhage,Lyssavirus_duvenhage,FALSE,FALSE
+EEE,Argentina,country,3,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Australia,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Brazil,country,43,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Canada,country,3,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,China,country,3,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Colombia,country,3,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Costa Rica,country,3,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Dominican Republic,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Ecuador,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Guatemala,country,2,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Guyana,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Jamaica,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Mexico,country,4,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Panama,country,3,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Peru,country,79,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Spain,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Trinidad and Tobago,country,1,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,United States,country,764,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Uruguay,country,5,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+EEE,Venezuela,country,17,Eastern equine encephalitis virus,Eastern_equine_encephalitis_virus,FALSE,FALSE
+Ebola virus disease,Canada,country,1,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Democratic Republic of the Congo,country,1129,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Gabon,country,180,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Guinea,country,449,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,India,country,3,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Italy,country,4,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Liberia,country,257,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Mali,country,4,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Nigeria,country,13,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Republic of the Congo,country,3,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Russia,country,1,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Sierra Leone,country,1521,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Switzerland,country,1,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,Uganda,country,4,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,United Kingdom,country,6,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ebola virus disease,United States,country,2,Orthoebolavirus zairense,Orthoebolavirus_zairense,FALSE,FALSE
+Ehrlichia chaffeensis,Argentina,country,7,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Brazil,country,1,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Cameroon,country,1,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,China,country,75,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Colombia,country,1,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Costa Rica,country,5,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Egypt,country,7,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Grenada,country,6,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,India,country,1,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Kenya,country,2,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Kyrgyzstan,country,1,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Mexico,country,13,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Nigeria,country,1,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,South Korea,country,10,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Taiwan,country,3,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Thailand,country,4,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,United States,country,88,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Ehrlichia chaffeensis,Vietnam,country,5,Ehrlichia chaffeensis,Ehrlichia_chaffeensis,FALSE,FALSE
+Epizootic haemorrhagic disease,Algeria,country,1,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Australia,country,62,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Bahrain,country,10,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Brazil,country,3,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Canada,country,13,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,China,country,94,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Cuba,country,20,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Ecuador,country,1,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Egypt,country,1,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,France,country,141,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Israel,country,100,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Italy,country,30,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Japan,country,146,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Morocco,country,1,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Nigeria,country,20,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,South Africa,country,23,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,South Korea,country,11,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Spain,country,77,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Taiwan,country,1,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Trinidad and Tobago,country,12,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,Tunisia,country,135,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Epizootic haemorrhagic disease,United States,country,975,Orbivirus ruminantium,Orbivirus_ruminantium,FALSE,FALSE
+Everglades,United States,country,17,Alphavirus everglades,Alphavirus_everglades,FALSE,FALSE
+Guanarito,Australia,country,10,Mammarenavirus guanaritoense,Mammarenavirus_guanaritoense,FALSE,FALSE
+Guanarito,United States,country,3,Mammarenavirus guanaritoense,Mammarenavirus_guanaritoense,FALSE,FALSE
+Guanarito,Venezuela,country,118,Mammarenavirus guanaritoense,Mammarenavirus_guanaritoense,FALSE,FALSE
+Hantavirus pulmonary syndrome; Sin Nombre,Mexico,country,9,Orthohantavirus sinnombreense,Orthohantavirus_sinnombreense,FALSE,FALSE
+Hantavirus pulmonary syndrome; Sin Nombre,United States,country,293,Orthohantavirus sinnombreense,Orthohantavirus_sinnombreense,FALSE,FALSE
+Hemorrhagic fever with renal syndrome (Hantaan virus),China,country,1170,Orthohantavirus hantanense,Orthohantavirus_hantanense,FALSE,FALSE
+Hemorrhagic fever with renal syndrome (Hantaan virus),India,country,1,Orthohantavirus hantanense,Orthohantavirus_hantanense,FALSE,FALSE
+Hemorrhagic fever with renal syndrome (Hantaan virus),Russia,country,94,Orthohantavirus hantanense,Orthohantavirus_hantanense,FALSE,FALSE
+Hemorrhagic fever with renal syndrome (Hantaan virus),South Korea,country,793,Orthohantavirus hantanense,Orthohantavirus_hantanense,FALSE,FALSE
+Hemorrhagic fever with renal syndrome (Hantaan virus),Vietnam,country,6,Orthohantavirus hantanense,Orthohantavirus_hantanense,FALSE,FALSE
+Hendra,Australia,country,212,Henipavirus hendraense,Henipavirus_hendraense,FALSE,FALSE
+Hendra,United States,country,1,Henipavirus hendraense,Henipavirus_hendraense,FALSE,FALSE
+Hepatitis E,Argentina,country,5,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Australia,country,28,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Austria,country,7,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Bangladesh,country,15,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Belarus,country,10,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Belgium,country,5,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Brazil,country,62,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Bulgaria,country,29,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Cambodia,country,2,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Cameroon,country,23,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Canada,country,121,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Central African Republic,country,13,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,China,country,884,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Cuba,country,19,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Czechia,country,72,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Denmark,country,4,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Egypt,country,5,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,France,country,153,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Germany,country,2240,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Ghana,country,13,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Greece,country,10,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Hong Kong,country,7,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Hungary,country,174,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,India,country,16,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Indonesia,country,154,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Ireland,country,9,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Israel,country,2,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Italy,country,500,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Japan,country,4992,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Kenya,country,2,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Malaysia,country,14,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Mexico,country,15,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Mongolia,country,179,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Myanmar,country,21,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Nepal,country,177,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Netherlands,country,115,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,New Zealand,country,1,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Nigeria,country,6,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Pakistan,country,140,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Philippines,country,22,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Poland,country,37,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Portugal,country,15,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Romania,country,2,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Russia,country,11,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Senegal,country,6,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Somalia,country,2,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,South Africa,country,6,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,South Korea,country,41,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,South Sudan,country,57,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Spain,country,618,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Sweden,country,6,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Switzerland,country,400,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Taiwan,country,20,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Thailand,country,99,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Tunisia,country,3,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Ukraine,country,3,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,United Arab Emirates,country,16,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,United Kingdom,country,10,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,United States,country,70,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Uruguay,country,3,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Vietnam,country,150,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Hepatitis E,Zambia,country,36,Paslahepevirus balayani,Paslahepevirus_balayani,FALSE,FALSE
+Influenza (H5N1 avian influenza),Afghanistan,country,45,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Algeria,country,11,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Antarctica,territory,131,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Argentina,country,142,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Australia,country,160,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Austria,country,64,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Azerbaijan,country,90,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Bangladesh,country,7285,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Belgium,country,23,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Benin,country,40,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Bhutan,country,462,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Bolivia,country,104,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Bosnia and Herzegovina,country,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Brazil,country,439,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Bulgaria,country,9,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Burkina Faso,country,128,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Cambodia,country,832,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Cameroon,country,51,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Canada,country,23715,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Chile,country,1774,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),China,country,7636,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Colombia,country,48,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Cote d'Ivoire,country,144,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Croatia,country,9,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Czechia,country,83,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Denmark,country,64,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Djibouti,country,1,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Egypt,country,3154,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),France,country,385,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Gabon,country,13,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Germany,country,1943,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Ghana,country,126,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Greenland,territory,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Hong Kong,country,625,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Hungary,country,42,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Iceland,country,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),India,country,1125,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Indonesia,country,2586,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Iran,country,22,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Iraq,country,71,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Israel,country,41,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Italy,country,119,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Japan,country,1024,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Kazakhstan,country,112,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Kuwait,country,64,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Laos,country,636,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Lebanon,country,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Lesotho,country,16,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Libya,country,4,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Madagascar,country,6,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Malaysia,country,29,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Maldives,country,14,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Mauritania,country,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Mexico,country,57,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Mongolia,country,107,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Mozambique,country,5,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Myanmar,country,120,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Namibia,country,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Nepal,country,51,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Netherlands,country,41,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),New Zealand,country,9,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Niger,country,76,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Nigeria,country,1892,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),North Korea,country,1,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Pakistan,country,171,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Papua New Guinea,country,9,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Peru,country,319,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Philippines,country,26,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Poland,country,16,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Romania,country,61,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Russia,country,676,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Saudi Arabia,country,19,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Serbia,country,32,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Slovakia,country,27,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Slovenia,country,28,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Somalia,country,18,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),South Africa,country,8,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),South Georgia and the South Sandwich Islands,territory,288,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),South Korea,country,455,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Spain,country,82,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Sri Lanka,country,7,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Sudan,country,51,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Sweden,country,85,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Switzerland,country,402,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Taiwan,country,10,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Thailand,country,1503,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Togo,country,30,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Turkey,country,247,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Ukraine,country,39,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),United Kingdom,country,115,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),United States,country,125259,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Uruguay,country,246,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Venezuela,country,16,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Vietnam,country,6264,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H5N1 avian influenza),Yemen,country,28,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,FALSE,FALSE
+Influenza (H7N9 avian influenza),Argentina,country,8,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Australia,country,42,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Bangladesh,country,24,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Canada,country,49,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Chile,country,16,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),China,country,14951,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Czechia,country,16,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Egypt,country,8,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Georgia,country,2,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Germany,country,2,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Guatemala,country,16,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Italy,country,2,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Japan,country,63,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Mongolia,country,10,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Netherlands,country,16,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),South Korea,country,271,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Spain,country,10,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Sweden,country,17,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),Taiwan,country,85,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Influenza (H7N9 avian influenza),United States,country,520,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,FALSE,FALSE
+Irkut,China,country,3,Lyssavirus irkut,Lyssavirus_irkut,FALSE,FALSE
+Irkut,Russia,country,6,Lyssavirus irkut,Lyssavirus_irkut,FALSE,FALSE
+Jamestown Canyon,Canada,country,8,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Jamestown Canyon,Finland,country,2,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Jamestown Canyon,Greenland,territory,1,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Jamestown Canyon,Mexico,country,3,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Jamestown Canyon,Russia,country,18,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Jamestown Canyon,Sweden,country,5,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Jamestown Canyon,United States,country,397,Orthobunyavirus jamestownense,Orthobunyavirus_jamestownense,FALSE,FALSE
+Japanese encephalitis,Angola,country,1,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Australia,country,195,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Cambodia,country,12,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,China,country,1354,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Hong Kong,country,1,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,India,country,391,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Indonesia,country,39,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Japan,country,794,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Laos,country,5,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Malaysia,country,6,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Myanmar,country,2,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Papua New Guinea,country,4,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Philippines,country,11,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Singapore,country,19,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,South Korea,country,200,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Spain,country,1,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Sri Lanka,country,2,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Taiwan,country,203,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Thailand,country,46,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Japanese encephalitis,Vietnam,country,47,Orthoflavivirus japonicum,Orthoflavivirus_japonicum,FALSE,FALSE
+Kyasanur Forest disease,China,country,2,Orthoflavivirus kyasanurense,Orthoflavivirus_kyasanurense,FALSE,FALSE
+Kyasanur Forest disease,Egypt,country,12,Orthoflavivirus kyasanurense,Orthoflavivirus_kyasanurense,FALSE,FALSE
+Kyasanur Forest disease,India,country,216,Orthoflavivirus kyasanurense,Orthoflavivirus_kyasanurense,FALSE,FALSE
+Kyasanur Forest disease,Saudi Arabia,country,64,Orthoflavivirus kyasanurense,Orthoflavivirus_kyasanurense,FALSE,FALSE
+La Crosse encephalitis,United States,country,324,Orthobunyavirus lacrosseense,Orthobunyavirus_lacrosseense,FALSE,FALSE
+Lassa fever,Benin,country,32,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,China,country,1,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Cote d'Ivoire,country,58,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Ghana,country,4,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Guinea,country,564,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Liberia,country,83,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Mali,country,27,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Nigeria,country,1487,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Sierra Leone,country,415,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,Togo,country,6,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Lassa fever,United States,country,7,Mammarenavirus lassaense,Mammarenavirus_lassaense,FALSE,FALSE
+Leishmania aethiopica,Eritrea,country,1,Leishmania aethiopica,Leishmania_aethiopica,FALSE,FALSE
+Leishmania aethiopica,Ethiopia,country,81,Leishmania aethiopica,Leishmania_aethiopica,FALSE,FALSE
+Leishmania aethiopica,Kenya,country,5,Leishmania aethiopica,Leishmania_aethiopica,FALSE,FALSE
+Lujo hemorrhagic fever,Canada,country,2,Mammarenavirus lujoense,Mammarenavirus_lujoense,FALSE,FALSE
+Lujo hemorrhagic fever,South Africa,country,4,Mammarenavirus lujoense,Mammarenavirus_lujoense,FALSE,FALSE
+Lujo hemorrhagic fever,United States,country,3,Mammarenavirus lujoense,Mammarenavirus_lujoense,FALSE,FALSE
+Lumpy skin disease,Albania,country,7,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Algeria,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Bangladesh,country,130,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Belgium,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Bhutan,country,33,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Botswana,country,6,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Bulgaria,country,4,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Burkina Faso,country,2,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Cameroon,country,4,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,China,country,70,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Cote d'Ivoire,country,20,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Croatia,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Egypt,country,222,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Ethiopia,country,75,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Greece,country,9,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Hong Kong,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,India,country,760,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Indonesia,country,25,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Iran,country,30,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Iraq,country,50,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Israel,country,13,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Italy,country,3,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Japan,country,3,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Jordan,country,4,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Kazakhstan,country,7,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Kenya,country,21,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Kosovo,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Lesotho,country,33,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Libya,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Malaysia,country,2,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Mongolia,country,15,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Morocco,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Myanmar,country,24,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Namibia,country,37,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Nepal,country,36,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Niger,country,3,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Nigeria,country,251,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,North Macedonia,country,2,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Oman,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Pakistan,country,121,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Russia,country,84,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Saudi Arabia,country,15,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Senegal,country,2,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Serbia,country,6,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Singapore,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,South Africa,country,42,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,South Korea,country,15,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Sudan,country,14,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Syria,country,5,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Taiwan,country,9,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Tanzania,country,76,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Thailand,country,108,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Tunisia,country,1,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Turkey,country,61,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Uganda,country,8,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Vietnam,country,185,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Lumpy skin disease,Zimbabwe,country,13,Capripoxvirus lumpyskinpox,Capripoxvirus_lumpyskinpox,FALSE,FALSE
+Machupo,Bolivia,country,104,Mammarenavirus machupoense,Mammarenavirus_machupoense,FALSE,FALSE
+Machupo,China,country,1,Mammarenavirus machupoense,Mammarenavirus_machupoense,FALSE,FALSE
+Machupo,United States,country,32,Mammarenavirus machupoense,Mammarenavirus_machupoense,FALSE,FALSE
+Marburg virus disease,Angola,country,14,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Canada,country,3,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Democratic Republic of the Congo,country,157,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Gabon,country,1,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Germany,country,4,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Ghana,country,2,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Guinea,country,7,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Kenya,country,11,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Netherlands,country,1,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Rwanda,country,20,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Sierra Leone,country,22,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,South Africa,country,2,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Tanzania,country,5,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Uganda,country,98,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,United States,country,7,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Marburg virus disease,Zambia,country,4,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,FALSE,FALSE
+Mayaro,Bolivia,country,9,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Brazil,country,97,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Colombia,country,2,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Haiti,country,5,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Peru,country,21,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Spain,country,1,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Trinidad and Tobago,country,4,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,United States,country,1,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Mayaro,Venezuela,country,14,Alphavirus mayaro,Alphavirus_mayaro,FALSE,FALSE
+Menangle,Australia,country,3,Pararubulavirus menangleense,Pararubulavirus_menangleense,FALSE,FALSE
+Mpox (Monkeypox),Argentina,country,6,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Australia,country,205,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Austria,country,14,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Belgium,country,279,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Benin,country,5,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Brazil,country,27,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Cambodia,country,20,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Cameroon,country,21,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Canada,country,239,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Central African Republic,country,55,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Chile,country,9,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),China,country,44,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Colombia,country,286,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Cote d'Ivoire,country,19,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Czechia,country,2,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Democratic Republic of the Congo,country,1406,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Denmark,country,7,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Egypt,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Finland,country,3,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),France,country,31,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Gabon,country,3,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Germany,country,1619,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Ghana,country,18,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Guinea,country,17,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Hong Kong,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),India,country,3,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Ireland,country,216,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Israel,country,3,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Italy,country,88,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Japan,country,64,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Kenya,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Liberia,country,7,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Malawi,country,3,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Mexico,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Netherlands,country,5,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Nigeria,country,195,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Peru,country,10,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Philippines,country,2,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Poland,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Portugal,country,794,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Republic of the Congo,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Romania,country,20,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Rwanda,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Sierra Leone,country,374,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Singapore,country,2,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Slovakia,country,4,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Slovenia,country,48,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),South Africa,country,17,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),South Korea,country,166,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Spain,country,19,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Sudan,country,2,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Switzerland,country,8,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Taiwan,country,10,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Thailand,country,16,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Togo,country,2,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Uganda,country,1,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),United Kingdom,country,324,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),United States,country,5001,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Mpox (Monkeypox),Vietnam,country,2,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,FALSE,FALSE
+Murine typhus,Algeria,country,1,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Azerbaijan,country,2,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,China,country,2,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Costa Rica,country,2,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Egypt,country,1,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Ethiopia,country,2,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Georgia,country,1,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Germany,country,1,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,India,country,31,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Indonesia,country,16,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Malaysia,country,1,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Mexico,country,50,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Myanmar,country,6,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Pakistan,country,1,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,South Africa,country,3,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,South Korea,country,4,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Switzerland,country,2117,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Tanzania,country,2,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,Thailand,country,24,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murine typhus,United States,country,36,Rickettsia typhi,Rickettsia_typhi,FALSE,FALSE
+Murray Valley encephalitis,Australia,country,307,Orthoflavivirus murrayense,Orthoflavivirus_murrayense,FALSE,FALSE
+Murray Valley encephalitis,Canada,country,1,Orthoflavivirus murrayense,Orthoflavivirus_murrayense,FALSE,FALSE
+Murray Valley encephalitis,Papua New Guinea,country,13,Orthoflavivirus murrayense,Orthoflavivirus_murrayense,FALSE,FALSE
+Nipah virus disease,Bangladesh,country,135,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,Cambodia,country,32,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,India,country,70,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,Indonesia,country,7,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,Malaysia,country,17,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,Sri Lanka,country,7,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,Thailand,country,103,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+Nipah virus disease,United States,country,1,Henipavirus nipahense,Henipavirus_nipahense,FALSE,FALSE
+O'nyong-nyong,Central African Republic,country,1,Onyong-nyong virus,Onyong_nyong_virus,FALSE,FALSE
+O'nyong-nyong,Chad,country,4,Onyong-nyong virus,Onyong_nyong_virus,FALSE,FALSE
+O'nyong-nyong,Kenya,country,1,Onyong-nyong virus,Onyong_nyong_virus,FALSE,FALSE
+O'nyong-nyong,Nigeria,country,1,Onyong-nyong virus,Onyong_nyong_virus,FALSE,FALSE
+O'nyong-nyong,Uganda,country,4,Onyong-nyong virus,Onyong_nyong_virus,FALSE,FALSE
+Omsk HF,Russia,country,122,Orthoflavivirus omskense,Orthoflavivirus_omskense,FALSE,FALSE
+Oropouche fever,Bolivia,country,102,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Brazil,country,2721,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Colombia,country,101,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Cuba,country,26,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Ecuador,country,19,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Haiti,country,3,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Italy,country,7,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Panama,country,18,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Peru,country,121,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Portugal,country,1,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Spain,country,9,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Trinidad and Tobago,country,6,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,United States,country,7,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Oropouche fever,Venezuela,country,12,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,FALSE,FALSE
+Plague,Angola,country,205,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Armenia,country,2401,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Azerbaijan,country,4754,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Bolivia,country,21,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Brazil,country,19,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Canada,country,1164,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,China,country,52845,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Democratic Republic of the Congo,country,9,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Ecuador,country,1,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,France,country,14,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Georgia,country,793,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Germany,country,8,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,India,country,829,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Indonesia,country,23,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Iran,country,16,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Israel,country,1,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Italy,country,2,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Japan,country,17,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Kazakhstan,country,13464,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Kenya,country,11,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Kyrgyzstan,country,4481,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Madagascar,country,234,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Mongolia,country,7252,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Myanmar,country,2,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Netherlands,country,43,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Peru,country,34912,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Republic of the Congo,country,13,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Russia,country,17261,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Tajikistan,country,351,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Turkmenistan,country,2777,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,United Kingdom,country,14,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,United States,country,5112,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Uzbekistan,country,909,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Vietnam,country,1768,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Plague,Zimbabwe,country,169,Yersinia pestis,Yersinia_pestis,FALSE,FALSE
+Powassan,Canada,country,24,Orthoflavivirus powassanense,Orthoflavivirus_powassanense,FALSE,FALSE
+Powassan,Russia,country,19,Orthoflavivirus powassanense,Orthoflavivirus_powassanense,FALSE,FALSE
+Powassan,United States,country,536,Orthoflavivirus powassanense,Orthoflavivirus_powassanense,FALSE,FALSE
+Prospect Hill,United States,country,2,Orthohantavirus prospectense,Orthohantavirus_prospectense,FALSE,FALSE
+Q fever,Algeria,country,5,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Argentina,country,3,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Australia,country,322,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Austria,country,117,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Belarus,country,3,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Belgium,country,2,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Brazil,country,108,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Bulgaria,country,5,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Canada,country,154,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,China,country,390,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Colombia,country,24,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Cuba,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Egypt,country,54,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Ethiopia,country,2,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,France,country,3849,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Germany,country,479,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Ghana,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Greece,country,142,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Guinea,country,4,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Hungary,country,40,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,India,country,199,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Indonesia,country,16,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Iran,country,120,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Iraq,country,230,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Israel,country,49,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Italy,country,14,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Japan,country,60,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Kazakhstan,country,12,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Kenya,country,37,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Kyrgyzstan,country,5,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Lesotho,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Malaysia,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Mexico,country,29,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Mongolia,country,8,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Morocco,country,3,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Namibia,country,10,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Netherlands,country,45,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Nigeria,country,20,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Pakistan,country,18,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Philippines,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Portugal,country,9,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Romania,country,7,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Russia,country,235,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Saudi Arabia,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Senegal,country,225,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Serbia,country,7,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Slovakia,country,82,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,South Africa,country,26,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,South Korea,country,255,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Spain,country,6,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Switzerland,country,2,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Thailand,country,100,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Tunisia,country,35,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Turkey,country,110,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Ukraine,country,1,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,United Arab Emirates,country,3,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,United Kingdom,country,1525,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,United States,country,1618,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Q fever,Zambia,country,6,Coxiella burnetii,Coxiella_burnetii,FALSE,FALSE
+Rabies,Afghanistan,country,43,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Algeria,country,4,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Argentina,country,536,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Australia,country,3,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Austria,country,4,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Azerbaijan,country,25,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Bangladesh,country,16,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Belarus,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Belgium,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Benin,country,9,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Bhutan,country,24,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Bosnia and Herzegovina,country,24,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Botswana,country,41,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Brazil,country,4093,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Bulgaria,country,30,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Burkina Faso,country,50,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Burundi,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Cambodia,country,372,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Cameroon,country,173,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Canada,country,1143,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Central African Republic,country,215,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Chad,country,101,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Chile,country,174,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,China,country,2890,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Colombia,country,260,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Costa Rica,country,49,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Cote d'Ivoire,country,16,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Croatia,country,98,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Cuba,country,121,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Czechia,country,11,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Democratic Republic of the Congo,country,31,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Dominican Republic,country,47,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Ecuador,country,76,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Egypt,country,51,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,El Salvador,country,2,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Equatorial Guinea,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Estonia,country,66,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Ethiopia,country,238,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Finland,country,8,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,France,country,42,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Gabon,country,15,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Gambia,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Georgia,country,153,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Germany,country,28,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Ghana,country,83,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Greece,country,11,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Greenland,territory,99,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Grenada,country,24,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Guatemala,country,14,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Guinea,country,14,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Guyana,country,4,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Haiti,country,94,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Honduras,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Hungary,country,160,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,India,country,1908,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Indonesia,country,80,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Iran,country,180,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Iraq,country,70,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Israel,country,216,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Italy,country,232,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Japan,country,21,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Jordan,country,6,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Kazakhstan,country,39,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Kenya,country,315,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Laos,country,121,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Latvia,country,82,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Lebanon,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Lesotho,country,22,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Liberia,country,20,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Lithuania,country,36,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Madagascar,country,89,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Malawi,country,65,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Malaysia,country,21,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Mali,country,36,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Mauritania,country,72,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Mexico,country,467,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Moldova,country,33,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Mongolia,country,92,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Montenegro,country,6,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Morocco,country,18,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Mozambique,country,24,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Myanmar,country,9,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Namibia,country,98,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Nepal,country,115,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Netherlands,country,13,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Niger,country,19,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Nigeria,country,350,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Norway,country,3,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Oman,country,84,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Pakistan,country,63,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Paraguay,country,16,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Peru,country,1084,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Philippines,country,1116,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Poland,country,272,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Puerto Rico,territory,49,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Qatar,country,2,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Republic of the Congo,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Romania,country,125,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Russia,country,739,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Rwanda,country,2,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Saudi Arabia,country,10,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Senegal,country,51,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Serbia,country,120,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Sierra Leone,country,5,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Slovakia,country,3,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Slovenia,country,52,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Somalia,country,2,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,South Africa,country,1906,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,South Korea,country,177,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Spain,country,92,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Sri Lanka,country,183,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Sudan,country,33,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Switzerland,country,4,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Syria,country,1,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Taiwan,country,152,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Tajikistan,country,5,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Tanzania,country,446,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Thailand,country,606,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Trinidad and Tobago,country,37,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Tunisia,country,113,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Turkey,country,325,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Uganda,country,49,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Ukraine,country,65,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,United Arab Emirates,country,15,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,United Kingdom,country,9,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,United States,country,3681,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Uruguay,country,23,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Vietnam,country,118,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Zambia,country,200,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Rabies,Zimbabwe,country,242,Lyssavirus rabies,Lyssavirus_rabies,FALSE,FALSE
+Reovirus infection (usually mild),Austria,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Brazil,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Cameroon,country,25,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Canada,country,250,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),China,country,497,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),France,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Germany,country,31,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Hungary,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),India,country,20,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Indonesia,country,30,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Italy,country,220,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Japan,country,590,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Malaysia,country,11,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Mongolia,country,2,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Peru,country,3,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Russia,country,1,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Slovenia,country,80,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),South Africa,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),South Korea,country,48,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Switzerland,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Taiwan,country,45,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Thailand,country,10,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),United Kingdom,country,13,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),United States,country,261,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Reovirus infection (usually mild),Zambia,country,30,Orthoreovirus mammalis,Orthoreovirus_mammalis,FALSE,FALSE
+Rickettsia conorii indica,China,country,1,Rickettsia conorii subsp. indica,Rickettsia_conorii_subsp_indica,FALSE,FALSE
+Rickettsia conorii indica,India,country,23,Rickettsia conorii subsp. indica,Rickettsia_conorii_subsp_indica,FALSE,FALSE
+Rickettsia conorii indica,Italy,country,2,Rickettsia conorii subsp. indica,Rickettsia_conorii_subsp_indica,FALSE,FALSE
+Rift Valley fever,Angola,country,5,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Botswana,country,10,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Brazil,country,3,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Burkina Faso,country,4,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Burundi,country,17,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Central African Republic,country,37,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Chad,country,5,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,China,country,25,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Egypt,country,64,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Gabon,country,4,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Guinea,country,8,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Kenya,country,281,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Madagascar,country,198,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Mali,country,4,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Mauritania,country,129,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Mozambique,country,3,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Namibia,country,15,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Niger,country,4,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Nigeria,country,12,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Russia,country,3,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Rwanda,country,131,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Saudi Arabia,country,11,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Senegal,country,58,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Somalia,country,2,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,South Africa,country,452,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Spain,country,5,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Sudan,country,28,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Tanzania,country,15,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Uganda,country,190,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,United States,country,11,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Zambia,country,2,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rift Valley fever,Zimbabwe,country,51,Phlebovirus riftense,Phlebovirus_riftense,FALSE,FALSE
+Rocio,Brazil,country,12,Rocio virus,Rocio_virus,FALSE,FALSE
+Ross River virus,American Samoa,territory,1,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Ross River virus,Australia,country,576,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Ross River virus,China,country,2,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Ross River virus,Cook Islands,territory,13,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Ross River virus,Fiji,country,3,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Ross River virus,Papua New Guinea,country,1,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Ross River virus,Spain,country,1,Alphavirus rossriver,Alphavirus_rossriver,FALSE,FALSE
+Schmallenberg,Australia,country,9,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Belgium,country,94,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Germany,country,107,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Hungary,country,21,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Israel,country,31,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Italy,country,26,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Japan,country,38,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Liechtenstein,country,4,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Netherlands,country,11,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Nigeria,country,2,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Norway,country,3,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Poland,country,42,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,South Africa,country,8,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Sweden,country,15,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Switzerland,country,10,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Taiwan,country,2,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,Turkey,country,28,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Schmallenberg,United Kingdom,country,58,Orthobunyavirus schmallenbergense,Orthobunyavirus_schmallenbergense,FALSE,FALSE
+Scrub typhus,Australia,country,101,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Bangladesh,country,40,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Bhutan,country,5,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Cambodia,country,133,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Chile,country,1,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,China,country,1345,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,India,country,2163,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Japan,country,177,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Laos,country,2,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Malaysia,country,49,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Myanmar,country,9,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Nepal,country,13,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Papua New Guinea,country,218,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,South Korea,country,313,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Sri Lanka,country,16,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Taiwan,country,77,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Thailand,country,2814,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,United Arab Emirates,country,1,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Scrub typhus,Vietnam,country,229,Orientia tsutsugamushi,Orientia_tsutsugamushi,FALSE,FALSE
+Severe fever with thrombocytopenia syndrome (SFTS),China,country,7402,Bandavirus dabieense,Bandavirus_dabieense,FALSE,FALSE
+Severe fever with thrombocytopenia syndrome (SFTS),Japan,country,732,Bandavirus dabieense,Bandavirus_dabieense,FALSE,FALSE
+Severe fever with thrombocytopenia syndrome (SFTS),Pakistan,country,4,Bandavirus dabieense,Bandavirus_dabieense,FALSE,FALSE
+Severe fever with thrombocytopenia syndrome (SFTS),South Korea,country,1794,Bandavirus dabieense,Bandavirus_dabieense,FALSE,FALSE
+Severe fever with thrombocytopenia syndrome (SFTS),Taiwan,country,16,Bandavirus dabieense,Bandavirus_dabieense,FALSE,FALSE
+Severe fever with thrombocytopenia syndrome (SFTS),Thailand,country,27,Bandavirus dabieense,Bandavirus_dabieense,FALSE,FALSE
+St. Louis encephalitis,Argentina,country,41,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Brazil,country,81,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Colombia,country,6,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Guatemala,country,4,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Haiti,country,2,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Jamaica,country,1,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Mexico,country,6,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Panama,country,5,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Peru,country,3,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Spain,country,1,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,Trinidad and Tobago,country,4,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+St. Louis encephalitis,United States,country,264,Orthoflavivirus louisense,Orthoflavivirus_louisense,FALSE,FALSE
+Sudan virus disease (Ebola virus disease),Canada,country,1,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,FALSE,FALSE
+Sudan virus disease (Ebola virus disease),South Sudan,country,1,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,FALSE,FALSE
+Sudan virus disease (Ebola virus disease),Sudan,country,11,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,FALSE,FALSE
+Sudan virus disease (Ebola virus disease),Uganda,country,137,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,FALSE,FALSE
+Tick-borne encephalitis,Austria,country,8,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Belarus,country,4,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Belgium,country,2,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Bosnia and Herzegovina,country,6,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,China,country,170,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Croatia,country,6,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Czechia,country,77,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Denmark,country,4,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Estonia,country,40,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Finland,country,85,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,France,country,3,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Germany,country,112,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Hungary,country,9,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Italy,country,32,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Japan,country,15,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Kazakhstan,country,35,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Kyrgyzstan,country,12,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Latvia,country,12,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Lithuania,country,123,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Moldova,country,9,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Mongolia,country,56,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Netherlands,country,13,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Norway,country,6,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Poland,country,19,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Russia,country,2064,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Serbia,country,1,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Slovakia,country,16,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Slovenia,country,224,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,South Korea,country,34,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Spain,country,1,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Sweden,country,34,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Switzerland,country,178,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Tunisia,country,1,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,Ukraine,country,11,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,United Kingdom,country,3,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Tick-borne encephalitis,United States,country,2,Orthoflavivirus encephalitidis,Orthoflavivirus_encephalitidis,FALSE,FALSE
+Venezuelan equine encephalitis,Argentina,country,14,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Australia,country,2,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Belize,country,1,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Bolivia,country,9,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Brazil,country,5,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Colombia,country,40,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Costa Rica,country,3,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Ecuador,country,5,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Guatemala,country,19,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Honduras,country,3,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Mexico,country,67,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Nicaragua,country,1,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Panama,country,83,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Peru,country,77,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Spain,country,1,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Trinidad and Tobago,country,14,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,United States,country,5,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+Venezuelan equine encephalitis,Venezuela,country,18,Alphavirus venezuelan,Alphavirus_venezuelan,FALSE,FALSE
+WEE,Argentina,country,30,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Brazil,country,4,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Canada,country,6,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,China,country,1,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Cuba,country,1,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Guyana,country,1,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Russia,country,1,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Spain,country,1,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,United States,country,69,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+WEE,Uruguay,country,30,Western equine encephalitis virus,Western_equine_encephalitis_virus,FALSE,FALSE
+West Nile fever,Albania,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Argentina,country,8,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Australia,country,84,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Austria,country,66,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Azerbaijan,country,7,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Belarus,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Belgium,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Bosnia and Herzegovina,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Brazil,country,16,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,British Virgin Islands,territory,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Bulgaria,country,4,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Canada,country,42,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Central African Republic,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,China,country,6,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Colombia,country,9,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Costa Rica,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Croatia,country,24,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Cyprus,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Czechia,country,10,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Democratic Republic of the Congo,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Djibouti,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Egypt,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Estonia,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Ethiopia,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,France,country,72,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Germany,country,269,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Greece,country,222,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Hungary,country,172,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,India,country,87,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Iran,country,11,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Iraq,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Israel,country,144,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Italy,country,631,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Kazakhstan,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Kenya,country,16,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Kosovo,country,5,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Madagascar,country,15,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Malaysia,country,32,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Mali,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Mexico,country,36,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Moldova,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Morocco,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Namibia,country,10,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Nepal,country,4,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Netherlands,country,14,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Nigeria,country,14,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Pakistan,country,4,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Poland,country,6,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Portugal,country,4,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Puerto Rico,territory,5,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Romania,country,170,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Russia,country,255,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Senegal,country,43,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Serbia,country,92,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Singapore,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Slovakia,country,63,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Slovenia,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,South Africa,country,102,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,South Korea,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Spain,country,98,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Switzerland,country,8,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Tajikistan,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Tanzania,country,2,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Tunisia,country,51,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Turkey,country,68,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Uganda,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Ukraine,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,United Arab Emirates,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,United Kingdom,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,United States,country,5261,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Vietnam,country,5,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Zambia,country,3,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+West Nile fever,Zimbabwe,country,1,Orthoflavivirus nilense,Orthoflavivirus_nilense,FALSE,FALSE
+Yellow fever,Angola,country,5,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Argentina,country,27,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Australia,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Belgium,country,9,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Bolivia,country,16,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Brazil,country,1502,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Burkina Faso,country,7,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Cameroon,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Central African Republic,country,10,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,China,country,23,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Colombia,country,11,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Cote d'Ivoire,country,7,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Democratic Republic of the Congo,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Ecuador,country,6,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Ethiopia,country,14,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,France,country,33,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Gambia,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Germany,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Ghana,country,4,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Guinea,country,3,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Guinea-Bissau,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Kenya,country,3,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Mali,country,4,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Mauritania,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Netherlands,country,8,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Nigeria,country,51,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Panama,country,5,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Peru,country,60,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Republic of the Congo,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Russia,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Senegal,country,82,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Sierra Leone,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Singapore,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Spain,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Sudan,country,15,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Suriname,country,2,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Trinidad and Tobago,country,25,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Uganda,country,10,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,United Kingdom,country,1,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,United States,country,5,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Yellow fever,Venezuela,country,28,Orthoflavivirus flavi,Orthoflavivirus_flavi,FALSE,FALSE
+Zika virus disease,Angola,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Argentina,country,3,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Australia,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Bangladesh,country,7,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Barbados,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Brazil,country,385,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Burkina Faso,country,3,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Cambodia,country,12,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Canada,country,6,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Cape Verde,country,3,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Central African Republic,country,5,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Chile,country,65,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,China,country,53,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Colombia,country,121,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Cook Islands,territory,8,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Costa Rica,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Cote d'Ivoire,country,33,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Cuba,country,69,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Dominican Republic,country,31,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Ecuador,country,14,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,El Salvador,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Fiji,country,6,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,France,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,French Polynesia,territory,25,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Gabon,country,4,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Germany,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Grenada,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Guatemala,country,6,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Guinea,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Guyana,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Haiti,country,28,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Honduras,country,36,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Hungary,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,India,country,61,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Indonesia,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Israel,country,4,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Italy,country,11,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Jamaica,country,5,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Japan,country,7,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Kenya,country,3,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Malaysia,country,48,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Mexico,country,113,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Micronesia,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,New Caledonia,territory,8,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,New Zealand,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Nicaragua,country,142,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Nigeria,country,7,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Norway,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Pakistan,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Panama,country,16,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Peru,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Philippines,country,6,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Portugal,country,4,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Puerto Rico,territory,107,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Russia,country,27,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Samoa,country,4,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Senegal,country,89,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Seychelles,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Singapore,country,126,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Solomon Islands,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,South Korea,country,4,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Spain,country,11,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Sri Lanka,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Sudan,country,11,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Suriname,country,8,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Taiwan,country,8,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Thailand,country,241,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Tonga,country,2,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Trinidad and Tobago,country,3,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Uganda,country,27,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,United Kingdom,country,1,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,United States,country,119,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Venezuela,country,4,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Vietnam,country,32,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zika virus disease,Virgin Islands,country,5,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Afghanistan,country,1,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Cambodia,country,18,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Cameroon,country,1,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),China,country,9,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),India,country,17,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Indonesia,country,56,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Israel,country,2,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Laos,country,43,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Malaysia,country,1689,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Myanmar,country,84,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Philippines,country,23,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Singapore,country,40,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Sri Lanka,country,1,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Thailand,country,315,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE
+Zoonotic malaria (P. knowlesi),Vietnam,country,27,Plasmodium knowlesi,Plasmodium_knowlesi,FALSE,FALSE

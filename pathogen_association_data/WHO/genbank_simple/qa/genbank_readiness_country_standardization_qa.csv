@@ -1,0 +1,11 @@
+metric,value
+status_country,619192
+status_historical,1482
+status_missing,407385
+status_ocean_or_non_country,18
+status_review,23
+status_territory,6658
+records_total,1034758
+records_with_standardized_country,627355
+records_recovered_from_lat_lon,117
+unique_country_standardized,232

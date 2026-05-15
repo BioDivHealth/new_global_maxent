@@ -20,9 +20,9 @@ association data, with a focus on WHO priority pathogens.
 - `role_annotation/`
   Builds conservative host/vector role candidate scaffolds and keeps final
   biological role review separate from the core network evidence tables.
-- `genbank/`
-  Adds pathogen-country enrichment from GenBank/NCBI and contains the shared
-  helper layer plus source-routing rules.
+- `genbank_simple/`
+  Builds and runs the current GenBank-simple country-evidence workflow,
+  including the expanded readiness manifest and readiness-combined summaries.
 
 ### Project Goals
 
@@ -90,11 +90,11 @@ The intended workflow is:
 6.  **Host-Vector Integration (`host_vector_integration/5_8_*` to `host_vector_integration/5_11_*`):**
     -   These scripts connect the WHO disease/pathogen network to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/WHO/networks/`.
 
-7.  **Geographic Enrichment (`genbank/5_7_*`):**
-    -   `genbank/5_7_GenBank_Pathogen_Country_Metadata.R`: Builds GenBank-ready pathogen queries from the WHO master tables, writes a per-pathogen metadata-source recommendation (`nuccore` vs `biosample`), fetches accession-level nuccore metadata, and writes pathogen-country summaries under `pathogen_association_data/WHO/genbank/`.
-    -   `genbank/5_7a_GenBank_Search_Diagnostics.R`: Runs lightweight NCBI ESearch diagnostics for the same WHO pathogen manifest and writes per-query success/failure tables before any accession fetching.
-    -   `genbank/genbank_metadata_helpers.R`: Shared helper layer for query building, NCBI search/fetch plumbing, taxonomy-link fallback, and metadata-source routing.
-    -   `genbank/GENBANK_METADATA_SOURCE_RULES.md`: Exact routing rules for deciding when a pathogen should start in `nuccore` versus `biosample`, plus when a weak `nuccore` result should be escalated to `biosample` review.
+7.  **Geographic Enrichment (`genbank_simple/`):**
+    -   `genbank_simple/01b_build_readiness_manifest.R`: Builds the expanded readiness manifest from the disease modelling readiness surface.
+    -   `genbank_simple/02_run_genbank_full_retrieval.R`: Retrieves GenBank nuccore records for approved manifest targets. In readiness mode it writes per-target checkpoints under `pathogen_association_data/WHO/genbank_simple/pathogen_runs_readiness/`.
+    -   `genbank_simple/03_summarize_country_metadata.R` to `genbank_simple/06_map_disease_countries.R`: Summarize, QA, standardize, and map country evidence. With `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined`, these scripts bind the original 19-target run with the expanded readiness run, keep the final disease-country table at the top of `pathogen_association_data/WHO/genbank_simple/`, and place review/control files under `qa/` and lower-level derived tables under `intermediate/`.
+    -   Current modelling-readiness handoffs should use `pathogen_association_data/WHO/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv` when present.
 
 8.  **Role Annotation (`role_annotation/6_1_*`):**
     -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the canonical WHO disease-pathogen-host backbone for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/WHO/role_annotation/`.
