@@ -1,0 +1,86 @@
+table,disease_name,claim,confidence,rows,entities,manual_review_rows
+host_role_assignments,Argentine hemorrhagic fever,incidental_host,high,1,1,0
+host_role_assignments,Argentine hemorrhagic fever,reservoir_host,high,1,1,0
+host_role_assignments,Chikungunya fever,amplifying_host,high,1,1,0
+host_role_assignments,Crimean-Congo hemorrhagic fever,amplifying_host,high,1,1,1
+host_role_assignments,Crimean-Congo hemorrhagic fever,incidental_host,high,1,1,0
+host_role_assignments,Dengue,amplifying_host,high,1,1,0
+host_role_assignments,Ebola virus disease,amplifying_host,high,1,1,0
+host_role_assignments,Ebola virus disease,reservoir_host_group,medium,1,1,1
+host_role_assignments,Ebola virus disease,spillover_host,medium,2,2,2
+host_role_assignments,Hemorrhagic fever with renal syndrome (Hantaan virus),incidental_host,high,1,1,0
+host_role_assignments,Hemorrhagic fever with renal syndrome (Hantaan virus),reservoir_host,high,1,1,0
+host_role_assignments,Influenza (H5N1 avian influenza),amplifying_host,medium,1,1,1
+host_role_assignments,Influenza (H5N1 avian influenza),incidental_host,high,1,1,0
+host_role_assignments,Influenza (H5N1 avian influenza),reservoir_host_group,high,1,1,1
+host_role_assignments,Influenza (H5N1 avian influenza),susceptible_host_only,medium,2,2,2
+host_role_assignments,Lassa fever,amplifying_host,medium,1,1,1
+host_role_assignments,Lassa fever,reservoir_host,high,1,1,0
+host_role_assignments,Lassa fever,reservoir_host,medium,2,2,2
+host_role_assignments,Marburg virus disease,amplifying_host,high,1,1,0
+host_role_assignments,Marburg virus disease,incidental_host,medium,1,1,1
+host_role_assignments,Marburg virus disease,reservoir_host,high,1,1,0
+host_role_assignments,Mpox (Monkeypox),amplifying_host,high,1,1,0
+host_role_assignments,Mpox (Monkeypox),amplifying_host,medium,1,1,1
+host_role_assignments,Mpox (Monkeypox),spillover_host,medium,1,1,1
+host_role_assignments,Nipah virus disease,amplifying_host,high,1,1,0
+host_role_assignments,Nipah virus disease,amplifying_host,medium,1,1,1
+host_role_assignments,Nipah virus disease,reservoir_host,high,2,2,2
+host_role_assignments,Nipah virus disease,reservoir_host,medium,2,2,2
+host_role_assignments,Nipah virus disease,reservoir_host_group,high,1,1,1
+host_role_assignments,Oropouche fever,amplifying_host,medium,1,1,1
+host_role_assignments,Oropouche fever,reservoir_host_group,medium,1,1,1
+host_role_assignments,Plague,amplifying_host,medium,1,1,1
+host_role_assignments,Plague,incidental_host,high,1,1,0
+host_role_assignments,Plague,maintenance_host,high,1,1,1
+host_role_assignments,Rift Valley fever,amplifying_host,high,3,3,3
+host_role_assignments,Rift Valley fever,amplifying_host,medium,1,1,1
+host_role_assignments,Rift Valley fever,incidental_host,high,1,1,0
+host_role_assignments,Severe fever with thrombocytopenia syndrome (SFTS),amplifying_host,medium,1,1,1
+host_role_assignments,Severe fever with thrombocytopenia syndrome (SFTS),host_presence_only,medium,1,1,1
+host_role_assignments,Sudan virus disease (Ebola virus disease),amplifying_host,high,1,1,0
+host_role_assignments,Tick-borne encephalitis,amplifying_host,high,1,1,1
+host_role_assignments,Tick-borne encephalitis,reservoir_host,medium,2,2,2
+host_role_assignments,Venezuelan equine encephalitis,amplifying_host,high,1,1,0
+host_role_assignments,Venezuelan equine encephalitis,reservoir_host_group,high,1,1,1
+host_role_assignments,West Nile fever,amplifying_host,medium,1,1,1
+host_role_assignments,West Nile fever,dead_end_host,high,1,1,0
+host_role_assignments,West Nile fever,dead_end_incidental_host,high,1,1,0
+host_role_assignments,Yellow fever,amplifying_host,medium,1,1,0
+host_role_assignments,Zika virus disease,amplifying_host,high,1,1,0
+vector_role_assignments,Chikungunya fever,epidemic_vector,medium,1,1,1
+vector_role_assignments,Chikungunya fever,main_vector,high,2,2,0
+vector_role_assignments,Crimean-Congo hemorrhagic fever,enzootic_maintenance_vector,medium,1,1,1
+vector_role_assignments,Crimean-Congo hemorrhagic fever,main_vector,high,1,1,1
+vector_role_assignments,Crimean-Congo hemorrhagic fever,main_vector,medium,2,2,2
+vector_role_assignments,Crimean-Congo hemorrhagic fever,principal_vector_genus,high,1,1,1
+vector_role_assignments,Dengue,candidate_vector,medium,1,1,1
+vector_role_assignments,Dengue,epidemic_vector,medium,1,1,1
+vector_role_assignments,Dengue,primary_vector,high,1,1,0
+vector_role_assignments,Dengue,sylvatic_vector,medium,3,3,3
+vector_role_assignments,Oropouche fever,candidate_vector,medium,1,1,1
+vector_role_assignments,Oropouche fever,competent_vector_only,medium,1,1,1
+vector_role_assignments,Oropouche fever,primary_vector,high,1,1,0
+vector_role_assignments,Plague,candidate_vector,medium,1,1,1
+vector_role_assignments,Plague,main_vector,high,1,1,1
+vector_role_assignments,Plague,primary_vector,high,2,2,1
+vector_role_assignments,Rift Valley fever,enzootic_maintenance_vector,high,1,1,1
+vector_role_assignments,Rift Valley fever,enzootic_maintenance_vector,medium,1,1,1
+vector_role_assignments,Rift Valley fever,epidemic_vector,medium,1,1,1
+vector_role_assignments,Rift Valley fever,mechanical_vector,medium,3,3,3
+vector_role_assignments,Severe fever with thrombocytopenia syndrome (SFTS),candidate_vector,medium,1,1,1
+vector_role_assignments,Severe fever with thrombocytopenia syndrome (SFTS),competent_vector_only,medium,1,1,1
+vector_role_assignments,Severe fever with thrombocytopenia syndrome (SFTS),primary_vector,high,1,1,0
+vector_role_assignments,Tick-borne encephalitis,candidate_vector,medium,2,2,2
+vector_role_assignments,Tick-borne encephalitis,enzootic_maintenance_vector,high,1,1,1
+vector_role_assignments,Tick-borne encephalitis,main_vector,high,2,2,0
+vector_role_assignments,Venezuelan equine encephalitis,bridge_vector,medium,1,1,1
+vector_role_assignments,Venezuelan equine encephalitis,enzootic_maintenance_vector,high,1,1,1
+vector_role_assignments,Venezuelan equine encephalitis,epidemic_vector,high,1,1,1
+vector_role_assignments,West Nile fever,epidemic_vector,medium,1,1,1
+vector_role_assignments,West Nile fever,main_vector,high,4,4,4
+vector_role_assignments,Yellow fever,main_vector,high,1,1,0
+vector_role_assignments,Yellow fever,sylvatic_vector,high,5,5,5
+vector_role_assignments,Zika virus disease,candidate_vector,low,1,1,1
+vector_role_assignments,Zika virus disease,main_vector,medium,1,1,1
+vector_role_assignments,Zika virus disease,primary_vector,high,1,1,0

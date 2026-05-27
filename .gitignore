@@ -1,49 +1,319 @@
-# History files
+# R history and session files
 .Rhistory
 .Rapp.history
-
-# Session Data files
 .RData
 .RDataTmp
-
-# User-specific files
 .Ruserdata
 
-# Example code in package build process
+# R package/build artifacts
 *-Ex.R
-
-# Output files from R CMD build
 /*.tar.gz
-
-# Output files from R CMD check
 /*.Rcheck/
+fs-Ex.Rout
 
-# RStudio files
+# RStudio and local project files
 .Rproj.user/
+*.Rproj
 
-# produced vignettes
+# R Markdown and vignette artifacts
+*_cache/
+/cache/
+*.utf8.md
+*.knit.md
 vignettes/*.html
 vignettes/*.pdf
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+# Credentials and local environment
+.Renviron
+.env
 .httr-oauth
 
-# knitr and R markdown default cache directories
-*_cache/
-/cache/
+# OS/editor noise
+.DS_Store
+*.DS_Store
+.cursorignore
 
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
-
-# R Environment Variables
-.Renviron
-
-# pkgdown site
+# Personal local guidance and notes
+AGENTS.md
+TODO.md
+BIG_TODO.md
+BIG_TODO_PROGRESS.md
+BIG_TODO_TASK_D_E_PROGRESS.md
+GAPS.md
+GIT_CLEANUP_PLAN.md
+ROLE_EVIDENCE_FULL_CURATION_PLAN.md
+TASKS_ALL.md
+TASKS_ALL_PLAN.md
+docs/codex_chats/
 docs/
+.codex/
+.cursor/
 
-# translation temp files
+# Translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Local scratch and dependency folders
+data/
+tmp/
+outputs/
+ncbi/
+dr/disease_table32cb.csv
+dr/species_host_vector_rosterold.xlsx
+scripts/AutoMaxent-main/
+straus_etal/
+pathogen_association_data/viralemergence-clover-2604d22/
+
+# Local cleanup holding areas; move files here instead of deleting them.
+archive/git_cleanup_*/
+
+# Local notes, bibliographies, and source exports not used as pipeline inputs
+zotero.py
+references.bib
+vector-list.Rmd
+kristan_2025_dengue_vectors.txt
+
+# PDFs are retained locally unless explicitly curated into repo artifacts.
+*.pdf
+
+# SDM caches, fitted models, and generated raster/image outputs
+sdms/cache/
+sdms/models/
+sdms/explore_sdms_models.R
+sdms/outputs/projections/
+sdms/outputs/present_projections/
+sdms/outputs/comparisons/
+sdms/outputs/logs/
+
+# SDM readiness control manifests; keep bulky rasters/logs ignored.
+!sdms/outputs/
+sdms/outputs/*
+!sdms/outputs/catalog/
+sdms/outputs/catalog/*
+!sdms/outputs/catalog/accessible_sdm_species.csv
+
+# WHO DON raw/API payloads and OpenAI transport artifacts
+pathogen_association_data/WHO/disease_outbreak_news/who_don_raw.json
+pathogen_association_data/WHO/disease_outbreak_news/who_don_records.csv
+pathogen_association_data/WHO/disease_outbreak_news*/raw/
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*.json
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*.jsonl
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*requests*
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*upload*
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*job*
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*output*
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*parsed*
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*error*
+pathogen_association_data/WHO/disease_outbreak_news*/openai_batch/**/*estimate*
+pathogen_association_data/WHO/disease_outbreak_news_clean/intermediate/
+pathogen_association_data/WHO/disease_outbreak_news*/web/who_don_web.json
+pathogen_association_data/WHO/disease_outbreak_news/*.csv
+pathogen_association_data/WHO/disease_outbreak_news/*.jsonl
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/
+pathogen_association_data/WHO/disease_outbreak_news/web/
+pathogen_association_data/WHO/disease_outbreak_news_clean/records/
+pathogen_association_data/WHO/disease_outbreak_news_clean/qa/
+pathogen_association_data/WHO/disease_outbreak_news_clean/openai_batch/
+pathogen_association_data/WHO/disease_outbreak_news_clean/web/
+pathogen_association_data/WHO/disease_outbreak_news_clean/*.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/records/
+pathogen_association_data/WHO/disease_outbreak_news_v2/candidates/
+pathogen_association_data/WHO/disease_outbreak_news_v2/qa/
+pathogen_association_data/WHO/disease_outbreak_news_v2/web/
+pathogen_association_data/WHO/disease_outbreak_news_v2/evidence/
+pathogen_association_data/WHO/disease_outbreak_news_v2/final/
+pathogen_association_data/WHO/disease_outbreak_news_v2/reference/
+pathogen_association_data/WHO/disease_outbreak_news_v2/review/*queue*.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_country_candidate_adoption_decisions.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/review/who_don_review_decisions_applied.csv
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*requests*.jsonl
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*requests*.manifest.json
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*upload*.json
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*job*.json
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*output*.jsonl
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*parsed*.jsonl
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*error*.jsonl
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*invalid_outputs*.csv
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*test5*
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*test25*
+pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*estimate*
+
+# GenBank retrieval scratch and bulky per-pathogen records
+pathogen_association_data/WHO/genbank/pathogen_runs/
+pathogen_association_data/WHO/genbank/pathogen_runs/old/
+pathogen_association_data/WHO/genbank_simple/pathogen_runs/
+pathogen_association_data/WHO/genbank_simple/pathogen_runs_readiness/
+pathogen_association_data/WHO/genbank_simple/*.log
+pathogen_association_data/WHO/genbank_simple/excluded_targets.csv
+pathogen_association_data/WHO/genbank_simple/genbank_country_records.csv
+pathogen_association_data/WHO/genbank_simple/genbank_country_records_standardized.csv
+pathogen_association_data/WHO/genbank_simple/genbank_country_standardization_qa.csv
+pathogen_association_data/WHO/genbank_simple/genbank_disease_country_summary.csv
+pathogen_association_data/WHO/genbank_simple/genbank_disease_country_summary_standardized.csv
+pathogen_association_data/WHO/genbank_simple/genbank_pathogen_country_summary.csv
+pathogen_association_data/WHO/genbank_simple/genbank_pathogen_country_summary_standardized.csv
+pathogen_association_data/WHO/genbank_simple/genbank_search_logs.csv
+pathogen_association_data/WHO/genbank_simple/genbank_simple_qa_summary.csv
+pathogen_association_data/WHO/genbank_simple/genbank_simple_target_qa.csv
+pathogen_association_data/WHO/genbank_simple/genbank_readiness_country_records.csv
+pathogen_association_data/WHO/genbank_simple/genbank_readiness_country_records_standardized.csv
+pathogen_association_data/WHO/genbank_simple/intermediate/genbank_readiness_country_records.csv
+pathogen_association_data/WHO/genbank_simple/intermediate/genbank_readiness_country_records_standardized.csv
+pathogen_association_data/WHO/genbank_simple/maps/
+pathogen_association_data/WHO/genbank_simple/maps_readiness/disease_country_records/
+pathogen_association_data/WHO/virion/who_pathogens_virion_hosts_long.csv
+pathogen_association_data/WHO/who_diseases/*_raw.jsonl
+
+# Raw host-vector source exports
+pathogen_association_data/mapveu/*.txt
+pathogen_association_data/vectormap/*.csv
+pathogen_association_data/vectormap/outputs/vectormap_vector_host_links_raw.csv
+
+# Generated Deep Research prompt/report staging. The durable handoff is
+# pathogen_association_data/WHO/role_annotation/source_check/.
+pathogen_association_data/WHO/role_annotation/deep_research_inputs/
+pathogen_association_data/WHO/role_annotation/source_check/pdf_text/
+
+# Generated readiness convenience package; keep the XLSX visible for sharing.
+pathogen_association_data/readiness/disease_modelling_pilot_package.rds
+
+# Legacy archived pipeline outputs kept locally for comparison only
+pathogen_association_data/WHO/networks/outputs_v1/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+archive/who_don_pre_v2/README.md
+archive/who_don_pre_v2/scripts/who_don/1_WHO_DON_Fetch.R
+archive/who_don_pre_v2/scripts/who_don/2_WHO_DON_Clean_Text.R
+archive/who_don_pre_v2/scripts/who_don/3_WHO_DON_Title_Country_Extraction.R
+archive/who_don_pre_v2/scripts/who_don/4_1_WHO_DON_Deterministic_Pass2.R
+archive/who_don_pre_v2/scripts/who_don/4_WHO_DON_Text_Country_Extraction.R
+archive/who_don_pre_v2/scripts/who_don/5_WHO_DON_Country_Evidence_Union.R
+archive/who_don_pre_v2/scripts/who_don/6_WHO_DON_QA_Summary.R
+archive/who_don_pre_v2/scripts/who_don/7_WHO_DON_Unresolved_For_LLM.R
+archive/who_don_pre_v2/scripts/who_don/8_WHO_DON_OpenAI_Batch_Extract.py
+archive/who_don_pre_v2/scripts/who_don/9_WHO_DON_OpenAI_Cleanup.R
+archive/who_don_pre_v2/scripts/who_don/10_WHO_DON_OpenAI_Adjudication_Subset.R
+archive/who_don_pre_v2/scripts/who_don/11_WHO_DON_OpenAI_Third_Pass_Subset.R
+archive/who_don_pre_v2/scripts/who_don/12_WHO_DON_OpenAI_Merge_Passes.R
+archive/who_don_pre_v2/scripts/who_don/13_5_WHO_DON_Disease_Aliases.R
+archive/who_don_pre_v2/scripts/who_don/13_WHO_DON_Combine_Deterministic_LLM.R
+archive/who_don_pre_v2/scripts/who_don/14_WHO_DON_Disease_Extraction.R
+archive/who_don_pre_v2/scripts/who_don/15_WHO_DON_Country_Disease_Join.R
+archive/who_don_pre_v2/scripts/who_don/16_WHO_DON_Disease_Extraction_Refinement_Plan.md
+archive/who_don_pre_v2/scripts/who_don/16_WHO_DON_Event_Country_Classification_Plan.md
+archive/who_don_pre_v2/scripts/who_don/16_WHO_DON_Event_Country_Classifier.R
+archive/who_don_pre_v2/scripts/who_don/17_WHO_DON_Event_Country_Adjudication_Plan.md
+archive/who_don_pre_v2/scripts/who_don/17_WHO_DON_Event_Country_Adjudication_Subset.R
+archive/who_don_pre_v2/scripts/who_don/18_WHO_DON_Event_Country_Adjudication_Merge.R
+archive/who_don_pre_v2/scripts/who_don/19_WHO_DON_Standardization_Review.R
+archive/who_don_pre_v2/scripts/who_don/20_WHO_DON_Apply_Standardization.R
+archive/who_don_pre_v2/scripts/who_don/21_WHO_DON_Export_Web_Artifact.R
+archive/who_don_pre_v2/scripts/who_don/22_WHO_DON_Focal_Event_Country_Scope.R
+archive/who_don_pre_v2/scripts/who_don/23_WHO_DON_Influenza_Subtype_Refinement.R
+archive/who_don_pre_v2/scripts/who_don/24_WHO_DON_Apply_Focal_Review_Overrides.R
+archive/who_don_pre_v2/scripts/who_don/25_WHO_DON_Influenza_Refinement_LLM_Subset.R
+archive/who_don_pre_v2/scripts/who_don/26_WHO_DON_Influenza_Refinement_Batch_Prep.R
+archive/who_don_pre_v2/scripts/who_don/27_WHO_DON_Influenza_Refinement_Batch_Parse.R
+archive/who_don_pre_v2/scripts/who_don/28_WHO_DON_Influenza_Refinement_Merge.R
+archive/who_don_pre_v2/scripts/who_don/29_WHO_DON_Influenza_Manual_Review_Apply.R
+archive/who_don_pre_v2/scripts/who_don/30_WHO_DON_Final_Adoption_QA.R
+archive/who_don_pre_v2/scripts/who_don/WHO_DON_CLEANUP_PLAN.md
+archive/who_don_pre_v2/scripts/who_don/who_don_country_aliases.csv
+archive/who_don_pre_v2/scripts/who_don/who_don_country_standardization_map.csv
+archive/who_don_pre_v2/scripts/who_don/who_don_disease_alias_patches.csv
+archive/who_don_pre_v2/scripts/who_don/who_don_disease_standardization_map.csv
+archive/who_don_pre_v2/scripts/who_don/who_don_helpers.R
+archive/who_don_pre_v2/scripts/who_don_clean/00_materialize_manifest.R
+archive/who_don_pre_v2/scripts/who_don_clean/01_fetch_and_clean_records.R
+archive/who_don_pre_v2/scripts/who_don_clean/02_country_recovery_deterministic.R
+archive/who_don_pre_v2/scripts/who_don_clean/03_country_recovery_llm_runbook.md
+archive/who_don_pre_v2/scripts/who_don_clean/03a_country_recovery_llm_prepare.R
+archive/who_don_pre_v2/scripts/who_don_clean/03b_country_recovery_llm_merge.R
+archive/who_don_pre_v2/scripts/who_don_clean/04_disease_extraction_and_join.R
+archive/who_don_pre_v2/scripts/who_don_clean/05_event_country_classification.R
+archive/who_don_pre_v2/scripts/who_don_clean/06_focal_scope_and_disease_refinement.R
+archive/who_don_pre_v2/scripts/who_don_clean/07_export_and_final_qa.R
+archive/who_don_pre_v2/scripts/who_don_clean/08_compare_clean_to_reference.R
+archive/who_don_pre_v2/scripts/who_don_clean/README.md
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_country_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_disease_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_event_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_export_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_fetch_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_focal_influenza_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_helpers.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_io.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_llm_rules.R
+archive/who_don_pre_v2/scripts/who_don_clean/who_don_paths.R
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/00_WHO_DON_V2_MASTER_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/01_CANONICAL_EVIDENCE_TABLE_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/02_RULE_TABLES_AND_CLASSIFICATION_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/03_LLM_AND_MANUAL_REVIEW_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/04_OUTPUT_COMPATIBILITY_AND_QA_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/05_NATIVE_EXTRACTION_AND_CLASSIFICATION_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/06_NATIVE_DISEASE_EXTRACTION_FIRST_SLICE_PLAN.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/07_NATIVE_DISEASE_DIFF_REVIEW.md
+archive/who_don_pre_v2/scripts/who_don_clean/redesign/WHO_DON_V2_SHARED_TODO.md
+scripts/associations/network_building/virion.txt
+pathogen_association_data/WHO/disease_outbreak_news_v2/archive/candidates/who_don_country_candidates.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/archive/final_compatibility_exports/who_don_country_disease_event_focal_modelling_ready_final_analysis.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/archive/final_compatibility_exports/who_don_country_disease_event_focal_modelling_ready_final.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/archive/final_compatibility_exports/who_don_country_disease_event_focal_scope_evidence_final.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/archive/qa_seeded_baseline/v2_seeded_baseline_counts.csv
+pathogen_association_data/WHO/disease_outbreak_news_v2/archive/qa_seeded_baseline/v2_seeded_baseline_manifest.csv
+scripts/associations/genbank_simple/PLAN.md
+scripts/associations/genbank_simple/PLAN.md
+scripts/associations/who_don_v2/archive/historical_docs/08_NATIVE_DISEASE_EXTRACTION_REFINEMENT_PLAN.md
+scripts/associations/who_don_v2/archive/historical_docs/09_MEDIUM_NATIVE_NEW_COUNTRY_REVIEW_PLAN.md
+scripts/associations/who_don_v2/archive/historical_docs/WHO_DON_GOAL_NEW.md
+scripts/associations/who_don_v2/archive/historical_docs/WHO_DON_GOAL.md
+scripts/dev/export_codex_chats.py
+scripts/associations/who_don_v2/archive/option_a_migration/15_build_association_evidence_option_a_shadow.R
+scripts/associations/who_don_v2/archive/option_a_migration/16_run_option_a_shadow_pipeline.R
+scripts/associations/who_don_v2/archive/option_a_migration/17_compare_option_a_to_current.R
+scripts/associations/who_don_v2/archive/option_a_migration/18_option_a_transition_adjudication.R
+scripts/associations/who_don_v2/archive/option_a_migration/19_option_a_scope_policy_review.R
+scripts/associations/who_don_v2/archive/option_a_migration/20_option_a_scope_rule_experiment.R
+scripts/associations/who_don_v2/archive/option_a_migration/21_option_a_residual_scope_pattern_review.R
+scripts/associations/who_don_v2/archive/option_a_migration/22_prepare_option_a_residual_scope_consensus_workpacks.R
+scripts/associations/who_don_v2/archive/option_a_migration/23_merge_option_a_residual_scope_consensus_reviews.R
+scripts/associations/who_don_v2/archive/option_a_migration/24_prepare_option_a_scope_claim_cards.R
+scripts/associations/who_don_v2/archive/option_a_migration/26_prepare_option_a_full_article_scope_review.R
+scripts/associations/who_don_v2/archive/option_a_migration/27_apply_option_a_full_article_scope_decisions_shadow.R
+scripts/associations/who_don_v2/archive/option_a_migration/28_option_a_remaining_gap_triage.R
+scripts/associations/who_don_v2/archive/option_a_migration/29_option_a_production_readiness_gap_review.R
+scripts/associations/who_don_v2/archive/option_a_migration/30_materialize_option_a_keep_current_exceptions.R
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_FULL_ARTICLE_SCOPE_REVIEW_PLAN.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_NATIVE_ASSOCIATION_PLAN.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_PRODUCTION_READINESS_ROADMAP.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_RESIDUAL_SCOPE_CONSENSUS_PLAN.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_RESIDUAL_SCOPE_CONSENSUS_STATUS.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_REVIEWER_1_SCOPE_CONSENSUS_INSTRUCTIONS.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_REVIEWER_2_SCOPE_CONSENSUS_INSTRUCTIONS.md
+scripts/associations/who_don_v2/archive/option_a_migration/OPTION_A_SCOPE_CLAIM_CARDS_AND_CLUSTERING_PLAN.md
+scripts/associations/who_don_v2/archive/option_a_migration/README.md
+scripts/associations/who_don_v2/archive/option_a_migration/WHO_DON_TASKS_REMAINING_11May2026.md
+scripts/associations/who_don_v2/archive/option_b_shadow/10_contract_dependency_audit.R
+scripts/associations/who_don_v2/archive/option_b_shadow/10b_contract_dependency_audit_summaries.R
+scripts/associations/who_don_v2/archive/option_b_shadow/11_build_association_evidence_slim_shadow.R
+scripts/associations/who_don_v2/archive/option_b_shadow/12_compare_slim_shadow.R
+scripts/associations/who_don_v2/archive/option_b_shadow/13_option_b_category_triage.R
+scripts/associations/who_don_v2/archive/option_b_shadow/14_option_b_contract_only_review.R
+scripts/associations/who_don_v2/archive/option_b_shadow/layer_B_closure.md
+scripts/associations/who_don_v2/archive/option_b_shadow/layer_B_continue.md
+scripts/associations/who_don_v2/archive/option_b_shadow/layer_B_further.md
+scripts/associations/who_don_v2/archive/option_b_shadow/OPTION_B_STATUS.md
+scripts/associations/who_don_v2/archive/option_b_shadow/README.md
+scripts/associations/who_don_v2/archive/option_b_shadow/slim_layer_B.md
+scripts/associations/who_don_v2/archive/transitional_scripts/02_extract_candidates.R
+scripts/associations/who_don_v2/archive/transitional_scripts/02a_freeze_seeded_baseline.R
+scripts/associations/who_don_v2/archive/transitional_scripts/who_don_v2_baseline.R
+scripts/associations/who_don_v2/archive/transitional_scripts/02_extract_candidates.R
+scripts/associations/who_don_v2/archive/transitional_scripts/02a_freeze_seeded_baseline.R
+scripts/associations/who_don_v2/archive/transitional_scripts/who_don_v2_baseline.R
+pathogen_association_data/WHO/role_annotation/deep_research_inputs/consolidated/CONSOLIDATED_DEEP_RESEARCH_REVIEW.md
+pathogen_association_data/WHO/role_annotation/deep_research_inputs/consolidated/SOURCE_REQUEST_LIST.md

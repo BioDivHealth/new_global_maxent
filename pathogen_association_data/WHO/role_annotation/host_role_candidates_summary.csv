@@ -1,0 +1,225 @@
+disease_name,metric,flag_value,row_count
+Argentine hemorrhagic fever,candidate_rows,,8
+Argentine hemorrhagic fever,is_bat,FALSE,6
+Argentine hemorrhagic fever,is_bat,,2
+Argentine hemorrhagic fever,is_bird,FALSE,6
+Argentine hemorrhagic fever,is_bird,,2
+Argentine hemorrhagic fever,is_human,TRUE,1
+Argentine hemorrhagic fever,is_human,FALSE,7
+Argentine hemorrhagic fever,is_livestock_like,FALSE,8
+Argentine hemorrhagic fever,is_rodent,TRUE,6
+Argentine hemorrhagic fever,is_rodent,,2
+Chikungunya fever,candidate_rows,,20
+Chikungunya fever,is_bat,TRUE,9
+Chikungunya fever,is_bat,FALSE,8
+Chikungunya fever,is_bat,,3
+Chikungunya fever,is_bird,TRUE,1
+Chikungunya fever,is_bird,FALSE,16
+Chikungunya fever,is_bird,,3
+Chikungunya fever,is_human,TRUE,1
+Chikungunya fever,is_human,FALSE,19
+Chikungunya fever,is_livestock_like,FALSE,20
+Chikungunya fever,is_rodent,TRUE,2
+Chikungunya fever,is_rodent,FALSE,15
+Chikungunya fever,is_rodent,,3
+Crimean-Congo hemorrhagic fever,candidate_rows,,13
+Crimean-Congo hemorrhagic fever,is_bat,FALSE,11
+Crimean-Congo hemorrhagic fever,is_bat,,2
+Crimean-Congo hemorrhagic fever,is_bird,FALSE,11
+Crimean-Congo hemorrhagic fever,is_bird,,2
+Crimean-Congo hemorrhagic fever,is_human,TRUE,1
+Crimean-Congo hemorrhagic fever,is_human,FALSE,12
+Crimean-Congo hemorrhagic fever,is_livestock_like,TRUE,5
+Crimean-Congo hemorrhagic fever,is_livestock_like,FALSE,8
+Crimean-Congo hemorrhagic fever,is_rodent,TRUE,3
+Crimean-Congo hemorrhagic fever,is_rodent,FALSE,8
+Crimean-Congo hemorrhagic fever,is_rodent,,2
+Dengue,candidate_rows,,37
+Dengue,is_bat,TRUE,14
+Dengue,is_bat,FALSE,20
+Dengue,is_bat,,3
+Dengue,is_bird,FALSE,34
+Dengue,is_bird,,3
+Dengue,is_human,TRUE,1
+Dengue,is_human,FALSE,36
+Dengue,is_livestock_like,FALSE,37
+Dengue,is_rodent,TRUE,5
+Dengue,is_rodent,FALSE,29
+Dengue,is_rodent,,3
+Ebola virus disease,candidate_rows,,16
+Ebola virus disease,is_bat,TRUE,6
+Ebola virus disease,is_bat,FALSE,8
+Ebola virus disease,is_bat,,2
+Ebola virus disease,is_bird,FALSE,14
+Ebola virus disease,is_bird,,2
+Ebola virus disease,is_human,TRUE,1
+Ebola virus disease,is_human,FALSE,15
+Ebola virus disease,is_livestock_like,FALSE,16
+Ebola virus disease,is_rodent,TRUE,2
+Ebola virus disease,is_rodent,FALSE,12
+Ebola virus disease,is_rodent,,2
+Hemorrhagic fever with renal syndrome (Hantaan virus),candidate_rows,,21
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_bat,TRUE,1
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_bat,FALSE,15
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_bat,,5
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_bird,FALSE,16
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_bird,,5
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_human,TRUE,1
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_human,FALSE,20
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_livestock_like,FALSE,21
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_rodent,TRUE,14
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_rodent,FALSE,2
+Hemorrhagic fever with renal syndrome (Hantaan virus),is_rodent,,5
+Influenza (H5N1 avian influenza),candidate_rows,,538
+Influenza (H5N1 avian influenza),is_bat,TRUE,12
+Influenza (H5N1 avian influenza),is_bat,FALSE,453
+Influenza (H5N1 avian influenza),is_bat,,73
+Influenza (H5N1 avian influenza),is_bird,TRUE,382
+Influenza (H5N1 avian influenza),is_bird,FALSE,83
+Influenza (H5N1 avian influenza),is_bird,,73
+Influenza (H5N1 avian influenza),is_human,TRUE,1
+Influenza (H5N1 avian influenza),is_human,FALSE,537
+Influenza (H5N1 avian influenza),is_livestock_like,TRUE,10
+Influenza (H5N1 avian influenza),is_livestock_like,FALSE,528
+Influenza (H5N1 avian influenza),is_rodent,TRUE,3
+Influenza (H5N1 avian influenza),is_rodent,FALSE,462
+Influenza (H5N1 avian influenza),is_rodent,,73
+Lassa fever,candidate_rows,,14
+Lassa fever,is_bat,FALSE,12
+Lassa fever,is_bat,,2
+Lassa fever,is_bird,FALSE,12
+Lassa fever,is_bird,,2
+Lassa fever,is_human,TRUE,1
+Lassa fever,is_human,FALSE,13
+Lassa fever,is_livestock_like,TRUE,1
+Lassa fever,is_livestock_like,FALSE,13
+Lassa fever,is_rodent,TRUE,9
+Lassa fever,is_rodent,FALSE,3
+Lassa fever,is_rodent,,2
+Marburg virus disease,candidate_rows,,9
+Marburg virus disease,is_bat,TRUE,4
+Marburg virus disease,is_bat,FALSE,4
+Marburg virus disease,is_bat,,1
+Marburg virus disease,is_bird,FALSE,8
+Marburg virus disease,is_bird,,1
+Marburg virus disease,is_human,TRUE,1
+Marburg virus disease,is_human,FALSE,8
+Marburg virus disease,is_livestock_like,FALSE,9
+Marburg virus disease,is_rodent,TRUE,3
+Marburg virus disease,is_rodent,FALSE,5
+Marburg virus disease,is_rodent,,1
+Mpox (Monkeypox),candidate_rows,,20
+Mpox (Monkeypox),is_bat,FALSE,17
+Mpox (Monkeypox),is_bat,,3
+Mpox (Monkeypox),is_bird,FALSE,17
+Mpox (Monkeypox),is_bird,,3
+Mpox (Monkeypox),is_human,TRUE,1
+Mpox (Monkeypox),is_human,FALSE,19
+Mpox (Monkeypox),is_livestock_like,FALSE,20
+Mpox (Monkeypox),is_rodent,TRUE,4
+Mpox (Monkeypox),is_rodent,FALSE,13
+Mpox (Monkeypox),is_rodent,,3
+Nipah virus disease,candidate_rows,,16
+Nipah virus disease,is_bat,TRUE,7
+Nipah virus disease,is_bat,FALSE,7
+Nipah virus disease,is_bat,,2
+Nipah virus disease,is_bird,FALSE,14
+Nipah virus disease,is_bird,,2
+Nipah virus disease,is_human,TRUE,1
+Nipah virus disease,is_human,FALSE,15
+Nipah virus disease,is_livestock_like,TRUE,4
+Nipah virus disease,is_livestock_like,FALSE,12
+Nipah virus disease,is_rodent,TRUE,1
+Nipah virus disease,is_rodent,FALSE,13
+Nipah virus disease,is_rodent,,2
+Oropouche fever,candidate_rows,,6
+Oropouche fever,is_bat,FALSE,3
+Oropouche fever,is_bat,,3
+Oropouche fever,is_bird,FALSE,3
+Oropouche fever,is_bird,,3
+Oropouche fever,is_human,TRUE,1
+Oropouche fever,is_human,FALSE,5
+Oropouche fever,is_livestock_like,FALSE,6
+Oropouche fever,is_rodent,FALSE,3
+Oropouche fever,is_rodent,,3
+Plague,candidate_rows,,37
+Plague,is_bat,FALSE,33
+Plague,is_bat,,4
+Plague,is_bird,FALSE,33
+Plague,is_bird,,4
+Plague,is_human,TRUE,1
+Plague,is_human,FALSE,36
+Plague,is_livestock_like,TRUE,1
+Plague,is_livestock_like,FALSE,36
+Plague,is_rodent,TRUE,22
+Plague,is_rodent,FALSE,11
+Plague,is_rodent,,4
+Rift Valley fever,candidate_rows,,17
+Rift Valley fever,is_bat,TRUE,6
+Rift Valley fever,is_bat,FALSE,9
+Rift Valley fever,is_bat,,2
+Rift Valley fever,is_bird,FALSE,15
+Rift Valley fever,is_bird,,2
+Rift Valley fever,is_human,TRUE,1
+Rift Valley fever,is_human,FALSE,16
+Rift Valley fever,is_livestock_like,TRUE,5
+Rift Valley fever,is_livestock_like,FALSE,12
+Rift Valley fever,is_rodent,TRUE,1
+Rift Valley fever,is_rodent,FALSE,14
+Rift Valley fever,is_rodent,,2
+Sudan virus disease (Ebola virus disease),candidate_rows,,1
+Sudan virus disease (Ebola virus disease),is_bat,,1
+Sudan virus disease (Ebola virus disease),is_bird,,1
+Sudan virus disease (Ebola virus disease),is_human,TRUE,1
+Sudan virus disease (Ebola virus disease),is_livestock_like,FALSE,1
+Sudan virus disease (Ebola virus disease),is_rodent,,1
+Venezuelan equine encephalitis,candidate_rows,,31
+Venezuelan equine encephalitis,is_bat,TRUE,7
+Venezuelan equine encephalitis,is_bat,FALSE,22
+Venezuelan equine encephalitis,is_bat,,2
+Venezuelan equine encephalitis,is_bird,TRUE,7
+Venezuelan equine encephalitis,is_bird,FALSE,22
+Venezuelan equine encephalitis,is_bird,,2
+Venezuelan equine encephalitis,is_human,TRUE,1
+Venezuelan equine encephalitis,is_human,FALSE,30
+Venezuelan equine encephalitis,is_livestock_like,TRUE,1
+Venezuelan equine encephalitis,is_livestock_like,FALSE,30
+Venezuelan equine encephalitis,is_rodent,TRUE,9
+Venezuelan equine encephalitis,is_rodent,FALSE,20
+Venezuelan equine encephalitis,is_rodent,,2
+West Nile fever,candidate_rows,,186
+West Nile fever,is_bat,TRUE,1
+West Nile fever,is_bat,FALSE,168
+West Nile fever,is_bat,,17
+West Nile fever,is_bird,TRUE,140
+West Nile fever,is_bird,FALSE,29
+West Nile fever,is_bird,,17
+West Nile fever,is_human,TRUE,1
+West Nile fever,is_human,FALSE,185
+West Nile fever,is_livestock_like,TRUE,7
+West Nile fever,is_livestock_like,FALSE,179
+West Nile fever,is_rodent,TRUE,6
+West Nile fever,is_rodent,FALSE,163
+West Nile fever,is_rodent,,17
+Yellow fever,candidate_rows,,23
+Yellow fever,is_bat,FALSE,15
+Yellow fever,is_bat,,8
+Yellow fever,is_bird,FALSE,15
+Yellow fever,is_bird,,8
+Yellow fever,is_human,TRUE,1
+Yellow fever,is_human,FALSE,22
+Yellow fever,is_livestock_like,FALSE,23
+Yellow fever,is_rodent,FALSE,15
+Yellow fever,is_rodent,,8
+Zika virus disease,candidate_rows,,18
+Zika virus disease,is_bat,TRUE,6
+Zika virus disease,is_bat,FALSE,8
+Zika virus disease,is_bat,,4
+Zika virus disease,is_bird,FALSE,14
+Zika virus disease,is_bird,,4
+Zika virus disease,is_human,TRUE,1
+Zika virus disease,is_human,FALSE,17
+Zika virus disease,is_livestock_like,FALSE,18
+Zika virus disease,is_rodent,TRUE,2
+Zika virus disease,is_rodent,FALSE,12
+Zika virus disease,is_rodent,,4

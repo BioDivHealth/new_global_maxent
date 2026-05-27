@@ -1,0 +1,13 @@
+disease_name,vector_rows,vector_species_or_taxa,confirmed_rows,probable_rows,candidate_rows,competence_joined_rows,competent_rows,mixed_competence_rows,not_competent_rows,unclear_competence_rows,transmission_yes_rows,natural_infection_yes_rows,taxonomy_review_needed_rows,roster_vectors_with_host_vector_evidence,roster_vectors_with_human_biting
+Rift Valley fever,88,78,6,33,36,82,30,11,4,37,30,53,0,45,43
+West Nile fever,75,75,9,10,52,39,20,7,2,10,21,1,1,47,39
+Zika virus disease,57,56,7,7,27,27,4,10,7,6,7,11,0,29,29
+Crimean-Congo hemorrhagic fever,49,49,16,4,29,30,14,1,0,15,2,1,1,35,27
+Plague,47,47,38,5,3,47,24,17,0,6,37,14,0,11,2
+Venezuelan equine encephalitis,43,35,9,12,22,40,18,0,0,22,19,17,0,21,19
+Yellow fever,32,30,18,7,7,29,20,2,0,7,20,10,0,12,12
+Chikungunya fever,21,21,2,7,10,15,14,0,0,1,14,0,0,12,12
+Dengue,16,16,8,2,4,15,3,7,1,4,2,3,0,6,6
+Oropouche fever,16,15,1,4,7,16,2,3,4,7,2,9,0,10,10
+Severe fever with thrombocytopenia syndrome (SFTS),15,15,5,1,2,15,5,1,1,8,5,15,0,7,3
+Tick-borne encephalitis,11,11,8,1,0,11,9,0,0,2,10,8,0,6,6

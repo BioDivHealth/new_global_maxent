@@ -1,0 +1,96 @@
+table,disease_name,claim,confidence,rows,entities,manual_review_rows
+host_role_evidence,Argentine hemorrhagic fever,incidental_host,high,1,1,0
+host_role_evidence,Argentine hemorrhagic fever,reservoir_host,high,1,1,0
+host_role_evidence,Chikungunya fever,amplifying_host,high,1,1,0
+host_role_evidence,Chikungunya fever,reservoir_host_group,medium,1,1,1
+host_role_evidence,Crimean-Congo hemorrhagic fever,amplifying_host,high,1,1,1
+host_role_evidence,Crimean-Congo hemorrhagic fever,incidental_host,high,1,1,0
+host_role_evidence,Dengue,amplifying_host,high,1,1,0
+host_role_evidence,Ebola virus disease,amplifying_host,high,1,1,0
+host_role_evidence,Ebola virus disease,reservoir_host_group,medium,1,1,1
+host_role_evidence,Ebola virus disease,spillover_host,medium,3,3,3
+host_role_evidence,Hemorrhagic fever with renal syndrome (Hantaan virus),incidental_host,high,1,1,0
+host_role_evidence,Hemorrhagic fever with renal syndrome (Hantaan virus),reservoir_host,high,1,1,0
+host_role_evidence,Influenza (H5N1 avian influenza),amplifying_host,medium,1,1,1
+host_role_evidence,Influenza (H5N1 avian influenza),incidental_host,high,1,1,0
+host_role_evidence,Influenza (H5N1 avian influenza),reservoir_host_group,high,1,1,1
+host_role_evidence,Influenza (H5N1 avian influenza),susceptible_host_only,medium,2,2,2
+host_role_evidence,Lassa fever,amplifying_host,medium,1,1,1
+host_role_evidence,Lassa fever,reservoir_host,high,1,1,0
+host_role_evidence,Lassa fever,reservoir_host,medium,2,2,2
+host_role_evidence,Marburg virus disease,amplifying_host,high,1,1,0
+host_role_evidence,Marburg virus disease,incidental_host,medium,1,1,1
+host_role_evidence,Marburg virus disease,reservoir_host,high,1,1,0
+host_role_evidence,Mpox (Monkeypox),amplifying_host,high,1,1,0
+host_role_evidence,Mpox (Monkeypox),amplifying_host,medium,1,1,1
+host_role_evidence,Mpox (Monkeypox),spillover_host,medium,1,1,1
+host_role_evidence,Mpox (Monkeypox),susceptible_host_only,medium,2,2,2
+host_role_evidence,Nipah virus disease,amplifying_host,high,1,1,0
+host_role_evidence,Nipah virus disease,amplifying_host,medium,1,1,1
+host_role_evidence,Nipah virus disease,reservoir_host,high,2,2,2
+host_role_evidence,Nipah virus disease,reservoir_host,medium,2,2,2
+host_role_evidence,Nipah virus disease,reservoir_host_group,high,1,1,1
+host_role_evidence,Oropouche fever,amplifying_host,medium,1,1,1
+host_role_evidence,Oropouche fever,reservoir_host_group,medium,1,1,1
+host_role_evidence,Plague,amplifying_host,medium,1,1,1
+host_role_evidence,Plague,incidental_host,high,1,1,0
+host_role_evidence,Plague,maintenance_host,high,1,1,1
+host_role_evidence,Rift Valley fever,amplifying_host,high,3,3,3
+host_role_evidence,Rift Valley fever,amplifying_host,medium,1,1,1
+host_role_evidence,Rift Valley fever,incidental_host,high,1,1,0
+host_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),amplifying_host,medium,1,1,1
+host_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),host_presence_only,medium,1,1,1
+host_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),incidental_host,medium,1,1,1
+host_role_evidence,Sudan virus disease (Ebola virus disease),amplifying_host,high,1,1,0
+host_role_evidence,Sudan virus disease (Ebola virus disease),reservoir_host_group,low,1,1,1
+host_role_evidence,Tick-borne encephalitis,amplifying_host,high,1,1,1
+host_role_evidence,Tick-borne encephalitis,incidental_host,high,1,1,1
+host_role_evidence,Tick-borne encephalitis,reservoir_host,medium,2,2,2
+host_role_evidence,Venezuelan equine encephalitis,amplifying_host,high,1,1,0
+host_role_evidence,Venezuelan equine encephalitis,incidental_host,medium,1,1,1
+host_role_evidence,Venezuelan equine encephalitis,reservoir_host_group,high,1,1,1
+host_role_evidence,West Nile fever,amplifying_host,medium,1,1,1
+host_role_evidence,West Nile fever,dead_end_host,high,1,1,0
+host_role_evidence,West Nile fever,dead_end_incidental_host,high,1,1,0
+host_role_evidence,West Nile fever,reservoir_host_group,high,1,1,1
+host_role_evidence,Yellow fever,amplifying_host,medium,1,1,0
+host_role_evidence,Yellow fever,reservoir_host_group,high,1,1,1
+host_role_evidence,Zika virus disease,amplifying_host,high,1,1,0
+vector_role_evidence,Chikungunya fever,epidemic_vector,medium,1,1,1
+vector_role_evidence,Chikungunya fever,main_vector,high,2,2,0
+vector_role_evidence,Crimean-Congo hemorrhagic fever,enzootic_maintenance_vector,medium,1,1,1
+vector_role_evidence,Crimean-Congo hemorrhagic fever,main_vector,high,1,1,1
+vector_role_evidence,Crimean-Congo hemorrhagic fever,main_vector,medium,2,2,2
+vector_role_evidence,Crimean-Congo hemorrhagic fever,principal_vector_genus,high,1,1,1
+vector_role_evidence,Dengue,candidate_vector,medium,1,1,1
+vector_role_evidence,Dengue,epidemic_vector,medium,1,1,1
+vector_role_evidence,Dengue,primary_vector,high,1,1,0
+vector_role_evidence,Dengue,sylvatic_vector,medium,3,3,3
+vector_role_evidence,Oropouche fever,candidate_vector,medium,1,1,1
+vector_role_evidence,Oropouche fever,competent_vector_only,medium,1,1,1
+vector_role_evidence,Oropouche fever,primary_vector,high,1,1,0
+vector_role_evidence,Plague,candidate_vector,medium,1,1,1
+vector_role_evidence,Plague,main_vector,high,1,1,1
+vector_role_evidence,Plague,primary_vector,high,2,2,1
+vector_role_evidence,Rift Valley fever,enzootic_maintenance_vector,high,1,1,1
+vector_role_evidence,Rift Valley fever,enzootic_maintenance_vector,medium,1,1,1
+vector_role_evidence,Rift Valley fever,epidemic_vector,medium,1,1,1
+vector_role_evidence,Rift Valley fever,mechanical_vector,medium,3,3,3
+vector_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),candidate_vector,medium,1,1,1
+vector_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),competent_vector_only,medium,1,1,1
+vector_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),enzootic_maintenance_vector,medium,1,1,1
+vector_role_evidence,Severe fever with thrombocytopenia syndrome (SFTS),primary_vector,high,1,1,0
+vector_role_evidence,Tick-borne encephalitis,candidate_vector,medium,2,2,2
+vector_role_evidence,Tick-borne encephalitis,enzootic_maintenance_vector,high,1,1,1
+vector_role_evidence,Tick-borne encephalitis,main_vector,high,2,2,0
+vector_role_evidence,Venezuelan equine encephalitis,bridge_vector,medium,1,1,1
+vector_role_evidence,Venezuelan equine encephalitis,enzootic_maintenance_vector,high,1,1,1
+vector_role_evidence,Venezuelan equine encephalitis,epidemic_vector,high,1,1,1
+vector_role_evidence,West Nile fever,epidemic_vector,medium,1,1,1
+vector_role_evidence,West Nile fever,main_vector,high,4,4,4
+vector_role_evidence,West Nile fever,principal_vector_genus,high,1,1,1
+vector_role_evidence,Yellow fever,main_vector,high,1,1,0
+vector_role_evidence,Yellow fever,sylvatic_vector,high,5,5,5
+vector_role_evidence,Zika virus disease,candidate_vector,low,1,1,1
+vector_role_evidence,Zika virus disease,main_vector,medium,1,1,1
+vector_role_evidence,Zika virus disease,primary_vector,high,1,1,0
