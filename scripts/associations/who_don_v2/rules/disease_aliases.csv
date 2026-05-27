@@ -108,16 +108,21 @@ Influenza (H3N2),Influenza (H3N2),influenza,influenza_subtype,20,FALSE,TRUE,FALS
 Influenza (H5 subtype),Influenza (H5 subtype),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
 Influenza (H5N1 avian influenza),Influenza (H5N1),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
 Influenza (H7 subtype),Influenza (H7 subtype),influenza,influenza_subtype,20,FALSE,TRUE,FALSE,Safe only because the alias itself contains subtype evidence.
+Sudan virus disease,Sudan virus disease (Ebola virus disease),,synonym,20,FALSE,FALSE,TRUE,Short DON title wording for Sudan virus disease.
+mpox,Mpox (Monkeypox),,synonym,20,FALSE,FALSE,TRUE,Current DON wording for mpox.
 Acute hemorrhagic fever syndrome,Acute haemorrhagic fever syndrome,,synonym,25,TRUE,FALSE,TRUE,US spelling variant for broad haemorrhagic fever syndrome.
+Acute watery diarrhoeal syndrome,Acute watery diarrhoea,,syndrome,25,TRUE,FALSE,TRUE,Older DON wording for acute watery diarrhoea.
 Crimean-Congo haemorrhagic fever,Crimean-Congo hemorrhagic fever,,synonym,25,FALSE,FALSE,TRUE,British spelling variant for CCHF.
 E. coli O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
 E. coli serotype O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
 E.coli O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
 E.coli serotype O157:H7,E. coli O157 infection,,synonym,25,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+Ebola haemorragic fever,Ebola virus disease,,synonym,25,FALSE,FALSE,TRUE,DON typo for older Ebola haemorrhagic fever wording.
 Ebola haemorrhagic fever,Ebola virus disease,,synonym,25,FALSE,FALSE,TRUE,Older DON wording for Ebola virus disease.
 Ebola hemorrhagic fever,Ebola virus disease,,synonym,25,FALSE,FALSE,TRUE,US spelling variant for older DON Ebola wording.
 Enterovirus D68,Enterovirus D68 respiratory disease,,synonym,25,FALSE,FALSE,TRUE,DON pathogen wording for enterovirus D68 respiratory disease.
 Hemorrhagic fever syndrome,Haemorrhagic fever syndrome,,synonym,25,TRUE,FALSE,TRUE,US spelling variant for broad haemorrhagic fever syndrome.
+Klebsiella pneumoniae,Klebsiella infection (pneumonia sepsis),,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for hypervirulent Klebsiella pneumoniae reports.
 MERS-CoV,Middle East Respiratory Syndrome (MERS),,abbreviation,25,TRUE,FALSE,TRUE,Safe DON wording variant for MERS; keep syndrome-level and reviewable.
 Marburg haemorrhagic fever,Marburg virus disease,,synonym,25,FALSE,FALSE,TRUE,Older DON wording for Marburg virus disease.
 Marburg hemorrhagic fever,Marburg virus disease,,synonym,25,FALSE,FALSE,TRUE,US spelling variant for older DON Marburg wording.
@@ -127,22 +132,46 @@ Middle East respiratory syndrome coronavirus,Middle East Respiratory Syndrome (M
 Middle East respiratory syndrome coronavirus (MERS-CoV),Middle East Respiratory Syndrome (MERS),,synonym,25,TRUE,FALSE,TRUE,Safe DON wording variant for MERS.
 Nipah virus,Nipah virus disease,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for Nipah virus disease.
 Oropouche virus,Oropouche fever,,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for Oropouche fever.
+Salmonella Agona,Salmonellosis,,synonym,25,FALSE,FALSE,TRUE,Pathogen/serovar wording for Salmonella Agona infection reports.
 Shigella dysenteriae,Shigellosis (bacillary dysentery),,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for bacillary dysentery.
+Shigella sonnei,Shigellosis (bacillary dysentery),,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for Shigella sonnei dysentery reports.
+Sudan Ebola virus,Sudan virus disease (Ebola virus disease),,synonym,25,FALSE,FALSE,TRUE,Older DON pathogen wording for Sudan virus disease.
+Sudan ebolavirus,Sudan virus disease (Ebola virus disease),,synonym,25,FALSE,FALSE,TRUE,Pathogen wording for Sudan virus disease.
 West Nile virus,West Nile fever,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for West Nile fever.
 West Nile virus infection,West Nile fever,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for West Nile fever.
 Zika virus infection,Zika virus disease,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for Zika virus disease.
+acute hepatitis of unknown aetiology,Severe acute hepatitis of unknown aetiology,,syndrome,25,TRUE,FALSE,TRUE,DON wording variant for severe acute hepatitis of unknown aetiology.
+acute hepatitis of unknown etiology,Severe acute hepatitis of unknown aetiology,,syndrome,25,TRUE,FALSE,TRUE,US spelling variant for severe acute hepatitis of unknown aetiology.
+circulating vaccine derived poliovirus,Vaccine-derived poliovirus,,synonym,25,FALSE,FALSE,TRUE,DON title wording for circulating vaccine-derived poliovirus.
 "hand, foot and mouth disease",Hand foot and mouth disease,,synonym,25,FALSE,FALSE,TRUE,Punctuated DON wording for hand foot and mouth disease.
+hypervirulent Klebsiella,Klebsiella infection (pneumonia sepsis),,synonym,25,FALSE,FALSE,TRUE,DON title wording for hypervirulent Klebsiella reports.
 meningococcal meningitis,Meningococcal disease,,synonym,25,FALSE,FALSE,TRUE,Common DON wording for meningococcal disease.
 monkeypox,Mpox (Monkeypox),,synonym,25,FALSE,FALSE,TRUE,Older DON wording for mpox.
 severe acute respiratory syndrome,Severe Acute Respiratory Syndrome (SARS),,synonym,25,TRUE,FALSE,TRUE,Expanded SARS wording; abbreviation-only matching is avoided to prevent SARS-CoV-2 false positives.
+vaccine derived poliovirus,Vaccine-derived poliovirus,,synonym,25,FALSE,FALSE,TRUE,Hyphenless DON wording for vaccine-derived poliovirus.
+vaccine-derived poliovirus,Vaccine-derived poliovirus,,synonym,25,FALSE,FALSE,TRUE,DON wording for vaccine-derived poliovirus.
+Diarrhoeal diseases,Diarrhoeal disease,,syndrome,30,TRUE,FALSE,TRUE,Older DON plural title wording for diarrhoeal disease.
 E. coli O157,E. coli O157 infection,,synonym,30,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
 E.coli O157,E. coli O157 infection,,synonym,30,FALSE,FALSE,TRUE,Common DON pathogen wording for E. coli O157 infection.
+Ebola disease,Ebola virus disease,,synonym,30,FALSE,FALSE,TRUE,"DON title wording for Ebola virus disease, including Sudan ebolavirus-era reports."
+Ebola fever,Ebola virus disease,,synonym,30,FALSE,FALSE,TRUE,Older DON evidence wording for Ebola virus disease.
+Ebola infection,Ebola virus disease,,synonym,30,FALSE,FALSE,TRUE,Older DON title wording for Ebola virus disease.
+Ebola outbreak,Ebola virus disease,,synonym,30,FALSE,FALSE,TRUE,DON title wording for Ebola virus disease outbreaks.
+Salmonella infections,Salmonellosis,,synonym,30,FALSE,FALSE,TRUE,DON title wording for Salmonella infection reports.
 Zika virus,Zika virus disease,,synonym,30,FALSE,FALSE,TRUE,Common DON wording for Zika virus disease.
 acute infective myocarditis,Myocarditis associated with enterovirus infection,,synonym,30,FALSE,FALSE,TRUE,DON title wording for myocarditis associated with enterovirus infection.
+cerebrospinal meningitis,Meningococcal disease,,synonym,30,FALSE,FALSE,TRUE,Older DON wording for epidemic meningococcal meningitis; generic/viral meningitis remains intentionally unmatched.
+epidemic meningitis,Meningococcal disease,,synonym,30,FALSE,FALSE,TRUE,Older DON wording for epidemic meningococcal meningitis; generic/viral meningitis remains intentionally unmatched.
 EV-D68,Enterovirus D68 respiratory disease,,abbreviation,35,FALSE,FALSE,TRUE,Standard abbreviation for enterovirus D68.
 HFMD,Hand foot and mouth disease,,abbreviation,35,FALSE,FALSE,TRUE,Standard abbreviation for hand foot and mouth disease.
+MPXV,Mpox (Monkeypox),,abbreviation,35,FALSE,FALSE,TRUE,Common abbreviation for monkeypox virus in DON mpox reports.
 OROV,Oropouche fever,,abbreviation,35,FALSE,FALSE,TRUE,Standard abbreviation for Oropouche virus/febrile disease in DON reports.
+Polio,Poliomyelitis,,synonym,35,FALSE,FALSE,TRUE,Common DON title wording for poliomyelitis.
 Shiga bacillus,Shigellosis (bacillary dysentery),,synonym,35,FALSE,FALSE,TRUE,DON pathogen wording for bacillary dysentery.
+XDR Shigella,Shigellosis (bacillary dysentery),,synonym,35,FALSE,FALSE,TRUE,DON shorthand for extensively drug-resistant Shigella reports.
+acute respiratory syndrome,Acute respiratory syndrome,,syndrome,35,TRUE,FALSE,TRUE,DON syndrome wording; promotion gate keeps this title/event anchored.
+hepatitis of unknown origin,Severe acute hepatitis of unknown aetiology,,syndrome,35,TRUE,FALSE,TRUE,DON wording variant for severe acute hepatitis of unknown aetiology.
+respiratory illnesses,Respiratory illness,,syndrome,35,TRUE,FALSE,TRUE,Plural DON title wording for respiratory illness; promotion gate keeps this title/event anchored.
 viral haemorrhagic fever,Haemorrhagic fever syndrome,,syndrome,35,TRUE,FALSE,TRUE,Broad DON syndrome wording; keep reviewable.
 viral hemorrhagic fever,Haemorrhagic fever syndrome,,syndrome,35,TRUE,FALSE,TRUE,US spelling variant for broad DON syndrome wording.
 CCHF,Crimean-Congo hemorrhagic fever,,abbreviation,40,FALSE,FALSE,TRUE,Standard abbreviation for Crimean-Congo hemorrhagic fever.

@@ -8,10 +8,21 @@ V2 is organized around native candidate layers, explicit claim types, a
 canonical country-disease-scope evidence table, and reviewed adoption/policy
 layers:
 
-The default production command is:
+Shared implementation modules live under `helpers/`; top-level numbered scripts
+are the runnable production and optional QA entrypoints.
+
+The default production command is Option A native association mode:
 
 ```sh
 Rscript scripts/associations/who_don_v2/run_who_don_v2.R
+```
+
+Option A builds routine association evidence from native country and native
+disease adoption layers. The old accepted association contract is retained as
+audit/reference material and as a rollback association mode:
+
+```sh
+Rscript scripts/associations/who_don_v2/run_who_don_v2.R --association-mode contract
 ```
 
 Default production writes a minimal top-level `qa/` surface. To refresh detailed
@@ -78,10 +89,70 @@ after the quality-tightening surface exists:
 Rscript scripts/associations/who_don_v2/09_scope_qa_closure.R
 ```
 
+The former Option B contract-dependency audit scripts have been archived under
+`archive/option_b_shadow/`. They are historical migration diagnostics, not
+routine production commands. To rerun the initial dependency audit from the
+archive:
+
+```sh
+Rscript scripts/associations/who_don_v2/archive/option_b_shadow/10_contract_dependency_audit.R
+```
+
+This diagnostic is not part of routine production. It compares the current
+contract-based final audit to a native-only association build, then writes
+summary counts, row-level differences, native-only associations, and candidate
+slim-contract rows under `qa/archive/contract_dependency_audit/`.
+
 Stages `07`, `08`, and `09` are not part of routine production. They summarize
 country recovery gaps, rank native-new country candidates, sample/close optional
 scope adjudication candidates, and write targeted review surfaces for future
 manual QA. They are not broad LLM inputs.
+
+Option A native association is now the default production path. Historical
+Option A migration/review scripts have been archived under
+`archive/option_a_migration/`. For example, the residual scope-consensus
+handoff for the earlier Option A scope disagreements is prepared by:
+
+```sh
+Rscript scripts/associations/who_don_v2/archive/option_a_migration/22_prepare_option_a_residual_scope_consensus_workpacks.R
+```
+
+It writes review workpacks under
+`qa/archive/option_a_scope_consensus/` and blank durable reviewer templates under
+`review/`. After those templates are completed by reviewers, merge consensus
+decisions with:
+
+```sh
+Rscript scripts/associations/who_don_v2/archive/option_a_migration/23_merge_option_a_residual_scope_consensus_reviews.R
+```
+
+This is optional QA for the Option A transition history and is not part of
+routine production.
+
+The completed Option A full-article keep-current decisions have been
+materialized into a durable explicit exception file:
+
+```text
+review/option_a_full_article_keep_current_exception_rows.csv
+```
+
+The historical shadow scripts that applied those decisions and froze the
+pre-switch remaining gap are:
+
+```sh
+Rscript scripts/associations/who_don_v2/archive/option_a_migration/27_apply_option_a_full_article_scope_decisions_shadow.R
+Rscript scripts/associations/who_don_v2/archive/option_a_migration/28_option_a_remaining_gap_triage.R
+```
+
+Those outputs are written under
+`qa/archive/option_a_native_association/` and
+`qa/archive/option_a_remaining_gap_triage/`. The production-readiness ledger is
+under `qa/archive/option_a_production_readiness/` and records `0` unexplained
+blockers. The final acceptance report is:
+
+```text
+scripts/associations/who_don_v2/OPTION_A_PRODUCTION_ACCEPTANCE_REPORT.md
+```
 
 The current implementation materializes accepted clean outputs into
 v2-owned fixtures with `00_materialize_v2_fixtures.R`. Routine v2 production
@@ -194,16 +265,29 @@ After the pre-v2 archive move, audit/fixture-refresh helpers resolve accepted
 clean outputs from `archive/who_don_pre_v2/data/disease_outbreak_news_clean/`
 when the old active clean folder is not present.
 
-Current production snapshot:
+Current production snapshot, refreshed with the default native Option A runner
+on 2026-05-15:
 
-- Final audit rows: `10738`
-- Modelling rows: `6486`
+- Association evidence rows: `9957`
+- Final audit rows: `9963`
+- Modelling rows: `4288`
 - Native country candidates: `14459`
-- Native disease candidates: `8246`
-- Claim rows: `10738`
-- Clean audit differences: `7406` exact matches, `171` v2 additions by disease
-  policy, `521` v2 additions by country policy, `2639` scope changes explained
-  by claim policy, and `76` clean rows removed by policy.
+- Native disease candidates: `8842`
+- Claim rows: `9957`
+- Web export rows: `9963`
+- Web strict/default rows: `4288`
+- Production checks: `19` pass, `0` fail
+- Production-readiness unexplained blockers: `0`
+- Full-article keep-current exceptions materialized: `222` output rows from
+  `216` decision rows
+- Web-facing influenza `disease` and `disease_display` labels have `0`
+  malformed `Influenza influenza(...)` labels and `0` legacy
+  `Influenza (H...)` display labels. The final audit keeps raw
+  `disease_standard` values for provenance, so use the web/display fields for
+  app labels.
+- Clean audit differences are optional audit outputs against the older accepted
+  clean reference; use the Option A production-readiness ledger for
+  pre-switch current-vs-Option-A blocker status.
 - Medium native-new country sample: `1171` sampled rows from `2391` medium
   native-new candidates; `326` accept-pattern, `159` reject-pattern, and `686`
   defer-insufficient-evidence-closed decisions.
@@ -211,11 +295,9 @@ Current production snapshot:
   through `country_candidate_medium_reported_cases_policy`.
 - Native-country accepted misses: `157`; no actionable tail or
   `high_rule_review` rows remain.
-- Scope adjudication candidates: `1245`, with `0` remaining high-priority
-  possible focal-event rows. The scope QA closure pass reduced the previous
-  `1627` optional rows through conservative event/context claim rules; the
-  current remaining closure surface has `216` context-pattern rows and `1029`
-  closed-insufficient-evidence rows.
+- Scope adjudication candidates: `661`. Remaining readiness gaps are documented
+  as non-blocking optional QA debt or accepted Option A policy differences in
+  `qa/archive/option_a_production_readiness/option_a_production_readiness_gap_ledger.csv`.
 
 Compatibility exports are skipped by default. To refresh the old clean-shaped
 final filenames for a temporary downstream compatibility check, opt in
@@ -278,3 +360,34 @@ surface and includes audit-only rows carried forward from accepted clean
 evidence. Rows that are plausible future adjudication candidates are separated
 into `review/who_don_scope_adjudication_candidates.csv`; even those should be
 manually subsetted before any paid/manual LLM run.
+
+### Option B slim-layer shadow lane
+
+Status: closed as optional QA/audit, not an active production blocker. The
+current status note is
+`archive/option_b_shadow/OPTION_B_STATUS.md`.
+
+The slim-layer migration path is implemented as a non-production shadow lane.
+Run it only if you want to inspect accepted-contract dependency after the
+contract dependency audit exists:
+
+```sh
+Rscript scripts/associations/who_don_v2/archive/option_b_shadow/10b_contract_dependency_audit_summaries.R
+Rscript scripts/associations/who_don_v2/archive/option_b_shadow/11_build_association_evidence_slim_shadow.R
+Rscript scripts/associations/who_don_v2/archive/option_b_shadow/12_compare_slim_shadow.R
+```
+
+Slim decision schemas live in:
+
+```text
+scripts/associations/who_don_v2/rules/slim_country_decisions.csv
+scripts/associations/who_don_v2/rules/slim_disease_decisions.csv
+scripts/associations/who_don_v2/rules/slim_scope_decisions.csv
+scripts/associations/who_don_v2/rules/slim_association_decisions.csv
+```
+
+Shadow outputs are written to
+`pathogen_association_data/WHO/disease_outbreak_news_v2/qa/archive/slim_layer_shadow/`.
+This lane does not write to production `evidence/`, `review/`, `final/`, or
+`web/` outputs. Active slim decision tables are intentionally empty for now; do
+not copy the large `accepted_association_contract.csv` into slim tables.

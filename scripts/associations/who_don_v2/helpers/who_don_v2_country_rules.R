@@ -2,7 +2,7 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_io.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_io.R"))
 
 v2_country_alias_input_cols <- c(
   "country.name.en",

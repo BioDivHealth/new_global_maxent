@@ -1,10 +1,27 @@
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_production.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_production.R"))
 
 args <- commandArgs(trailingOnly = TRUE)
-valid_args <- c("--audit-clean", "--skip-production", "--verbose-qa", "--help", "-h")
-unknown_args <- setdiff(args, valid_args)
+flag_args <- args[grepl("^--", args)]
+valid_flags <- c("--audit-clean", "--skip-production", "--verbose-qa", "--association-mode", "--help", "-h")
+unknown_args <- setdiff(flag_args, valid_flags)
 if (length(unknown_args) > 0) {
   stop("Unknown arguments: ", paste(unknown_args, collapse = ", "), call. = FALSE)
+}
+
+association_mode <- "native"
+association_mode_index <- which(args == "--association-mode")
+if (length(association_mode_index) > 1L) {
+  stop("--association-mode can be supplied at most once.", call. = FALSE)
+}
+if (length(association_mode_index) == 1L) {
+  value_index <- association_mode_index + 1L
+  if (value_index > length(args) || grepl("^--", args[[value_index]])) {
+    stop("--association-mode requires a value: native or contract.", call. = FALSE)
+  }
+  association_mode <- args[[value_index]]
+}
+if (!association_mode %in% c("native", "contract")) {
+  stop("--association-mode must be native or contract.", call. = FALSE)
 }
 
 if (any(args %in% c("--help", "-h"))) {
@@ -17,11 +34,13 @@ if (any(args %in% c("--help", "-h"))) {
       "  Rscript scripts/associations/who_don_v2/run_who_don_v2.R --audit-clean",
       "  Rscript scripts/associations/who_don_v2/run_who_don_v2.R --skip-production --audit-clean",
       "  Rscript scripts/associations/who_don_v2/run_who_don_v2.R --verbose-qa",
+      "  Rscript scripts/associations/who_don_v2/run_who_don_v2.R --association-mode contract",
       "",
       "Options:",
       "  --audit-clean       Run optional clean-vs-v2 audit after production.",
       "  --skip-production   Skip production stages; requires --audit-clean.",
       "  --verbose-qa        Write detailed stage diagnostics to qa/archive/stage_diagnostics/.",
+      "  --association-mode  Association evidence mode: native (default Option A) or contract (rollback/reference).",
       sep = "\n"
     ),
     "\n"
@@ -38,6 +57,7 @@ if (skip_production && !audit_clean) {
 if (verbose_qa) {
   Sys.setenv(WHO_DON_V2_VERBOSE_QA = "1")
 }
+Sys.setenv(WHO_DON_V2_ASSOCIATION_MODE = association_mode)
 
 production_stages <- c(
   "01_records.R",
@@ -65,6 +85,7 @@ run_stage <- function(stage_file) {
 }
 
 if (!skip_production) {
+  message("WHO DON v2 association mode: ", association_mode)
   lapply(production_stages, run_stage)
   v2_validate_production_outputs()
   manifest <- v2_write_output_manifest(v2_production_output_specs())

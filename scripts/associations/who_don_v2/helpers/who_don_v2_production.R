@@ -1,6 +1,6 @@
 library(dplyr)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_io.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_io.R"))
 
 v2_is_blank <- function(x) {
   is.na(x) | trimws(as.character(x)) == ""
@@ -24,7 +24,7 @@ v2_production_output_specs <- function() {
   tibble::tibble(
     output_role = c(
       "association_evidence",
-      "accepted_association_contract",
+      "accepted_association_contract_reference",
       "claim_evidence",
       "records_source_fixture",
       "country_candidates_native",

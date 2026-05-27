@@ -2,7 +2,7 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_io.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_io.R"))
 
 v2_disease_compare_key <- c(
   "record_key",
@@ -315,6 +315,110 @@ v2_apply_influenza_compare_standardization <- function(x, influenza_standardizat
       -canonical_influenza_type,
       -canonical_influenza_subtype,
       -is_influenza_before_standardization
+    )
+}
+
+v2_extract_influenza_subtype_from_label <- function(x) {
+  label <- str_to_upper(coalesce(as.character(x), ""))
+  specific <- str_match(label, "\\bH[0-9]+N[0-9]+\\b")[, 1]
+  family <- str_match(label, "\\bH[0-9]+\\b")[, 1]
+  na_if(coalesce(specific, family), "")
+}
+
+v2_add_influenza_compare_keys <- function(
+  x,
+  influenza_standardization = v2_read_csv(who_don_v2_rules_dir("influenza_label_standardization.csv"))
+) {
+  missing_cols <- setdiff(v2_disease_compare_key, names(x))
+  if (length(missing_cols) > 0) {
+    stop(
+      "Missing disease comparison columns for influenza compare keys: ",
+      paste(missing_cols, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  missing_standardization_cols <- setdiff(
+    v2_influenza_label_standardization_cols,
+    names(influenza_standardization)
+  )
+  if (length(missing_standardization_cols) > 0) {
+    stop(
+      "Missing influenza standardization columns: ",
+      paste(missing_standardization_cols, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  influenza_standardization <- influenza_standardization %>%
+    transmute(
+      influenza_subtype_lookup = v2_normalize_compare_value(influenza_subtype),
+      canonical_disease_standard = v2_normalize_compare_value(canonical_disease_standard),
+      canonical_influenza_type = v2_normalize_compare_value(canonical_influenza_type),
+      canonical_influenza_subtype = v2_normalize_compare_value(canonical_influenza_subtype)
+    ) %>%
+    distinct(influenza_subtype_lookup, .keep_all = TRUE)
+
+  x %>%
+    mutate(
+      disease_original_key = v2_normalize_compare_value(disease_standard),
+      influenza_type_original_key = v2_normalize_compare_value(influenza_type),
+      influenza_subtype_original_key = v2_normalize_compare_value(influenza_subtype),
+      influenza_subtype_label_key = v2_normalize_compare_value(
+        v2_extract_influenza_subtype_from_label(disease_standard)
+      ),
+      influenza_subtype_lookup = coalesce(
+        na_if(influenza_subtype_original_key, ""),
+        na_if(influenza_subtype_label_key, ""),
+        ""
+      ),
+      is_influenza_compare_label = v2_is_influenza_label(disease_standard)
+    ) %>%
+    left_join(influenza_standardization, by = "influenza_subtype_lookup") %>%
+    mutate(
+      disease_compare_key = case_when(
+        is_influenza_compare_label & influenza_subtype_lookup != "" &
+          canonical_disease_standard != "" ~ canonical_disease_standard,
+        is_influenza_compare_label & influenza_subtype_lookup == "" ~ "Influenza",
+        TRUE ~ disease_original_key
+      ),
+      influenza_type_compare_key = case_when(
+        is_influenza_compare_label & influenza_subtype_lookup != "" &
+          canonical_influenza_type != "" ~ canonical_influenza_type,
+        is_influenza_compare_label & influenza_subtype_lookup == "" ~ "influenza",
+        TRUE ~ influenza_type_original_key
+      ),
+      influenza_subtype_compare_key = case_when(
+        is_influenza_compare_label & influenza_subtype_lookup != "" &
+          canonical_influenza_subtype != "" ~ canonical_influenza_subtype,
+        is_influenza_compare_label ~ influenza_subtype_lookup,
+        TRUE ~ influenza_subtype_original_key
+      ),
+      influenza_compare_changed =
+        disease_compare_key != disease_original_key |
+          influenza_type_compare_key != influenza_type_original_key |
+          influenza_subtype_compare_key != influenza_subtype_original_key,
+      influenza_compare_note = case_when(
+        !is_influenza_compare_label ~ NA_character_,
+        influenza_compare_changed & influenza_subtype_lookup != "" ~ paste0(
+          "Influenza comparison key standardized from subtype ",
+          influenza_subtype_lookup,
+          "."
+        ),
+        influenza_compare_changed ~ "Generic influenza comparison key standardized.",
+        TRUE ~ "Influenza comparison key already canonical."
+      )
+    ) %>%
+    select(
+      -disease_original_key,
+      -influenza_type_original_key,
+      -influenza_subtype_original_key,
+      -influenza_subtype_label_key,
+      -influenza_subtype_lookup,
+      -canonical_disease_standard,
+      -canonical_influenza_type,
+      -canonical_influenza_subtype,
+      -is_influenza_compare_label
     )
 }
 

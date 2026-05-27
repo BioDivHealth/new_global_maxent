@@ -1,7 +1,7 @@
 library(dplyr)
 library(stringr)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_rules.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_rules.R"))
 
 v2_influenza_specific_pattern <- "(h[0-9]+n[0-9]+|a\\(h[0-9]+n[0-9]+\\))"
 v2_influenza_h_only_pattern <- "(^|[^a-z0-9])h[0-9]+([^a-z0-9]|$)"
@@ -139,18 +139,32 @@ v2_safe_disease_aliases <- function(disease_candidates) {
     "Acute hemorrhagic fever syndrome", "Acute haemorrhagic fever syndrome", NA_character_, "synonym", 25L, TRUE, FALSE, TRUE, "US spelling variant for broad haemorrhagic fever syndrome.",
     "Ebola haemorrhagic fever", "Ebola virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Older DON wording for Ebola virus disease.",
     "Ebola hemorrhagic fever", "Ebola virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "US spelling variant for older DON Ebola wording.",
+    "Ebola haemorragic fever", "Ebola virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "DON typo for older Ebola haemorrhagic fever wording.",
+    "Ebola disease", "Ebola virus disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "DON title wording for Ebola virus disease, including Sudan ebolavirus-era reports.",
+    "Ebola infection", "Ebola virus disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "Older DON title wording for Ebola virus disease.",
+    "Ebola fever", "Ebola virus disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "Older DON evidence wording for Ebola virus disease.",
+    "Ebola outbreak", "Ebola virus disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "DON title wording for Ebola virus disease outbreaks.",
+    "Sudan virus disease", "Sudan virus disease (Ebola virus disease)", NA_character_, "synonym", 20L, FALSE, FALSE, TRUE, "Short DON title wording for Sudan virus disease.",
+    "Sudan ebolavirus", "Sudan virus disease (Ebola virus disease)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Pathogen wording for Sudan virus disease.",
+    "Sudan Ebola virus", "Sudan virus disease (Ebola virus disease)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Older DON pathogen wording for Sudan virus disease.",
     "Marburg haemorrhagic fever", "Marburg virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Older DON wording for Marburg virus disease.",
     "Marburg hemorrhagic fever", "Marburg virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "US spelling variant for older DON Marburg wording.",
     "Meningooccal disease", "Meningococcal disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "DON typo for meningococcal disease.",
     "Meningococcal meningitidis", "Meningococcal disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Older DON title wording for meningococcal disease.",
     "meningococcal meningitis", "Meningococcal disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Common DON wording for meningococcal disease.",
+    "cerebrospinal meningitis", "Meningococcal disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "Older DON wording for epidemic meningococcal meningitis; generic/viral meningitis remains intentionally unmatched.",
+    "epidemic meningitis", "Meningococcal disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "Older DON wording for epidemic meningococcal meningitis; generic/viral meningitis remains intentionally unmatched.",
     "viral haemorrhagic fever", "Haemorrhagic fever syndrome", NA_character_, "syndrome", 35L, TRUE, FALSE, TRUE, "Broad DON syndrome wording; keep reviewable.",
     "viral hemorrhagic fever", "Haemorrhagic fever syndrome", NA_character_, "syndrome", 35L, TRUE, FALSE, TRUE, "US spelling variant for broad DON syndrome wording.",
     "haemorrhagic fever", "Haemorrhagic fever syndrome", NA_character_, "syndrome", 80L, TRUE, FALSE, TRUE, "Generic broad DON syndrome wording; keep reviewable.",
     "hemorrhagic fever", "Haemorrhagic fever syndrome", NA_character_, "syndrome", 80L, TRUE, FALSE, TRUE, "US spelling variant for generic broad DON syndrome wording.",
     "severe acute respiratory syndrome", "Severe Acute Respiratory Syndrome (SARS)", NA_character_, "synonym", 25L, TRUE, FALSE, TRUE, "Expanded SARS wording; abbreviation-only matching is avoided to prevent SARS-CoV-2 false positives.",
     "SARS", "Severe Acute Respiratory Syndrome (SARS)", NA_character_, "abbreviation", 40L, TRUE, FALSE, TRUE, "Historical SARS abbreviation; alias regex blocks SARS-CoV hyphenated matches.",
+    "acute respiratory syndrome", "Acute respiratory syndrome", NA_character_, "syndrome", 35L, TRUE, FALSE, TRUE, "DON syndrome wording; promotion gate keeps this title/event anchored.",
+    "respiratory illnesses", "Respiratory illness", NA_character_, "syndrome", 35L, TRUE, FALSE, TRUE, "Plural DON title wording for respiratory illness; promotion gate keeps this title/event anchored.",
     "monkeypox", "Mpox (Monkeypox)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Older DON wording for mpox.",
+    "mpox", "Mpox (Monkeypox)", NA_character_, "synonym", 20L, FALSE, FALSE, TRUE, "Current DON wording for mpox.",
+    "MPXV", "Mpox (Monkeypox)", NA_character_, "abbreviation", 35L, FALSE, FALSE, TRUE, "Common abbreviation for monkeypox virus in DON mpox reports.",
     "West Nile virus", "West Nile fever", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Common DON wording for West Nile fever.",
     "West Nile virus infection", "West Nile fever", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Common DON wording for West Nile fever.",
     "Nipah virus", "Nipah virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Common DON wording for Nipah virus disease.",
@@ -171,8 +185,23 @@ v2_safe_disease_aliases <- function(disease_candidates) {
     "Oropouche virus", "Oropouche fever", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Pathogen wording for Oropouche fever.",
     "Shiga bacillus", "Shigellosis (bacillary dysentery)", NA_character_, "synonym", 35L, FALSE, FALSE, TRUE, "DON pathogen wording for bacillary dysentery.",
     "Shigella dysenteriae", "Shigellosis (bacillary dysentery)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Pathogen wording for bacillary dysentery.",
+    "Shigella sonnei", "Shigellosis (bacillary dysentery)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Pathogen wording for Shigella sonnei dysentery reports.",
+    "XDR Shigella", "Shigellosis (bacillary dysentery)", NA_character_, "synonym", 35L, FALSE, FALSE, TRUE, "DON shorthand for extensively drug-resistant Shigella reports.",
     "Zika virus infection", "Zika virus disease", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Common DON wording for Zika virus disease.",
-    "Zika virus", "Zika virus disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "Common DON wording for Zika virus disease."
+    "Zika virus", "Zika virus disease", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "Common DON wording for Zika virus disease.",
+    "Acute watery diarrhoeal syndrome", "Acute watery diarrhoea", NA_character_, "syndrome", 25L, TRUE, FALSE, TRUE, "Older DON wording for acute watery diarrhoea.",
+    "Diarrhoeal diseases", "Diarrhoeal disease", NA_character_, "syndrome", 30L, TRUE, FALSE, TRUE, "Older DON plural title wording for diarrhoeal disease.",
+    "Salmonella Agona", "Salmonellosis", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Pathogen/serovar wording for Salmonella Agona infection reports.",
+    "Salmonella infections", "Salmonellosis", NA_character_, "synonym", 30L, FALSE, FALSE, TRUE, "DON title wording for Salmonella infection reports.",
+    "Klebsiella pneumoniae", "Klebsiella infection (pneumonia sepsis)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Pathogen wording for hypervirulent Klebsiella pneumoniae reports.",
+    "hypervirulent Klebsiella", "Klebsiella infection (pneumonia sepsis)", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "DON title wording for hypervirulent Klebsiella reports.",
+    "acute hepatitis of unknown aetiology", "Severe acute hepatitis of unknown aetiology", NA_character_, "syndrome", 25L, TRUE, FALSE, TRUE, "DON wording variant for severe acute hepatitis of unknown aetiology.",
+    "acute hepatitis of unknown etiology", "Severe acute hepatitis of unknown aetiology", NA_character_, "syndrome", 25L, TRUE, FALSE, TRUE, "US spelling variant for severe acute hepatitis of unknown aetiology.",
+    "hepatitis of unknown origin", "Severe acute hepatitis of unknown aetiology", NA_character_, "syndrome", 35L, TRUE, FALSE, TRUE, "DON wording variant for severe acute hepatitis of unknown aetiology.",
+    "Polio", "Poliomyelitis", NA_character_, "synonym", 35L, FALSE, FALSE, TRUE, "Common DON title wording for poliomyelitis.",
+    "vaccine-derived poliovirus", "Vaccine-derived poliovirus", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "DON wording for vaccine-derived poliovirus.",
+    "vaccine derived poliovirus", "Vaccine-derived poliovirus", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "Hyphenless DON wording for vaccine-derived poliovirus.",
+    "circulating vaccine derived poliovirus", "Vaccine-derived poliovirus", NA_character_, "synonym", 25L, FALSE, FALSE, TRUE, "DON title wording for circulating vaccine-derived poliovirus."
   )
 
   bind_rows(seeded_aliases, manual_aliases) %>%

@@ -3,8 +3,8 @@ library(stringr)
 library(tidyr)
 library(purrr)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_country_rules.R"))
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_disease_extraction.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_country_rules.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_disease_extraction.R"))
 
 v2_country_text_sections <- function(records) {
   section_cols <- c(

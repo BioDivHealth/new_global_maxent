@@ -22,7 +22,7 @@ alias:108,alias,influenza,Influenza (H5N1),Influenza (H5N1 avian influenza),,,,1
 alias:109,alias,influenza,Influenza (H7 subtype),Influenza (H7 subtype),,,,1,FALSE,TRUE,,20,Safe only because the alias itself contains subtype evidence.
 flu_h1,influenza_subtype,influenza,Influenza A(H1),,\bH1\b,A,H1,2,TRUE,TRUE,history of|historical|previously|differential diagnosis|surveillance|background,48,H1 family evidence without explicit N subtype.
 flu_h5,influenza_subtype,influenza,Influenza (H5 subtype),,\bH5\b,A,H5,2,TRUE,TRUE,history of|historical|previously|differential diagnosis|surveillance|background,50,H5 family evidence without explicit N subtype.
-alias:152,alias,influenza,Influenza,Influenza,,,,8,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,90,Safe generic influenza alias; subtype must be resolved by explicit subtype evidence.
+alias:181,alias,influenza,Influenza,Influenza,,,,8,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,90,Safe generic influenza alias; subtype must be resolved by explicit subtype evidence.
 flu_generic,influenza_subtype,influenza,Influenza,,influenza,influenza,,9,FALSE,FALSE,history of|historical|previously|differential diagnosis|surveillance|background,100,Generic influenza mention.
 alias:1,alias,other,Acute diarrhoea,Acute diarrhoea,,,,2,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,10,Safe native disease alias derived from accepted clean disease candidates.
 alias:2,alias,other,Acute encephalitis syndrome due to Chandipura virus,Acute encephalitis syndrome due to Chandipura virus,,,,2,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,10,Safe native disease alias derived from accepted clean disease candidates.
@@ -128,45 +128,74 @@ alias:101,alias,other,Western equine encephalitis,Western equine encephalitis,,,
 alias:102,alias,other,Wild poliovirus,Wild poliovirus,,,,2,FALSE,FALSE,,10,Safe native disease alias derived from accepted clean disease candidates.
 alias:103,alias,other,Yellow fever,Yellow fever,,,,2,FALSE,FALSE,,10,Safe native disease alias derived from accepted clean disease candidates.
 alias:104,alias,other,Zika virus disease,Zika virus disease,,,,2,FALSE,FALSE,,10,Safe native disease alias derived from accepted clean disease candidates.
-alias:110,alias,other,Acute haemorrhagic fever syndrome,Acute hemorrhagic fever syndrome,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,US spelling variant for broad haemorrhagic fever syndrome.
-alias:111,alias,other,Crimean-Congo hemorrhagic fever,Crimean-Congo haemorrhagic fever,,,,3,FALSE,FALSE,,25,British spelling variant for CCHF.
-alias:112,alias,other,E. coli O157 infection,E. coli O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
-alias:113,alias,other,E. coli O157 infection,E. coli serotype O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
-alias:114,alias,other,E. coli O157 infection,E.coli O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
-alias:115,alias,other,E. coli O157 infection,E.coli serotype O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
-alias:116,alias,other,Ebola virus disease,Ebola haemorrhagic fever,,,,3,FALSE,FALSE,,25,Older DON wording for Ebola virus disease.
-alias:117,alias,other,Ebola virus disease,Ebola hemorrhagic fever,,,,3,FALSE,FALSE,,25,US spelling variant for older DON Ebola wording.
-alias:118,alias,other,Enterovirus D68 respiratory disease,Enterovirus D68,,,,3,FALSE,FALSE,,25,DON pathogen wording for enterovirus D68 respiratory disease.
-alias:119,alias,other,Haemorrhagic fever syndrome,Hemorrhagic fever syndrome,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,US spelling variant for broad haemorrhagic fever syndrome.
-alias:133,alias,other,Hand foot and mouth disease,"hand, foot and mouth disease",,,,3,FALSE,FALSE,,25,Punctuated DON wording for hand foot and mouth disease.
-alias:121,alias,other,Marburg virus disease,Marburg haemorrhagic fever,,,,3,FALSE,FALSE,,25,Older DON wording for Marburg virus disease.
-alias:122,alias,other,Marburg virus disease,Marburg hemorrhagic fever,,,,3,FALSE,FALSE,,25,US spelling variant for older DON Marburg wording.
-alias:123,alias,other,Meningococcal disease,Meningococcal meningitidis,,,,3,FALSE,FALSE,,25,Older DON title wording for meningococcal disease.
-alias:124,alias,other,Meningococcal disease,Meningooccal disease,,,,3,FALSE,FALSE,,25,DON typo for meningococcal disease.
-alias:134,alias,other,Meningococcal disease,meningococcal meningitis,,,,3,FALSE,FALSE,,25,Common DON wording for meningococcal disease.
-alias:120,alias,other,Middle East Respiratory Syndrome (MERS),MERS-CoV,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Safe DON wording variant for MERS; keep syndrome-level and reviewable.
-alias:125,alias,other,Middle East Respiratory Syndrome (MERS),Middle East respiratory syndrome coronavirus,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Safe DON wording variant for MERS.
-alias:126,alias,other,Middle East Respiratory Syndrome (MERS),Middle East respiratory syndrome coronavirus (MERS-CoV),,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Safe DON wording variant for MERS.
-alias:135,alias,other,Mpox (Monkeypox),monkeypox,,,,3,FALSE,FALSE,,25,Older DON wording for mpox.
-alias:127,alias,other,Nipah virus disease,Nipah virus,,,,3,FALSE,FALSE,,25,Common DON wording for Nipah virus disease.
-alias:128,alias,other,Oropouche fever,Oropouche virus,,,,3,FALSE,FALSE,,25,Pathogen wording for Oropouche fever.
-alias:136,alias,other,Severe Acute Respiratory Syndrome (SARS),severe acute respiratory syndrome,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Expanded SARS wording; abbreviation-only matching is avoided to prevent SARS-CoV-2 false positives.
-alias:129,alias,other,Shigellosis (bacillary dysentery),Shigella dysenteriae,,,,3,FALSE,FALSE,,25,Pathogen wording for bacillary dysentery.
-alias:130,alias,other,West Nile fever,West Nile virus,,,,3,FALSE,FALSE,,25,Common DON wording for West Nile fever.
-alias:131,alias,other,West Nile fever,West Nile virus infection,,,,3,FALSE,FALSE,,25,Common DON wording for West Nile fever.
-alias:132,alias,other,Zika virus disease,Zika virus infection,,,,3,FALSE,FALSE,,25,Common DON wording for Zika virus disease.
-alias:137,alias,other,E. coli O157 infection,E. coli O157,,,,3,FALSE,FALSE,,30,Common DON pathogen wording for E. coli O157 infection.
-alias:138,alias,other,E. coli O157 infection,E.coli O157,,,,3,FALSE,FALSE,,30,Common DON pathogen wording for E. coli O157 infection.
-alias:140,alias,other,Myocarditis associated with enterovirus infection,acute infective myocarditis,,,,3,FALSE,FALSE,,30,DON title wording for myocarditis associated with enterovirus infection.
-alias:139,alias,other,Zika virus disease,Zika virus,,,,3,FALSE,FALSE,,30,Common DON wording for Zika virus disease.
-alias:141,alias,other,Enterovirus D68 respiratory disease,EV-D68,,,,3,FALSE,FALSE,,35,Standard abbreviation for enterovirus D68.
-alias:142,alias,other,Hand foot and mouth disease,HFMD,,,,3,FALSE,FALSE,,35,Standard abbreviation for hand foot and mouth disease.
-alias:143,alias,other,Oropouche fever,OROV,,,,3,FALSE,FALSE,,35,Standard abbreviation for Oropouche virus/febrile disease in DON reports.
-alias:144,alias,other,Shigellosis (bacillary dysentery),Shiga bacillus,,,,3,FALSE,FALSE,,35,DON pathogen wording for bacillary dysentery.
-alias:147,alias,other,Crimean-Congo hemorrhagic fever,CCHF,,,,3,FALSE,FALSE,,40,Standard abbreviation for Crimean-Congo hemorrhagic fever.
-alias:148,alias,other,Severe Acute Respiratory Syndrome (SARS),SARS,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,40,Historical SARS abbreviation; alias regex blocks SARS-CoV hyphenated matches.
-alias:149,alias,other,Middle East Respiratory Syndrome (MERS),Novel coronavirus infection,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,80,Review-only MERS-era wording; event anchoring prevents COVID-era promotion.
-alias:145,alias,other,Haemorrhagic fever syndrome,viral haemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,Broad DON syndrome wording; keep reviewable.
-alias:146,alias,other,Haemorrhagic fever syndrome,viral hemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,US spelling variant for broad DON syndrome wording.
-alias:150,alias,other,Haemorrhagic fever syndrome,haemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,80,Generic broad DON syndrome wording; keep reviewable.
-alias:151,alias,other,Haemorrhagic fever syndrome,hemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,80,US spelling variant for generic broad DON syndrome wording.
+alias:111,alias,other,Mpox (Monkeypox),mpox,,,,3,FALSE,FALSE,,20,Current DON wording for mpox.
+alias:110,alias,other,Sudan virus disease (Ebola virus disease),Sudan virus disease,,,,3,FALSE,FALSE,,20,Short DON title wording for Sudan virus disease.
+alias:112,alias,other,Acute haemorrhagic fever syndrome,Acute hemorrhagic fever syndrome,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,US spelling variant for broad haemorrhagic fever syndrome.
+alias:114,alias,other,Crimean-Congo hemorrhagic fever,Crimean-Congo haemorrhagic fever,,,,3,FALSE,FALSE,,25,British spelling variant for CCHF.
+alias:115,alias,other,E. coli O157 infection,E. coli O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
+alias:116,alias,other,E. coli O157 infection,E. coli serotype O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
+alias:117,alias,other,E. coli O157 infection,E.coli O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
+alias:118,alias,other,E. coli O157 infection,E.coli serotype O157:H7,,,,3,FALSE,FALSE,,25,Common DON pathogen wording for E. coli O157 infection.
+alias:119,alias,other,Ebola virus disease,Ebola haemorragic fever,,,,3,FALSE,FALSE,,25,DON typo for older Ebola haemorrhagic fever wording.
+alias:120,alias,other,Ebola virus disease,Ebola haemorrhagic fever,,,,3,FALSE,FALSE,,25,Older DON wording for Ebola virus disease.
+alias:121,alias,other,Ebola virus disease,Ebola hemorrhagic fever,,,,3,FALSE,FALSE,,25,US spelling variant for older DON Ebola wording.
+alias:122,alias,other,Enterovirus D68 respiratory disease,Enterovirus D68,,,,3,FALSE,FALSE,,25,DON pathogen wording for enterovirus D68 respiratory disease.
+alias:123,alias,other,Haemorrhagic fever syndrome,Hemorrhagic fever syndrome,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,US spelling variant for broad haemorrhagic fever syndrome.
+alias:145,alias,other,Hand foot and mouth disease,"hand, foot and mouth disease",,,,3,FALSE,FALSE,,25,Punctuated DON wording for hand foot and mouth disease.
+alias:124,alias,other,Klebsiella infection (pneumonia sepsis),Klebsiella pneumoniae,,,,3,FALSE,FALSE,,25,Pathogen wording for hypervirulent Klebsiella pneumoniae reports.
+alias:146,alias,other,Klebsiella infection (pneumonia sepsis),hypervirulent Klebsiella,,,,3,FALSE,FALSE,,25,DON title wording for hypervirulent Klebsiella reports.
+alias:126,alias,other,Marburg virus disease,Marburg haemorrhagic fever,,,,3,FALSE,FALSE,,25,Older DON wording for Marburg virus disease.
+alias:127,alias,other,Marburg virus disease,Marburg hemorrhagic fever,,,,3,FALSE,FALSE,,25,US spelling variant for older DON Marburg wording.
+alias:128,alias,other,Meningococcal disease,Meningococcal meningitidis,,,,3,FALSE,FALSE,,25,Older DON title wording for meningococcal disease.
+alias:129,alias,other,Meningococcal disease,Meningooccal disease,,,,3,FALSE,FALSE,,25,DON typo for meningococcal disease.
+alias:147,alias,other,Meningococcal disease,meningococcal meningitis,,,,3,FALSE,FALSE,,25,Common DON wording for meningococcal disease.
+alias:125,alias,other,Middle East Respiratory Syndrome (MERS),MERS-CoV,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Safe DON wording variant for MERS; keep syndrome-level and reviewable.
+alias:130,alias,other,Middle East Respiratory Syndrome (MERS),Middle East respiratory syndrome coronavirus,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Safe DON wording variant for MERS.
+alias:131,alias,other,Middle East Respiratory Syndrome (MERS),Middle East respiratory syndrome coronavirus (MERS-CoV),,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Safe DON wording variant for MERS.
+alias:148,alias,other,Mpox (Monkeypox),monkeypox,,,,3,FALSE,FALSE,,25,Older DON wording for mpox.
+alias:132,alias,other,Nipah virus disease,Nipah virus,,,,3,FALSE,FALSE,,25,Common DON wording for Nipah virus disease.
+alias:133,alias,other,Oropouche fever,Oropouche virus,,,,3,FALSE,FALSE,,25,Pathogen wording for Oropouche fever.
+alias:134,alias,other,Salmonellosis,Salmonella Agona,,,,3,FALSE,FALSE,,25,Pathogen/serovar wording for Salmonella Agona infection reports.
+alias:149,alias,other,Severe Acute Respiratory Syndrome (SARS),severe acute respiratory syndrome,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Expanded SARS wording; abbreviation-only matching is avoided to prevent SARS-CoV-2 false positives.
+alias:135,alias,other,Shigellosis (bacillary dysentery),Shigella dysenteriae,,,,3,FALSE,FALSE,,25,Pathogen wording for bacillary dysentery.
+alias:136,alias,other,Shigellosis (bacillary dysentery),Shigella sonnei,,,,3,FALSE,FALSE,,25,Pathogen wording for Shigella sonnei dysentery reports.
+alias:137,alias,other,Sudan virus disease (Ebola virus disease),Sudan Ebola virus,,,,3,FALSE,FALSE,,25,Older DON pathogen wording for Sudan virus disease.
+alias:138,alias,other,Sudan virus disease (Ebola virus disease),Sudan ebolavirus,,,,3,FALSE,FALSE,,25,Pathogen wording for Sudan virus disease.
+alias:144,alias,other,Vaccine-derived poliovirus,circulating vaccine derived poliovirus,,,,3,FALSE,FALSE,,25,DON title wording for circulating vaccine-derived poliovirus.
+alias:150,alias,other,Vaccine-derived poliovirus,vaccine derived poliovirus,,,,3,FALSE,FALSE,,25,Hyphenless DON wording for vaccine-derived poliovirus.
+alias:151,alias,other,Vaccine-derived poliovirus,vaccine-derived poliovirus,,,,3,FALSE,FALSE,,25,DON wording for vaccine-derived poliovirus.
+alias:139,alias,other,West Nile fever,West Nile virus,,,,3,FALSE,FALSE,,25,Common DON wording for West Nile fever.
+alias:140,alias,other,West Nile fever,West Nile virus infection,,,,3,FALSE,FALSE,,25,Common DON wording for West Nile fever.
+alias:141,alias,other,Zika virus disease,Zika virus infection,,,,3,FALSE,FALSE,,25,Common DON wording for Zika virus disease.
+alias:153,alias,other,E. coli O157 infection,E. coli O157,,,,3,FALSE,FALSE,,30,Common DON pathogen wording for E. coli O157 infection.
+alias:154,alias,other,E. coli O157 infection,E.coli O157,,,,3,FALSE,FALSE,,30,Common DON pathogen wording for E. coli O157 infection.
+alias:155,alias,other,Ebola virus disease,Ebola disease,,,,3,FALSE,FALSE,,30,"DON title wording for Ebola virus disease, including Sudan ebolavirus-era reports."
+alias:156,alias,other,Ebola virus disease,Ebola fever,,,,3,FALSE,FALSE,,30,Older DON evidence wording for Ebola virus disease.
+alias:157,alias,other,Ebola virus disease,Ebola infection,,,,3,FALSE,FALSE,,30,Older DON title wording for Ebola virus disease.
+alias:158,alias,other,Ebola virus disease,Ebola outbreak,,,,3,FALSE,FALSE,,30,DON title wording for Ebola virus disease outbreaks.
+alias:162,alias,other,Meningococcal disease,cerebrospinal meningitis,,,,3,FALSE,FALSE,,30,Older DON wording for epidemic meningococcal meningitis; generic/viral meningitis remains intentionally unmatched.
+alias:163,alias,other,Meningococcal disease,epidemic meningitis,,,,3,FALSE,FALSE,,30,Older DON wording for epidemic meningococcal meningitis; generic/viral meningitis remains intentionally unmatched.
+alias:161,alias,other,Myocarditis associated with enterovirus infection,acute infective myocarditis,,,,3,FALSE,FALSE,,30,DON title wording for myocarditis associated with enterovirus infection.
+alias:159,alias,other,Salmonellosis,Salmonella infections,,,,3,FALSE,FALSE,,30,DON title wording for Salmonella infection reports.
+alias:160,alias,other,Zika virus disease,Zika virus,,,,3,FALSE,FALSE,,30,Common DON wording for Zika virus disease.
+alias:164,alias,other,Enterovirus D68 respiratory disease,EV-D68,,,,3,FALSE,FALSE,,35,Standard abbreviation for enterovirus D68.
+alias:165,alias,other,Hand foot and mouth disease,HFMD,,,,3,FALSE,FALSE,,35,Standard abbreviation for hand foot and mouth disease.
+alias:166,alias,other,Mpox (Monkeypox),MPXV,,,,3,FALSE,FALSE,,35,Common abbreviation for monkeypox virus in DON mpox reports.
+alias:167,alias,other,Oropouche fever,OROV,,,,3,FALSE,FALSE,,35,Standard abbreviation for Oropouche virus/febrile disease in DON reports.
+alias:168,alias,other,Poliomyelitis,Polio,,,,3,FALSE,FALSE,,35,Common DON title wording for poliomyelitis.
+alias:169,alias,other,Shigellosis (bacillary dysentery),Shiga bacillus,,,,3,FALSE,FALSE,,35,DON pathogen wording for bacillary dysentery.
+alias:170,alias,other,Shigellosis (bacillary dysentery),XDR Shigella,,,,3,FALSE,FALSE,,35,DON shorthand for extensively drug-resistant Shigella reports.
+alias:176,alias,other,Crimean-Congo hemorrhagic fever,CCHF,,,,3,FALSE,FALSE,,40,Standard abbreviation for Crimean-Congo hemorrhagic fever.
+alias:177,alias,other,Severe Acute Respiratory Syndrome (SARS),SARS,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,40,Historical SARS abbreviation; alias regex blocks SARS-CoV hyphenated matches.
+alias:178,alias,other,Middle East Respiratory Syndrome (MERS),Novel coronavirus infection,,,,3,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,80,Review-only MERS-era wording; event anchoring prevents COVID-era promotion.
+alias:113,alias,other,Acute watery diarrhoea,Acute watery diarrhoeal syndrome,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,Older DON wording for acute watery diarrhoea.
+alias:142,alias,other,Severe acute hepatitis of unknown aetiology,acute hepatitis of unknown aetiology,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,DON wording variant for severe acute hepatitis of unknown aetiology.
+alias:143,alias,other,Severe acute hepatitis of unknown aetiology,acute hepatitis of unknown etiology,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,25,US spelling variant for severe acute hepatitis of unknown aetiology.
+alias:152,alias,other,Diarrhoeal disease,Diarrhoeal diseases,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,30,Older DON plural title wording for diarrhoeal disease.
+alias:171,alias,other,Acute respiratory syndrome,acute respiratory syndrome,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,DON syndrome wording; promotion gate keeps this title/event anchored.
+alias:174,alias,other,Haemorrhagic fever syndrome,viral haemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,Broad DON syndrome wording; keep reviewable.
+alias:175,alias,other,Haemorrhagic fever syndrome,viral hemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,US spelling variant for broad DON syndrome wording.
+alias:173,alias,other,Respiratory illness,respiratory illnesses,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,Plural DON title wording for respiratory illness; promotion gate keeps this title/event anchored.
+alias:172,alias,other,Severe acute hepatitis of unknown aetiology,hepatitis of unknown origin,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,35,DON wording variant for severe acute hepatitis of unknown aetiology.
+alias:179,alias,other,Haemorrhagic fever syndrome,haemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,80,Generic broad DON syndrome wording; keep reviewable.
+alias:180,alias,other,Haemorrhagic fever syndrome,hemorrhagic fever,,,,9,TRUE,FALSE,history of|historical|previously|differential diagnosis|advice|preparedness|surveillance|background,80,US spelling variant for generic broad DON syndrome wording.

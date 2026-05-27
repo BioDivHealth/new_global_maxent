@@ -2,7 +2,7 @@ library(readr)
 library(dplyr)
 library(jsonlite)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_paths.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_paths.R"))
 
 v2_read_csv <- function(path, required_cols = character()) {
   if (!file.exists(path)) {

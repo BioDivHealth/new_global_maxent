@@ -1,4 +1,4 @@
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_country_extraction.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_country_extraction.R"))
 
 who_don_v2_ensure_dirs()
 

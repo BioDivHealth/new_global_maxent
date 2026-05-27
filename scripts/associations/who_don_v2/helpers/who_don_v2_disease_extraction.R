@@ -3,7 +3,7 @@ library(stringr)
 library(tidyr)
 library(purrr)
 
-source(here::here("scripts", "associations", "who_don_v2", "who_don_v2_disease_rules.R"))
+source(here::here("scripts", "associations", "who_don_v2", "helpers", "who_don_v2_disease_rules.R"))
 
 v2_disease_text_sections <- function(records) {
   section_cols <- c(
@@ -148,13 +148,27 @@ v2_disease_standard_from_influenza_subtype <- function(
   subtype,
   influenza_standardization = v2_read_csv(who_don_v2_rules_dir("influenza_label_standardization.csv"))
 ) {
-  case_when(
-    subtype == "H1" ~ "Influenza A(H1)",
-    subtype == "H5" ~ "Influenza (H5 subtype)",
-    subtype %in% c("H1N1", "H1N2", "H3N2") ~ paste0("Influenza (", subtype, ")"),
-    !is.na(subtype) & subtype != "" ~ paste0("Influenza A(", subtype, ")"),
-    TRUE ~ NA_character_
-  )
+  subtype_lookup <- stringr::str_squish(as.character(subtype))
+  subtype_lookup <- dplyr::na_if(subtype_lookup, "")
+
+  standardization <- influenza_standardization %>%
+    transmute(
+      influenza_subtype = stringr::str_squish(as.character(influenza_subtype)),
+      canonical_disease_standard = stringr::str_squish(as.character(canonical_disease_standard))
+    ) %>%
+    filter(!is.na(influenza_subtype), influenza_subtype != "") %>%
+    distinct(influenza_subtype, .keep_all = TRUE)
+
+  dplyr::tibble(influenza_subtype = subtype_lookup) %>%
+    left_join(standardization, by = "influenza_subtype") %>%
+    mutate(
+      disease_standard = case_when(
+        !is.na(canonical_disease_standard) & canonical_disease_standard != "" ~ canonical_disease_standard,
+        !is.na(influenza_subtype) & influenza_subtype != "" ~ paste0("Influenza A(", influenza_subtype, ")"),
+        TRUE ~ NA_character_
+      )
+    ) %>%
+    pull(disease_standard)
 }
 
 v2_extract_alias_hits <- function(sections, disease_aliases) {
