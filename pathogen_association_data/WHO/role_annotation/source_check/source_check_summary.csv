@@ -1,0 +1,2 @@
+candidate_rows,source_links,unique_source_file_rows,candidate_rows_with_any_file_name,candidate_rows_all_local_pdfs_found,candidate_rows_some_local_pdfs_found,candidate_rows_without_local_pdf,candidate_rows_missing_local_pdf
+53,67,53,41,40,1,12,0

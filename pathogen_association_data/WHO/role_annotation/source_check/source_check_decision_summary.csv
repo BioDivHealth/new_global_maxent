@@ -1,0 +1,4 @@
+decision,import_ready,n
+accept,TRUE,45
+accept_evidence_only,FALSE,7
+defer,FALSE,1

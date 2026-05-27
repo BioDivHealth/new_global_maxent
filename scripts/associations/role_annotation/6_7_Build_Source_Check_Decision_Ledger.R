@@ -51,6 +51,16 @@ split_many <- function(x) {
   pieces[pieces != ""]
 }
 
+repo_relative_path <- function(path) {
+  repo_root <- normalizePath(here::here(), winslash = "/", mustWork = TRUE)
+  normalized <- normalizePath(path, winslash = "/", mustWork = FALSE)
+  repo_prefix <- paste0(repo_root, "/")
+  is_repo_path <- !is.na(normalized) & startsWith(normalized, repo_prefix)
+
+  normalized[is_repo_path] <- substring(normalized[is_repo_path], nchar(repo_prefix) + 1L)
+  normalized
+}
+
 candidate_queue <- read_stage_csv(candidate_queue_path) %>%
   mutate(candidate_row_id = paste0("candidate_", str_pad(row_number(), 3, pad = "0"))) %>%
   relocate(candidate_row_id, .before = 1)
@@ -96,17 +106,23 @@ source_file_status <- source_request_with_files %>%
   unnest_longer(file_name_piece, values_to = "file_name_piece", keep_empty = TRUE) %>%
   mutate(
     file_name_piece = if_else(is.na(file_name_piece), NA_character_, file_name_piece),
-    local_pdf_path = if_else(
+    local_pdf_path_absolute = if_else(
       is.na(file_name_piece) | file_name_piece == "",
       NA_character_,
       file.path(papers_dir, file_name_piece)
     ),
     local_pdf_exists = if_else(
-      is.na(local_pdf_path),
+      is.na(local_pdf_path_absolute),
       FALSE,
-      file.exists(local_pdf_path)
+      file.exists(local_pdf_path_absolute)
+    ),
+    local_pdf_path = if_else(
+      is.na(local_pdf_path_absolute),
+      NA_character_,
+      repo_relative_path(local_pdf_path_absolute)
     )
   ) %>%
+  select(-local_pdf_path_absolute) %>%
   arrange(batch_id, source_id, file_name_piece)
 
 candidate_sources_collapsed <- source_request_with_files %>%
@@ -132,7 +148,7 @@ decision_ledger <- candidate_queue %>%
     local_pdf_paths = map_chr(file_name, function(value) {
       pieces <- split_many(value)
       if (length(pieces) == 0) return("")
-      paste(file.path(papers_dir, pieces), collapse = " | ")
+      paste(repo_relative_path(file.path(papers_dir, pieces)), collapse = " | ")
     }),
     local_pdf_status = map_chr(local_pdf_paths, function(value) {
       paths <- split_many(value)

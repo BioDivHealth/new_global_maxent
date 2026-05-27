@@ -1,0 +1,14 @@
+table,role,was_present_before_import,new_official_csv_role_value
+host_role_evidence,amplifying_host,TRUE,FALSE
+host_role_evidence,incidental_host,TRUE,FALSE
+host_role_evidence,reservoir_host,TRUE,FALSE
+host_role_evidence,spillover_host,TRUE,FALSE
+host_role_evidence,susceptible_host_only,TRUE,FALSE
+vector_role_evidence,bridge_vector,TRUE,FALSE
+vector_role_evidence,candidate_vector,TRUE,FALSE
+vector_role_evidence,competent_vector_only,TRUE,FALSE
+vector_role_evidence,enzootic_maintenance_vector,TRUE,FALSE
+vector_role_evidence,epidemic_vector,TRUE,FALSE
+vector_role_evidence,main_vector,TRUE,FALSE
+vector_role_evidence,primary_vector,TRUE,FALSE
+vector_role_evidence,sylvatic_vector,TRUE,FALSE
