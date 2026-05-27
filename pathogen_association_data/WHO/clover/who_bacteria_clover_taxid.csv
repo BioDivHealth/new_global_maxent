@@ -1,6 +1,6 @@
-Family,PHEIC risk,Pathogens,previous_name,msl39_viral_name,Disease_name,ID,PathogenTaxID,Clover_PathogenName,Clover_PathogenClass,match_source,num_clover_matches,num_host_associations
-Bacteria,High,Klebsiella pneumoniae,NA,NA,Klebsiella infection (pneumonia sepsis),B1,573,klebsiella pneumoniae,gammaproteobacteria,exact,1,21
-Bacteria,High,Salmonella enterica non typhoidal serovars,NA,NA,Non-typhoidal salmonellosis,B2,28901,salmonella enterica,gammaproteobacteria,manual,1,101
-Bacteria,High,Shigella dysenteriae serotype 1,NA,NA,Shigellosis (bacillary dysentery),B3,622,shigella dysenteriae,gammaproteobacteria,manual,1,3
-Bacteria,High,Vibrio cholerae serogroup 0139,NA,NA,Cholera,B4,666,vibrio cholerae,gammaproteobacteria,manual,1,10
-Bacteria,High,Yersinia pestis,NA,NA,Plague,B5,632,yersinia pestis,gammaproteobacteria,exact,1,37
+Family,PHEIC risk,Pathogens,previous_name,msl39_viral_name,Disease_name,in_gibb_etal,in_empres_i,is_priority_pathogen,is_prototype_pathogen,priority_prototype_status,region_africa,region_americas,region_europe,region_mediterranean,region_se_asia,region_western_pacific,ID,PathogenTaxID,Clover_PathogenName,Clover_PathogenClass,match_source,num_clover_matches,num_host_associations
+Bacteria,High,Klebsiella pneumoniae,NA,NA,Klebsiella infection (pneumonia sepsis),FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,priority,B1,573,klebsiella pneumoniae,gammaproteobacteria,exact,1,32
+Bacteria,High,Salmonella enterica non typhoidal serovars,NA,NA,Non-typhoidal salmonellosis,FALSE,FALSE,TRUE,FALSE,priority,priority,priority,priority,priority,priority,priority,B2,28901,salmonella enterica,gammaproteobacteria,manual,1,120
+Bacteria,High,Shigella dysenteriae serotype 1,NA,NA,Shigellosis (bacillary dysentery),FALSE,FALSE,TRUE,FALSE,priority,priority,none,none,priority,priority,none,B3,622,shigella dysenteriae,gammaproteobacteria,manual,1,5
+Bacteria,High,Vibrio cholerae serogroup 0139,NA,NA,Cholera,FALSE,FALSE,TRUE,FALSE,priority,priority,none,none,priority,priority,priority,B4,666,vibrio cholerae,gammaproteobacteria,manual,1,12
+Bacteria,High,Yersinia pestis,NA,NA,Plague,TRUE,FALSE,TRUE,FALSE,priority,priority,priority,none,none,none,none,B5,632,yersinia pestis,gammaproteobacteria,exact,1,67

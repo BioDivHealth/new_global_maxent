@@ -3,3 +3,29 @@ stegomyia albopicta,aedes albopictus,species,manual_map,Old genus usage normaliz
 aedes flavicolis,aedes flavicollis,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
 aedes luteocephalis,aedes luteocephalus,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
 haemagogus spegazzinni,haemagogus spegazzinii,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
+haemaphysalis punctate,haemaphysalis punctata,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
+haemagogus leucocelanus,haemagogus leucocelaenus,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
+ixodes persuleatus,ixodes persulcatus,species,manual_map,Likely spelling variant aligned to the canonical species spelling already present in the table.
+aedes vexans arabiensis,aedes aedimorphus vexans arabiensis,species,manual_map,Competence extraction dropped the subgenus token while the curated vector table retained it.
+ae albopictus,aedes albopictus,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+ae notoscriptus,aedes notoscriptus,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+ae procax,aedes procax,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+ae rusticus,aedes rusticus,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+ae vigilax,aedes vigilax,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx annulirostris,culex annulirostris,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx erythrothorax,culex erythrothorax,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx gelidus,culex gelidus,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx sitiens,culex sitiens,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx stigmatosoma,culex stigmatosoma,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+oc melanimon,ochlerotatus melanimon,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+oc sierrensis,ochlerotatus sierrensis,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+culex p pipiens,culex pipiens biotype pipiens,species,manual_map,Shorthand biotype notation aligned to the West Nile curated vector table spelling.
+culex p quinquefasciatus,culex pipiens quinquefasciatus,species,manual_map,Shorthand quinquefasciatus notation aligned to the curated vector table spelling.
+cx p pipiens,culex pipiens biotype pipiens,species,manual_map,Abbreviated shorthand biotype notation aligned to the West Nile curated vector table spelling.
+cx p quinquefasciatus,culex pipiens quinquefasciatus,species,manual_map,Abbreviated shorthand quinquefasciatus notation aligned to the curated vector table spelling.
+cx pipiens,culex pipiens,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx pipiens s l,culex pipiens s l,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+cx quinquefasciatus,culex quinquefasciatus,species,manual_map,Abbreviated genus notation aligned to the curated vector table spelling.
+culex pipiens molestus,culex pipiens biotype molestus,species,manual_map,Collapsed molestus wording aligned to the curated vector table spelling.
+culex pipiens hybrid pipiens x molestus,culex pipiens biotype pipiens x biotype molestus,species,manual_map,Hybrid wording aligned to the curated vector table spelling.
+culex aikenii s l,culex aikenii sensu lato,species,manual_map,Expanded s.l. notation aligned to the curated VEE vector table spelling.

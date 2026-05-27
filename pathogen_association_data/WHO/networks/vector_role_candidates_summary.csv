@@ -1,0 +1,58 @@
+disease_name,metric,flag_value,row_count
+Chikungunya fever,bridge_vector_candidate,FALSE,9
+Chikungunya fever,enzootic_maintenance_candidate,FALSE,9
+Chikungunya fever,human_amplification_candidate,TRUE,9
+Crimean-Congo hemorrhagic fever,bridge_vector_candidate,TRUE,19
+Crimean-Congo hemorrhagic fever,bridge_vector_candidate,FALSE,5
+Crimean-Congo hemorrhagic fever,enzootic_maintenance_candidate,TRUE,23
+Crimean-Congo hemorrhagic fever,enzootic_maintenance_candidate,FALSE,1
+Crimean-Congo hemorrhagic fever,human_amplification_candidate,TRUE,20
+Crimean-Congo hemorrhagic fever,human_amplification_candidate,FALSE,4
+Dengue,bridge_vector_candidate,FALSE,5
+Dengue,enzootic_maintenance_candidate,FALSE,5
+Dengue,human_amplification_candidate,TRUE,5
+Oropouche fever,bridge_vector_candidate,FALSE,6
+Oropouche fever,enzootic_maintenance_candidate,FALSE,6
+Oropouche fever,human_amplification_candidate,TRUE,6
+Plague,bridge_vector_candidate,TRUE,1
+Plague,bridge_vector_candidate,FALSE,10
+Plague,enzootic_maintenance_candidate,TRUE,10
+Plague,enzootic_maintenance_candidate,FALSE,1
+Plague,human_amplification_candidate,TRUE,2
+Plague,human_amplification_candidate,FALSE,9
+Rift Valley fever,bridge_vector_candidate,TRUE,37
+Rift Valley fever,bridge_vector_candidate,FALSE,4
+Rift Valley fever,enzootic_maintenance_candidate,TRUE,38
+Rift Valley fever,enzootic_maintenance_candidate,FALSE,3
+Rift Valley fever,human_amplification_candidate,TRUE,40
+Rift Valley fever,human_amplification_candidate,FALSE,1
+Severe fever with thrombocytopenia syndrome (SFTS),bridge_vector_candidate,TRUE,2
+Severe fever with thrombocytopenia syndrome (SFTS),bridge_vector_candidate,FALSE,5
+Severe fever with thrombocytopenia syndrome (SFTS),enzootic_maintenance_candidate,TRUE,6
+Severe fever with thrombocytopenia syndrome (SFTS),enzootic_maintenance_candidate,FALSE,1
+Severe fever with thrombocytopenia syndrome (SFTS),human_amplification_candidate,TRUE,3
+Severe fever with thrombocytopenia syndrome (SFTS),human_amplification_candidate,FALSE,4
+Tick-borne encephalitis,bridge_vector_candidate,TRUE,4
+Tick-borne encephalitis,bridge_vector_candidate,FALSE,2
+Tick-borne encephalitis,enzootic_maintenance_candidate,TRUE,4
+Tick-borne encephalitis,enzootic_maintenance_candidate,FALSE,2
+Tick-borne encephalitis,human_amplification_candidate,TRUE,6
+Venezuelan equine encephalitis,bridge_vector_candidate,TRUE,13
+Venezuelan equine encephalitis,bridge_vector_candidate,FALSE,6
+Venezuelan equine encephalitis,enzootic_maintenance_candidate,TRUE,15
+Venezuelan equine encephalitis,enzootic_maintenance_candidate,FALSE,4
+Venezuelan equine encephalitis,human_amplification_candidate,TRUE,17
+Venezuelan equine encephalitis,human_amplification_candidate,FALSE,2
+West Nile fever,bridge_vector_candidate,TRUE,17
+West Nile fever,bridge_vector_candidate,FALSE,3
+West Nile fever,enzootic_maintenance_candidate,TRUE,20
+West Nile fever,human_amplification_candidate,TRUE,17
+West Nile fever,human_amplification_candidate,FALSE,3
+Yellow fever,bridge_vector_candidate,FALSE,12
+Yellow fever,enzootic_maintenance_candidate,FALSE,12
+Yellow fever,human_amplification_candidate,TRUE,12
+Zika virus disease,bridge_vector_candidate,TRUE,4
+Zika virus disease,bridge_vector_candidate,FALSE,10
+Zika virus disease,enzootic_maintenance_candidate,TRUE,4
+Zika virus disease,enzootic_maintenance_candidate,FALSE,10
+Zika virus disease,human_amplification_candidate,TRUE,14

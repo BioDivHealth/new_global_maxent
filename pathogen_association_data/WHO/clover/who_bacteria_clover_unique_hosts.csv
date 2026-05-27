@@ -1,4 +1,5 @@
 Host,HostGenus,HostFamily,HostNCBIResolved
+Alces alces,Alces,Cervidae,TRUE
 Amphiprion nigripes,Amphiprion,Pomacentridae,TRUE
 Bison bison,Bison,Bovidae,TRUE
 Bos taurus,Bos,Bovidae,TRUE
@@ -16,6 +17,7 @@ Papio ursinus,Papio,Cercopithecidae,TRUE
 Phoca vitulina,Phoca,Phocidae,TRUE
 Phocarctos hookeri,Phocarctos,Otariidae,TRUE
 Pteroglossus viridis,Pteroglossus,Ramphastidae,TRUE
+Rupicapra rupicapra,Rupicapra,Bovidae,TRUE
 Saimiri sciureus,Saimiri,Cebidae,TRUE
 Sus scrofa,Sus,Suidae,TRUE
 Ursus americanus,Ursus,Ursidae,TRUE
@@ -40,7 +42,9 @@ Boiga irregularis,Boiga,Colubridae,TRUE
 Bothriechis schlegelii,Bothriechis,Viperidae,TRUE
 Cacatua galerita,Cacatua,Cacatuidae,TRUE
 Callorhinus ursinus,Callorhinus,Otariidae,TRUE
+Capra hircus,Capra,Bovidae,TRUE
 Cavia porcellus,Cavia,Caviidae,TRUE
+Cervus elaphus,Cervus,Cervidae,TRUE
 Chamaeleo calyptratus,Chamaeleo,Chamaeleonidae,TRUE
 Chelodina oblonga,Chelodina,Chelidae,TRUE
 Chlamydosaurus kingii,Chlamydosaurus,Agamidae,TRUE
@@ -97,7 +101,6 @@ Pseudonaja textilis,Pseudonaja,Elapidae,TRUE
 Pyrrhula pyrrhula,Pyrrhula,Fringillidae,TRUE
 Python molurus,Python,Pythonidae,TRUE
 Python regius,Python,Pythonidae,TRUE
-Rupicapra rupicapra,Rupicapra,Bovidae,TRUE
 Saguinus geoffroyi,Saguinus,Cebidae,TRUE
 Scomberomorus cavalla,Scomberomorus,Scombridae,TRUE
 Spinus spinus,Spinus,Fringillidae,TRUE
@@ -125,27 +128,35 @@ Pampus argenteus,Pampus,Stromateidae,TRUE
 Siniperca chuatsi,Siniperca,Sinipercidae,TRUE
 Tachysurus fulvidraco,Tachysurus,Bagridae,TRUE
 Apodemus chevrieri,Apodemus,Muridae,TRUE
+Bassariscus astutus,Bassariscus,Procyonidae,TRUE
+Canis latrans,Canis,Canidae,TRUE
 Cerradomys subflavus,Cerradomys,Cricetidae,TRUE
 Cynomys ludovicianus,Cynomys,Sciuridae,TRUE
 Eothenomys miletus,Eothenomys,Cricetidae,TRUE
 Lasiopodomys brandtii,Lasiopodomys,Cricetidae,TRUE
 Lynx canadensis,Lynx,Felidae,TRUE
+Lynx rufus,Lynx,Felidae,TRUE
 Marmota baibacina,Marmota,Sciuridae,TRUE
 Marmota caudata,Marmota,Sciuridae,TRUE
 Marmota himalayana,Marmota,Sciuridae,TRUE
 Marmota sibirica,Marmota,Sciuridae,TRUE
+Martes americana,Martes,Mustelidae,TRUE
+Mephitis mephitis,Mephitis,Mephitidae,TRUE
 Meriones meridianus,Meriones,Muridae,TRUE
 Meriones unguiculatus,Meriones,Muridae,TRUE
 Microtus arvalis,Microtus,Cricetidae,TRUE
 Mustela eversmannii,Mustela,Mustelidae,TRUE
+Mustela frenata,Mustela,Mustelidae,TRUE
 Mustela nigripes,Mustela,Mustelidae,TRUE
 Necromys lasiurus,Necromys,Cricetidae,TRUE
 Neodon fuscus,Neodon,Cricetidae,TRUE
+Neotoma fuscipes,Neotoma,Cricetidae,TRUE
 Ochotona dauurica,Ochotona,Ochotonidae,TRUE
 Ochotona pallasi,Ochotona,Ochotonidae,TRUE
 Odocoileus hemionus,Odocoileus,Cervidae,TRUE
 Onychomys leucogaster,Onychomys,Cricetidae,TRUE
 Orientallactaga sibirica,Orientallactaga,Dipodidae,TRUE
+Peromyscus maniculatus,Peromyscus,Cricetidae,TRUE
 Pseudois nayaur,Pseudois,Bovidae,TRUE
 Puma concolor,Puma,Felidae,TRUE
 Rattus norvegicus,Rattus,Muridae,TRUE
@@ -154,5 +165,8 @@ Rattus tanezumi,Rattus,Muridae,TRUE
 Rhombomys opimus,Rhombomys,Muridae,TRUE
 Spermophilus alashanicus,Spermophilus,Sciuridae,TRUE
 Spermophilus dauricus,Spermophilus,Sciuridae,TRUE
+Spilogale putorius,Spilogale,Mephitidae,TRUE
+Taxidea taxus,Taxidea,Mustelidae,TRUE
 Urocitellus parryii,Urocitellus,Sciuridae,TRUE
 Urocyon cinereoargenteus,Urocyon,Canidae,TRUE
+Vulpes velox,Vulpes,Canidae,TRUE

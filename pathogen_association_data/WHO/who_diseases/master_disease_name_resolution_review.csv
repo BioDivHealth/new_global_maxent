@@ -48,9 +48,7 @@ master_row,disease_master_name,pathogen_family_master,in_master_who,in_master_gi
 58,Trypanosomosis (tsetse),Trypanosoma,FALSE,FALSE,TRUE,FALSE,E,TRUE,2/3,Glossina (tsetse),9 EMPRES-i records. Livestock key host,master_list_new_or_unmatched
 13,Hendra,Paramyxoviridae,TRUE,TRUE,TRUE,FALSE,B,TRUE,3,Pteropus bats,Horse amplification. n=11,master_list_new_or_unmatched
 69,Bayou,Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Oryzomys palustris,3 points,master_list_new_or_unmatched
-70,Other hantaviruses (n=1-2),Hantaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Various rodents,"~15 viruses, ~20 points total",master_list_new_or_unmatched
 73,Guanarito,Arenaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Zygodontomys brevicauda,2 points,master_list_new_or_unmatched
-74,Other arenaviruses (n=1),Arenaviridae,FALSE,FALSE,FALSE,TRUE,A,FALSE,3,Various rodents,"Allpahuayo, Sangassou, Magboi, etc.",master_list_new_or_unmatched
 76,Irkut,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Murina leucogaster (bat),5 points,master_list_new_or_unmatched
 77,Bokeloh bat lyssavirus,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Myotis nattereri,2 points,master_list_new_or_unmatched
 78,Duvenhage,Lyssaviridae,FALSE,FALSE,FALSE,TRUE,B,FALSE,3,Insectivorous bats,1 point,master_list_new_or_unmatched
