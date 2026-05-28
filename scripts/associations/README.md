@@ -97,7 +97,7 @@ The intended workflow is:
     -   Current modelling-readiness handoffs should use `pathogen_association_data/WHO/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv` when present.
 
 8.  **Role Annotation (`role_annotation/6_1_*`):**
-    -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the canonical WHO disease-pathogen-host backbone for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/WHO/role_annotation/`.
+    -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the canonical WHO disease-pathogen-host backbone for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/evidence/role_annotation/`.
     -   `role_annotation/6_2_Derive_Species_Host_Vector_Roster.R`: Builds a collaborator-facing disease-species roster that covers both vectored and non-vectored diseases by combining host rows from the canonical WHO backbone with vector rows from the curated disease-vector table, plus host-vector observation and competence flags where available.
     -   Role annotation files are an interpretation layer. Do not treat candidate rows as final reservoir, amplifier, incidental, dead-end, or vector-role assignments without source-backed evidence review.
 

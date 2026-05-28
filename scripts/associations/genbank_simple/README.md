@@ -14,7 +14,7 @@ The workflow supports two target surfaces:
   zoonotic manifest, retained as a reference/control surface.
 - `genbank_simple_readiness_manifest.csv`: the expanded readiness manifest
   built from
-  `pathogen_association_data/WHO/role_annotation/qa/disease_modelling_readiness.csv`.
+  `pathogen_association_data/readiness/disease_modelling_readiness.csv`.
 
 Readiness mode is the current main path. It starts from non-held readiness rows,
 joins the full readiness audit table for query/provenance fields, and builds one
