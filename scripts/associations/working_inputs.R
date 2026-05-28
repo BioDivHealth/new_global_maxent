@@ -11,8 +11,12 @@
 
 pathogen_association_data_dir <- here::here("pathogen_association_data")
 who_data_dir <- file.path(pathogen_association_data_dir, "WHO")
+source_data_dir <- file.path(pathogen_association_data_dir, "source_data")
+manual_data_dir <- file.path(pathogen_association_data_dir, "manual")
+staged_data_dir <- file.path(pathogen_association_data_dir, "staged")
 
-vectormap_dir <- file.path(pathogen_association_data_dir, "vectormap")
+vectormap_raw_dir <- file.path(source_data_dir, "vectormap", "raw")
+vectormap_dir <- vectormap_raw_dir
 mapveu_dir <- file.path(pathogen_association_data_dir, "mapveu")
 vector_host_dir <- file.path(pathogen_association_data_dir, "vector_host")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
@@ -25,8 +29,8 @@ clover_source_dir <- file.path(
 )
 who_clover_dir <- file.path(who_data_dir, "clover")
 
-vectormap_outputs_dir <- file.path(vectormap_dir, "outputs")
-vectormap_manual_dir <- file.path(vectormap_dir, "manual")
+vectormap_outputs_dir <- file.path(staged_data_dir, "vectormap", "outputs")
+vectormap_manual_dir <- file.path(manual_data_dir, "vectormap")
 
 mapveu_outputs_dir <- file.path(mapveu_dir, "outputs")
 mapveu_manual_dir <- file.path(mapveu_dir, "manual")

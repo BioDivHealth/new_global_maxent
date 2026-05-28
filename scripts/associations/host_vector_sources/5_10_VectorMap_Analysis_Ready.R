@@ -5,11 +5,11 @@
 #          WHO-host-filtered table. One output stays at the original evidence
 #          record grain, and the second collapses to unique host-vector pairs.
 #
-# Input  : pathogen_association_data/vectormap/outputs/
+# Input  : pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_host_links_who_vector_cleaned.csv
-# Outputs: pathogen_association_data/vectormap/outputs/
+# Outputs: pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_host_links_analysis_ready.csv
-#          pathogen_association_data/vectormap/outputs/
+#          pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_host_links_analysis_summary.csv
 # ------------------------------------------------------------------------------
 

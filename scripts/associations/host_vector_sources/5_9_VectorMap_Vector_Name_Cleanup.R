@@ -5,13 +5,13 @@
 #          WHO-host-filtered VectorMap host-vector table while preserving the
 #          original VectorMap fields and routing unresolved names to review.
 #
-# Input  : pathogen_association_data/vectormap/outputs/
+# Input  : pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_host_links_who_filtered.csv
-# Outputs: pathogen_association_data/vectormap/outputs/
+# Outputs: pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_host_links_who_vector_cleaned.csv
-#          pathogen_association_data/vectormap/outputs/
+#          pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_taxonomy_review_needed.csv
-#          pathogen_association_data/vectormap/manual/
+#          pathogen_association_data/manual/vectormap/
 #          vectormap_vector_taxonomy_manual_map.csv (seeded if absent)
 # ------------------------------------------------------------------------------
 
