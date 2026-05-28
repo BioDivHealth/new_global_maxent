@@ -5,7 +5,8 @@
 library(pacman)
 p_load(here, readr)
 
-mapveu_dir <- here("pathogen_association_data", "mapveu")
+source(here("scripts", "associations", "working_inputs.R"))
+
 mapveu_files <- list.files(
   mapveu_dir,
   pattern = "\\.(txt|tsv|csv)$",

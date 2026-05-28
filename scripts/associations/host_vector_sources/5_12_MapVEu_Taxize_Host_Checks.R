@@ -5,17 +5,17 @@
 #          WHO host list, mirroring the VectorMap host-taxize stage but scoped
 #          only to the small unresolved MapVEu host set.
 #
-# Inputs : pathogen_association_data/mapveu/outputs/
+# Inputs : pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_raw.csv
-#          pathogen_association_data/mapveu/manual/
+#          pathogen_association_data/manual/mapveu/
 #          mapveu_host_manual_crosswalk.csv
 #          pathogen_association_data/WHO/networks/
 #          combined_who_network_canonical_zoonotic.csv
-# Outputs: pathogen_association_data/mapveu/outputs/
+# Outputs: pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_host_taxize_candidates.csv
-#          pathogen_association_data/mapveu/outputs/
+#          pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_host_taxize_review.csv
-#          pathogen_association_data/mapveu/outputs/
+#          pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_host_taxize_who_hits.csv
 # ------------------------------------------------------------------------------
 

@@ -30,9 +30,10 @@ active layout.
   Pilot split of the VectorMap source family. Raw exports live under
   `source_data/vectormap/raw/`, reviewed crosswalks under `manual/vectormap/`,
   and VectorMap-only generated outputs under `staged/vectormap/outputs/`.
-- `mapveu/`: Raw MapVEu exports, manual crosswalks, and staged MapVEu-only
-  host-vector outputs. Use these when changing MapVEu extraction or debugging
-  MapVEu taxonomy/host filtering.
+- `source_data/mapveu/`, `manual/mapveu/`, and `staged/mapveu/`: Prepared split
+  of the MapVEu source family. Raw exports should live under
+  `source_data/mapveu/raw/`, reviewed crosswalks under `manual/mapveu/`, and
+  MapVEu-only generated outputs under `staged/mapveu/outputs/`.
 - `viralemergence-clover-2604d22/`: Local CLOVER source checkout/vendor export.
   Generated WHO-specific CLOVER outputs live under `WHO/clover/`.
 
@@ -58,7 +59,7 @@ should prefer:
 - `source_data_dir`, `manual_data_dir`, `staged_data_dir`
 - `vectormap_raw_dir`, `vectormap_dir`, `vectormap_outputs_dir`,
   `vectormap_manual_dir`
-- `mapveu_dir`, `mapveu_outputs_dir`, `mapveu_manual_dir`
+- `mapveu_raw_dir`, `mapveu_dir`, `mapveu_outputs_dir`, `mapveu_manual_dir`
 - `vector_host_dir`, `vector_host_outputs_dir`
 - `clover_source_dir`, `who_clover_dir`
 - `readiness_dir`

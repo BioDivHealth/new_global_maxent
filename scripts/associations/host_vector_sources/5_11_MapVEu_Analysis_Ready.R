@@ -4,15 +4,15 @@
 # Purpose: Turn the staged MapVEu blood-meal table into analysis-ready,
 #          VectorMap-compatible host-vector outputs.
 #
-# Input  : pathogen_association_data/mapveu/outputs/
+# Input  : pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_raw.csv
 #          pathogen_association_data/WHO/networks/
 #          combined_who_network_canonical_zoonotic.csv
-# Outputs: pathogen_association_data/mapveu/outputs/
+# Outputs: pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_analysis_ready.csv
-#          pathogen_association_data/mapveu/outputs/
+#          pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_analysis_summary.csv
-#          pathogen_association_data/mapveu/manual/
+#          pathogen_association_data/manual/mapveu/
 #          mapveu_host_manual_crosswalk.csv (seeded if absent)
 # ------------------------------------------------------------------------------
 

@@ -7,7 +7,7 @@
 #
 # Inputs : pathogen_association_data/staged/vectormap/outputs/
 #          vectormap_vector_host_links_analysis_ready.csv
-#          pathogen_association_data/mapveu/outputs/
+#          pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_analysis_ready.csv
 # Outputs: pathogen_association_data/vector_host/outputs/
 #          vector_host_links_analysis_ready.csv

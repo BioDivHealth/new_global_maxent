@@ -168,6 +168,7 @@ pathogen_association_data/WHO/who_diseases/*_raw.jsonl
 
 # Raw host-vector source exports
 pathogen_association_data/mapveu/*.txt
+pathogen_association_data/source_data/mapveu/raw/*.txt
 pathogen_association_data/vectormap/*.csv
 pathogen_association_data/vectormap/outputs/vectormap_vector_host_links_raw.csv
 pathogen_association_data/source_data/vectormap/raw/*.csv
@@ -184,6 +185,14 @@ pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_r
 !pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_who_filtered.csv
 !pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_who_vector_cleaned.csv
 !pathogen_association_data/staged/vectormap/outputs/vectormap_vector_taxonomy_review_needed.csv
+!pathogen_association_data/staged/mapveu/outputs/
+!pathogen_association_data/staged/mapveu/outputs/mapveu_host_taxize_candidates.csv
+!pathogen_association_data/staged/mapveu/outputs/mapveu_host_taxize_review.csv
+!pathogen_association_data/staged/mapveu/outputs/mapveu_host_taxize_who_hits.csv
+!pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_analysis_ready.csv
+!pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_analysis_summary.csv
+!pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_raw.csv
+!pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_review.csv
 
 # Generated Deep Research prompt/report staging. The durable handoff is
 # pathogen_association_data/WHO/role_annotation/source_check/.
