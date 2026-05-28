@@ -16,14 +16,18 @@ active layout.
 
 ## Active Pipeline Folders
 
-- `WHO/`: Main WHO-centred pipeline output root. Active subfolders include
-  `who_diseases/`, `networks/`, `vector_screening/`, `role_annotation/`,
+- `WHO/`: Main WHO-centred pipeline output root for disease lists, combined
+  networks, vector screening, GenBank, and WHO Disease Outbreak News outputs.
+  Active subfolders include `who_diseases/`, `networks/`, `vector_screening/`,
   `genbank_simple/`, and `disease_outbreak_news_v2/`.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
   outputs. Prefer this integrated evidence surface for downstream host-vector
   joins.
+- `evidence/role_annotation/`: Active role-annotation evidence, assignment,
+  roster, and QA outputs. Manual review materials, generated prompt staging, and
+  source PDFs/text are split out under `manual/`, `staged/`, and `source_data/`.
 
 ## Raw And Staged Source Folders
 
@@ -35,8 +39,13 @@ active layout.
   source family. Raw exports live under
   `source_data/mapveu/raw/`, reviewed crosswalks under `manual/mapveu/`, and
   MapVEu-only generated outputs under `staged/mapveu/outputs/`.
-- `viralemergence-clover-2604d22/`: Local CLOVER source checkout/vendor export.
-  Generated WHO-specific CLOVER outputs live under `WHO/clover/`.
+- `source_data/clover/`: Ignored raw/vendor CLOVER source checkout. Generated
+  WHO-specific CLOVER outputs live under `staged/clover/outputs/`.
+- `source_data/virion/raw/`: Ignored raw VIRION download material. Generated
+  WHO-specific VIRION outputs live under `staged/virion/outputs/`.
+- `source_data/role_annotation/`, `manual/role_annotation/`, and
+  `staged/role_annotation/`: Split role-annotation source PDFs/OCR text, manual
+  reviews/source checks, and generated Deep Research prompt/report staging.
 
 ## Archive Or Local Comparison Material
 
@@ -63,7 +72,10 @@ should prefer:
   `vectormap_manual_dir`
 - `mapveu_raw_dir`, `mapveu_dir`, `mapveu_outputs_dir`, `mapveu_manual_dir`
 - `vector_host_dir`, `vector_host_outputs_dir`
-- `clover_source_dir`, `who_clover_dir`
+- `clover_source_dir`, `virion_source_dir`, `virion_source_version_dir`,
+  `who_clover_dir`, `who_virion_dir`
+- role-annotation helpers for evidence, manual review/source-check, staged
+  Deep Research, source PDF/text, roster, and QA locations
 - `readiness_dir`
 
 The same helper also keeps the current WHO working network/pathogen accessors,
