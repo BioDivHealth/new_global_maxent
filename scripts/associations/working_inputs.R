@@ -14,12 +14,13 @@ who_data_dir <- file.path(pathogen_association_data_dir, "WHO")
 source_data_dir <- file.path(pathogen_association_data_dir, "source_data")
 manual_data_dir <- file.path(pathogen_association_data_dir, "manual")
 staged_data_dir <- file.path(pathogen_association_data_dir, "staged")
+evidence_data_dir <- file.path(pathogen_association_data_dir, "evidence")
 
 vectormap_raw_dir <- file.path(source_data_dir, "vectormap", "raw")
 vectormap_dir <- vectormap_raw_dir
 mapveu_raw_dir <- file.path(source_data_dir, "mapveu", "raw")
 mapveu_dir <- mapveu_raw_dir
-vector_host_dir <- file.path(pathogen_association_data_dir, "vector_host")
+vector_host_dir <- file.path(evidence_data_dir, "host_vector")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
 
 # Raw CLOVER checkout/vendor export. WHO-specific generated CLOVER outputs live
@@ -36,7 +37,7 @@ vectormap_manual_dir <- file.path(manual_data_dir, "vectormap")
 mapveu_outputs_dir <- file.path(staged_data_dir, "mapveu", "outputs")
 mapveu_manual_dir <- file.path(manual_data_dir, "mapveu")
 
-vector_host_outputs_dir <- file.path(vector_host_dir, "outputs")
+vector_host_outputs_dir <- vector_host_dir
 
 who_raw_network_path <- function() {
   file.path(

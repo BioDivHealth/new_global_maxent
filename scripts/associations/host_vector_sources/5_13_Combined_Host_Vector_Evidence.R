@@ -9,9 +9,9 @@
 #          vectormap_vector_host_links_analysis_ready.csv
 #          pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_analysis_ready.csv
-# Outputs: pathogen_association_data/vector_host/outputs/
+# Outputs: pathogen_association_data/evidence/host_vector/
 #          vector_host_links_analysis_ready.csv
-#          pathogen_association_data/vector_host/outputs/
+#          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_analysis_summary.csv
 # ------------------------------------------------------------------------------
 

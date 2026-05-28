@@ -21,8 +21,11 @@ active layout.
   `genbank_simple/`, and `disease_outbreak_news_v2/`.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
-- `vector_host/`: Combined VectorMap + MapVEu host-vector evidence outputs.
-  Prefer `vector_host/outputs/` for downstream host-vector joins.
+- `evidence/host_vector/`: Prepared target for the combined VectorMap + MapVEu
+  host-vector evidence outputs. Once moved, downstream host-vector joins should
+  use this integrated evidence surface.
+- `vector_host/`: Legacy current location for combined host-vector outputs until
+  the pending file move is completed.
 
 ## Raw And Staged Source Folders
 
@@ -56,7 +59,8 @@ should prefer:
 
 - `pathogen_association_data_dir`
 - `who_data_dir`
-- `source_data_dir`, `manual_data_dir`, `staged_data_dir`
+- `source_data_dir`, `manual_data_dir`, `staged_data_dir`,
+  `evidence_data_dir`
 - `vectormap_raw_dir`, `vectormap_dir`, `vectormap_outputs_dir`,
   `vectormap_manual_dir`
 - `mapveu_raw_dir`, `mapveu_dir`, `mapveu_outputs_dir`, `mapveu_manual_dir`

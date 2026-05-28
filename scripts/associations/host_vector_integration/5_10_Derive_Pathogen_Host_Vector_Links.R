@@ -9,7 +9,7 @@
 #          combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/
 #          pathogen_vector_links_filled.csv
-#          pathogen_association_data/vector_host/outputs/
+#          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
 # Output : pathogen_association_data/WHO/networks/
 #          pathogen_host_vector_links.csv

@@ -10,7 +10,7 @@
 #          pathogen_association_data/WHO/vector_screening/
 #          disease_vector_links_taxonomy_cleaned.csv
 #          pathogen_vector_links_filled.csv
-#          pathogen_association_data/vector_host/outputs/
+#          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
 #          vector_host_links_join_blocked.csv
 #          pathogen_association_data/WHO/networks/

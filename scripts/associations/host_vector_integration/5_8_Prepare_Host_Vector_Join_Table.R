@@ -5,9 +5,9 @@
 #          MapVEu/VectorMap analysis-ready evidence, while preserving blocked
 #          non-joinable rows for QA.
 #
-# Input  : pathogen_association_data/vector_host/outputs/
+# Input  : pathogen_association_data/evidence/host_vector/
 #          vector_host_links_analysis_ready.csv
-# Outputs: pathogen_association_data/vector_host/outputs/
+# Outputs: pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
 #          vector_host_links_join_blocked.csv
 # ------------------------------------------------------------------------------
