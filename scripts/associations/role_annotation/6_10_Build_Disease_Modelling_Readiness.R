@@ -66,6 +66,14 @@ read_csv_layer <- function(path, required = FALSE) {
     mutate(across(where(is.character), clean_text))
 }
 
+prefer_existing_path <- function(primary, fallback) {
+  if (file.exists(primary)) {
+    return(primary)
+  }
+
+  fallback
+}
+
 empty_disease_summary <- function() {
   tibble(disease_name = character())
 }
@@ -444,19 +452,30 @@ who_disease_dir <- file.path(who_dir, "who_diseases")
 role_dir <- role_annotation_dir
 qa_dir <- role_qa_dir
 don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
-genbank_dir <- file.path(who_dir, "genbank_simple")
+genbank_legacy_dir <- genbank_simple_legacy_dir
 sdm_dir <- here::here("sdms")
 
 dir.create(qa_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(readiness_dir, recursive = TRUE, showWarnings = FALSE)
 
 genbank_readiness_summary_path <- file.path(
-  genbank_dir,
+  genbank_simple_evidence_dir,
   "genbank_readiness_disease_country_summary_standardized.csv"
 )
+genbank_readiness_summary_path <- prefer_existing_path(
+  genbank_readiness_summary_path,
+  file.path(
+    genbank_legacy_dir,
+    "genbank_readiness_disease_country_summary_standardized.csv"
+  )
+)
 genbank_standard_summary_path <- file.path(
-  genbank_dir,
+  genbank_simple_evidence_dir,
   "genbank_disease_country_summary_standardized.csv"
+)
+genbank_standard_summary_path <- prefer_existing_path(
+  genbank_standard_summary_path,
+  file.path(genbank_legacy_dir, "genbank_disease_country_summary_standardized.csv")
 )
 genbank_summary_source <- if (file.exists(genbank_readiness_summary_path)) {
   "readiness_combined"

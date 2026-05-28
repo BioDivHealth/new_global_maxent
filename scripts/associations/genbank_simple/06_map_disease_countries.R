@@ -21,11 +21,12 @@ library(pacman)
 p_load(dplyr, ggplot2, here, purrr, readr, rnaturalearth, sf, stringr, tibble, tidyr)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------------------------------------------------------|
 #      Resolve run mode and map paths -----------------------------------------
 # ------------------------------------------------------------------------------|
-output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
+output_dir <- genbank_simple_dir
 summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
   clean_text() %>%
   stringr::str_to_lower()
@@ -44,10 +45,7 @@ if (is.na(summary_kind)) {
   )
 }
 
-map_dir <- file.path(
-  output_dir,
-  if_else(summary_kind == "readiness_combined", "maps_readiness", "maps")
-)
+map_dir <- genbank_simple_map_dir(summary_kind, output_dir)
 disease_map_dir <- file.path(map_dir, "disease_country_records")
 dir.create(disease_map_dir, recursive = TRUE, showWarnings = FALSE)
 

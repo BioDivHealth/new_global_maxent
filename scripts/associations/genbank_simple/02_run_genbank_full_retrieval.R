@@ -36,15 +36,22 @@ library(pacman)
 p_load(dplyr, here, purrr, readr, rentrez, stringr, tibble, xml2)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+source(here("scripts", "associations", "working_inputs.R"))
 
 configure_entrez_key(here(".env"))
 
 # ------------------------------------------------------------------------------|
 #      Resolve manifest and run directories -----------------------------------
 # ------------------------------------------------------------------------------|
-output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
-standard_manifest_path <- file.path(output_dir, "genbank_simple_manifest.csv")
-readiness_manifest_path <- file.path(output_dir, "genbank_simple_readiness_manifest.csv")
+output_dir <- genbank_simple_dir
+standard_manifest_path <- genbank_simple_existing_file_path(
+  output_dir,
+  "genbank_simple_manifest.csv"
+)
+readiness_manifest_path <- genbank_simple_existing_file_path(
+  output_dir,
+  "genbank_simple_readiness_manifest.csv"
+)
 
 manifest_kind <- Sys.getenv("GENBANK_SIMPLE_MANIFEST_KIND", unset = "standard") %>%
   clean_text() %>%
@@ -69,9 +76,10 @@ manifest_path <- dplyr::coalesce(
   if_else(manifest_kind == "readiness", readiness_manifest_path, standard_manifest_path)
 )
 
-run_dir <- file.path(
-  output_dir,
-  if_else(manifest_kind == "readiness", "pathogen_runs_readiness", "pathogen_runs")
+run_dir <- if_else(
+  manifest_kind == "readiness",
+  genbank_simple_readiness_run_dir,
+  genbank_simple_standard_run_dir
 )
 search_log_dir <- file.path(run_dir, "search_logs")
 country_record_dir <- file.path(run_dir, "country_records")

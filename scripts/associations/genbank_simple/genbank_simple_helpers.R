@@ -104,7 +104,11 @@ genbank_simple_qa_files <- c(
   "genbank_readiness_search_logs.csv",
   "genbank_readiness_qa_summary.csv",
   "genbank_readiness_target_qa.csv",
-  "genbank_readiness_country_standardization_qa.csv"
+  "genbank_readiness_country_standardization_qa.csv",
+  "genbank_search_logs.csv",
+  "genbank_simple_qa_summary.csv",
+  "genbank_simple_target_qa.csv",
+  "genbank_country_standardization_qa.csv"
 )
 
 genbank_simple_intermediate_files <- c(
@@ -112,21 +116,64 @@ genbank_simple_intermediate_files <- c(
   "genbank_readiness_country_records_standardized.csv",
   "genbank_readiness_pathogen_country_summary.csv",
   "genbank_readiness_pathogen_country_summary_standardized.csv",
-  "genbank_readiness_disease_country_summary.csv"
+  "genbank_readiness_disease_country_summary.csv",
+  "genbank_country_records.csv",
+  "genbank_country_records_standardized.csv",
+  "genbank_pathogen_country_summary.csv",
+  "genbank_pathogen_country_summary_standardized.csv",
+  "genbank_disease_country_summary.csv"
+)
+
+genbank_simple_manifest_files <- c(
+  "genbank_simple_manifest.csv",
+  "genbank_simple_readiness_manifest.csv",
+  "excluded_targets.csv"
+)
+
+genbank_simple_manual_files <- c(
+  "genbank_readiness_query_overrides.csv"
+)
+
+genbank_simple_evidence_files <- c(
+  "genbank_readiness_disease_country_summary_standardized.csv",
+  "genbank_disease_country_summary_standardized.csv"
 )
 
 genbank_simple_file_path <- function(output_dir, file_name, create_parent = FALSE) {
-  subdir <- dplyr::case_when(
-    file_name %in% genbank_simple_qa_files ~ "qa",
-    file_name %in% genbank_simple_intermediate_files ~ "intermediate",
+  directory <- dplyr::case_when(
+    file_name %in% genbank_simple_qa_files &&
+      exists("genbank_simple_qa_dir", inherits = TRUE) ~
+      get("genbank_simple_qa_dir", inherits = TRUE),
+    file_name %in% genbank_simple_intermediate_files &&
+      exists("genbank_simple_intermediate_dir", inherits = TRUE) ~
+      get("genbank_simple_intermediate_dir", inherits = TRUE),
+    file_name %in% genbank_simple_manifest_files &&
+      exists("genbank_simple_manifest_dir", inherits = TRUE) ~
+      get("genbank_simple_manifest_dir", inherits = TRUE),
+    file_name %in% genbank_simple_manual_files &&
+      exists("genbank_simple_manual_dir", inherits = TRUE) ~
+      get("genbank_simple_manual_dir", inherits = TRUE),
+    file_name %in% genbank_simple_evidence_files &&
+      exists("genbank_simple_evidence_dir", inherits = TRUE) ~
+      get("genbank_simple_evidence_dir", inherits = TRUE),
     TRUE ~ NA_character_
   )
 
-  path <- if (is.na(subdir)) {
-    file.path(output_dir, file_name)
-  } else {
-    file.path(output_dir, subdir, file_name)
+  if (is.na(directory)) {
+    subdir <- dplyr::case_when(
+      file_name %in% genbank_simple_qa_files ~ "qa",
+      file_name %in% genbank_simple_intermediate_files ~ "intermediate",
+      TRUE ~ NA_character_
+    )
+
+    directory <- if (is.na(subdir)) {
+      output_dir
+    } else {
+      file.path(output_dir, subdir)
+    }
   }
+
+  path <- file.path(directory, file_name)
 
   if (create_parent) {
     dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
@@ -135,15 +182,82 @@ genbank_simple_file_path <- function(output_dir, file_name, create_parent = FALS
   path
 }
 
+genbank_simple_legacy_file_candidates <- function(output_dir, file_name) {
+  candidate_roots <- output_dir
+
+  if (exists("genbank_simple_legacy_dir", inherits = TRUE)) {
+    candidate_roots <- c(
+      candidate_roots,
+      get("genbank_simple_legacy_dir", inherits = TRUE)
+    )
+  }
+
+  unique(c(
+    file.path(candidate_roots, file_name),
+    file.path(candidate_roots, "qa", file_name),
+    file.path(candidate_roots, "intermediate", file_name)
+  ))
+}
+
+genbank_simple_existing_dir <- function(preferred_dir, legacy_dir = NULL) {
+  if (dir.exists(preferred_dir) || is.null(legacy_dir) || !dir.exists(legacy_dir)) {
+    return(preferred_dir)
+  }
+
+  legacy_dir
+}
+
+genbank_simple_map_dir <- function(summary_kind, output_dir) {
+  summary_kind <- clean_text(summary_kind)
+
+  if (
+    summary_kind == "readiness_combined" &&
+      exists("genbank_simple_readiness_maps_dir", inherits = TRUE)
+  ) {
+    return(get("genbank_simple_readiness_maps_dir", inherits = TRUE))
+  }
+
+  if (
+    summary_kind != "readiness_combined" &&
+      exists("genbank_simple_standard_maps_dir", inherits = TRUE)
+  ) {
+    return(get("genbank_simple_standard_maps_dir", inherits = TRUE))
+  }
+
+  if (summary_kind == "readiness_combined") {
+    file.path(output_dir, "maps_readiness")
+  } else {
+    file.path(output_dir, "maps")
+  }
+}
+
+genbank_simple_existing_map_dir <- function(summary_kind, output_dir) {
+  preferred_dir <- genbank_simple_map_dir(summary_kind, output_dir)
+  legacy_subdir <- if (summary_kind == "readiness_combined") {
+    "maps_readiness"
+  } else {
+    "maps"
+  }
+
+  legacy_dir <- if (exists("genbank_simple_legacy_dir", inherits = TRUE)) {
+    file.path(get("genbank_simple_legacy_dir", inherits = TRUE), legacy_subdir)
+  } else {
+    file.path(output_dir, legacy_subdir)
+  }
+
+  genbank_simple_existing_dir(preferred_dir, legacy_dir)
+}
+
 genbank_simple_existing_file_path <- function(output_dir, file_name) {
   preferred_path <- genbank_simple_file_path(output_dir, file_name)
-  legacy_path <- file.path(output_dir, file_name)
+  legacy_paths <- genbank_simple_legacy_file_candidates(output_dir, file_name)
+  existing_legacy_path <- legacy_paths[file.exists(legacy_paths)]
 
-  if (file.exists(preferred_path) || !file.exists(legacy_path)) {
+  if (file.exists(preferred_path) || length(existing_legacy_path) == 0) {
     return(preferred_path)
   }
 
-  legacy_path
+  existing_legacy_path[[1]]
 }
 
 # ------------------------------------------------------------------------------|

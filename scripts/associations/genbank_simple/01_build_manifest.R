@@ -16,23 +16,14 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------------------------------------------------------|
 #      Define input and output paths ------------------------------------------
 # ------------------------------------------------------------------------------|
-who_path <- here(
-  "pathogen_association_data",
-  "WHO",
-  "who_diseases",
-  "who_pathogens_diseases_zoonotic.csv"
-)
-network_path <- here(
-  "pathogen_association_data",
-  "WHO",
-  "networks",
-  "combined_who_network_canonical_zoonotic.csv"
-)
-output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
+who_path <- who_zoonotic_pathogens_path()
+network_path <- who_canonical_zoonotic_network_path()
+output_dir <- genbank_simple_dir
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -183,8 +174,14 @@ manifest <- target_summary %>%
 # ------------------------------------------------------------------------------|
 #      Write outputs -----------------------------------------------------------
 # ------------------------------------------------------------------------------|
-write_csv(manifest, file.path(output_dir, "genbank_simple_manifest.csv"))
-write_csv(excluded_targets, file.path(output_dir, "excluded_targets.csv"))
+write_csv(
+  manifest,
+  genbank_simple_file_path(output_dir, "genbank_simple_manifest.csv", create_parent = TRUE)
+)
+write_csv(
+  excluded_targets,
+  genbank_simple_file_path(output_dir, "excluded_targets.csv", create_parent = TRUE)
+)
 
 message("Wrote manifest rows: ", nrow(manifest))
 message("Wrote excluded rows: ", nrow(excluded_targets))

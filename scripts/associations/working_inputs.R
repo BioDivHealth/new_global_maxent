@@ -65,6 +65,41 @@ virion_source_version_dir <- file.path(virion_source_dir, "19502921")
 who_clover_dir <- file.path(staged_data_dir, "clover", "outputs")
 who_virion_dir <- file.path(staged_data_dir, "virion", "outputs")
 
+# GenBank-simple layout. Manual query overrides live under manual/, generated
+# manifests/intermediates/maps/local retrieval checkpoints live under staged/,
+# and the active disease-country evidence plus QA live under evidence/.
+genbank_simple_legacy_dir <- file.path(who_data_dir, "genbank_simple")
+genbank_simple_evidence_dir <- file.path(evidence_data_dir, "genbank_simple")
+genbank_simple_dir <- genbank_simple_evidence_dir
+genbank_simple_manual_dir <- file.path(manual_data_dir, "genbank_simple")
+genbank_simple_manifest_dir <- file.path(
+  staged_data_dir,
+  "genbank_simple",
+  "manifests"
+)
+genbank_simple_intermediate_dir <- file.path(
+  staged_data_dir,
+  "genbank_simple",
+  "intermediate"
+)
+genbank_simple_maps_dir <- file.path(staged_data_dir, "genbank_simple", "maps")
+genbank_simple_standard_maps_dir <- file.path(genbank_simple_maps_dir, "standard")
+genbank_simple_readiness_maps_dir <- file.path(genbank_simple_maps_dir, "readiness")
+genbank_simple_local_runs_dir <- file.path(
+  staged_data_dir,
+  "genbank_simple",
+  "local_runs"
+)
+genbank_simple_standard_run_dir <- file.path(
+  genbank_simple_local_runs_dir,
+  "pathogen_runs"
+)
+genbank_simple_readiness_run_dir <- file.path(
+  genbank_simple_local_runs_dir,
+  "pathogen_runs_readiness"
+)
+genbank_simple_qa_dir <- file.path(genbank_simple_evidence_dir, "qa")
+
 vectormap_outputs_dir <- file.path(staged_data_dir, "vectormap", "outputs")
 vectormap_manual_dir <- file.path(manual_data_dir, "vectormap")
 

@@ -22,11 +22,12 @@ library(pacman)
 p_load(dplyr, here, purrr, readr, stringr, tibble)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------------------------------------------------------|
 #      Resolve run mode and paths ---------------------------------------------
 # ------------------------------------------------------------------------------|
-output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
+output_dir <- genbank_simple_dir
 summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
   clean_text() %>%
   stringr::str_to_lower()
@@ -45,19 +46,25 @@ if (is.na(summary_kind)) {
   )
 }
 
-manifest_path <- file.path(
-  output_dir,
-  if_else(
-    summary_kind == "readiness_combined",
-    "genbank_simple_readiness_manifest.csv",
-    "genbank_simple_manifest.csv"
-  )
+manifest_file <- if_else(
+  summary_kind == "readiness_combined",
+  "genbank_simple_readiness_manifest.csv",
+  "genbank_simple_manifest.csv"
 )
+manifest_path <- genbank_simple_existing_file_path(output_dir, manifest_file)
 
-standard_search_log_dir <- file.path(output_dir, "pathogen_runs", "search_logs")
-standard_country_record_dir <- file.path(output_dir, "pathogen_runs", "country_records")
-readiness_search_log_dir <- file.path(output_dir, "pathogen_runs_readiness", "search_logs")
-readiness_country_record_dir <- file.path(output_dir, "pathogen_runs_readiness", "country_records")
+standard_run_dir <- genbank_simple_existing_dir(
+  genbank_simple_standard_run_dir,
+  file.path(genbank_simple_legacy_dir, "pathogen_runs")
+)
+readiness_run_dir <- genbank_simple_existing_dir(
+  genbank_simple_readiness_run_dir,
+  file.path(genbank_simple_legacy_dir, "pathogen_runs_readiness")
+)
+standard_search_log_dir <- file.path(standard_run_dir, "search_logs")
+standard_country_record_dir <- file.path(standard_run_dir, "country_records")
+readiness_search_log_dir <- file.path(readiness_run_dir, "search_logs")
+readiness_country_record_dir <- file.path(readiness_run_dir, "country_records")
 
 search_log_dirs <- if (summary_kind == "readiness_combined") {
   c(standard_search_log_dir, readiness_search_log_dir)

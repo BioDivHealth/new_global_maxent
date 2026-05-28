@@ -160,18 +160,30 @@ who_dir <- who_data_dir
 role_dir <- role_annotation_dir
 qa_dir <- role_qa_dir
 vector_output_dir <- file.path(who_dir, "vector_screening", "outputs")
-genbank_dir <- file.path(who_dir, "genbank_simple")
+genbank_legacy_dir <- genbank_simple_legacy_dir
 don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
 
 dir.create(qa_dir, recursive = TRUE, showWarnings = FALSE)
 
 genbank_summary_path <- prefer_existing_path(
-  file.path(genbank_dir, "genbank_readiness_disease_country_summary_standardized.csv"),
-  file.path(genbank_dir, "genbank_disease_country_summary_standardized.csv")
+  file.path(genbank_simple_evidence_dir, "genbank_readiness_disease_country_summary_standardized.csv"),
+  prefer_existing_path(
+    file.path(genbank_simple_evidence_dir, "genbank_disease_country_summary_standardized.csv"),
+    prefer_existing_path(
+      file.path(genbank_legacy_dir, "genbank_readiness_disease_country_summary_standardized.csv"),
+      file.path(genbank_legacy_dir, "genbank_disease_country_summary_standardized.csv")
+    )
+  )
 )
 genbank_map_unmatched_path <- prefer_existing_path(
-  file.path(genbank_dir, "maps_readiness", "genbank_disease_country_map_unmatched.csv"),
-  file.path(genbank_dir, "maps", "genbank_disease_country_map_unmatched.csv")
+  file.path(genbank_simple_readiness_maps_dir, "genbank_disease_country_map_unmatched.csv"),
+  prefer_existing_path(
+    file.path(genbank_simple_standard_maps_dir, "genbank_disease_country_map_unmatched.csv"),
+    prefer_existing_path(
+      file.path(genbank_legacy_dir, "maps_readiness", "genbank_disease_country_map_unmatched.csv"),
+      file.path(genbank_legacy_dir, "maps", "genbank_disease_country_map_unmatched.csv")
+    )
+  )
 )
 
 paths <- list(

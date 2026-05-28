@@ -21,11 +21,12 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble, tidyr)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------------------------------------------------------|
 #      Resolve run mode and output files --------------------------------------
 # ------------------------------------------------------------------------------|
-output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
+output_dir <- genbank_simple_dir
 summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
   clean_text() %>%
   stringr::str_to_lower()
@@ -81,8 +82,8 @@ read_optional_csv <- function(path) {
   read_csv(path, show_col_types = FALSE, na = c("", "NA"))
 }
 
-manifest <- read_optional_csv(file.path(output_dir, manifest_file))
-excluded_targets <- read_optional_csv(file.path(output_dir, "excluded_targets.csv"))
+manifest <- read_optional_csv(genbank_simple_existing_file_path(output_dir, manifest_file))
+excluded_targets <- read_optional_csv(genbank_simple_existing_file_path(output_dir, "excluded_targets.csv"))
 search_logs <- read_optional_csv(genbank_simple_existing_file_path(output_dir, search_log_file))
 country_records <- read_optional_csv(genbank_simple_existing_file_path(output_dir, country_records_file))
 

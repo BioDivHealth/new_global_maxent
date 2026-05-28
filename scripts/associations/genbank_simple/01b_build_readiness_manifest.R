@@ -41,10 +41,20 @@ legacy_readiness_full_path <- here(
   "qa",
   "disease_modelling_readiness_full.csv"
 )
-output_dir <- here("pathogen_association_data", "WHO", "genbank_simple")
-current_manifest_path <- file.path(output_dir, "genbank_simple_manifest.csv")
-override_path <- file.path(output_dir, "genbank_readiness_query_overrides.csv")
-readiness_manifest_path <- file.path(output_dir, "genbank_simple_readiness_manifest.csv")
+output_dir <- genbank_simple_dir
+current_manifest_path <- genbank_simple_existing_file_path(
+  output_dir,
+  "genbank_simple_manifest.csv"
+)
+override_path <- genbank_simple_existing_file_path(
+  output_dir,
+  "genbank_readiness_query_overrides.csv"
+)
+readiness_manifest_path <- genbank_simple_file_path(
+  output_dir,
+  "genbank_simple_readiness_manifest.csv",
+  create_parent = TRUE
+)
 readiness_qa_path <- genbank_simple_file_path(
   output_dir,
   "genbank_simple_readiness_manifest_qa.csv",
