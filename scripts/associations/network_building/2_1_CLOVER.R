@@ -14,11 +14,14 @@ library(stringdist)
 library(fuzzyjoin)
 library(magrittr)
 library(dplyr)
+
+source(here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------| Helper paths  |------------------------------
-who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogens_diseases.csv")
-output_csv_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_taxid.csv")
-output_hosts_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv")
-output_unique_hosts_path <- file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_unique_hosts.csv")
+who_csv_path <- file.path(who_data_dir, "who_diseases", "who_pathogens_diseases.csv")
+output_csv_path <- file.path(who_clover_dir, "who_bacteria_clover_taxid.csv")
+output_hosts_path <- file.path(who_clover_dir, "who_bacteria_clover_hosts.csv")
+output_unique_hosts_path <- file.path(who_clover_dir, "who_bacteria_clover_unique_hosts.csv")
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
 # ------------------------------| Load datasets |------------------------------
@@ -36,14 +39,18 @@ unique(who_df$Pathogens)
 
 # 2. CLOVER bacteria database --------------------------------------------------
 # Read column descriptions
-clover_col_desc <- read_csv(here("pathogen_association_data","viralemergence-clover-2604d22",
-                                 "clover","clover_1.0_allpathogens",
-                                 "CLOVER_ColumnDescriptions.csv"))
+clover_col_desc <- read_csv(file.path(
+  clover_source_dir,
+  "clover", "clover_1.0_allpathogens",
+  "CLOVER_ColumnDescriptions.csv"
+))
 
 # Read bacteria dataset
-clover_bacteria <- read_csv(here("pathogen_association_data","viralemergence-clover-2604d22",
-                                 "clover","clover_1.0_allpathogens",
-                                 "CLOVER_1.0_Bacteria_AssociationsFlatFile.csv"))
+clover_bacteria <- read_csv(file.path(
+  clover_source_dir,
+  "clover", "clover_1.0_allpathogens",
+  "CLOVER_1.0_Bacteria_AssociationsFlatFile.csv"
+))
 
 # ------------------------------| Pre-processing |-----------------------------
 # Create a lowercase, trimmed helper column for safer joins --------------------

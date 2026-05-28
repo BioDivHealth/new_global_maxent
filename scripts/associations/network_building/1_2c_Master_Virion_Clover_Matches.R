@@ -19,8 +19,10 @@ library(here)
 library(stringdist)
 library(magrittr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------| Helper paths |-------------------------------
-who_dir <- file.path("pathogen_association_data", "WHO", "who_diseases")
+who_dir <- file.path(who_data_dir, "who_diseases")
 
 manual_path <- file.path(who_dir, "master_disease_name_resolution_manual.csv")
 alias_path <- file.path(who_dir, "master_pathogen_aliases.csv")
@@ -28,8 +30,8 @@ candidate_output_path <- file.path(who_dir, "master_pathogen_virion_clover_candi
 match_output_path <- file.path(who_dir, "master_pathogen_virion_clover_matches.csv")
 external_review_output_path <- file.path(who_dir, "master_pathogen_external_taxonomy_review.csv")
 
-clover_dir <- here(
-  "pathogen_association_data", "viralemergence-clover-2604d22",
+clover_dir <- file.path(
+  clover_source_dir,
   "clover", "clover_1.0_allpathogens"
 )
 

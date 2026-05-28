@@ -242,23 +242,20 @@ suggest_fuzzy_match <- function(raw_key, who_lookup, min_score = 0.75) {
   )
 }
 
-vectormap_path <- here("pathogen_association_data", "vectormap")
-who_path <- here("pathogen_association_data", "WHO")
-
-outputs_dir <- here(vectormap_path, "outputs")
-manual_dir <- here(vectormap_path, "manual")
+outputs_dir <- vectormap_outputs_dir
+manual_dir <- vectormap_manual_dir
 dir.create(outputs_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(manual_dir, recursive = TRUE, showWarnings = FALSE)
 
-raw_links_path <- here(outputs_dir, "vectormap_vector_host_links_raw.csv")
+raw_links_path <- file.path(outputs_dir, "vectormap_vector_host_links_raw.csv")
 combined_network_path <- who_working_network_path()
-manual_crosswalk_path <- here(manual_dir, "vectormap_host_manual_crosswalk.csv")
+manual_crosswalk_path <- file.path(manual_dir, "vectormap_host_manual_crosswalk.csv")
 
-exact_output_path <- here(outputs_dir, "vectormap_vector_host_links_who_exact.csv")
-review_output_path <- here(outputs_dir, "vectormap_host_crosswalk_review.csv")
-filtered_output_path <- here(outputs_dir, "vectormap_vector_host_links_who_filtered.csv")
-package_candidates_path <- here(outputs_dir, "vectormap_host_package_candidates.csv")
-manual_candidates_path <- here(outputs_dir, "vectormap_host_manual_crosswalk_candidates.csv")
+exact_output_path <- file.path(outputs_dir, "vectormap_vector_host_links_who_exact.csv")
+review_output_path <- file.path(outputs_dir, "vectormap_host_crosswalk_review.csv")
+filtered_output_path <- file.path(outputs_dir, "vectormap_vector_host_links_who_filtered.csv")
+package_candidates_path <- file.path(outputs_dir, "vectormap_host_package_candidates.csv")
+manual_candidates_path <- file.path(outputs_dir, "vectormap_host_manual_crosswalk_candidates.csv")
 
 if (!file.exists(manual_crosswalk_path)) {
   manual_crosswalk_template <- tibble(

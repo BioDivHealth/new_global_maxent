@@ -5,6 +5,8 @@
 library(pacman)
 p_load(data.table, dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # Normalize text while keeping this export close to the source tables.
 clean_text <- function(x) {
   x <- as.character(x)
@@ -21,16 +23,15 @@ clean_names_bom <- function(dt) {
   dt
 }
 
-vectormap_dir <- here("pathogen_association_data", "vectormap")
-output_dir <- here(vectormap_dir, "outputs")
+output_dir <- vectormap_outputs_dir
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
-bloodmeal_path <- here(vectormap_dir, "BloodMealMap_Layer_-3496204453665016601.csv")
-tick_path <- here(vectormap_dir, "TickMap_4464597498443279194.csv")
-flea_path <- here(vectormap_dir, "FleaMap_-6875364799851429947.csv")
-mite_path <- here(vectormap_dir, "MiteMap_-6324776740768397246.csv")
+bloodmeal_path <- file.path(vectormap_dir, "BloodMealMap_Layer_-3496204453665016601.csv")
+tick_path <- file.path(vectormap_dir, "TickMap_4464597498443279194.csv")
+flea_path <- file.path(vectormap_dir, "FleaMap_-6875364799851429947.csv")
+mite_path <- file.path(vectormap_dir, "MiteMap_-6324776740768397246.csv")
 
-output_path <- here(output_dir, "vectormap_vector_host_links_raw.csv")
+output_path <- file.path(output_dir, "vectormap_vector_host_links_raw.csv")
 
 target_cols <- c(
   "source_dataset",

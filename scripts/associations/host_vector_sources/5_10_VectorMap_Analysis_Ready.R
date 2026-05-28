@@ -16,6 +16,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -37,8 +39,7 @@ collapse_unique <- function(x) {
   paste(x, collapse = "; ")
 }
 
-vectormap_dir <- here("pathogen_association_data", "vectormap")
-outputs_dir <- file.path(vectormap_dir, "outputs")
+outputs_dir <- vectormap_outputs_dir
 
 input_path <- file.path(outputs_dir, "vectormap_vector_host_links_who_vector_cleaned.csv")
 analysis_ready_path <- file.path(outputs_dir, "vectormap_vector_host_links_analysis_ready.csv")

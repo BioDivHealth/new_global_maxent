@@ -183,10 +183,8 @@ parse_vector_field <- function(x) {
     mutate(across(c(vector_name_taxonomy_cleaned, vector_species_analysis, vector_taxon_rank, vector_review_reason_extra), ~ dplyr::na_if(.x, "")))
 }
 
-mapveu_dir <- here("pathogen_association_data", "mapveu")
-who_dir <- here("pathogen_association_data", "WHO")
-outputs_dir <- file.path(mapveu_dir, "outputs")
-manual_dir <- file.path(mapveu_dir, "manual")
+outputs_dir <- mapveu_outputs_dir
+manual_dir <- mapveu_manual_dir
 
 input_path <- file.path(outputs_dir, "mapveu_vector_host_links_raw.csv")
 who_path <- who_working_network_path()

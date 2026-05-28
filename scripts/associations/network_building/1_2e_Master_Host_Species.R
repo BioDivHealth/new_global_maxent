@@ -17,14 +17,16 @@
 library(tidyverse)
 library(here)
 
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
+source(here("scripts", "associations", "working_inputs.R"))
+
+who_dir <- file.path(who_data_dir, "who_diseases")
 host_query_path <- file.path(who_dir, "master_pathogen_host_query_units.csv")
 
 host_output_path <- file.path(who_dir, "master_pathogen_host_species.csv")
 summary_output_path <- file.path(who_dir, "master_pathogen_host_species_summary.csv")
 
-clover_dir <- here(
-  "pathogen_association_data", "viralemergence-clover-2604d22",
+clover_dir <- file.path(
+  clover_source_dir,
   "clover", "clover_1.0_allpathogens"
 )
 

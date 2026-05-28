@@ -26,6 +26,8 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, purrr, readr, stringr, tibble, tidyr)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
@@ -437,11 +439,10 @@ write_pilot_package_readme <- function(path) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-who_dir <- here::here("pathogen_association_data", "WHO")
+who_dir <- who_data_dir
 who_disease_dir <- file.path(who_dir, "who_diseases")
 role_dir <- file.path(who_dir, "role_annotation")
 qa_dir <- file.path(role_dir, "qa")
-readiness_dir <- here::here("pathogen_association_data", "readiness")
 don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
 genbank_dir <- file.path(who_dir, "genbank_simple")
 sdm_dir <- here::here("sdms")

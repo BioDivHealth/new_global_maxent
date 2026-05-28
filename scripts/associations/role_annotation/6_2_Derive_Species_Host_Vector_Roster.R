@@ -41,6 +41,8 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, readr, stringr, tidyr, writexl)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
@@ -132,10 +134,10 @@ summarise_bites_humans_basis <- function(x) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-who_dir <- here::here("pathogen_association_data", "WHO")
+who_dir <- who_data_dir
 networks_dir <- file.path(who_dir, "networks")
 vector_dir <- file.path(who_dir, "vector_screening", "outputs")
-host_vector_dir <- here::here("pathogen_association_data", "vector_host", "outputs")
+host_vector_dir <- vector_host_outputs_dir
 role_dir <- file.path(who_dir, "role_annotation")
 
 network_path <- file.path(networks_dir, "combined_who_network_canonical_zoonotic.csv")

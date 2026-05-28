@@ -64,21 +64,17 @@ add_missing_columns <- function(df, all_columns) {
   df[, all_columns]
 }
 
-vectormap_path <- here(
-  "pathogen_association_data",
-  "vectormap",
-  "outputs",
+vectormap_path <- file.path(
+  vectormap_outputs_dir,
   "vectormap_vector_host_links_analysis_ready.csv"
 )
 who_network_path <- who_working_network_path()
-mapveu_path <- here(
-  "pathogen_association_data",
-  "mapveu",
-  "outputs",
+mapveu_path <- file.path(
+  mapveu_outputs_dir,
   "mapveu_vector_host_links_analysis_ready.csv"
 )
 
-output_dir <- here("pathogen_association_data", "vector_host", "outputs")
+output_dir <- vector_host_outputs_dir
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 combined_ready_path <- file.path(output_dir, "vector_host_links_analysis_ready.csv")

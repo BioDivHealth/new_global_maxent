@@ -131,19 +131,16 @@ resolve_with_taxize <- function(query_name) {
   )
 }
 
-mapveu_path <- here("pathogen_association_data", "mapveu")
-who_path <- here("pathogen_association_data", "WHO")
+outputs_dir <- mapveu_outputs_dir
+manual_dir <- mapveu_manual_dir
 
-outputs_dir <- here(mapveu_path, "outputs")
-manual_dir <- here(mapveu_path, "manual")
-
-raw_links_path <- here(outputs_dir, "mapveu_vector_host_links_raw.csv")
-host_crosswalk_path <- here(manual_dir, "mapveu_host_manual_crosswalk.csv")
+raw_links_path <- file.path(outputs_dir, "mapveu_vector_host_links_raw.csv")
+host_crosswalk_path <- file.path(manual_dir, "mapveu_host_manual_crosswalk.csv")
 combined_network_path <- who_working_network_path()
 
-candidate_path <- here(outputs_dir, "mapveu_host_taxize_candidates.csv")
-taxize_review_path <- here(outputs_dir, "mapveu_host_taxize_review.csv")
-taxize_who_hits_path <- here(outputs_dir, "mapveu_host_taxize_who_hits.csv")
+candidate_path <- file.path(outputs_dir, "mapveu_host_taxize_candidates.csv")
+taxize_review_path <- file.path(outputs_dir, "mapveu_host_taxize_review.csv")
+taxize_who_hits_path <- file.path(outputs_dir, "mapveu_host_taxize_who_hits.csv")
 
 max_queries_env <- Sys.getenv("TAXIZE_MAX_QUERIES", unset = "")
 max_queries <- if (max_queries_env == "") {

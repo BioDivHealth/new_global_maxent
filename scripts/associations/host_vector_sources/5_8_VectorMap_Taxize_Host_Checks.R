@@ -99,16 +99,13 @@ resolve_with_taxize <- function(query_name) {
   )
 }
 
-vectormap_path <- here("pathogen_association_data", "vectormap")
-who_path <- here("pathogen_association_data", "WHO")
+outputs_dir <- vectormap_outputs_dir
 
-outputs_dir <- here(vectormap_path, "outputs")
-
-candidate_path <- here(outputs_dir, "vectormap_host_package_candidates.csv")
+candidate_path <- file.path(outputs_dir, "vectormap_host_package_candidates.csv")
 combined_network_path <- who_working_network_path()
 
-taxize_review_path <- here(outputs_dir, "vectormap_host_taxize_review.csv")
-taxize_who_hits_path <- here(outputs_dir, "vectormap_host_taxize_who_hits.csv")
+taxize_review_path <- file.path(outputs_dir, "vectormap_host_taxize_review.csv")
+taxize_who_hits_path <- file.path(outputs_dir, "vectormap_host_taxize_who_hits.csv")
 
 max_queries_env <- Sys.getenv("TAXIZE_MAX_QUERIES", unset = "")
 max_queries <- if (max_queries_env == "") {

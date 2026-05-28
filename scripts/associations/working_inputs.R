@@ -1,36 +1,57 @@
 # ------------------------------------------------------------------------------
 # working_inputs.R
 # ------------------------------------------------------------------------------
-# Purpose: Centralize the default WHO working-input paths used by the
-#          downstream pathogen-association pipeline.
+# Purpose: Centralize the default data roots and WHO working-input paths used
+#          by the downstream pathogen-association pipeline.
 #
 # Notes  : Keep the raw network-building stages pointed at the original WHO
 #          source tables. Downstream scripts should default to the canonical
 #          zoonotic working layer unless they explicitly need a broader input.
 # ------------------------------------------------------------------------------
 
+pathogen_association_data_dir <- here::here("pathogen_association_data")
+who_data_dir <- file.path(pathogen_association_data_dir, "WHO")
+
+vectormap_dir <- file.path(pathogen_association_data_dir, "vectormap")
+mapveu_dir <- file.path(pathogen_association_data_dir, "mapveu")
+vector_host_dir <- file.path(pathogen_association_data_dir, "vector_host")
+readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
+
+# Raw CLOVER checkout/vendor export. WHO-specific generated CLOVER outputs live
+# under `who_clover_dir`.
+clover_source_dir <- file.path(
+  pathogen_association_data_dir,
+  "viralemergence-clover-2604d22"
+)
+who_clover_dir <- file.path(who_data_dir, "clover")
+
+vectormap_outputs_dir <- file.path(vectormap_dir, "outputs")
+vectormap_manual_dir <- file.path(vectormap_dir, "manual")
+
+mapveu_outputs_dir <- file.path(mapveu_dir, "outputs")
+mapveu_manual_dir <- file.path(mapveu_dir, "manual")
+
+vector_host_outputs_dir <- file.path(vector_host_dir, "outputs")
+
 who_raw_network_path <- function() {
-  here::here(
-    "pathogen_association_data",
-    "WHO",
+  file.path(
+    who_data_dir,
     "networks",
     "combined_who_network.csv"
   )
 }
 
 who_canonical_network_path <- function() {
-  here::here(
-    "pathogen_association_data",
-    "WHO",
+  file.path(
+    who_data_dir,
     "networks",
     "combined_who_network_canonical.csv"
   )
 }
 
 who_canonical_zoonotic_network_path <- function() {
-  here::here(
-    "pathogen_association_data",
-    "WHO",
+  file.path(
+    who_data_dir,
     "networks",
     "combined_who_network_canonical_zoonotic.csv"
   )
@@ -48,18 +69,16 @@ who_working_network_path <- function(scope = c("zoonotic", "canonical", "raw")) 
 }
 
 who_raw_pathogens_path <- function() {
-  here::here(
-    "pathogen_association_data",
-    "WHO",
+  file.path(
+    who_data_dir,
     "who_diseases",
     "who_pathogens_diseases.csv"
   )
 }
 
 who_zoonotic_pathogens_path <- function() {
-  here::here(
-    "pathogen_association_data",
-    "WHO",
+  file.path(
+    who_data_dir,
     "who_diseases",
     "who_pathogen_analysis_units_keep.csv"
   )
