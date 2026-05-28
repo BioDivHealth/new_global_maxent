@@ -197,7 +197,7 @@ pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_r
 
 # Generated Deep Research prompt/report staging. The durable handoff is
 # pathogen_association_data/manual/role_annotation/source_check/.
-pathogen_association_data/WHO/role_annotation/deep_research_inputs/
+pathogen_association_data/staged/role_annotation/deep_research_inputs/
 
 # Generated readiness convenience package; keep the XLSX visible for sharing.
 pathogen_association_data/readiness/disease_modelling_pilot_package.rds
@@ -339,8 +339,8 @@ scripts/associations/who_don_v2/archive/transitional_scripts/who_don_v2_baseline
 scripts/associations/who_don_v2/archive/transitional_scripts/02_extract_candidates.R
 scripts/associations/who_don_v2/archive/transitional_scripts/02a_freeze_seeded_baseline.R
 scripts/associations/who_don_v2/archive/transitional_scripts/who_don_v2_baseline.R
-pathogen_association_data/WHO/role_annotation/deep_research_inputs/consolidated/CONSOLIDATED_DEEP_RESEARCH_REVIEW.md
-pathogen_association_data/WHO/role_annotation/deep_research_inputs/consolidated/SOURCE_REQUEST_LIST.md
+pathogen_association_data/staged/role_annotation/deep_research_inputs/consolidated/CONSOLIDATED_DEEP_RESEARCH_REVIEW.md
+pathogen_association_data/staged/role_annotation/deep_research_inputs/consolidated/SOURCE_REQUEST_LIST.md
 dr/disease_master_list_v2.xlsx
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/who_don_scope_adjudication_candidates.csv
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_medium_native_new_country_review_decisions.csv

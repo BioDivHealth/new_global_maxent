@@ -6,7 +6,7 @@
 #          reviewable staging artifacts without changing official role tables.
 #
 # Inputs : Deep Research markdown reports from ~/Downloads
-# Outputs: pathogen_association_data/WHO/role_annotation/deep_research_inputs/
+# Outputs: pathogen_association_data/staged/role_annotation/deep_research_inputs/
 #            <batch_id>/reformatted/
 #              DEEP_RESEARCH_REFORMATTED.md
 #              extracted_<table_type>.csv

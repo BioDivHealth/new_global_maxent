@@ -11,7 +11,7 @@
 #          disease_vector_links_taxonomy_cleaned_competence_annotated.csv
 #          existing role review markdowns
 #
-# Outputs: pathogen_association_data/WHO/role_annotation/deep_research_inputs/
+# Outputs: pathogen_association_data/staged/role_annotation/deep_research_inputs/
 #            README.md
 #            batch_manifest.csv
 #            <batch_id>/PROMPT.md

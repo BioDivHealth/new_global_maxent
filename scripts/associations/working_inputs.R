@@ -24,12 +24,17 @@ vector_host_dir <- file.path(evidence_data_dir, "host_vector")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
 
 # Current role-annotation layout. Core evidence/QA files still live under the
-# existing WHO root; manual reviews/source checks live under manual/, and source
-# PDFs plus extracted text live under source_data/.
+# existing WHO root; manual reviews/source checks live under manual/, generated
+# Deep Research prompts/reports live under staged/, and source PDFs plus
+# extracted text live under source_data/.
 role_annotation_dir <- file.path(who_data_dir, "role_annotation")
 role_manual_dir <- file.path(manual_data_dir, "role_annotation")
 role_reviews_dir <- file.path(role_manual_dir, "reviews")
-role_deep_research_dir <- file.path(role_annotation_dir, "deep_research_inputs")
+role_deep_research_dir <- file.path(
+  staged_data_dir,
+  "role_annotation",
+  "deep_research_inputs"
+)
 role_deep_research_consolidated_dir <- file.path(
   role_deep_research_dir,
   "consolidated"
