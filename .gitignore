@@ -196,9 +196,8 @@ pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_r
 !pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_review.csv
 
 # Generated Deep Research prompt/report staging. The durable handoff is
-# pathogen_association_data/WHO/role_annotation/source_check/.
+# pathogen_association_data/manual/role_annotation/source_check/.
 pathogen_association_data/WHO/role_annotation/deep_research_inputs/
-pathogen_association_data/WHO/role_annotation/source_check/pdf_text/
 
 # Generated readiness convenience package; keep the XLSX visible for sharing.
 pathogen_association_data/readiness/disease_modelling_pilot_package.rds
@@ -348,8 +347,8 @@ pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_medium_native_n
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_scope_adjudication_review_decisions.csv
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_targeted_adjudication_subset_candidates.csv
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/who_don_review_decisions_seeded_from_clean.csv
-pathogen_association_data/WHO/role_annotation/source_check/SOURCE_CHECK_PROGRESS.md
-pathogen_association_data/WHO/role_annotation/source_check/import/SOURCE_CHECK_IMPORT_SUMMARY.md
+pathogen_association_data/manual/role_annotation/source_check/SOURCE_CHECK_PROGRESS.md
+pathogen_association_data/manual/role_annotation/source_check/import/SOURCE_CHECK_IMPORT_SUMMARY.md
 scripts/sdms/01_catalog_models.R
 scripts/sdms/02_prepare_future_climate.R
 scripts/sdms/03_project_future_sdms.R
