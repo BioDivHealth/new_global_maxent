@@ -77,6 +77,7 @@ kristan_2025_dengue_vectors.txt
 
 # PDFs are retained locally unless explicitly curated into repo artifacts.
 *.pdf
+pathogen_association_data/source_data/role_annotation/pdf_text/
 
 # SDM caches, fitted models, and generated raster/image outputs
 sdms/cache/

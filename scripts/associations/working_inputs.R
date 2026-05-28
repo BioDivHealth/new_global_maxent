@@ -23,9 +23,8 @@ mapveu_dir <- mapveu_raw_dir
 vector_host_dir <- file.path(evidence_data_dir, "host_vector")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
 
-# Current role-annotation layout. Keep these pointed at the existing WHO root
-# until the role-annotation split is moved and validated one lifecycle class at
-# a time.
+# Current role-annotation layout. Most files still live under the existing WHO
+# root; source PDFs and their extracted text have moved to source_data.
 role_annotation_dir <- file.path(who_data_dir, "role_annotation")
 role_reviews_dir <- file.path(role_annotation_dir, "reviews")
 role_deep_research_dir <- file.path(role_annotation_dir, "deep_research_inputs")
@@ -35,8 +34,12 @@ role_deep_research_consolidated_dir <- file.path(
 )
 role_source_check_dir <- file.path(role_annotation_dir, "source_check")
 role_source_check_import_dir <- file.path(role_source_check_dir, "import")
-role_source_pdf_dir <- file.path(role_annotation_dir, "papers")
-role_source_pdf_text_dir <- file.path(role_source_check_dir, "pdf_text")
+role_source_pdf_dir <- file.path(source_data_dir, "role_annotation", "papers")
+role_source_pdf_text_dir <- file.path(
+  source_data_dir,
+  "role_annotation",
+  "pdf_text"
+)
 role_candidates_dir <- role_annotation_dir
 role_evidence_dir <- role_annotation_dir
 role_roster_dir <- role_annotation_dir
