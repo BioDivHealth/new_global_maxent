@@ -8,7 +8,7 @@
 # Inputs : generated role_annotation, vector_screening, genbank_simple, and
 #          disease_outbreak_news_v2 CSVs where present.
 #
-# Outputs: pathogen_association_data/WHO/role_annotation/qa/
+# Outputs: pathogen_association_data/evidence/role_annotation/qa/
 #            evidence_layer_inventory.csv
 #            disease_evidence_readiness.csv
 #            vector_evidence_readiness_by_disease.csv

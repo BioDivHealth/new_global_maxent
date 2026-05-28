@@ -16,11 +16,11 @@
 #          pathogen_association_data/WHO/who_diseases/
 #            who_pathogens_diseases_zoonotic.csv
 #
-# Outputs: pathogen_association_data/WHO/role_annotation/
+# Outputs: pathogen_association_data/evidence/role_annotation/
 #            species_host_vector_roster.csv
-#          pathogen_association_data/WHO/role_annotation/
+#          pathogen_association_data/evidence/role_annotation/
 #            species_host_vector_roster_summary.csv
-#          pathogen_association_data/WHO/role_annotation/
+#          pathogen_association_data/evidence/role_annotation/
 #            species_host_vector_roster.xlsx
 #
 # Notes  : This is an evidence roster, not a final biological role assignment.

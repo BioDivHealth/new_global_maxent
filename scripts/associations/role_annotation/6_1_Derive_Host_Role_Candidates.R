@@ -10,9 +10,9 @@
 #          pathogen_association_data/WHO/who_diseases/
 #            who_pathogens_diseases_zoonotic.csv
 #
-# Outputs: pathogen_association_data/WHO/role_annotation/
+# Outputs: pathogen_association_data/evidence/role_annotation/
 #            host_role_candidates.csv
-#          pathogen_association_data/WHO/role_annotation/
+#          pathogen_association_data/evidence/role_annotation/
 #            host_role_candidates_summary.csv
 #
 # Notes  : This script creates candidate-review rows only. It does not assign
