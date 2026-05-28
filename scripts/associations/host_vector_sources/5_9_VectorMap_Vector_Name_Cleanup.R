@@ -18,6 +18,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -225,9 +227,8 @@ seed_manual_map <- function(path) {
   write_csv(seeded_map, path, na = "")
 }
 
-vectormap_dir <- here("pathogen_association_data", "vectormap")
-outputs_dir <- file.path(vectormap_dir, "outputs")
-manual_dir <- file.path(vectormap_dir, "manual")
+outputs_dir <- vectormap_outputs_dir
+manual_dir <- vectormap_manual_dir
 
 input_path <- file.path(outputs_dir, "vectormap_vector_host_links_who_filtered.csv")
 output_path <- file.path(outputs_dir, "vectormap_vector_host_links_who_vector_cleaned.csv")

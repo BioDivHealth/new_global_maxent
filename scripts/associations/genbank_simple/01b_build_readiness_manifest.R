@@ -20,12 +20,13 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "genbank_simple", "genbank_simple_helpers.R"))
+source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------------------------------------------------------|
 #      Define input and output paths ------------------------------------------
 # ------------------------------------------------------------------------------|
-readiness_path <- here("pathogen_association_data", "readiness", "disease_modelling_readiness.csv")
-readiness_full_path <- here("pathogen_association_data", "readiness", "disease_modelling_readiness_full.csv")
+readiness_path <- file.path(readiness_dir, "disease_modelling_readiness.csv")
+readiness_full_path <- file.path(readiness_dir, "disease_modelling_readiness_full.csv")
 legacy_readiness_path <- here(
   "pathogen_association_data",
   "WHO",

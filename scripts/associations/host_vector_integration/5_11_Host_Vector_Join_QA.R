@@ -59,9 +59,9 @@ collapse_unique <- function(x) {
   paste(x, collapse = "; ")
 }
 
-networks_dir <- here("pathogen_association_data", "WHO", "networks")
-vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
-host_vector_dir <- here("pathogen_association_data", "vector_host", "outputs")
+networks_dir <- file.path(who_data_dir, "networks")
+vector_dir <- file.path(who_data_dir, "vector_screening")
+host_vector_dir <- vector_host_outputs_dir
 vector_output_dir <- file.path(vector_dir, "outputs")
 
 who_path <- who_working_network_path()

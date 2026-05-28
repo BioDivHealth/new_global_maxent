@@ -5,6 +5,8 @@
 library(pacman)
 p_load(data.table, dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # Normalize free-text fields and convert blanks to NA.
 clean_text <- function(x) {
   x <- as.character(x)
@@ -82,8 +84,7 @@ read_irregular_tsv <- function(path, expected_cols) {
   as.data.frame(value_matrix, stringsAsFactors = FALSE, check.names = FALSE)
 }
 
-mapveu_dir <- here("pathogen_association_data", "mapveu")
-output_dir <- file.path(mapveu_dir, "outputs")
+output_dir <- mapveu_outputs_dir
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 blood_meal_path <- file.path(mapveu_dir, "VBP_MEGA_Blood meal assay_subsettedData.txt")
