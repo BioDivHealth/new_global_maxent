@@ -34,6 +34,8 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, readr, stringr, tibble)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
@@ -218,12 +220,18 @@ make_prompt <- function(batch_title, diseases, phase, has_vector_csv, cautions) 
 #      Define paths ------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
 repo_root <- here::here()
-role_dir <- here::here("pathogen_association_data", "WHO", "role_annotation")
-reviews_dir <- file.path(role_dir, "reviews")
-output_root <- file.path(role_dir, "deep_research_inputs")
+repo_relative_path <- function(path) {
+  path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+  root <- normalizePath(repo_root, winslash = "/", mustWork = TRUE)
+  sub(paste0("^", root, "/?"), "", path)
+}
+
+role_dir <- role_annotation_dir
+reviews_dir <- role_reviews_dir
+output_root <- role_deep_research_dir
 plan_path <- here::here("ROLE_EVIDENCE_FULL_CURATION_PLAN.md")
-roster_path <- file.path(role_dir, "species_host_vector_roster.csv")
-host_candidates_path <- file.path(role_dir, "host_role_candidates.csv")
+roster_path <- file.path(role_roster_dir, "species_host_vector_roster.csv")
+host_candidates_path <- file.path(role_candidates_dir, "host_role_candidates.csv")
 vector_candidates_path <- here::here(
   "pathogen_association_data", "WHO", "vector_screening", "outputs",
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
@@ -425,7 +433,7 @@ for (batch in batches) {
     roster_rows = nrow(batch_roster),
     host_candidate_rows = nrow(batch_hosts),
     vector_candidate_rows = vector_rows,
-    folder = file.path("pathogen_association_data/WHO/role_annotation/deep_research_inputs", batch$id)
+    folder = repo_relative_path(file.path(output_root, batch$id))
   )
 }
 

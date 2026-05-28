@@ -138,7 +138,7 @@ who_dir <- who_data_dir
 networks_dir <- file.path(who_dir, "networks")
 vector_dir <- file.path(who_dir, "vector_screening", "outputs")
 host_vector_dir <- vector_host_outputs_dir
-role_dir <- file.path(who_dir, "role_annotation")
+role_dir <- role_roster_dir
 
 network_path <- file.path(networks_dir, "combined_who_network_canonical_zoonotic.csv")
 vector_path <- file.path(

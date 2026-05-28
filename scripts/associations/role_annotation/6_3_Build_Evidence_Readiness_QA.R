@@ -31,6 +31,8 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, purrr, readr, stringr, tibble, tidyr)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
@@ -154,9 +156,9 @@ summarise_assignments <- function(data, disease_col, assignment_col, prefix) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-who_dir <- here::here("pathogen_association_data", "WHO")
-role_dir <- file.path(who_dir, "role_annotation")
-qa_dir <- file.path(role_dir, "qa")
+who_dir <- who_data_dir
+role_dir <- role_annotation_dir
+qa_dir <- role_qa_dir
 vector_output_dir <- file.path(who_dir, "vector_screening", "outputs")
 genbank_dir <- file.path(who_dir, "genbank_simple")
 don_dir <- file.path(who_dir, "disease_outbreak_news_v2")

@@ -441,8 +441,8 @@ write_pilot_package_readme <- function(path) {
 # ------------------------------------------------------------------------------|
 who_dir <- who_data_dir
 who_disease_dir <- file.path(who_dir, "who_diseases")
-role_dir <- file.path(who_dir, "role_annotation")
-qa_dir <- file.path(role_dir, "qa")
+role_dir <- role_annotation_dir
+qa_dir <- role_qa_dir
 don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
 genbank_dir <- file.path(who_dir, "genbank_simple")
 sdm_dir <- here::here("sdms")

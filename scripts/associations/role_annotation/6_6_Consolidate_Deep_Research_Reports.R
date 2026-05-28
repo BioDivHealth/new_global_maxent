@@ -18,13 +18,15 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, purrr, readr, stringr, tibble, tidyr)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Define paths ------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-role_dir <- here::here("pathogen_association_data", "WHO", "role_annotation")
-input_root <- file.path(role_dir, "deep_research_inputs")
+role_dir <- role_annotation_dir
+input_root <- role_deep_research_dir
 manifest_path <- file.path(input_root, "deep_research_reformat_manifest.csv")
-output_dir <- file.path(input_root, "consolidated")
+output_dir <- role_deep_research_consolidated_dir
 candidate_unique_sources_path <- file.path(output_dir, "candidate_unique_sources_to_fetch.csv")
 
 if (!file.exists(manifest_path)) {

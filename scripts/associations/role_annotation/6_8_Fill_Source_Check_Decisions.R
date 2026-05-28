@@ -6,12 +6,9 @@ suppressPackageStartupMessages({
   library(tibble)
 })
 
-source_check_dir <- file.path(
-  "pathogen_association_data",
-  "WHO",
-  "role_annotation",
-  "source_check"
-)
+source(file.path("scripts", "associations", "working_inputs.R"))
+
+source_check_dir <- role_source_check_dir
 
 decision_path <- file.path(source_check_dir, "candidate_source_check_decisions.csv")
 decision_summary_path <- file.path(source_check_dir, "source_check_decision_summary.csv")

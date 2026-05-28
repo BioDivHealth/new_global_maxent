@@ -171,9 +171,11 @@ stop_if_missing_required <- function(data, cols, label) {
 #      Paths and preflight -----------------------------------------------------|
 # ------------------------------------------------------------------------------|
 repo_root <- here::here()
-role_dir <- file.path(repo_root, "pathogen_association_data", "WHO", "role_annotation")
-source_check_dir <- file.path(role_dir, "source_check")
-import_dir <- file.path(source_check_dir, "import")
+source(here::here("scripts", "associations", "working_inputs.R"))
+
+role_dir <- role_annotation_dir
+source_check_dir <- role_source_check_dir
+import_dir <- role_source_check_import_dir
 
 paths <- list(
   data_decisions = file.path(repo_root, "docs", "DATA_DECISIONS.md"),
@@ -181,11 +183,11 @@ paths <- list(
   role_readme = file.path(role_dir, "README.md"),
   decisions = file.path(source_check_dir, "candidate_source_check_decisions.csv"),
   source_request = file.path(source_check_dir, "candidate_source_request_list_with_files.csv"),
-  host_evidence = file.path(role_dir, "host_role_evidence.csv"),
-  vector_evidence = file.path(role_dir, "vector_role_evidence.csv"),
-  host_assignments = file.path(role_dir, "host_role_assignments.csv"),
-  vector_assignments = file.path(role_dir, "vector_role_assignments.csv"),
-  host_candidates = file.path(role_dir, "host_role_candidates.csv"),
+  host_evidence = file.path(role_evidence_dir, "host_role_evidence.csv"),
+  vector_evidence = file.path(role_evidence_dir, "vector_role_evidence.csv"),
+  host_assignments = file.path(role_evidence_dir, "host_role_assignments.csv"),
+  vector_assignments = file.path(role_evidence_dir, "vector_role_assignments.csv"),
+  host_candidates = file.path(role_candidates_dir, "host_role_candidates.csv"),
   vector_candidates = file.path(repo_root, "pathogen_association_data", "WHO", "networks", "vector_role_candidates.csv"),
   host_taxonomy = file.path(repo_root, "pathogen_association_data", "WHO", "virion", "who_host_species_standardized.csv")
 )

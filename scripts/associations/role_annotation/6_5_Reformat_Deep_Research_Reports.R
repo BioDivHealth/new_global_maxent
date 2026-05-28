@@ -24,11 +24,13 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, purrr, readr, stringr, tibble)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Define paths and report map --------------------------------------------|
 # ------------------------------------------------------------------------------|
-role_dir <- here::here("pathogen_association_data", "WHO", "role_annotation")
-input_root <- file.path(role_dir, "deep_research_inputs")
+role_dir <- role_annotation_dir
+input_root <- role_deep_research_dir
 
 report_specs <- tribble(
   ~source_path, ~batch_id, ~batch_title, ~phase,

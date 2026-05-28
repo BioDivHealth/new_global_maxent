@@ -18,10 +18,12 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, purrr, readr, stringr, tidyr, tibble)
 
-role_dir <- here::here("pathogen_association_data", "WHO", "role_annotation")
-consolidated_dir <- file.path(role_dir, "deep_research_inputs", "consolidated")
-papers_dir <- file.path(role_dir, "papers")
-output_dir <- file.path(role_dir, "source_check")
+source(here::here("scripts", "associations", "working_inputs.R"))
+
+role_dir <- role_annotation_dir
+consolidated_dir <- role_deep_research_consolidated_dir
+papers_dir <- role_source_pdf_dir
+output_dir <- role_source_check_dir
 
 candidate_queue_path <- file.path(consolidated_dir, "candidate_source_check_queue.csv")
 source_request_path <- file.path(consolidated_dir, "candidate_source_request_list.csv")
