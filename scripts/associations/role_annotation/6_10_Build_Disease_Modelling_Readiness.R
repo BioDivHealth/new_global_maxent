@@ -480,8 +480,8 @@ paths <- list(
   accessible_sdm_species = file.path(sdm_dir, "outputs", "catalog", "accessible_sdm_species.csv"),
   sdm_projections = file.path(sdm_dir, "outputs", "projections", "projection_manifest.csv"),
   sdm_comparisons = file.path(sdm_dir, "outputs", "comparisons", "comparison_manifest.csv"),
-  virion_taxid = file.path(who_dir, "virion", "who_pathogens_virion_taxid.csv"),
-  clover_taxid = file.path(who_dir, "clover", "who_bacteria_clover_taxid.csv")
+  virion_taxid = file.path(who_virion_dir, "who_pathogens_virion_taxid.csv"),
+  clover_taxid = file.path(who_clover_dir, "who_bacteria_clover_taxid.csv")
 )
 
 # ------------------------------------------------------------------------------|

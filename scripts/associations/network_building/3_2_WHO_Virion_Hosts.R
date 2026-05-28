@@ -20,10 +20,12 @@ library(frictionless)
 # install.packages("devtools")
 #devtools::install_github("frictionlessdata/frictionless-r")
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------| Helper paths  |------------------------------
-input_csv_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_taxid.csv")
-output_long_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_long.csv")
-output_summary_path <- here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv")
+input_csv_path <- file.path(who_virion_dir, "who_pathogens_virion_taxid.csv")
+output_long_path <- file.path(who_virion_dir, "who_pathogens_virion_hosts_long.csv")
+output_summary_path <- file.path(who_virion_dir, "who_pathogens_virion_hosts_summary.csv")
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
 # ----------------------------- Load datasets ------------------------------
@@ -37,8 +39,9 @@ if (!exists("virion_data")) {
   source(here("scripts", "associations", "network_building", "virion_data.R"))
 }
 
-dictionaries = virionData::get_data_dictionary(datapackage_json = here("data","virion_download",
-                                                                       "19502921","datapackage.json"))
+dictionaries = virionData::get_data_dictionary(
+  datapackage_json = file.path(virion_source_version_dir, "datapackage.json")
+)
 
 print(dictionaries)
 dictionaries$virion_csv
@@ -172,7 +175,7 @@ cat("Covering", n_distinct(who_virion_hosts_complete$Pathogens), "WHO pathogens\
 cat("Covering", n_distinct(who_virion_hosts_complete$Virus), "Virion pathogens\n")
 cat("With", n_distinct(who_virion_hosts_complete$Host), "unique host species\n")
 
-
+dir.create(dirname(output_long_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(who_virion_hosts_complete, output_long_path)
 
 # ----------------------------- Summarise host associations -------------------

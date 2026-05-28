@@ -4,8 +4,8 @@
 # Purpose: Identify which WHO priority pathogens are present in the VIRION
 #          database and retrieve their corresponding VirusTaxID identifiers.
 #
-# Output : A CSV file `who_pathogens_virion_taxid.csv` saved into the WHO
-#          documents folder containing all exact (and selected fuzzy) matches.
+# Output : A CSV file `who_pathogens_virion_taxid.csv` saved into the staged
+#          VIRION outputs folder with all exact and selected fuzzy matches.
 # ------------------------------------------------------------------------------|
 
 # ------------------------------| Load libraries |------------------------------
@@ -14,9 +14,11 @@ library(stringdist)
 library(fuzzyjoin)
 library(magrittr)
 
+source(file.path("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------| Helper paths  |------------------------------
 who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogen_analysis_units_keep.csv")
-output_csv_path <- file.path("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_taxid.csv")
+output_csv_path <- file.path(who_virion_dir, "who_pathogens_virion_taxid.csv")
 
 # ------------------------------| Load datasets |------------------------------
 # 1. WHO pathogen list ---------------------------------------------------------
@@ -186,6 +188,7 @@ final_output <- who_df %>%
   left_join(collapsed_matches, by = "ID")
 
 # Save CSV --------------------------------------------------------------------
+dir.create(dirname(output_csv_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(final_output, output_csv_path)
 
 # ------------------------------| Console summary |---------------------------

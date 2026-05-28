@@ -20,10 +20,12 @@ if (!require(tidygraph)) install.packages("tidygraph")
 library(tidygraph)
 library(magrittr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------| Load data |--------------------------------
 cat("Loading pathogen-host association data...\n")
 # Load the main association data
-host_associations <- read_csv(here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv"))
+host_associations <- read_csv(file.path(who_virion_dir, "who_pathogens_virion_hosts_summary.csv"))
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
 # Harmonize Virus names to standardized taxonomy
@@ -48,7 +50,7 @@ host_associations$Virus_og = host_associations$Virus  # Keep original names for 
 host_associations$Virus = host_associations$Virus_std  # Use standardized names for analysis
 
 # Load standardized host taxonomy  
-host_taxonomy <- read_csv(here("pathogen_association_data", "WHO", "virion", "who_host_species_standardized.csv"))
+host_taxonomy <- read_csv(file.path(who_virion_dir, "who_host_species_standardized.csv"))
 host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
 
 # Clean and prepare data for network analysis

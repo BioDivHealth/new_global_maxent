@@ -14,6 +14,8 @@
 library(tidyverse)
 library(here)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 large_host_threshold <- 75L
 narrow_host_threshold <- 3L
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
@@ -23,11 +25,13 @@ host_input_path <- file.path(who_dir, "master_pathogen_host_species.csv")
 host_clean_output_path <- file.path(who_dir, "master_pathogen_host_species_clean.csv")
 analysis_units_path <- file.path(who_dir, "master_plus_who_analysis_units.csv")
 
-virion_host_standardized_path <- here(
-  "pathogen_association_data", "WHO", "virion", "who_host_species_standardized.csv"
+virion_host_standardized_path <- file.path(
+  who_virion_dir,
+  "who_host_species_standardized.csv"
 )
-clover_host_standardized_path <- here(
-  "pathogen_association_data", "WHO", "clover", "clover_host_species_standardized.csv"
+clover_host_standardized_path <- file.path(
+  who_clover_dir,
+  "clover_host_species_standardized.csv"
 )
 
 clean_text <- function(x) {

@@ -2,9 +2,9 @@ library(pacman)
 p_load(here, tidyverse, igraph, ggraph, networkD3, visNetwork, 
        plotly, RColorBrewer, viridis, cowplot, scales, magrittr,dplyr)
 
+source(here("scripts", "associations", "working_inputs.R"))
 
-
-host_taxonomy = read_csv(file.path("pathogen_association_data", "WHO", "clover", "clover_host_species_standardized.csv"))
+host_taxonomy = read_csv(file.path(who_clover_dir, "clover_host_species_standardized.csv"))
 host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
 # names(host_taxonomy)
 #  [1] "Host"                  "HostTaxID"             "correct_name"          "type"                  "taxon_level"           "Genus"                
@@ -20,8 +20,8 @@ unique(host_taxonomy$Host)
 unique(host_taxonomy$correct_name)
 unique(host_taxonomy$host_species)
 
-disease_names = read_csv(file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_taxid.csv"))
-host_associations = read_csv(file.path("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv"))
+disease_names = read_csv(file.path(who_clover_dir, "who_bacteria_clover_taxid.csv"))
+host_associations = read_csv(file.path(who_clover_dir, "who_bacteria_clover_hosts.csv"))
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 names(host_associations)
 #  [1] "ID"                      "bacteria_name"           "name_type"               "match_source"            "dist"                    "PathogenTaxID"          
@@ -82,5 +82,4 @@ cat("Prepared", nrow(network_data), "pathogen-host associations for visualizatio
 
 dir.create(here("pathogen_association_data", "WHO", "networks"), showWarnings = FALSE)
 write_csv(network_data, here("pathogen_association_data", "WHO", "networks", "clover_who_network.csv"))
-
 

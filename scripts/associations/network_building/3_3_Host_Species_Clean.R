@@ -5,6 +5,8 @@ p_load(here, rgbif, taxize, raster, dismo,
 
 library(dplyr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 load(file = "scripts/functions/wrld_simpl2.R")
 source("scripts/New_functions/get_synonyms.R")
 options(iucn_redlist_key="tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
@@ -16,7 +18,7 @@ collapse_vals <- function(x, sep = "; ") {
 }
 
 # Load data ----------------------------------------------------------------
-who_virion_hosts_short = read_csv(here("pathogen_association_data", "WHO", "virion", "who_pathogens_virion_hosts_summary.csv"))
+who_virion_hosts_short = read_csv(file.path(who_virion_dir, "who_pathogens_virion_hosts_summary.csv"))
 
 host_species = who_virion_hosts_short %>%
   dplyr::select(Host, HostGenus, HostFamily, HostFlagID) %>%
@@ -112,11 +114,11 @@ for (i in 1:nrow(tax_df_joined)){
     tax_df_joined$Spp_syn[i] =  clean_synonyms2(tax_df_joined$Spp_syn[i])}
 }
 
-output_dir <- here("pathogen_association_data","WHO","virion")
+output_dir <- who_virion_dir
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Save the standardized host species data --------------------------------
-output_file <- here(output_dir, "who_host_species_standardized.csv")
+output_file <- file.path(output_dir, "who_host_species_standardized.csv")
 write_csv(tax_df_joined, output_file)
 
 cat("Standardization complete!\n")
@@ -164,7 +166,7 @@ library(ggplot2)
 library(tidyverse)
 library(here)
 library(magrittr)
-host = read_csv(here("pathogen_association_data","WHO","virion","who_host_species_standardized.csv"))
+host = read_csv(file.path(who_virion_dir, "who_host_species_standardized.csv"))
 host %<>% dplyr::select(Host, correct_name, Genus, Family, Order, Class, Phylum)
 
 # ------------------------------------------------------------------------------

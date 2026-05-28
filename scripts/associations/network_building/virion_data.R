@@ -26,6 +26,8 @@ library(kableExtra)  # For nice tables
 library(jsonlite)    # For JSON parsing
 library(rlang)  # For dynamic column references
 
+source(file.path("scripts", "associations", "working_inputs.R"))
+
 # =============================================================================
 # DATA LOADING FUNCTIONS
 # =============================================================================
@@ -36,7 +38,7 @@ library(rlang)  # For dynamic column references
 #' @param data_path Path to VIRION data directory
 #' @param files Vector of file names to load (default: all main files)
 #' @return List containing loaded data frames
-load_virion_data <- function(data_path = "data/virion_download/19502921", 
+load_virion_data <- function(data_path = virion_source_version_dir,
                             files = c("virion.csv.gz", "edgelist.csv", 
                                      "taxonomy_host.csv", "taxonomy_virus.csv",
                                      "provenance.csv.gz", "detection.csv.gz", 
@@ -134,7 +136,7 @@ load_virion_package <- function(version = "latest",
   
   # Get the latest version data using get_versioned_data
   cat("  - Downloading VIRION data from Zenodo...\n")
-  data_path <- virionData::get_versioned_data(version = version, dir_path = "data/virion_download")
+  data_path <- virionData::get_versioned_data(version = version, dir_path = virion_source_dir)
   
   # Load the CSV files directly
   if ("virion" %in% tables) {

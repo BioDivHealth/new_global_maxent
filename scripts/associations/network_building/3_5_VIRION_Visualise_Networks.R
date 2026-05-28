@@ -14,6 +14,8 @@ library(pacman)
 p_load(here, tidyverse, igraph, ggraph, networkD3, visNetwork, 
        plotly, RColorBrewer, viridis, cowplot, scales)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # Additional network packages
 if (!require(tidygraph)) install.packages("tidygraph")
 library(tidygraph)
@@ -738,7 +740,7 @@ ggsave(here(analysis_dir, "centrality_distributions.png"), centrality_plots$dist
        width = 12, height = 8, dpi = 300, bg = "white")
 
 # Save analysis results to CSV files
-results_dir <- here("pathogen_association_data", "WHO", "virion", "network_analysis")
+results_dir <- file.path(who_virion_dir, "network_analysis")
 dir.create(results_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Enhanced node metrics

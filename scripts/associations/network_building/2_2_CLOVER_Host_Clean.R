@@ -15,6 +15,8 @@ p_load(here, rgbif, taxize, raster, dismo,
 
 library(dplyr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 load(file = "scripts/functions/wrld_simpl2.R")
 source("scripts/New_functions/get_synonyms.R")
 options(iucn_redlist_key="tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
@@ -26,7 +28,7 @@ collapse_vals <- function(x, sep = "; ") {
 }
 
 # Load data ----------------------------------------------------------------
-clover_hosts_file <- here("pathogen_association_data", "WHO", "clover", "who_bacteria_clover_hosts.csv")
+clover_hosts_file <- file.path(who_clover_dir, "who_bacteria_clover_hosts.csv")
 clover_hosts_data <- read_csv(clover_hosts_file)
 
 host_species <- clover_hosts_data %>%
@@ -121,11 +123,11 @@ for (i in 1:nrow(tax_df_joined)){
 }
 
 # Create output directory if it doesn't exist
-output_dir <- here("pathogen_association_data", "WHO", "clover")
+output_dir <- who_clover_dir
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Save the standardized host species data --------------------------------
-output_file <- here(output_dir, "clover_host_species_standardized.csv")
+output_file <- file.path(output_dir, "clover_host_species_standardized.csv")
 write_csv(tax_df_joined, output_file)
 
 cat("Standardization complete!\n")

@@ -52,13 +52,18 @@ role_evidence_dir <- role_annotation_dir
 role_roster_dir <- role_annotation_dir
 role_qa_dir <- file.path(role_annotation_dir, "qa")
 
-# Raw CLOVER checkout/vendor export. WHO-specific generated CLOVER outputs live
-# under `who_clover_dir`.
+# Raw CLOVER/VIRION source exports. WHO-specific generated source outputs live
+# under staged source-specific output directories.
 clover_source_dir <- file.path(
-  pathogen_association_data_dir,
+  source_data_dir,
+  "clover",
   "viralemergence-clover-2604d22"
 )
-who_clover_dir <- file.path(who_data_dir, "clover")
+virion_source_dir <- file.path(source_data_dir, "virion", "raw", "virion_download")
+virion_source_version_dir <- file.path(virion_source_dir, "19502921")
+
+who_clover_dir <- file.path(staged_data_dir, "clover", "outputs")
+who_virion_dir <- file.path(staged_data_dir, "virion", "outputs")
 
 vectormap_outputs_dir <- file.path(staged_data_dir, "vectormap", "outputs")
 vectormap_manual_dir <- file.path(manual_data_dir, "vectormap")

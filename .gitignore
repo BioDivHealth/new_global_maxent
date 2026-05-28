@@ -64,7 +64,8 @@ dr/disease_table32cb.csv
 dr/species_host_vector_rosterold.xlsx
 scripts/AutoMaxent-main/
 straus_etal/
-pathogen_association_data/viralemergence-clover-2604d22/
+pathogen_association_data/source_data/clover/viralemergence-clover-2604d22/
+pathogen_association_data/source_data/virion/raw/virion_download/
 
 # Local cleanup holding areas; move files here instead of deleting them.
 archive/git_cleanup_*/
@@ -164,7 +165,6 @@ pathogen_association_data/WHO/genbank_simple/intermediate/genbank_readiness_coun
 pathogen_association_data/WHO/genbank_simple/intermediate/genbank_readiness_country_records_standardized.csv
 pathogen_association_data/WHO/genbank_simple/maps/
 pathogen_association_data/WHO/genbank_simple/maps_readiness/disease_country_records/
-pathogen_association_data/WHO/virion/who_pathogens_virion_hosts_long.csv
 pathogen_association_data/WHO/who_diseases/*_raw.jsonl
 
 # Raw host-vector source exports
@@ -194,6 +194,19 @@ pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_r
 !pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_analysis_summary.csv
 !pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_raw.csv
 !pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_review.csv
+
+# Source-specific WHO/CLOVER and WHO/VIRION staging outputs
+!pathogen_association_data/staged/clover/outputs/
+!pathogen_association_data/staged/clover/outputs/clover_host_species_standardized.csv
+!pathogen_association_data/staged/clover/outputs/who_bacteria_clover_hosts.csv
+!pathogen_association_data/staged/clover/outputs/who_bacteria_clover_taxid.csv
+!pathogen_association_data/staged/clover/outputs/who_bacteria_clover_unique_hosts.csv
+!pathogen_association_data/staged/virion/outputs/
+pathogen_association_data/staged/virion/outputs/who_pathogens_virion_hosts_long.csv
+!pathogen_association_data/staged/virion/outputs/who_host_species_standardized.csv
+!pathogen_association_data/staged/virion/outputs/who_host_species_standardized_github.csv
+!pathogen_association_data/staged/virion/outputs/who_pathogens_virion_hosts_summary.csv
+!pathogen_association_data/staged/virion/outputs/who_pathogens_virion_taxid.csv
 
 # Generated Deep Research prompt/report staging. The durable handoff is
 # pathogen_association_data/manual/role_annotation/source_check/.
