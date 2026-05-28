@@ -21,20 +21,18 @@ active layout.
   `genbank_simple/`, and `disease_outbreak_news_v2/`.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
-- `evidence/host_vector/`: Prepared target for the combined VectorMap + MapVEu
-  host-vector evidence outputs. Once moved, downstream host-vector joins should
-  use this integrated evidence surface.
-- `vector_host/`: Legacy current location for combined host-vector outputs until
-  the pending file move is completed.
+- `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
+  outputs. Prefer this integrated evidence surface for downstream host-vector
+  joins.
 
 ## Raw And Staged Source Folders
 
 - `source_data/vectormap/`, `manual/vectormap/`, and `staged/vectormap/`:
-  Pilot split of the VectorMap source family. Raw exports live under
+  Split VectorMap source family. Raw exports live under
   `source_data/vectormap/raw/`, reviewed crosswalks under `manual/vectormap/`,
   and VectorMap-only generated outputs under `staged/vectormap/outputs/`.
-- `source_data/mapveu/`, `manual/mapveu/`, and `staged/mapveu/`: Prepared split
-  of the MapVEu source family. Raw exports should live under
+- `source_data/mapveu/`, `manual/mapveu/`, and `staged/mapveu/`: Split MapVEu
+  source family. Raw exports live under
   `source_data/mapveu/raw/`, reviewed crosswalks under `manual/mapveu/`, and
   MapVEu-only generated outputs under `staged/mapveu/outputs/`.
 - `viralemergence-clover-2604d22/`: Local CLOVER source checkout/vendor export.
