@@ -5,10 +5,8 @@
 # Purpose: Derive conservative host-role candidate rows from the canonical WHO
 #          disease-pathogen-host backbone for the current role-review scope.
 #
-# Inputs : pathogen_association_data/WHO/networks/
-#            combined_who_network_canonical_zoonotic.csv
-#          pathogen_association_data/WHO/who_diseases/
-#            who_pathogens_diseases_zoonotic.csv
+# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
+#          WHO diseases helper path for who_pathogens_diseases_zoonotic.csv
 #
 # Outputs: pathogen_association_data/evidence/role_annotation/
 #            host_role_candidates.csv

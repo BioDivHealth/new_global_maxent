@@ -262,6 +262,7 @@ annotate_with_competence <- function(input_path, output_path, competence_collaps
     stop("Row count changed while annotating ", input_path)
   }
 
+  dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
   write_csv(annotated, output_path, na = "")
 
   tibble::tibble(
@@ -272,7 +273,6 @@ annotate_with_competence <- function(input_path, output_path, competence_collaps
 }
 
 competence_path <- here("diseases", "vector_competence.csv")
-networks_dir <- here("pathogen_association_data", "WHO", "networks")
 
 disease_vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned.csv"
@@ -281,11 +281,12 @@ disease_vector_annotated_path <- file.path(
   vector_screening_evidence_dir,
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 )
-dhv_path <- file.path(networks_dir, "disease_host_vector_links.csv")
-dhv_annotated_path <- file.path(networks_dir, "disease_host_vector_links_competence_annotated.csv")
-dhv_expanded_path <- file.path(networks_dir, "disease_host_vector_links_expanded.csv")
-dhv_expanded_annotated_path <- file.path(
-  networks_dir,
+dhv_path <- who_network_host_vector_path("disease_host_vector_links.csv")
+dhv_annotated_path <- who_network_host_vector_path(
+  "disease_host_vector_links_competence_annotated.csv"
+)
+dhv_expanded_path <- who_network_host_vector_path("disease_host_vector_links_expanded.csv")
+dhv_expanded_annotated_path <- who_network_host_vector_path(
   "disease_host_vector_links_expanded_competence_annotated.csv"
 )
 collapsed_path <- file.path(vector_screening_evidence_dir, "vector_competence_collapsed.csv")

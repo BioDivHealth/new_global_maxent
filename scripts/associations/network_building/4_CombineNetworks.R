@@ -1,13 +1,12 @@
 library(pacman)
 p_load(here, tidyverse, readr, magrittr)
 
-clover_network = read_csv(here("pathogen_association_data", "WHO",
-                               "networks", "clover_who_network.csv"))
-clover_disease_names = read_csv(here("pathogen_association_data", 
-                                     "WHO", "networks", "clover_who_network.csv"))
+source(here("scripts", "associations", "working_inputs.R"))
 
-virion_network = read_csv(here("pathogen_association_data",
-                               "WHO", "networks", "virion_who_network.csv"))
+clover_network = read_csv(who_network_source_component_path("clover_who_network.csv"))
+clover_disease_names = read_csv(who_network_source_component_path("clover_who_network.csv"))
+
+virion_network = read_csv(who_network_source_component_path("virion_who_network.csv"))
 
 clover_network$PathogenType = "bacteria"
 virion_network$PathogenType = "virus"
@@ -46,7 +45,9 @@ combined_network %<>% rename(Host = Host_clean) %>%
     HostOrder = tolower(HostOrder)
     )
 
-write_csv(combined_network, here("pathogen_association_data", "WHO", "networks", "combined_who_network.csv"))
+output_path <- who_raw_network_path()
+dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
+write_csv(combined_network, output_path)
 
 unique_pairs = combined_network %>% select(Host, Pathogen) %>% distinct()
 dim(unique_pairs)

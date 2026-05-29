@@ -5,14 +5,12 @@
 # Purpose: Canonicalize pathogen names in the merged WHO host-pathogen network,
 #          add zoonotic status, and preserve the raw labels for provenance.
 #
-# Inputs : pathogen_association_data/WHO/networks/combined_who_network.csv
+# Inputs : WHO network helper path for combined_who_network.csv
 #          pathogen_association_data/WHO/who_diseases/who_pathogens_diseases.csv
 #          pathogen_association_data/WHO/who_diseases/disease_names.csv
 #          pathogen_association_data/WHO/who_diseases/who_pathogen_analysis_units_keep.csv
 #
-# Outputs: pathogen_association_data/WHO/networks/combined_who_pathogen_canonical_lookup.csv
-#          pathogen_association_data/WHO/networks/combined_who_network_canonical.csv
-#          pathogen_association_data/WHO/networks/combined_who_network_canonical_zoonotic.csv
+# Outputs: WHO network helper paths for canonical network outputs
 #
 # Notes  : This script does not overwrite the existing raw combined network.
 #          It creates a derived canonical artifact so downstream scripts can
@@ -80,7 +78,7 @@ who_path <- who_raw_pathogens_path()
 disease_names_path <- who_disease_names_path()
 analysis_units_keep_path <- who_pathogen_analysis_units_keep_path()
 
-lookup_output_path <- file.path(who_data_dir, "networks", "combined_who_pathogen_canonical_lookup.csv")
+lookup_output_path <- who_network_canonicalization_path("combined_who_pathogen_canonical_lookup.csv")
 canonical_output_path <- who_canonical_network_path()
 zoonotic_network_output_path <- who_canonical_zoonotic_network_path()
 
@@ -377,6 +375,9 @@ combined_network_canonical_zoonotic <- combined_network_canonical %>%
 # ------------------------------------------------------------------------------|
 #      Write outputs and report ------------------------------------------------|
 # ------------------------------------------------------------------------------|
+dir.create(dirname(lookup_output_path), recursive = TRUE, showWarnings = FALSE)
+dir.create(dirname(canonical_output_path), recursive = TRUE, showWarnings = FALSE)
+
 write_csv(canonical_lookup, lookup_output_path, na = "")
 write_csv(combined_network_canonical, canonical_output_path, na = "")
 write_csv(combined_network_canonical_zoonotic, zoonotic_network_output_path, na = "")

@@ -5,18 +5,17 @@
 #          rows, and taxonomy cautions across the disease-level and
 #          pathogen-level host-vector-pathogen outputs.
 #
-# Inputs : pathogen_association_data/WHO/networks/
-#          combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/
 #          disease_vector_links_taxonomy_cleaned.csv
 #          pathogen_vector_links_filled.csv
 #          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
 #          vector_host_links_join_blocked.csv
-#          pathogen_association_data/WHO/networks/
+#          WHO host-vector helper paths for:
 #          disease_host_vector_links.csv
 #          pathogen_host_vector_links.csv
-# Outputs: pathogen_association_data/WHO/networks/
+# Outputs: WHO network QA helper paths:
 #          host_vector_join_qa_summary.csv
 #          host_vector_join_missing_host_tax_id.csv
 #          host_vector_join_unmatched_disease_vectors.csv
@@ -59,7 +58,6 @@ collapse_unique <- function(x) {
   paste(x, collapse = "; ")
 }
 
-networks_dir <- file.path(who_data_dir, "networks")
 host_vector_dir <- vector_host_outputs_dir
 
 who_path <- who_working_network_path()
@@ -69,15 +67,15 @@ disease_vector_path <- vector_screening_evidence_path(
 pathogen_vector_path <- vector_screening_evidence_path("pathogen_vector_links_filled.csv")
 host_vector_join_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 host_vector_blocked_path <- file.path(host_vector_dir, "vector_host_links_join_blocked.csv")
-disease_output_path <- file.path(networks_dir, "disease_host_vector_links.csv")
-pathogen_output_path <- file.path(networks_dir, "pathogen_host_vector_links.csv")
+disease_output_path <- who_network_host_vector_path("disease_host_vector_links.csv")
+pathogen_output_path <- who_network_host_vector_path("pathogen_host_vector_links.csv")
 
-summary_path <- file.path(networks_dir, "host_vector_join_qa_summary.csv")
-missing_taxid_path <- file.path(networks_dir, "host_vector_join_missing_host_tax_id.csv")
-unmatched_disease_path <- file.path(networks_dir, "host_vector_join_unmatched_disease_vectors.csv")
-unmatched_pathogen_path <- file.path(networks_dir, "host_vector_join_unmatched_pathogen_vectors.csv")
-taxonomy_caution_path <- file.path(networks_dir, "host_vector_join_taxonomy_caution_rows.csv")
-disease_coverage_path <- file.path(networks_dir, "host_vector_join_disease_coverage.csv")
+summary_path <- who_network_qa_path("host_vector_join_qa_summary.csv")
+missing_taxid_path <- who_network_qa_path("host_vector_join_missing_host_tax_id.csv")
+unmatched_disease_path <- who_network_qa_path("host_vector_join_unmatched_disease_vectors.csv")
+unmatched_pathogen_path <- who_network_qa_path("host_vector_join_unmatched_pathogen_vectors.csv")
+taxonomy_caution_path <- who_network_qa_path("host_vector_join_taxonomy_caution_rows.csv")
+disease_coverage_path <- who_network_qa_path("host_vector_join_disease_coverage.csv")
 
 who_network <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(across(where(is.character), clean_text))
@@ -173,6 +171,7 @@ qa_summary <- tibble::tribble(
   "taxonomy_caution_rows_total", as.character(nrow(taxonomy_caution_rows))
 )
 
+dir.create(dirname(summary_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(qa_summary, summary_path, na = "")
 write_csv(missing_host_tax_id, missing_taxid_path, na = "")
 write_csv(unmatched_disease_vectors, unmatched_disease_path, na = "")

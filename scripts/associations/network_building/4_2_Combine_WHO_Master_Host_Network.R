@@ -4,13 +4,12 @@
 # Purpose: Append the WHO host network and disease-master host network into one
 #          downstream-ready host table without dropping review evidence rows.
 #
-# Inputs : pathogen_association_data/WHO/networks/combined_who_network.csv
+# Inputs : WHO network helper path for combined_who_network.csv
 #          pathogen_association_data/WHO/who_diseases/
 #            master_pathogen_host_species_clean.csv
 #            master_plus_who_analysis_units.csv
 #
-# Output: pathogen_association_data/WHO/networks/
-#           master_plus_who_host_network.csv
+# Output: WHO host-pathogen network helper path for master_plus_who_host_network.csv
 # ------------------------------------------------------------------------------
 
 library(tidyverse)
@@ -18,12 +17,11 @@ library(here)
 
 source(here("scripts", "associations", "working_inputs.R"))
 
-network_dir <- here("pathogen_association_data", "WHO", "networks")
 who_network_path <- who_raw_network_path()
 master_host_path <- who_master_pathogen_host_species_clean_path()
 analysis_units_path <- who_master_plus_analysis_units_path()
 who_keep_path <- who_pathogen_analysis_units_keep_path()
-combined_output_path <- file.path(network_dir, "master_plus_who_host_network.csv")
+combined_output_path <- who_network_host_pathogen_path("master_plus_who_host_network.csv")
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -401,6 +399,7 @@ stopifnot(!any(is.na(combined_network$host_taxonomy_ready)))
 stopifnot(!any(is.na(combined_network$modelling_scope_status)))
 stopifnot(!any(is.na(combined_network$modelling_scope_reason)))
 
+dir.create(dirname(combined_output_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(combined_network, combined_output_path, na = "")
 
 cat("WHO network rows:", nrow(who_network), "\n")

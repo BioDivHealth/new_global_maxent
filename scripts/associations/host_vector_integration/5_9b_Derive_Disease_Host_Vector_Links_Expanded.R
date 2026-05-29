@@ -5,13 +5,12 @@
 #          subset by keeping all observed host-vector combinations for WHO hosts
 #          and then marking whether curated disease-vector evidence is present.
 #
-# Inputs : pathogen_association_data/WHO/networks/
-#          combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/
 #          disease_vector_links_taxonomy_cleaned.csv
 #          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
-# Output : pathogen_association_data/WHO/networks/
+# Output : WHO host-vector helper paths for:
 #          disease_host_vector_links_expanded.csv
 #          disease_host_vector_links_expanded_summary.csv
 # ------------------------------------------------------------------------------
@@ -76,7 +75,6 @@ first_non_missing <- function(x) {
   x[[1]]
 }
 
-networks_dir <- file.path(who_data_dir, "networks")
 host_vector_dir <- vector_host_outputs_dir
 
 who_path <- who_working_network_path()
@@ -84,8 +82,8 @@ disease_vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned.csv"
 )
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
-expanded_path <- file.path(networks_dir, "disease_host_vector_links_expanded.csv")
-summary_path <- file.path(networks_dir, "disease_host_vector_links_expanded_summary.csv")
+expanded_path <- who_network_host_vector_path("disease_host_vector_links_expanded.csv")
+summary_path <- who_network_host_vector_path("disease_host_vector_links_expanded_summary.csv")
 
 who_network <- read_csv(
   who_path,
@@ -270,6 +268,7 @@ expanded_summary <- disease_host_vector_links_expanded %>%
   ) %>%
   arrange(desc(expanded_rows), disease_name)
 
+dir.create(dirname(expanded_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(disease_host_vector_links_expanded, expanded_path, na = "")
 write_csv(expanded_summary, summary_path, na = "")
 

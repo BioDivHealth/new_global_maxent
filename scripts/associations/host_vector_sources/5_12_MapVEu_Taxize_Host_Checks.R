@@ -9,8 +9,7 @@
 #          mapveu_vector_host_links_raw.csv
 #          pathogen_association_data/manual/mapveu/
 #          mapveu_host_manual_crosswalk.csv
-#          pathogen_association_data/WHO/networks/
-#          combined_who_network_canonical_zoonotic.csv
+#          WHO network helper path for combined_who_network_canonical_zoonotic.csv
 # Outputs: pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_host_taxize_candidates.csv
 #          pathogen_association_data/staged/mapveu/outputs/

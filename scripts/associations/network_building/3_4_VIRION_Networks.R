@@ -106,5 +106,6 @@ network_data <- host_associations %>%
   filter(!is.na(Pathogen), !is.na(Host_clean))
 
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
-dir.create(here("pathogen_association_data", "WHO", "networks"), showWarnings = FALSE)
-write_csv(network_data, here("pathogen_association_data", "WHO", "networks", "virion_who_network.csv"))
+output_path <- who_network_source_component_path("virion_who_network.csv")
+dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
+write_csv(network_data, output_path)

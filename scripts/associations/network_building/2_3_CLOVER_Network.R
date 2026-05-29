@@ -80,6 +80,6 @@ network_data <- host_associations %>%
 
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
 
-dir.create(here("pathogen_association_data", "WHO", "networks"), showWarnings = FALSE)
-write_csv(network_data, here("pathogen_association_data", "WHO", "networks", "clover_who_network.csv"))
-
+output_path <- who_network_source_component_path("clover_who_network.csv")
+dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
+write_csv(network_data, output_path)

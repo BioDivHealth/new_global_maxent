@@ -5,13 +5,12 @@
 # Purpose: Build a disease-species roster for collaborator review, covering both
 #          vectored and non-vectored diseases.
 #
-# Inputs : pathogen_association_data/WHO/networks/
-#            combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/outputs/
 #            disease_vector_links_taxonomy_cleaned_competence_annotated.csv
 #          pathogen_association_data/evidence/host_vector/
 #            vector_host_links_join_ready.csv
-#          pathogen_association_data/WHO/networks/
+#          WHO host-vector helper path for:
 #            disease_host_vector_links_expanded_competence_annotated.csv
 #          pathogen_association_data/WHO/who_diseases/
 #            who_pathogens_diseases_zoonotic.csv
@@ -142,8 +141,7 @@ vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 )
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
-expanded_path <- file.path(
-  file.path(who_data_dir, "networks"),
+expanded_path <- who_network_host_vector_path(
   "disease_host_vector_links_expanded_competence_annotated.csv"
 )
 zoonotic_path <- who_pathogens_diseases_zoonotic_path()

@@ -23,7 +23,7 @@ library(magrittr)
 
 # ------------------------------| Load data |--------------------------------
 cat("Loading pathogen-host association data...\n")
-network_data = read_csv(here("pathogen_association_data", "WHO", "networks", "virion_who_network.csv"))
+network_data = read_csv(who_network_source_component_path("virion_who_network.csv"))
 
 # ------------------------------| Create network objects |-------------------
 

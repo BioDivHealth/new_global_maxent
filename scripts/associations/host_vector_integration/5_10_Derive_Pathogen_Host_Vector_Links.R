@@ -5,14 +5,12 @@
 #          pathogen-host network to the pathogen-vector backfill output and the
 #          observational host-vector join table.
 #
-# Inputs : pathogen_association_data/WHO/networks/
-#          combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
 #          pathogen_association_data/WHO/vector_screening/
 #          pathogen_vector_links_filled.csv
 #          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
-# Output : pathogen_association_data/WHO/networks/
-#          pathogen_host_vector_links.csv
+# Output : WHO host-vector helper path for pathogen_host_vector_links.csv
 # ------------------------------------------------------------------------------
 
 library(pacman)
@@ -75,13 +73,12 @@ collapse_unique <- function(x) {
   paste(x, collapse = "; ")
 }
 
-networks_dir <- file.path(who_data_dir, "networks")
 host_vector_dir <- vector_host_outputs_dir
 
 who_path <- who_working_network_path()
 pathogen_vector_path <- vector_screening_evidence_path("pathogen_vector_links_filled.csv")
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
-output_path <- file.path(networks_dir, "pathogen_host_vector_links.csv")
+output_path <- who_network_host_vector_path("pathogen_host_vector_links.csv")
 
 who_network <- read_csv(
   who_path,
@@ -258,6 +255,7 @@ if (duplicate_key_count > 0) {
   stop("Duplicate disease_name + pathogen_tax_id + host_tax_id + vector_join_key rows found in pathogen-host-vector output")
 }
 
+dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(pathogen_host_vector_links, output_path, na = "")
 
 cat("WHO pathogen-host rows used:", nrow(who_pathogen_host), "\n")

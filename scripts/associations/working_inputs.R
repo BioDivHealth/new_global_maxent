@@ -24,6 +24,33 @@ mapveu_dir <- mapveu_raw_dir
 vector_host_dir <- file.path(evidence_data_dir, "host_vector")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
 
+# WHO networks layout. During migration, helpers prefer the proposed lifecycle
+# roots but fall back to the legacy WHO/networks/ directory until files move.
+who_networks_legacy_dir <- file.path(who_data_dir, "networks")
+who_networks_staged_dir <- file.path(staged_data_dir, "who_networks")
+who_networks_source_components_dir <- file.path(
+  who_networks_staged_dir,
+  "source_components"
+)
+who_networks_canonicalization_dir <- file.path(
+  who_networks_staged_dir,
+  "canonicalization"
+)
+who_networks_evidence_dir <- file.path(evidence_data_dir, "who_networks")
+who_networks_host_pathogen_dir <- file.path(
+  who_networks_evidence_dir,
+  "host_pathogen"
+)
+who_networks_host_vector_dir <- file.path(
+  who_networks_evidence_dir,
+  "host_vector"
+)
+who_networks_host_vector_who_dir <- file.path(
+  who_networks_host_vector_dir,
+  "who_only"
+)
+who_networks_qa_dir <- file.path(who_networks_evidence_dir, "qa")
+
 # Current role-annotation layout. Core evidence/QA files live under evidence/,
 # manual reviews/source checks live under manual/, generated Deep Research
 # prompts/reports live under staged/, and source PDFs plus extracted text live
@@ -334,6 +361,78 @@ vector_screening_taxonomy_review_path <- function(filename) {
   )
 }
 
+who_network_legacy_path <- function(filename) {
+  file.path(who_networks_legacy_dir, filename)
+}
+
+who_network_source_component_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_networks_source_components_dir, filename),
+    who_network_legacy_path(filename)
+  )
+}
+
+who_network_canonicalization_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_networks_canonicalization_dir, filename),
+    who_network_legacy_path(filename)
+  )
+}
+
+who_network_host_pathogen_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_networks_host_pathogen_dir, filename),
+    who_network_legacy_path(filename)
+  )
+}
+
+who_network_host_vector_path <- function(filename, scope = c("who")) {
+  scope <- match.arg(scope)
+
+  primary_dir <- switch(
+    scope,
+    who = who_networks_host_vector_who_dir
+  )
+
+  prefer_existing_path(
+    file.path(primary_dir, filename),
+    who_network_legacy_path(filename)
+  )
+}
+
+who_network_qa_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_networks_qa_dir, filename),
+    who_network_legacy_path(filename)
+  )
+}
+
+role_vector_candidate_path <- function(scope = c("who", "master_plus")) {
+  scope <- match.arg(scope)
+  filename <- paste0("vector_role_candidates_", scope, ".csv")
+
+  fallback <- if (scope == "who") {
+    who_network_legacy_path("vector_role_candidates.csv")
+  } else {
+    file.path(role_candidates_dir, filename)
+  }
+
+  prefer_existing_path(file.path(role_candidates_dir, filename), fallback)
+}
+
+role_vector_candidate_summary_path <- function(scope = c("who", "master_plus")) {
+  scope <- match.arg(scope)
+  filename <- paste0("vector_role_candidates_", scope, "_summary.csv")
+
+  fallback <- if (scope == "who") {
+    who_network_legacy_path("vector_role_candidates_summary.csv")
+  } else {
+    file.path(role_candidates_dir, filename)
+  }
+
+  prefer_existing_path(file.path(role_candidates_dir, filename), fallback)
+}
+
 who_diseases_path <- function(filename) {
   file.path(who_diseases_legacy_dir, filename)
 }
@@ -515,27 +614,15 @@ who_master_pathogen_host_species_summary_path <- function() {
 }
 
 who_raw_network_path <- function() {
-  file.path(
-    who_data_dir,
-    "networks",
-    "combined_who_network.csv"
-  )
+  who_network_host_pathogen_path("combined_who_network.csv")
 }
 
 who_canonical_network_path <- function() {
-  file.path(
-    who_data_dir,
-    "networks",
-    "combined_who_network_canonical.csv"
-  )
+  who_network_host_pathogen_path("combined_who_network_canonical.csv")
 }
 
 who_canonical_zoonotic_network_path <- function() {
-  file.path(
-    who_data_dir,
-    "networks",
-    "combined_who_network_canonical_zoonotic.csv"
-  )
+  who_network_host_pathogen_path("combined_who_network_canonical_zoonotic.csv")
 }
 
 who_working_network_path <- function(scope = c("zoonotic", "canonical", "raw")) {

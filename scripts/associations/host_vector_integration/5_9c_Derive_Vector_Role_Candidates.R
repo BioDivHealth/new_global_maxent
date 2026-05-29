@@ -4,15 +4,15 @@
 # Purpose: Derive conservative vector-role candidate flags from the integrated
 #          disease-host-vector table plus the joined competence annotations.
 #
-# Inputs : pathogen_association_data/WHO/networks/
-#            disease_host_vector_links_competence_annotated.csv
-# Outputs: pathogen_association_data/WHO/networks/vector_role_candidates.csv
-#          pathogen_association_data/WHO/networks/
-#            vector_role_candidates_summary.csv
+# Inputs : WHO host-vector helper path for
+#          disease_host_vector_links_competence_annotated.csv
+# Outputs: role-annotation helper paths for WHO vector role candidates
 # ------------------------------------------------------------------------------
 
 library(pacman)
 p_load(dplyr, here, readr, stringr)
+
+source(here("scripts", "associations", "working_inputs.R"))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -86,20 +86,11 @@ summarise_competence_status <- function(x) {
   )
 }
 
-input_path <- here(
-  "pathogen_association_data", "WHO", "networks",
+input_path <- who_network_host_vector_path(
   "disease_host_vector_links_competence_annotated.csv"
 )
-
-output_path <- here(
-  "pathogen_association_data", "WHO", "networks",
-  "vector_role_candidates.csv"
-)
-
-summary_path <- here(
-  "pathogen_association_data", "WHO", "networks",
-  "vector_role_candidates_summary.csv"
-)
+output_path <- role_vector_candidate_path("who")
+summary_path <- role_vector_candidate_summary_path("who")
 
 livestock_species <- c(
   "Bos taurus",
@@ -206,6 +197,7 @@ summary_table <- bind_rows(
   count(disease_name, metric, flag_value, name = "row_count") %>%
   arrange(disease_name, metric, desc(flag_value))
 
+dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(vector_role_candidates, output_path, na = "")
 write_csv(summary_table, summary_path, na = "")
 

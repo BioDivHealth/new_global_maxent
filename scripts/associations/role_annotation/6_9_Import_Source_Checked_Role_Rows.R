@@ -188,7 +188,7 @@ paths <- list(
   host_assignments = file.path(role_evidence_dir, "host_role_assignments.csv"),
   vector_assignments = file.path(role_evidence_dir, "vector_role_assignments.csv"),
   host_candidates = file.path(role_candidates_dir, "host_role_candidates.csv"),
-  vector_candidates = file.path(repo_root, "pathogen_association_data", "WHO", "networks", "vector_role_candidates.csv"),
+  vector_candidates = role_vector_candidate_path("who"),
   host_taxonomy = file.path(who_virion_dir, "who_host_species_standardized.csv")
 )
 
