@@ -451,7 +451,6 @@ who_dir <- who_data_dir
 who_disease_dir <- file.path(who_dir, "who_diseases")
 role_dir <- role_annotation_dir
 qa_dir <- role_qa_dir
-don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
 genbank_legacy_dir <- genbank_simple_legacy_dir
 sdm_dir <- here::here("sdms")
 
@@ -490,7 +489,10 @@ paths <- list(
   disease_evidence_readiness = file.path(qa_dir, "disease_evidence_readiness.csv"),
   vector_evidence_readiness = file.path(qa_dir, "vector_evidence_readiness_by_disease.csv"),
   species_host_vector_roster = file.path(role_dir, "species_host_vector_roster.csv"),
-  who_don_modelling_ready = file.path(don_dir, "final", "who_don_modelling_ready.csv"),
+  who_don_modelling_ready = prefer_existing_path(
+    file.path(who_don_v2_final_dir, "who_don_modelling_ready.csv"),
+    file.path(who_don_v2_legacy_dir, "final", "who_don_modelling_ready.csv")
+  ),
   genbank_disease_country_summary = if (genbank_summary_source == "readiness_combined") {
     genbank_readiness_summary_path
   } else {

@@ -130,6 +130,28 @@ pathogen_association_data/WHO/disease_outbreak_news_v2/reference/
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/*queue*.csv
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_country_candidate_adoption_decisions.csv
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/who_don_review_decisions_applied.csv
+
+# WHO DON v2 generated outputs after data-layout split. Durable manual review
+# decisions under manual/who_don_v2/review/ remain trackable unless listed here.
+pathogen_association_data/staged/who_don_v2/records/
+pathogen_association_data/staged/who_don_v2/reference/
+pathogen_association_data/staged/who_don_v2/candidates/
+pathogen_association_data/evidence/who_don_v2/evidence/
+pathogen_association_data/evidence/who_don_v2/final/
+pathogen_association_data/evidence/who_don_v2/web/
+pathogen_association_data/evidence/who_don_v2/qa/
+pathogen_association_data/archive/who_don_v2/
+pathogen_association_data/manual/who_don_v2/review/*queue*.csv
+pathogen_association_data/manual/who_don_v2/review/influenza_refinement_review_queue.csv
+pathogen_association_data/manual/who_don_v2/review/v2_country_candidate_adoption_decisions.csv
+pathogen_association_data/manual/who_don_v2/review/v2_country_candidate_review_queue.csv
+pathogen_association_data/manual/who_don_v2/review/v2_medium_native_new_country_review_decisions.csv
+pathogen_association_data/manual/who_don_v2/review/v2_scope_adjudication_review_decisions.csv
+pathogen_association_data/manual/who_don_v2/review/v2_targeted_adjudication_subset_candidates.csv
+pathogen_association_data/manual/who_don_v2/review/who_don_review_decisions_applied.csv
+pathogen_association_data/manual/who_don_v2/review/who_don_review_decisions_seeded_from_clean.csv
+pathogen_association_data/manual/who_don_v2/review/who_don_review_queue.csv
+pathogen_association_data/manual/who_don_v2/review/who_don_scope_adjudication_candidates.csv
 pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*requests*.jsonl
 pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*requests*.manifest.json
 pathogen_association_data/WHO/disease_outbreak_news/openai_batch/*upload*.json

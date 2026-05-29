@@ -160,7 +160,6 @@ who_dir <- who_data_dir
 role_dir <- role_annotation_dir
 qa_dir <- role_qa_dir
 genbank_legacy_dir <- genbank_simple_legacy_dir
-don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
 
 dir.create(qa_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -196,8 +195,9 @@ paths <- list(
   ),
   genbank_disease_country_summary = genbank_summary_path,
   genbank_map_unmatched = genbank_map_unmatched_path,
-  who_don_focal_modelling_ready = file.path(
-    don_dir, "final", "who_don_modelling_ready.csv"
+  who_don_focal_modelling_ready = prefer_existing_path(
+    file.path(who_don_v2_final_dir, "who_don_modelling_ready.csv"),
+    file.path(who_don_v2_legacy_dir, "final", "who_don_modelling_ready.csv")
   ),
   host_role_evidence = file.path(role_dir, "host_role_evidence.csv"),
   vector_role_evidence = file.path(role_dir, "vector_role_evidence.csv"),

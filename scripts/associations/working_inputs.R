@@ -15,6 +15,7 @@ source_data_dir <- file.path(pathogen_association_data_dir, "source_data")
 manual_data_dir <- file.path(pathogen_association_data_dir, "manual")
 staged_data_dir <- file.path(pathogen_association_data_dir, "staged")
 evidence_data_dir <- file.path(pathogen_association_data_dir, "evidence")
+archive_data_dir <- file.path(pathogen_association_data_dir, "archive")
 
 vectormap_raw_dir <- file.path(source_data_dir, "vectormap", "raw")
 vectormap_dir <- vectormap_raw_dir
@@ -99,6 +100,26 @@ genbank_simple_readiness_run_dir <- file.path(
   "pathogen_runs_readiness"
 )
 genbank_simple_qa_dir <- file.path(genbank_simple_evidence_dir, "qa")
+
+# WHO DON v2 layout. The current production tree still lives under WHO/ during
+# migration; proposed roots split generated fixtures/intermediates under
+# staged/, durable review decisions under manual/, active evidence/final/web/QA
+# under evidence/, and historical diagnostics under archive/.
+who_don_v2_legacy_dir <- file.path(who_data_dir, "disease_outbreak_news_v2")
+who_don_v2_staged_dir <- file.path(staged_data_dir, "who_don_v2")
+who_don_v2_manual_dir <- file.path(manual_data_dir, "who_don_v2")
+who_don_v2_evidence_dir <- file.path(evidence_data_dir, "who_don_v2")
+who_don_v2_archive_dir <- file.path(archive_data_dir, "who_don_v2")
+
+who_don_v2_records_dir <- file.path(who_don_v2_staged_dir, "records")
+who_don_v2_reference_staged_dir <- file.path(who_don_v2_staged_dir, "reference")
+who_don_v2_candidates_dir <- file.path(who_don_v2_staged_dir, "candidates")
+who_don_v2_review_manual_dir <- file.path(who_don_v2_manual_dir, "review")
+who_don_v2_evidence_tables_dir <- file.path(who_don_v2_evidence_dir, "evidence")
+who_don_v2_final_dir <- file.path(who_don_v2_evidence_dir, "final")
+who_don_v2_web_dir <- file.path(who_don_v2_evidence_dir, "web")
+who_don_v2_qa_dir <- file.path(who_don_v2_evidence_dir, "qa")
+who_don_v2_qa_archive_root_dir <- file.path(who_don_v2_archive_dir, "qa")
 
 vectormap_outputs_dir <- file.path(staged_data_dir, "vectormap", "outputs")
 vectormap_manual_dir <- file.path(manual_data_dir, "vectormap")
