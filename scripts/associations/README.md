@@ -63,6 +63,7 @@ association data, with a focus on WHO priority pathogens.
 
 - Raw source artifacts remain in place for provenance and matching:
   - `pathogen_association_data/evidence/who_diseases/backbone/who_pathogens_diseases.csv`
+  - `pathogen_association_data/source_data/who_networks/domesticated/domesticated_lab_farmed.csv`
   - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network.csv`
 - Derived review artifact with canonical pathogen labels:
   - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network_canonical.csv`

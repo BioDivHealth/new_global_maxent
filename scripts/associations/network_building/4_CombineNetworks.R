@@ -56,6 +56,6 @@ names(combined_network)
 
 sample(unique(combined_network$Host), size  = 100)
 
-domesticated = read_csv(here("pathogen_association_data","WHO","domesticated","domesticated_lab_farmed.csv"))
+domesticated = read_csv(who_network_domesticated_path())
 
 which(unique(domesticated$scientific_name) %in% unique(combined_network$Host))

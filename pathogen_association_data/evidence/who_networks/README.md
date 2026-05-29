@@ -91,6 +91,17 @@ Related helpers:
 - `who_network_source_component_path(filename)`
 - `who_network_canonicalization_path(filename)`
 
+Source lookup files used during network construction live under:
+
+```text
+pathogen_association_data/source_data/who_networks/domesticated/
+  domesticated_lab_farmed.csv
+```
+
+Related helper:
+
+- `who_network_domesticated_path()`
+
 ## Role-Candidate Companions
 
 Derived WHO vector-role candidate summaries live with the role-annotation

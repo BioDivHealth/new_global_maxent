@@ -64,6 +64,8 @@ planning guidance, not the source of truth for already-moved folders.
 - `source_data/role_annotation/`, `manual/role_annotation/`, and
   `staged/role_annotation/`: Split role-annotation source PDFs/OCR text, manual
   reviews/source checks, and generated Deep Research prompt/report staging.
+- `source_data/who_networks/`: WHO-network source lookup files, including the
+  domesticated/lab/farmed host lookup used during network combination.
 - `staged/who_networks/`: Generated WHO network staging surfaces. Source-family
   CLOVER/VIRION network components live under
   `staged/who_networks/source_components/`; canonicalization support files live

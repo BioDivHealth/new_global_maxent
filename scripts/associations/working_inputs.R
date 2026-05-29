@@ -32,6 +32,12 @@ who_networks_source_components_dir <- file.path(
   who_networks_staged_dir,
   "source_components"
 )
+who_networks_source_dir <- file.path(source_data_dir, "who_networks")
+who_networks_domesticated_dir <- file.path(
+  who_networks_source_dir,
+  "domesticated"
+)
+who_networks_domesticated_legacy_dir <- file.path(who_data_dir, "domesticated")
 who_networks_canonicalization_dir <- file.path(
   who_networks_staged_dir,
   "canonicalization"
@@ -369,6 +375,13 @@ who_network_source_component_path <- function(filename) {
   prefer_existing_path(
     file.path(who_networks_source_components_dir, filename),
     who_network_legacy_path(filename)
+  )
+}
+
+who_network_domesticated_path <- function(filename = "domesticated_lab_farmed.csv") {
+  prefer_existing_path(
+    file.path(who_networks_domesticated_dir, filename),
+    file.path(who_networks_domesticated_legacy_dir, filename)
   )
 }
 
