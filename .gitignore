@@ -204,6 +204,7 @@ pathogen_association_data/staged/genbank_simple/maps/standard/genbank_disease_co
 pathogen_association_data/staged/genbank_simple/maps/standard/genbank_disease_country_map_unmatched.csv
 pathogen_association_data/archive/genbank_simple/legacy_19_target/
 pathogen_association_data/WHO/who_diseases/*_raw.jsonl
+pathogen_association_data/staged/who_diseases/broad_taxa/*_raw.jsonl
 
 # Raw host-vector source exports
 pathogen_association_data/mapveu/*.txt
