@@ -137,7 +137,8 @@ pathogen_association_data/staged/who_don_v2/records/
 pathogen_association_data/staged/who_don_v2/reference/
 pathogen_association_data/staged/who_don_v2/candidates/
 pathogen_association_data/evidence/who_don_v2/evidence/
-pathogen_association_data/evidence/who_don_v2/final/
+pathogen_association_data/evidence/who_don_v2/final/*
+!pathogen_association_data/evidence/who_don_v2/final/who_don_modelling_ready.csv
 pathogen_association_data/evidence/who_don_v2/web/
 pathogen_association_data/evidence/who_don_v2/qa/
 pathogen_association_data/archive/who_don_v2/
