@@ -14,10 +14,10 @@ planning guidance, not the source of truth for already-moved folders.
 
 ## Active Pipeline Folders
 
-- `WHO/`: Compatibility root for remaining WHO-centred pipeline outputs, most
-  notably combined network files under `WHO/networks/`. WHO diseases and WHO
-  Disease Outbreak News v2 data now use the split `source_data/`, `manual/`,
-  `staged/`, `evidence/`, and `archive/` roots below.
+- `WHO/`: Compatibility root for remaining WHO-centred pipeline outputs that
+  have not yet been split. WHO diseases, WHO Disease Outbreak News v2, and WHO
+  network data now use the split `source_data/`, `manual/`, `staged/`,
+  `evidence/`, and `archive/` roots below.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
@@ -33,6 +33,12 @@ planning guidance, not the source of truth for already-moved folders.
 - `evidence/vector_screening/`: Active disease/pathogen-vector evidence and
   vector-competence annotation outputs. QA companions, including competence
   unmatched-review files, live under `evidence/vector_screening/qa/`.
+- `evidence/who_networks/`: Active WHO host-pathogen and WHO-only host-vector
+  network evidence. Host-pathogen backbones live under
+  `evidence/who_networks/host_pathogen/`; current WHO-only host-vector
+  integrations live under `evidence/who_networks/host_vector/who_only/`; join
+  QA lives under `evidence/who_networks/qa/`. Derived WHO vector-role candidate
+  surfaces live under `evidence/role_annotation/`.
 - `evidence/who_diseases/`: Active WHO diseases backbone, master expansion, host
   species, and QA evidence surfaces. See `WHO_DISEASES_DATA.md` for the
   full source/manual/staged/evidence split.
@@ -58,6 +64,10 @@ planning guidance, not the source of truth for already-moved folders.
 - `source_data/role_annotation/`, `manual/role_annotation/`, and
   `staged/role_annotation/`: Split role-annotation source PDFs/OCR text, manual
   reviews/source checks, and generated Deep Research prompt/report staging.
+- `staged/who_networks/`: Generated WHO network staging surfaces. Source-family
+  CLOVER/VIRION network components live under
+  `staged/who_networks/source_components/`; canonicalization support files live
+  under `staged/who_networks/canonicalization/`.
 - `source_data/vector_screening/`, `manual/vector_screening/`, and
   `staged/vector_screening/`: Split Vector Screening source family. EFSA raw
   workbooks live under `source_data/vector_screening/efsa/raw/`, manual
@@ -123,6 +133,9 @@ should prefer:
 - WHO diseases helpers for raw regional tables, manual name resolution and
   transmission rules, staged backbone/master-expansion/pathogen-matching/
   host-query/broad-taxa outputs, and active evidence/QA surfaces
+- WHO network helpers for staged source components, canonicalization support,
+  active host-pathogen evidence, current WHO-only host-vector evidence, join QA,
+  and WHO-scoped vector-role candidate surfaces
 - `readiness_dir`
 
 The same helper also keeps the current WHO working network/pathogen accessors,

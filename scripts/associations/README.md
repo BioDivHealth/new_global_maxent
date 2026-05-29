@@ -55,29 +55,29 @@ association data, with a focus on WHO priority pathogens.
     -   `3_3_Host_Species_Clean.R`: Takes the unique host species from VIRION and standardizes their taxonomy, similar to the CLOVER workflow. Generates taxonomic summary visualizations.
 
 4.  **Network Combination, Analysis, and Visualization (`network_building/3_4_VIRION_Networks.R`, `network_building/3_5_VIRION_Visualise_Networks.R`, `network_building/4_CombineNetworks.R`):**
-    -   `network_building/3_4_VIRION_Networks.R`: Primary VIRION network assembly and analysis script. It constructs pathogen-host networks, performs advanced analyses (centrality, modularity, bridge species, sampling bias), and writes `virion_who_network.csv` under `pathogen_association_data/WHO/networks/`.
+    -   `network_building/3_4_VIRION_Networks.R`: Primary VIRION network assembly and analysis script. It constructs pathogen-host networks, performs advanced analyses (centrality, modularity, bridge species, sampling bias), and writes `virion_who_network.csv` under `pathogen_association_data/staged/who_networks/source_components/`.
     -   `network_building/3_5_VIRION_Visualise_Networks.R`: Reads `virion_who_network.csv` and generates static (`.png`) and interactive (`.html`) visualizations, with outputs saved under `figures/network_plots/` (and related subfolders).
     -   `network_building/4_CombineNetworks.R`: Merges the processed network data from CLOVER (bacteria) and VIRION (viruses) into a single, comprehensive dataset for combined analysis.
 
 ### Working Input Layers
 
 - Raw source artifacts remain in place for provenance and matching:
-  - `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases.csv`
-  - `pathogen_association_data/WHO/networks/combined_who_network.csv`
+  - `pathogen_association_data/evidence/who_diseases/backbone/who_pathogens_diseases.csv`
+  - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network.csv`
 - Derived review artifact with canonical pathogen labels:
-  - `pathogen_association_data/WHO/networks/combined_who_network_canonical.csv`
+  - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network_canonical.csv`
 - Default downstream working layer for the rest of `scripts/associations/`:
-  - `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases_zoonotic.csv`
-  - `pathogen_association_data/WHO/networks/combined_who_network_canonical_zoonotic.csv`
+  - `pathogen_association_data/evidence/who_diseases/backbone/who_pathogens_diseases_zoonotic.csv`
+  - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network_canonical_zoonotic.csv`
 - Shared path helpers for these layers live in `scripts/associations/working_inputs.R`.
 - A separate curation layer for splitting broad pathogen taxa into narrower
   host/vector/amplifier analysis units can be generated with:
   - `scripts/associations/network_building/1_2_WHO_Pathogen_Analysis_Units.R`
-  - output: `pathogen_association_data/WHO/who_diseases/who_pathogen_analysis_units.csv`
+  - output: `pathogen_association_data/evidence/who_diseases/backbone/who_pathogen_analysis_units.csv`
 - A candidate strain inventory for ICTV-backed Sarbecovirus, Merbecovirus,
   and Vesiculovirus rows can be generated with:
   - `scripts/associations/network_building/1_3_WHO_Broad_Taxa_Candidate_Strains.R`
-  - output: `pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains.csv`
+  - output: `pathogen_association_data/staged/who_diseases/broad_taxa/who_broad_taxa_candidate_strains.csv`
 
 The intended workflow is:
 
@@ -92,7 +92,7 @@ The intended workflow is:
     -   VecTraits API outputs are exploratory/local and remain ignored under `pathogen_association_data/staged/vector_screening/vectraits/`.
 
 6.  **Host-Vector Integration (`host_vector_integration/5_8_*` to `host_vector_integration/5_11_*`):**
-    -   These scripts connect the WHO disease/pathogen network to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/WHO/networks/`.
+    -   These scripts connect the WHO disease/pathogen network to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/evidence/who_networks/`. Current host-vector outputs are WHO-only and live under `pathogen_association_data/evidence/who_networks/host_vector/who_only/`.
 
 7.  **Geographic Enrichment (`genbank_simple/`):**
     -   `genbank_simple/01b_build_readiness_manifest.R`: Builds the expanded readiness manifest from the disease modelling readiness surface.

@@ -15,6 +15,12 @@ The files here should not replace the canonical network, vector-screening, compe
 - `host_role_assignments.csv` is the reviewed or draft host-role assignment table.
 - `vector_role_evidence.csv` is the manually curated evidence table for vector role claims.
 - `vector_role_assignments.csv` is the reviewed or draft vector-role assignment table.
+- `vector_role_candidates_who.csv` is a generated WHO-scope vector-role
+  candidate surface derived from the conservative WHO-only
+  disease-host-vector evidence plus vector-competence annotations. It is not a
+  full master-plus/readiness vector-candidate table.
+- `vector_role_candidates_who_summary.csv` is the generated per-disease summary
+  for `vector_role_candidates_who.csv`.
 - `qa/` contains generated role-annotation QA summaries that make the host,
   vector, GenBank-simple, WHO DON, and role-review evidence layers easier to
   inspect before assigning final roles.
