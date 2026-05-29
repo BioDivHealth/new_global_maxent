@@ -17,9 +17,9 @@ active layout.
 ## Active Pipeline Folders
 
 - `WHO/`: Main WHO-centred pipeline output root for disease lists, combined
-  networks, vector screening, GenBank, and WHO Disease Outbreak News outputs.
+  networks, vector screening, and WHO Disease Outbreak News outputs.
   Active subfolders include `who_diseases/`, `networks/`, `vector_screening/`,
-  `genbank_simple/`, and `disease_outbreak_news_v2/`.
+  and `disease_outbreak_news_v2/`.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
@@ -28,6 +28,10 @@ active layout.
 - `evidence/role_annotation/`: Active role-annotation evidence, assignment,
   roster, and QA outputs. Manual review materials, generated prompt staging, and
   source PDFs/text are split out under `manual/`, `staged/`, and `source_data/`.
+- `evidence/genbank_simple/`: Active GenBank-simple readiness disease-country
+  evidence and QA outputs. Generated manifests, intermediate summaries, and map
+  controls live under `staged/genbank_simple/`; manual query overrides live
+  under `manual/genbank_simple/`.
 
 ## Raw And Staged Source Folders
 
@@ -55,6 +59,8 @@ active layout.
 - `archive/loose_files/`: Unclassified local material moved out of active data
   roots. Do not use these files as pipeline inputs until their contents are
   reviewed and moved to a named active folder.
+- `archive/genbank_simple/legacy_19_target/`: Ignored local archive of the
+  older standard-mode GenBank-simple outputs.
 - Loose PDFs or dragged files found at this level should be moved under
   `archive/loose_files/` unless they are explicitly documented by the relevant
   script or README.
@@ -74,6 +80,9 @@ should prefer:
 - `vector_host_dir`, `vector_host_outputs_dir`
 - `clover_source_dir`, `virion_source_dir`, `virion_source_version_dir`,
   `who_clover_dir`, `who_virion_dir`
+- GenBank-simple helpers for evidence, manual overrides, staged manifests,
+  staged intermediates, staged maps, ignored local runs, QA, and legacy
+  compatibility locations
 - role-annotation helpers for evidence, manual review/source-check, staged
   Deep Research, source PDF/text, roster, and QA locations
 - `readiness_dir`

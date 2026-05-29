@@ -27,6 +27,6 @@ disease modelling readiness.
 
 ## Legacy Files
 
-Ignored legacy/local files may remain temporarily under
-`../../WHO/genbank_simple/` during migration. Current modelling-readiness
+Ignored legacy standard-mode files are kept, when needed locally, under
+`../../archive/genbank_simple/legacy_19_target/`. Current modelling-readiness
 handoffs should use the readiness evidence output above.

@@ -7,11 +7,11 @@ News country evidence, and SDM availability manifests.
 
 When the expanded GenBank-simple readiness run has been summarized and
 standardized, the readiness build uses
-`pathogen_association_data/WHO/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv`.
+`pathogen_association_data/evidence/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv`.
 That file combines the original 19-target GenBank-simple run with the expanded
 readiness run. The older
 `genbank_disease_country_summary_standardized.csv` is retained as a fallback for
-historical reruns only.
+historical standard-mode reruns only and is treated as local/archive material.
 
 Regenerate from the repository root with:
 

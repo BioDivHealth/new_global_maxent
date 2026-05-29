@@ -92,9 +92,9 @@ The intended workflow is:
 
 7.  **Geographic Enrichment (`genbank_simple/`):**
     -   `genbank_simple/01b_build_readiness_manifest.R`: Builds the expanded readiness manifest from the disease modelling readiness surface.
-    -   `genbank_simple/02_run_genbank_full_retrieval.R`: Retrieves GenBank nuccore records for approved manifest targets. In readiness mode it writes per-target checkpoints under `pathogen_association_data/WHO/genbank_simple/pathogen_runs_readiness/`.
-    -   `genbank_simple/03_summarize_country_metadata.R` to `genbank_simple/06_map_disease_countries.R`: Summarize, QA, standardize, and map country evidence. With `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined`, these scripts bind the original 19-target run with the expanded readiness run, keep the final disease-country table at the top of `pathogen_association_data/WHO/genbank_simple/`, and place review/control files under `qa/` and lower-level derived tables under `intermediate/`.
-    -   Current modelling-readiness handoffs should use `pathogen_association_data/WHO/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv` when present.
+    -   `genbank_simple/02_run_genbank_full_retrieval.R`: Retrieves GenBank nuccore records for approved manifest targets. In readiness mode it writes ignored per-target checkpoints under `pathogen_association_data/staged/genbank_simple/local_runs/pathogen_runs_readiness/`.
+    -   `genbank_simple/03_summarize_country_metadata.R` to `genbank_simple/06_map_disease_countries.R`: Summarize, QA, standardize, and map country evidence. With `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined`, these scripts bind the original 19-target run with the expanded readiness run. Generated manifests, intermediates, and map-control files live under `pathogen_association_data/staged/genbank_simple/`; manual query overrides live under `pathogen_association_data/manual/genbank_simple/`; active evidence and QA live under `pathogen_association_data/evidence/genbank_simple/`.
+    -   Current modelling-readiness handoffs should use `pathogen_association_data/evidence/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv` when present.
 
 8.  **Role Annotation (`role_annotation/6_1_*`):**
     -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the canonical WHO disease-pathogen-host backbone for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/evidence/role_annotation/`.

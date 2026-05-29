@@ -11,10 +11,11 @@ tables.
 The workflow supports two target surfaces:
 
 - `genbank_simple_manifest.csv`: the original 19-target point-data-backed WHO
-  zoonotic manifest, retained as a reference/control surface.
+  zoonotic manifest, retained as a reference/control surface under
+  `pathogen_association_data/staged/genbank_simple/manifests/`.
 - `genbank_simple_readiness_manifest.csv`: the expanded readiness manifest
-  built from
-  `pathogen_association_data/readiness/disease_modelling_readiness.csv`.
+  built from `pathogen_association_data/readiness/disease_modelling_readiness.csv`
+  and written under `pathogen_association_data/staged/genbank_simple/manifests/`.
 
 Readiness mode is the current main path. It starts from non-held readiness rows,
 joins the full readiness audit table for query/provenance fields, and builds one
@@ -63,22 +64,27 @@ Run scripts from the repository root.
 
 Commit lightweight, reviewable readiness artifacts:
 
-- top-level manifests, query overrides, and standardized disease-country
-  summaries;
-- `qa/` control and QA tables;
-- `intermediate/` aggregate summaries;
-- compact `maps_readiness/*.csv` map-control files.
+- generated manifests under `pathogen_association_data/staged/genbank_simple/manifests/`;
+- manual query overrides under `pathogen_association_data/manual/genbank_simple/`;
+- standardized readiness disease-country summaries under
+  `pathogen_association_data/evidence/genbank_simple/`;
+- QA tables under `pathogen_association_data/evidence/genbank_simple/qa/`;
+- aggregate readiness summaries under
+  `pathogen_association_data/staged/genbank_simple/intermediate/`;
+- compact readiness map-control CSVs under
+  `pathogen_association_data/staged/genbank_simple/maps/readiness/`.
 
 Do not commit bulky or transient retrieval outputs:
 
-- `pathogen_runs/`
-- `pathogen_runs_readiness/`
+- `staged/genbank_simple/local_runs/pathogen_runs/`
+- `staged/genbank_simple/local_runs/pathogen_runs_readiness/`
 - record-level `*_country_records*.csv`
-- generated PNG maps under `maps*/disease_country_records/`
+- generated PNG maps under `staged/genbank_simple/maps/*/disease_country_records/`
+- standard-mode map-control CSVs under `staged/genbank_simple/maps/standard/`
 - local retrieval logs.
 
 ## Downstream Handoff
 
 Downstream modelling-readiness scripts should prefer
-`pathogen_association_data/WHO/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv`
+`pathogen_association_data/evidence/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv`
 when it exists.
