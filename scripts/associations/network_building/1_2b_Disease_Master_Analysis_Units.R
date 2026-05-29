@@ -22,6 +22,8 @@
 library(pacman)
 p_load(dplyr, here, readr, readxl, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -182,10 +184,11 @@ master_existing_aliases <- tibble::tribble(
   )
 
 input_master_path <- here("dr", "disease_master_list_v2.xlsx")
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
-analysis_units_path <- file.path(who_dir, "who_pathogen_analysis_units.csv")
-output_path <- file.path(who_dir, "master_disease_analysis_units.csv")
-review_path <- file.path(who_dir, "master_disease_name_resolution_review.csv")
+analysis_units_path <- who_pathogen_analysis_units_path()
+output_path <- who_master_disease_analysis_units_path()
+review_path <- who_diseases_staged_master_expansion_path(
+  "master_disease_name_resolution_review.csv"
+)
 
 master <- readxl::read_excel(input_master_path, sheet = "Disease Master List") %>%
   standardize_master_cols()

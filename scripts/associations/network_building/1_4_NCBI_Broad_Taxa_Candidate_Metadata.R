@@ -16,6 +16,8 @@
 library(pacman)
 p_load(dplyr, here, jsonlite, purrr, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -55,18 +57,16 @@ collapse_lineage <- function(x) {
   if (is.null(x) || length(x) == 0) y else x
 }
 
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
-candidate_path <- file.path(who_dir, "who_broad_taxa_candidate_strains.csv")
-metadata_output_path <- file.path(
-  who_dir,
+candidate_path <- who_diseases_broad_taxa_staged_path(
+  "who_broad_taxa_candidate_strains.csv"
+)
+metadata_output_path <- who_diseases_broad_taxa_staged_path(
   "who_broad_taxa_candidate_strains_ncbi_metadata.csv"
 )
-enriched_output_path <- file.path(
-  who_dir,
+enriched_output_path <- who_diseases_broad_taxa_staged_path(
   "who_broad_taxa_candidate_strains_ncbi_enriched.csv"
 )
-raw_output_path <- file.path(
-  who_dir,
+raw_output_path <- who_diseases_broad_taxa_staged_path(
   "who_broad_taxa_candidate_strains_ncbi_raw.jsonl"
 )
 

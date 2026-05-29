@@ -18,6 +18,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 who_provenance_cols <- c(
   "is_priority_pathogen",
   "is_prototype_pathogen",
@@ -98,10 +100,9 @@ infer_transmission_context <- function(pathogen, disease_name) {
   )
 }
 
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
-input_path <- file.path(who_dir, "who_pathogens_diseases_zoonotic.csv")
-output_path <- file.path(who_dir, "who_pathogen_analysis_units.csv")
-output_keep_path <- file.path(who_dir, "who_pathogen_analysis_units_keep.csv")
+input_path <- who_pathogens_diseases_zoonotic_path()
+output_path <- who_pathogen_analysis_units_path()
+output_keep_path <- who_pathogen_analysis_units_keep_path()
 
 split_source_pathogens <- c(
   "Subgenus Sarbecovirus",

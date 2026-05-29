@@ -66,6 +66,70 @@ virion_source_version_dir <- file.path(virion_source_dir, "19502921")
 who_clover_dir <- file.path(staged_data_dir, "clover", "outputs")
 who_virion_dir <- file.path(staged_data_dir, "virion", "outputs")
 
+# WHO diseases layout. During migration, helpers prefer the proposed lifecycle
+# roots but fall back to the legacy WHO/who_diseases/ directory until files move.
+who_diseases_legacy_dir <- file.path(who_data_dir, "who_diseases")
+who_diseases_source_dir <- file.path(source_data_dir, "who_diseases")
+who_diseases_manual_dir <- file.path(manual_data_dir, "who_diseases")
+who_diseases_staged_dir <- file.path(staged_data_dir, "who_diseases")
+who_diseases_evidence_dir <- file.path(evidence_data_dir, "who_diseases")
+who_diseases_archive_dir <- file.path(archive_data_dir, "who_diseases")
+
+who_diseases_regional_tables_dir <- file.path(
+  who_diseases_source_dir,
+  "regional_tables"
+)
+who_diseases_comparison_lookups_dir <- file.path(
+  who_diseases_source_dir,
+  "comparison_lookups"
+)
+who_diseases_name_resolution_dir <- file.path(
+  who_diseases_manual_dir,
+  "name_resolution"
+)
+who_diseases_transmission_rules_dir <- file.path(
+  who_diseases_manual_dir,
+  "transmission_rules"
+)
+who_diseases_pathogen_matching_manual_dir <- file.path(
+  who_diseases_manual_dir,
+  "pathogen_matching"
+)
+who_diseases_broad_taxa_manual_dir <- file.path(
+  who_diseases_manual_dir,
+  "broad_taxa"
+)
+who_diseases_staged_backbone_dir <- file.path(
+  who_diseases_staged_dir,
+  "backbone"
+)
+who_diseases_staged_master_expansion_dir <- file.path(
+  who_diseases_staged_dir,
+  "master_expansion"
+)
+who_diseases_staged_pathogen_matching_dir <- file.path(
+  who_diseases_staged_dir,
+  "pathogen_matching"
+)
+who_diseases_host_queries_dir <- file.path(
+  who_diseases_staged_dir,
+  "host_queries"
+)
+who_diseases_broad_taxa_staged_dir <- file.path(
+  who_diseases_staged_dir,
+  "broad_taxa"
+)
+who_diseases_backbone_dir <- file.path(who_diseases_evidence_dir, "backbone")
+who_diseases_master_expansion_dir <- file.path(
+  who_diseases_evidence_dir,
+  "master_expansion"
+)
+who_diseases_host_species_dir <- file.path(
+  who_diseases_evidence_dir,
+  "host_species"
+)
+who_diseases_qa_dir <- file.path(who_diseases_evidence_dir, "qa")
+
 # GenBank-simple layout. Manual query overrides live under manual/, generated
 # manifests/intermediates/maps/local retrieval checkpoints live under staged/,
 # and the active disease-country evidence plus QA live under evidence/.
@@ -270,6 +334,186 @@ vector_screening_taxonomy_review_path <- function(filename) {
   )
 }
 
+who_diseases_path <- function(filename) {
+  file.path(who_diseases_legacy_dir, filename)
+}
+
+who_diseases_source_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_source_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_regional_table_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_regional_tables_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_regional_table_paths <- function(regions = c(
+  "africa",
+  "americas",
+  "europe",
+  "mediterranean",
+  "se_asia",
+  "western_pacific"
+)) {
+  vapply(
+    paste0(regions, "_table.csv"),
+    who_diseases_regional_table_path,
+    character(1),
+    USE.NAMES = FALSE
+  )
+}
+
+who_diseases_comparison_lookup_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_comparison_lookups_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_name_resolution_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_name_resolution_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_transmission_rules_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_transmission_rules_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_pathogen_matching_manual_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_pathogen_matching_manual_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_broad_taxa_manual_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_broad_taxa_manual_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_staged_backbone_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_staged_backbone_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_staged_master_expansion_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_staged_master_expansion_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_staged_pathogen_matching_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_staged_pathogen_matching_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_host_query_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_host_queries_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_broad_taxa_staged_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_broad_taxa_staged_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_backbone_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_backbone_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_master_expansion_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_master_expansion_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_host_species_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_host_species_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_qa_path <- function(filename) {
+  prefer_existing_path(
+    file.path(who_diseases_qa_dir, filename),
+    who_diseases_path(filename)
+  )
+}
+
+who_diseases_translation_path <- function() {
+  who_diseases_name_resolution_path("translation.csv")
+}
+
+who_disease_names_path <- function() {
+  who_diseases_name_resolution_path("disease_names.csv")
+}
+
+who_diseases_gibb_lookup_path <- function() {
+  who_diseases_comparison_lookup_path("diseases_in_gibb_etal.csv")
+}
+
+who_final_pathogen_data_path <- function() {
+  who_diseases_staged_backbone_path("final_pathogen_data.csv")
+}
+
+who_pathogens_diseases_zoonotic_path <- function() {
+  who_diseases_backbone_path("who_pathogens_diseases_zoonotic.csv")
+}
+
+who_pathogen_analysis_units_path <- function() {
+  who_diseases_backbone_path("who_pathogen_analysis_units.csv")
+}
+
+who_pathogen_analysis_units_keep_path <- function() {
+  who_diseases_backbone_path("who_pathogen_analysis_units_keep.csv")
+}
+
+who_master_disease_analysis_units_path <- function() {
+  who_diseases_master_expansion_path("master_disease_analysis_units.csv")
+}
+
+who_master_plus_analysis_units_path <- function() {
+  who_diseases_master_expansion_path("master_plus_who_analysis_units.csv")
+}
+
+who_master_pathogen_host_species_path <- function() {
+  who_diseases_host_species_path("master_pathogen_host_species.csv")
+}
+
+who_master_pathogen_host_species_clean_path <- function() {
+  who_diseases_host_species_path("master_pathogen_host_species_clean.csv")
+}
+
+who_master_pathogen_host_species_summary_path <- function() {
+  who_diseases_qa_path("master_pathogen_host_species_summary.csv")
+}
+
 who_raw_network_path <- function() {
   file.path(
     who_data_dir,
@@ -306,19 +550,11 @@ who_working_network_path <- function(scope = c("zoonotic", "canonical", "raw")) 
 }
 
 who_raw_pathogens_path <- function() {
-  file.path(
-    who_data_dir,
-    "who_diseases",
-    "who_pathogens_diseases.csv"
-  )
+  who_diseases_backbone_path("who_pathogens_diseases.csv")
 }
 
 who_zoonotic_pathogens_path <- function() {
-  file.path(
-    who_data_dir,
-    "who_diseases",
-    "who_pathogen_analysis_units_keep.csv"
-  )
+  who_pathogen_analysis_units_keep_path()
 }
 
 who_working_pathogens_path <- function(scope = c("zoonotic", "raw")) {

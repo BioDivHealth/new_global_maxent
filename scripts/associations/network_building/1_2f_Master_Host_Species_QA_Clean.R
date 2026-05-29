@@ -20,10 +20,9 @@ large_host_threshold <- 75L
 narrow_host_threshold <- 3L
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
-host_input_path <- file.path(who_dir, "master_pathogen_host_species.csv")
-host_clean_output_path <- file.path(who_dir, "master_pathogen_host_species_clean.csv")
-analysis_units_path <- file.path(who_dir, "master_plus_who_analysis_units.csv")
+host_input_path <- who_master_pathogen_host_species_path()
+host_clean_output_path <- who_master_pathogen_host_species_clean_path()
+analysis_units_path <- who_master_plus_analysis_units_path()
 
 virion_host_standardized_path <- file.path(
   who_virion_dir,

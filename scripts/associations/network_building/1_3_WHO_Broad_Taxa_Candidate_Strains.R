@@ -14,6 +14,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -24,10 +26,13 @@ clean_text <- function(x) {
   x
 }
 
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
-candidate_seed_path <- file.path(who_dir, "who_broad_taxa_candidate_strains_seed.csv")
-output_path <- file.path(who_dir, "who_broad_taxa_candidate_strains.csv")
-analysis_units_keep_path <- file.path(who_dir, "who_pathogen_analysis_units_keep.csv")
+candidate_seed_path <- who_diseases_broad_taxa_manual_path(
+  "who_broad_taxa_candidate_strains_seed.csv"
+)
+output_path <- who_diseases_broad_taxa_staged_path(
+  "who_broad_taxa_candidate_strains.csv"
+)
+analysis_units_keep_path <- who_pathogen_analysis_units_keep_path()
 
 if (!file.exists(candidate_seed_path)) {
   stop("Candidate strain seed table not found: ", candidate_seed_path)

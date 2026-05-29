@@ -22,13 +22,21 @@ library(magrittr)
 source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------| Helper paths |-------------------------------
-who_dir <- file.path(who_data_dir, "who_diseases")
-
-manual_path <- file.path(who_dir, "master_disease_name_resolution_manual.csv")
-alias_path <- file.path(who_dir, "master_pathogen_aliases.csv")
-candidate_output_path <- file.path(who_dir, "master_pathogen_virion_clover_candidates.csv")
-match_output_path <- file.path(who_dir, "master_pathogen_virion_clover_matches.csv")
-external_review_output_path <- file.path(who_dir, "master_pathogen_external_taxonomy_review.csv")
+manual_path <- who_diseases_name_resolution_path(
+  "master_disease_name_resolution_manual.csv"
+)
+alias_path <- who_diseases_pathogen_matching_manual_path(
+  "master_pathogen_aliases.csv"
+)
+candidate_output_path <- who_diseases_staged_master_expansion_path(
+  "master_pathogen_virion_clover_candidates.csv"
+)
+match_output_path <- who_diseases_staged_master_expansion_path(
+  "master_pathogen_virion_clover_matches.csv"
+)
+external_review_output_path <- who_diseases_staged_pathogen_matching_path(
+  "master_pathogen_external_taxonomy_review.csv"
+)
 
 clover_dir <- file.path(
   clover_source_dir,

@@ -6,6 +6,8 @@ library(here)
 library(pacman)
 p_load(fuzzyjoin, stringdist)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 region_levels <- c(
   "africa",
   "americas",
@@ -18,9 +20,7 @@ region_levels <- c(
 # ------------------------------------------------------------------------------|
 #      Load and combine WHO disease data --------------------------------------
 # ------------------------------------------------------------------------------|
-# Read all WHO CSV files (excluding translation.csv)
-csv_files <- list.files(path = here("pathogen_association_data","WHO","who_diseases"), pattern = "\\.csv$", full.names = TRUE) %>%
-  .[!grepl("translation.csv|final_pathogen_data.csv|disease_names.csv|final_pathogen_data_old.csv", .)] %>% .[grepl("table",.)]
+csv_files <- who_diseases_regional_table_paths(region_levels)
 
 # Read and combine all tables
 document_tables <- csv_files %>%
@@ -176,7 +176,7 @@ pathogens_with_family_risk <- who_diseases_long %>%
 # ------------------------------------------------------------------------------|
 #      Load translation data and create mapping -------------------------------
 # ------------------------------------------------------------------------------|
-translation <- read_csv(here("pathogen_association_data","WHO","who_diseases", "translation.csv"))
+translation <- read_csv(who_diseases_translation_path())
 names(translation) <- c("Family", "Previous_Name", "MSL39_Viral_Species_Name")
 
 # Define manual fuzzy matches
@@ -259,7 +259,7 @@ final_pathogen_data <- pathogens_with_family_risk %>%
   left_join(pathogen_mapping, by = c("Pathogens" = "pathogen"))
 
 # Save final_pathogen_data to csv
-write_csv(final_pathogen_data, here("pathogen_association_data","WHO","who_diseases","final_pathogen_data.csv"))
+write_csv(final_pathogen_data, who_final_pathogen_data_path())
 
 # Summary statistics
 mapped_count <- sum(!is.na(pathogen_mapping$previous_name) | !is.na(pathogen_mapping$msl39_viral_name))
@@ -284,14 +284,14 @@ if (nrow(unmapped_pathogens) > 0) {
 # ------------------------------------------------------------------------------|
 
 # Read final pathogen data
-final_pathogen_data = read_csv(here("pathogen_association_data","WHO","who_diseases","final_pathogen_data.csv"))
+final_pathogen_data = read_csv(who_final_pathogen_data_path())
 
 # Read disease names
-diseases = read_csv(here("pathogen_association_data","WHO","who_diseases","disease_names.csv"))
+diseases = read_csv(who_disease_names_path())
 diseases = diseases %>% distinct()
 
 point_data_lookup <- read_csv(
-  here("pathogen_association_data", "WHO", "who_diseases", "diseases_in_gibb_etal.csv"),
+  who_diseases_gibb_lookup_path(),
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
@@ -338,4 +338,4 @@ final_pathogen_data <- final_pathogen_data %>%
   )
 
 # Save final_pathogen_data to csv
-write_csv(final_pathogen_data, here("pathogen_association_data","WHO","who_diseases","who_pathogens_diseases.csv"))
+write_csv(final_pathogen_data, who_raw_pathogens_path())

@@ -27,6 +27,8 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, readr, stringr)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 character_cols <- c(
   "Family",
   "PHEIC risk",
@@ -54,15 +56,9 @@ provenance_cols <- c(
 # ------------------------------------------------------------------------------|
 #      Paths and lookup tables -------------------------------------------------|
 # ------------------------------------------------------------------------------|
-source_path <- here::here(
-  "pathogen_association_data", "WHO", "who_diseases", "who_pathogens_diseases.csv"
-)
-disease_lookup_path <- here::here(
-  "pathogen_association_data", "WHO", "who_diseases", "disease_names.csv"
-)
-output_path <- here::here(
-  "pathogen_association_data", "WHO", "who_diseases", "who_pathogens_diseases_zoonotic.csv"
-)
+source_path <- who_raw_pathogens_path()
+disease_lookup_path <- who_disease_names_path()
+output_path <- who_pathogens_diseases_zoonotic_path()
 
 excluded_pathogens <- c(
   "Klebsiella pneumoniae",

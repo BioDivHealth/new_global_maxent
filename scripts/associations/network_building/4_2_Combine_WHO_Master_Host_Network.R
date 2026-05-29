@@ -16,20 +16,13 @@
 library(tidyverse)
 library(here)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 network_dir <- here("pathogen_association_data", "WHO", "networks")
-who_network_path <- file.path(network_dir, "combined_who_network.csv")
-master_host_path <- here(
-  "pathogen_association_data", "WHO", "who_diseases",
-  "master_pathogen_host_species_clean.csv"
-)
-analysis_units_path <- here(
-  "pathogen_association_data", "WHO", "who_diseases",
-  "master_plus_who_analysis_units.csv"
-)
-who_keep_path <- here(
-  "pathogen_association_data", "WHO", "who_diseases",
-  "who_pathogen_analysis_units_keep.csv"
-)
+who_network_path <- who_raw_network_path()
+master_host_path <- who_master_pathogen_host_species_clean_path()
+analysis_units_path <- who_master_plus_analysis_units_path()
+who_keep_path <- who_pathogen_analysis_units_keep_path()
 combined_output_path <- file.path(network_dir, "master_plus_who_host_network.csv")
 
 clean_text <- function(x) {

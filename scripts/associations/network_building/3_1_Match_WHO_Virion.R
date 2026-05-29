@@ -17,7 +17,7 @@ library(magrittr)
 source(file.path("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------| Helper paths  |------------------------------
-who_csv_path   <- file.path("pathogen_association_data", "WHO", "who_diseases", "who_pathogen_analysis_units_keep.csv")
+who_csv_path <- who_pathogen_analysis_units_keep_path()
 output_csv_path <- file.path(who_virion_dir, "who_pathogens_virion_taxid.csv")
 
 # ------------------------------| Load datasets |------------------------------

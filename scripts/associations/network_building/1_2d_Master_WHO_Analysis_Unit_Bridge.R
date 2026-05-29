@@ -19,16 +19,24 @@
 library(tidyverse)
 library(here)
 
-who_dir <- here("pathogen_association_data", "WHO", "who_diseases")
+source(here("scripts", "associations", "working_inputs.R"))
 
-master_units_path <- file.path(who_dir, "master_disease_analysis_units.csv")
-manual_path <- file.path(who_dir, "master_disease_name_resolution_manual.csv")
-matches_path <- file.path(who_dir, "master_pathogen_virion_clover_matches.csv")
-who_units_path <- file.path(who_dir, "who_pathogen_analysis_units.csv")
-transmission_rules_path <- file.path(who_dir, "master_plus_who_transmission_rules_manual.csv")
+master_units_path <- who_master_disease_analysis_units_path()
+manual_path <- who_diseases_name_resolution_path(
+  "master_disease_name_resolution_manual.csv"
+)
+matches_path <- who_diseases_staged_master_expansion_path(
+  "master_pathogen_virion_clover_matches.csv"
+)
+who_units_path <- who_pathogen_analysis_units_path()
+transmission_rules_path <- who_diseases_transmission_rules_path(
+  "master_plus_who_transmission_rules_manual.csv"
+)
 
-combined_output_path <- file.path(who_dir, "master_plus_who_analysis_units.csv")
-host_query_output_path <- file.path(who_dir, "master_pathogen_host_query_units.csv")
+combined_output_path <- who_master_plus_analysis_units_path()
+host_query_output_path <- who_diseases_host_query_path(
+  "master_pathogen_host_query_units.csv"
+)
 
 clean_text <- function(x) {
   x <- as.character(x)

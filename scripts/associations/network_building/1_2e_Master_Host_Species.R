@@ -19,11 +19,12 @@ library(here)
 
 source(here("scripts", "associations", "working_inputs.R"))
 
-who_dir <- file.path(who_data_dir, "who_diseases")
-host_query_path <- file.path(who_dir, "master_pathogen_host_query_units.csv")
+host_query_path <- who_diseases_host_query_path(
+  "master_pathogen_host_query_units.csv"
+)
 
-host_output_path <- file.path(who_dir, "master_pathogen_host_species.csv")
-summary_output_path <- file.path(who_dir, "master_pathogen_host_species_summary.csv")
+host_output_path <- who_master_pathogen_host_species_path()
+summary_output_path <- who_master_pathogen_host_species_summary_path()
 
 clover_dir <- file.path(
   clover_source_dir,

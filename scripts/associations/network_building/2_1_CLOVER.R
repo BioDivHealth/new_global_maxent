@@ -18,7 +18,7 @@ library(dplyr)
 source(here("scripts", "associations", "working_inputs.R"))
 
 # ------------------------------| Helper paths  |------------------------------
-who_csv_path <- file.path(who_data_dir, "who_diseases", "who_pathogens_diseases.csv")
+who_csv_path <- who_raw_pathogens_path()
 output_csv_path <- file.path(who_clover_dir, "who_bacteria_clover_taxid.csv")
 output_hosts_path <- file.path(who_clover_dir, "who_bacteria_clover_hosts.csv")
 output_unique_hosts_path <- file.path(who_clover_dir, "who_bacteria_clover_unique_hosts.csv")

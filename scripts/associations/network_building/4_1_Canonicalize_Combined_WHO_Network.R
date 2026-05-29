@@ -30,6 +30,8 @@ suppressPackageStartupMessages({
 
 pacman::p_load(dplyr, readr, stringr, tidyr)
 
+source(here::here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
@@ -73,18 +75,14 @@ normalize_who_pathogen <- function(x) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-who_dir <- here::here("pathogen_association_data", "WHO")
+network_path <- who_raw_network_path()
+who_path <- who_raw_pathogens_path()
+disease_names_path <- who_disease_names_path()
+analysis_units_keep_path <- who_pathogen_analysis_units_keep_path()
 
-network_path <- file.path(who_dir, "networks", "combined_who_network.csv")
-who_path <- file.path(who_dir, "who_diseases", "who_pathogens_diseases.csv")
-disease_names_path <- file.path(who_dir, "who_diseases", "disease_names.csv")
-analysis_units_keep_path <- file.path(who_dir, "who_diseases", "who_pathogen_analysis_units_keep.csv")
-
-lookup_output_path <- file.path(who_dir, "networks", "combined_who_pathogen_canonical_lookup.csv")
-canonical_output_path <- file.path(who_dir, "networks", "combined_who_network_canonical.csv")
-zoonotic_network_output_path <- file.path(
-  who_dir, "networks", "combined_who_network_canonical_zoonotic.csv"
-)
+lookup_output_path <- file.path(who_data_dir, "networks", "combined_who_pathogen_canonical_lookup.csv")
+canonical_output_path <- who_canonical_network_path()
+zoonotic_network_output_path <- who_canonical_zoonotic_network_path()
 
 # ------------------------------------------------------------------------------|
 #      Manual overrides for known synonym / specificity cases -------------------|

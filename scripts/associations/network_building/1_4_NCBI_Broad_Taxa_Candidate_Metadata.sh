@@ -4,14 +4,28 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
 
-INPUT_CSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains.csv"
-RAW_JSONL="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains_ncbi_raw.jsonl"
-RESOLUTION_CSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains_ncbi_resolution.csv"
-METADATA_TSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains_ncbi_metadata.tsv"
-METADATA_CSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains_ncbi_metadata.csv"
-ENRICHED_CSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains_ncbi_enriched.csv"
-ENRICHED_SLIM_CSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_strains_ncbi_enriched_slim.csv"
-HOST_OVERRIDE_CSV="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases/who_broad_taxa_candidate_host_overrides.csv"
+WHO_DISEASES_OLD_DIR="${REPO_ROOT}/pathogen_association_data/WHO/who_diseases"
+WHO_DISEASES_STAGED_BROAD_TAXA_DIR="${REPO_ROOT}/pathogen_association_data/staged/who_diseases/broad_taxa"
+WHO_DISEASES_MANUAL_BROAD_TAXA_DIR="${REPO_ROOT}/pathogen_association_data/manual/who_diseases/broad_taxa"
+
+prefer_existing_path() {
+  local primary="$1"
+  local fallback="$2"
+  if [[ -e "${primary}" || ! -e "${fallback}" ]]; then
+    printf "%s" "${primary}"
+  else
+    printf "%s" "${fallback}"
+  fi
+}
+
+INPUT_CSV="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains.csv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains.csv")"
+RAW_JSONL="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains_ncbi_raw.jsonl" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains_ncbi_raw.jsonl")"
+RESOLUTION_CSV="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains_ncbi_resolution.csv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains_ncbi_resolution.csv")"
+METADATA_TSV="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains_ncbi_metadata.tsv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains_ncbi_metadata.tsv")"
+METADATA_CSV="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains_ncbi_metadata.csv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains_ncbi_metadata.csv")"
+ENRICHED_CSV="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains_ncbi_enriched.csv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains_ncbi_enriched.csv")"
+ENRICHED_SLIM_CSV="$(prefer_existing_path "${WHO_DISEASES_STAGED_BROAD_TAXA_DIR}/who_broad_taxa_candidate_strains_ncbi_enriched_slim.csv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_strains_ncbi_enriched_slim.csv")"
+HOST_OVERRIDE_CSV="$(prefer_existing_path "${WHO_DISEASES_MANUAL_BROAD_TAXA_DIR}/who_broad_taxa_candidate_host_overrides.csv" "${WHO_DISEASES_OLD_DIR}/who_broad_taxa_candidate_host_overrides.csv")"
 
 DATASETS_BIN="${REPO_ROOT}/ncbi/datasets"
 DATAFORMAT_BIN="${REPO_ROOT}/ncbi/dataformat"

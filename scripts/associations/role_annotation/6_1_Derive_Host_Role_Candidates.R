@@ -67,15 +67,8 @@ is_true <- function(x) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-who_dir <- who_data_dir
-
-network_path <- file.path(
-  who_dir, "networks", "combined_who_network_canonical_zoonotic.csv"
-)
-
-zoonotic_path <- file.path(
-  who_dir, "who_diseases", "who_pathogens_diseases_zoonotic.csv"
-)
+network_path <- who_canonical_zoonotic_network_path()
+zoonotic_path <- who_pathogens_diseases_zoonotic_path()
 
 output_dir <- role_candidates_dir
 output_path <- file.path(output_dir, "host_role_candidates.csv")

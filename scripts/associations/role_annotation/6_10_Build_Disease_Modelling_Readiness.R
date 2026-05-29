@@ -447,8 +447,6 @@ write_pilot_package_readme <- function(path) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-who_dir <- who_data_dir
-who_disease_dir <- file.path(who_dir, "who_diseases")
 role_dir <- role_annotation_dir
 qa_dir <- role_qa_dir
 genbank_legacy_dir <- genbank_simple_legacy_dir
@@ -483,9 +481,11 @@ genbank_summary_source <- if (file.exists(genbank_readiness_summary_path)) {
 }
 
 paths <- list(
-  master = file.path(who_disease_dir, "master_plus_who_analysis_units.csv"),
-  rules = file.path(who_disease_dir, "master_plus_who_transmission_rules_manual_reviewed_v2.csv"),
-  master_disease_units = file.path(who_disease_dir, "master_disease_analysis_units.csv"),
+  master = who_master_plus_analysis_units_path(),
+  rules = who_diseases_transmission_rules_path(
+    "master_plus_who_transmission_rules_manual_reviewed_v2.csv"
+  ),
+  master_disease_units = who_master_disease_analysis_units_path(),
   disease_evidence_readiness = file.path(qa_dir, "disease_evidence_readiness.csv"),
   vector_evidence_readiness = file.path(qa_dir, "vector_evidence_readiness_by_disease.csv"),
   species_host_vector_roster = file.path(role_dir, "species_host_vector_roster.csv"),
