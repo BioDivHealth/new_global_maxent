@@ -14,9 +14,10 @@ planning guidance, not the source of truth for already-moved folders.
 
 ## Active Pipeline Folders
 
-- `WHO/`: Main WHO-centred pipeline output root for disease lists, combined
-  networks, and WHO Disease Outbreak News outputs. Active subfolders include
-  `who_diseases/`, `networks/`, and `disease_outbreak_news_v2/`.
+- `WHO/`: Main WHO-centred pipeline output root for disease lists and combined
+  networks. Active subfolders include `who_diseases/` and `networks/`; WHO
+  Disease Outbreak News v2 outputs now use the split `staged/`, `manual/`,
+  `evidence/`, and `archive/` roots below.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
@@ -32,6 +33,10 @@ planning guidance, not the source of truth for already-moved folders.
 - `evidence/vector_screening/`: Active disease/pathogen-vector evidence and
   vector-competence annotation outputs. QA companions, including competence
   unmatched-review files, live under `evidence/vector_screening/qa/`.
+- `evidence/who_don_v2/`: Active WHO Disease Outbreak News v2 evidence
+  outputs. `final/who_don_modelling_ready.csv` is the tracked downstream
+  country-evidence surface; larger final audit tables, intermediate evidence,
+  QA summaries, and web JSON exports are generated locally and ignored.
 
 ## Raw And Staged Source Folders
 
@@ -57,6 +62,10 @@ planning guidance, not the source of truth for already-moved folders.
   generated source-specific/intermediate outputs under
   `staged/vector_screening/`. VecTraits API probe outputs remain ignored under
   `staged/vector_screening/vectraits/` until promoted.
+- `manual/who_don_v2/` and `staged/who_don_v2/`: Split WHO Disease Outbreak
+  News v2 review inputs and generated staging layers. Durable review decisions
+  live under `manual/who_don_v2/review/`; generated records, reference seeds,
+  and candidate tables live under ignored `staged/who_don_v2/` subfolders.
 
 ## Archive Or Local Comparison Material
 
@@ -70,6 +79,9 @@ planning guidance, not the source of truth for already-moved folders.
   older standard-mode GenBank-simple outputs.
 - `archive/vector_screening/`: Inactive Vector Screening snapshots retained for
   comparison only.
+- `archive/who_don_v2/`: Ignored WHO Disease Outbreak News v2 archive and QA
+  comparison material. Active scripts should not read from this archive except
+  for explicitly documented historical QA or migration checks.
 - Loose PDFs or dragged files found at this level should be moved under
   `archive/loose_files/` unless they are explicitly documented by the relevant
   script or README.
@@ -97,6 +109,8 @@ should prefer:
   legacy compatibility locations
 - role-annotation helpers for evidence, manual review/source-check, staged
   Deep Research, source PDF/text, roster, and QA locations
+- WHO DON v2 helpers for generated records/reference/candidates, durable manual
+  review decisions, active evidence/final/web/QA outputs, and ignored archives
 - `readiness_dir`
 
 The same helper also keeps the current WHO working network/pathogen accessors,
