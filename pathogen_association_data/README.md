@@ -9,17 +9,14 @@ consistently. New scripts should source
 `scripts/associations/working_inputs.R` and use its shared path constants before
 adding new hard-coded `pathogen_association_data/...` roots.
 
-For the proposed future split into `source_data/`, `manual/`, `staged/`,
-`evidence/`, `readiness/`, `compatibility/`, and `archive/`, see
-`DATA_LAYOUT_PROPOSAL.md`. That file is planning guidance, not the current
-active layout.
+For remaining proposed splits, see `DATA_LAYOUT_PROPOSAL.md`. That file is
+planning guidance, not the source of truth for already-moved folders.
 
 ## Active Pipeline Folders
 
 - `WHO/`: Main WHO-centred pipeline output root for disease lists, combined
-  networks, vector screening, and WHO Disease Outbreak News outputs.
-  Active subfolders include `who_diseases/`, `networks/`, `vector_screening/`,
-  and `disease_outbreak_news_v2/`.
+  networks, and WHO Disease Outbreak News outputs. Active subfolders include
+  `who_diseases/`, `networks/`, and `disease_outbreak_news_v2/`.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
@@ -32,6 +29,9 @@ active layout.
   evidence and QA outputs. Generated manifests, intermediate summaries, and map
   controls live under `staged/genbank_simple/`; manual query overrides live
   under `manual/genbank_simple/`.
+- `evidence/vector_screening/`: Active disease/pathogen-vector evidence and
+  vector-competence annotation outputs. QA companions, including competence
+  unmatched-review files, live under `evidence/vector_screening/qa/`.
 
 ## Raw And Staged Source Folders
 
@@ -50,6 +50,13 @@ active layout.
 - `source_data/role_annotation/`, `manual/role_annotation/`, and
   `staged/role_annotation/`: Split role-annotation source PDFs/OCR text, manual
   reviews/source checks, and generated Deep Research prompt/report staging.
+- `source_data/vector_screening/`, `manual/vector_screening/`, and
+  `staged/vector_screening/`: Split Vector Screening source family. EFSA raw
+  workbooks live under `source_data/vector_screening/efsa/raw/`, manual
+  screening/crosswalk/taxonomy decisions under `manual/vector_screening/`, and
+  generated source-specific/intermediate outputs under
+  `staged/vector_screening/`. VecTraits API probe outputs remain ignored under
+  `staged/vector_screening/vectraits/` until promoted.
 
 ## Archive Or Local Comparison Material
 
@@ -61,6 +68,8 @@ active layout.
   reviewed and moved to a named active folder.
 - `archive/genbank_simple/legacy_19_target/`: Ignored local archive of the
   older standard-mode GenBank-simple outputs.
+- `archive/vector_screening/`: Inactive Vector Screening snapshots retained for
+  comparison only.
 - Loose PDFs or dragged files found at this level should be moved under
   `archive/loose_files/` unless they are explicitly documented by the relevant
   script or README.
@@ -83,6 +92,9 @@ should prefer:
 - GenBank-simple helpers for evidence, manual overrides, staged manifests,
   staged intermediates, staged maps, ignored local runs, QA, and legacy
   compatibility locations
+- Vector Screening helpers for raw EFSA source workbooks, manual screening and
+  taxonomy decisions, staged EFSA/intermediate outputs, active evidence, QA, and
+  legacy compatibility locations
 - role-annotation helpers for evidence, manual review/source-check, staged
   Deep Research, source PDF/text, roster, and QA locations
 - `readiness_dir`

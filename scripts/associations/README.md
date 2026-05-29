@@ -13,7 +13,9 @@ association data, with a focus on WHO priority pathogens.
 - `vector_screening/`
   Builds the disease/pathogen-vector workflow, including EFSA crosswalks,
   canonical disease-vector tables, taxonomy cleanup, and pathogen-vector
-  backfilling.
+  backfilling. Source workbooks, manual review inputs, staged outputs, and
+  active evidence are split under `pathogen_association_data/source_data/`,
+  `manual/`, `staged/`, and `evidence/`.
 - `host_vector_integration/`
   Joins the WHO disease/pathogen network to observational host-vector evidence
   and writes disease-level, pathogen-level, and expanded host-vector outputs.
@@ -86,6 +88,8 @@ The intended workflow is:
 5.  **Vector Screening (`vector_screening/5_1_*` to `vector_screening/5_6_*`):**
     -   `vector_screening/5_1_Pathogen_Vector_Links_Scaffold.R` to `vector_screening/5_6_Backfill_Pathogen_Vector_Links.R`: Build, standardize, and backfill the WHO disease-pathogen-vector tables.
     -   `vector_screening/5_5b_Vector_Name_Cleanup.R` and `vector_screening/5_5c_Vector_Taxonomy_Package_Review.R`: Add conservative vector-name normalization and taxonomy-review outputs.
+    -   Use `scripts/associations/working_inputs.R` helpers for all Vector Screening paths. Raw EFSA inputs live under `pathogen_association_data/source_data/vector_screening/`, manual control files under `pathogen_association_data/manual/vector_screening/`, intermediate outputs under `pathogen_association_data/staged/vector_screening/`, and active vector evidence plus QA under `pathogen_association_data/evidence/vector_screening/`.
+    -   VecTraits API outputs are exploratory/local and remain ignored under `pathogen_association_data/staged/vector_screening/vectraits/`.
 
 6.  **Host-Vector Integration (`host_vector_integration/5_8_*` to `host_vector_integration/5_11_*`):**
     -   These scripts connect the WHO disease/pathogen network to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/WHO/networks/`.
