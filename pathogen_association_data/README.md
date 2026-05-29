@@ -9,15 +9,12 @@ consistently. New scripts should source
 `scripts/associations/working_inputs.R` and use its shared path constants before
 adding new hard-coded `pathogen_association_data/...` roots.
 
-For remaining proposed splits, see `DATA_LAYOUT_PROPOSAL.md`. That file is
-planning guidance, not the source of truth for already-moved folders.
+The former `WHO/` compatibility root has been split into lifecycle folders.
+Active scripts should use `scripts/associations/working_inputs.R` helpers rather
+than reading from `pathogen_association_data/WHO/`.
 
 ## Active Pipeline Folders
 
-- `WHO/`: Compatibility root for remaining WHO-centred pipeline outputs that
-  have not yet been split. WHO diseases, WHO Disease Outbreak News v2, and WHO
-  network data now use the split `source_data/`, `manual/`, `staged/`,
-  `evidence/`, and `archive/` roots below.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence

@@ -69,6 +69,7 @@ pathogen_association_data/source_data/virion/raw/virion_download/
 
 # Local cleanup holding areas; move files here instead of deleting them.
 archive/git_cleanup_*/
+archive/md/
 
 # Local notes, bibliographies, and source exports not used as pipeline inputs
 zotero.py
