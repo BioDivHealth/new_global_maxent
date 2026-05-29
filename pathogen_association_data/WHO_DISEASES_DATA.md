@@ -1,0 +1,129 @@
+# WHO Diseases Data Catalog
+
+The WHO diseases workflow is split by data lifecycle. Scripts should read these
+paths through `scripts/associations/working_inputs.R` rather than hard-coding
+the folder names below.
+
+## Source Data
+
+Raw or near-raw WHO source material lives under
+`pathogen_association_data/source_data/who_diseases/`.
+
+- `regional_tables/africa_table.csv` - WHO Africa regional priority/prototype
+  pathogen table used by `scripts/associations/network_building/1_WHO_Diseases.R`.
+- `regional_tables/americas_table.csv` - WHO Americas regional priority/prototype
+  pathogen table used by `1_WHO_Diseases.R`.
+- `regional_tables/europe_table.csv` - WHO Europe regional priority/prototype
+  pathogen table used by `1_WHO_Diseases.R`.
+- `regional_tables/mediterranean_table.csv` - WHO Eastern Mediterranean regional
+  priority/prototype pathogen table used by `1_WHO_Diseases.R`.
+- `regional_tables/se_asia_table.csv` - WHO South-East Asia regional
+  priority/prototype pathogen table used by `1_WHO_Diseases.R`.
+- `regional_tables/western_pacific_table.csv` - WHO Western Pacific regional
+  priority/prototype pathogen table used by `1_WHO_Diseases.R`.
+- `comparison_lookups/diseases_in_gibb_etal.csv` - Project comparison and
+  provenance lookup marking disease analysis units represented in Gibb et al.
+  and/or EMPRES-i.
+
+## Manual Data
+
+Manual review, curation, and control surfaces live under
+`pathogen_association_data/manual/who_diseases/`.
+
+- `name_resolution/translation.csv` - Lookup table mapping older/common pathogen
+  names to MSL39 viral species names.
+- `name_resolution/disease_names.csv` - Manual pathogen-to-disease lookup used
+  to attach disease names to standardized WHO pathogen rows and seed WHO DON
+  disease aliases.
+- `name_resolution/master_disease_name_resolution_manual.csv` - Editable
+  resolution surface for unresolved master-list rows.
+- `pathogen_matching/master_pathogen_aliases.csv` - Manual aliases for matching
+  resolved master-list pathogen names to local VIRION and CLOVER taxonomy labels.
+- `transmission_rules/master_plus_who_transmission_rules_manual.csv` - Manual
+  transmission-rule curation scaffold used by the master-plus-WHO bridge.
+- `transmission_rules/master_plus_who_transmission_rules_manual_completed.csv`
+  - Filled transmission-rule curation snapshot.
+- `transmission_rules/master_plus_who_transmission_rules_manual_reviewed_v2.csv`
+  - Reviewed v2 transmission-rule snapshot used by readiness workflows.
+- `broad_taxa/who_broad_taxa_candidate_strains_seed.csv` - Manual seed inventory
+  for candidate strains/exemplar viruses under broad WHO taxa.
+- `broad_taxa/who_broad_taxa_candidate_host_overrides.csv` - Manual host-name
+  override notes for candidate-strain NCBI records where Datasets metadata is
+  too broad or outdated.
+
+## Staged Data
+
+Generated intermediate or review-staging files live under
+`pathogen_association_data/staged/who_diseases/`.
+
+- `backbone/final_pathogen_data.csv` - Intermediate standardized pathogen table
+  written by `1_WHO_Diseases.R` before disease-name joins and comparison flags.
+- `master_expansion/master_disease_name_resolution_review.csv` - Generated
+  review queue for master-list diseases not already resolved to an existing WHO
+  analysis unit.
+- `master_expansion/master_pathogen_virion_clover_candidates.csv` - Candidate
+  VIRION/CLOVER taxonomy matches for active resolved master-list analysis units.
+- `master_expansion/master_pathogen_virion_clover_matches.csv` - Best
+  source-prioritized VIRION/CLOVER matches used to build host query units.
+- `pathogen_matching/master_pathogen_external_taxonomy_review.csv` - Review
+  table for pathogen names requiring external taxonomy support when local
+  VIRION/CLOVER evidence is absent or incomplete.
+- `host_queries/master_pathogen_host_query_units.csv` - Query-ready units
+  specifying which source, pathogen names, and taxids should be used for host
+  retrieval.
+- `broad_taxa/who_broad_taxa_candidate_strains.csv` - Generated curation
+  inventory of ICTV-supported candidate strains and examples for broad taxa.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_resolution.csv` -
+  Accession-base to resolved accession lookup from the NCBI Datasets metadata
+  pull.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_metadata.csv` - Parsed NCBI
+  Datasets metadata for resolved candidate-strain accessions.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_metadata.tsv` - Raw or
+  near-raw tabular NCBI Datasets metadata export kept for provenance.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_enriched.csv` -
+  Candidate-strain table joined to NCBI metadata and host/taxonomy fields for
+  review.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_enriched_slim.csv` - Slim
+  review/export version of the enriched candidate-strain table.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_enriched_slim.xlsx` - Excel
+  copy of the slim enriched candidate-strain table for manual review or sharing.
+- `broad_taxa/who_broad_taxa_candidate_strains_ncbi_raw.jsonl` - Ignored raw
+  JSONL responses from the NCBI Datasets CLI.
+
+## Evidence Data
+
+Active evidence surfaces live under
+`pathogen_association_data/evidence/who_diseases/`.
+
+- `backbone/who_pathogens_diseases.csv` - Broad consolidated WHO
+  pathogen-disease table with priority/prototype status and per-region WHO
+  provenance.
+- `backbone/who_pathogens_diseases_zoonotic.csv` - Conservative
+  zoonotic-focused subset derived from `who_pathogens_diseases.csv`.
+- `backbone/who_pathogens_diseases_zoonotic.xlsx` - Excel copy of the zoonotic
+  WHO table for manual review or sharing.
+- `backbone/who_pathogen_analysis_units.csv` - Curated analysis-unit scaffold
+  derived from the zoonotic WHO table, including broad taxa that may need
+  splitting or review.
+- `backbone/who_pathogen_analysis_units_keep.csv` - Retained modelling/query
+  scope from the analysis-unit scaffold; used by VIRION, GenBank, and related
+  downstream scripts.
+- `master_expansion/master_disease_analysis_units.csv` - Additive merge of
+  `dr/disease_master_list_v2.xlsx` with the WHO analysis-unit table.
+- `master_expansion/master_plus_who_analysis_units.csv` - Compact combined
+  analysis-unit table that lets resolved master-list rows sit alongside existing
+  WHO analysis units.
+- `host_species/master_pathogen_host_species.csv` - Host-species associations
+  retrieved from VIRION/CLOVER for the master-list query units.
+- `host_species/master_pathogen_host_species_clean.csv` - QA/harmonized version
+  of the host-species table with host-name standardization and downstream
+  readiness flags.
+- `qa/master_pathogen_host_species_summary.csv` - Summary counts and QA totals
+  for the master-list host-species extraction.
+
+## Compatibility
+
+`pathogen_association_data/WHO/who_diseases/` is no longer the active location
+for these files. The shared helpers still carry legacy fallback support for
+migration checks, but new scripts should use the helper functions and the split
+roots above.

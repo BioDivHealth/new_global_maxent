@@ -14,10 +14,10 @@ planning guidance, not the source of truth for already-moved folders.
 
 ## Active Pipeline Folders
 
-- `WHO/`: Main WHO-centred pipeline output root for disease lists and combined
-  networks. Active subfolders include `who_diseases/` and `networks/`; WHO
-  Disease Outbreak News v2 outputs now use the split `staged/`, `manual/`,
-  `evidence/`, and `archive/` roots below.
+- `WHO/`: Compatibility root for remaining WHO-centred pipeline outputs, most
+  notably combined network files under `WHO/networks/`. WHO diseases and WHO
+  Disease Outbreak News v2 data now use the split `source_data/`, `manual/`,
+  `staged/`, `evidence/`, and `archive/` roots below.
 - `readiness/`: Generated modelling-readiness handoff files. These are planning
   and collaborator handoff surfaces, not final biological evidence claims.
 - `evidence/host_vector/`: Combined VectorMap + MapVEu host-vector evidence
@@ -33,6 +33,9 @@ planning guidance, not the source of truth for already-moved folders.
 - `evidence/vector_screening/`: Active disease/pathogen-vector evidence and
   vector-competence annotation outputs. QA companions, including competence
   unmatched-review files, live under `evidence/vector_screening/qa/`.
+- `evidence/who_diseases/`: Active WHO diseases backbone, master expansion, host
+  species, and QA evidence surfaces. See `WHO_DISEASES_DATA.md` for the
+  full source/manual/staged/evidence split.
 - `evidence/who_don_v2/`: Active WHO Disease Outbreak News v2 evidence
   outputs. `final/who_don_modelling_ready.csv` is the tracked downstream
   country-evidence surface; larger final audit tables, intermediate evidence,
@@ -66,6 +69,12 @@ planning guidance, not the source of truth for already-moved folders.
   News v2 review inputs and generated staging layers. Durable review decisions
   live under `manual/who_don_v2/review/`; generated records, reference seeds,
   and candidate tables live under ignored `staged/who_don_v2/` subfolders.
+- `source_data/who_diseases/`, `manual/who_diseases/`, and
+  `staged/who_diseases/`: Split WHO diseases source family. Raw WHO regional
+  tables live under `source_data/who_diseases/regional_tables/`, manual
+  name-resolution/transmission/pathogen-matching/broad-taxa decisions live under
+  `manual/who_diseases/`, and generated backbone/master-expansion/host-query/
+  broad-taxa staging files live under `staged/who_diseases/`.
 
 ## Archive Or Local Comparison Material
 
@@ -111,6 +120,9 @@ should prefer:
   Deep Research, source PDF/text, roster, and QA locations
 - WHO DON v2 helpers for generated records/reference/candidates, durable manual
   review decisions, active evidence/final/web/QA outputs, and ignored archives
+- WHO diseases helpers for raw regional tables, manual name resolution and
+  transmission rules, staged backbone/master-expansion/pathogen-matching/
+  host-query/broad-taxa outputs, and active evidence/QA surfaces
 - `readiness_dir`
 
 The same helper also keeps the current WHO working network/pathogen accessors,
