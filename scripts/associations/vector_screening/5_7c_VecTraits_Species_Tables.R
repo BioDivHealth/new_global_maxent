@@ -16,6 +16,8 @@
 library(pacman)
 p_load(dplyr, here, httr, jsonlite, purrr, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 `%||%` <- function(x, y) {
   if (is.null(x) || length(x) == 0 || all(is.na(x))) {
     return(y)
@@ -124,13 +126,7 @@ target_species <- tibble(
   )
 )
 
-output_dir <- here(
-  "pathogen_association_data",
-  "WHO",
-  "vector_screening",
-  "outputs",
-  "vectraits_species_tables"
-)
+output_dir <- file.path(vector_screening_vectraits_dir, "vectraits_species_tables")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 manifest_path <- file.path(output_dir, "vectraits_species_manifest.csv")

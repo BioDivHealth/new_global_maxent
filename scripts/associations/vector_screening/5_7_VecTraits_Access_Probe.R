@@ -15,6 +15,8 @@
 library(pacman)
 p_load(dplyr, here, httr, jsonlite, readr, stringr, tibble, purrr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -192,13 +194,7 @@ probe_keywords <- c(
   "temperature"
 )
 
-output_dir <- here(
-  "pathogen_association_data",
-  "WHO",
-  "vector_screening",
-  "outputs",
-  "vectraits_probe"
-)
+output_dir <- file.path(vector_screening_vectraits_dir, "vectraits_probe")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 manifest_path <- file.path(output_dir, "vectraits_probe_manifest.csv")

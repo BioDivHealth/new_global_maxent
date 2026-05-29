@@ -1,0 +1,22 @@
+competence_disease_name,vector_join_key,vector_competence_species,vector_competence_status,vector_competence_evidence_types,transmission_demonstrated,natural_infection_reported,competence_source_examples,competence_note_examples
+Chikungunya fever,culex pipiens,Culex pipiens,not_competent,narrative_review,no,,Coffey et al. 2014,review table reports 0 infection and 0 transmission
+Chikungunya fever,culex quinquefasciatus,Cx. quinquefasciatus,not_competent,lab_experiment,no,,van den Hurk et al. 2010,refractory to infection
+Chikungunya fever,ornithodoros savignyi,Ornithodoros savignyi,not_competent,narrative_review,no,,Coffey et al. 2014,review table reports 0 infection and no transmission
+Oropouche fever,aedes japonicus,Aedes japonicus,not_competent,narrative_review,no,,Ayres et al. 2026,"local mosquito study; low or no infection, dissemination or transmission"
+Oropouche fever,anopheles quadrimaculatus,Anopheles quadrimaculatus,not_competent,narrative_review,no,,Ayres et al. 2026,tested in the US colony study; very low dissemination and no transmission
+Oropouche fever,ceratopogonidae spp,Ceratopogonidae spp.,unclear,field_detection,,yes,González et al. 2025,family-level positive pool; species not resolved
+Oropouche fever,culex torrentium,Culex torrentium,not_competent,narrative_review,no,,Ayres et al. 2026,"local mosquito study; low or no infection, dissemination or transmission"
+Plague,atyphloceras multidentatus,Atyphloceras multidentatus,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,catallagia decipiens,Catallagia decipiens,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,euhoplopsyllus glacialis affinis,Euhoplopsyllus glacialis affinis,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,leptopsylla segnis,Leptopsylla segnis,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,megabothris clantoni,Megabothris clantoni,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,meringis shannoni,Meringis shannoni,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,paradoxopsyllus integer,Paradoxopsyllus integer,unclear,narrative_review,,yes,Medvedev et al. 2022,spontaneous infection reported but no competence experiment in the cited passage
+Plague,paradoxopsyllus scalonae,Paradoxopsyllus scalonae,unclear,narrative_review,,yes,Medvedev et al. 2022,plague microbe isolated from the species but no transmission result given
+Plague,thrassis gladiolus,Thrassis gladiolus,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Plague,thrassis petiolatus,Thrassis petiolatus,not_competent,narrative_review,no,,Eisen et al. 2009,older study failed to transmit and the authors said the sample size was too small for a final verdict
+Rift Valley fever,aedes dorsalis,Aedes dorsalis,unclear,dataset,,,Golnar et al. 2014 Table 1,near-zero measured vector competence
+Rift Valley fever,aedes infirmatus,Aedes infirmatus,not_competent,dataset,no,,Golnar et al. 2014 Table 1,explicit incompetent example in text
+Rift Valley fever,anopheles crucians,Anopheles crucians,not_competent,dataset,no,,Golnar et al. 2014 Table 1,explicit incompetent example in text
+Tick-borne encephalitis,ixodes ricinus x ixodes persulcatus hybrids,Ixodes ricinus x Ixodes persulcatus hybrids,competent,lab_experiment,yes,,Belova et al. 2023,hybrid generation from I. persulcatus female x I. ricinus male; highest acquisition in Siberian subtype

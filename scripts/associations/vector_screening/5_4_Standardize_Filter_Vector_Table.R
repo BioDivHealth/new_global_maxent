@@ -78,10 +78,10 @@ normalize_vector_group <- function(x) {
 }
 
 # ------------------------------| Define paths |--------------------------------
-who_dir <- here("pathogen_association_data", "WHO")
 network_path <- who_working_network_path()
-vector_output_dir <- file.path(who_dir, "vector_screening", "efsa", "outputs")
-vector_input_path <- file.path(vector_output_dir, "vector_table_with_efsa.csv")
+vector_output_dir <- vector_screening_efsa_outputs_dir
+vector_input_path <- vector_screening_efsa_staged_path("vector_table_with_efsa.csv")
+dir.create(vector_output_dir, recursive = TRUE, showWarnings = FALSE)
 
 output_standardized_path <- file.path(
   vector_output_dir,

@@ -252,19 +252,13 @@ build_best_fuzzy_candidate <- function(efsa_clean, combined_reference) {
     filter(relative_distance <= 0.12, distance <= 4, shared_tokens >= 2)
 }
 
-who_dir <- here("pathogen_association_data", "WHO")
-vector_dir <- file.path(who_dir, "vector_screening")
-efsa_dir <- file.path(vector_dir, "efsa")
-vector_input_dir <- file.path(vector_dir, "inputs")
-efsa_input_dir <- file.path(efsa_dir, "inputs")
-efsa_manual_dir <- file.path(efsa_dir, "manual")
-output_dir <- file.path(efsa_dir, "outputs")
+output_dir <- vector_screening_efsa_outputs_dir
 
-appendix_a_path <- file.path(efsa_input_dir, "efsa_report_appendix_a.xlsx")
-appendix_g_path <- file.path(efsa_input_dir, "efsa_report_appendix_g.xlsx")
+appendix_a_path <- vector_screening_efsa_source_path("efsa_report_appendix_a.xlsx")
+appendix_g_path <- vector_screening_efsa_source_path("efsa_report_appendix_g.xlsx")
 combined_network_path <- who_working_network_path()
-screening_path <- file.path(vector_input_dir, "disease_vector_screening.csv")
-manual_map_path <- file.path(efsa_manual_dir, "efsa_name_manual_map.csv")
+screening_path <- vector_screening_manual_path("disease_vector_screening.csv")
+manual_map_path <- vector_screening_efsa_manual_path("efsa_name_manual_map.csv")
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 

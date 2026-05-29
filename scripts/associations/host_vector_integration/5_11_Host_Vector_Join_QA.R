@@ -60,13 +60,13 @@ collapse_unique <- function(x) {
 }
 
 networks_dir <- file.path(who_data_dir, "networks")
-vector_dir <- file.path(who_data_dir, "vector_screening")
 host_vector_dir <- vector_host_outputs_dir
-vector_output_dir <- file.path(vector_dir, "outputs")
 
 who_path <- who_working_network_path()
-disease_vector_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
-pathogen_vector_path <- file.path(vector_output_dir, "pathogen_vector_links_filled.csv")
+disease_vector_path <- vector_screening_evidence_path(
+  "disease_vector_links_taxonomy_cleaned.csv"
+)
+pathogen_vector_path <- vector_screening_evidence_path("pathogen_vector_links_filled.csv")
 host_vector_join_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 host_vector_blocked_path <- file.path(host_vector_dir, "vector_host_links_join_blocked.csv")
 disease_output_path <- file.path(networks_dir, "disease_host_vector_links.csv")

@@ -76,12 +76,12 @@ first_non_missing <- function(x) {
 }
 
 networks_dir <- file.path(who_data_dir, "networks")
-vector_dir <- file.path(who_data_dir, "vector_screening")
 host_vector_dir <- vector_host_outputs_dir
-vector_output_dir <- file.path(vector_dir, "outputs")
 
 who_path <- who_working_network_path()
-disease_vector_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
+disease_vector_path <- vector_screening_evidence_path(
+  "disease_vector_links_taxonomy_cleaned.csv"
+)
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 output_path <- file.path(networks_dir, "disease_host_vector_links.csv")
 

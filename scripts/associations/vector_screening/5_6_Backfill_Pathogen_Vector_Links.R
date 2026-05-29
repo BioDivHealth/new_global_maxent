@@ -13,6 +13,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("NA", "NaN")] <- NA_character_
@@ -46,12 +48,10 @@ extract_vector_genus <- function(x) {
   out
 }
 
-vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
-vector_output_dir <- file.path(vector_dir, "outputs")
-
-scaffold_path <- file.path(vector_output_dir, "pathogen_vector_links.csv")
-canonical_path <- file.path(vector_output_dir, "disease_vector_links.csv")
-output_path <- file.path(vector_output_dir, "pathogen_vector_links_filled.csv")
+scaffold_path <- vector_screening_staged_path("pathogen_vector_links.csv")
+canonical_path <- vector_screening_staged_path("disease_vector_links.csv")
+output_path <- file.path(vector_screening_evidence_dir, "pathogen_vector_links_filled.csv")
+dir.create(vector_screening_evidence_dir, recursive = TRUE, showWarnings = FALSE)
 
 scaffold <- read_csv(
   scaffold_path,

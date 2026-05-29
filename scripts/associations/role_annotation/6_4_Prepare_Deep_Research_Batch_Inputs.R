@@ -232,8 +232,7 @@ output_root <- role_deep_research_dir
 plan_path <- here::here("ROLE_EVIDENCE_FULL_CURATION_PLAN.md")
 roster_path <- file.path(role_roster_dir, "species_host_vector_roster.csv")
 host_candidates_path <- file.path(role_candidates_dir, "host_role_candidates.csv")
-vector_candidates_path <- here::here(
-  "pathogen_association_data", "WHO", "vector_screening", "outputs",
+vector_candidates_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 )
 

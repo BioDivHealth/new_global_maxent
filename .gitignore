@@ -210,6 +210,18 @@ pathogen_association_data/staged/vectormap/outputs/vectormap_vector_host_links_r
 !pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_raw.csv
 !pathogen_association_data/staged/mapveu/outputs/mapveu_vector_host_links_review.csv
 
+# Source-specific vector-screening staging outputs. VecTraits API probes remain
+# ignored until promoted into a stable evidence layer.
+!pathogen_association_data/staged/vector_screening/
+!pathogen_association_data/staged/vector_screening/outputs/
+!pathogen_association_data/staged/vector_screening/outputs/**
+!pathogen_association_data/staged/vector_screening/efsa/
+!pathogen_association_data/staged/vector_screening/efsa/outputs/
+!pathogen_association_data/staged/vector_screening/efsa/outputs/**
+!pathogen_association_data/staged/vector_screening/taxonomy_review/
+!pathogen_association_data/staged/vector_screening/taxonomy_review/**
+pathogen_association_data/staged/vector_screening/vectraits/
+
 # Source-specific WHO/CLOVER and WHO/VIRION staging outputs
 !pathogen_association_data/staged/clover/outputs/
 !pathogen_association_data/staged/clover/outputs/clover_host_species_standardized.csv

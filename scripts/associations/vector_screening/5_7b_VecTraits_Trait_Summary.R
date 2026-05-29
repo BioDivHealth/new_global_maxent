@@ -15,6 +15,8 @@
 library(pacman)
 p_load(dplyr, here, httr, jsonlite, purrr, readr, stringr, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 `%||%` <- function(x, y) {
   if (is.null(x) || length(x) == 0 || all(is.na(x))) {
     return(y)
@@ -131,13 +133,7 @@ trait_keywords <- c(
   "fecundity"
 )
 
-output_dir <- here(
-  "pathogen_association_data",
-  "WHO",
-  "vector_screening",
-  "outputs",
-  "vectraits_traits"
-)
+output_dir <- file.path(vector_screening_vectraits_dir, "vectraits_traits")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 species_manifest_path <- file.path(output_dir, "vectraits_species_manifest.csv")

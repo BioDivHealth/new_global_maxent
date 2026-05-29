@@ -159,7 +159,6 @@ summarise_assignments <- function(data, disease_col, assignment_col, prefix) {
 who_dir <- who_data_dir
 role_dir <- role_annotation_dir
 qa_dir <- role_qa_dir
-vector_output_dir <- file.path(who_dir, "vector_screening", "outputs")
 genbank_legacy_dir <- genbank_simple_legacy_dir
 don_dir <- file.path(who_dir, "disease_outbreak_news_v2")
 
@@ -189,11 +188,11 @@ genbank_map_unmatched_path <- prefer_existing_path(
 paths <- list(
   host_role_candidates = file.path(role_dir, "host_role_candidates.csv"),
   species_host_vector_roster = file.path(role_dir, "species_host_vector_roster.csv"),
-  vector_competence_unmatched_review = file.path(
-    vector_output_dir, "vector_competence_join_unmatched_review.csv"
+  vector_competence_unmatched_review = vector_screening_qa_path(
+    "vector_competence_join_unmatched_review.csv"
   ),
-  disease_vector_competence_annotated = file.path(
-    vector_output_dir, "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
+  disease_vector_competence_annotated = vector_screening_evidence_path(
+    "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
   ),
   genbank_disease_country_summary = genbank_summary_path,
   genbank_map_unmatched = genbank_map_unmatched_path,

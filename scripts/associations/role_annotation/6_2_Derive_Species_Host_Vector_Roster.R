@@ -136,13 +136,11 @@ summarise_bites_humans_basis <- function(x) {
 # ------------------------------------------------------------------------------|
 who_dir <- who_data_dir
 networks_dir <- file.path(who_dir, "networks")
-vector_dir <- file.path(who_dir, "vector_screening", "outputs")
 host_vector_dir <- vector_host_outputs_dir
 role_dir <- role_roster_dir
 
 network_path <- file.path(networks_dir, "combined_who_network_canonical_zoonotic.csv")
-vector_path <- file.path(
-  vector_dir,
+vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 )
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")

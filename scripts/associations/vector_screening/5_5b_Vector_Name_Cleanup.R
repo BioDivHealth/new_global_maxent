@@ -14,6 +14,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("NA", "NaN")] <- NA_character_
@@ -108,14 +110,19 @@ seed_manual_map <- function(path) {
   write_csv(seeded_map, path, na = "")
 }
 
-vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
-vector_output_dir <- file.path(vector_dir, "outputs")
-taxonomy_review_dir <- file.path(vector_dir, "taxonomy_review")
-
-input_path <- file.path(vector_output_dir, "disease_vector_links.csv")
-output_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
-review_path <- file.path(taxonomy_review_dir, "vector_taxonomy_review_needed.csv")
-manual_map_path <- file.path(taxonomy_review_dir, "vector_taxonomy_manual_map.csv")
+input_path <- vector_screening_staged_path("disease_vector_links.csv")
+output_path <- file.path(
+  vector_screening_evidence_dir,
+  "disease_vector_links_taxonomy_cleaned.csv"
+)
+review_path <- file.path(
+  vector_screening_taxonomy_review_dir,
+  "vector_taxonomy_review_needed.csv"
+)
+manual_map_path <- vector_screening_taxonomy_manual_path("vector_taxonomy_manual_map.csv")
+dir.create(vector_screening_evidence_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(vector_screening_taxonomy_review_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(vector_screening_taxonomy_manual_dir, recursive = TRUE, showWarnings = FALSE)
 
 if (!file.exists(manual_map_path)) {
   seed_manual_map(manual_map_path)
@@ -291,5 +298,4 @@ collapse_vals <- function(x, sep = "; ") {
 retrieve_syns_new(sp,  
                   n_times=10,
                   Gbif=TRUE)
-
 

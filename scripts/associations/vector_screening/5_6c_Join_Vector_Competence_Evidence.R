@@ -19,6 +19,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
@@ -270,14 +272,13 @@ annotate_with_competence <- function(input_path, output_path, competence_collaps
 }
 
 competence_path <- here("diseases", "vector_competence.csv")
-vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
-vector_output_dir <- file.path(vector_dir, "outputs")
-taxonomy_review_dir <- file.path(vector_dir, "taxonomy_review")
 networks_dir <- here("pathogen_association_data", "WHO", "networks")
 
-disease_vector_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
+disease_vector_path <- vector_screening_evidence_path(
+  "disease_vector_links_taxonomy_cleaned.csv"
+)
 disease_vector_annotated_path <- file.path(
-  vector_output_dir,
+  vector_screening_evidence_dir,
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 )
 dhv_path <- file.path(networks_dir, "disease_host_vector_links.csv")
@@ -287,9 +288,11 @@ dhv_expanded_annotated_path <- file.path(
   networks_dir,
   "disease_host_vector_links_expanded_competence_annotated.csv"
 )
-collapsed_path <- file.path(vector_output_dir, "vector_competence_collapsed.csv")
-unmatched_path <- file.path(vector_output_dir, "vector_competence_join_unmatched.csv")
-manual_map_path <- file.path(taxonomy_review_dir, "vector_taxonomy_manual_map.csv")
+collapsed_path <- file.path(vector_screening_evidence_dir, "vector_competence_collapsed.csv")
+unmatched_path <- file.path(vector_screening_qa_dir, "vector_competence_join_unmatched.csv")
+manual_map_path <- vector_screening_taxonomy_manual_path("vector_taxonomy_manual_map.csv")
+dir.create(vector_screening_evidence_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(vector_screening_qa_dir, recursive = TRUE, showWarnings = FALSE)
 
 manual_map <- read_csv(
   manual_map_path,

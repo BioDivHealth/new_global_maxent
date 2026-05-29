@@ -13,6 +13,8 @@
 library(pacman)
 p_load(dplyr, here, readr, stringr, tidyr)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 clean_text <- function(x) {
   x <- as.character(x)
   x[x %in% c("NA", "NaN")] <- NA_character_
@@ -74,17 +76,14 @@ rank_evidence_level <- function(x) {
   )
 }
 
-vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
-efsa_output_dir <- file.path(vector_dir, "efsa", "outputs")
-vector_output_dir <- file.path(vector_dir, "outputs")
+vector_output_dir <- vector_screening_staged_outputs_dir
+dir.create(vector_output_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(vector_screening_qa_dir, recursive = TRUE, showWarnings = FALSE)
 
-input_path <- file.path(
-  efsa_output_dir,
-  "vector_table_with_efsa_standardized.csv"
-)
-scaffold_path <- file.path(vector_output_dir, "pathogen_vector_links.csv")
+input_path <- vector_screening_efsa_staged_path("vector_table_with_efsa_standardized.csv")
+scaffold_path <- vector_screening_staged_path("pathogen_vector_links.csv")
 output_path <- file.path(vector_output_dir, "disease_vector_links.csv")
-gap_output_path <- file.path(vector_output_dir, "disease_vector_link_gaps.csv")
+gap_output_path <- file.path(vector_screening_qa_dir, "disease_vector_link_gaps.csv")
 
 vector_table <- read_csv(
   input_path,

@@ -108,6 +108,147 @@ mapveu_manual_dir <- file.path(manual_data_dir, "mapveu")
 
 vector_host_outputs_dir <- vector_host_dir
 
+# Vector-screening layout. Source EFSA workbooks live under source_data/,
+# manual screening/crosswalk decisions under manual/, generated intermediates
+# under staged/, and active vector evidence plus QA under evidence/.
+vector_screening_legacy_dir <- file.path(who_data_dir, "vector_screening")
+vector_screening_legacy_outputs_dir <- file.path(
+  vector_screening_legacy_dir,
+  "outputs"
+)
+vector_screening_source_dir <- file.path(source_data_dir, "vector_screening")
+vector_screening_manual_dir <- file.path(manual_data_dir, "vector_screening")
+vector_screening_staged_dir <- file.path(staged_data_dir, "vector_screening")
+vector_screening_staged_outputs_dir <- file.path(
+  vector_screening_staged_dir,
+  "outputs"
+)
+vector_screening_evidence_dir <- file.path(evidence_data_dir, "vector_screening")
+vector_screening_qa_dir <- file.path(vector_screening_evidence_dir, "qa")
+
+vector_screening_efsa_source_dir <- file.path(
+  vector_screening_source_dir,
+  "efsa",
+  "raw"
+)
+vector_screening_efsa_manual_dir <- file.path(
+  vector_screening_manual_dir,
+  "efsa"
+)
+vector_screening_efsa_outputs_dir <- file.path(
+  vector_screening_staged_dir,
+  "efsa",
+  "outputs"
+)
+vector_screening_taxonomy_manual_dir <- file.path(
+  vector_screening_manual_dir,
+  "taxonomy"
+)
+vector_screening_taxonomy_review_dir <- file.path(
+  vector_screening_staged_dir,
+  "taxonomy_review"
+)
+vector_screening_vectraits_dir <- file.path(
+  vector_screening_staged_dir,
+  "vectraits"
+)
+
+vector_screening_legacy_input_dir <- file.path(
+  vector_screening_legacy_dir,
+  "inputs"
+)
+vector_screening_legacy_efsa_input_dir <- file.path(
+  vector_screening_legacy_dir,
+  "efsa",
+  "inputs"
+)
+vector_screening_legacy_efsa_manual_dir <- file.path(
+  vector_screening_legacy_dir,
+  "efsa",
+  "manual"
+)
+vector_screening_legacy_efsa_outputs_dir <- file.path(
+  vector_screening_legacy_dir,
+  "efsa",
+  "outputs"
+)
+vector_screening_legacy_taxonomy_review_dir <- file.path(
+  vector_screening_legacy_dir,
+  "taxonomy_review"
+)
+
+prefer_existing_path <- function(primary, fallback) {
+  if (file.exists(primary) || dir.exists(primary) ||
+      (!file.exists(fallback) && !dir.exists(fallback))) {
+    return(primary)
+  }
+
+  fallback
+}
+
+vector_screening_manual_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_manual_dir, filename),
+    file.path(vector_screening_legacy_input_dir, filename)
+  )
+}
+
+vector_screening_efsa_source_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_efsa_source_dir, filename),
+    file.path(vector_screening_legacy_efsa_input_dir, filename)
+  )
+}
+
+vector_screening_efsa_manual_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_efsa_manual_dir, filename),
+    file.path(vector_screening_legacy_efsa_manual_dir, filename)
+  )
+}
+
+vector_screening_efsa_staged_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_efsa_outputs_dir, filename),
+    file.path(vector_screening_legacy_efsa_outputs_dir, filename)
+  )
+}
+
+vector_screening_staged_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_staged_outputs_dir, filename),
+    file.path(vector_screening_legacy_outputs_dir, filename)
+  )
+}
+
+vector_screening_evidence_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_evidence_dir, filename),
+    file.path(vector_screening_legacy_outputs_dir, filename)
+  )
+}
+
+vector_screening_qa_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_qa_dir, filename),
+    file.path(vector_screening_legacy_outputs_dir, filename)
+  )
+}
+
+vector_screening_taxonomy_manual_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_taxonomy_manual_dir, filename),
+    file.path(vector_screening_legacy_taxonomy_review_dir, filename)
+  )
+}
+
+vector_screening_taxonomy_review_path <- function(filename) {
+  prefer_existing_path(
+    file.path(vector_screening_taxonomy_review_dir, filename),
+    file.path(vector_screening_legacy_taxonomy_review_dir, filename)
+  )
+}
+
 who_raw_network_path <- function() {
   file.path(
     who_data_dir,

@@ -15,6 +15,8 @@
 library(pacman)
 p_load(dplyr, here, readr, readxl, stringr, writexl)
 
+source(here("scripts", "associations", "working_inputs.R"))
+
 # ------------------------------| Helper functions |----------------------------
 clean_text <- function(x) {
   x <- as.character(x)
@@ -44,25 +46,13 @@ to_vector_group <- function(x) {
 
 # ------------------------------| Define paths |--------------------------------
 root_dir <- here()
-vector_table_path <- file.path(root_dir, "vector_table.xlsx")
-efsa_links_path <- file.path(
-  root_dir,
-  "pathogen_association_data",
-  "WHO",
-  "vector_screening",
-  "efsa",
-  "outputs",
-  "pathogen_vector_links_efsa.csv"
+vector_table_path <- prefer_existing_path(
+  file.path(root_dir, "diseases", "vector_table.xlsx"),
+  file.path(root_dir, "vector_table.xlsx")
 )
+efsa_links_path <- vector_screening_efsa_staged_path("pathogen_vector_links_efsa.csv")
 
-output_dir <- file.path(
-  root_dir,
-  "pathogen_association_data",
-  "WHO",
-  "vector_screening",
-  "efsa",
-  "outputs"
-)
+output_dir <- vector_screening_efsa_outputs_dir
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 output_csv <- file.path(output_dir, "vector_table_with_efsa.csv")

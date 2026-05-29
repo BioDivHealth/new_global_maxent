@@ -1,0 +1,5 @@
+qa_priority,unmatched_reason,vector_competence_status,row_count
+medium,not_in_curated_disease_vector_table,unclear,3
+medium,genus_or_family_level,unclear,1
+low,not_in_curated_disease_vector_table,not_competent,16
+high,hybrid_or_cross,competent,1

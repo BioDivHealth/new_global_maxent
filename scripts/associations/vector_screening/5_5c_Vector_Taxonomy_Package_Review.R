@@ -13,6 +13,7 @@
 library(pacman)
 p_load(dplyr, here, purrr, readr, rgbif, stringr, taxize, tibble)
 
+source(here("scripts", "associations", "working_inputs.R"))
 source(here("scripts", "New_functions", "get_synonyms.R"))
 options(iucn_redlist_key = "tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
 
@@ -164,13 +165,16 @@ safe_retrieve_syns <- function(name, n_times = 3, Gbif = TRUE, Skip_ITIS = FALSE
   )
 }
 
-vector_dir <- here("pathogen_association_data", "WHO", "vector_screening")
-vector_output_dir <- file.path(vector_dir, "outputs")
-taxonomy_review_dir <- file.path(vector_dir, "taxonomy_review")
-
-input_path <- file.path(vector_output_dir, "disease_vector_links_taxonomy_cleaned.csv")
-full_output_path <- file.path(taxonomy_review_dir, "vector_taxonomy_official_name_checks.csv")
-review_output_path <- file.path(taxonomy_review_dir, "vector_taxonomy_package_suggestions.csv")
+input_path <- vector_screening_evidence_path("disease_vector_links_taxonomy_cleaned.csv")
+full_output_path <- file.path(
+  vector_screening_taxonomy_review_dir,
+  "vector_taxonomy_official_name_checks.csv"
+)
+review_output_path <- file.path(
+  vector_screening_taxonomy_review_dir,
+  "vector_taxonomy_package_suggestions.csv"
+)
+dir.create(vector_screening_taxonomy_review_dir, recursive = TRUE, showWarnings = FALSE)
 
 taxonomy_cleaned <- read_csv(
   input_path,
