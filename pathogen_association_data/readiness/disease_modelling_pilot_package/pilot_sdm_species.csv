@@ -1468,6 +1468,22 @@ master_8,Rift Valley fever,Rift Valley fever,ochlerotatus caballus,,vector,yes,F
 master_8,Rift Valley fever,Rift Valley fever,ochlerotatus juppi,,vector,yes,FALSE,
 master_8,Rift Valley fever,Rift Valley fever,psorophora ferox,,vector,yes,FALSE,
 master_8,Rift Valley fever,Rift Valley fever,rhipicephalus appendiculatus,,vector,yes,FALSE,
+master_9,Ebola virus disease,Ebola virus disease,Cavia porcellus,10141,host,optional,TRUE,Cavia porcellus
+master_9,Ebola virus disease,Ebola virus disease,Cephalophus callipygus,129223,host,optional,TRUE,Cephalophus callipygus
+master_9,Ebola virus disease,Ebola virus disease,Eidolon helvum,77214,host,optional,TRUE,Eidolon helvum
+master_9,Ebola virus disease,Ebola virus disease,Epomophorus pusillus,2853157,host,optional,TRUE,Epomophorus pusillus
+master_9,Ebola virus disease,Ebola virus disease,Epomops franqueti,77231,host,optional,TRUE,Epomops franqueti
+master_9,Ebola virus disease,Ebola virus disease,Gorilla beringei,499232,host,optional,TRUE,Gorilla beringei
+master_9,Ebola virus disease,Ebola virus disease,Gorilla gorilla,9593,host,optional,TRUE,Gorilla gorilla
+master_9,Ebola virus disease,Ebola virus disease,Homo sapiens,9606,host,optional,FALSE,
+master_9,Ebola virus disease,Ebola virus disease,Hypsignathus monstrosus,448084,host,optional,TRUE,Hypsignathus monstrosus
+master_9,Ebola virus disease,Ebola virus disease,Macaca fascicularis,9541,host,optional,TRUE,Macaca fascicularis
+master_9,Ebola virus disease,Ebola virus disease,Macaca mulatta,9544,host,optional,TRUE,Macaca mulatta
+master_9,Ebola virus disease,Ebola virus disease,Mus setulosus,10102,host,optional,TRUE,Mus setulosus
+master_9,Ebola virus disease,Ebola virus disease,Myonycteris torquata,77243,host,optional,FALSE,
+master_9,Ebola virus disease,Ebola virus disease,Pan troglodytes,9598,host,optional,TRUE,Pan troglodytes
+master_9,Ebola virus disease,Ebola virus disease,Rousettus aegyptiacus,9407,host,optional,TRUE,Rousettus aegyptiacus
+master_9,Ebola virus disease,Ebola virus disease,Sylvisorex ollula,128151,host,optional,FALSE,
 who_18,Influenza (H7N9 avian influenza),Influenza (H7N9 avian influenza),Accipiter cooperii,261198,host,yes,FALSE,
 who_18,Influenza (H7N9 avian influenza),Influenza (H7N9 avian influenza),Accipiter nisus,211598,host,yes,FALSE,
 who_18,Influenza (H7N9 avian influenza),Influenza (H7N9 avian influenza),Accipiter striatus,56330,host,yes,FALSE,
@@ -2209,20 +2225,4 @@ master_26,Borna disease (encephalitis),Borna disease (encephalitis),Vicugna paco
 master_26,Borna disease (encephalitis),Borna disease (encephalitis),Vulpes vulpes,9627,host,yes,TRUE,Vulpes vulpes
 master_26,Borna disease (encephalitis),Borna disease (encephalitis),crocidura suaveolens,52631,host,yes,FALSE,
 master_27,Lujo hemorrhagic fever,Lujo hemorrhagic fever,Homo sapiens,9606,host,uncertain,FALSE,
-master_9,Ebola virus disease,Ebola virus disease,Cavia porcellus,10141,host,optional,TRUE,Cavia porcellus
-master_9,Ebola virus disease,Ebola virus disease,Cephalophus callipygus,129223,host,optional,TRUE,Cephalophus callipygus
-master_9,Ebola virus disease,Ebola virus disease,Eidolon helvum,77214,host,optional,TRUE,Eidolon helvum
-master_9,Ebola virus disease,Ebola virus disease,Epomophorus pusillus,2853157,host,optional,TRUE,Epomophorus pusillus
-master_9,Ebola virus disease,Ebola virus disease,Epomops franqueti,77231,host,optional,TRUE,Epomops franqueti
-master_9,Ebola virus disease,Ebola virus disease,Gorilla beringei,499232,host,optional,TRUE,Gorilla beringei
-master_9,Ebola virus disease,Ebola virus disease,Gorilla gorilla,9593,host,optional,TRUE,Gorilla gorilla
-master_9,Ebola virus disease,Ebola virus disease,Homo sapiens,9606,host,optional,FALSE,
-master_9,Ebola virus disease,Ebola virus disease,Hypsignathus monstrosus,448084,host,optional,TRUE,Hypsignathus monstrosus
-master_9,Ebola virus disease,Ebola virus disease,Macaca fascicularis,9541,host,optional,TRUE,Macaca fascicularis
-master_9,Ebola virus disease,Ebola virus disease,Macaca mulatta,9544,host,optional,TRUE,Macaca mulatta
-master_9,Ebola virus disease,Ebola virus disease,Mus setulosus,10102,host,optional,TRUE,Mus setulosus
-master_9,Ebola virus disease,Ebola virus disease,Myonycteris torquata,77243,host,optional,FALSE,
-master_9,Ebola virus disease,Ebola virus disease,Pan troglodytes,9598,host,optional,TRUE,Pan troglodytes
-master_9,Ebola virus disease,Ebola virus disease,Rousettus aegyptiacus,9407,host,optional,TRUE,Rousettus aegyptiacus
-master_9,Ebola virus disease,Ebola virus disease,Sylvisorex ollula,128151,host,optional,FALSE,
 who_37,Sudan virus disease (Ebola virus disease),Sudan virus disease (Ebola virus disease),Homo sapiens,9606,host,optional,FALSE,

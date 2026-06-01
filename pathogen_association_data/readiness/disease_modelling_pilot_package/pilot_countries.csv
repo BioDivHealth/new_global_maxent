@@ -15,23 +15,23 @@ master_10,Marburg virus disease,genbank,Marburg virus disease,Tanzania,country,,
 master_10,Marburg virus disease,genbank,Marburg virus disease,Uganda,country,,98,,,,,,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,
 master_10,Marburg virus disease,genbank,Marburg virus disease,United States,country,,7,,,,,,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,
 master_10,Marburg virus disease,genbank,Marburg virus disease,Zambia,country,,4,,,,,,Orthomarburgvirus marburgense,Orthomarburgvirus_marburgense,
-master_10,Marburg virus disease,who_don,Marburg virus disease,Angola,reported_by_who_don,25,,25,18,15,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Democratic Republic of the Congo,reported_by_who_don,5,,5,1,4,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Equatorial Guinea,reported_by_who_don,15,,15,5,15,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Ethiopia,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Germany,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2005-04-15
-master_10,Marburg virus disease,who_don,Marburg virus disease,Ghana,reported_by_who_don,6,,6,2,6,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Guinea,reported_by_who_don,18,,18,2,18,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Kenya,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Netherlands,reported_by_who_don,4,,4,1,3,v2_native_country_seeded_disease,event_disease,,,2017-11-07
-master_10,Marburg virus disease,who_don,Marburg virus disease,Rwanda,reported_by_who_don,11,,11,7,11,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Senegal,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2023-06-09
-master_10,Marburg virus disease,who_don,Marburg virus disease,South Africa,reported_by_who_don,3,,3,0,3,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Sweden,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2005-04-15
-master_10,Marburg virus disease,who_don,Marburg virus disease,Tanzania,reported_by_who_don,14,,14,6,14,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,Uganda,reported_by_who_don,12,,12,10,8,v2_native_country_seeded_disease,event_disease,,,2026-01-26
-master_10,Marburg virus disease,who_don,Marburg virus disease,United Kingdom,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2005-04-15
-master_10,Marburg virus disease,who_don,Marburg virus disease,United States,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2017-11-07
+master_10,Marburg virus disease,who_don,Marburg virus disease,Angola,reported_by_who_don,15,,15,0,15,native_only_country_seeded_exact_disease,event_disease,,,2005-08-24
+master_10,Marburg virus disease,who_don,Marburg virus disease,Belgium,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2024-10-18
+master_10,Marburg virus disease,who_don,Marburg virus disease,Canada,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2005-07-29
+master_10,Marburg virus disease,who_don,Marburg virus disease,Democratic Republic of the Congo,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2000-03-21
+master_10,Marburg virus disease,who_don,Marburg virus disease,Equatorial Guinea,reported_by_who_don,9,,9,1,9,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2024-12-20
+master_10,Marburg virus disease,who_don,Marburg virus disease,Germany,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2024-10-18
+master_10,Marburg virus disease,who_don,Marburg virus disease,Ghana,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2022-09-26
+master_10,Marburg virus disease,who_don,Marburg virus disease,Guinea,reported_by_who_don,9,,9,0,9,native_only_country_seeded_exact_disease,event_disease,,,2024-12-20
+master_10,Marburg virus disease,who_don,Marburg virus disease,Netherlands,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2005-04-15
+master_10,Marburg virus disease,who_don,Marburg virus disease,Rwanda,reported_by_who_don,7,,7,0,7,native_only_country_seeded_exact_disease,event_disease,,,2024-12-20
+master_10,Marburg virus disease,who_don,Marburg virus disease,Senegal,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2023-06-09
+master_10,Marburg virus disease,who_don,Marburg virus disease,South Africa,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,1999-05-18
+master_10,Marburg virus disease,who_don,Marburg virus disease,South Sudan,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2024-09-30
+master_10,Marburg virus disease,who_don,Marburg virus disease,Sweden,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2005-04-15
+master_10,Marburg virus disease,who_don,Marburg virus disease,Tanzania,reported_by_who_don,8,,8,0,8,native_only_country_seeded_exact_disease,event_disease,,,2025-01-14
+master_10,Marburg virus disease,who_don,Marburg virus disease,Uganda,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2012-10-31
+master_10,Marburg virus disease,who_don,Marburg virus disease,United Kingdom,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2005-04-15
 master_11,Lassa fever,genbank,Lassa fever,Benin,country,,32,,,,,,Mammarenavirus lassaense,Mammarenavirus_lassaense,
 master_11,Lassa fever,genbank,Lassa fever,China,country,,1,,,,,,Mammarenavirus lassaense,Mammarenavirus_lassaense,
 master_11,Lassa fever,genbank,Lassa fever,Cote d'Ivoire,country,,58,,,,,,Mammarenavirus lassaense,Mammarenavirus_lassaense,
@@ -43,16 +43,17 @@ master_11,Lassa fever,genbank,Lassa fever,Nigeria,country,,1487,,,,,,Mammarenavi
 master_11,Lassa fever,genbank,Lassa fever,Sierra Leone,country,,415,,,,,,Mammarenavirus lassaense,Mammarenavirus_lassaense,
 master_11,Lassa fever,genbank,Lassa fever,Togo,country,,6,,,,,,Mammarenavirus lassaense,Mammarenavirus_lassaense,
 master_11,Lassa fever,genbank,Lassa fever,United States,country,,7,,,,,,Mammarenavirus lassaense,Mammarenavirus_lassaense,
-master_11,Lassa fever,who_don,Lassa fever,Benin,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2016-06-13
-master_11,Lassa fever,who_don,Lassa fever,Germany,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-03-23
-master_11,Lassa fever,who_don,Lassa fever,Ghana,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2022-03-24
-master_11,Lassa fever,who_don,Lassa fever,Guinea,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2022-05-13
-master_11,Lassa fever,who_don,Lassa fever,Liberia,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2018-02-22
-master_11,Lassa fever,who_don,Lassa fever,Nigeria,reported_by_who_don,12,,12,11,10,v2_native_country_seeded_disease,event_disease,,,2023-05-01
-master_11,Lassa fever,who_don,Lassa fever,Sierra Leone,reported_by_who_don,9,,9,1,9,v2_native_country_seeded_disease,event_disease,,,2019-11-28
-master_11,Lassa fever,who_don,Lassa fever,Togo,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2022-03-24
-master_11,Lassa fever,who_don,Lassa fever,United Kingdom,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2022-02-21
-master_11,Lassa fever,who_don,Lassa fever,United States,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2016-03-23
+master_11,Lassa fever,who_don,Lassa fever,Benin,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2017-06-28
+master_11,Lassa fever,who_don,Lassa fever,Germany,reported_by_who_don,2,,2,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2022-02-21
+master_11,Lassa fever,who_don,Lassa fever,Ghana,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,1997-10-31
+master_11,Lassa fever,who_don,Lassa fever,Liberia,reported_by_who_don,2,,2,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2018-02-22
+master_11,Lassa fever,who_don,Lassa fever,Mali,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2022-02-21
+master_11,Lassa fever,who_don,Lassa fever,Netherlands,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2000-07-26
+master_11,Lassa fever,who_don,Lassa fever,Nigeria,reported_by_who_don,7,,7,1,7,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2022-02-14
+master_11,Lassa fever,who_don,Lassa fever,Sierra Leone,reported_by_who_don,6,,6,0,6,native_only_country_seeded_exact_disease,event_disease,,,1997-05-22
+master_11,Lassa fever,who_don,Lassa fever,Togo,reported_by_who_don,2,,2,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2017-06-28
+master_11,Lassa fever,who_don,Lassa fever,United Kingdom,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2022-02-21
+master_11,Lassa fever,who_don,Lassa fever,United States,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-06-28
 master_12,Nipah virus disease,genbank,Nipah virus disease,Bangladesh,country,,135,,,,,,Henipavirus nipahense,Henipavirus_nipahense,
 master_12,Nipah virus disease,genbank,Nipah virus disease,Cambodia,country,,32,,,,,,Henipavirus nipahense,Henipavirus_nipahense,
 master_12,Nipah virus disease,genbank,Nipah virus disease,India,country,,70,,,,,,Henipavirus nipahense,Henipavirus_nipahense,
@@ -61,11 +62,10 @@ master_12,Nipah virus disease,genbank,Nipah virus disease,Malaysia,country,,17,,
 master_12,Nipah virus disease,genbank,Nipah virus disease,Sri Lanka,country,,7,,,,,,Henipavirus nipahense,Henipavirus_nipahense,
 master_12,Nipah virus disease,genbank,Nipah virus disease,Thailand,country,,103,,,,,,Henipavirus nipahense,Henipavirus_nipahense,
 master_12,Nipah virus disease,genbank,Nipah virus disease,United States,country,,1,,,,,,Henipavirus nipahense,Henipavirus_nipahense,
-master_12,Nipah virus disease,who_don,Nipah virus disease,Bangladesh,reported_by_who_don,4,,4,4,4,v2_native_country_seeded_disease,event_disease,,,2026-02-06
-master_12,Nipah virus disease,who_don,Nipah virus disease,Democratic Republic of the Congo,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_reviewed_disease,event_disease,,,2000-03-21
-master_12,Nipah virus disease,who_don,Nipah virus disease,India,reported_by_who_don,6,,6,6,5,v2_native_country_seeded_disease,event_disease,,,2026-01-30
-master_12,Nipah virus disease,who_don,Nipah virus disease,Malaysia,reported_by_who_don,3,,3,1,2,v2_native_country_seeded_disease,event_disease,,,2025-09-18
-master_12,Nipah virus disease,who_don,Nipah virus disease,Singapore,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2025-09-18
+master_12,Nipah virus disease,who_don,Nipah virus disease,Bangladesh,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2023-02-17
+master_12,Nipah virus disease,who_don,Nipah virus disease,India,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2023-02-17
+master_12,Nipah virus disease,who_don,Nipah virus disease,Malaysia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2023-02-17
+master_12,Nipah virus disease,who_don,Nipah virus disease,Singapore,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2023-02-17
 master_13,Hendra,genbank,Hendra,Australia,country,,212,,,,,,Henipavirus hendraense,Henipavirus_hendraense,
 master_13,Hendra,genbank,Hendra,United States,country,,1,,,,,,Henipavirus hendraense,Henipavirus_hendraense,
 master_16,Influenza (H5N1 avian influenza),genbank,Influenza (H5N1 avian influenza),Afghanistan,country,,45,,,,,,Alphainfluenzavirus influenzae (H5N1),Alphainfluenzavirus_influenzae_H5N1,
@@ -199,19 +199,17 @@ master_17,Plague,genbank,Plague,United States,country,,5112,,,,,,Yersinia pestis
 master_17,Plague,genbank,Plague,Uzbekistan,country,,909,,,,,,Yersinia pestis,Yersinia_pestis,
 master_17,Plague,genbank,Plague,Vietnam,country,,1768,,,,,,Yersinia pestis,Yersinia_pestis,
 master_17,Plague,genbank,Plague,Zimbabwe,country,,169,,,,,,Yersinia pestis,Yersinia_pestis,
-master_17,Plague,who_don,Plague,Algeria,reported_by_who_don,3,,3,3,0,v2_native_country_seeded_disease,event_disease,,,2003-07-10
-master_17,Plague,who_don,Plague,China,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2009-08-11
-master_17,Plague,who_don,Plague,Democratic Republic of the Congo,reported_by_who_don,8,,8,2,8,v2_native_country_seeded_disease,event_disease,,,2020-07-23
-master_17,Plague,who_don,Plague,India,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2002-02-20
-master_17,Plague,who_don,Plague,Madagascar,reported_by_who_don,10,,10,10,7,v2_native_country_seeded_disease,event_disease,,,2021-10-01
-master_17,Plague,who_don,Plague,Malawi,reported_by_who_don,3,,3,1,2,v2_native_country_seeded_disease,event_disease,,,2002-06-05
-master_17,Plague,who_don,Plague,Mozambique,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,1997-11-21
-master_17,Plague,who_don,Plague,Namibia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,1999-05-11
-master_17,Plague,who_don,Plague,Peru,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2010-08-10
-master_17,Plague,who_don,Plague,Seychelles,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2017-10-26
-master_17,Plague,who_don,Plague,Uganda,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,1998-11-06
-master_17,Plague,who_don,Plague,Zambia,reported_by_who_don,3,,3,0,3,v2_native_country_seeded_disease,event_disease,,,2001-03-26
-master_19,Hantavirus pulmonary syndrome,who_don,Hantavirus pulmonary syndrome,United States,reported_by_who_don,2,,2,2,0,v2_native_country_seeded_disease,event_disease,,,2012-09-12
+master_17,Plague,who_don,Plague,Algeria,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2003-07-10
+master_17,Plague,who_don,Plague,China,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2009-08-11
+master_17,Plague,who_don,Plague,Democratic Republic of the Congo,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2020-07-23
+master_17,Plague,who_don,Plague,France,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2017-11-27
+master_17,Plague,who_don,Plague,Madagascar,reported_by_who_don,5,,5,1,5,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2021-10-01
+master_17,Plague,who_don,Plague,Mozambique,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,1997-11-21
+master_17,Plague,who_don,Plague,Namibia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,1999-05-11
+master_17,Plague,who_don,Plague,Peru,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2010-08-10
+master_17,Plague,who_don,Plague,Uganda,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,1998-11-06
+master_17,Plague,who_don,Plague,Zambia,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2001-03-26
+master_19,Hantavirus pulmonary syndrome,who_don,Hantavirus pulmonary syndrome,Panama,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2000-03-02
 master_2,Dengue,genbank,Dengue,American Samoa,territory,,14,,,,,,Orthoflavivirus denguei,Orthoflavivirus_denguei,
 master_2,Dengue,genbank,Dengue,Angola,country,,47,,,,,,Orthoflavivirus denguei,Orthoflavivirus_denguei,
 master_2,Dengue,genbank,Dengue,Anguilla,territory,,1,,,,,,Orthoflavivirus denguei,Orthoflavivirus_denguei,
@@ -355,69 +353,34 @@ master_2,Dengue,genbank,Dengue,Vietnam,country,,4303,,,,,,Orthoflavivirus dengue
 master_2,Dengue,genbank,Dengue,Virgin Islands,country,,6,,,,,,Orthoflavivirus denguei,Orthoflavivirus_denguei,
 master_2,Dengue,genbank,Dengue,Wallis and Futuna,territory,,17,,,,,,Orthoflavivirus denguei,Orthoflavivirus_denguei,
 master_2,Dengue,genbank,Dengue,Yemen,country,,19,,,,,,Orthoflavivirus denguei,Orthoflavivirus_denguei,
-master_2,Dengue,who_don,Dengue,Afghanistan,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Argentina,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Australia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Bangladesh,reported_by_who_don,6,,6,3,6,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Belize,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2023-03-23
-master_2,Dengue,who_don,Dengue,Benin,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Bolivia,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2023-07-19
-master_2,Dengue,who_don,Dengue,Brazil,reported_by_who_don,5,,5,4,3,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Burkina Faso,reported_by_who_don,4,,4,3,4,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Cabo Verde,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Cambodia,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Chad,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Chile,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2020-02-22
-master_2,Dengue,who_don,Dengue,China,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Colombia,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Costa Rica,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2023-07-19
-master_2,Dengue,who_don,Dengue,Cote d'Ivoire,reported_by_who_don,3,,3,1,3,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Cuba,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,1997-06-18
-master_2,Dengue,who_don,Dengue,Ecuador,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2002-08-16
-master_2,Dengue,who_don,Dengue,Egypt,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,El Salvador,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2002-07-19
-master_2,Dengue,who_don,Dengue,Ethiopia,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Fiji,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,France,reported_by_who_don,3,,3,2,1,v2_native_country_disease_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2020-03-10
-master_2,Dengue,who_don,Dengue,French Polynesia,reported_by_who_don,1,,1,0,0,v2_native_reviewed_adoption+v2_native_new_country_reviewed_adoption,event_disease,,,2016-03-07
-master_2,Dengue,who_don,Dengue,Ghana,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Guatemala,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2023-07-19
-master_2,Dengue,who_don,Dengue,Guinea,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Honduras,reported_by_who_don,2,,2,2,1,v2_native_country_disease_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2002-07-19
-master_2,Dengue,who_don,Dengue,India,reported_by_who_don,7,,7,1,7,v2_native_country_seeded_disease,event_disease,,,2019-12-13
-master_2,Dengue,who_don,Dengue,Indonesia,reported_by_who_don,7,,7,5,3,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Iran,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2024-07-22
-master_2,Dengue,who_don,Dengue,Kenya,reported_by_who_don,1,,1,1,0,v2_native_country_disease_reviewed_adoption,event_disease,,,2018-02-27
-master_2,Dengue,who_don,Dengue,Kiribati,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,1998-06-08
-master_2,Dengue,who_don,Dengue,Laos,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Malaysia,reported_by_who_don,3,,3,2,3,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Maldives,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2006-03-17
-master_2,Dengue,who_don,Dengue,Mali,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Mauritius,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Mexico,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Nepal,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2022-10-10
-master_2,Dengue,who_don,Dengue,Nicaragua,reported_by_who_don,3,,3,3,1,v2_native_country_disease_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2023-07-19
-master_2,Dengue,who_don,Dengue,Niger,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Nigeria,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Oman,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Pakistan,reported_by_who_don,6,,6,5,6,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Panama,reported_by_who_don,1,,1,1,0,v2_native_country_disease_reviewed_adoption,event_disease,,,2015-12-22
-master_2,Dengue,who_don,Dengue,Paraguay,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Peru,reported_by_who_don,4,,4,3,3,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Philippines,reported_by_who_don,3,,3,1,3,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Portugal,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2012-10-17
-master_2,Dengue,who_don,Dengue,Réunion,reported_by_who_don,1,,1,1,1,clean_final_seed+v2_native_new_country_reviewed_adoption,event_disease,,,2018-05-01
-master_2,Dengue,who_don,Dengue,Samoa,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Saudi Arabia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Senegal,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Singapore,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2023-12-21
-master_2,Dengue,who_don,Dengue,Sri Lanka,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2017-07-19
-master_2,Dengue,who_don,Dengue,Sudan,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2023-10-16
-master_2,Dengue,who_don,Dengue,Timor-Leste,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2005-03-01
-master_2,Dengue,who_don,Dengue,Togo,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2024-05-30
-master_2,Dengue,who_don,Dengue,Uruguay,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2016-03-10
-master_2,Dengue,who_don,Dengue,Venezuela,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,1996-08-13
-master_2,Dengue,who_don,Dengue,Vietnam,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2023-12-21
+master_2,Dengue,who_don,Dengue,Bangladesh,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2022-11-28
+master_2,Dengue,who_don,Dengue,Belize,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1998-12-02
+master_2,Dengue,who_don,Dengue,Brazil,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2002-05-08
+master_2,Dengue,who_don,Dengue,Burkina Faso,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-11-06
+master_2,Dengue,who_don,Dengue,Cambodia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,1998-02-13
+master_2,Dengue,who_don,Dengue,Chile,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2020-02-22
+master_2,Dengue,who_don,Dengue,Comoros,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2020-04-23
+master_2,Dengue,who_don,Dengue,Cook Islands,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1997-02-28
+master_2,Dengue,who_don,Dengue,Cote d'Ivoire,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-08-04
+master_2,Dengue,who_don,Dengue,Ecuador,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2002-08-16
+master_2,Dengue,who_don,Dengue,Egypt,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-11-12
+master_2,Dengue,who_don,Dengue,El Salvador,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2002-07-19
+master_2,Dengue,who_don,Dengue,France,reported_by_who_don,2,,2,0,2,native_only_country_disease_reviewed_adoption; native_only_country_seeded_exact_disease,event_disease,,,2020-04-23
+master_2,Dengue,who_don,Dengue,French Polynesia,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,2016-03-07
+master_2,Dengue,who_don,Dengue,Guatemala,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1998-12-02
+master_2,Dengue,who_don,Dengue,Honduras,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1998-12-02
+master_2,Dengue,who_don,Dengue,India,reported_by_who_don,10,,10,0,10,native_only_country_seeded_exact_disease,event_disease,,,2019-12-13
+master_2,Dengue,who_don,Dengue,Indonesia,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2004-05-11
+master_2,Dengue,who_don,Dengue,Mayotte,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2020-04-23
+master_2,Dengue,who_don,Dengue,Mozambique,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2020-04-23
+master_2,Dengue,who_don,Dengue,Nicaragua,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1998-12-02
+master_2,Dengue,who_don,Dengue,Pakistan,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2022-11-28
+master_2,Dengue,who_don,Dengue,Papua New Guinea,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,2016-04-22
+master_2,Dengue,who_don,Dengue,Sri Lanka,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-07-19
+master_2,Dengue,who_don,Dengue,Sudan,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2019-11-22
+master_2,Dengue,who_don,Dengue,Timor-Leste,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2005-02-03
+master_2,Dengue,who_don,Dengue,Uruguay,reported_by_who_don,2,,2,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-03-10
+master_2,Dengue,who_don,Dengue,Venezuela,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,1996-08-13
 master_20,Argentine hemorrhagic fever,genbank,Argentine hemorrhagic fever,Argentina,country,,161,,,,,,Mammarenavirus juninense,Mammarenavirus_juninense,
 master_20,Argentine hemorrhagic fever,genbank,Argentine hemorrhagic fever,Australia,country,,6,,,,,,Mammarenavirus juninense,Mammarenavirus_juninense,
 master_20,Argentine hemorrhagic fever,genbank,Argentine hemorrhagic fever,United States,country,,11,,,,,,Mammarenavirus juninense,Mammarenavirus_juninense,
@@ -520,15 +483,10 @@ master_28,Hepatitis E,genbank,Hepatitis E,United States,country,,70,,,,,,Paslahe
 master_28,Hepatitis E,genbank,Hepatitis E,Uruguay,country,,3,,,,,,Paslahepevirus balayani,Paslahepevirus_balayani,
 master_28,Hepatitis E,genbank,Hepatitis E,Vietnam,country,,150,,,,,,Paslahepevirus balayani,Paslahepevirus_balayani,
 master_28,Hepatitis E,genbank,Hepatitis E,Zambia,country,,36,,,,,,Paslahepevirus balayani,Paslahepevirus_balayani,
-master_28,Hepatitis E,who_don,Hepatitis E,Burkina Faso,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2020-11-27
-master_28,Hepatitis E,who_don,Hepatitis E,Cameroon,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2017-07-12
-master_28,Hepatitis E,who_don,Hepatitis E,Chad,reported_by_who_don,4,,4,2,4,v2_native_country_seeded_disease,event_disease,,,2024-05-08
-master_28,Hepatitis E,who_don,Hepatitis E,Namibia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2018-01-15
-master_28,Hepatitis E,who_don,Hepatitis E,Niger,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2017-05-05
-master_28,Hepatitis E,who_don,Hepatitis E,Nigeria,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2017-07-12
-master_28,Hepatitis E,who_don,Hepatitis E,South Sudan,reported_by_who_don,3,,3,2,3,v2_native_country_seeded_disease,event_disease,,,2023-05-05
-master_28,Hepatitis E,who_don,Hepatitis E,Sudan,reported_by_who_don,4,,4,1,4,v2_native_country_seeded_disease,event_disease,,,2023-05-05
-master_28,Hepatitis E,who_don,Hepatitis E,Uganda,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2021-12-23
+master_28,Hepatitis E,who_don,Hepatitis E,Chad,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2004-08-31
+master_28,Hepatitis E,who_don,Hepatitis E,South Sudan,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
+master_28,Hepatitis E,who_don,Hepatitis E,Sudan,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
+master_28,Hepatitis E,who_don,Hepatitis E,Uganda,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
 master_3,Zika virus disease,genbank,Zika virus disease,Angola,country,,2,,,,,,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,
 master_3,Zika virus disease,genbank,Zika virus disease,Argentina,country,,3,,,,,,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,
 master_3,Zika virus disease,genbank,Zika virus disease,Australia,country,,1,,,,,,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,
@@ -607,39 +565,20 @@ master_3,Zika virus disease,genbank,Zika virus disease,United States,country,,11
 master_3,Zika virus disease,genbank,Zika virus disease,Venezuela,country,,4,,,,,,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,
 master_3,Zika virus disease,genbank,Zika virus disease,Vietnam,country,,32,,,,,,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,
 master_3,Zika virus disease,genbank,Zika virus disease,Virgin Islands,country,,5,,,,,,Orthoflavivirus zikaense,Orthoflavivirus_zikaense,
-master_3,Zika virus disease,who_don,Zika virus disease,Argentina,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-03-07
-master_3,Zika virus disease,who_don,Zika virus disease,Aruba,reported_by_who_don,1,,1,0,1,clean_final_seed+v2_native_new_country_reviewed_adoption,event_disease,,,2016-02-22
-master_3,Zika virus disease,who_don,Zika virus disease,Barbados,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-01-20
-master_3,Zika virus disease,who_don,Zika virus disease,Bolivia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-01-20
-master_3,Zika virus disease,who_don,Zika virus disease,Brazil,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2016-02-22
-master_3,Zika virus disease,who_don,Zika virus disease,Chile,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2016-04-15
-master_3,Zika virus disease,who_don,Zika virus disease,Colombia,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2016-02-22
-master_3,Zika virus disease,who_don,Zika virus disease,Cuba,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-03-29
-master_3,Zika virus disease,who_don,Zika virus disease,Dominica,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-03-29
-master_3,Zika virus disease,who_don,Zika virus disease,Dominican Republic,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-01-27
-master_3,Zika virus disease,who_don,Zika virus disease,Ecuador,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-01-20
-master_3,Zika virus disease,who_don,Zika virus disease,El Salvador,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2015-11-27
-master_3,Zika virus disease,who_don,Zika virus disease,France,reported_by_who_don,4,,4,4,4,v2_native_country_seeded_disease,event_disease,,,2019-11-01
-master_3,Zika virus disease,who_don,Zika virus disease,Guatemala,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2015-11-27
-master_3,Zika virus disease,who_don,Zika virus disease,Guyana,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-01-20
-master_3,Zika virus disease,who_don,Zika virus disease,Haiti,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-01-21
-master_3,Zika virus disease,who_don,Zika virus disease,Honduras,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2015-12-21
-master_3,Zika virus disease,who_don,Zika virus disease,India,reported_by_who_don,3,,3,3,3,v2_native_country_seeded_disease,event_disease,,,2025-01-29
-master_3,Zika virus disease,who_don,Zika virus disease,Jamaica,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-02-08
-master_3,Zika virus disease,who_don,Zika virus disease,Mexico,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2015-12-03
-master_3,Zika virus disease,who_don,Zika virus disease,Netherlands,reported_by_who_don,3,,3,3,2,v2_native_country_seeded_disease,event_disease,,,2016-03-04
-master_3,Zika virus disease,who_don,Zika virus disease,Nicaragua,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-02-08
-master_3,Zika virus disease,who_don,Zika virus disease,Panama,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2015-12-22
-master_3,Zika virus disease,who_don,Zika virus disease,Papua New Guinea,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-04-22
-master_3,Zika virus disease,who_don,Zika virus disease,Peru,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-04-21
-master_3,Zika virus disease,who_don,Zika virus disease,Saint Lucia,reported_by_who_don,1,,1,1,0,clean_final_seed+legacy_country_exception,event_disease,,,2016-04-20
-master_3,Zika virus disease,who_don,Zika virus disease,Saint Vincent and the Grenadines,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-03-01
-master_3,Zika virus disease,who_don,Zika virus disease,Sint Maarten,reported_by_who_don,1,,1,1,0,clean_final_seed+v2_native_new_country_reviewed_adoption,event_disease,,,2016-03-04
-master_3,Zika virus disease,who_don,Zika virus disease,Suriname,reported_by_who_don,2,,2,2,0,v2_native_country_seeded_disease,event_disease,,,2015-11-13
-master_3,Zika virus disease,who_don,Zika virus disease,Trinidad and Tobago,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-02-29
-master_3,Zika virus disease,who_don,Zika virus disease,United States,reported_by_who_don,4,,4,4,4,v2_native_country_seeded_disease,event_disease,,,2016-03-07
-master_3,Zika virus disease,who_don,Zika virus disease,Venezuela,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2016-02-22
-master_3,Zika virus disease,who_don,Zika virus disease,Vietnam,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-04-12
+master_3,Zika virus disease,who_don,Zika virus disease,Bolivia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-01-20
+master_3,Zika virus disease,who_don,Zika virus disease,Cuba,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-03-29
+master_3,Zika virus disease,who_don,Zika virus disease,Dominica,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-03-29
+master_3,Zika virus disease,who_don,Zika virus disease,Dominican Republic,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-01-27
+master_3,Zika virus disease,who_don,Zika virus disease,El Salvador,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2015-11-27
+master_3,Zika virus disease,who_don,Zika virus disease,France,reported_by_who_don,3,,3,2,3,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2019-11-01
+master_3,Zika virus disease,who_don,Zika virus disease,Guatemala,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-11-27
+master_3,Zika virus disease,who_don,Zika virus disease,Haiti,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-01-21
+master_3,Zika virus disease,who_don,Zika virus disease,Honduras,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-12-21
+master_3,Zika virus disease,who_don,Zika virus disease,Mexico,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2015-12-03
+master_3,Zika virus disease,who_don,Zika virus disease,Papua New Guinea,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-04-22
+master_3,Zika virus disease,who_don,Zika virus disease,Suriname,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2015-11-11
+master_3,Zika virus disease,who_don,Zika virus disease,Trinidad and Tobago,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-02-29
+master_3,Zika virus disease,who_don,Zika virus disease,Vietnam,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-04-12
 master_4,Chikungunya fever,genbank,Chikungunya fever,Angola,country,,3,,,,,,Alphavirus chikungunya,Alphavirus_chikungunya,
 master_4,Chikungunya fever,genbank,Chikungunya fever,Anguilla,territory,,2,,,,,,Alphavirus chikungunya,Alphavirus_chikungunya,
 master_4,Chikungunya fever,genbank,Chikungunya fever,Antigua and Barbuda,country,,1,,,,,,Alphavirus chikungunya,Alphavirus_chikungunya,
@@ -755,34 +694,12 @@ master_4,Chikungunya fever,genbank,Chikungunya fever,Venezuela,country,,13,,,,,,
 master_4,Chikungunya fever,genbank,Chikungunya fever,Vietnam,country,,14,,,,,,Alphavirus chikungunya,Alphavirus_chikungunya,
 master_4,Chikungunya fever,genbank,Chikungunya fever,Virgin Islands,country,,4,,,,,,Alphavirus chikungunya,Alphavirus_chikungunya,
 master_4,Chikungunya fever,genbank,Chikungunya fever,Yemen,country,,9,,,,,,Alphavirus chikungunya,Alphavirus_chikungunya,
-master_4,Chikungunya fever,who_don,Chikungunya,Argentina,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-03-14
-master_4,Chikungunya fever,who_don,Chikungunya,Bangladesh,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Belize,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2023-03-23
-master_4,Chikungunya fever,who_don,Chikungunya,Bolivia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Brazil,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Chad,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2020-09-24
-master_4,Chikungunya fever,who_don,Chikungunya,China,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Comoros,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,France,reported_by_who_don,5,,5,2,5,v2_native_country_seeded_disease,event_disease,,,2017-09-29
-master_4,Chikungunya fever,who_don,Chikungunya,India,reported_by_who_don,2,,2,0,2,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Indonesia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Italy,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2017-09-29
-master_4,Chikungunya fever,who_don,Chikungunya,Kenya,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Malaysia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Maldives,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2006-03-17
-master_4,Chikungunya fever,who_don,Chikungunya,Mauritius,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Mayotte,reported_by_who_don,1,,1,1,1,clean_final_seed+v2_native_new_country_reviewed_adoption,event_disease,,,2006-03-01
-master_4,Chikungunya fever,who_don,Chikungunya,Netherlands,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2013-12-10
-master_4,Chikungunya fever,who_don,Chikungunya,Pakistan,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Paraguay,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2023-03-23
-master_4,Chikungunya fever,who_don,Chikungunya,Philippines,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Senegal,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Seychelles,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2006-03-17
-master_4,Chikungunya fever,who_don,Chikungunya,Singapore,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Somalia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-10-03
-master_4,Chikungunya fever,who_don,Chikungunya,Spain,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2015-09-17
-master_4,Chikungunya fever,who_don,Chikungunya,Sudan,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2018-10-15
-master_4,Chikungunya fever,who_don,Chikungunya,United States,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-06-14
+master_4,Chikungunya fever,who_don,Chikungunya,Argentina,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-03-14
+master_4,Chikungunya fever,who_don,Chikungunya,France,reported_by_who_don,5,,5,1,5,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2017-09-29
+master_4,Chikungunya fever,who_don,Chikungunya,Italy,reported_by_who_don,2,,2,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2017-09-29
+master_4,Chikungunya fever,who_don,Chikungunya,Netherlands,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2013-12-10
+master_4,Chikungunya fever,who_don,Chikungunya,Senegal,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-09-14
+master_4,Chikungunya fever,who_don,Chikungunya,Spain,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-08-10
 master_5,Yellow fever,genbank,Yellow fever,Angola,country,,5,,,,,,Orthoflavivirus flavi,Orthoflavivirus_flavi,
 master_5,Yellow fever,genbank,Yellow fever,Argentina,country,,27,,,,,,Orthoflavivirus flavi,Orthoflavivirus_flavi,
 master_5,Yellow fever,genbank,Yellow fever,Australia,country,,2,,,,,,Orthoflavivirus flavi,Orthoflavivirus_flavi,
@@ -825,44 +742,40 @@ master_5,Yellow fever,genbank,Yellow fever,Uganda,country,,10,,,,,,Orthoflavivir
 master_5,Yellow fever,genbank,Yellow fever,United Kingdom,country,,1,,,,,,Orthoflavivirus flavi,Orthoflavivirus_flavi,
 master_5,Yellow fever,genbank,Yellow fever,United States,country,,5,,,,,,Orthoflavivirus flavi,Orthoflavivirus_flavi,
 master_5,Yellow fever,genbank,Yellow fever,Venezuela,country,,28,,,,,,Orthoflavivirus flavi,Orthoflavivirus_flavi,
-master_5,Yellow fever,who_don,Yellow fever,Angola,reported_by_who_don,8,,8,7,8,v2_native_country_seeded_disease,event_disease,,,2021-12-23
-master_5,Yellow fever,who_don,Yellow fever,Belgium,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2002-11-29
-master_5,Yellow fever,who_don,Yellow fever,Benin,reported_by_who_don,4,,4,0,4,v2_native_country_seeded_disease,event_disease,,,2021-12-23
-master_5,Yellow fever,who_don,Yellow fever,Bolivia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,1997-03-11
-master_5,Yellow fever,who_don,Yellow fever,Brazil,reported_by_who_don,19,,19,15,11,clean_final_seed+legacy_country_exception; v2_native_country_seeded_disease,event_disease,,,2018-03-09
-master_5,Yellow fever,who_don,Yellow fever,Burkina Faso,reported_by_who_don,6,,6,5,3,v2_native_country_seeded_disease,event_disease,,,2021-12-23
-master_5,Yellow fever,who_don,Yellow fever,Cameroon,reported_by_who_don,6,,6,5,2,v2_native_country_seeded_disease,event_disease,,,2016-05-02
-master_5,Yellow fever,who_don,Yellow fever,Central African Republic,reported_by_who_don,3,,3,3,0,v2_native_country_seeded_disease,event_disease,,,2009-12-01
-master_5,Yellow fever,who_don,Yellow fever,Chad,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2013-02-14
-master_5,Yellow fever,who_don,Yellow fever,China,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2016-03-29
-master_5,Yellow fever,who_don,Yellow fever,Colombia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-05-16
-master_5,Yellow fever,who_don,Yellow fever,Cote d'Ivoire,reported_by_who_don,8,,8,7,4,v2_native_country_seeded_disease,event_disease,,,2011-01-25
-master_5,Yellow fever,who_don,Yellow fever,Democratic Republic of the Congo,reported_by_who_don,4,,4,4,4,v2_native_country_seeded_disease,event_disease,,,2016-06-02
-master_5,Yellow fever,who_don,Yellow fever,Ecuador,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-05-16
-master_5,Yellow fever,who_don,Yellow fever,Ethiopia,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2020-04-22
-master_5,Yellow fever,who_don,Yellow fever,France,reported_by_who_don,3,,3,3,2,v2_native_country_seeded_disease,event_disease,,,2020-08-01
-master_5,Yellow fever,who_don,Yellow fever,French Guiana,reported_by_who_don,2,,2,2,1,clean_final_seed+v2_native_new_country_reviewed_adoption,event_disease,,,2020-08-01
-master_5,Yellow fever,who_don,Yellow fever,Gabon,reported_by_who_don,3,,3,1,3,v2_native_country_seeded_disease,event_disease,,,2023-01-03
-master_5,Yellow fever,who_don,Yellow fever,Ghana,reported_by_who_don,5,,5,2,4,v2_native_country_seeded_disease,event_disease,,,2021-12-01
-master_5,Yellow fever,who_don,Yellow fever,Guinea,reported_by_who_don,10,,10,8,6,v2_native_country_seeded_disease,event_disease,,,2020-12-23
-master_5,Yellow fever,who_don,Yellow fever,Guyana,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-05-16
-master_5,Yellow fever,who_don,Yellow fever,Kenya,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2022-09-02
-master_5,Yellow fever,who_don,Yellow fever,Liberia,reported_by_who_don,8,,8,6,4,v2_native_country_seeded_disease,event_disease,,,2009-05-06
-master_5,Yellow fever,who_don,Yellow fever,Mali,reported_by_who_don,6,,6,3,5,v2_native_country_seeded_disease,event_disease,,,2021-12-23
-master_5,Yellow fever,who_don,Yellow fever,Netherlands,reported_by_who_don,3,,3,3,2,v2_native_country_seeded_disease,event_disease,,,2018-02-27
-master_5,Yellow fever,who_don,Yellow fever,Niger,reported_by_who_don,3,,3,1,3,v2_native_country_seeded_disease,event_disease,,,2022-09-02
-master_5,Yellow fever,who_don,Yellow fever,Nigeria,reported_by_who_don,8,,8,7,5,v2_native_country_seeded_disease,event_disease,,,2021-10-01
-master_5,Yellow fever,who_don,Yellow fever,Norway,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2002-11-29
-master_5,Yellow fever,who_don,Yellow fever,Paraguay,reported_by_who_don,3,,3,1,2,v2_native_country_seeded_disease,event_disease,,,2008-03-07
-master_5,Yellow fever,who_don,Yellow fever,Peru,reported_by_who_don,3,,3,2,2,v2_native_country_seeded_disease,event_disease,,,2025-05-16
-master_5,Yellow fever,who_don,Yellow fever,Republic of the Congo,reported_by_who_don,3,,3,3,1,v2_native_country_seeded_disease,event_disease,,,2018-09-07
-master_5,Yellow fever,who_don,Yellow fever,Senegal,reported_by_who_don,11,,11,4,10,v2_native_country_seeded_disease,event_disease,,,2020-12-29
-master_5,Yellow fever,who_don,Yellow fever,Sierra Leone,reported_by_who_don,4,,4,3,1,v2_native_country_seeded_disease,event_disease,,,2011-03-11
-master_5,Yellow fever,who_don,Yellow fever,Sudan,reported_by_who_don,6,,6,6,1,v2_native_country_seeded_disease,event_disease,,,2013-12-03
-master_5,Yellow fever,who_don,Yellow fever,Togo,reported_by_who_don,5,,5,2,4,v2_native_country_seeded_disease,event_disease,,,2021-12-23
-master_5,Yellow fever,who_don,Yellow fever,Uganda,reported_by_who_don,5,,5,4,5,v2_native_country_seeded_disease,event_disease,,,2022-09-02
-master_5,Yellow fever,who_don,Yellow fever,United States,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,1999-11-23
-master_5,Yellow fever,who_don,Yellow fever,Venezuela,reported_by_who_don,3,,3,3,1,v2_native_country_seeded_disease,event_disease,,,2021-10-13
+master_5,Yellow fever,who_don,Yellow fever,Angola,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
+master_5,Yellow fever,who_don,Yellow fever,Belgium,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2002-11-29
+master_5,Yellow fever,who_don,Yellow fever,Benin,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
+master_5,Yellow fever,who_don,Yellow fever,Bolivia,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,1999-02-11
+master_5,Yellow fever,who_don,Yellow fever,Brazil,reported_by_who_don,13,,13,1,12,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2017-04-04
+master_5,Yellow fever,who_don,Yellow fever,Burkina Faso,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
+master_5,Yellow fever,who_don,Yellow fever,Cameroon,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Central African Republic,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Chad,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,China,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2016-03-29
+master_5,Yellow fever,who_don,Yellow fever,Cote d'Ivoire,reported_by_who_don,9,,9,1,8,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Democratic Republic of the Congo,reported_by_who_don,5,,5,0,5,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Ethiopia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2020-04-22
+master_5,Yellow fever,who_don,Yellow fever,France,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-08-30
+master_5,Yellow fever,who_don,Yellow fever,French Guiana,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-08-30
+master_5,Yellow fever,who_don,Yellow fever,Gabon,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Ghana,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Guinea,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2003-02-03
+master_5,Yellow fever,who_don,Yellow fever,Kenya,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Liberia,reported_by_who_don,5,,5,0,5,native_only_country_seeded_exact_disease,event_disease,,,2009-05-06
+master_5,Yellow fever,who_don,Yellow fever,Mali,reported_by_who_don,4,,4,1,4,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2021-12-23
+master_5,Yellow fever,who_don,Yellow fever,Netherlands,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2000-02-25
+master_5,Yellow fever,who_don,Yellow fever,Niger,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Nigeria,reported_by_who_don,8,,8,0,8,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Norway,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2002-11-29
+master_5,Yellow fever,who_don,Yellow fever,Peru,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2001-06-07
+master_5,Yellow fever,who_don,Yellow fever,Republic of the Congo,reported_by_who_don,4,,4,2,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Saudi Arabia,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,1998-01-09
+master_5,Yellow fever,who_don,Yellow fever,Senegal,reported_by_who_don,5,,5,0,5,native_only_country_seeded_exact_disease,event_disease,,,2009-05-06
+master_5,Yellow fever,who_don,Yellow fever,Sierra Leone,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,Togo,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2021-12-23
+master_5,Yellow fever,who_don,Yellow fever,Uganda,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2023-01-03
+master_5,Yellow fever,who_don,Yellow fever,United Arab Emirates,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-04-22
+master_5,Yellow fever,who_don,Yellow fever,Venezuela,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2004-09-14
 master_6,West Nile fever,genbank,West Nile fever,Albania,country,,1,,,,,,Orthoflavivirus nilense,Orthoflavivirus_nilense,
 master_6,West Nile fever,genbank,West Nile fever,Argentina,country,,8,,,,,,Orthoflavivirus nilense,Orthoflavivirus_nilense,
 master_6,West Nile fever,genbank,West Nile fever,Australia,country,,84,,,,,,Orthoflavivirus nilense,Orthoflavivirus_nilense,
@@ -936,12 +849,10 @@ master_6,West Nile fever,genbank,West Nile fever,United States,country,,5261,,,,
 master_6,West Nile fever,genbank,West Nile fever,Vietnam,country,,5,,,,,,Orthoflavivirus nilense,Orthoflavivirus_nilense,
 master_6,West Nile fever,genbank,West Nile fever,Zambia,country,,3,,,,,,Orthoflavivirus nilense,Orthoflavivirus_nilense,
 master_6,West Nile fever,genbank,West Nile fever,Zimbabwe,country,,1,,,,,,Orthoflavivirus nilense,Orthoflavivirus_nilense,
-master_6,West Nile fever,who_don,West Nile fever,Albania,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2011-08-16
-master_6,West Nile fever,who_don,West Nile fever,Barbados,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2024-10-03
-master_6,West Nile fever,who_don,West Nile fever,Brazil,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-12-15
-master_6,West Nile fever,who_don,West Nile fever,Canada,reported_by_who_don,9,,9,9,0,v2_native_country_seeded_disease,event_disease,,,2002-11-06
-master_6,West Nile fever,who_don,West Nile fever,Israel,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2000-09-22
-master_6,West Nile fever,who_don,West Nile fever,United States,reported_by_who_don,5,,5,0,5,v2_native_country_seeded_disease,event_disease,,,2002-11-14
+master_6,West Nile fever,who_don,West Nile fever,Canada,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2002-10-30
+master_6,West Nile fever,who_don,West Nile fever,Israel,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2000-09-22
+master_6,West Nile fever,who_don,West Nile fever,Portugal,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-09-17
+master_6,West Nile fever,who_don,West Nile fever,United States,reported_by_who_don,8,,8,0,8,native_only_country_seeded_exact_disease,event_disease,,,2002-11-14
 master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever,Afghanistan,country,,16,,,,,,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,
 master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever,Albania,country,,11,,,,,,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,
 master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever,Algeria,country,,3,,,,,,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,
@@ -995,11 +906,9 @@ master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever
 master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever,Uzbekistan,country,,7,,,,,,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,
 master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever,Yugoslavia,historical,,4,,,,,,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,
 master_7,Crimean-Congo hemorrhagic fever,genbank,Crimean-Congo hemorrhagic fever,Zambia,country,,13,,,,,,Orthonairovirus haemorrhagiae,Orthonairovirus_haemorrhagiae,
-master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Iraq,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2022-06-01
-master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Kosovo,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2001-06-15
-master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Mauritania,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2003-03-24
-master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Pakistan,reported_by_who_don,2,,2,1,2,v2_native_country_seeded_disease,event_disease,,,2010-10-25
-master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Turkey,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2006-08-08
+master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Kosovo,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2001-06-15
+master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,Russia,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1999-07-26
+master_7,Crimean-Congo hemorrhagic fever,who_don,Crimean-Congo hemorrhagic fever,South Africa,reported_by_who_don,1,,1,0,1,native_only_country_disease_reviewed_adoption,event_disease,,,1996-11-05
 master_8,Rift Valley fever,genbank,Rift Valley fever,Angola,country,,5,,,,,,Phlebovirus riftense,Phlebovirus_riftense,
 master_8,Rift Valley fever,genbank,Rift Valley fever,Botswana,country,,10,,,,,,Phlebovirus riftense,Phlebovirus_riftense,
 master_8,Rift Valley fever,genbank,Rift Valley fever,Brazil,country,,3,,,,,,Phlebovirus riftense,Phlebovirus_riftense,
@@ -1033,19 +942,50 @@ master_8,Rift Valley fever,genbank,Rift Valley fever,Uganda,country,,190,,,,,,Ph
 master_8,Rift Valley fever,genbank,Rift Valley fever,United States,country,,11,,,,,,Phlebovirus riftense,Phlebovirus_riftense,
 master_8,Rift Valley fever,genbank,Rift Valley fever,Zambia,country,,2,,,,,,Phlebovirus riftense,Phlebovirus_riftense,
 master_8,Rift Valley fever,genbank,Rift Valley fever,Zimbabwe,country,,51,,,,,,Phlebovirus riftense,Phlebovirus_riftense,
-master_8,Rift Valley fever,who_don,Rift Valley fever,Gambia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2018-02-26
-master_8,Rift Valley fever,who_don,Rift Valley fever,Guinea-Bissau,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2018-02-26
-master_8,Rift Valley fever,who_don,Rift Valley fever,Kenya,reported_by_who_don,9,,9,8,6,v2_native_country_seeded_disease,event_disease,,,2021-02-12
-master_8,Rift Valley fever,who_don,Rift Valley fever,Madagascar,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2008-04-18
-master_8,Rift Valley fever,who_don,Rift Valley fever,Mauritania,reported_by_who_don,5,,5,5,3,v2_native_country_seeded_disease,event_disease,,,2025-11-05
-master_8,Rift Valley fever,who_don,Rift Valley fever,Niger,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-11-24
-master_8,Rift Valley fever,who_don,Rift Valley fever,Saudi Arabia,reported_by_who_don,4,,4,4,1,v2_native_country_seeded_disease,event_disease,,,2000-10-25
-master_8,Rift Valley fever,who_don,Rift Valley fever,Senegal,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2025-11-05
-master_8,Rift Valley fever,who_don,Rift Valley fever,Somalia,reported_by_who_don,3,,3,3,2,v2_native_country_seeded_disease,event_disease,,,2007-05-09
-master_8,Rift Valley fever,who_don,Rift Valley fever,South Africa,reported_by_who_don,3,,3,2,1,v2_native_country_seeded_disease,event_disease,,,2010-05-12
-master_8,Rift Valley fever,who_don,Rift Valley fever,Sudan,reported_by_who_don,5,,5,3,3,v2_native_country_seeded_disease,event_disease,,,2019-11-14
-master_8,Rift Valley fever,who_don,Rift Valley fever,Tanzania,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2007-05-09
-master_8,Rift Valley fever,who_don,Rift Valley fever,Yemen,reported_by_who_don,3,,3,2,2,v2_native_country_seeded_disease,event_disease,,,2000-10-25
+master_8,Rift Valley fever,who_don,Rift Valley fever,Gambia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2018-02-26
+master_8,Rift Valley fever,who_don,Rift Valley fever,Guinea-Bissau,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2018-02-26
+master_8,Rift Valley fever,who_don,Rift Valley fever,Kenya,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2021-02-12
+master_8,Rift Valley fever,who_don,Rift Valley fever,Mauritania,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2012-11-01
+master_8,Rift Valley fever,who_don,Rift Valley fever,Saudi Arabia,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2000-10-25
+master_8,Rift Valley fever,who_don,Rift Valley fever,Senegal,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2018-02-26
+master_8,Rift Valley fever,who_don,Rift Valley fever,Somalia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2007-05-09
+master_8,Rift Valley fever,who_don,Rift Valley fever,Sudan,reported_by_who_don,2,,2,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2019-11-14
+master_8,Rift Valley fever,who_don,Rift Valley fever,Tanzania,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2007-05-09
+master_8,Rift Valley fever,who_don,Rift Valley fever,Yemen,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2000-10-25
+master_9,Ebola virus disease,genbank,Ebola virus disease,Canada,country,,1,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Democratic Republic of the Congo,country,,1129,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Gabon,country,,180,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Guinea,country,,449,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,India,country,,3,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Italy,country,,4,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Liberia,country,,257,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Mali,country,,4,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Nigeria,country,,13,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Republic of the Congo,country,,3,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Russia,country,,1,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Sierra Leone,country,,1521,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Switzerland,country,,1,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,Uganda,country,,4,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,United Kingdom,country,,6,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,genbank,Ebola virus disease,United States,country,,2,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
+master_9,Ebola virus disease,who_don,Ebola virus disease,Belgium,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2018-05-23
+master_9,Ebola virus disease,who_don,Ebola virus disease,Democratic Republic of the Congo,reported_by_who_don,46,,46,1,45,native_only_country_disease_reviewed_adoption; native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2022-09-29
+master_9,Ebola virus disease,who_don,Ebola virus disease,Gabon,reported_by_who_don,27,,27,0,27,native_only_country_seeded_exact_disease,event_disease,,,2002-05-09
+master_9,Ebola virus disease,who_don,Ebola virus disease,Gambia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-07-19
+master_9,Ebola virus disease,who_don,Ebola virus disease,Ghana,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-04-07
+master_9,Ebola virus disease,who_don,Ebola virus disease,Guinea,reported_by_who_don,35,,35,0,35,native_only_country_seeded_exact_disease,event_disease,,,2021-06-19
+master_9,Ebola virus disease,who_don,Ebola virus disease,Italy,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2015-05-13
+master_9,Ebola virus disease,who_don,Ebola virus disease,Liberia,reported_by_who_don,16,,16,0,16,native_only_country_seeded_exact_disease,event_disease,,,2014-08-28
+master_9,Ebola virus disease,who_don,Ebola virus disease,Mali,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2014-10-31
+master_9,Ebola virus disease,who_don,Ebola virus disease,Morocco,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-12-30
+master_9,Ebola virus disease,who_don,Ebola virus disease,Nigeria,reported_by_who_don,8,,8,0,8,native_only_country_seeded_exact_disease,event_disease,,,2014-08-28
+master_9,Ebola virus disease,who_don,Ebola virus disease,Republic of the Congo,reported_by_who_don,7,,7,0,7,native_only_country_seeded_exact_disease,event_disease,,,2004-01-06
+master_9,Ebola virus disease,who_don,Ebola virus disease,Sierra Leone,reported_by_who_don,18,,18,0,18,native_only_country_seeded_exact_disease,event_disease,,,2014-08-28
+master_9,Ebola virus disease,who_don,Ebola virus disease,South Africa,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,1996-12-06
+master_9,Ebola virus disease,who_don,Ebola virus disease,South Sudan,reported_by_who_don,3,,3,1,2,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2004-07-06
+master_9,Ebola virus disease,who_don,Ebola virus disease,Sudan,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2022-11-10
+master_9,Ebola virus disease,who_don,Ebola virus disease,Uganda,reported_by_who_don,35,,35,3,34,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2022-12-08
+master_9,Ebola virus disease,who_don,Ebola virus disease,United Kingdom,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-12-30
 who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza),Argentina,country,,8,,,,,,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,
 who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza),Australia,country,,42,,,,,,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,
 who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza),Bangladesh,country,,24,,,,,,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,
@@ -1066,9 +1006,9 @@ who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza)
 who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza),Sweden,country,,17,,,,,,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,
 who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza),Taiwan,country,,85,,,,,,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,
 who_18,Influenza (H7N9 avian influenza),genbank,Influenza (H7N9 avian influenza),United States,country,,520,,,,,,Alphainfluenzavirus influenzae (H7N9),Alphainfluenzavirus_influenzae_H7N9,
-who_18,Influenza (H7N9 avian influenza),who_don,Influenza A(H7N9),Canada,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2015-02-01
-who_18,Influenza (H7N9 avian influenza),who_don,Influenza A(H7N9),China,reported_by_who_don,131,,131,113,93,v2_native_country_seeded_disease,event_disease,,,2018-09-05
-who_18,Influenza (H7N9 avian influenza),who_don,Influenza A(H7N9),Malaysia,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-02-17
+who_18,Influenza (H7N9 avian influenza),who_don,Influenza A(H7N9),Canada,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-02-22
+who_18,Influenza (H7N9 avian influenza),who_don,Influenza A(H7N9),China,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2014-01-15
+who_18,Influenza (H7N9 avian influenza),who_don,Influenza A(H7N9),Malaysia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2017-02-22
 who_8,Hemorrhagic fever with renal syndrome (Hantaan virus),genbank,Hemorrhagic fever with renal syndrome (Hantaan virus),China,country,,1170,,,,,,Orthohantavirus hantanense,Orthohantavirus_hantanense,
 who_8,Hemorrhagic fever with renal syndrome (Hantaan virus),genbank,Hemorrhagic fever with renal syndrome (Hantaan virus),India,country,,1,,,,,,Orthohantavirus hantanense,Orthohantavirus_hantanense,
 who_8,Hemorrhagic fever with renal syndrome (Hantaan virus),genbank,Hemorrhagic fever with renal syndrome (Hantaan virus),Russia,country,,94,,,,,,Orthohantavirus hantanense,Orthohantavirus_hantanense,
@@ -1133,34 +1073,9 @@ master_15,Mpox (Monkeypox),genbank,Mpox (Monkeypox),Uganda,country,,1,,,,,,Ortho
 master_15,Mpox (Monkeypox),genbank,Mpox (Monkeypox),United Kingdom,country,,324,,,,,,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,
 master_15,Mpox (Monkeypox),genbank,Mpox (Monkeypox),United States,country,,5001,,,,,,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,
 master_15,Mpox (Monkeypox),genbank,Mpox (Monkeypox),Vietnam,country,,2,,,,,,Orthopoxvirus monkeypox,Orthopoxvirus_monkeypox,
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Australia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Belgium,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2023-11-23
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Benin,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2021-07-27
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Burundi,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2024-08-22
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Cameroon,reported_by_who_don,3,,3,2,3,v2_native_country_seeded_disease,event_disease,,,2024-06-14
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Canada,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Central African Republic,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2023-11-23
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Democratic Republic of the Congo,reported_by_who_don,4,,4,2,4,v2_native_country_seeded_disease,event_disease,,,2024-06-14
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Egypt,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Germany,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Ireland,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Italy,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Japan,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Lebanon,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Malaysia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Namibia,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Niger,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2017-12-21
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Nigeria,reported_by_who_don,3,,3,2,2,v2_native_country_seeded_disease,event_disease,,,2022-06-27
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Portugal,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Qatar,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Rwanda,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2024-08-22
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),South Africa,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2024-07-09
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),South Sudan,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2023-11-23
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Sudan,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2023-11-23
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Sweden,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2024-08-30
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Thailand,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),United Kingdom,reported_by_who_don,4,,4,4,3,v2_native_country_seeded_disease,event_disease,,,2025-12-05
-master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),United States,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2021-11-25
+master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Cameroon,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2018-06-05
+master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),Nigeria,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2018-10-05
+master_15,Mpox (Monkeypox),who_don,Mpox (Monkeypox),United Kingdom,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2021-06-11
 master_18,Oropouche fever,genbank,Oropouche fever,Bolivia,country,,102,,,,,,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,
 master_18,Oropouche fever,genbank,Oropouche fever,Brazil,country,,2721,,,,,,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,
 master_18,Oropouche fever,genbank,Oropouche fever,Colombia,country,,101,,,,,,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,
@@ -1176,15 +1091,11 @@ master_18,Oropouche fever,genbank,Oropouche fever,Spain,country,,9,,,,,,Orthobun
 master_18,Oropouche fever,genbank,Oropouche fever,Trinidad and Tobago,country,,6,,,,,,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,
 master_18,Oropouche fever,genbank,Oropouche fever,United States,country,,7,,,,,,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,
 master_18,Oropouche fever,genbank,Oropouche fever,Venezuela,country,,12,,,,,,Orthobunyavirus oropoucheense,Orthobunyavirus_oropoucheense,
-master_18,Oropouche fever,who_don,Oropouche fever,Bolivia,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Brazil,reported_by_who_don,3,,3,1,2,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Colombia,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Cuba,reported_by_who_don,3,,3,3,0,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Ecuador,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Guyana,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Panama,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Peru,reported_by_who_don,3,,3,2,2,v2_native_country_seeded_disease,event_disease,,,2024-12-05
-master_18,Oropouche fever,who_don,Oropouche fever,Trinidad and Tobago,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2016-06-03
+master_18,Oropouche fever,who_don,Oropouche fever,Brazil,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-06-03
+master_18,Oropouche fever,who_don,Oropouche fever,Ecuador,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-06-03
+master_18,Oropouche fever,who_don,Oropouche fever,Panama,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-06-03
+master_18,Oropouche fever,who_don,Oropouche fever,Peru,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-06-03
+master_18,Oropouche fever,who_don,Oropouche fever,Trinidad and Tobago,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2016-06-03
 master_24,Severe fever with thrombocytopenia syndrome (SFTS),genbank,Severe fever with thrombocytopenia syndrome (SFTS),China,country,,7402,,,,,,Bandavirus dabieense,Bandavirus_dabieense,
 master_24,Severe fever with thrombocytopenia syndrome (SFTS),genbank,Severe fever with thrombocytopenia syndrome (SFTS),Japan,country,,732,,,,,,Bandavirus dabieense,Bandavirus_dabieense,
 master_24,Severe fever with thrombocytopenia syndrome (SFTS),genbank,Severe fever with thrombocytopenia syndrome (SFTS),Pakistan,country,,4,,,,,,Bandavirus dabieense,Bandavirus_dabieense,
@@ -1220,46 +1131,31 @@ master_26,Borna disease (encephalitis),genbank,Borna disease (encephalitis),Japa
 master_26,Borna disease (encephalitis),genbank,Borna disease (encephalitis),Liechtenstein,country,,2,,,,,,Orthobornavirus bornaense,Orthobornavirus_bornaense,
 master_26,Borna disease (encephalitis),genbank,Borna disease (encephalitis),Sweden,country,,1,,,,,,Orthobornavirus bornaense,Orthobornavirus_bornaense,
 master_26,Borna disease (encephalitis),genbank,Borna disease (encephalitis),Switzerland,country,,25,,,,,,Orthobornavirus bornaense,Orthobornavirus_bornaense,
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Algeria,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-06-14
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),China,reported_by_who_don,13,,13,0,13,native_only_country_seeded_exact_disease,event_disease,,,2023-08-29
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Egypt,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-05-01
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Finland,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2015-07-08
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),France,reported_by_who_don,14,,14,0,14,native_only_country_seeded_exact_disease,event_disease,,,2013-06-26
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Germany,reported_by_who_don,8,,8,0,8,native_only_country_seeded_exact_disease,event_disease,,,2015-03-09
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Greece,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-04-20
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Italy,reported_by_who_don,7,,7,0,7,native_only_country_seeded_exact_disease,event_disease,,,2013-06-26
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Jordan,reported_by_who_don,14,,14,0,14,native_only_country_seeded_exact_disease,event_disease,,,2015-10-12
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Kuwait,reported_by_who_don,4,,4,0,4,native_only_country_seeded_exact_disease,event_disease,,,2016-08-26
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Malaysia,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-04-17
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Netherlands,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-05-16
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Oman,reported_by_who_don,12,,12,0,12,native_only_country_seeded_exact_disease,event_disease,,,2023-02-08
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Philippines,reported_by_who_don,3,,3,0,3,native_only_country_seeded_exact_disease,event_disease,,,2015-07-10
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Qatar,reported_by_who_don,15,,15,0,15,native_only_country_seeded_exact_disease,event_disease,,,2020-03-12
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Saudi Arabia,reported_by_who_don,105,,105,0,105,native_only_country_disease_reviewed_adoption; native_only_country_seeded_exact_disease,event_disease,,,2025-03-13
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),South Korea,reported_by_who_don,14,,14,1,13,native_only_country_seeded_exact_disease; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2015-10-25
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Thailand,reported_by_who_don,2,,2,0,2,native_only_country_seeded_exact_disease,event_disease,,,2016-01-29
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Tunisia,reported_by_who_don,12,,12,0,12,native_only_country_seeded_exact_disease,event_disease,,,2013-06-26
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),United Arab Emirates,reported_by_who_don,33,,33,0,33,native_only_country_seeded_exact_disease,event_disease,,,2023-07-24
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),United Kingdom,reported_by_who_don,17,,17,0,17,native_only_country_seeded_exact_disease,event_disease,,,2014-01-27
+master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Yemen,reported_by_who_don,1,,1,0,1,native_only_country_seeded_exact_disease,event_disease,,,2014-05-07
 master_27,Lujo hemorrhagic fever,genbank,Lujo hemorrhagic fever,Canada,country,,2,,,,,,Mammarenavirus lujoense,Mammarenavirus_lujoense,
 master_27,Lujo hemorrhagic fever,genbank,Lujo hemorrhagic fever,South Africa,country,,4,,,,,,Mammarenavirus lujoense,Mammarenavirus_lujoense,
 master_27,Lujo hemorrhagic fever,genbank,Lujo hemorrhagic fever,United States,country,,3,,,,,,Mammarenavirus lujoense,Mammarenavirus_lujoense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Canada,country,,1,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Democratic Republic of the Congo,country,,1129,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Gabon,country,,180,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Guinea,country,,449,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,India,country,,3,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Italy,country,,4,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Liberia,country,,257,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Mali,country,,4,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Nigeria,country,,13,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Republic of the Congo,country,,3,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Russia,country,,1,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Sierra Leone,country,,1521,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Switzerland,country,,1,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,Uganda,country,,4,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,United Kingdom,country,,6,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,genbank,Ebola virus disease,United States,country,,2,,,,,,Orthoebolavirus zairense,Orthoebolavirus_zairense,
-master_9,Ebola virus disease,who_don,Ebola virus disease,Democratic Republic of the Congo,reported_by_who_don,138,,138,137,110,v2_native_country_seeded_disease,event_disease,,,2025-12-01
-master_9,Ebola virus disease,who_don,Ebola virus disease,Gabon,reported_by_who_don,40,,40,19,29,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2002-12-31
-master_9,Ebola virus disease,who_don,Ebola virus disease,Gambia,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2014-07-19
-master_9,Ebola virus disease,who_don,Ebola virus disease,Ghana,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2014-07-08
-master_9,Ebola virus disease,who_don,Ebola virus disease,Guinea,reported_by_who_don,42,,42,38,26,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2021-06-19
-master_9,Ebola virus disease,who_don,Ebola virus disease,Italy,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2015-05-13
-master_9,Ebola virus disease,who_don,Ebola virus disease,Liberia,reported_by_who_don,23,,23,18,19,v2_native_country_seeded_disease,event_disease,,,2014-09-04
-master_9,Ebola virus disease,who_don,Ebola virus disease,Mali,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2014-10-31
-master_9,Ebola virus disease,who_don,Ebola virus disease,Nigeria,reported_by_who_don,12,,12,11,12,v2_native_country_seeded_disease,event_disease,,,2014-09-04
-master_9,Ebola virus disease,who_don,Ebola virus disease,Philippines,reported_by_who_don,3,,3,3,1,v2_native_country_seeded_disease; v2_native_country_seeded_reviewed_disease,event_disease,,,2012-09-18
-master_9,Ebola virus disease,who_don,Ebola virus disease,Republic of the Congo,reported_by_who_don,17,,17,14,12,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2022-04-28
-master_9,Ebola virus disease,who_don,Ebola virus disease,Senegal,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2014-09-04
-master_9,Ebola virus disease,who_don,Ebola virus disease,Sierra Leone,reported_by_who_don,22,,22,17,20,v2_native_country_seeded_disease,event_disease,,,2014-09-04
-master_9,Ebola virus disease,who_don,Ebola virus disease,South Africa,reported_by_who_don,5,,5,2,4,v2_native_country_seeded_disease,event_disease,,,2001-12-11
-master_9,Ebola virus disease,who_don,Ebola virus disease,South Sudan,reported_by_who_don,6,,6,6,2,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2004-06-17
-master_9,Ebola virus disease,who_don,Ebola virus disease,Spain,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-10-09
-master_9,Ebola virus disease,who_don,Ebola virus disease,Sudan,reported_by_who_don,11,,11,11,6,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2023-01-14
-master_9,Ebola virus disease,who_don,Ebola virus disease,Switzerland,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2019-04-18
-master_9,Ebola virus disease,who_don,Ebola virus disease,Tanzania,reported_by_who_don,1,,1,0,1,v2_native_country_seeded_disease,event_disease,,,2000-11-30
-master_9,Ebola virus disease,who_don,Ebola virus disease,Uganda,reported_by_who_don,43,,43,28,27,clean_final_seed+legacy_country_exception; v2_native_country_seeded_disease; v2_native_country_seeded_reviewed_disease,event_disease,,,2023-01-14
-master_9,Ebola virus disease,who_don,Ebola virus disease,United Kingdom,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2014-12-30
 who_30,Reovirus infection (usually mild),genbank,Reovirus infection (usually mild),Austria,country,,10,,,,,,Orthoreovirus mammalis,Orthoreovirus_mammalis,
 who_30,Reovirus infection (usually mild),genbank,Reovirus infection (usually mild),Brazil,country,,10,,,,,,Orthoreovirus mammalis,Orthoreovirus_mammalis,
 who_30,Reovirus infection (usually mild),genbank,Reovirus infection (usually mild),Cameroon,country,,25,,,,,,Orthoreovirus mammalis,Orthoreovirus_mammalis,
@@ -1289,33 +1185,5 @@ who_37,Sudan virus disease (Ebola virus disease),genbank,Sudan virus disease (Eb
 who_37,Sudan virus disease (Ebola virus disease),genbank,Sudan virus disease (Ebola virus disease),South Sudan,country,,1,,,,,,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,
 who_37,Sudan virus disease (Ebola virus disease),genbank,Sudan virus disease (Ebola virus disease),Sudan,country,,11,,,,,,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,
 who_37,Sudan virus disease (Ebola virus disease),genbank,Sudan virus disease (Ebola virus disease),Uganda,country,,137,,,,,,Orthoebolavirus sudanense,Orthoebolavirus_sudanense,
-who_37,Sudan virus disease (Ebola virus disease),who_don,Sudan virus disease (Ebola virus disease),Sudan,reported_by_who_don,8,,8,8,4,v2_native_country_disease_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2025-04-26
-who_37,Sudan virus disease (Ebola virus disease),who_don,Sudan virus disease (Ebola virus disease),Uganda,reported_by_who_don,10,,10,10,4,v2_native_country_disease_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2025-04-26
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Algeria,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-06-14
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Austria,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-10-02
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Bahrain,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2016-04-25
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),China,reported_by_who_don,3,,3,1,3,v2_native_country_seeded_disease,event_disease,,,2024-05-08
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Egypt,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-05-01
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),France,reported_by_who_don,14,,14,5,2,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2025-12-24
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Germany,reported_by_who_don,8,,8,5,3,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2015-03-09
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Greece,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2014-04-20
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Iran,reported_by_who_don,3,,3,3,1,v2_native_country_seeded_disease,event_disease,,,2015-05-08
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Italy,reported_by_who_don,8,,8,4,0,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2013-09-20
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Jordan,reported_by_who_don,23,,23,14,15,v2_native_country_seeded_disease,event_disease,,,2025-12-24
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Kuwait,reported_by_who_don,3,,3,3,1,v2_native_country_seeded_disease,event_disease,,,2015-09-23
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Lebanon,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2017-07-04
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Malaysia,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2018-01-08
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Netherlands,reported_by_who_don,2,,2,2,2,v2_native_country_seeded_disease,event_disease,,,2014-05-16
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Oman,reported_by_who_don,14,,14,14,4,v2_native_country_seeded_disease,event_disease,,,2023-02-08
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Philippines,reported_by_who_don,3,,3,3,2,v2_native_country_seeded_disease,event_disease,,,2015-07-10
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Qatar,reported_by_who_don,30,,30,21,19,v2_native_country_seeded_disease,event_disease,,,2022-05-12
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Saudi Arabia,reported_by_who_don,188,,188,181,37,v2_native_country_seeded_disease,event_disease,,,2025-12-24
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),South Korea,reported_by_who_don,26,,26,26,23,v2_native_country_seeded_disease,event_disease,,,2025-12-24
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Spain,reported_by_who_don,1,,1,1,0,v2_native_country_seeded_disease,event_disease,,,2013-11-07
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Thailand,reported_by_who_don,4,,4,4,4,v2_native_country_seeded_disease,event_disease,,,2016-08-26
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Tunisia,reported_by_who_don,14,,14,6,0,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2013-09-06
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Turkey,reported_by_who_don,1,,1,1,1,v2_native_country_seeded_disease,event_disease,,,2014-10-24
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),United Arab Emirates,reported_by_who_don,48,,48,39,25,v2_native_country_seeded_disease,event_disease,,,2023-07-24
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),United Kingdom,reported_by_who_don,17,,17,5,5,clean_final_seed+v2_native_new_country_reviewed_adoption; v2_native_country_seeded_disease,event_disease,,,2018-08-31
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),United States,reported_by_who_don,2,,2,2,1,v2_native_country_seeded_disease,event_disease,,,2014-05-22
-master_14,Middle East Respiratory Syndrome (MERS),who_don,Middle East Respiratory Syndrome (MERS),Yemen,reported_by_who_don,2,,2,1,1,v2_native_country_seeded_disease,event_disease,,,2014-05-07
+who_37,Sudan virus disease (Ebola virus disease),who_don,Sudan virus disease (Ebola virus disease),Sudan,reported_by_who_don,4,,4,0,4,native_only_country_disease_reviewed_adoption; native_only_country_seeded_exact_disease,event_disease,,,2025-03-08
+who_37,Sudan virus disease (Ebola virus disease),who_don,Sudan virus disease (Ebola virus disease),Uganda,reported_by_who_don,7,,7,3,5,native_only_country_disease_reviewed_adoption; native_only_country_seeded_exact_disease; v2_native_country_disease_reviewed_adoption+option_a_full_article_keep_current_exception; v2_native_country_seeded_disease+option_a_full_article_keep_current_exception,event_disease,,,2025-03-08

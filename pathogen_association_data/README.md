@@ -11,7 +11,7 @@ adding new hard-coded `pathogen_association_data/...` roots.
 
 The former `WHO/` compatibility root has been split into lifecycle folders.
 Active scripts should use `scripts/associations/working_inputs.R` helpers rather
-than reading from `pathogen_association_data/WHO/`.
+than reading from the former WHO compatibility root.
 
 ## Active Pipeline Folders
 

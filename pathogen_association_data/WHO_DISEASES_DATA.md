@@ -123,7 +123,7 @@ Active evidence surfaces live under
 
 ## Compatibility
 
-`pathogen_association_data/WHO/who_diseases/` is no longer the active location
-for these files. The shared helpers still carry legacy fallback support for
+The former WHO diseases compatibility root is no longer the active location for
+these files. The shared helpers still carry legacy fallback support for
 migration checks, but new scripts should use the helper functions and the split
 roots above.

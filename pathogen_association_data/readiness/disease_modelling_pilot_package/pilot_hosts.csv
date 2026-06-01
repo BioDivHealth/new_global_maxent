@@ -1085,6 +1085,22 @@ master_8,Rift Valley fever,Rift Valley fever,Ovis aries,9940,mammalia,artiodacty
 master_8,Rift Valley fever,Rift Valley fever,Philantomba monticola,907742,mammalia,artiodactyla,bovidae,PCR/Sequencing,Phlebovirus riftense,TRUE,TRUE,TRUE,FALSE
 master_8,Rift Valley fever,Rift Valley fever,Rattus rattus,10117,mammalia,rodentia,muridae,Isolation/Observation,Phlebovirus riftense,TRUE,TRUE,TRUE,FALSE
 master_8,Rift Valley fever,Rift Valley fever,Syncerus caffer,9970,mammalia,artiodactyla,bovidae,Isolation/Observation; PCR/Sequencing,Phlebovirus riftense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Cavia porcellus,10141,mammalia,rodentia,caviidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Cephalophus callipygus,129223,,,,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Eidolon helvum,77214,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Epomophorus pusillus,2853157,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Epomops franqueti,77231,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Gorilla beringei,499232,mammalia,primates,hominidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Gorilla gorilla,9593,mammalia,primates,hominidae,Isolation/Observation; PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Homo sapiens,9606,,,,Isolation/Observation; PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Hypsignathus monstrosus,448084,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Macaca fascicularis,9541,mammalia,primates,cercopithecidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Macaca mulatta,9544,mammalia,primates,cercopithecidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Mus setulosus,10102,mammalia,rodentia,muridae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Myonycteris torquata,77243,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Pan troglodytes,9598,mammalia,primates,hominidae,Isolation/Observation; PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Rousettus aegyptiacus,9407,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
+master_9,Ebola virus disease,Ebola virus disease,Sylvisorex ollula,128151,mammalia,eulipotyphla,soricidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
 who_18,Influenza (H7N9 avian influenza),Influenza (H7N9 avian influenza),Accipiter cooperii,261198,aves,accipitriformes,accipitridae,Isolation/Observation; PCR/Sequencing,,,,,FALSE
 who_18,Influenza (H7N9 avian influenza),Influenza (H7N9 avian influenza),Accipiter nisus,211598,aves,accipitriformes,accipitridae,PCR/Sequencing,,,,,FALSE
 who_18,Influenza (H7N9 avian influenza),Influenza (H7N9 avian influenza),Accipiter striatus,56330,aves,accipitriformes,accipitridae,PCR/Sequencing,,,,,FALSE
@@ -1761,20 +1777,4 @@ master_26,Borna disease (encephalitis),Borna disease (encephalitis),Vicugna paco
 master_26,Borna disease (encephalitis),Borna disease (encephalitis),Vulpes vulpes,9627,mammalia,carnivora,canidae,PCR/Sequencing,Orthobornavirus bornaense,FALSE,FALSE,FALSE,FALSE
 master_26,Borna disease (encephalitis),Borna disease (encephalitis),crocidura suaveolens,52631,,,,PCR/Sequencing,Orthobornavirus bornaense,FALSE,FALSE,FALSE,FALSE
 master_27,Lujo hemorrhagic fever,Lujo hemorrhagic fever,Homo sapiens,9606,,,,Isolation/Observation; PCR/Sequencing,Mammarenavirus lujoense,FALSE,FALSE,FALSE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Cavia porcellus,10141,mammalia,rodentia,caviidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Cephalophus callipygus,129223,,,,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Eidolon helvum,77214,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Epomophorus pusillus,2853157,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Epomops franqueti,77231,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Gorilla beringei,499232,mammalia,primates,hominidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Gorilla gorilla,9593,mammalia,primates,hominidae,Isolation/Observation; PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Homo sapiens,9606,,,,Isolation/Observation; PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Hypsignathus monstrosus,448084,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Macaca fascicularis,9541,mammalia,primates,cercopithecidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Macaca mulatta,9544,mammalia,primates,cercopithecidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Mus setulosus,10102,mammalia,rodentia,muridae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Myonycteris torquata,77243,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Pan troglodytes,9598,mammalia,primates,hominidae,Isolation/Observation; PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Rousettus aegyptiacus,9407,mammalia,chiroptera,pteropodidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
-master_9,Ebola virus disease,Ebola virus disease,Sylvisorex ollula,128151,mammalia,eulipotyphla,soricidae,PCR/Sequencing,Orthoebolavirus zairense,TRUE,TRUE,TRUE,FALSE
 who_37,Sudan virus disease (Ebola virus disease),Sudan virus disease (Ebola virus disease),Homo sapiens,9606,,,,Isolation/Observation; PCR/Sequencing,Orthoebolavirus sudanense,TRUE,TRUE,FALSE,FALSE
