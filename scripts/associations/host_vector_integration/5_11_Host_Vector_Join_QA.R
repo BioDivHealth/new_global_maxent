@@ -30,6 +30,7 @@ p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
 source(here("scripts", "associations", "association_text_helpers.R"))
+source(here("scripts", "associations", "host_vector_integration", "host_vector_join_helpers.R"))
 
 host_vector_dir <- vector_host_outputs_dir
 
@@ -50,31 +51,20 @@ unmatched_pathogen_path <- who_network_qa_path("host_vector_join_unmatched_patho
 taxonomy_caution_path <- who_network_qa_path("host_vector_join_taxonomy_caution_rows.csv")
 disease_coverage_path <- who_network_qa_path("host_vector_join_disease_coverage.csv")
 
-who_network <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
-disease_vectors <- read_csv(disease_vector_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
-pathogen_vectors <- read_csv(pathogen_vector_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
-host_vector_join <- read_csv(host_vector_join_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
-host_vector_blocked <- read_csv(host_vector_blocked_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
-disease_output <- read_csv(disease_output_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
-pathogen_output <- read_csv(
+who_network <- read_clean_csv(who_path)
+disease_vectors <- read_clean_csv(disease_vector_path)
+pathogen_vectors <- read_clean_csv(pathogen_vector_path)
+host_vector_join <- read_clean_csv(host_vector_join_path)
+host_vector_blocked <- read_clean_csv(host_vector_blocked_path)
+disease_output <- read_clean_csv(disease_output_path)
+pathogen_output <- read_clean_csv(
   pathogen_output_path,
-  show_col_types = FALSE,
-  na = c("", "NA"),
   col_types = cols(
     review_reason_examples = col_character()
   )
-) %>%
-  mutate(across(where(is.character), clean_text))
+)
 
-host_vector_keys <- host_vector_join %>%
-  filter(!is.na(vector_join_key)) %>%
-  distinct(vector_join_key)
+host_vector_keys <- prepare_host_vector_keys(host_vector_join)
 
 missing_host_tax_id <- host_vector_blocked %>%
   filter(stringr::str_detect(coalesce(block_reason, ""), "missing_host_tax_id"))

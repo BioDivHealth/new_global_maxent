@@ -21,6 +21,7 @@ p_load(dplyr, here, readr, stringr)
 
 source(here("scripts", "associations", "working_inputs.R"))
 source(here("scripts", "associations", "association_text_helpers.R"))
+source(here("scripts", "associations", "host_vector_integration", "host_vector_join_helpers.R"))
 
 host_vector_dir <- vector_host_outputs_dir
 
@@ -32,98 +33,18 @@ host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv
 expanded_path <- who_network_host_vector_path("disease_host_vector_links_expanded.csv")
 summary_path <- who_network_host_vector_path("disease_host_vector_links_expanded_summary.csv")
 
-who_network <- read_csv(
-  who_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-) %>%
-  mutate(across(where(is.character), clean_text))
-
-disease_vectors <- read_csv(
-  disease_vector_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-) %>%
-  mutate(across(where(is.character), clean_text))
-
-host_vectors <- read_csv(
-  host_vector_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-) %>%
-  mutate(across(where(is.character), clean_text)) %>%
-  mutate(
-    host_tax_id = clean_text(host_tax_id),
-    vector_join_key = normalize_vector_key(vector_join_key)
-  )
+who_network <- read_clean_csv(who_path)
+disease_vectors <- read_clean_csv(disease_vector_path)
+host_vectors <- read_clean_csv(host_vector_path)
 
 screened_diseases <- disease_vectors %>%
   filter(!is.na(disease_name)) %>%
   distinct(disease_name) %>%
   pull(disease_name)
 
-disease_host_network <- who_network %>%
-  filter(
-    !is.na(Disease_name),
-    Disease_name %in% screened_diseases,
-    !is.na(HostTaxID),
-    !is.na(Host)
-  ) %>%
-  mutate(
-    disease_name_join = normalize_name_for_match(Disease_name),
-    host_tax_id = clean_text(HostTaxID)
-  ) %>%
-  group_by(disease_name_join, Disease_name, host_tax_id) %>%
-  summarise(
-    host = first_non_missing(Host),
-    host_class = first_non_missing(HostClass),
-    host_order = first_non_missing(HostOrder),
-    host_family = first_non_missing(HostFamily),
-    pathogen_count_in_disease_host_network = n_distinct(PathogenTaxID),
-    pathogen_examples = collapse_unique(Pathogen),
-    detection_method_examples = collapse_unique(DetectionMethod),
-    main_source_examples = collapse_unique(MainSource),
-    .groups = "drop"
-  )
-
-disease_vector_joinable <- disease_vectors %>%
-  filter(!is.na(disease_name), !is.na(vector_species_taxonomy_cleaned)) %>%
-  mutate(
-    disease_name_join = normalize_name_for_match(disease_name),
-    vector_join_key = normalize_vector_key(vector_species_taxonomy_cleaned)
-  ) %>%
-  group_by(disease_name_join, vector_join_key) %>%
-  summarise(
-    disease_name_clean = first_non_missing(disease_name_clean),
-    vector_species = first_non_missing(vector_species_taxonomy_cleaned),
-    vector_group = collapse_unique(vector_group),
-    best_evidence_level = first_non_missing(best_evidence_level),
-    best_evidence_basis = first_non_missing(best_evidence_basis),
-    record_sources = collapse_unique(record_sources),
-    supporting_row_count = sum(suppressWarnings(as.integer(supporting_row_count)), na.rm = TRUE),
-    disease_vector_taxon_rank = first_non_missing(vector_taxon_rank),
-    disease_vector_review_needed = any(review_needed %in% TRUE, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-host_vector_joinable <- host_vectors %>%
-  filter(!is.na(host_tax_id), !is.na(vector_join_key)) %>%
-  rename(
-    hv_host = host,
-    hv_host_class = host_class,
-    hv_host_order = host_order,
-    hv_host_family = host_family,
-    hv_vector_species = vector_species,
-    hv_vector_taxon_rank = vector_taxon_rank,
-    hv_vector_species_needs_review = vector_species_needs_review,
-    hv_vector_name_taxonomy_examples = vector_name_taxonomy_examples,
-    hv_source_platform_examples = source_platform_examples,
-    hv_source_dataset_examples = source_dataset_examples,
-    hv_interaction_type_examples = interaction_type_examples,
-    hv_country_examples = country_examples,
-    hv_review_reason_examples = review_reason_examples,
-    hv_record_count = record_count
-  )
+disease_host_network <- prepare_disease_host_network(who_network, screened_diseases)
+disease_vector_joinable <- prepare_disease_vector_joinable(disease_vectors)
+host_vector_joinable <- prepare_host_vector_joinable(host_vectors)
 
 disease_host_vector_links_expanded <- disease_host_network %>%
   inner_join(
