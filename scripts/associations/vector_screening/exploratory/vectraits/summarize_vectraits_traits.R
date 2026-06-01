@@ -1,9 +1,10 @@
 # ------------------------------------------------------------------------------
-# 5_7b_VecTraits_Trait_Summary.R
+# summarize_vectraits_traits.R
 # ------------------------------------------------------------------------------
-# Purpose: Inspect VecTraits datasets for a small set of species and trait
-#          keywords, then summarise the trait names, standardized names, and
-#          fields relevant to vector competence, blood feeding, and transmission.
+# Purpose: Optional exploratory inspection of VecTraits datasets for a small set
+#          of species and trait keywords, then summarise the trait names,
+#          standardized names, and fields relevant to vector competence, blood
+#          feeding, and transmission.
 #
 # Inputs : VecTraits API search queries
 # Outputs: pathogen_association_data/staged/vector_screening/vectraits/vectraits_traits/

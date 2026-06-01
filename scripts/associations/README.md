@@ -90,7 +90,7 @@ The intended workflow is:
     -   `vector_screening/5_1_Pathogen_Vector_Links_Scaffold.R` to `vector_screening/5_6_Backfill_Pathogen_Vector_Links.R`: Build, standardize, and backfill the WHO disease-pathogen-vector tables.
     -   `vector_screening/5_5b_Vector_Name_Cleanup.R` and `vector_screening/5_5c_Vector_Taxonomy_Package_Review.R`: Add conservative vector-name normalization and taxonomy-review outputs.
     -   Use `scripts/associations/working_inputs.R` helpers for all Vector Screening paths. Raw EFSA inputs live under `pathogen_association_data/source_data/vector_screening/`, manual control files under `pathogen_association_data/manual/vector_screening/`, intermediate outputs under `pathogen_association_data/staged/vector_screening/`, and active vector evidence plus QA under `pathogen_association_data/evidence/vector_screening/`.
-    -   VecTraits API outputs are exploratory/local and remain ignored under `pathogen_association_data/staged/vector_screening/vectraits/`.
+    -   Optional VecTraits API probes live under `vector_screening/exploratory/vectraits/`; their outputs are exploratory/local and remain ignored under `pathogen_association_data/staged/vector_screening/vectraits/`.
 
 6.  **Host-Vector Integration (`host_vector_integration/5_8_*` to `host_vector_integration/5_11_*`):**
     -   These scripts connect the WHO disease/pathogen network to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/evidence/who_networks/`. Current host-vector outputs are WHO-only and live under `pathogen_association_data/evidence/who_networks/host_vector/who_only/`.

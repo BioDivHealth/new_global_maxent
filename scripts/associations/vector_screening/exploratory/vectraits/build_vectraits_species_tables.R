@@ -1,9 +1,9 @@
 # ------------------------------------------------------------------------------
-# 5_7c_VecTraits_Species_Tables.R
+# build_vectraits_species_tables.R
 # ------------------------------------------------------------------------------
-# Purpose: Pull VecTraits datasets for a few target vector species and combine
-#          all row-level trait evidence into one table per species while
-#          preserving dataset provenance.
+# Purpose: Optional exploratory pull of VecTraits datasets for a few target
+#          vector species, combining row-level trait evidence into one table per
+#          species while preserving dataset provenance.
 #
 # Inputs : VecTraits API searches for the configured species names
 # Outputs: pathogen_association_data/staged/vector_screening/vectraits/

@@ -72,8 +72,9 @@ than reading from the former WHO compatibility root.
   workbooks live under `source_data/vector_screening/efsa/raw/`, manual
   screening/crosswalk/taxonomy decisions under `manual/vector_screening/`, and
   generated source-specific/intermediate outputs under
-  `staged/vector_screening/`. VecTraits API probe outputs remain ignored under
-  `staged/vector_screening/vectraits/` until promoted.
+  `staged/vector_screening/`. Optional VecTraits API probe scripts live under
+  `scripts/associations/vector_screening/exploratory/vectraits/`; their outputs
+  remain ignored under `staged/vector_screening/vectraits/` until promoted.
 - `manual/who_don_v2/` and `staged/who_don_v2/`: Split WHO Disease Outbreak
   News v2 review inputs and generated staging layers. Durable review decisions
   live under `manual/who_don_v2/review/`; generated records, reference seeds,

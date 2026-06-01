@@ -1,9 +1,9 @@
 # ------------------------------------------------------------------------------
-# 5_7_VecTraits_Access_Probe.R
+# probe_vectraits_access.R
 # ------------------------------------------------------------------------------
-# Purpose: Probe the VectorByte VecTraits API with a small set of vector- and
-#          trait-oriented searches, then write a compact manifest and schema
-#          summary for the datasets that come back.
+# Purpose: Optional exploratory probe of the VectorByte VecTraits API with a
+#          small set of vector- and trait-oriented searches, then write a
+#          compact manifest and schema summary for the datasets that come back.
 #
 # Inputs : VecTraits API search queries
 # Outputs: pathogen_association_data/staged/vector_screening/vectraits/vectraits_probe/
