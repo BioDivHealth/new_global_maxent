@@ -4,16 +4,20 @@
 # Purpose: Build compact additive tables that let disease-master analysis units
 #          be used alongside the existing WHO analysis-unit tables.
 #
-# Inputs : pathogen_association_data/WHO/who_diseases/
-#            master_disease_analysis_units.csv
-#            master_disease_name_resolution_manual.csv
-#            master_pathogen_virion_clover_matches.csv
-#            master_plus_who_transmission_rules_manual.csv (optional)
-#            who_pathogen_analysis_units.csv
+# Inputs : who_master_disease_analysis_units_path()
+#          who_diseases_name_resolution_path(
+#            "master_disease_name_resolution_manual.csv"
+#          )
+#          who_diseases_staged_master_expansion_path(
+#            "master_pathogen_virion_clover_matches.csv"
+#          )
+#          who_diseases_transmission_rules_path(
+#            "master_plus_who_transmission_rules_manual.csv"
+#          ) (optional)
+#          who_pathogen_analysis_units_path()
 #
-# Outputs: pathogen_association_data/WHO/who_diseases/
-#            master_plus_who_analysis_units.csv
-#            master_pathogen_host_query_units.csv
+# Outputs: who_master_plus_analysis_units_path()
+#          who_diseases_host_query_path("master_pathogen_host_query_units.csv")
 # ------------------------------------------------------------------------------
 
 library(tidyverse)

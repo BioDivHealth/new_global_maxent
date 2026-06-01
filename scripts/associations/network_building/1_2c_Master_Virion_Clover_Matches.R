@@ -4,13 +4,17 @@
 # Purpose: Match active, concrete disease-master analysis units to local VIRION
 #          and CLOVER pathogen taxonomies.
 #
-# Inputs : pathogen_association_data/WHO/who_diseases/
-#            master_disease_name_resolution_manual.csv
+# Inputs : who_diseases_name_resolution_path(
+#            "master_disease_name_resolution_manual.csv"
+#          )
 #          local VIRION and CLOVER source tables
 #
-# Outputs: pathogen_association_data/WHO/who_diseases/
-#            master_pathogen_virion_clover_candidates.csv
-#            master_pathogen_virion_clover_matches.csv
+# Outputs: who_diseases_staged_master_expansion_path(
+#            "master_pathogen_virion_clover_candidates.csv"
+#          )
+#          who_diseases_staged_master_expansion_path(
+#            "master_pathogen_virion_clover_matches.csv"
+#          )
 # ------------------------------------------------------------------------------
 
 # ------------------------------| Load libraries |------------------------------

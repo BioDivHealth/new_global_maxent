@@ -5,13 +5,13 @@
 #          using source-prioritized VIRION/CLOVER mappings from
 #          master_pathogen_host_query_units.csv.
 #
-# Inputs : pathogen_association_data/WHO/who_diseases/
-#            master_pathogen_host_query_units.csv
+# Inputs : who_diseases_host_query_path(
+#            "master_pathogen_host_query_units.csv"
+#          )
 #          local VIRION and CLOVER source tables
 #
-# Outputs: pathogen_association_data/WHO/who_diseases/
-#            master_pathogen_host_species.csv
-#            master_pathogen_host_species_summary.csv
+# Outputs: who_master_pathogen_host_species_path()
+#          who_master_pathogen_host_species_summary_path()
 # ------------------------------------------------------------------------------
 
 library(tidyverse)

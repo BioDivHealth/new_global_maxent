@@ -6,9 +6,10 @@
 #          pathogen-level host-vector-pathogen outputs.
 #
 # Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
-#          pathogen_association_data/WHO/vector_screening/
-#          disease_vector_links_taxonomy_cleaned.csv
-#          pathogen_vector_links_filled.csv
+#          vector_screening_evidence_path(
+#            "disease_vector_links_taxonomy_cleaned.csv"
+#          )
+#          vector_screening_evidence_path("pathogen_vector_links_filled.csv")
 #          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
 #          vector_host_links_join_blocked.csv

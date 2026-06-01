@@ -5,10 +5,8 @@
 #          flags to the disease master host-species table without dropping
 #          evidence rows.
 #
-# Input : pathogen_association_data/WHO/who_diseases/
-#           master_pathogen_host_species.csv
-# Output: pathogen_association_data/WHO/who_diseases/
-#           master_pathogen_host_species_clean.csv
+# Input : who_master_pathogen_host_species_path()
+# Output: who_master_pathogen_host_species_clean_path()
 # ------------------------------------------------------------------------------
 
 library(tidyverse)

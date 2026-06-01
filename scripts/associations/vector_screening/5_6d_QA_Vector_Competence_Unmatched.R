@@ -5,12 +5,13 @@
 #          rows so we can separate fixable join mismatches from rows that are
 #          genuinely outside the curated disease-vector inclusion gate.
 #
-# Inputs : pathogen_association_data/WHO/vector_screening/outputs/
-#            vector_competence_join_unmatched.csv
-# Outputs: pathogen_association_data/WHO/vector_screening/outputs/
-#            vector_competence_join_unmatched_review.csv
-#          pathogen_association_data/WHO/vector_screening/outputs/
-#            vector_competence_join_unmatched_summary.csv
+# Inputs : vector_screening_qa_path("vector_competence_join_unmatched.csv")
+# Outputs: vector_screening_qa_path(
+#            "vector_competence_join_unmatched_review.csv"
+#          )
+#          vector_screening_qa_path(
+#            "vector_competence_join_unmatched_summary.csv"
+#          )
 # ------------------------------------------------------------------------------
 
 library(pacman)

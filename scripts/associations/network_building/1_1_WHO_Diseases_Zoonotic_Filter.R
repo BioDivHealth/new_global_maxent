@@ -4,9 +4,9 @@
 ################################################################################
 # Purpose: Derive a conservative zoonotic-focused WHO pathogen table from the
 #          broader `who_pathogens_diseases.csv` source.
-# Input  : `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases.csv`
-#          `pathogen_association_data/WHO/who_diseases/disease_names.csv`
-# Output : `pathogen_association_data/WHO/who_diseases/who_pathogens_diseases_zoonotic.csv`
+# Input  : `who_raw_pathogens_path()`
+#          `who_disease_names_path()`
+# Output : `who_zoonotic_pathogens_path()`
 #
 # Notes  : The filter is intentionally conservative. It removes:
 #          - clear duplicate / case-only duplicate rows

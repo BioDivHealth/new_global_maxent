@@ -6,7 +6,7 @@
 #          summary for the datasets that come back.
 #
 # Inputs : VecTraits API search queries
-# Outputs: pathogen_association_data/WHO/vector_screening/outputs/vectraits_probe/
+# Outputs: pathogen_association_data/staged/vector_screening/vectraits/vectraits_probe/
 #          - vectraits_probe_manifest.csv
 #          - vectraits_probe_datasets.csv
 #          - vectraits_probe_schema.csv

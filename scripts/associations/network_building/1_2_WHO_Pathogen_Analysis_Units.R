@@ -8,11 +8,9 @@
 #          3. expanding selected broad taxa into narrower candidate units using
 #             a transparent decision framework
 #
-# Input  : pathogen_association_data/WHO/who_diseases/
-#          who_pathogens_diseases_zoonotic.csv
-# Output : pathogen_association_data/WHO/who_diseases/
-#          who_pathogen_analysis_units.csv
-#          who_pathogen_analysis_units_keep.csv
+# Input  : who_zoonotic_pathogens_path()
+# Output : who_pathogen_analysis_units_path()
+#          who_pathogen_analysis_units_keep_path()
 # ------------------------------------------------------------------------------
 
 library(pacman)

@@ -6,9 +6,9 @@
 #          add zoonotic status, and preserve the raw labels for provenance.
 #
 # Inputs : WHO network helper path for combined_who_network.csv
-#          pathogen_association_data/WHO/who_diseases/who_pathogens_diseases.csv
-#          pathogen_association_data/WHO/who_diseases/disease_names.csv
-#          pathogen_association_data/WHO/who_diseases/who_pathogen_analysis_units_keep.csv
+#          who_raw_pathogens_path()
+#          who_disease_names_path()
+#          who_pathogen_analysis_units_keep_path()
 #
 # Outputs: WHO network helper paths for canonical network outputs
 #

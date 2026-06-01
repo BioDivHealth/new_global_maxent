@@ -12,11 +12,11 @@
 #            pathogen-name resolution
 #
 # Input  : dr/disease_master_list_v2.xlsx
-#          pathogen_association_data/WHO/who_diseases/
-#          who_pathogen_analysis_units.csv
-# Output : pathogen_association_data/WHO/who_diseases/
-#          master_disease_analysis_units.csv
-#          master_disease_name_resolution_review.csv
+#          who_pathogen_analysis_units_path()
+# Output : who_master_disease_analysis_units_path()
+#          who_diseases_staged_master_expansion_path(
+#            "master_disease_name_resolution_review.csv"
+#          )
 # ------------------------------------------------------------------------------
 
 library(pacman)

@@ -4,11 +4,12 @@
 # Purpose: Build a curation inventory of ICTV-supported candidate strains and
 #          exemplar viruses for the broad taxa currently under review.
 #
-# Input  : pathogen_association_data/WHO/who_diseases/
-#          who_broad_taxa_candidate_strains_seed.csv plus the current zoonotic
-#          WHO analysis-unit shortlist.
-# Output : pathogen_association_data/WHO/who_diseases/
-#          who_broad_taxa_candidate_strains.csv
+# Input  : who_diseases_broad_taxa_manual_path(
+#            "who_broad_taxa_candidate_strains_seed.csv"
+#          ) plus the current zoonotic WHO analysis-unit shortlist.
+# Output : who_diseases_broad_taxa_staged_path(
+#            "who_broad_taxa_candidate_strains.csv"
+#          )
 # ------------------------------------------------------------------------------
 
 library(pacman)

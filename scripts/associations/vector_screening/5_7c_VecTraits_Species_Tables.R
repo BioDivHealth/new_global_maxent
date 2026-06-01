@@ -6,7 +6,7 @@
 #          preserving dataset provenance.
 #
 # Inputs : VecTraits API searches for the configured species names
-# Outputs: pathogen_association_data/WHO/vector_screening/outputs/
+# Outputs: pathogen_association_data/staged/vector_screening/vectraits/
 #          vectraits_species_tables/
 #          - vectraits_species_manifest.csv
 #          - <species>_vectraits_combined.csv

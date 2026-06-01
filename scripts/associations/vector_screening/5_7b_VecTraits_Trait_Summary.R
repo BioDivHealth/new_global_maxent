@@ -6,7 +6,7 @@
 #          fields relevant to vector competence, blood feeding, and transmission.
 #
 # Inputs : VecTraits API search queries
-# Outputs: pathogen_association_data/WHO/vector_screening/outputs/vectraits_traits/
+# Outputs: pathogen_association_data/staged/vector_screening/vectraits/vectraits_traits/
 #          - vectraits_species_manifest.csv
 #          - vectraits_trait_summary.csv
 #          - vectraits_field_presence.csv

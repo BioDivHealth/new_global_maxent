@@ -5,9 +5,8 @@
 #          downstream-ready host table without dropping review evidence rows.
 #
 # Inputs : WHO network helper path for combined_who_network.csv
-#          pathogen_association_data/WHO/who_diseases/
-#            master_pathogen_host_species_clean.csv
-#            master_plus_who_analysis_units.csv
+#          who_master_pathogen_host_species_clean_path()
+#          who_master_plus_analysis_units_path()
 #
 # Output: WHO host-pathogen network helper path for master_plus_who_host_network.csv
 # ------------------------------------------------------------------------------

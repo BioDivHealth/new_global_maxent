@@ -1,34 +1,92 @@
-# Title: Ecological impacts of climate change will transform public health priorities for zoonotic and vector-borne disease
+# new_global_maxent
 
-## Author List: David W Redding, Rory Gibb and Kate E Jones
+This repository is an R analysis workspace for zoonotic and vector-borne
+disease modelling. It now contains three related but distinct work surfaces:
 
-A link to the pre-print of this manuscript (containing all methods) can be found [here](https://www.medrxiv.org/content/10.1101/2024.02.09.24302575v1).
+- legacy manuscript modelling assets from the original global MaxEnt analysis
+- active pathogen-host-vector association workflows under `scripts/associations/`
+- local SDM pilot and modelling-readiness work under `scripts/sdms/`,
+  `sdms/`, and `pathogen_association_data/readiness/`
 
-## Paper Abstract: 
-Climate change impacts on zoonotic/vector-borne diseases pose significant threats to humanity but these links are, in general, poorly understood. Here, we project present and future geographical risk patterns for 141 infectious agents to understand likely climate change impacts, by integrating ecological models of infection hazard (climate-driven host/vector distributions and dispersal) with exposure (human populations) and vulnerability (poverty prevalence). Projections until 2050, under a medium climate change (Representative Concentration Pathway (RCP)), show a 9.6% mean increase in endemic area size for zoonotic/vector-borne diseases globally (n=101), with expansions common across continents and priority pathogen groups. Range shifts of host and vector animal species appear to drive higher disease risk for many areas near the poles by 2050 and beyond. Projections using lower climate change scenarios (RCP 2.6 & 4.5) indicated similar or slightly worse future population exposure trends than higher scenarios (RCP 6.0 & 8.5), possibly due to host and vector species being unable to track faster climatic changes. Socioeconomic development trajectories, Shared Socioeconomic Pathways (SSPs), mediate future risk through a combination of climate and demographic change, which will disrupt current, regional patterns of disease burden. Overall, our study suggests that climate change will likely exacerbate global animal-borne disease risk, emphasising the need to consider climate change as a health threat.
+Run scripts from the repository root so `here::here()` resolves paths
+consistently.
 
+## Current Active Work
 
-## Navigation:
+The actively maintained workflow is the pathogen association pipeline. It builds
+WHO-linked disease/pathogen analysis units, attaches host, vector, competence,
+country, role-review, and SDM-availability evidence layers, and writes
+modelling-readiness handoff files.
 
-* 📁[data](https://github.com/BioDivHealth/new_global_maxent/tree/main/data) contains most of the data needed to complete the analyses. For any files that are too large, please see the **Data** section below.
-* 📁[scripts](https://github.com/BioDivHealth/new_global_maxent/tree/main/scripts) contains all of the R code needed to complete the analyses.
-* 📁[figures](https://github.com/BioDivHealth/new_global_maxent/tree/main/figures) contains all of the figures associated with this manuscript.
+Start with these files:
 
-  
-## Analysis order:
-- 📝 [01_species_gbif.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/01_species_gbif_25.R)
-- 📝 [02_maxentX2.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/02_maxent_modelling.R)
-- 📝 [03_project_rasters_present.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/03_project_rasters_present.R)
-- 📝 [04_Combine_maxent_models_by_transmission_model.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/04__Combine_maxent_models_by_transmission_model.R)
-- 📝 [05_combine_and_future_dispersion.R](https://github.com/BioDivHealth/new_global_maxent/blob/main/scripts/05_combine_and_future_dispersion.R)
+- `AGENTS.md`: repository working rules and current path conventions.
+- `DATA_DECISIONS.md`: evidence-interpretation boundaries for host, vector,
+  competence, country, role, and readiness layers.
+- `pathogen_association_data/README.md`: current data lifecycle layout.
+- `scripts/associations/README.md`: association workflow overview.
+- `scripts/associations/working_inputs.R`: shared path helpers for active
+  scripts.
 
+Conceptual workflow order:
 
-## Data: 
+1. `scripts/associations/network_building/` builds WHO disease/pathogen
+   backbones and host-pathogen networks from WHO, CLOVER, and VIRION sources.
+2. `scripts/associations/vector_screening/` curates disease/pathogen-vector
+   evidence and vector-competence annotations.
+3. `scripts/associations/host_vector_sources/` prepares VectorMap and MapVEu
+   host-vector evidence.
+4. `scripts/associations/host_vector_integration/` joins disease/pathogen,
+   host, vector, competence, and host-vector evidence for WHO-scoped outputs.
+5. `scripts/associations/genbank_simple/` builds GenBank disease-country
+   evidence for readiness workflows.
+6. `scripts/associations/who_don_v2/` builds WHO Disease Outbreak News
+   disease-country evidence.
+7. `scripts/associations/role_annotation/` builds role-review candidates,
+   source-check surfaces, QA summaries, and modelling-readiness handoffs.
 
-All of the data in this repository can be found in either the [data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data) or in dropbox links (see below) where the files were too large to incorporate into the Github repository. 
+## Data Layout
 
-* 📊**per_disease3** data can be downloaded [here](https://www.dropbox.com/scl/fo/gen8spncb15csjfz7thyj/ACuRzeswgWdM2DFIH8H8F7c?rlkey=wxnm9f13pv8yxavw018ubhum4&dl=0)
-* 📊**livestock_future_2030_2050_2070_2080b.csv** can be downloaded [here](https://www.dropbox.com/scl/fi/7gvr5n5t4fvn99mho02bf/livestock_future_2030_2050_2070_2080b.csv?rlkey=5n6hix1ouu84mbkiruaoolprz&dl=0)
-* 📊**disease_analyses2** data can be downloaded [here](https://www.dropbox.com/scl/fo/3ogm3f5bde2hjqs9oqjzk/ABD7HCw0V1fCx9IrQGNDoTk?rlkey=wsduuu4jj25m75vidh49y7tf0&dl=0)
-* 📊**MODIS landcover** data can be downloaded [here](https://lpdaac.usgs.gov/products/mcd12q1v006/) and we have put a sample in the [MODIS data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data/MODIS)
-* 📊**Worldclim bioclimate** data can be downloaded [here](https://www.worldclim.org/data/bioclim.html) and we have put a sample in the [worldclim data folder](https://github.com/BioDivHealth/new_global_maxent/tree/main/data/worldclim)
+Versioned pathogen association data lives under `pathogen_association_data/`.
+The current layout is lifecycle-based:
+
+- `source_data/`: raw or near-raw source/vendor files.
+- `manual/`: hand-edited curation, review, crosswalk, and control files.
+- `staged/`: generated intermediates, prompts, manifests, and candidate tables.
+- `evidence/`: active analysis-ready evidence outputs and QA surfaces.
+- `readiness/`: generated modelling-readiness handoff files.
+- `archive/`: inactive snapshots and local historical comparison material.
+
+New scripts should source `scripts/associations/working_inputs.R` and use helper
+functions instead of hard-coding data paths.
+
+## Legacy Manuscript Modelling
+
+The original manuscript work studied climate-change impacts on zoonotic and
+vector-borne disease risk using host/vector ecological models, exposure, and
+vulnerability layers. Some historical scripts, figures, and references remain in
+the repository, but the top-level modelling order from the original manuscript
+is not the current operating guide for this worktree.
+
+The `data/` tree is sparse or ignored in normal local checkouts, and large
+historical modelling inputs may not be present. Treat old modelling scripts and
+point-data artifacts as legacy unless a current workflow explicitly references
+them.
+
+## Local SDM Pilot Work
+
+The current SDM pilot surface is driven by readiness outputs, not by the legacy
+manuscript script order. See:
+
+- `pathogen_association_data/readiness/README.md`
+- `scripts/sdms/README.md`
+
+The readiness outputs are planning and collaborator handoff surfaces. They are
+not final biological evidence claims.
+
+## Validation Style
+
+There is no `testthat` suite. Validate changes by running the smallest relevant
+script or parse/smoke check and confirming outputs land in the current
+`source_data/`, `manual/`, `staged/`, `evidence/`, or `readiness/` roots without
+schema regressions.

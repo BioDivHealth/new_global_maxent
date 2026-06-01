@@ -6,14 +6,14 @@
 #          vectored and non-vectored diseases.
 #
 # Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
-#          pathogen_association_data/WHO/vector_screening/outputs/
-#            disease_vector_links_taxonomy_cleaned_competence_annotated.csv
+#          vector_screening_evidence_path(
+#            "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
+#          )
 #          pathogen_association_data/evidence/host_vector/
 #            vector_host_links_join_ready.csv
 #          WHO host-vector helper path for:
 #            disease_host_vector_links_expanded_competence_annotated.csv
-#          pathogen_association_data/WHO/who_diseases/
-#            who_pathogens_diseases_zoonotic.csv
+#          who_zoonotic_pathogens_path()
 #
 # Outputs: pathogen_association_data/evidence/role_annotation/
 #            species_host_vector_roster.csv

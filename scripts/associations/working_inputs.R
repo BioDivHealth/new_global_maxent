@@ -24,8 +24,8 @@ mapveu_dir <- mapveu_raw_dir
 vector_host_dir <- file.path(evidence_data_dir, "host_vector")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
 
-# WHO networks layout. During migration, helpers prefer the proposed lifecycle
-# roots but fall back to the legacy WHO/networks/ directory until files move.
+# WHO networks layout. Helpers prefer the lifecycle roots and keep legacy
+# fallback paths only for migration checks or historical reruns.
 who_networks_legacy_dir <- file.path(who_data_dir, "networks")
 who_networks_staged_dir <- file.path(staged_data_dir, "who_networks")
 who_networks_source_components_dir <- file.path(
@@ -99,8 +99,8 @@ virion_source_version_dir <- file.path(virion_source_dir, "19502921")
 who_clover_dir <- file.path(staged_data_dir, "clover", "outputs")
 who_virion_dir <- file.path(staged_data_dir, "virion", "outputs")
 
-# WHO diseases layout. During migration, helpers prefer the proposed lifecycle
-# roots but fall back to the legacy WHO/who_diseases/ directory until files move.
+# WHO diseases layout. Helpers prefer the lifecycle roots and keep legacy
+# fallback paths only for migration checks or historical reruns.
 who_diseases_legacy_dir <- file.path(who_data_dir, "who_diseases")
 who_diseases_source_dir <- file.path(source_data_dir, "who_diseases")
 who_diseases_manual_dir <- file.path(manual_data_dir, "who_diseases")
@@ -198,10 +198,10 @@ genbank_simple_readiness_run_dir <- file.path(
 )
 genbank_simple_qa_dir <- file.path(genbank_simple_evidence_dir, "qa")
 
-# WHO DON v2 layout. The current production tree still lives under WHO/ during
-# migration; proposed roots split generated fixtures/intermediates under
-# staged/, durable review decisions under manual/, active evidence/final/web/QA
-# under evidence/, and historical diagnostics under archive/.
+# WHO DON v2 layout. Generated fixtures/intermediates live under staged/,
+# durable review decisions under manual/, active evidence/final/web/QA under
+# evidence/, and historical diagnostics under archive/. Legacy fallback paths
+# remain for migration checks and historical reruns.
 who_don_v2_legacy_dir <- file.path(who_data_dir, "disease_outbreak_news_v2")
 who_don_v2_staged_dir <- file.path(staged_data_dir, "who_don_v2")
 who_don_v2_manual_dir <- file.path(manual_data_dir, "who_don_v2")

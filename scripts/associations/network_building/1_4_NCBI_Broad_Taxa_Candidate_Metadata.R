@@ -5,12 +5,18 @@
 #          table, pull NCBI virus genome metadata via the local Datasets CLI,
 #          and save analysis-ready metadata for downstream R work.
 #
-# Input  : pathogen_association_data/WHO/who_diseases/
-#          who_broad_taxa_candidate_strains.csv
-# Output : pathogen_association_data/WHO/who_diseases/
-#          who_broad_taxa_candidate_strains_ncbi_metadata.csv
-#          who_broad_taxa_candidate_strains_ncbi_enriched.csv
-#          who_broad_taxa_candidate_strains_ncbi_raw.jsonl
+# Input  : who_diseases_broad_taxa_staged_path(
+#            "who_broad_taxa_candidate_strains.csv"
+#          )
+# Output : who_diseases_broad_taxa_staged_path(
+#            "who_broad_taxa_candidate_strains_ncbi_metadata.csv"
+#          )
+#          who_diseases_broad_taxa_staged_path(
+#            "who_broad_taxa_candidate_strains_ncbi_enriched.csv"
+#          )
+#          who_diseases_broad_taxa_staged_path(
+#            "who_broad_taxa_candidate_strains_ncbi_raw.jsonl"
+#          )
 # -------------------------------------------------------------------------------
 
 library(pacman)
