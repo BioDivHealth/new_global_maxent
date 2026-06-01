@@ -522,7 +522,8 @@ host_tax_id,vector_join_key,host,host_class,host_order,host_family,vector_specie
 9614,oropsylla tuberculata,Canis latrans,mammalia,carnivora,canidae,Oropsylla tuberculata,infraspecific,TRUE,Oropsylla tuberculata cynomuris,VectorMap,FleaMap,on_host_occurrence,United States,,1
 9614,otobius megnini,Canis latrans,mammalia,carnivora,canidae,Otobius megnini,species,FALSE,Otobius megnini,VectorMap,TickMap,on_host_occurrence,United States,,1
 9612,aedeomyia africana,Canis lupus,mammalia,carnivora,canidae,Aedeomyia africana,species,FALSE,Aedeomyia africana,VectorMap,BloodMealMap,blood_meal,Kenya,,1
-9612,aedes aegypti,Canis lupus,mammalia,carnivora,canidae,Aedes aegypti,species,FALSE,Aedes aegypti,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Australia; Grenada; Kenya; Unites States,,38
+9612,aedes aegypti,Canis lupus,mammalia,carnivora,canidae,Aedes aegypti,species,FALSE,Aedes aegypti,VectorMap,BloodMealMap,blood_meal,Australia; Kenya; Unites States,,6
+9615,aedes aegypti,Canis lupus,mammalia,carnivora,canidae,Aedes aegypti,species,FALSE,Aedes aegypti,MapVEu,MapVEu,blood_meal,Grenada,,32
 9612,aedes albopictus,Canis lupus,mammalia,carnivora,canidae,Aedes albopictus,species,FALSE,Aedes albopictus,VectorMap,BloodMealMap,blood_meal,Brazil; Japan; Singapore; Unites States,,9
 9612,aedes atlanticus,Canis lupus,mammalia,carnivora,canidae,Aedes atlanticus,species,FALSE,Aedes atlanticus,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 9612,aedes bancroftianus,Canis lupus,mammalia,carnivora,canidae,Aedes bancroftianus,species,FALSE,Aedes bancroftianus,VectorMap,BloodMealMap,blood_meal,Australia,,1
@@ -561,41 +562,55 @@ host_tax_id,vector_join_key,host,host_class,host_order,host_family,vector_specie
 9612,amblyomma variegatum,Canis lupus,mammalia,carnivora,canidae,Amblyomma variegatum,species,FALSE,Amblyomma variegatum,VectorMap,TickMap,on_host_occurrence,"Benin; Burkina Faso; Congo, The Democratic Republic of The; Cote D'Ivoire; Guinea; Nigeria; Senegal; South Africa; Sudan",,32
 9612,anopheles albimanus,Canis lupus,mammalia,carnivora,canidae,Anopheles albimanus,species,FALSE,Anopheles albimanus,VectorMap,BloodMealMap,blood_meal,Belize,,2
 9612,anopheles amictus,Canis lupus,mammalia,carnivora,canidae,Anopheles amictus,species,FALSE,Anopheles amictus,VectorMap,BloodMealMap,blood_meal,Australia,,1
-9612,anopheles annulipes,Canis lupus,mammalia,carnivora,canidae,Anopheles annulipes,species,FALSE,Anopheles annulipes,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Australia,,4
+9612,anopheles annulipes,Canis lupus,mammalia,carnivora,canidae,Anopheles annulipes,species,FALSE,Anopheles annulipes,VectorMap,BloodMealMap,blood_meal,Australia,,3
+9615,anopheles annulipes,Canis lupus,mammalia,carnivora,canidae,Anopheles annulipes,species,FALSE,Anopheles annulipes,MapVEu,MapVEu,blood_meal,Australia,,1
 9612,anopheles apoci,Canis lupus,mammalia,carnivora,canidae,Anopheles apoci,species,FALSE,Anopheles apoci,VectorMap,BloodMealMap,blood_meal,Iran,,1
-9612,anopheles arabiensis,Canis lupus,mammalia,carnivora,canidae,Anopheles arabiensis,species,FALSE,Anopheles arabiensis,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Ethiopia; Ghana; Kenya; Madagascar,,19
+9612,anopheles arabiensis,Canis lupus,mammalia,carnivora,canidae,Anopheles arabiensis,species,FALSE,Anopheles arabiensis,VectorMap,BloodMealMap,blood_meal,Madagascar,,1
+9615,anopheles arabiensis,Canis lupus,mammalia,carnivora,canidae,Anopheles arabiensis,species,FALSE,Anopheles arabiensis,MapVEu,MapVEu,blood_meal,Ethiopia; Ghana; Kenya; Madagascar,,18
 9612,anopheles atroparvus,Canis lupus,mammalia,carnivora,canidae,Anopheles atroparvus,species,FALSE,Anopheles atroparvus,VectorMap,BloodMealMap,blood_meal,ESP,,1
-9612,anopheles bancroftii,Canis lupus,mammalia,carnivora,canidae,Anopheles bancroftii,species,FALSE,Anopheles bancroftii,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Australia; Papua New Guinea,,4
-9612,anopheles coluzzii,Canis lupus,mammalia,carnivora,canidae,Anopheles coluzzii,species,FALSE,Anopheles coluzzii,MapVEu,MapVEu,blood_meal,Ghana,,5
-9612,anopheles coustani,Canis lupus,mammalia,carnivora,canidae,Anopheles coustani,species,FALSE,Anopheles coustani,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Ethiopia; Kenya; Madagascar,,37
+9612,anopheles bancroftii,Canis lupus,mammalia,carnivora,canidae,Anopheles bancroftii,species,FALSE,Anopheles bancroftii,VectorMap,BloodMealMap,blood_meal,Australia,,1
+9615,anopheles bancroftii,Canis lupus,mammalia,carnivora,canidae,Anopheles bancroftii,species,FALSE,Anopheles bancroftii,MapVEu,MapVEu,blood_meal,Papua New Guinea,,3
+9615,anopheles coluzzii,Canis lupus,mammalia,carnivora,canidae,Anopheles coluzzii,species,FALSE,Anopheles coluzzii,MapVEu,MapVEu,blood_meal,Ghana,,5
+9612,anopheles coustani,Canis lupus,mammalia,carnivora,canidae,Anopheles coustani,species,FALSE,Anopheles coustani,VectorMap,BloodMealMap,blood_meal,Kenya; Madagascar,,3
+9615,anopheles coustani,Canis lupus,mammalia,carnivora,canidae,Anopheles coustani,species,FALSE,Anopheles coustani,MapVEu,MapVEu,blood_meal,Ethiopia; Kenya; Madagascar,,34
 9612,anopheles crucians,Canis lupus,mammalia,carnivora,canidae,Anopheles crucians,species,FALSE,Anopheles crucians,VectorMap,BloodMealMap,blood_meal,Unites States,,1
-9612,anopheles darlingi,Canis lupus,mammalia,carnivora,canidae,Anopheles darlingi,species,FALSE,Anopheles darlingi,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Brazil; Peru,,4420
-9612,anopheles farauti,Canis lupus,mammalia,carnivora,canidae,Anopheles farauti,species,FALSE,Anopheles farauti,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Papua New Guinea,,130
-9612,anopheles farauti no. 4,Canis lupus,mammalia,carnivora,canidae,Anopheles farauti No. 4,infraspecific,TRUE,Anopheles farauti No. 4,MapVEu,MapVEu,blood_meal,Papua New Guinea,vector_infraspecific,44
+9612,anopheles darlingi,Canis lupus,mammalia,carnivora,canidae,Anopheles darlingi,species,FALSE,Anopheles darlingi,VectorMap,BloodMealMap,blood_meal,Brazil; Peru,,4
+9615,anopheles darlingi,Canis lupus,mammalia,carnivora,canidae,Anopheles darlingi,species,FALSE,Anopheles darlingi,MapVEu,MapVEu,blood_meal,Peru,,4416
+9612,anopheles farauti,Canis lupus,mammalia,carnivora,canidae,Anopheles farauti,species,FALSE,Anopheles farauti,VectorMap,BloodMealMap,blood_meal,Papua New Guinea,,2
+9615,anopheles farauti,Canis lupus,mammalia,carnivora,canidae,Anopheles farauti,species,FALSE,Anopheles farauti,MapVEu,MapVEu,blood_meal,Papua New Guinea,,128
+9615,anopheles farauti no. 4,Canis lupus,mammalia,carnivora,canidae,Anopheles farauti No. 4,infraspecific,TRUE,Anopheles farauti No. 4,MapVEu,MapVEu,blood_meal,Papua New Guinea,vector_infraspecific,44
 9612,anopheles freeborni,Canis lupus,mammalia,carnivora,canidae,Anopheles freeborni,species,FALSE,Anopheles freeborni,VectorMap,BloodMealMap,blood_meal,Unites States,,5
-9612,anopheles funestus,Canis lupus,mammalia,carnivora,canidae,Anopheles funestus,species,FALSE,Anopheles funestus,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Kenya; Madagascar; Tanzania,,6
-9612,anopheles gambiae,Canis lupus,mammalia,carnivora,canidae,Anopheles gambiae,species,FALSE,Anopheles gambiae,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Ghana; Kenya; Tanzania,,15
-9612,anopheles hinesorum,Canis lupus,mammalia,carnivora,canidae,Anopheles hinesorum,species,FALSE,Anopheles hinesorum,MapVEu,MapVEu,blood_meal,Papua New Guinea,,1
-9612,anopheles koliensis,Canis lupus,mammalia,carnivora,canidae,Anopheles koliensis,species,FALSE,Anopheles koliensis,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Papua New Guinea,,3
+9612,anopheles funestus,Canis lupus,mammalia,carnivora,canidae,Anopheles funestus,species,FALSE,Anopheles funestus,VectorMap,BloodMealMap,blood_meal,Madagascar; Tanzania,,2
+9615,anopheles funestus,Canis lupus,mammalia,carnivora,canidae,Anopheles funestus,species,FALSE,Anopheles funestus,MapVEu,MapVEu,blood_meal,Kenya; Madagascar,,4
+9612,anopheles gambiae,Canis lupus,mammalia,carnivora,canidae,Anopheles gambiae,species,FALSE,Anopheles gambiae,VectorMap,BloodMealMap,blood_meal,Kenya; Tanzania,,6
+9615,anopheles gambiae,Canis lupus,mammalia,carnivora,canidae,Anopheles gambiae,species,FALSE,Anopheles gambiae,MapVEu,MapVEu,blood_meal,Ghana; Kenya,,9
+9615,anopheles hinesorum,Canis lupus,mammalia,carnivora,canidae,Anopheles hinesorum,species,FALSE,Anopheles hinesorum,MapVEu,MapVEu,blood_meal,Papua New Guinea,,1
+9612,anopheles koliensis,Canis lupus,mammalia,carnivora,canidae,Anopheles koliensis,species,FALSE,Anopheles koliensis,VectorMap,BloodMealMap,blood_meal,Papua New Guinea,,1
+9615,anopheles koliensis,Canis lupus,mammalia,carnivora,canidae,Anopheles koliensis,species,FALSE,Anopheles koliensis,MapVEu,MapVEu,blood_meal,Papua New Guinea,,2
 9612,anopheles longipalpis,Canis lupus,mammalia,carnivora,canidae,Anopheles longipalpis,species,FALSE,Anopheles longipalpis,VectorMap,BloodMealMap,blood_meal,Zambia,,1
-9612,anopheles longirostris,Canis lupus,mammalia,carnivora,canidae,Anopheles longirostris,species,FALSE,Anopheles longirostris,MapVEu,MapVEu,blood_meal,Papua New Guinea,,7
-9612,anopheles maculipalpis,Canis lupus,mammalia,carnivora,canidae,Anopheles maculipalpis,species,FALSE,Anopheles maculipalpis,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Madagascar,,12
+9615,anopheles longirostris,Canis lupus,mammalia,carnivora,canidae,Anopheles longirostris,species,FALSE,Anopheles longirostris,MapVEu,MapVEu,blood_meal,Papua New Guinea,,7
+9612,anopheles maculipalpis,Canis lupus,mammalia,carnivora,canidae,Anopheles maculipalpis,species,FALSE,Anopheles maculipalpis,VectorMap,BloodMealMap,blood_meal,Madagascar,,1
+9615,anopheles maculipalpis,Canis lupus,mammalia,carnivora,canidae,Anopheles maculipalpis,species,FALSE,Anopheles maculipalpis,MapVEu,MapVEu,blood_meal,Madagascar,,11
 9612,anopheles maculipennis,Canis lupus,mammalia,carnivora,canidae,Anopheles maculipennis,species,FALSE,Anopheles maculipennis,VectorMap,BloodMealMap,blood_meal,Hungary,,1
 9612,anopheles marajoara,Canis lupus,mammalia,carnivora,canidae,Anopheles marajoara,species,FALSE,Anopheles marajoara,VectorMap,BloodMealMap,blood_meal,Brazil,,3
 9612,anopheles marteri,Canis lupus,mammalia,carnivora,canidae,Anopheles marteri,species,FALSE,Anopheles marteri,VectorMap,BloodMealMap,blood_meal,Iran,,1
-9612,anopheles mascarensis,Canis lupus,mammalia,carnivora,canidae,Anopheles mascarensis,species,FALSE,Anopheles mascarensis,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Madagascar,,4
+9612,anopheles mascarensis,Canis lupus,mammalia,carnivora,canidae,Anopheles mascarensis,species,FALSE,Anopheles mascarensis,VectorMap,BloodMealMap,blood_meal,Madagascar,,1
+9615,anopheles mascarensis,Canis lupus,mammalia,carnivora,canidae,Anopheles mascarensis,species,FALSE,Anopheles mascarensis,MapVEu,MapVEu,blood_meal,Madagascar,,3
 9612,anopheles messeae,Canis lupus,mammalia,carnivora,canidae,Anopheles messeae,species,FALSE,Anopheles messeae,VectorMap,BloodMealMap,blood_meal,Russia; United Kingdom,,3
 9612,anopheles nuneztovari,Canis lupus,mammalia,carnivora,canidae,Anopheles nuneztovari,species,FALSE,Anopheles nuneztovari,VectorMap,BloodMealMap,blood_meal,Brazil,,3
 9612,anopheles peryassui,Canis lupus,mammalia,carnivora,canidae,Anopheles peryassui,species,FALSE,Anopheles peryassui,VectorMap,BloodMealMap,blood_meal,Brazil,,1
-9612,anopheles pharoensis,Canis lupus,mammalia,carnivora,canidae,Anopheles pharoensis,species,FALSE,Anopheles pharoensis,MapVEu,MapVEu,blood_meal,Ethiopia,,2
-9612,anopheles pretoriensis,Canis lupus,mammalia,carnivora,canidae,Anopheles pretoriensis,species,FALSE,Anopheles pretoriensis,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Madagascar,,2
+9615,anopheles pharoensis,Canis lupus,mammalia,carnivora,canidae,Anopheles pharoensis,species,FALSE,Anopheles pharoensis,MapVEu,MapVEu,blood_meal,Ethiopia,,2
+9612,anopheles pretoriensis,Canis lupus,mammalia,carnivora,canidae,Anopheles pretoriensis,species,FALSE,Anopheles pretoriensis,VectorMap,BloodMealMap,blood_meal,Madagascar,,1
+9615,anopheles pretoriensis,Canis lupus,mammalia,carnivora,canidae,Anopheles pretoriensis,species,FALSE,Anopheles pretoriensis,MapVEu,MapVEu,blood_meal,Madagascar,,1
 9612,anopheles punctimacula,Canis lupus,mammalia,carnivora,canidae,Anopheles punctimacula,species,FALSE,Anopheles punctimacula,VectorMap,BloodMealMap,blood_meal,Belize,,1
 9612,anopheles punctipennis,Canis lupus,mammalia,carnivora,canidae,Anopheles punctipennis,species,FALSE,Anopheles punctipennis,VectorMap,BloodMealMap,blood_meal,Unites States,,3
-9612,anopheles punctulatus,Canis lupus,mammalia,carnivora,canidae,Anopheles punctulatus,species,FALSE,Anopheles punctulatus,MapVEu,MapVEu,blood_meal,Papua New Guinea,,30
+9615,anopheles punctulatus,Canis lupus,mammalia,carnivora,canidae,Anopheles punctulatus,species,FALSE,Anopheles punctulatus,MapVEu,MapVEu,blood_meal,Papua New Guinea,,30
 9612,anopheles quadrimaculatus,Canis lupus,mammalia,carnivora,canidae,Anopheles quadrimaculatus,species,FALSE,Anopheles quadrimaculatus,VectorMap,BloodMealMap,blood_meal,Unites States,,2
-9612,anopheles rufipes,Canis lupus,mammalia,carnivora,canidae,Anopheles rufipes,species,FALSE,Anopheles rufipes,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Madagascar,,3
+9612,anopheles rufipes,Canis lupus,mammalia,carnivora,canidae,Anopheles rufipes,species,FALSE,Anopheles rufipes,VectorMap,BloodMealMap,blood_meal,Madagascar,,1
+9615,anopheles rufipes,Canis lupus,mammalia,carnivora,canidae,Anopheles rufipes,species,FALSE,Anopheles rufipes,MapVEu,MapVEu,blood_meal,Madagascar,,2
 9612,anopheles sinensis,Canis lupus,mammalia,carnivora,canidae,Anopheles sinensis,species,FALSE,Anopheles sinensis,VectorMap,BloodMealMap,blood_meal,Japan,,1
-9612,anopheles squamosus,Canis lupus,mammalia,carnivora,canidae,Anopheles squamosus,species,FALSE,Anopheles squamosus,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Madagascar,,10
+9612,anopheles squamosus,Canis lupus,mammalia,carnivora,canidae,Anopheles squamosus,species,FALSE,Anopheles squamosus,VectorMap,BloodMealMap,blood_meal,Madagascar,,1
+9615,anopheles squamosus,Canis lupus,mammalia,carnivora,canidae,Anopheles squamosus,species,FALSE,Anopheles squamosus,MapVEu,MapVEu,blood_meal,Madagascar,,9
 9612,anopheles strodei,Canis lupus,mammalia,carnivora,canidae,Anopheles strodei,species,FALSE,Anopheles strodei,VectorMap,BloodMealMap,blood_meal,Brazil,,1
 9612,anopheles triannulatus,Canis lupus,mammalia,carnivora,canidae,Anopheles triannulatus,species,FALSE,Anopheles triannulatus,VectorMap,BloodMealMap,blood_meal,Brazil,,2
 9612,anopheles vestitipennis,Canis lupus,mammalia,carnivora,canidae,Anopheles vestitipennis,species,FALSE,Anopheles vestitipennis,VectorMap,BloodMealMap,blood_meal,Belize,,3
@@ -609,7 +624,8 @@ host_tax_id,vector_join_key,host,host_class,host_order,host_family,vector_specie
 9612,coquillettidia xanthogaster,Canis lupus,mammalia,carnivora,canidae,Coquillettidia xanthogaster,species,FALSE,Coquillettidia xanthogaster,VectorMap,BloodMealMap,blood_meal,Australia,,1
 9612,ctenocephalides canis,Canis lupus,mammalia,carnivora,canidae,Ctenocephalides canis,species,FALSE,Ctenocephalides canis,VectorMap,FleaMap,on_host_occurrence,Brazil; Ethiopia; France; Germany; Guatemala; Japan; Myanmar; Netherlands; Peru; Tunisia; Turkey; United Kingdom; United States,,98
 9612,ctenocephalides felis,Canis lupus,mammalia,carnivora,canidae,Ctenocephalides felis,mixed,FALSE,Ctenocephalides felis; Ctenocephalides felis felis,VectorMap,FleaMap,on_host_occurrence,"Bahamas; Brazil; Costa Rica; Dominican Republic; Egypt; Kenya; Liberia; Malaysia; Marshall Islands; Northern Mariana Islands; Paraguay; Philippines; Saint Helena; Tunisia; United States; Uruguay; Virgin Islands, U.S",,136
-9612,culex annulirostris,Canis lupus,mammalia,carnivora,canidae,Culex annulirostris,species,FALSE,Culex annulirostris,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Australia; Papua New Guinea,,30
+9612,culex annulirostris,Canis lupus,mammalia,carnivora,canidae,Culex annulirostris,species,FALSE,Culex annulirostris,VectorMap,BloodMealMap,blood_meal,Australia; Papua New Guinea,,25
+9615,culex annulirostris,Canis lupus,mammalia,carnivora,canidae,Culex annulirostris,species,FALSE,Culex annulirostris,MapVEu,MapVEu,blood_meal,Australia,,5
 9612,culex antennatus,Canis lupus,mammalia,carnivora,canidae,Culex antennatus,species,FALSE,Culex antennatus,VectorMap,BloodMealMap,blood_meal,Egypt,,1
 9612,culex bitaeniorhynchus,Canis lupus,mammalia,carnivora,canidae,Culex bitaeniorhynchus,species,FALSE,Culex bitaeniorhynchus,VectorMap,BloodMealMap,blood_meal,Australia; India,,2
 9612,culex caudelli,Canis lupus,mammalia,carnivora,canidae,Culex caudelli,species,FALSE,Culex caudelli,VectorMap,BloodMealMap,blood_meal,Trinidad & Tobago,,1
@@ -625,9 +641,10 @@ host_tax_id,vector_join_key,host,host_class,host_order,host_family,vector_specie
 9612,culex nigripalpus,Canis lupus,mammalia,carnivora,canidae,Culex nigripalpus,species,FALSE,Culex nigripalpus,VectorMap,BloodMealMap,blood_meal,Brazil; Trinidad & Tobago,,2
 9612,culex perexiguus,Canis lupus,mammalia,carnivora,canidae,Culex perexiguus,species,FALSE,Culex perexiguus,VectorMap,BloodMealMap,blood_meal,ESP; Iran; Israel,,4
 9612,culex pipiens,Canis lupus,mammalia,carnivora,canidae,Culex pipiens,species,FALSE,Culex pipiens,VectorMap,BloodMealMap,blood_meal,Egypt; ESP; Iran; Israel; Kenya; Russia; South Africa; Unites States,,19
-9612,culex pipiens molestus,Canis lupus,mammalia,carnivora,canidae,Culex pipiens molestus,infraspecific,TRUE,Culex pipiens molestus,MapVEu,MapVEu,blood_meal,Australia,vector_infraspecific,1
+9615,culex pipiens molestus,Canis lupus,mammalia,carnivora,canidae,Culex pipiens molestus,infraspecific,TRUE,Culex pipiens molestus,MapVEu,MapVEu,blood_meal,Australia,vector_infraspecific,1
 9612,culex pseudovishnui,Canis lupus,mammalia,carnivora,canidae,Culex pseudovishnui,species,FALSE,Culex pseudovishnui,VectorMap,BloodMealMap,blood_meal,India,,2
-9612,culex quinquefasciatus,Canis lupus,mammalia,carnivora,canidae,Culex quinquefasciatus,species,FALSE,Culex quinquefasciatus,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Australia; Brazil; Grenada; India; Japan; Malaysia; Mexico; Tanzania; Unites States,,65
+9612,culex quinquefasciatus,Canis lupus,mammalia,carnivora,canidae,Culex quinquefasciatus,species,FALSE,Culex quinquefasciatus,VectorMap,BloodMealMap,blood_meal,Australia; Brazil; India; Japan; Malaysia; Mexico; Tanzania; Unites States,,26
+9615,culex quinquefasciatus,Canis lupus,mammalia,carnivora,canidae,Culex quinquefasciatus,species,FALSE,Culex quinquefasciatus,MapVEu,MapVEu,blood_meal,Australia; Grenada,,39
 9612,culex salinarius,Canis lupus,mammalia,carnivora,canidae,Culex salinarius,species,FALSE,Culex salinarius,VectorMap,BloodMealMap,blood_meal,Unites States,,3
 9612,culex shanahani,Canis lupus,mammalia,carnivora,canidae,Culex shanahani,species,FALSE,Culex shanahani,VectorMap,BloodMealMap,blood_meal,Japan,,1
 9612,culex sitiens,Canis lupus,mammalia,carnivora,canidae,Culex sitiens,species,FALSE,Culex sitiens,VectorMap,BloodMealMap,blood_meal,Australia; Iran; Singapore,,6
@@ -743,7 +760,7 @@ host_tax_id,vector_join_key,host,host_class,host_order,host_family,vector_specie
 9612,rhipicephalus ziemanni,Canis lupus,mammalia,carnivora,canidae,Rhipicephalus ziemanni,species,FALSE,Rhipicephalus ziemanni,VectorMap,TickMap,on_host_occurrence,Cote D'Ivoire,,5
 9612,runchomyia theobaldi,Canis lupus,mammalia,carnivora,canidae,Runchomyia theobaldi,species,FALSE,Runchomyia theobaldi,VectorMap,BloodMealMap,blood_meal,Brazil,,1
 9612,verrallina carmenti,Canis lupus,mammalia,carnivora,canidae,Verrallina carmenti,species,FALSE,Verrallina carmenti,VectorMap,BloodMealMap,blood_meal,Australia,,1
-9612,gambiae species complex,Canis lupus,mammalia,carnivora,canidae,gambiae species complex,complex,TRUE,gambiae species complex,MapVEu,MapVEu,blood_meal,Tanzania,vector_complex,2
+9615,gambiae species complex,Canis lupus,mammalia,carnivora,canidae,gambiae species complex,complex,TRUE,gambiae species complex,MapVEu,MapVEu,blood_meal,Tanzania,vector_complex,2
 68725,echidnophaga gallinacea,Canis mesomelas,,,,Echidnophaga gallinacea,species,FALSE,Echidnophaga gallinacea,VectorMap,FleaMap,on_host_occurrence,Botswana,,99
 68725,haemaphysalis aciculifer,Canis mesomelas,,,,Haemaphysalis aciculifer,species,FALSE,Haemaphysalis aciculifer,VectorMap,TickMap,on_host_occurrence,Kenya,,1
 68725,haemaphysalis leachi,Canis mesomelas,,,,Haemaphysalis leachi,species,FALSE,Haemaphysalis leachi,VectorMap,TickMap,on_host_occurrence,Ethiopia; Sudan,,2
@@ -1913,7 +1930,7 @@ host_tax_id,vector_join_key,host,host_class,host_order,host_family,vector_specie
 9983,coquillettidia richiardii,Lepus europaeus,mammalia,lagomorpha,leporidae,Coquillettidia richiardii,species,FALSE,Coquillettidia richiardii,VectorMap,BloodMealMap,blood_meal,Serbia,,1
 9983,ochlerotatus camptorhynchus,Lepus europaeus,mammalia,lagomorpha,leporidae,Ochlerotatus camptorhynchus,species,FALSE,Ochlerotatus camptorhynchus,MapVEu,MapVEu,blood_meal,Australia,,1
 76717,amblyomma americanum,Lontra canadensis,mammalia,carnivora,mustelidae,Amblyomma americanum,species,FALSE,Amblyomma americanum,VectorMap,TickMap,on_host_occurrence,United States of America,,40
-76717,culex cedecei,Lontra canadensis,mammalia,carnivora,mustelidae,Culex cedecei,species,FALSE,Culex cedecei,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,United States; Unites States,,452
+76717,culex cedecei,Lontra canadensis,mammalia,carnivora,mustelidae,Culex cedecei,species,FALSE,Culex cedecei,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 76717,culex erraticus,Lontra canadensis,mammalia,carnivora,mustelidae,Culex erraticus,species,FALSE,Culex erraticus,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 76717,culex tarsalis,Lontra canadensis,mammalia,carnivora,mustelidae,Culex tarsalis,species,FALSE,Culex tarsalis,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 76717,ixodes cookei,Lontra canadensis,mammalia,carnivora,mustelidae,Ixodes cookei,species,FALSE,Ixodes cookei,VectorMap,TickMap,on_host_occurrence,United States of America,,40

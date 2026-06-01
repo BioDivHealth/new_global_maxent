@@ -8,8 +8,10 @@ Crimean-Congo hemorrhagic fever,enzootic_maintenance_candidate,TRUE,23
 Crimean-Congo hemorrhagic fever,enzootic_maintenance_candidate,FALSE,1
 Crimean-Congo hemorrhagic fever,human_amplification_candidate,TRUE,20
 Crimean-Congo hemorrhagic fever,human_amplification_candidate,FALSE,4
-Dengue,bridge_vector_candidate,FALSE,5
-Dengue,enzootic_maintenance_candidate,FALSE,5
+Dengue,bridge_vector_candidate,TRUE,1
+Dengue,bridge_vector_candidate,FALSE,4
+Dengue,enzootic_maintenance_candidate,TRUE,1
+Dengue,enzootic_maintenance_candidate,FALSE,4
 Dengue,human_amplification_candidate,TRUE,5
 Oropouche fever,bridge_vector_candidate,FALSE,6
 Oropouche fever,enzootic_maintenance_candidate,FALSE,6
@@ -37,17 +39,16 @@ Tick-borne encephalitis,bridge_vector_candidate,FALSE,2
 Tick-borne encephalitis,enzootic_maintenance_candidate,TRUE,4
 Tick-borne encephalitis,enzootic_maintenance_candidate,FALSE,2
 Tick-borne encephalitis,human_amplification_candidate,TRUE,6
-Venezuelan equine encephalitis,bridge_vector_candidate,TRUE,13
-Venezuelan equine encephalitis,bridge_vector_candidate,FALSE,6
-Venezuelan equine encephalitis,enzootic_maintenance_candidate,TRUE,15
-Venezuelan equine encephalitis,enzootic_maintenance_candidate,FALSE,4
+Venezuelan equine encephalitis,bridge_vector_candidate,TRUE,4
+Venezuelan equine encephalitis,bridge_vector_candidate,FALSE,13
+Venezuelan equine encephalitis,enzootic_maintenance_candidate,TRUE,4
+Venezuelan equine encephalitis,enzootic_maintenance_candidate,FALSE,13
 Venezuelan equine encephalitis,human_amplification_candidate,TRUE,17
-Venezuelan equine encephalitis,human_amplification_candidate,FALSE,2
 West Nile fever,bridge_vector_candidate,TRUE,17
-West Nile fever,bridge_vector_candidate,FALSE,3
-West Nile fever,enzootic_maintenance_candidate,TRUE,20
+West Nile fever,bridge_vector_candidate,FALSE,4
+West Nile fever,enzootic_maintenance_candidate,TRUE,21
 West Nile fever,human_amplification_candidate,TRUE,17
-West Nile fever,human_amplification_candidate,FALSE,3
+West Nile fever,human_amplification_candidate,FALSE,4
 Yellow fever,bridge_vector_candidate,FALSE,12
 Yellow fever,enzootic_maintenance_candidate,FALSE,12
 Yellow fever,human_amplification_candidate,TRUE,12
