@@ -18,16 +18,7 @@ library(pacman)
 p_load(dplyr, here, readr, stringr)
 
 source(here("scripts", "associations", "working_inputs.R"))
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
-  x <- stringr::str_replace_all(x, "\u00A0", " ")
-  x <- stringr::str_replace_all(x, "[\r\n\t]+", " ")
-  x <- stringr::str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
+source(here("scripts", "associations", "association_text_helpers.R"))
 
 input_path <- vector_screening_qa_path("vector_competence_join_unmatched.csv")
 review_path <- file.path(vector_screening_qa_dir, "vector_competence_join_unmatched_review.csv")
