@@ -24,9 +24,7 @@ mapveu_dir <- mapveu_raw_dir
 vector_host_dir <- file.path(evidence_data_dir, "host_vector")
 readiness_dir <- file.path(pathogen_association_data_dir, "readiness")
 
-# WHO networks layout. Helpers prefer the lifecycle roots and keep legacy
-# fallback paths only for migration checks or historical reruns.
-who_networks_legacy_dir <- file.path(who_data_dir, "networks")
+# WHO networks layout.
 who_networks_staged_dir <- file.path(staged_data_dir, "who_networks")
 who_networks_source_components_dir <- file.path(
   who_networks_staged_dir,
@@ -37,7 +35,6 @@ who_networks_domesticated_dir <- file.path(
   who_networks_source_dir,
   "domesticated"
 )
-who_networks_domesticated_legacy_dir <- file.path(who_data_dir, "domesticated")
 who_networks_canonicalization_dir <- file.path(
   who_networks_staged_dir,
   "canonicalization"
@@ -99,9 +96,7 @@ virion_source_version_dir <- file.path(virion_source_dir, "19502921")
 who_clover_dir <- file.path(staged_data_dir, "clover", "outputs")
 who_virion_dir <- file.path(staged_data_dir, "virion", "outputs")
 
-# WHO diseases layout. Helpers prefer the lifecycle roots and keep legacy
-# fallback paths only for migration checks or historical reruns.
-who_diseases_legacy_dir <- file.path(who_data_dir, "who_diseases")
+# WHO diseases layout.
 who_diseases_source_dir <- file.path(source_data_dir, "who_diseases")
 who_diseases_manual_dir <- file.path(manual_data_dir, "who_diseases")
 who_diseases_staged_dir <- file.path(staged_data_dir, "who_diseases")
@@ -367,36 +362,20 @@ vector_screening_taxonomy_review_path <- function(filename) {
   )
 }
 
-who_network_legacy_path <- function(filename) {
-  file.path(who_networks_legacy_dir, filename)
-}
-
 who_network_source_component_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_networks_source_components_dir, filename),
-    who_network_legacy_path(filename)
-  )
+  file.path(who_networks_source_components_dir, filename)
 }
 
 who_network_domesticated_path <- function(filename = "domesticated_lab_farmed.csv") {
-  prefer_existing_path(
-    file.path(who_networks_domesticated_dir, filename),
-    file.path(who_networks_domesticated_legacy_dir, filename)
-  )
+  file.path(who_networks_domesticated_dir, filename)
 }
 
 who_network_canonicalization_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_networks_canonicalization_dir, filename),
-    who_network_legacy_path(filename)
-  )
+  file.path(who_networks_canonicalization_dir, filename)
 }
 
 who_network_host_pathogen_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_networks_host_pathogen_dir, filename),
-    who_network_legacy_path(filename)
-  )
+  file.path(who_networks_host_pathogen_dir, filename)
 }
 
 who_network_host_vector_path <- function(filename, scope = c("who")) {
@@ -407,61 +386,33 @@ who_network_host_vector_path <- function(filename, scope = c("who")) {
     who = who_networks_host_vector_who_dir
   )
 
-  prefer_existing_path(
-    file.path(primary_dir, filename),
-    who_network_legacy_path(filename)
-  )
+  file.path(primary_dir, filename)
 }
 
 who_network_qa_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_networks_qa_dir, filename),
-    who_network_legacy_path(filename)
-  )
+  file.path(who_networks_qa_dir, filename)
 }
 
 role_vector_candidate_path <- function(scope = c("who", "master_plus")) {
   scope <- match.arg(scope)
   filename <- paste0("vector_role_candidates_", scope, ".csv")
 
-  fallback <- if (scope == "who") {
-    who_network_legacy_path("vector_role_candidates.csv")
-  } else {
-    file.path(role_candidates_dir, filename)
-  }
-
-  prefer_existing_path(file.path(role_candidates_dir, filename), fallback)
+  file.path(role_candidates_dir, filename)
 }
 
 role_vector_candidate_summary_path <- function(scope = c("who", "master_plus")) {
   scope <- match.arg(scope)
   filename <- paste0("vector_role_candidates_", scope, "_summary.csv")
 
-  fallback <- if (scope == "who") {
-    who_network_legacy_path("vector_role_candidates_summary.csv")
-  } else {
-    file.path(role_candidates_dir, filename)
-  }
-
-  prefer_existing_path(file.path(role_candidates_dir, filename), fallback)
-}
-
-who_diseases_path <- function(filename) {
-  file.path(who_diseases_legacy_dir, filename)
+  file.path(role_candidates_dir, filename)
 }
 
 who_diseases_source_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_source_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_source_dir, filename)
 }
 
 who_diseases_regional_table_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_regional_tables_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_regional_tables_dir, filename)
 }
 
 who_diseases_regional_table_paths <- function(regions = c(
@@ -481,101 +432,59 @@ who_diseases_regional_table_paths <- function(regions = c(
 }
 
 who_diseases_comparison_lookup_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_comparison_lookups_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_comparison_lookups_dir, filename)
 }
 
 who_diseases_name_resolution_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_name_resolution_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_name_resolution_dir, filename)
 }
 
 who_diseases_transmission_rules_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_transmission_rules_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_transmission_rules_dir, filename)
 }
 
 who_diseases_pathogen_matching_manual_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_pathogen_matching_manual_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_pathogen_matching_manual_dir, filename)
 }
 
 who_diseases_broad_taxa_manual_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_broad_taxa_manual_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_broad_taxa_manual_dir, filename)
 }
 
 who_diseases_staged_backbone_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_staged_backbone_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_staged_backbone_dir, filename)
 }
 
 who_diseases_staged_master_expansion_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_staged_master_expansion_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_staged_master_expansion_dir, filename)
 }
 
 who_diseases_staged_pathogen_matching_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_staged_pathogen_matching_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_staged_pathogen_matching_dir, filename)
 }
 
 who_diseases_host_query_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_host_queries_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_host_queries_dir, filename)
 }
 
 who_diseases_broad_taxa_staged_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_broad_taxa_staged_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_broad_taxa_staged_dir, filename)
 }
 
 who_diseases_backbone_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_backbone_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_backbone_dir, filename)
 }
 
 who_diseases_master_expansion_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_master_expansion_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_master_expansion_dir, filename)
 }
 
 who_diseases_host_species_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_host_species_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_host_species_dir, filename)
 }
 
 who_diseases_qa_path <- function(filename) {
-  prefer_existing_path(
-    file.path(who_diseases_qa_dir, filename),
-    who_diseases_path(filename)
-  )
+  file.path(who_diseases_qa_dir, filename)
 }
 
 who_diseases_translation_path <- function() {
