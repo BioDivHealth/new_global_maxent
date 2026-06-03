@@ -1,4 +1,10 @@
 #!/usr/bin/env Rscript
+################################################################################
+# Deprecated: this historical replay script hard-codes one completed curation
+# pass. Durable source-check decisions now live in
+# pathogen_association_data/manual/role_annotation/source_check/curated_source_check_decisions.csv
+# and are merged by 6_7_Build_Source_Check_Decision_Ledger.R.
+################################################################################
 
 suppressPackageStartupMessages({
   library(dplyr)

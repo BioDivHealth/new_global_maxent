@@ -28,6 +28,7 @@ output_dir <- role_source_check_dir
 candidate_queue_path <- file.path(consolidated_dir, "candidate_source_check_queue.csv")
 source_request_path <- file.path(consolidated_dir, "candidate_source_request_list.csv")
 unique_sources_path <- file.path(consolidated_dir, "candidate_unique_sources_to_fetch.csv")
+curated_decisions_path <- file.path(output_dir, "curated_source_check_decisions.csv")
 
 required_paths <- c(candidate_queue_path, source_request_path, unique_sources_path)
 missing_paths <- required_paths[!file.exists(required_paths)]
@@ -61,6 +62,123 @@ repo_relative_path <- function(path) {
 
   normalized[is_repo_path] <- substring(normalized[is_repo_path], nchar(repo_prefix) + 1L)
   normalized
+}
+
+curated_identity_columns <- c(
+  "candidate_row_id",
+  "batch_id",
+  "disease_name",
+  "entity_type",
+  "entity_name",
+  "role_assignment",
+  "assignment_confidence"
+)
+
+curated_decision_columns <- c(
+  "source_checked",
+  "source_check_method",
+  "evidence_found",
+  "checked_evidence_span",
+  "checked_evidence_location",
+  "decision",
+  "accepted_role",
+  "accepted_confidence",
+  "accepted_evidence_scope",
+  "caveat",
+  "official_csv_target",
+  "decision_reason",
+  "reviewer",
+  "review_date",
+  "import_ready"
+)
+
+apply_curated_source_check_decisions <- function(decision_ledger, curated_path) {
+  if (!file.exists(curated_path)) {
+    return(decision_ledger)
+  }
+
+  curated_decisions <- read_stage_csv(curated_path)
+  required_columns <- c(curated_identity_columns, curated_decision_columns)
+  missing_columns <- setdiff(required_columns, names(curated_decisions))
+  if (length(missing_columns) > 0) {
+    stop(
+      "Curated source-check decisions are missing required columns: ",
+      paste(missing_columns, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  duplicated_ids <- unique(curated_decisions$candidate_row_id[duplicated(curated_decisions$candidate_row_id)])
+  if (length(duplicated_ids) > 0) {
+    stop(
+      "Curated source-check decisions contain duplicate candidate_row_id values: ",
+      paste(duplicated_ids, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  unknown_ids <- setdiff(curated_decisions$candidate_row_id, decision_ledger$candidate_row_id)
+  if (length(unknown_ids) > 0) {
+    stop(
+      "Curated source-check decisions refer to candidate_row_id values absent from the regenerated ledger: ",
+      paste(unknown_ids, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  identity_comparison <- decision_ledger %>%
+    select(all_of(curated_identity_columns)) %>%
+    inner_join(
+      curated_decisions %>% select(all_of(curated_identity_columns)),
+      by = "candidate_row_id",
+      suffix = c(".ledger", ".curated")
+    )
+
+  identity_mismatches <- map_dfr(setdiff(curated_identity_columns, "candidate_row_id"), function(column) {
+    ledger_column <- paste0(column, ".ledger")
+    curated_column <- paste0(column, ".curated")
+
+    identity_comparison %>%
+      filter(coalesce(.data[[ledger_column]], "") != coalesce(.data[[curated_column]], "")) %>%
+      transmute(
+        candidate_row_id,
+        column = column,
+        ledger_value = .data[[ledger_column]],
+        curated_value = .data[[curated_column]]
+      )
+  })
+
+  if (nrow(identity_mismatches) > 0) {
+    mismatch_preview <- identity_mismatches %>%
+      mutate(summary = paste0(candidate_row_id, ":", column)) %>%
+      pull(summary) %>%
+      head(10)
+
+    stop(
+      "Curated source-check decisions no longer match regenerated candidate identities: ",
+      paste(mismatch_preview, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  curated_values <- curated_decisions %>%
+    select(candidate_row_id, all_of(curated_decision_columns)) %>%
+    rename_with(~ paste0(.x, ".curated"), all_of(curated_decision_columns))
+
+  filled_ledger <- decision_ledger %>%
+    left_join(curated_values, by = "candidate_row_id")
+
+  for (column in curated_decision_columns) {
+    curated_column <- paste0(column, ".curated")
+    filled_ledger[[column]] <- if_else(
+      !is.na(filled_ledger[[curated_column]]),
+      filled_ledger[[curated_column]],
+      filled_ledger[[column]]
+    )
+    filled_ledger[[curated_column]] <- NULL
+  }
+
+  filled_ledger
 }
 
 candidate_queue <- read_stage_csv(candidate_queue_path) %>%
@@ -137,7 +255,7 @@ candidate_sources_collapsed <- source_request_with_files %>%
     pmid = paste(unique(na.omit(pmid)), collapse = " | "),
     pmcid = paste(unique(na.omit(pmcid)), collapse = " | "),
     source_access = paste(unique(na.omit(source_access)), collapse = " | "),
-    file_name = paste(unique(na.omit(file_name)), collapse = ", "),
+    file_name = paste(unique(file_name[!is.na(file_name) & file_name != ""]), collapse = ", "),
     .groups = "drop"
   )
 
@@ -227,9 +345,17 @@ decision_ledger <- candidate_queue %>%
     import_ready
   )
 
+decision_ledger <- apply_curated_source_check_decisions(decision_ledger, curated_decisions_path)
+
 write_csv(decision_ledger, file.path(output_dir, "candidate_source_check_decisions.csv"), na = "")
 write_csv(source_request_with_files, file.path(output_dir, "candidate_source_request_list_with_files.csv"), na = "")
 write_csv(source_file_status, file.path(output_dir, "source_file_status.csv"), na = "")
+
+decision_summary <- decision_ledger %>%
+  count(decision, import_ready, name = "n") %>%
+  arrange(decision, import_ready)
+
+write_csv(decision_summary, file.path(output_dir, "source_check_decision_summary.csv"), na = "")
 
 summary <- tibble(
   candidate_rows = nrow(decision_ledger),
@@ -243,6 +369,23 @@ summary <- tibble(
 )
 write_csv(summary, file.path(output_dir, "source_check_summary.csv"), na = "")
 
+progress_lines <- c(
+  "# Source-Check Progress",
+  "",
+  paste0("Generated: ", Sys.Date()),
+  "",
+  "Durable curated decisions:",
+  "",
+  "- `curated_source_check_decisions.csv` stores manual/source-checked curation fields.",
+  "- `candidate_source_check_decisions.csv` is regenerated by merging fresh candidate/source metadata with those curated decisions.",
+  "- Official role evidence and assignment CSVs are not modified by this ledger build.",
+  "",
+  "Decision summary:",
+  "",
+  paste(capture.output(print(decision_summary, n = Inf)), collapse = "\n")
+)
+writeLines(progress_lines, file.path(output_dir, "SOURCE_CHECK_PROGRESS.md"), useBytes = TRUE)
+
 readme_lines <- c(
   "# Source-Check Decision Ledger",
   "",
@@ -252,10 +395,12 @@ readme_lines <- c(
   "",
   "Core files:",
   "",
-  "- `candidate_source_check_decisions.csv`: one row per candidate role claim; fill decisions here.",
+  "- `curated_source_check_decisions.csv`: durable manual/source-checked curation decisions keyed by candidate identity.",
+  "- `candidate_source_check_decisions.csv`: regenerated one-row-per-candidate ledger with source metadata and curated decisions applied.",
   "- `candidate_source_request_list_with_files.csv`: candidate-source links with the user-provided `file_name` metadata joined in.",
   "- `source_file_status.csv`: local PDF existence checks for each source/file pointer.",
   "- `source_check_summary.csv`: compact counts for the decision ledger.",
+  "- `source_check_decision_summary.csv`: counts by source-check decision and import-readiness.",
   "",
   "Decision vocabulary:",
   "",
@@ -264,11 +409,26 @@ readme_lines <- c(
   "- `defer`: taxonomy, role vocabulary, source-access, or interpretation issue remains.",
   "- `reject`: source does not support the proposed candidate role.",
   "",
+  "Import status:",
+  "",
+  "- The source-check import script is idempotent. It skips rows whose",
+  "  `source_check_candidate_id` is already present in the official role CSVs.",
+  "- A rerun reporting `+0` official row deltas is expected after the accepted rows",
+  "  have already been imported.",
+  "- In the current package, 45 accepted/import-ready rows are already represented",
+  "  in the official role evidence and assignment CSVs; 8 rows remain excluded as",
+  "  evidence-only or deferred.",
+  "",
   "Generated by:",
   "",
-  "`Rscript scripts/associations/role_annotation/6_7_Build_Source_Check_Decision_Ledger.R`"
+  "`Rscript scripts/associations/role_annotation/6_7_Build_Source_Check_Decision_Ledger.R`",
+  "",
+  "Import checked rows with:",
+  "",
+  "`Rscript scripts/associations/role_annotation/6_9_Import_Source_Checked_Role_Rows.R`"
 )
 writeLines(readme_lines, file.path(output_dir, "README.md"), useBytes = TRUE)
 
 message("Wrote source-check decision ledger.")
 print(summary)
+print(decision_summary)

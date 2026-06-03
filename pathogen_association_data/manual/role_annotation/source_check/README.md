@@ -6,10 +6,12 @@ No official role evidence or assignment CSVs are modified by this workflow.
 
 Core files:
 
-- `candidate_source_check_decisions.csv`: one row per candidate role claim; fill decisions here.
+- `curated_source_check_decisions.csv`: durable manual/source-checked curation decisions keyed by candidate identity.
+- `candidate_source_check_decisions.csv`: regenerated one-row-per-candidate ledger with source metadata and curated decisions applied.
 - `candidate_source_request_list_with_files.csv`: candidate-source links with the user-provided `file_name` metadata joined in.
 - `source_file_status.csv`: local PDF existence checks for each source/file pointer.
 - `source_check_summary.csv`: compact counts for the decision ledger.
+- `source_check_decision_summary.csv`: counts by source-check decision and import-readiness.
 
 Decision vocabulary:
 
