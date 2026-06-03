@@ -97,6 +97,17 @@ sdms/outputs/*
 sdms/outputs/catalog/*
 !sdms/outputs/catalog/accessible_sdm_species.csv
 
+# SDM disease-run workspaces: keep small run manifests visible, but ignore
+# generated occurrence tables, logs, diagnostics, fitted models, and rasters.
+sdms/runs/*/calibration/occurrences/
+sdms/runs/*/calibration/batch_runs/
+sdms/runs/*/calibration/regenerated_models/
+sdms/runs/*/calibration/range_diagnostics/
+sdms/runs/*/calibration/model_inventory_diagnostics/
+sdms/runs/*/calibration/*_gbif_counts.csv
+sdms/runs/*/calibration/*_gbif_exact_name_counts.csv
+sdms/runs/*/calibration/gonzalo_*_summary.md
+
 # WHO DON raw/API payloads and OpenAI transport artifacts
 pathogen_association_data/WHO/disease_outbreak_news/who_don_raw.json
 pathogen_association_data/WHO/disease_outbreak_news/who_don_records.csv
@@ -414,9 +425,3 @@ pathogen_association_data/WHO/disease_outbreak_news_v2/review/v2_targeted_adjudi
 pathogen_association_data/WHO/disease_outbreak_news_v2/review/who_don_review_decisions_seeded_from_clean.csv
 pathogen_association_data/manual/role_annotation/source_check/SOURCE_CHECK_PROGRESS.md
 pathogen_association_data/manual/role_annotation/source_check/import/SOURCE_CHECK_IMPORT_SUMMARY.md
-scripts/sdms/01_catalog_models.R
-scripts/sdms/02_prepare_future_climate.R
-scripts/sdms/03_project_future_sdms.R
-scripts/sdms/04_compare_present_future_distributions.R
-scripts/sdms/README.md
-scripts/sdms/utils.R
