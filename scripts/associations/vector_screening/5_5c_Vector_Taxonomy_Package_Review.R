@@ -15,7 +15,10 @@ p_load(dplyr, here, purrr, readr, rgbif, stringr, taxize, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
 source(here("scripts", "New_functions", "get_synonyms.R"))
-options(iucn_redlist_key = "tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
+iucn_redlist_key <- Sys.getenv("IUCN_REDLIST_KEY", unset = Sys.getenv("IUCN_API_KEY", unset = ""))
+if (nzchar(iucn_redlist_key)) {
+  options(iucn_redlist_key = iucn_redlist_key)
+}
 
 clean_text <- function(x) {
   x <- as.character(x)

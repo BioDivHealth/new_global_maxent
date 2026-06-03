@@ -19,7 +19,10 @@ source(here("scripts", "associations", "working_inputs.R"))
 
 load(file = "scripts/functions/wrld_simpl2.R")
 source("scripts/New_functions/get_synonyms.R")
-options(iucn_redlist_key="tiB4fspZ5oyjmPYd88F5NqpNFxitdb4mfqu4")
+iucn_redlist_key <- Sys.getenv("IUCN_REDLIST_KEY", unset = Sys.getenv("IUCN_API_KEY", unset = ""))
+if (nzchar(iucn_redlist_key)) {
+  options(iucn_redlist_key = iucn_redlist_key)
+}
 
 # Helper function from 0_SpList.R -----------------------------------------
 collapse_vals <- function(x, sep = "; ") {
