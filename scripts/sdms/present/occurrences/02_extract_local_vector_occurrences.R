@@ -2,8 +2,8 @@
 # -----------------------------------------------------------------------------|
 # 02_extract_local_vector_occurrences.R ----
 # -----------------------------------------------------------------------------|
-# Purpose: Copy local VectorMap and MapVEu occurrence records for Chikungunya
-#          vector species into the SDM occurrence workspace.
+# Purpose: Copy local VectorMap and MapVEu occurrence records for vector
+#          species into the SDM occurrence workspace.
 # -----------------------------------------------------------------------------|
 
 suppressPackageStartupMessages({
@@ -18,18 +18,29 @@ suppressPackageStartupMessages({
 source(file.path(here::here(), "scripts", "sdms", "present", "utils.R"))
 
 # -----------------------------------------------------------------------------|
-# Config ----
+# RStudio config: edit this block before sourcing the script ----
 # -----------------------------------------------------------------------------|
 
-local_occurrence_config <- list(
-  target_manifest_path = file.path(repo_root(), "sdms", "runs", "chikungunya", "sdm_target_manifest.csv"),
-  output_occurrence_root = file.path(repo_root(), "sdms", "runs", "chikungunya", "calibration", "occurrences"),
+if (!exists("local_occurrence_config", inherits = FALSE)) {
+  local_occurrence_config <- list(
+    target_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "vector_species_sdm_targets.csv"),
+    output_occurrence_root = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "occurrences"),
+    output_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "local_vector_occurrence_sources_manifest.csv")
+  )
+}
+
+# -----------------------------------------------------------------------------|
+# Internal defaults ----
+# -----------------------------------------------------------------------------|
+
+default_local_occurrence_config <- list(
+  target_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "vector_species_sdm_targets.csv"),
+  output_occurrence_root = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "occurrences"),
   output_manifest_path = file.path(
     repo_root(),
     "sdms",
     "runs",
-    "chikungunya",
-    "calibration",
+    "vector_sdm_push",
     "local_vector_occurrence_sources_manifest.csv"
   ),
   vectormap_mosquito_path = file.path(
@@ -65,6 +76,17 @@ local_occurrence_config <- list(
     "VBP_MEGA_Collection_subsettedData.txt"
   )
 )
+
+local_occurrence_config <- utils::modifyList(default_local_occurrence_config, local_occurrence_config)
+args <- parse_cli_args(commandArgs(trailingOnly = TRUE))
+
+config_arg <- function(key, config_key = gsub("-", "_", key)) {
+  get_arg(args, key, local_occurrence_config[[config_key]])
+}
+
+local_occurrence_config$target_manifest_path <- config_arg("target-manifest-path")
+local_occurrence_config$output_occurrence_root <- config_arg("output-occurrence-root")
+local_occurrence_config$output_manifest_path <- config_arg("output-manifest-path")
 
 # -----------------------------------------------------------------------------|
 # Normalisation and validation helpers ----

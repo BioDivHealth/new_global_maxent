@@ -1,22 +1,30 @@
 # Present-Day SDM Fitting
 
-This folder contains the present-day SDM workflow for Chikungunya host/vector
-calibration and vector model generation.
+This folder contains the present-day SDM workflow for regenerating calibration
+models and building vector SDMs. The current bulk workflow is disease-aware at
+the manifest stage, but fits each vector species once so the same SDM can be
+reused across diseases.
 
 ## Folder Layout
 
 ```text
 scripts/sdms/present/
   utils.R
+  manifests/
+    01_build_vector_sdm_target_manifests.R
   occurrences/
+    01_prepare_one_gbif_species.R
     01_prepare_gbif_occurrences.R
     02_extract_local_vector_occurrences.R
+    03_prepare_species_occurrences_batch.R
     03_prepare_chikungunya_occurrences_batch.R
     04_submit_gbif_download_requests.R
     05_fetch_gbif_download_requests.R
     06_combine_vector_occurrences.R
+    07_plot_combined_vector_occurrence_maps.R
   models/
     01_run_present_model.R
+    02_run_species_models_batch.R
     02_run_chikungunya_models_batch.R
   calibration/
     01_prepare_host_regeneration_manifest.R
@@ -24,57 +32,89 @@ scripts/sdms/present/
     03_compare_rousettus_models.R
 ```
 
-`occurrences/` scripts create occurrence inputs. `models/` scripts run or
-dry-run present-day AutoMaxent models. `calibration/` scripts are comparison and
-diagnostic scripts used while checking our regenerated models against Gonzalo's
-saved host SDMs.
+`manifests/` builds SDM target manifests. `occurrences/` downloads, imports,
+extracts, and combines occurrence records. `models/` runs or dry-runs present-day
+AutoMaxent models. `calibration/` contains diagnostics used while comparing our
+regenerated host models against Gonzalo's saved host SDMs.
 
-## Occurrence Preparation
+## Vector SDM Push
 
-Use `occurrences/01_prepare_gbif_occurrences.R` for one species. It supports
-three GBIF pathways:
+The all-disease vector workflow writes to:
+
+```text
+sdms/runs/vector_sdm_push/
+```
+
+Build target manifests first:
+
+```r
+manifest_config <- list(
+  recommended_next_action = "find_or_build_vector_sdm",
+  roles = "vector",
+  start_year = 1970,
+  end_year = as.integer(format(Sys.Date(), "%Y")),
+  overwrite = TRUE
+)
+
+source("scripts/sdms/present/manifests/01_build_vector_sdm_target_manifests.R")
+```
+
+This creates:
+
+```text
+sdms/runs/vector_sdm_push/disease_vector_sdm_targets.csv
+sdms/runs/vector_sdm_push/vector_species_sdm_targets.csv
+sdms/runs/vector_sdm_push/manifest_build_summary.csv
+```
+
+`disease_vector_sdm_targets.csv` keeps disease-vector context. Use it later for
+disease proxy stacking. `vector_species_sdm_targets.csv` is the operational
+species manifest used for occurrence downloads and model fitting.
+
+## Occurrence Records
+
+For one species, use `occurrences/01_prepare_one_gbif_species.R`. It supports:
 
 - `direct-gbif`: month-by-month `rgbif::occ_search()` download for smaller jobs;
 - `spatial-spp`: SDM_Pipeline synonym-expanded download, requiring
   `IUCN_REDLIST_KEY` or `IUCN_API_KEY`;
 - `gbif-download`: asynchronous GBIF download API for record-rich species.
 
-For Chikungunya vectors, the working default is `gbif-download` with records from
-1970 through the current calendar year.
-
-```sh
-Rscript scripts/sdms/present/occurrences/01_prepare_gbif_occurrences.R \
-  --species "Aedes albopictus" \
-  --method gbif-download \
-  --manifest sdms/runs/chikungunya/sdm_target_manifest.csv \
-  --start-year 1970 \
-  --end-year 2026 \
-  --redownload
-```
-
-The script reads GBIF credentials from environment variables named `GBIF_USER`,
+For vector batches, use `gbif-download` from 1970 through the current year.
+GBIF credentials are read from environment variables named `GBIF_USER`,
 `GBIF_PASSWORD`, and `GBIF_EMAIL`, or from repo-ignored `.env` entries named
 `gbif_username`, `gbif_password`, and `gbif_email`.
 
-Outputs are separated by species and method:
+Raw asynchronous GBIF downloads are not filtered by `occurrenceStatus`, so raw
+GBIF source files can retain explicit `ABSENT` rows for audit. GBIF inputs used
+for modelling are filtered later: the preparation/combination scripts remove
+explicit non-present rows plus rows with `individualCount == 0` before
+deduplication and cleaning.
 
-```text
-sdms/runs/chikungunya/calibration/occurrences/<Species_safe>/<method>/
+Extract local VectorMap and MapVEu records before combining sources:
+
+```r
+source("scripts/sdms/present/occurrences/02_extract_local_vector_occurrences.R")
 ```
 
-Before cleaning, synonym-expanded downloads are deduplicated by GBIF key where
-that key is available. The occurrence summary records raw, year-filtered,
-deduplicated, cleaned, and unique-coordinate counts.
+The extractor writes exact species matches only:
 
-## Two-Phase GBIF Download Runs
+```text
+sdms/runs/vector_sdm_push/occurrences/<Species_safe>/vectormap/raw/
+sdms/runs/vector_sdm_push/occurrences/<Species_safe>/mapveu/raw/
+sdms/runs/vector_sdm_push/local_vector_occurrence_sources_manifest.csv
+```
 
-Use the two-phase workflow for Chikungunya vectors and other record-rich
-species. It avoids waiting for every GBIF download inside one long serial run.
+## Two-Phase GBIF Downloads
 
-Submit requests first:
+Submit GBIF download requests first:
 
 ```r
 batch_config <- list(
+  target_manifest_path = "sdms/runs/vector_sdm_push/vector_species_sdm_targets.csv",
+  request_manifest_path = "sdms/runs/vector_sdm_push/gbif_download_requests.csv",
+  occurrence_root = "sdms/runs/vector_sdm_push/occurrences",
+  request_run_root = "sdms/runs/vector_sdm_push/gbif_download_request_runs",
   roles = "vector",
   start_year = 1970,
   end_year = as.integer(format(Sys.Date(), "%Y")),
@@ -87,25 +127,17 @@ batch_config <- list(
 source("scripts/sdms/present/occurrences/04_submit_gbif_download_requests.R")
 ```
 
-This writes a durable request ledger:
+The submit script refreshes saved GBIF statuses before submitting and only fills
+available GBIF download slots. Re-run it after earlier downloads finish.
 
-```text
-sdms/runs/chikungunya/calibration/gbif_download_requests.csv
-```
-
-By default, the submit script first seeds that ledger from any existing
-per-species `gbif-download/raw/raw_download_manifest.csv` files, so previously
-downloaded species are recorded before new GBIF requests are submitted.
-It also defaults to `max_new_submissions = 3`, matching GBIF's simultaneous
-download limit for the account. Before submitting, it refreshes saved GBIF
-download statuses and only uses the free slots. Re-run the submit script after
-earlier jobs have finished to submit the next batch.
-
-Later, after GBIF has finished preparing the downloads, fetch and clean ready
-requests:
+Fetch and clean completed downloads later:
 
 ```r
 batch_config <- list(
+  target_manifest_path = "sdms/runs/vector_sdm_push/vector_species_sdm_targets.csv",
+  request_manifest_path = "sdms/runs/vector_sdm_push/gbif_download_requests.csv",
+  occurrence_root = "sdms/runs/vector_sdm_push/occurrences",
+  fetch_run_root = "sdms/runs/vector_sdm_push/gbif_download_fetch_runs",
   roles = "vector",
   fetch_statuses = "SUCCEEDED",
   redownload_occurrences = FALSE,
@@ -115,72 +147,17 @@ batch_config <- list(
 source("scripts/sdms/present/occurrences/05_fetch_gbif_download_requests.R")
 ```
 
-`05_fetch_gbif_download_requests.R` refreshes GBIF status metadata, skips jobs
-that are not ready, and calls `01_prepare_gbif_occurrences.R` with the saved
-`gbif_download_key` for ready jobs. The one-species script then imports the ZIP,
-deduplicates, cleans, writes occurrence summaries, and updates
-`sdm_target_manifest.csv` when requested.
-
-Submit/fetch run summaries are written under:
-
-```text
-sdms/runs/chikungunya/calibration/gbif_download_request_runs/
-sdms/runs/chikungunya/calibration/gbif_download_fetch_runs/
-```
-
-## One-Pass Occurrence Runs
-
-Use `occurrences/03_prepare_chikungunya_occurrences_batch.R` only for small
-one-pass jobs where it is acceptable for each species to submit, wait, import,
-and clean before the next species starts. For `gbif-download` vector batches,
-prefer the two-phase workflow above.
-
-For RStudio use, either edit the top `batch_config` block in the script, or
-define `batch_config` in the console immediately before sourcing:
-
-```r
-batch_config <- list(
-  roles = "vector",
-  occurrence_method = "direct-gbif",
-  prepare_occurrences = FALSE,
-  redownload_occurrences = FALSE,
-  start_year = 1970,
-  end_year = as.integer(format(Sys.Date(), "%Y"))
-)
-
-source("scripts/sdms/present/occurrences/03_prepare_chikungunya_occurrences_batch.R")
-```
-
-The one-pass batch script retries occurrence preparation using
-`occurrence_download_attempts` and `occurrence_retry_sleep_seconds` from its
-internal defaults. Logs and summaries are written under:
-
-```text
-sdms/runs/chikungunya/calibration/occurrence_batch_runs/
-```
-
-## Local Vector Occurrence Sources
-
-Use `occurrences/02_extract_local_vector_occurrences.R` to copy exact species
-matches from local VectorMap and MapVEu raw tables into the same occurrence
-workspace. These are source-specific raw folders only; they are not yet the
-combined cleaned occurrence input for model fitting.
-
-```text
-sdms/runs/chikungunya/calibration/occurrences/<Species_safe>/vectormap/raw/
-sdms/runs/chikungunya/calibration/occurrences/<Species_safe>/mapveu/raw/
-```
-
 ## Combined Vector Occurrences
 
-After GBIF records have been fetched and local VectorMap/MapVEu records have
-been extracted, use `occurrences/06_combine_vector_occurrences.R` to write a
-new `combined` occurrence method per species. The script reads the source
-folders only; it does not modify `gbif-download`, `vectormap`, `mapveu`,
-`direct-gbif`, or `spatial-spp` inputs.
+After GBIF records have been fetched and local records extracted, combine all
+available sources into a `combined` occurrence method:
 
 ```r
 batch_config <- list(
+  target_manifest_path = "sdms/runs/vector_sdm_push/vector_species_sdm_targets.csv",
+  local_source_manifest_path = "sdms/runs/vector_sdm_push/local_vector_occurrence_sources_manifest.csv",
+  occurrence_root = "sdms/runs/vector_sdm_push/occurrences",
+  combined_run_root = "sdms/runs/vector_sdm_push/combined_vector_occurrence_runs",
   roles = "vector",
   start_year = 1970,
   end_year = as.integer(format(Sys.Date(), "%Y")),
@@ -191,50 +168,89 @@ batch_config <- list(
 source("scripts/sdms/present/occurrences/06_combine_vector_occurrences.R")
 ```
 
-Combined outputs are written under:
+The preferred modelling input is `combined`. If local records are absent, this
+can still be GBIF-only after combination. Local-only modelling should be treated
+as a fallback when GBIF has too few usable records and local sources have enough
+clean records. The combined run summary records how many GBIF rows were removed
+by the presence filter before source merging.
 
-```text
-sdms/runs/chikungunya/calibration/occurrences/<Species_safe>/combined/
-```
-
-Each species gets standardized, coordinate-deduplicated, and cleaned CSVs plus
-an occurrence-preparation summary. Run-level summaries are written under:
-
-```text
-sdms/runs/chikungunya/calibration/combined_vector_occurrence_runs/
-```
-
-## Model Runs
-
-Use `models/01_run_present_model.R` for one species and
-`models/02_run_chikungunya_models_batch.R` for manifest-driven batches.
-
-The model batch script does not prepare occurrences. It expects cleaned
-occurrence files to already exist under the configured occurrence method folder.
-By default it is a status/preflight run only. Set either `dry_run_models = TRUE`
-or `fit_models = TRUE` in the top `batch_config` block, or define
-`batch_config` in the console immediately before sourcing:
+To map the model-facing occurrence inputs by source provenance, plot the cleaned
+combined records:
 
 ```r
 batch_config <- list(
   roles = "vector",
   occurrence_method = "combined",
-  fit_models = TRUE,
-  dry_run_models = FALSE,
+  start_year = 1970,
+  end_year = as.integer(format(Sys.Date(), "%Y")),
+  dry_run = FALSE
+)
+
+source("scripts/sdms/present/occurrences/07_plot_combined_vector_occurrence_maps.R")
+```
+
+These maps use the deduplicated/cleaned combined layer, so they show the points
+the model workflow will see rather than raw pre-combination source records.
+Shared coordinate groups are labelled as mixed-source points.
+
+Map scripts write to stable, human-readable run folders by default so rerunning
+the same diagnostic replaces the previous map set. Chikungunya map diagnostics
+live under `sdms/runs/chikungunya/maps/`, not under `calibration/`. Set
+`timestamped_run_dir = TRUE` only when you intentionally want to keep every
+exploratory map run.
+
+## Model Runs
+
+Use `models/01_run_present_model.R` for one species and
+`models/02_run_species_models_batch.R` for manifest-driven vector batches.
+
+The batch script does not prepare occurrences. It expects cleaned occurrence
+files under the configured occurrence method folder. By default it is a
+status/preflight run only.
+
+```r
+batch_config <- list(
+  target_manifest_path = "sdms/runs/vector_sdm_push/vector_species_sdm_targets.csv",
+  occurrence_root = "sdms/runs/vector_sdm_push/occurrences",
+  model_output_root = "sdms/runs/vector_sdm_push/models",
+  model_batch_run_root = "sdms/runs/vector_sdm_push/model_batch_runs",
+  roles = "vector",
+  occurrence_method = "combined",
+  fit_models = FALSE,
+  dry_run_models = TRUE,
   start_year = 1970,
   end_year = as.integer(format(Sys.Date(), "%Y"))
 )
 
-source("scripts/sdms/present/models/02_run_chikungunya_models_batch.R")
+source("scripts/sdms/present/models/02_run_species_models_batch.R")
 ```
 
-Current model defaults use `predictor_mode = "bio-elev"` and
-`candidate_set = "iucn_complete_all"`. `range_filter = "auto"` applies IUCN
-ranges when available and falls back to the equivalent no-range candidate set
-when a species has no matching range polygon.
+Model outputs from the bulk vector push stay under
+`sdms/runs/vector_sdm_push/models/` until they have been reviewed. Do not promote
+them into the shared `sdms/models/` catalogue during the first batch run.
 
-Logs and summaries are written under:
+## Chikungunya Compatibility
+
+Existing Chikungunya outputs under `sdms/runs/chikungunya/` are not moved or
+deleted. The Chikungunya occurrence/model batch defaults now read and write
+occurrences from the shared vector workspace:
 
 ```text
-sdms/runs/chikungunya/calibration/model_batch_runs/
+sdms/runs/vector_sdm_push/occurrences/
 ```
+
+This avoids duplicating Chikungunya vector records in
+`sdms/runs/chikungunya/calibration/occurrences/`. To run the old
+Chikungunya-specific manifests, source the compatibility scripts:
+
+```text
+occurrences/03_prepare_chikungunya_occurrences_batch.R
+models/02_run_chikungunya_models_batch.R
+```
+
+Those scripts are path-configurable. Their run summaries and regenerated model
+outputs still default to the existing Chikungunya calibration workspace, but
+their occurrence root defaults to the shared vector-push occurrence folder.
+
+The older `occurrences/01_prepare_gbif_occurrences.R` filename is kept as a
+compatibility wrapper around `01_prepare_one_gbif_species.R`.

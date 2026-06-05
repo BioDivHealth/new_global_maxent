@@ -2,8 +2,11 @@
 # -----------------------------------------------------------------------------|
 # 04_submit_gbif_download_requests.R ----
 # -----------------------------------------------------------------------------|
-# Purpose: Submit asynchronous GBIF occurrence-download requests for Chikungunya
-#          SDM targets and save the returned download keys immediately.
+# Purpose: Submit asynchronous GBIF occurrence-download requests for SDM targets
+#          and save the returned download keys immediately.
+# Inputs : SDM target manifest, optional existing GBIF request manifest, and
+#          optional per-species raw download manifests under occurrence_root.
+# Outputs: Updated GBIF request manifest and a timestamped submit-run summary.
 # -----------------------------------------------------------------------------|
 
 suppressPackageStartupMessages({
@@ -15,7 +18,7 @@ suppressPackageStartupMessages({
 source(file.path(here::here(), "scripts", "sdms", "present", "utils.R"))
 
 # -----------------------------------------------------------------------------|
-# RStudio config: edit this block before sourcing the script ----
+# 1. RStudio config: edit this block before sourcing the script ----
 # -----------------------------------------------------------------------------|
 
 if (!exists("batch_config", inherits = FALSE)) {
@@ -32,12 +35,14 @@ if (!exists("batch_config", inherits = FALSE)) {
 }
 
 # -----------------------------------------------------------------------------|
-# Internal defaults ----
+# 2. Internal defaults ----
 # -----------------------------------------------------------------------------|
 
 default_batch_config <- list(
-  target_manifest_path = file.path(repo_root(), "sdms", "runs", "chikungunya", "sdm_target_manifest.csv"),
-  request_manifest_path = file.path(repo_root(), "sdms", "runs", "chikungunya", "calibration", "gbif_download_requests.csv"),
+  target_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "vector_species_sdm_targets.csv"),
+  request_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "gbif_download_requests.csv"),
+  occurrence_root = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "occurrences"),
+  request_run_root = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "gbif_download_request_runs"),
   roles = "vector",
   include_not_needed = FALSE,
   include_already_available = FALSE,
@@ -56,13 +61,15 @@ batch_config <- utils::modifyList(default_batch_config, batch_config)
 args <- parse_cli_args(commandArgs(trailingOnly = TRUE))
 
 # -----------------------------------------------------------------------------|
-# Helpers ----
+# 3. Helper functions ----
 # -----------------------------------------------------------------------------|
 
 config_arg <- function(key, config_key = gsub("-", "_", key)) {
   get_arg(args, key, batch_config[[config_key]])
 }
 
+# Durable request-ledger schema. The fetch script uses the same columns, so keep
+# this as the source of truth for submit/fetch hand-off metadata.
 request_columns <- c(
   "species_name",
   "species_name_canonical",
@@ -91,6 +98,8 @@ request_columns <- c(
   "notes"
 )
 
+# Create an empty ledger with stable column types so first-run writes match
+# later append/update operations.
 empty_request_manifest <- function() {
   data.frame(
     species_name = character(),
@@ -122,6 +131,8 @@ empty_request_manifest <- function() {
   )
 }
 
+# Add any newly introduced ledger columns to older manifests without dropping or
+# reordering expected fields.
 ensure_manifest_columns <- function(data) {
   for (col in request_columns) {
     if (!col %in% names(data)) {
@@ -131,11 +142,15 @@ ensure_manifest_columns <- function(data) {
   data[, request_columns, drop = FALSE]
 }
 
+# Every ledger write passes through the same schema guard to avoid partial rows
+# when a run is interrupted between submissions.
 write_request_manifest <- function(data, path) {
   dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
   write.csv(ensure_manifest_columns(data), path, row.names = FALSE, na = "")
 }
 
+# Copy status fields returned by the shared GBIF status helper onto the matching
+# ledger row.
 update_status_columns <- function(requests, row_idx, status_row) {
   for (col in intersect(names(status_row), names(requests))) {
     requests[[col]][row_idx] <- status_row[[col]][[1]]
@@ -143,6 +158,8 @@ update_status_columns <- function(requests, row_idx, status_row) {
   requests
 }
 
+# Request identity is species plus year window. This prevents repeated submit
+# calls from creating duplicate downloads for the same target window.
 existing_request_index <- function(requests, species, start_year, end_year) {
   if (nrow(requests) == 0) {
     return(integer())
@@ -154,18 +171,24 @@ existing_request_index <- function(requests, species, start_year, end_year) {
     request_species_key <- canonical_species_name(requests$species_name)
   }
 
+  has_download_key <- !is.na(requests$gbif_download_key) & nzchar(requests$gbif_download_key)
+  terminal_submit_failure <- requests$request_status == "failed" &
+    (is.na(requests$gbif_download_key) | !nzchar(requests$gbif_download_key))
+
   which(
     request_species_key == species_key &
       suppressWarnings(as.integer(requests$start_year)) == start_year &
       suppressWarnings(as.integer(requests$end_year)) == end_year &
-      !is.na(requests$gbif_download_key) &
-      nzchar(requests$gbif_download_key)
+      (has_download_key | terminal_submit_failure)
   )
 }
 
-seed_existing_gbif_downloads <- function(requests, target_manifest) {
+# Fold completed or previously imported per-species GBIF downloads into the
+# central request ledger before submitting anything new. This lets old outputs
+# count toward the active workflow instead of being accidentally duplicated.
+seed_existing_gbif_downloads <- function(requests, target_manifest, occurrence_root) {
   manifest_paths <- list.files(
-    file.path(repo_root(), "sdms", "runs", "chikungunya", "calibration", "occurrences"),
+    occurrence_root,
     pattern = "^raw_download_manifest[.]csv$",
     recursive = TRUE,
     full.names = TRUE
@@ -180,6 +203,8 @@ seed_existing_gbif_downloads <- function(requests, target_manifest) {
 
   for (manifest_path in manifest_paths) {
     raw_manifest <- read.csv(manifest_path, check.names = FALSE, stringsAsFactors = FALSE)
+    # Only raw manifests created by the asynchronous GBIF path can be represented
+    # in this request ledger.
     if (!all(c("species_name", "method", "start_year", "end_year", "gbif_download_key") %in% names(raw_manifest))) {
       next
     }
@@ -200,25 +225,17 @@ seed_existing_gbif_downloads <- function(requests, target_manifest) {
     target_idx <- target_manifest$species_name_canonical == species
     target_row <- if (any(target_idx)) target_manifest[which(target_idx)[[1]], , drop = FALSE] else NULL
     species_safe <- safe_species_name(species)
+    # Import status is inferred from the expected cleaned/summary files because
+    # seeded raw manifests predate the central request ledger.
     cleaned_path <- file.path(
-      repo_root(),
-      "sdms",
-      "runs",
-      "chikungunya",
-      "calibration",
-      "occurrences",
+      occurrence_root,
       species_safe,
       "gbif-download",
       "cleaned",
       paste0(species_safe, "_cleaned.csv")
     )
     summary_path <- file.path(
-      repo_root(),
-      "sdms",
-      "runs",
-      "chikungunya",
-      "calibration",
-      "occurrences",
+      occurrence_root,
       species_safe,
       "gbif-download",
       "occurrence_preparation_summary.csv"
@@ -258,6 +275,8 @@ seed_existing_gbif_downloads <- function(requests, target_manifest) {
   ensure_manifest_columns(requests)
 }
 
+# Refresh outstanding requests in-place so submission-slot accounting uses the
+# latest known status rather than stale ledger values.
 refresh_gbif_request_statuses <- function(requests) {
   requests <- ensure_manifest_columns(requests)
   if (nrow(requests) == 0) {
@@ -276,6 +295,8 @@ refresh_gbif_request_statuses <- function(requests) {
     status_row <- tryCatch(
       gbif_download_status_row(download_key),
       error = function(err) {
+        # Preserve the row when a status check fails; the next run can retry
+        # without losing the original request key.
         existing_note <- coalesce_scalar(requests$notes[row_idx], default = "")
         if (nzchar(existing_note)) {
           existing_note <- paste(existing_note, "|")
@@ -293,6 +314,9 @@ refresh_gbif_request_statuses <- function(requests) {
   requests
 }
 
+# Count ledger rows that still occupy asynchronous download slots. Succeeded,
+# failed, killed, cancelled, or already-imported requests do not block new
+# submissions.
 count_active_gbif_downloads <- function(requests) {
   requests <- ensure_manifest_columns(requests)
   if (nrow(requests) == 0) {
@@ -308,9 +332,12 @@ count_active_gbif_downloads <- function(requests) {
   sum(has_key & !already_imported & (!inactive_status | missing_submitted_status), na.rm = TRUE)
 }
 
+# Convert an existing ledger row into a concise per-target status for the
+# timestamped submit-run summary.
 existing_request_status_label <- function(request) {
   import_status <- coalesce_scalar(request$import_status, default = "")
   gbif_status <- toupper(trimws(coalesce_scalar(request$gbif_status, default = "")))
+  request_status <- coalesce_scalar(request$request_status, default = "")
 
   if (import_status %in% c("cleaned", "already_cleaned")) {
     return("already_cleaned")
@@ -324,16 +351,21 @@ existing_request_status_label <- function(request) {
   if (gbif_status %in% c("FAILED", "KILLED", "CANCELLED", "CANCELED")) {
     return(paste0("already_", tolower(gbif_status)))
   }
+  if (request_status == "failed") {
+    return("already_failed_submission")
+  }
 
   "already_requested_status_unknown"
 }
 
 # -----------------------------------------------------------------------------|
-# Resolve config ----
+# 4. Resolve config ----
 # -----------------------------------------------------------------------------|
 
 target_manifest_path <- config_arg("target-manifest-path")
 request_manifest_path <- config_arg("request-manifest-path")
+occurrence_root <- config_arg("occurrence-root")
+request_run_root <- config_arg("request-run-root")
 roles <- split_arg(config_arg("roles"))
 species_filter <- split_arg(config_arg("species-filter"))
 include_not_needed <- as_logical_arg(config_arg("include-not-needed"))
@@ -348,14 +380,16 @@ max_new_submissions <- as.integer(config_arg("max-new-submissions"))
 dry_run <- as_logical_arg(config_arg("dry-run")) || has_flag(args, "dry-run")
 
 if (!file.exists(target_manifest_path)) {
-  stop("Missing Chikungunya SDM target manifest: ", target_manifest_path, call. = FALSE)
+  stop("Missing SDM target manifest: ", target_manifest_path, call. = FALSE)
 }
 
 # -----------------------------------------------------------------------------|
-# Select targets and load existing request ledger ----
+# 5. Select targets and load the request ledger ----
 # -----------------------------------------------------------------------------|
 
 target_manifest <- read.csv(target_manifest_path, check.names = FALSE, stringsAsFactors = FALSE)
+# Target selection handles role/species filters and removes already-available
+# SDMs unless explicitly requested in the config.
 targets <- select_sdm_targets(
   target_manifest = target_manifest,
   roles = roles,
@@ -370,14 +404,20 @@ requests <- if (file.exists(request_manifest_path)) {
 } else {
   empty_request_manifest()
 }
+
+# Seeding comes before status refresh so any old raw downloads can be refreshed
+# and counted in the same run.
 if (seed_existing_downloads) {
-  seeded_requests <- seed_existing_gbif_downloads(requests, target_manifest)
+  seeded_requests <- seed_existing_gbif_downloads(requests, target_manifest, occurrence_root)
   if (nrow(seeded_requests) != nrow(requests)) {
     requests <- seeded_requests
     write_request_manifest(requests, request_manifest_path)
     cat("Seeded existing GBIF downloads:", nrow(requests), "request rows now in manifest.\n")
   }
 }
+
+# Refresh before slot counting. This is the step that turns "already requested"
+# rows into running/succeeded/failed labels.
 if (refresh_existing_status && !dry_run) {
   requests <- refresh_gbif_request_statuses(requests)
   write_request_manifest(requests, request_manifest_path)
@@ -385,12 +425,7 @@ if (refresh_existing_status && !dry_run) {
 
 timestamp <- paste0(format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC"), "_pid", Sys.getpid())
 run_dir <- ensure_dir(file.path(
-  repo_root(),
-  "sdms",
-  "runs",
-  "chikungunya",
-  "calibration",
-  "gbif_download_request_runs",
+  request_run_root,
   timestamp
 ))
 run_summary_path <- file.path(run_dir, "gbif_download_submit_summary.csv")
@@ -400,6 +435,8 @@ submission_limit_reached <- FALSE
 active_downloads <- count_active_gbif_downloads(requests)
 available_submission_slots <- max(0L, max_new_submissions - active_downloads)
 
+# `max_new_submissions` is treated as the maximum active-download budget for the
+# account, not simply as a per-run loop limit.
 cat("Selected target species:", nrow(targets), "\n")
 cat("Active GBIF downloads in request ledger:", active_downloads, "\n")
 cat("Available new GBIF submission slots:", available_submission_slots, "\n")
@@ -408,7 +445,7 @@ if (dry_run) {
 }
 
 # -----------------------------------------------------------------------------|
-# Submit requests ----
+# 6. Submit new requests where slots are available ----
 # -----------------------------------------------------------------------------|
 
 for (i in seq_len(nrow(targets))) {
@@ -416,6 +453,8 @@ for (i in seq_len(nrow(targets))) {
   species <- target$species_name_canonical[[1]]
   existing_idx <- existing_request_index(requests, species, start_year, end_year)
 
+  # Default to the intended action. Each branch below rewrites this status when
+  # the row should be skipped, reused, or reported as failed.
   row_status <- "submitted"
   notes <- NA_character_
   row_gbif_status <- NA_character_
@@ -424,6 +463,7 @@ for (i in seq_len(nrow(targets))) {
   submitted <- NULL
 
   if (length(existing_idx) > 0 && !resubmit_existing) {
+    # Reuse the most recent matching request row so repeated runs are idempotent.
     existing_row <- requests[existing_idx[[length(existing_idx)]], , drop = FALSE]
     row_status <- existing_request_status_label(existing_row)
     row_gbif_status <- coalesce_scalar(existing_row$gbif_status)
@@ -443,13 +483,18 @@ for (i in seq_len(nrow(targets))) {
       matched_name = existing_row$gbif_matched_name[[1]]
     )
   } else if (dry_run) {
+    # Dry runs still write a run summary, but they never mutate the durable
+    # request ledger or call the download API.
     row_status <- "dry_run"
     submitted <- list(gbif_download_key = NA_character_, taxon_key = NA_integer_, matched_name = NA_character_)
   } else if (submission_limit_reached) {
+    # Once the remote service reports a simultaneous-download limit, stop trying
+    # additional live submissions in this run.
     row_status <- "skipped_submission_limit"
     notes <- "Skipped because GBIF simultaneous-download limit was reached earlier in this run."
     submitted <- list(gbif_download_key = NA_character_, taxon_key = NA_integer_, matched_name = NA_character_)
   } else if (new_submissions >= available_submission_slots) {
+    # Local ledger accounting says all active slots are already occupied.
     row_status <- "skipped_submission_limit"
     notes <- paste0(
       "Skipped because available submission slots = ",
@@ -467,6 +512,8 @@ for (i in seq_len(nrow(targets))) {
           submission_limit_reached <<- TRUE
         } else {
           row_status <<- "failed"
+          row_gbif_status <<- "FAILED"
+          row_status_checked_at <<- format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
         }
         notes <<- error_message
         list(gbif_download_key = NA_character_, taxon_key = NA_integer_, matched_name = NA_character_)
@@ -477,6 +524,8 @@ for (i in seq_len(nrow(targets))) {
     }
   }
 
+  # The run summary gets one row per selected species, including skipped and
+  # already-requested rows. The durable ledger only receives new live attempts.
   request_row <- data.frame(
     species_name = species,
     species_name_canonical = species,
@@ -512,13 +561,21 @@ for (i in seq_len(nrow(targets))) {
 
   rows[[i]] <- request_row
   if (row_status %in% c("submitted", "failed", "skipped_gbif_simultaneous_download_limit") && !dry_run) {
+    # Write after every live submission attempt so request keys are not lost if
+    # the script stops before the full target list is processed.
     requests <- rbind(ensure_manifest_columns(requests), ensure_manifest_columns(request_row))
     write_request_manifest(requests, request_manifest_path)
   }
 
+  # Keep an incremental run summary for long sessions; this is separate from the
+  # durable request ledger and includes dry-run/skipped rows.
   write.csv(do.call(rbind, rows[seq_len(i)]), run_summary_path, row.names = FALSE, na = "")
   cat("[", i, "/", nrow(targets), "] ", species, ": ", row_status, "\n", sep = "")
 }
+
+# -----------------------------------------------------------------------------|
+# 7. Write final summaries ----
+# -----------------------------------------------------------------------------|
 
 summary <- if (length(rows) == 0) {
   data.frame()

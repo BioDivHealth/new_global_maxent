@@ -125,7 +125,7 @@ canonical_species_name <- function(x) {
 }
 
 # -----------------------------------------------------------------------------|
-# Chikungunya target-manifest helpers ----
+# SDM target-manifest helpers ----
 # -----------------------------------------------------------------------------|
 
 select_sdm_targets <- function(target_manifest,

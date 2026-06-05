@@ -2,7 +2,8 @@
 # -----------------------------------------------------------------------------|
 # 02_run_chikungunya_models_batch.R ----
 # -----------------------------------------------------------------------------|
-# Purpose: Run present-day SDMs across the Chikungunya SDM target manifest.
+# Purpose: Run present-day SDMs across an SDM target manifest. Defaults remain
+#          compatible with the Chikungunya target manifest.
 #
 # Default behavior is status/preflight only. Edit the RStudio config block before
 # sourcing to dry-run or fit models, or pass command-line arguments from Rscript.
@@ -37,6 +38,9 @@ if (!exists("batch_config", inherits = FALSE)) {
 
 default_batch_config <- list(
   target_manifest_path = file.path(here::here(), "sdms", "runs", "chikungunya", "sdm_target_manifest.csv"),
+  occurrence_root = file.path(here::here(), "sdms", "runs", "vector_sdm_push", "occurrences"),
+  model_output_root = file.path(here::here(), "sdms", "runs", "chikungunya", "calibration", "regenerated_models"),
+  model_batch_run_root = file.path(here::here(), "sdms", "runs", "chikungunya", "calibration", "model_batch_runs"),
   roles = "vector",
   include_not_needed = FALSE,
   include_already_available = FALSE,
@@ -90,17 +94,9 @@ expected_run_config_tag <- function(n_background, beta_values, n_selected_models
   )
 }
 
-existing_model_for_config <- function(species_name, method, predictor_mode, start_year, end_year, run_config_tag) {
+existing_model_for_config <- function(species_name, method, predictor_mode, start_year, end_year, run_config_tag, model_output_root) {
   species_safe <- safe_species_name(species_name)
-  output_dir <- file.path(
-    repo_root(),
-    "sdms",
-    "runs",
-    "chikungunya",
-    "calibration",
-    "regenerated_models",
-    species_safe
-  )
+  output_dir <- file.path(model_output_root, species_safe)
   if (!dir.exists(output_dir)) {
     return(NA_character_)
   }
@@ -144,6 +140,9 @@ run_rscript <- function(script, script_args, log_path) {
 # -----------------------------------------------------------------------------|
 
 target_manifest_path <- config_arg("target-manifest-path")
+occurrence_root <- config_arg("occurrence-root")
+model_output_root <- config_arg("model-output-root")
+model_batch_run_root <- config_arg("model-batch-run-root")
 roles <- split_arg(config_arg("roles"))
 species_filter <- split_arg(config_arg("species-filter"))
 include_not_needed <- as_logical_arg(config_arg("include-not-needed"))
@@ -170,7 +169,7 @@ predictor_stack_path <- config_arg("predictor-stack-path")
 iucn_range_path <- config_arg("iucn-range-path")
 
 if (!file.exists(target_manifest_path)) {
-  stop("Missing Chikungunya SDM target manifest: ", target_manifest_path, call. = FALSE)
+  stop("Missing SDM target manifest: ", target_manifest_path, call. = FALSE)
 }
 
 if (fit_models && dry_run_models) {
@@ -205,12 +204,7 @@ if (nrow(targets) == 0) {
 
 timestamp <- paste0(format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC"), "_pid", Sys.getpid())
 batch_dir <- ensure_dir(file.path(
-  repo_root(),
-  "sdms",
-  "runs",
-  "chikungunya",
-  "calibration",
-  "model_batch_runs",
+  model_batch_run_root,
   timestamp
 ))
 log_dir <- ensure_dir(file.path(batch_dir, "logs"))
@@ -229,12 +223,7 @@ for (i in seq_len(nrow(targets))) {
   species <- target$species_name_canonical[[1]]
   species_safe <- safe_species_name(species)
   occurrence_path <- file.path(
-    repo_root(),
-    "sdms",
-    "runs",
-    "chikungunya",
-    "calibration",
-    "occurrences",
+    occurrence_root,
     species_safe,
     occurrence_method,
     "cleaned",
@@ -246,7 +235,8 @@ for (i in seq_len(nrow(targets))) {
     predictor_mode,
     start_year,
     end_year,
-    run_config_tag
+    run_config_tag,
+    model_output_root
   )
 
   occurrence_status <- if (file.exists(occurrence_path)) "ready" else "missing"
@@ -264,6 +254,7 @@ for (i in seq_len(nrow(targets))) {
     model_args <- c(
       "--species", species,
       "--method", occurrence_method,
+      "--occurrences", occurrence_path,
       "--candidate-set", candidate_set,
       "--predictor-mode", predictor_mode,
       "--range-filter", range_filter,
@@ -278,7 +269,8 @@ for (i in seq_len(nrow(targets))) {
       "--n-selected-models", as.character(n_selected_models),
       "--threads", as.character(maxent_threads),
       "--predictor-stack", predictor_stack_path,
-      "--iucn-range-path", iucn_range_path
+      "--iucn-range-path", iucn_range_path,
+      "--output-root", model_output_root
     )
     if (fit_models) {
       model_args <- c(model_args, "--run")
@@ -298,7 +290,8 @@ for (i in seq_len(nrow(targets))) {
       predictor_mode,
       start_year,
       end_year,
-      run_config_tag
+      run_config_tag,
+      model_output_root
     )
   }
 

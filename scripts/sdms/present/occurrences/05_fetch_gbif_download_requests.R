@@ -32,8 +32,10 @@ if (!exists("batch_config", inherits = FALSE)) {
 # -----------------------------------------------------------------------------|
 
 default_batch_config <- list(
-  target_manifest_path = file.path(repo_root(), "sdms", "runs", "chikungunya", "sdm_target_manifest.csv"),
-  request_manifest_path = file.path(repo_root(), "sdms", "runs", "chikungunya", "calibration", "gbif_download_requests.csv"),
+  target_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "vector_species_sdm_targets.csv"),
+  request_manifest_path = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "gbif_download_requests.csv"),
+  occurrence_root = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "occurrences"),
+  fetch_run_root = file.path(repo_root(), "sdms", "runs", "vector_sdm_push", "gbif_download_fetch_runs"),
   roles = "vector",
   species_filter = character(),
   max_species = Inf,
@@ -133,15 +135,10 @@ update_status_columns <- function(requests, row_idx, status_row) {
   requests
 }
 
-cleaned_occurrence_path <- function(species, method = "gbif-download") {
+cleaned_occurrence_path <- function(species, occurrence_root, method = "gbif-download") {
   species_safe <- safe_species_name(species)
   file.path(
-    repo_root(),
-    "sdms",
-    "runs",
-    "chikungunya",
-    "calibration",
-    "occurrences",
+    occurrence_root,
     species_safe,
     method,
     "cleaned",
@@ -149,14 +146,9 @@ cleaned_occurrence_path <- function(species, method = "gbif-download") {
   )
 }
 
-occurrence_summary_path <- function(species, method = "gbif-download") {
+occurrence_summary_path <- function(species, occurrence_root, method = "gbif-download") {
   file.path(
-    repo_root(),
-    "sdms",
-    "runs",
-    "chikungunya",
-    "calibration",
-    "occurrences",
+    occurrence_root,
     safe_species_name(species),
     method,
     "occurrence_preparation_summary.csv"
@@ -169,6 +161,8 @@ occurrence_summary_path <- function(species, method = "gbif-download") {
 
 target_manifest_path <- config_arg("target-manifest-path")
 request_manifest_path <- config_arg("request-manifest-path")
+occurrence_root <- config_arg("occurrence-root")
+fetch_run_root <- config_arg("fetch-run-root")
 roles <- split_arg(config_arg("roles"))
 species_filter <- canonical_species_name(split_arg(config_arg("species-filter")))
 max_species <- as.numeric(config_arg("max-species"))
@@ -185,7 +179,7 @@ if (!file.exists(request_manifest_path)) {
 }
 
 if (update_target_manifest && !file.exists(target_manifest_path)) {
-  stop("Missing Chikungunya SDM target manifest: ", target_manifest_path, call. = FALSE)
+  stop("Missing SDM target manifest: ", target_manifest_path, call. = FALSE)
 }
 
 # -----------------------------------------------------------------------------|
@@ -218,12 +212,7 @@ if (is.finite(max_species)) {
 
 timestamp <- paste0(format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC"), "_pid", Sys.getpid())
 run_dir <- ensure_dir(file.path(
-  repo_root(),
-  "sdms",
-  "runs",
-  "chikungunya",
-  "calibration",
-  "gbif_download_fetch_runs",
+  fetch_run_root,
   timestamp
 ))
 log_dir <- ensure_dir(file.path(run_dir, "logs"))
@@ -234,7 +223,7 @@ script_occurrences <- file.path(
   "sdms",
   "present",
   "occurrences",
-  "01_prepare_gbif_occurrences.R"
+  "01_prepare_one_gbif_species.R"
 )
 rows <- vector("list", length(selected_idx))
 
@@ -283,8 +272,8 @@ for (pos in seq_along(selected_idx)) {
     write_request_manifest(requests, request_manifest_path)
   }
 
-  cleaned_path <- cleaned_occurrence_path(species)
-  summary_path <- occurrence_summary_path(species)
+  cleaned_path <- cleaned_occurrence_path(species, occurrence_root)
+  summary_path <- occurrence_summary_path(species, occurrence_root)
   occurrence_log <- NA_character_
   occurrence_exit_status <- NA_integer_
   import_status <- "skipped_not_ready"
@@ -304,6 +293,7 @@ for (pos in seq_along(selected_idx)) {
       "--start-year", as.character(suppressWarnings(as.integer(request$start_year[[1]]))),
       "--end-year", as.character(suppressWarnings(as.integer(request$end_year[[1]]))),
       "--manifest", target_manifest_path,
+      "--occurrence-root", occurrence_root,
       "--min-points", as.character(min_points)
     )
     if (!update_target_manifest) {

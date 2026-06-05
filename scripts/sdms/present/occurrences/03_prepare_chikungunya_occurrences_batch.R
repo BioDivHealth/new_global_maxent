@@ -2,8 +2,9 @@
 # -----------------------------------------------------------------------------|
 # 03_prepare_chikungunya_occurrences_batch.R ----
 # -----------------------------------------------------------------------------|
-# Purpose: Download and clean occurrence records across the Chikungunya SDM
-#          target manifest in one pass.
+# Purpose: Download and clean occurrence records across an SDM target manifest
+#          in one pass. Defaults remain compatible with the Chikungunya target
+#          manifest.
 #
 # For high-volume `gbif-download` vector work, prefer the two-phase submit/fetch
 # scripts so GBIF jobs can finish asynchronously.
@@ -38,6 +39,8 @@ if (!exists("batch_config", inherits = FALSE)) {
 
 default_batch_config <- list(
   target_manifest_path = file.path(here::here(), "sdms", "runs", "chikungunya", "sdm_target_manifest.csv"),
+  occurrence_root = file.path(here::here(), "sdms", "runs", "vector_sdm_push", "occurrences"),
+  batch_run_root = file.path(here::here(), "sdms", "runs", "chikungunya", "calibration", "occurrence_batch_runs"),
   roles = "vector",
   include_not_needed = FALSE,
   include_already_available = FALSE,
@@ -111,6 +114,8 @@ run_rscript_with_retries <- function(script, script_args, log_path, attempts, sl
 # -----------------------------------------------------------------------------|
 
 target_manifest_path <- config_arg("target-manifest-path")
+occurrence_root <- config_arg("occurrence-root")
+batch_run_root <- config_arg("batch-run-root")
 roles <- split_arg(config_arg("roles"))
 species_filter <- split_arg(config_arg("species-filter"))
 include_not_needed <- as_logical_arg(config_arg("include-not-needed"))
@@ -127,7 +132,7 @@ end_year <- as.integer(config_arg("end-year"))
 min_points <- as.integer(config_arg("min-points"))
 
 if (!file.exists(target_manifest_path)) {
-  stop("Missing Chikungunya SDM target manifest: ", target_manifest_path, call. = FALSE)
+  stop("Missing SDM target manifest: ", target_manifest_path, call. = FALSE)
 }
 
 if (!occurrence_method %in% c("direct-gbif", "spatial-spp", "gbif-download")) {
@@ -171,12 +176,7 @@ if (nrow(targets) == 0) {
 
 timestamp <- paste0(format(Sys.time(), "%Y%m%dT%H%M%SZ", tz = "UTC"), "_pid", Sys.getpid())
 batch_dir <- ensure_dir(file.path(
-  repo_root(),
-  "sdms",
-  "runs",
-  "chikungunya",
-  "calibration",
-  "occurrence_batch_runs",
+  batch_run_root,
   timestamp
 ))
 log_dir <- ensure_dir(file.path(batch_dir, "logs"))
@@ -187,7 +187,7 @@ script_occurrences <- file.path(
   "sdms",
   "present",
   "occurrences",
-  "01_prepare_gbif_occurrences.R"
+  "01_prepare_one_gbif_species.R"
 )
 
 rows <- vector("list", nrow(targets))
@@ -201,12 +201,7 @@ for (i in seq_len(nrow(targets))) {
   species <- target$species_name_canonical[[1]]
   species_safe <- safe_species_name(species)
   occurrence_path <- file.path(
-    repo_root(),
-    "sdms",
-    "runs",
-    "chikungunya",
-    "calibration",
-    "occurrences",
+    occurrence_root,
     species_safe,
     occurrence_method,
     "cleaned",
@@ -225,6 +220,7 @@ for (i in seq_len(nrow(targets))) {
       "--start-year", as.character(start_year),
       "--end-year", as.character(end_year),
       "--manifest", target_manifest_path,
+      "--occurrence-root", occurrence_root,
       "--min-points", as.character(min_points)
     )
     if (!update_target_manifest) {

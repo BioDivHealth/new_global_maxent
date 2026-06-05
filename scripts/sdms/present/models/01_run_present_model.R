@@ -57,6 +57,14 @@ sdm_config <- list(
     "MAMMALS_TERRESTRIAL_ONLY",
     "MAMMALS_TERRESTRIAL_ONLY.shp"
   ),
+  output_root = file.path(
+    here::here(),
+    "sdms",
+    "runs",
+    "chikungunya",
+    "calibration",
+    "regenerated_models"
+  ),
   automaxent_root = "/Users/arturtrebski/Coding_Projects/AutoMaxent"
 )
 
@@ -149,15 +157,8 @@ existing_model_path <- get_arg(
 )
 
 automaxent_root <- get_arg(args, "automaxent-root", sdm_config$automaxent_root)
-output_dir <- ensure_dir(file.path(
-  repo,
-  "sdms",
-  "runs",
-  "chikungunya",
-  "calibration",
-  "regenerated_models",
-  species_safe
-))
+output_root <- get_arg(args, "output-root", sdm_config$output_root)
+output_dir <- ensure_dir(file.path(output_root, species_safe))
 model_work_dir <- ensure_dir(file.path(output_dir, "maxent_work"))
 
 # -----------------------------------------------------------------------------|

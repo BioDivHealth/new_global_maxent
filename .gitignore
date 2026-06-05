@@ -107,6 +107,16 @@ sdms/runs/*/calibration/model_inventory_diagnostics/
 sdms/runs/*/calibration/*_gbif_counts.csv
 sdms/runs/*/calibration/*_gbif_exact_name_counts.csv
 sdms/runs/*/calibration/gonzalo_*_summary.md
+sdms/runs/*/occurrences/
+sdms/runs/*/occurrence_batch_runs/
+sdms/runs/*/gbif_download_request_runs/
+sdms/runs/*/gbif_download_fetch_runs/
+sdms/runs/*/combined_vector_occurrence_runs/
+sdms/runs/*/automation_logs/
+sdms/runs/*/models/
+sdms/runs/*/model_batch_runs/
+sdms/runs/*/maps/
+sdms/runs/*/gbif_download_requests.csv
 
 # WHO DON raw/API payloads and OpenAI transport artifacts
 pathogen_association_data/WHO/disease_outbreak_news/who_don_raw.json
