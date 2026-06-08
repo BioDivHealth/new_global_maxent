@@ -71,6 +71,7 @@ role_deep_research_consolidated_dir <- file.path(
   "consolidated"
 )
 role_source_check_dir <- file.path(role_manual_dir, "source_check")
+role_source_check_input_dir <- file.path(role_source_check_dir, "input")
 role_source_check_import_dir <- file.path(role_source_check_dir, "import")
 role_source_pdf_dir <- file.path(source_data_dir, "role_annotation", "papers")
 role_source_pdf_text_dir <- file.path(

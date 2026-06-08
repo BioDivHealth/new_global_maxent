@@ -149,6 +149,8 @@ zoonotic_path <- who_pathogens_diseases_zoonotic_path()
 output_path <- file.path(role_dir, "species_host_vector_roster.csv")
 summary_path <- file.path(role_dir, "species_host_vector_roster_summary.csv")
 xlsx_path <- file.path(role_dir, "species_host_vector_roster.xlsx")
+host_role_candidates_path <- file.path(role_dir, "host_role_candidates.csv")
+host_role_assignments_path <- file.path(role_dir, "host_role_assignments.csv")
 
 dir.create(role_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -185,6 +187,68 @@ disease_scope <- disease_scope_raw %>%
       is_true(in_gibb_etal) | is_true(in_empres_i),
       na.rm = TRUE
     ),
+    .groups = "drop"
+  )
+
+# ------------------------------------------------------------------------------|
+#      Host Role Summaries -----------------------------------------------------|
+# ------------------------------------------------------------------------------|
+role_join_key <- function(x) {
+  x <- clean_text(x)
+  x <- stringr::str_to_lower(x)
+  stringr::str_replace_all(x, "\\s+", " ")
+}
+
+tax_join_key <- function(x) {
+  x <- clean_text(x)
+  x[is.na(x)] <- ""
+  x
+}
+
+host_role_assignments <- read_csv(
+  host_role_assignments_path,
+  show_col_types = FALSE,
+  na = c("", "NA")
+) %>%
+  mutate(across(where(is.character), clean_text)) %>%
+  mutate(
+    role_disease_key = role_join_key(disease_name),
+    role_species_key = role_join_key(host),
+    role_tax_id_key = tax_join_key(host_tax_id),
+    assignment_needs_manual_review = is_true(needs_manual_review)
+  ) %>%
+  filter(
+    !is.na(role_disease_key),
+    !is.na(role_species_key),
+    !is.na(host_role_assignment)
+  ) %>%
+  group_by(role_disease_key, role_species_key, role_tax_id_key) %>%
+  summarise(
+    host_role_assignment = collapse_unique(host_role_assignment),
+    host_role_confidence_from_assignment = collapse_unique(assignment_confidence),
+    host_role_assignment_status = collapse_unique(assignment_status),
+    host_role_needs_manual_review_from_assignment = any(assignment_needs_manual_review, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+host_role_candidates <- read_csv(
+  host_role_candidates_path,
+  show_col_types = FALSE,
+  na = c("", "NA")
+) %>%
+  mutate(across(where(is.character), clean_text)) %>%
+  mutate(
+    role_disease_key = role_join_key(disease_name),
+    role_species_key = role_join_key(host),
+    role_tax_id_key = tax_join_key(host_tax_id)
+  ) %>%
+  filter(
+    !is.na(role_disease_key),
+    !is.na(role_species_key)
+  ) %>%
+  group_by(role_disease_key, role_species_key, role_tax_id_key) %>%
+  summarise(
+    host_role_candidate_confidence = collapse_unique(role_confidence),
     .groups = "drop"
   )
 
@@ -444,10 +508,45 @@ roster <- bind_rows(
     bites_humans_basis = collapse_unique(bites_humans_basis),
     taxonomy_caution = any(taxonomy_caution, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
+) %>%
   left_join(disease_scope, by = "disease_name") %>%
   mutate(
+    role_disease_key = role_join_key(disease_name),
+    role_species_key = role_join_key(species_name),
+    role_tax_id_key = tax_join_key(tax_id)
+  ) %>%
+  left_join(
+    host_role_assignments,
+    by = c("role_disease_key", "role_species_key", "role_tax_id_key")
+  ) %>%
+  left_join(
+    host_role_candidates,
+    by = c("role_disease_key", "role_species_key", "role_tax_id_key")
+  ) %>%
+  mutate(
     disease_has_vector_rows = disease_name %in% unique(vector_rows$disease_name),
+    has_host_role_assignment = species_role == "host" & !is.na(host_role_assignment),
+    host_role_assignment = dplyr::case_when(
+      species_role != "host" ~ NA_character_,
+      has_host_role_assignment ~ host_role_assignment,
+      TRUE ~ "host_presence_only"
+    ),
+    host_role_confidence = dplyr::case_when(
+      species_role != "host" ~ NA_character_,
+      has_host_role_assignment ~ host_role_confidence_from_assignment,
+      !is.na(host_role_candidate_confidence) ~ host_role_candidate_confidence,
+      TRUE ~ "low"
+    ),
+    host_role_needs_manual_review = dplyr::case_when(
+      species_role != "host" ~ NA,
+      has_host_role_assignment ~ host_role_needs_manual_review_from_assignment,
+      TRUE ~ TRUE
+    ),
+    host_role_assignment_status = dplyr::case_when(
+      species_role != "host" ~ NA_character_,
+      has_host_role_assignment ~ host_role_assignment_status,
+      TRUE ~ "candidate_only"
+    ),
     review_boundary = dplyr::case_when(
       appears_as_host & !appears_as_vector ~
         "host presence only; final host role not assigned",
@@ -475,6 +574,10 @@ roster <- bind_rows(
     host_order,
     host_family,
     host_detection_method,
+    host_role_assignment,
+    host_role_confidence,
+    host_role_needs_manual_review,
+    host_role_assignment_status,
     vector_group,
     vector_taxon_rank,
     vector_join_key,
@@ -525,6 +628,10 @@ column_dictionary <- tibble::tribble(
   "host_order", "Host taxonomic order for host rows, when available.",
   "host_family", "Host taxonomic family for host rows, when available.",
   "host_detection_method", "For host rows, harmonised host-pathogen detection method from the canonical WHO backbone, including CLOVER and VIRION evidence such as PCR/Sequencing and Isolation/Observation.",
+  "host_role_assignment", "Compact reviewed or fallback host role used for modelling handoff. Source-backed rows come from host_role_assignments.csv; unassigned host rows are marked host_presence_only.",
+  "host_role_confidence", "Confidence for host_role_assignment. Source-backed rows use assignment_confidence; fallback host_presence_only rows use host_role_candidates.csv confidence where available.",
+  "host_role_needs_manual_review", "TRUE when the host role assignment remains review-flagged or is only a candidate/presence fallback.",
+  "host_role_assignment_status", "Status for host_role_assignment, such as draft_source_backed or candidate_only.",
   "vector_group", "Broad vector group for vector rows, such as mosquito, tick, flea, or midge.",
   "vector_taxon_rank", "Taxonomic grain of the vector name after cleanup, such as species, genus, or infraspecific.",
   "vector_join_key", "Normalized vector name key used to join disease-vector, host-vector, and competence evidence.",

@@ -2,8 +2,8 @@
 ################################################################################
 # 6_9_Import_Source_Checked_Role_Rows.R
 ################################################################################
-# Purpose: Promote source-checked Deep Research role rows into the official
-#          host/vector role evidence and assignment CSVs.
+# Purpose: Promote source-checked role rows into the official host/vector role
+#          evidence and assignment CSVs.
 #
 # Guardrails:
 # - Import only source-check rows with decision == "accept" and import_ready.
@@ -105,9 +105,9 @@ make_note <- function(candidate_row_id, caveat, decision_reason, source_access,
 }
 
 extract_source_check_ids <- function(x) {
-  ids <- stringr::str_extract_all(coalesce(x, ""), "source_check_candidate_id=candidate_[0-9]+")
+  ids <- stringr::str_extract_all(coalesce(x, ""), "source_check_candidate_id=[^;]+")
   ids <- unlist(ids, use.names = FALSE)
-  unique(stringr::str_remove(ids, "^source_check_candidate_id="))
+  unique(stringr::str_trim(stringr::str_remove(ids, "^source_check_candidate_id=")))
 }
 
 classify_evidence_rows <- function(staged, existing, key_cols) {
@@ -179,7 +179,6 @@ import_dir <- role_source_check_import_dir
 
 paths <- list(
   data_decisions = file.path(repo_root, "docs", "DATA_DECISIONS.md"),
-  role_plan = file.path(repo_root, "ROLE_EVIDENCE_FULL_CURATION_PLAN.md"),
   role_readme = file.path(role_dir, "README.md"),
   decisions = file.path(source_check_dir, "candidate_source_check_decisions.csv"),
   source_request = file.path(source_check_dir, "candidate_source_request_list_with_files.csv"),
@@ -193,7 +192,7 @@ paths <- list(
 )
 
 required_paths <- unlist(paths[c(
-  "data_decisions", "role_plan", "role_readme", "decisions", "source_request",
+  "data_decisions", "role_readme", "decisions", "source_request",
   "host_evidence", "vector_evidence", "host_assignments", "vector_assignments"
 )]);
 missing_paths <- required_paths[!file.exists(required_paths)]
@@ -235,6 +234,15 @@ if (!"file_name" %in% names(decisions)) {
   stop("Expected file_name column is missing from candidate_source_check_decisions.csv", call. = FALSE)
 }
 
+duplicated_decision_ids <- unique(decisions$candidate_row_id[duplicated(decisions$candidate_row_id)])
+if (length(duplicated_decision_ids) > 0) {
+  stop(
+    "candidate_source_check_decisions.csv contains duplicate candidate_row_id values: ",
+    paste(duplicated_decision_ids, collapse = ", "),
+    call. = FALSE
+  )
+}
+
 accepted <- decisions %>%
   mutate(import_ready_flag = is_true(import_ready)) %>%
   filter(decision == "accept", import_ready_flag) %>%
@@ -244,14 +252,6 @@ excluded <- decisions %>%
   mutate(import_ready_flag = is_true(import_ready)) %>%
   filter(!(decision == "accept" & import_ready_flag)) %>%
   select(-import_ready_flag)
-
-if (nrow(accepted) != 45) {
-  stop("Expected 45 accepted import-ready rows, found ", nrow(accepted), call. = FALSE)
-}
-
-if (nrow(excluded) != 8) {
-  stop("Expected 8 excluded rows, found ", nrow(excluded), call. = FALSE)
-}
 
 missing_targets <- accepted %>%
   filter(is.na(official_csv_target)) %>%
@@ -588,6 +588,11 @@ row_actions <- bind_rows(
 
 imported_rows <- row_actions %>% filter(import_action == "imported")
 
+decision_accounting <- decisions %>%
+  mutate(import_ready_flag = is_true(import_ready)) %>%
+  count(decision, import_ready_flag, name = "candidate_rows") %>%
+  arrange(decision, import_ready_flag)
+
 imported_row_summary <- row_actions %>%
   count(table, import_action, name = "rows") %>%
   arrange(table, import_action)
@@ -647,7 +652,7 @@ summary_lines <- c(
   "",
   "## Guardrails",
   "",
-  "- `docs/DATA_DECISIONS.md`, `ROLE_EVIDENCE_FULL_CURATION_PLAN.md`, and `role_annotation/README.md` were required preflight inputs.",
+  "- `docs/DATA_DECISIONS.md` and the role-annotation README were required preflight inputs.",
   "- Only `decision == \"accept\"` and `import_ready == TRUE` rows were considered for import.",
   "- Evidence-only and deferred rows were excluded.",
   "- Official role CSV schemas were preserved.",
@@ -663,6 +668,10 @@ summary_lines <- c(
   "## Accepted Candidate Accounting",
   "",
   paste(accepted_accounting_lines, collapse = "\n"),
+  "",
+  "## Decision Ledger Accounting",
+  "",
+  paste(capture.output(print(decision_accounting, n = Inf)), collapse = "\n"),
   "",
   "## Import Actions",
   "",
@@ -683,14 +692,6 @@ writeLines(summary_lines, file.path(import_dir, "SOURCE_CHECK_IMPORT_SUMMARY.md"
 # ------------------------------------------------------------------------------|
 #      Validation --------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-if (sum(accepted_accounting$candidate_rows) != 45) {
-  stop("Accepted candidate accounting did not total 45 rows.", call. = FALSE)
-}
-
-if (nrow(excluded_non_import_rows) != 8) {
-  stop("Excluded-row accounting did not total 8 rows.", call. = FALSE)
-}
-
 host_assignment_join <- host_assignments_out %>%
   filter(stringr::str_detect(coalesce(evidence_record_ids, ""), "host_role_evidence:source_check:")) %>%
   left_join(

@@ -2,9 +2,10 @@
 ################################################################################
 # 6_7_Build_Source_Check_Decision_Ledger.R
 ################################################################################
-# Purpose: Build a review-only decision ledger for Deep Research candidate rows.
-#          This script reads the consolidated candidate/source tables, preserves
-#          user-added file_name metadata, and does not modify official role CSVs.
+# Purpose: Build a review-only decision ledger for source-check candidate rows.
+#          This script reads generated Deep Research candidates plus optional
+#          manual candidate/source inputs, preserves user-added file_name
+#          metadata, and does not modify official role CSVs.
 ################################################################################
 
 suppressPackageStartupMessages({
@@ -23,11 +24,14 @@ source(here::here("scripts", "associations", "working_inputs.R"))
 role_dir <- role_annotation_dir
 consolidated_dir <- role_deep_research_consolidated_dir
 papers_dir <- role_source_pdf_dir
+input_dir <- role_source_check_input_dir
 output_dir <- role_source_check_dir
 
 candidate_queue_path <- file.path(consolidated_dir, "candidate_source_check_queue.csv")
 source_request_path <- file.path(consolidated_dir, "candidate_source_request_list.csv")
 unique_sources_path <- file.path(consolidated_dir, "candidate_unique_sources_to_fetch.csv")
+manual_candidate_path <- file.path(input_dir, "manual_source_check_candidates.csv")
+manual_source_path <- file.path(input_dir, "manual_source_check_sources.csv")
 curated_decisions_path <- file.path(output_dir, "curated_source_check_decisions.csv")
 
 required_paths <- c(candidate_queue_path, source_request_path, unique_sources_path)
@@ -37,6 +41,7 @@ if (length(missing_paths) > 0) {
 }
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(input_dir, recursive = TRUE, showWarnings = FALSE)
 
 read_stage_csv <- function(path) {
   read_csv(
@@ -45,6 +50,29 @@ read_stage_csv <- function(path) {
     show_col_types = FALSE,
     na = c("", "NA")
   )
+}
+
+empty_stage_csv <- function(columns) {
+  tibble(!!!setNames(rep(list(character()), length(columns)), columns))
+}
+
+read_optional_stage_csv <- function(path, columns) {
+  if (!file.exists(path)) {
+    return(empty_stage_csv(columns))
+  }
+
+  data <- read_stage_csv(path)
+  missing_columns <- setdiff(columns, names(data))
+  if (length(missing_columns) > 0) {
+    stop(
+      "Manual source-check input is missing required columns in ", path, ": ",
+      paste(missing_columns, collapse = ", "),
+      call. = FALSE
+    )
+  }
+
+  data %>%
+    select(all_of(columns))
 }
 
 split_many <- function(x) {
@@ -91,6 +119,77 @@ curated_decision_columns <- c(
   "review_date",
   "import_ready"
 )
+
+candidate_queue_columns <- c(
+  "candidate_row_id",
+  "batch_order",
+  "phase",
+  "batch_id",
+  "disease_name",
+  "entity_type",
+  "entity_name",
+  "role_assignment",
+  "assignment_confidence",
+  "review_priority",
+  "evidence_source_ids",
+  "evidence_basis",
+  "review_reason",
+  "join_note",
+  "source_check_note"
+)
+
+source_request_columns <- c(
+  "batch_order",
+  "phase",
+  "batch_id",
+  "disease_name",
+  "entity_type",
+  "entity_name",
+  "role_assignment",
+  "assignment_confidence",
+  "evidence_basis",
+  "review_reason",
+  "source_id",
+  "source_lookup_status",
+  "source_title",
+  "authors_or_organization",
+  "year",
+  "source_type",
+  "source_url",
+  "doi",
+  "pmid",
+  "pmcid",
+  "source_access",
+  "rows_supported",
+  "reliability_note",
+  "source_check_note",
+  "candidate_row",
+  "file_name"
+)
+
+validate_manual_candidate_ids <- function(manual_candidates) {
+  if (nrow(manual_candidates) == 0) {
+    return(invisible(NULL))
+  }
+
+  missing_ids <- manual_candidates %>%
+    filter(is.na(candidate_row_id) | candidate_row_id == "") %>%
+    pull(candidate_row_id)
+  if (length(missing_ids) > 0) {
+    stop("Manual source-check candidates must have stable candidate_row_id values.", call. = FALSE)
+  }
+
+  invalid_ids <- manual_candidates %>%
+    filter(!str_detect(candidate_row_id, "^manual_[A-Za-z0-9_]+$")) %>%
+    pull(candidate_row_id)
+  if (length(invalid_ids) > 0) {
+    stop(
+      "Manual source-check candidate IDs must match ^manual_[A-Za-z0-9_]+$: ",
+      paste(invalid_ids, collapse = ", "),
+      call. = FALSE
+    )
+  }
+}
 
 apply_curated_source_check_decisions <- function(decision_ledger, curated_path) {
   if (!file.exists(curated_path)) {
@@ -181,12 +280,28 @@ apply_curated_source_check_decisions <- function(decision_ledger, curated_path) 
   filled_ledger
 }
 
-candidate_queue <- read_stage_csv(candidate_queue_path) %>%
+deep_candidate_queue <- read_stage_csv(candidate_queue_path) %>%
   mutate(candidate_row_id = paste0("candidate_", str_pad(row_number(), 3, pad = "0"))) %>%
-  relocate(candidate_row_id, .before = 1)
+  relocate(candidate_row_id, .before = 1) %>%
+  select(all_of(candidate_queue_columns))
 
-source_request <- read_stage_csv(source_request_path)
+deep_source_request <- read_stage_csv(source_request_path)
 unique_sources <- read_stage_csv(unique_sources_path)
+
+manual_candidate_queue <- read_optional_stage_csv(manual_candidate_path, candidate_queue_columns)
+manual_source_request <- read_optional_stage_csv(manual_source_path, source_request_columns)
+validate_manual_candidate_ids(manual_candidate_queue)
+
+candidate_queue <- bind_rows(deep_candidate_queue, manual_candidate_queue)
+
+duplicated_candidate_ids <- unique(candidate_queue$candidate_row_id[duplicated(candidate_queue$candidate_row_id)])
+if (length(duplicated_candidate_ids) > 0) {
+  stop(
+    "Source-check candidate inputs contain duplicate candidate_row_id values: ",
+    paste(duplicated_candidate_ids, collapse = ", "),
+    call. = FALSE
+  )
+}
 
 if (!"file_name" %in% names(unique_sources)) {
   unique_sources$file_name <- NA_character_
@@ -196,18 +311,24 @@ source_file_lookup <- unique_sources %>%
   select(batch_id, source_id, source_title, source_url, file_name) %>%
   mutate(file_name = coalesce(file_name, ""))
 
-if (!"file_name" %in% names(source_request)) {
-  source_request$file_name <- NA_character_
+if (!"file_name" %in% names(deep_source_request)) {
+  deep_source_request$file_name <- NA_character_
 }
 
-source_request_with_files <- source_request %>%
+deep_source_request_with_files <- deep_source_request %>%
   left_join(
     source_file_lookup,
     by = c("batch_id", "source_id", "source_title", "source_url"),
     suffix = c("", "_unique")
   ) %>%
   mutate(file_name = coalesce(.data$file_name_unique, .data$file_name)) %>%
-  select(-any_of("file_name_unique"))
+  select(-any_of("file_name_unique")) %>%
+  select(all_of(source_request_columns))
+
+source_request_with_files <- bind_rows(
+  deep_source_request_with_files,
+  manual_source_request
+)
 
 source_file_status <- source_request_with_files %>%
   select(
@@ -359,7 +480,11 @@ write_csv(decision_summary, file.path(output_dir, "source_check_decision_summary
 
 summary <- tibble(
   candidate_rows = nrow(decision_ledger),
+  deep_research_candidate_rows = nrow(deep_candidate_queue),
+  manual_candidate_rows = nrow(manual_candidate_queue),
   source_links = nrow(source_request_with_files),
+  deep_research_source_links = nrow(deep_source_request_with_files),
+  manual_source_links = nrow(manual_source_request),
   unique_source_file_rows = nrow(source_file_status),
   candidate_rows_with_any_file_name = sum(!is.na(decision_ledger$file_name) & decision_ledger$file_name != ""),
   candidate_rows_all_local_pdfs_found = sum(decision_ledger$local_pdf_status == "all_local_pdfs_found"),
@@ -377,8 +502,13 @@ progress_lines <- c(
   "Durable curated decisions:",
   "",
   "- `curated_source_check_decisions.csv` stores manual/source-checked curation fields.",
-  "- `candidate_source_check_decisions.csv` is regenerated by merging fresh candidate/source metadata with those curated decisions.",
+  "- `candidate_source_check_decisions.csv` is regenerated by merging fresh Deep Research and manual candidate/source metadata with those curated decisions.",
   "- Official role evidence and assignment CSVs are not modified by this ledger build.",
+  "",
+  "Input summary:",
+  "",
+  paste0("- Deep Research candidates: ", nrow(deep_candidate_queue)),
+  paste0("- Manual candidates: ", nrow(manual_candidate_queue)),
   "",
   "Decision summary:",
   "",
@@ -389,9 +519,15 @@ writeLines(progress_lines, file.path(output_dir, "SOURCE_CHECK_PROGRESS.md"), us
 readme_lines <- c(
   "# Source-Check Decision Ledger",
   "",
-  "This folder contains review-only source-check artifacts for candidate Deep Research role rows.",
+  "This folder contains review-only source-check artifacts for role rows from generated Deep Research outputs and durable manual candidate inputs.",
   "",
   "No official role evidence or assignment CSVs are modified by this workflow.",
+  "",
+  "Input files:",
+  "",
+  "- `input/manual_source_check_candidates.csv`: optional durable manual candidate rows, using stable `manual_*` candidate IDs.",
+  "- `input/manual_source_check_sources.csv`: optional durable manual candidate-source links, including local PDF/text filename metadata when available.",
+  "- Deep Research candidate/source inputs are read from `pathogen_association_data/staged/role_annotation/deep_research_inputs/consolidated/`.",
   "",
   "Core files:",
   "",
@@ -415,9 +551,8 @@ readme_lines <- c(
   "  `source_check_candidate_id` is already present in the official role CSVs.",
   "- A rerun reporting `+0` official row deltas is expected after the accepted rows",
   "  have already been imported.",
-  "- In the current package, 45 accepted/import-ready rows are already represented",
-  "  in the official role evidence and assignment CSVs; 8 rows remain excluded as",
-  "  evidence-only or deferred.",
+  "- Current source-check decision counts are written to",
+  "  `source_check_decision_summary.csv`.",
   "",
   "Generated by:",
   "",
