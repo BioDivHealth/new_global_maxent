@@ -22,6 +22,8 @@ scripts/sdms/present/
     05_fetch_gbif_download_requests.R
     06_combine_vector_occurrences.R
     07_plot_combined_vector_occurrence_maps.R
+    08_plot_occurrence_period_maps.R
+    09_audit_gbif_synonyms.R
   models/
     01_run_present_model.R
     02_run_species_models_batch.R
@@ -103,6 +105,34 @@ The extractor writes exact species matches only:
 sdms/runs/vector_sdm_push/occurrences/<Species_safe>/vectormap/raw/
 sdms/runs/vector_sdm_push/occurrences/<Species_safe>/mapveu/raw/
 sdms/runs/vector_sdm_push/local_vector_occurrence_sources_manifest.csv
+```
+
+Current bulk vector occurrence files may be stored outside the repo on the
+LaCie drive:
+
+```text
+/Volumes/LaCie/new_global_maxent/sdms/runs_artur/vector_sdm_push/occurrences/
+```
+
+To audit whether GBIF downloads likely cover older names and synonyms, run the
+diagnostic synonym audit. It reads existing GBIF files and optional GBIF
+taxonomy/count metadata, but it does not submit downloads or change occurrence
+inputs:
+
+```r
+batch_config <- list(
+  target_manifest_path = "sdms/runs/vector_sdm_push/vector_species_sdm_targets.csv",
+  occurrence_root = "/Volumes/LaCie/new_global_maxent/sdms/runs_artur/vector_sdm_push/occurrences",
+  request_manifest_path = "/Volumes/LaCie/new_global_maxent/sdms/runs_artur/vector_sdm_push/gbif_download_requests.csv",
+  audit_run_root = "/Volumes/LaCie/new_global_maxent/sdms/runs_artur/vector_sdm_push/gbif_synonym_audit_runs",
+  roles = "vector",
+  query_gbif_api = FALSE,
+  query_gbif_counts = FALSE,
+  gbif_api_timeout_seconds = 20,
+  dry_run = FALSE
+)
+
+source("scripts/sdms/present/occurrences/09_audit_gbif_synonyms.R")
 ```
 
 ## Two-Phase GBIF Downloads
