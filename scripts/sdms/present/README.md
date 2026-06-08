@@ -26,8 +26,8 @@ scripts/sdms/present/
     09_audit_gbif_synonyms.R
   models/
     01_run_present_model.R
-    02_run_species_models_batch.R
-    02_run_chikungunya_models_batch.R
+    02a_run_species_models_batch.R
+    02b_run_manifest_model_batch.R
   calibration/
     01_prepare_host_regeneration_manifest.R
     02_compare_occurrences_to_existing_model.R
@@ -231,12 +231,21 @@ exploratory map run.
 
 ## Model Runs
 
-Use `models/01_run_present_model.R` for one species and
-`models/02_run_species_models_batch.R` for manifest-driven vector batches.
+Use `models/01_run_present_model.R` for one species,
+`models/02a_run_species_models_batch.R` as the RStudio-friendly batch config,
+and `models/02b_run_manifest_model_batch.R` as the generic batch implementation.
 
 The batch script does not prepare occurrences. It expects cleaned occurrence
 files under the configured occurrence method folder. By default it is a
 status/preflight run only.
+
+For vector reruns intended to align with Gonzalo's saved host SDM catalogue,
+use the host-catalog-style settings: `start_year = 2000`, `end_year = 2026`,
+`n_background = "dynamic"`, `beta_values = "4,8,12"`, `random_features = TRUE`,
+`n_models = 25`, `n_selected_models = 10`, and `use_boyce = 0.5`. The default
+`test_percent = "dynamic"` uses `20%` test data below 60 model records and `30%`
+otherwise. Set `n_background` to an integer, such as `8000`, for a
+fixed-background sensitivity.
 
 ```r
 batch_config <- list(
@@ -248,11 +257,11 @@ batch_config <- list(
   occurrence_method = "combined",
   fit_models = FALSE,
   dry_run_models = TRUE,
-  start_year = 1970,
-  end_year = as.integer(format(Sys.Date(), "%Y"))
+  start_year = 2000,
+  end_year = 2026
 )
 
-source("scripts/sdms/present/models/02_run_species_models_batch.R")
+source("scripts/sdms/present/models/02a_run_species_models_batch.R")
 ```
 
 Model outputs from the bulk vector push stay under
@@ -270,12 +279,13 @@ sdms/runs/vector_sdm_push/occurrences/
 ```
 
 This avoids duplicating Chikungunya vector records in
-`sdms/runs/chikungunya/calibration/occurrences/`. To run the old
-Chikungunya-specific manifests, source the compatibility scripts:
+`sdms/runs/chikungunya/calibration/occurrences/`. The old model batch filename
+has been replaced by the generic `02a`/`02b` pair:
 
 ```text
 occurrences/03_prepare_chikungunya_occurrences_batch.R
-models/02_run_chikungunya_models_batch.R
+models/02a_run_species_models_batch.R
+models/02b_run_manifest_model_batch.R
 ```
 
 Those scripts are path-configurable. Their run summaries and regenerated model

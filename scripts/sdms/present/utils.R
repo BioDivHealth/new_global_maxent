@@ -170,11 +170,21 @@ select_sdm_targets <- function(target_manifest,
     targets <- targets[!already_available, , drop = FALSE]
   }
 
-  targets <- targets[
-    order(targets$run_priority, targets$species_role, targets$species_name_canonical),
-    ,
-    drop = FALSE
-  ]
+  if (length(species_filter) > 0) {
+    targets$species_filter_order <- match(targets$species_name_canonical, species_filter)
+    targets <- targets[
+      order(targets$species_filter_order, targets$run_priority, targets$species_role, targets$species_name_canonical),
+      ,
+      drop = FALSE
+    ]
+    targets$species_filter_order <- NULL
+  } else {
+    targets <- targets[
+      order(targets$run_priority, targets$species_role, targets$species_name_canonical),
+      ,
+      drop = FALSE
+    ]
+  }
   targets <- targets[!duplicated(targets$species_name_canonical), , drop = FALSE]
 
   max_species <- as.numeric(max_species)
