@@ -1,47 +1,70 @@
+# -----------------------------------------------------------------------------|
+# 2_3_CLOVER_Network.R ----
+# -----------------------------------------------------------------------------|
+# Purpose: Join WHO-CLOVER bacteria host associations to standardized host
+#          taxonomy and write the CLOVER source-component network table.
+# Inputs : clover_host_species_standardized.csv, who_bacteria_clover_taxid.csv,
+#          and who_bacteria_clover_hosts.csv
+# Outputs: clover_who_network.csv
+# -----------------------------------------------------------------------------|
+
+# -----------------------------------------------------------------------------|
+# 1. Load required libraries and path helpers ----
+# -----------------------------------------------------------------------------|
 library(pacman)
-p_load(here, tidyverse, igraph, ggraph, networkD3, visNetwork, 
-       plotly, RColorBrewer, viridis, cowplot, scales, magrittr,dplyr)
+p_load(here, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
 
+# -----------------------------------------------------------------------------|
+# 2. Define input guardrails ----
+# -----------------------------------------------------------------------------|
+require_columns <- function(data, columns, label) {
+  missing <- setdiff(columns, names(data))
+  if (length(missing) > 0) {
+    stop(
+      label, " is missing required columns: ",
+      paste(missing, collapse = ", "),
+      call. = FALSE
+    )
+  }
+}
+
+# -----------------------------------------------------------------------------|
+# 3. Load and validate inputs ----
+# -----------------------------------------------------------------------------|
 host_taxonomy = read_csv(file.path(who_clover_dir, "clover_host_species_standardized.csv"))
-host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
-# names(host_taxonomy)
-#  [1] "Host"                  "HostTaxID"             "correct_name"          "type"                  "taxon_level"           "Genus"                
-#  [7] "Family"                "Order"                 "Class"                 "Phylum"                "host_species"          "Spp_syn"              
-# [13] "IUCN_spp"              "Or_name"               "IUCN_Present"          "IUCN_id"               "IUCN_name"             "IUCN_latest"          
-# [19] "IUCN_date"             "IUCN_Category"         "IUCN_N_syn"            "IUCN_syn"              "IUCN_status"           "IUCN_Phylum"          
-# [25] "IUCN_Class"            "IUCN_Order"            "IUCN_Family"           "ITIS_Present"          "ITIS_is_valid"         "ITIS_id"              
-# [31] "ITIS_name"             "ITIS_Phylum"           "ITIS_N_syn"            "ITIS_syn"              "ITIS_Class"            "ITIS_Order"           
-# [37] "ITIS_Family"           "ITIS_species_in_genus" "GBIF_Present"          "GBIF_id"               "GBIF_name"             "GBIF_N_syn"           
-# [43] "GBIF_syn"              "GBIF_Phylum"           "GBIF_Status"           "GBIF_Class"            "GBIF_Order"            "GBIF_Family"  
-
-unique(host_taxonomy$Host)
-unique(host_taxonomy$correct_name)
-unique(host_taxonomy$host_species)
-
 disease_names = read_csv(file.path(who_clover_dir, "who_bacteria_clover_taxid.csv"))
 host_associations = read_csv(file.path(who_clover_dir, "who_bacteria_clover_hosts.csv"))
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
-names(host_associations)
-#  [1] "ID"                      "bacteria_name"           "name_type"               "match_source"            "dist"                    "PathogenTaxID"          
-#  [7] "Pathogen"                "PathogenType"            "PathogenClass"           "PathogenOrder"           "PathogenFamily"          "PathogenGenus"          
-# [13] "PathogenNCBIResolved"    "Host"                    "HostTaxID"               "HostGenus"               "HostFamily"              "HostOrder"              
-# [19] "HostClass"               "HostNCBIResolved"        "DetectionMethod"         "DetectionMethodOriginal" "ICTVRatified"            "Database"               
-# [25] "DatabaseVersion"         "DatabaseDOI"             "PublicationYear"         "ReferenceText"           "PMID"                    "ReleaseYear"            
-# [31] "AssocID"                 "NCBIAccession"         
 
+require_columns(
+  host_taxonomy,
+  c("Host", "HostTaxID", "correct_name", "Spp_syn", "Phylum", "Class", "Family", "Order"),
+  "CLOVER host taxonomy"
+)
+
+require_columns(disease_names, c("ID", "Disease_name"), "CLOVER disease-name lookup")
+
+require_columns(
+  host_associations,
+  c(
+    "ID", "Pathogen", "PathogenTaxID", "PHEIC risk", "Host", "HostTaxID",
+    "PathogenClass", "PathogenOrder", "PathogenFamily", "PathogenGenus",
+    "DetectionMethod"
+  ),
+  "CLOVER host associations"
+)
+
+host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
+
+# -----------------------------------------------------------------------------|
+# 4. Build CLOVER source-component network table ----
+# -----------------------------------------------------------------------------|
 # Match disease names to host_associations
 host_associations = host_associations %>%
   left_join(disease_names %>% select(ID, Disease_name), by = "ID")
 
-# $bacteria_name is the original name
-# $Pathogen is the standardized name
-# $Host is the CLOVER host name
- unique(host_associations$bacteria_name)
- unique(host_associations$Pathogen)
- table(unique(host_associations$Host) %in% host_taxonomy$Host_lower)
- 
 # Clean and prepare data for network analysis
 network_data <- host_associations %>%
   # Create lowercase host names for matching
@@ -80,6 +103,9 @@ network_data <- host_associations %>%
 
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
 
+# -----------------------------------------------------------------------------|
+# 5. Write source-component output ----
+# -----------------------------------------------------------------------------|
 output_path <- who_network_source_component_path("clover_who_network.csv")
 dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(network_data, output_path)

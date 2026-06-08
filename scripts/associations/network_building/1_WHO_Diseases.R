@@ -1,6 +1,16 @@
-# ------------------------------------------------------------------------------|
-#      Load required libraries -------------------------------------------------
-# ------------------------------------------------------------------------------|
+# -----------------------------------------------------------------------------|
+# 1_WHO_Diseases.R ----
+# -----------------------------------------------------------------------------|
+# Purpose: Build the consolidated WHO pathogen backbone from regional tables,
+#          translation lookups, disease names, and source-presence flags.
+# Inputs : WHO regional pathogen tables, translation table, disease-name lookup,
+#          and source-presence lookup.
+# Outputs: who_pathogens_diseases.csv
+# -----------------------------------------------------------------------------|
+
+# -----------------------------------------------------------------------------|
+# 1. Load required libraries and path helpers ----
+# -----------------------------------------------------------------------------|
 library(tidyverse)
 library(here)
 library(pacman)
@@ -17,9 +27,9 @@ region_levels <- c(
   "western_pacific"
 )
 
-# ------------------------------------------------------------------------------|
-#      Load and combine WHO disease data --------------------------------------
-# ------------------------------------------------------------------------------|
+# -----------------------------------------------------------------------------|
+# 2. Load and combine WHO disease data ----
+# -----------------------------------------------------------------------------|
 csv_files <- who_diseases_regional_table_paths(region_levels)
 
 # Read and combine all tables
@@ -43,9 +53,9 @@ who_diseases_all <- imap_dfr(document_tables, ~mutate(.x, source_region = str_re
     !(is.na(`Prototype Pathogens`) | `Prototype Pathogens` == "")
   )
 
-# ------------------------------------------------------------------------------|
-#      Pathogen name standardization ------------------------------------------
-# ------------------------------------------------------------------------------|
+# -----------------------------------------------------------------------------|
+# 3. Standardize pathogen names and regional provenance ----
+# -----------------------------------------------------------------------------|
 # Function to standardize pathogen names
 standardize_pathogen_name <- function(x) {
   x %>%
@@ -173,9 +183,9 @@ pathogens_with_family_risk <- who_diseases_long %>%
     region_western_pacific
   )
 
-# ------------------------------------------------------------------------------|
-#      Load translation data and create mapping -------------------------------
-# ------------------------------------------------------------------------------|
+# -----------------------------------------------------------------------------|
+# 4. Map WHO names to translation-table names ----
+# -----------------------------------------------------------------------------|
 translation <- read_csv(who_diseases_translation_path())
 names(translation) <- c("Family", "Previous_Name", "MSL39_Viral_Species_Name")
 
@@ -251,9 +261,9 @@ pathogen_mapping <- tibble(pathogen = pathogens_all) %>%
   ungroup() %>%
   select(pathogen, previous_name, msl39_viral_name)
 
-# ------------------------------------------------------------------------------|
-#      Final results and summary -----------------------------------------------
-# ------------------------------------------------------------------------------|
+# -----------------------------------------------------------------------------|
+# 5. Write interim pathogen mapping and summary ----
+# -----------------------------------------------------------------------------|
 # Merge pathogen mapping with family and risk data
 final_pathogen_data <- pathogens_with_family_risk %>%
   left_join(pathogen_mapping, by = c("Pathogens" = "pathogen"))
@@ -279,9 +289,9 @@ if (nrow(unmapped_pathogens) > 0) {
   print(unmapped_pathogens$pathogen)
 }
 
-# ------------------------------------------------------------------------------|
-#      Add disease names to final_pathogen_data -------------------------------
-# ------------------------------------------------------------------------------|
+# -----------------------------------------------------------------------------|
+# 6. Add disease names and source-presence flags ----
+# -----------------------------------------------------------------------------|
 
 # Read final pathogen data
 final_pathogen_data = read_csv(who_final_pathogen_data_path())
@@ -302,9 +312,6 @@ point_data_lookup <- read_csv(
   ) %>%
   distinct(Disease_name, .keep_all = TRUE)
 
-# Check which missing pathogens are in the disease names
-missing_pathogens = diseases$Pathogens[!diseases$Pathogens %in% final_pathogen_data$Pathogens]
-
 # Add disease names to final_pathogen_data
 final_pathogen_data = final_pathogen_data %>%
   left_join(diseases, by = c("Pathogens" = "Pathogens")) %>%
@@ -313,8 +320,6 @@ final_pathogen_data = final_pathogen_data %>%
     in_gibb_etal = coalesce(in_gibb_etal, FALSE),
     in_empres_i = coalesce(in_empres_i, FALSE)
   )
-
-dim(final_pathogen_data)
 
 final_pathogen_data <- final_pathogen_data %>%
   select(

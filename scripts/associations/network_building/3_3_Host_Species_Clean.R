@@ -1,9 +1,18 @@
+# -----------------------------------------------------------------------------|
+# 3_3_Host_Species_Clean.R ----
+# -----------------------------------------------------------------------------|
+# Purpose: Standardize VIRION host species names and taxonomy for downstream
+#          WHO pathogen-host network assembly.
+# Inputs : who_pathogens_virion_hosts_summary.csv
+# Outputs: who_host_species_standardized.csv
+# -----------------------------------------------------------------------------|
+
+# -----------------------------------------------------------------------------|
+# 1. Load required libraries and helpers ----
+# -----------------------------------------------------------------------------|
 library(pacman)
 p_load(here, rgbif, taxize, raster, dismo, 
-      doParallel, rJava, XML, rgbif, Hmisc, readr, 
-      stringr, purrr, dplyr, tidyr, magrittr, tidyverse)
-
-library(dplyr)
+      doParallel, rJava, XML, Hmisc, magrittr, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
 
@@ -14,13 +23,15 @@ if (nzchar(iucn_redlist_key)) {
   options(iucn_redlist_key = iucn_redlist_key)
 }
 
-# Helper function from 0_SpList.R -----------------------------------------
+# Collapse multi-source taxonomy fields into stable semicolon-separated cells.
 collapse_vals <- function(x, sep = "; ") {
   x <- unique(x[!is.na(x)])
   paste(x, collapse = sep)
 }
 
-# Load data ----------------------------------------------------------------
+# -----------------------------------------------------------------------------|
+# 2. Load VIRION host candidates ----
+# -----------------------------------------------------------------------------|
 who_virion_hosts_short = read_csv(file.path(who_virion_dir, "who_pathogens_virion_hosts_summary.csv"))
 
 host_species = who_virion_hosts_short %>%
@@ -45,7 +56,9 @@ hosts_ids = who_virion_hosts_short %>%
   summarise(HostTaxID = paste(unique(HostTaxID), collapse = ";"), .groups = "drop")
 
 
-# Main species standardization loop ---------------------------------------
+# -----------------------------------------------------------------------------|
+# 3. Retrieve taxonomy and synonyms for each host ----
+# -----------------------------------------------------------------------------|
 species_list = list()
 
 cat("Starting species standardization process...\n")
@@ -61,7 +74,9 @@ for (i in 1:length(host_species_list)) {
     species_list[[i]]$host_species = sp    
 }
 
-# Create one-row-per-species dataframe -----------------------------------
+# -----------------------------------------------------------------------------|
+# 4. Build one-row-per-species taxonomy table ----
+# -----------------------------------------------------------------------------|
 cat("Creating standardized taxonomic dataframe...\n")
 tax_df <- map_dfr(species_list, function(rec) {
   
@@ -86,8 +101,8 @@ tax_df <- map_dfr(species_list, function(rec) {
     bind_cols(td_summary)          # add the TaxDat summary columns
 })
 
-# Add consolidated taxonomic information ----------------------------------
-
+# Prefer curated taxonomy sources in a stable order while preserving source
+# columns for later inspection.
 tax_df$Phylum <- coalesce(tax_df$IUCN_Phylum, 
                           tax_df$ITIS_Phylum, 
                           tax_df$GBIF_Phylum)
@@ -110,17 +125,18 @@ tax_df_joined = tax_df %>%
   rename(Host = Submitted_name) %>%
   relocate(HostTaxID, .after = Host) %>% 
   relocate(Genus, Family, Order, Class, Phylum, .after = taxon_level)
-# Create output directory if it doesn't exist
 
 for (i in 1:nrow(tax_df_joined)){
   if(nchar(tax_df_joined$Spp_syn[i]) > 0){
     tax_df_joined$Spp_syn[i] =  clean_synonyms2(tax_df_joined$Spp_syn[i])}
 }
 
+# -----------------------------------------------------------------------------|
+# 5. Write standardized host taxonomy ----
+# -----------------------------------------------------------------------------|
 output_dir <- who_virion_dir
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
-# Save the standardized host species data --------------------------------
 output_file <- file.path(output_dir, "who_host_species_standardized.csv")
 write_csv(tax_df_joined, output_file)
 
@@ -128,7 +144,9 @@ cat("Standardization complete!\n")
 cat("Processed", nrow(tax_df), "host species records\n")
 cat("Results saved to:", output_file, "\n")
 
-# Summary statistics ------------------------------------------------------
+# -----------------------------------------------------------------------------|
+# 6. Print console summary ----
+# -----------------------------------------------------------------------------|
 cat("\n=== STANDARDIZATION SUMMARY ===\n")
 cat("Total species processed:", length(host_species_list), "\n")
 cat("Records with correct names:", sum(!is.na(tax_df$correct_name)), "\n")
@@ -158,80 +176,68 @@ if (nrow(problematic_species) > 0) {
 
 cat("\nProcess completed successfully!\n")
 
+if (interactive()) {
+  # ---------------------------------------------------------------------------|
+  # 7. Build exploratory visualisations for interactive sessions ----
+  # ---------------------------------------------------------------------------|
+  host <- read_csv(file.path(who_virion_dir, "who_host_species_standardized.csv"))
+  host %<>% dplyr::select(Host, correct_name, Genus, Family, Order, Class, Phylum)
 
-coalesce(tmp$IUCN_Class,  
-         tmp$ITIS_Class,  
-         tmp$GBIF_Class)
+  cat("\n=== CREATING TAXONOMY VISUALIZATIONS ===\n")
 
-# Visualisations -----------------------------------------------------------
+  host_clean <- host %>%
+    filter(!is.na(correct_name)) %>%
+    mutate(
+      Class = str_to_title(coalesce(Class, "Unknown")),
+      Order = str_to_title(coalesce(Order, "Unknown")),
+      Family = str_to_title(coalesce(Family, "Unknown")),
+      Phylum = str_to_title(coalesce(Phylum, "Unknown"))
+    )
 
-library(ggplot2)
-library(tidyverse)
-library(here)
-library(magrittr)
-host = read_csv(file.path(who_virion_dir, "who_host_species_standardized.csv"))
-host %<>% dplyr::select(Host, correct_name, Genus, Family, Order, Class, Phylum)
+  p1_class_pie <- host_clean %>%
+    count(Class, sort = TRUE) %>%
+    mutate(
+      percentage = round(n / sum(n) * 100, 1),
+      label = paste0(Class, "\n(", n, " species, ", percentage, "%)")
+    ) %>%
+    ggplot(aes(x = "", y = n, fill = Class)) +
+    geom_col(width = 1, color = "white", size = 0.5) +
+    coord_polar("y", start = 0) +
+    scale_fill_brewer(palette = "Set3") +
+    theme_void() +
+    theme(
+      legend.position = "right",
+      plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+      legend.text = element_text(size = 10)
+    ) +
+    labs(
+      title = "Host Species Distribution by Class",
+      subtitle = paste("Total:", nrow(host_clean), "host species"),
+      fill = "Taxonomic Class"
+    )
 
-# ------------------------------------------------------------------------------
-# TAXONOMY VISUALIZATIONS
-# ------------------------------------------------------------------------------
+  p2_order_bars <- host_clean %>%
+    count(Order, Class, sort = TRUE) %>%
+    slice_head(n = 20) %>%
+    mutate(Order = fct_reorder(Order, n)) %>%
+    ggplot(aes(x = Order, y = n, fill = Class)) +
+    geom_col(alpha = 0.8) +
+    coord_flip() +
+    scale_fill_brewer(palette = "Set2") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size = 14, face = "bold"),
+      axis.text = element_text(size = 10),
+      legend.position = "bottom"
+    ) +
+    labs(
+      title = "Top 20 Host Orders by Species Count",
+      subtitle = "Colored by taxonomic class",
+      x = "Taxonomic Order",
+      y = "Number of Species",
+      fill = "Class"
+    )
 
-cat("\n=== CREATING TAXONOMY VISUALIZATIONS ===\n")
-
-# Clean data for visualization
-host_clean <- host %>%
-  filter(!is.na(correct_name)) %>%
-  mutate(
-    Class = str_to_title(coalesce(Class, "Unknown")),
-    Order = str_to_title(coalesce(Order, "Unknown")),
-    Family = str_to_title(coalesce(Family, "Unknown")),
-    Phylum = str_to_title(coalesce(Phylum, "Unknown"))
-  )
-
-# 1. CLASS DISTRIBUTION PIE CHART
-p1_class_pie <- host_clean %>%
-  count(Class, sort = TRUE) %>%
-  mutate(
-    percentage = round(n/sum(n) * 100, 1),
-    label = paste0(Class, "\n(", n, " species, ", percentage, "%)")
-  ) %>%
-  ggplot(aes(x = "", y = n, fill = Class)) +
-  geom_col(width = 1, color = "white", size = 0.5) +
-  coord_polar("y", start = 0) +
-  scale_fill_brewer(palette = "Set3") +
-  theme_void() +
-  theme(
-    legend.position = "right",
-    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    legend.text = element_text(size = 10)
-  ) +
-  labs(
-    title = "Host Species Distribution by Class",
-    subtitle = paste("Total:", nrow(host_clean), "host species"),
-    fill = "Taxonomic Class"
-  )
-
-# 2. ORDER DISTRIBUTION BAR CHART (Top 15)
-p2_order_bars <- host_clean %>%
-  count(Order, Class, sort = TRUE) %>%
-  slice_head(n = 20) %>%
-  mutate(Order = fct_reorder(Order, n)) %>%
-  ggplot(aes(x = Order, y = n, fill = Class)) +
-  geom_col(alpha = 0.8) +
-  coord_flip() +
-  scale_fill_brewer(palette = "Set2") +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 14, face = "bold"),
-    axis.text = element_text(size = 10),
-    legend.position = "bottom"
-  ) +
-  labs(
-    title = "Top 20 Host Orders by Species Count",
-    subtitle = "Colored by taxonomic class",
-    x = "Taxonomic Order",
-    y = "Number of Species",
-    fill = "Class"
-  )
-
-print(p2_order_bars)
+  print(p1_class_pie)
+  print(p2_order_bars)
+}

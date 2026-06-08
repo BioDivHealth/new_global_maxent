@@ -1,33 +1,56 @@
-# ------------------------------------------------------------------------------|
-# 5_Network_Visualization.R
-# ------------------------------------------------------------------------------|
-# Purpose: Create network visualizations of WHO pathogen-host associations
-#          using standardized data from previous processing steps
-#
-# Input:   who_pathogens_virion_hosts_summary.csv (from 3_WHO_Virion_Hosts.R)
+# -----------------------------------------------------------------------------|
+# 3_4_VIRION_Networks.R ----
+# -----------------------------------------------------------------------------|
+# Purpose: Build the VIRION source-component WHO pathogen-host association table
+#          using standardized data from previous processing steps.
+# Inputs : who_pathogens_virion_hosts_summary.csv (from 3_WHO_Virion_Hosts.R)
 #          who_host_species_standardized.csv (from 4_Host_Species_Clean.R)
-#
-# Output:  Interactive and static network plots
-# ------------------------------------------------------------------------------|
+# Outputs: virion_who_network.csv
+# -----------------------------------------------------------------------------|
 
-# ------------------------------| Load libraries |------------------------------
+# -----------------------------------------------------------------------------|
+# 1. Load required libraries and path helpers ----
+# -----------------------------------------------------------------------------|
 library(pacman)
-p_load(here, tidyverse, igraph, ggraph, networkD3, visNetwork, 
-       plotly, RColorBrewer, viridis, cowplot, scales)
-
-# Additional network packages
-if (!require(tidygraph)) install.packages("tidygraph")
-library(tidygraph)
-library(magrittr)
+p_load(here, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
 
-# ------------------------------| Load data |--------------------------------
+# -----------------------------------------------------------------------------|
+# 2. Define input guardrails ----
+# -----------------------------------------------------------------------------|
+require_columns <- function(data, columns, label) {
+  missing <- setdiff(columns, names(data))
+  if (length(missing) > 0) {
+    stop(
+      label, " is missing required columns: ",
+      paste(missing, collapse = ", "),
+      call. = FALSE
+    )
+  }
+}
+
+# -----------------------------------------------------------------------------|
+# 3. Load and validate VIRION host associations ----
+# -----------------------------------------------------------------------------|
 cat("Loading pathogen-host association data...\n")
 # Load the main association data
 host_associations <- read_csv(file.path(who_virion_dir, "who_pathogens_virion_hosts_summary.csv"))
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
+require_columns(
+  host_associations,
+  c(
+    "Virus", "Pathogens", "Host", "HostTaxID", "VirusTaxID", "VirusGenus",
+    "VirusFamily", "VirusOrder", "VirusClass", "DetectionMethod", "HostFlagID",
+    "Disease_name", "PHEIC risk", "in_gibb_etal", "in_empres_i"
+  ),
+  "VIRION host associations"
+)
+
+# -----------------------------------------------------------------------------|
+# 4. Harmonize pathogen and host names ----
+# -----------------------------------------------------------------------------|
 # Harmonize Virus names to standardized taxonomy
 synonyms <- c(
   "influenza a virus"                       = "alphainfluenzavirus influenzae",
@@ -51,8 +74,16 @@ host_associations$Virus = host_associations$Virus_std  # Use standardized names 
 
 # Load standardized host taxonomy  
 host_taxonomy <- read_csv(file.path(who_virion_dir, "who_host_species_standardized.csv"))
+require_columns(
+  host_taxonomy,
+  c("Host", "correct_name", "Phylum", "Class", "Family", "Order"),
+  "VIRION host taxonomy"
+)
 host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
 
+# -----------------------------------------------------------------------------|
+# 5. Build VIRION source-component network table ----
+# -----------------------------------------------------------------------------|
 # Clean and prepare data for network analysis
 network_data <- host_associations %>%
   # Create lowercase host names for matching
@@ -106,6 +137,10 @@ network_data <- host_associations %>%
   filter(!is.na(Pathogen), !is.na(Host_clean))
 
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
+
+# -----------------------------------------------------------------------------|
+# 6. Write source-component output ----
+# -----------------------------------------------------------------------------|
 output_path <- who_network_source_component_path("virion_who_network.csv")
 dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
 write_csv(network_data, output_path)

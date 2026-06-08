@@ -1,50 +1,42 @@
-# ------------------------------------------------------------------------------
-# 2_1_CLOVER.R
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------|
+# 2_1_CLOVER.R ----
+# -----------------------------------------------------------------------------|
 # Purpose: Identify which WHO priority bacteria are present in the CLOVER
 #          database and retrieve their host associations directly.
-#
-# Output : CSV files containing WHO bacteria matches and their host associations
-# ------------------------------------------------------------------------------|
+# Inputs : who_pathogens_diseases.csv and CLOVER bacteria association flat file.
+# Outputs: who_bacteria_clover_taxid.csv, who_bacteria_clover_hosts.csv, and
+#          who_bacteria_clover_unique_hosts.csv
+# -----------------------------------------------------------------------------|
 
-# ------------------------------| Load libraries |------------------------------
+# -----------------------------------------------------------------------------|
+# 1. Load required libraries and path helpers ----
+# -----------------------------------------------------------------------------|
 library(tidyverse)
 library(here)
 library(stringdist)
 library(fuzzyjoin)
 library(magrittr)
-library(dplyr)
 
 source(here("scripts", "associations", "working_inputs.R"))
 
-# ------------------------------| Helper paths  |------------------------------
+# -----------------------------------------------------------------------------|
+# 2. Define paths and matching constants ----
+# -----------------------------------------------------------------------------|
 who_csv_path <- who_raw_pathogens_path()
 output_csv_path <- file.path(who_clover_dir, "who_bacteria_clover_taxid.csv")
 output_hosts_path <- file.path(who_clover_dir, "who_bacteria_clover_hosts.csv")
 output_unique_hosts_path <- file.path(who_clover_dir, "who_bacteria_clover_unique_hosts.csv")
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
-# ------------------------------| Load datasets |------------------------------
-# 1. WHO pathogen list ---------------------------------------------------------
+# -----------------------------------------------------------------------------|
+# 3. Load WHO and source inputs ----
+# -----------------------------------------------------------------------------|
+# 3.1 WHO pathogen list ----
 who_df <- read_csv(who_csv_path, show_col_types = FALSE)
 who_df %<>% filter(Family=="Bacteria") # Include only bacteria
 who_df$ID = paste0("B",1:nrow(who_df))
 
-unique(who_df$Pathogens)
-# [1] "Klebsiella pneumoniae"                     
-# [2] "Salmonella enterica non typhoidal serovars"
-# [3] "Shigella dysenteriae serotype 1"           
-# [4] "Vibrio cholerae serogroup 0139"            
-# [5] "Yersinia pestis"
-
-# 2. CLOVER bacteria database --------------------------------------------------
-# Read column descriptions
-clover_col_desc <- read_csv(file.path(
-  clover_source_dir,
-  "clover", "clover_1.0_allpathogens",
-  "CLOVER_ColumnDescriptions.csv"
-))
-
+# 3.2 CLOVER bacteria database ----
 # Read bacteria dataset
 clover_bacteria <- read_csv(file.path(
   clover_source_dir,
@@ -52,7 +44,9 @@ clover_bacteria <- read_csv(file.path(
   "CLOVER_1.0_Bacteria_AssociationsFlatFile.csv"
 ))
 
-# ------------------------------| Pre-processing |-----------------------------
+# -----------------------------------------------------------------------------|
+# 4. Prepare source keys for matching ----
+# -----------------------------------------------------------------------------|
 # Create a lowercase, trimmed helper column for safer joins --------------------
 who_long <- who_df %>%
   # For bacteria, we only have the main Pathogens column (no previous_name, msl39_viral_name)
@@ -77,7 +71,10 @@ clover_bacteria_proc <- clover_bacteria %>%
          Database, DatabaseVersion, DatabaseDOI, PublicationYear, ReferenceText, PMID,
          ReleaseYear, AssocID, NCBIAccession)
 
-# ------------------------------| Manual matches |-----------------------------
+# -----------------------------------------------------------------------------|
+# 5. Match WHO bacteria to source records ----
+# -----------------------------------------------------------------------------|
+# 5.1 Manual matches ----
 # Define manual mappings for specific cases where fuzzy matching needs correction
 manual_mappings <- tribble(
   ~who_name_lower, ~clover_name_lower,
@@ -100,13 +97,13 @@ manual_matches <- who_long %>%
   mutate(dist = 0.5, match_source = "manual") %>%
   dplyr::select(ID, name_type, bacteria_name, Disease_name, all_of(names(clover_bacteria_proc)), dist, match_source)
 
-# ------------------------------| Exact matches |------------------------------
+# 5.2 Exact matches ----
 exact_matches <- who_long %>%
   inner_join(clover_bacteria_proc, by = "bacteria_key") %>%
   mutate(dist = 0, match_source = "exact") %>%
   dplyr::select(ID, name_type, bacteria_name, Disease_name, all_of(names(clover_bacteria_proc)), dist, match_source)
 
-# ------------------------------| Fuzzy matches |------------------------------
+# 5.3 Fuzzy matches ----
 # Attempt fuzzy matching only for those still unmatched ------------------------
 unmatched <- who_long %>%
   filter(!ID %in% c(exact_matches$ID, manual_matches$ID))
@@ -136,12 +133,12 @@ if (nrow(unmatched) > 0) {
   fuzzy_matches <- tibble()
 }
 
-# ------------------------------| Combine results |----------------------------
+# -----------------------------------------------------------------------------|
+# 6. Build host-association outputs ----
+# -----------------------------------------------------------------------------|
 # Combine all matches - each row is now a WHO bacteria - CLOVER host association
 all_host_associations <- bind_rows(exact_matches, manual_matches, fuzzy_matches)
 all_host_associations = unique(all_host_associations)
-names(all_host_associations)
-unique(all_host_associations$match_source)
 
 # Process matches: prioritize exact over fuzzy
 final_host_associations_raw <- all_host_associations %>%
@@ -255,7 +252,9 @@ final_output <- who_df %>%
   )
 
 
-# Save CSV files -------------------------------------------------------------
+# -----------------------------------------------------------------------------|
+# 7. Write output CSVs ----
+# -----------------------------------------------------------------------------|
 # Create output directory if it doesn't exist
 dir.create(dirname(output_csv_path), recursive = TRUE, showWarnings = FALSE)
 
@@ -278,7 +277,9 @@ host_species <- final_host_associations %>%
 # Save detailed host associations
 write_csv(host_species, output_unique_hosts_path)
 
-# ------------------------------| Console summary |---------------------------
+# -----------------------------------------------------------------------------|
+# 8. Print console summary ----
+# -----------------------------------------------------------------------------|
 cat("Match summary:\n")
 cat(" - Total WHO bacteria records: ", nrow(who_df), "\n", sep = "")
 cat(" - Successfully matched: ", sum(!is.na(final_output$PathogenTaxID)), "\n", sep = "")
@@ -327,7 +328,3 @@ cat("\nProcessing complete!\n")
 cat("Files saved:\n")
 cat("  - WHO-CLOVER summary:", output_csv_path, "\n")
 cat("  - Detailed host associations:", output_hosts_path, "\n")
-
-# Display column descriptions for reference
-cat("\nCLOVER Column Descriptions (first 10):\n")
-print(head(clover_col_desc, 10))
