@@ -1,8 +1,8 @@
 metric,value
-who_network_rows,2573
+who_network_rows,3514
 who_distinct_diseases,29
 who_distinct_pathogens,42
-who_distinct_hosts,956
+who_distinct_hosts,1180
 host_vector_join_ready_rows,3097
 host_vector_join_blocked_rows,0
 host_vector_blocked_missing_host_tax_id_rows,0
@@ -12,8 +12,8 @@ disease_vector_rows,470
 disease_vector_unmatched_rows,207
 pathogen_vector_rows,697
 pathogen_vector_unmatched_rows,331
-disease_host_vector_rows,850
+disease_host_vector_rows,1074
 pathogen_host_vector_rows,1171
 diseases_with_disease_level_matches,12
 diseases_with_pathogen_level_matches,12
-taxonomy_caution_rows_total,20
+taxonomy_caution_rows_total,28

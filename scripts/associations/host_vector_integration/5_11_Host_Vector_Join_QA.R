@@ -5,7 +5,8 @@
 #          rows, and taxonomy cautions across the disease-level and
 #          pathogen-level host-vector-pathogen outputs.
 #
-# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for master_plus_who_host_network.csv,
+#          filtered to legacy canonical zoonotic associations
 #          vector_screening_evidence_path(
 #            "disease_vector_links_taxonomy_cleaned.csv"
 #          )
@@ -34,7 +35,7 @@ source(here("scripts", "associations", "host_vector_integration", "host_vector_j
 
 host_vector_dir <- vector_host_outputs_dir
 
-who_path <- who_working_network_path()
+who_path <- who_network_host_pathogen_path("master_plus_who_host_network.csv")
 disease_vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned.csv"
 )
@@ -51,12 +52,18 @@ unmatched_pathogen_path <- who_network_qa_path("host_vector_join_unmatched_patho
 taxonomy_caution_path <- who_network_qa_path("host_vector_join_taxonomy_caution_rows.csv")
 disease_coverage_path <- who_network_qa_path("host_vector_join_disease_coverage.csv")
 
-who_network <- read_clean_csv(who_path)
+who_network <- read_clean_csv(who_path) %>%
+  filter_legacy_compatible_host_network()
 disease_vectors <- read_clean_csv(disease_vector_path)
 pathogen_vectors <- read_clean_csv(pathogen_vector_path)
 host_vector_join <- read_clean_csv(host_vector_join_path)
 host_vector_blocked <- read_clean_csv(host_vector_blocked_path)
-disease_output <- read_clean_csv(disease_output_path)
+disease_output <- read_clean_csv(
+  disease_output_path,
+  col_types = cols(
+    review_reason_examples = col_character()
+  )
+)
 pathogen_output <- read_clean_csv(
   pathogen_output_path,
   col_types = cols(
