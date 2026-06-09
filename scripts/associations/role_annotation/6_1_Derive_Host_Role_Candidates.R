@@ -5,7 +5,7 @@
 # Purpose: Derive conservative host-role candidate rows from the canonical WHO
 #          disease-pathogen-host backbone for the current role-review scope.
 #
-# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
+# Inputs : master-plus compatibility view for the legacy canonical WHO network
 #          WHO diseases helper path for who_pathogens_diseases_zoonotic.csv
 #
 # Outputs: pathogen_association_data/evidence/role_annotation/
@@ -29,6 +29,12 @@ suppressPackageStartupMessages({
 pacman::p_load(dplyr, readr, stringr, tidyr)
 
 source(here::here("scripts", "associations", "working_inputs.R"))
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
@@ -65,7 +71,6 @@ is_true <- function(x) {
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-network_path <- who_canonical_zoonotic_network_path()
 zoonotic_path <- who_pathogens_diseases_zoonotic_path()
 
 output_dir <- role_candidates_dir
@@ -123,7 +128,7 @@ livestock_species <- c(
   "Sus scrofa"
 )
 
-network <- read_csv(network_path, show_col_types = FALSE, na = c("", "NA")) %>%
+network <- read_legacy_compatible_master_plus_network() %>%
   mutate(across(where(is.character), clean_text))
 
 host_role_candidates <- network %>%

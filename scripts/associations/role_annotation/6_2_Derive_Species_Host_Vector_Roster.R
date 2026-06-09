@@ -5,7 +5,7 @@
 # Purpose: Build a disease-species roster for collaborator review, covering both
 #          vectored and non-vectored diseases.
 #
-# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
+# Inputs : master-plus compatibility view for the legacy canonical WHO network
 #          vector_screening_evidence_path(
 #            "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 #          )
@@ -41,6 +41,12 @@ suppressPackageStartupMessages({
 pacman::p_load(dplyr, readr, stringr, tidyr, writexl)
 
 source(here::here("scripts", "associations", "working_inputs.R"))
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 # ------------------------------------------------------------------------------|
 #      Helpers -----------------------------------------------------------------|
@@ -136,7 +142,6 @@ summarise_bites_humans_basis <- function(x) {
 host_vector_dir <- vector_host_outputs_dir
 role_dir <- role_roster_dir
 
-network_path <- who_canonical_zoonotic_network_path()
 vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned_competence_annotated.csv"
 )
@@ -255,11 +260,7 @@ host_role_candidates <- read_csv(
 # ------------------------------------------------------------------------------|
 #      Host Rows ---------------------------------------------------------------|
 # ------------------------------------------------------------------------------|
-host_rows <- read_csv(
-  network_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-) %>%
+host_rows <- read_legacy_compatible_master_plus_network() %>%
   mutate(across(where(is.character), clean_text)) %>%
   mutate(HostTaxID = clean_text(HostTaxID)) %>%
   filter(!Disease_name %in% broad_disease_exclusions) %>%

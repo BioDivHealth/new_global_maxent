@@ -1,98 +1,98 @@
 disease_name,metric,flag_value,row_count
-Argentine hemorrhagic fever,has_competence_evidence,FALSE,8
-Argentine hemorrhagic fever,has_disease_vector_evidence,FALSE,8
-Argentine hemorrhagic fever,roster_rows,,8
-Argentine hemorrhagic fever,species_role,host,8
+Argentine hemorrhagic fever,has_competence_evidence,FALSE,10
+Argentine hemorrhagic fever,has_disease_vector_evidence,FALSE,10
+Argentine hemorrhagic fever,roster_rows,,10
+Argentine hemorrhagic fever,species_role,host,10
 Borna disease (encephalitis),has_competence_evidence,FALSE,23
 Borna disease (encephalitis),has_disease_vector_evidence,FALSE,23
 Borna disease (encephalitis),roster_rows,,23
 Borna disease (encephalitis),species_role,host,23
 Chikungunya fever,has_competence_evidence,TRUE,15
-Chikungunya fever,has_competence_evidence,FALSE,26
+Chikungunya fever,has_competence_evidence,FALSE,36
 Chikungunya fever,has_disease_vector_evidence,TRUE,21
-Chikungunya fever,has_disease_vector_evidence,FALSE,20
-Chikungunya fever,roster_rows,,41
+Chikungunya fever,has_disease_vector_evidence,FALSE,30
+Chikungunya fever,roster_rows,,51
 Chikungunya fever,species_role,vector,21
-Chikungunya fever,species_role,host,20
+Chikungunya fever,species_role,host,30
 Crimean-Congo hemorrhagic fever,has_competence_evidence,TRUE,30
-Crimean-Congo hemorrhagic fever,has_competence_evidence,FALSE,32
+Crimean-Congo hemorrhagic fever,has_competence_evidence,FALSE,77
 Crimean-Congo hemorrhagic fever,has_disease_vector_evidence,TRUE,49
-Crimean-Congo hemorrhagic fever,has_disease_vector_evidence,FALSE,13
-Crimean-Congo hemorrhagic fever,roster_rows,,62
+Crimean-Congo hemorrhagic fever,has_disease_vector_evidence,FALSE,58
+Crimean-Congo hemorrhagic fever,roster_rows,,107
 Crimean-Congo hemorrhagic fever,species_role,vector,49
-Crimean-Congo hemorrhagic fever,species_role,host,13
+Crimean-Congo hemorrhagic fever,species_role,host,58
 Dengue,has_competence_evidence,TRUE,15
-Dengue,has_competence_evidence,FALSE,38
+Dengue,has_competence_evidence,FALSE,54
 Dengue,has_disease_vector_evidence,TRUE,16
-Dengue,has_disease_vector_evidence,FALSE,37
-Dengue,roster_rows,,53
+Dengue,has_disease_vector_evidence,FALSE,53
+Dengue,roster_rows,,69
 Dengue,species_role,vector,16
-Dengue,species_role,host,37
-Ebola virus disease,has_competence_evidence,FALSE,16
-Ebola virus disease,has_disease_vector_evidence,FALSE,16
-Ebola virus disease,roster_rows,,16
-Ebola virus disease,species_role,host,16
-Hantavirus pulmonary syndrome,has_competence_evidence,FALSE,17
-Hantavirus pulmonary syndrome,has_disease_vector_evidence,FALSE,17
-Hantavirus pulmonary syndrome,roster_rows,,17
-Hantavirus pulmonary syndrome,species_role,host,17
-Hemorrhagic fever with renal syndrome (Hantaan virus),has_competence_evidence,FALSE,21
-Hemorrhagic fever with renal syndrome (Hantaan virus),has_disease_vector_evidence,FALSE,21
-Hemorrhagic fever with renal syndrome (Hantaan virus),roster_rows,,21
-Hemorrhagic fever with renal syndrome (Hantaan virus),species_role,host,21
-Hepatitis E,has_competence_evidence,FALSE,49
-Hepatitis E,has_disease_vector_evidence,FALSE,49
-Hepatitis E,roster_rows,,49
-Hepatitis E,species_role,host,49
-Influenza (H5N1 avian influenza),has_competence_evidence,FALSE,538
-Influenza (H5N1 avian influenza),has_disease_vector_evidence,FALSE,538
-Influenza (H5N1 avian influenza),roster_rows,,538
-Influenza (H5N1 avian influenza),species_role,host,538
-Influenza (H7N9 avian influenza),has_competence_evidence,FALSE,538
-Influenza (H7N9 avian influenza),has_disease_vector_evidence,FALSE,538
-Influenza (H7N9 avian influenza),roster_rows,,538
-Influenza (H7N9 avian influenza),species_role,host,538
-Lassa fever,has_competence_evidence,FALSE,14
-Lassa fever,has_disease_vector_evidence,FALSE,14
-Lassa fever,roster_rows,,14
-Lassa fever,species_role,host,14
+Dengue,species_role,host,53
+Ebola virus disease,has_competence_evidence,FALSE,19
+Ebola virus disease,has_disease_vector_evidence,FALSE,19
+Ebola virus disease,roster_rows,,19
+Ebola virus disease,species_role,host,19
+Hantavirus pulmonary syndrome,has_competence_evidence,FALSE,28
+Hantavirus pulmonary syndrome,has_disease_vector_evidence,FALSE,28
+Hantavirus pulmonary syndrome,roster_rows,,28
+Hantavirus pulmonary syndrome,species_role,host,28
+Hemorrhagic fever with renal syndrome (Hantaan virus),has_competence_evidence,FALSE,30
+Hemorrhagic fever with renal syndrome (Hantaan virus),has_disease_vector_evidence,FALSE,30
+Hemorrhagic fever with renal syndrome (Hantaan virus),roster_rows,,30
+Hemorrhagic fever with renal syndrome (Hantaan virus),species_role,host,30
+Hepatitis E,has_competence_evidence,FALSE,74
+Hepatitis E,has_disease_vector_evidence,FALSE,74
+Hepatitis E,roster_rows,,74
+Hepatitis E,species_role,host,74
+Influenza (H5N1 avian influenza),has_competence_evidence,FALSE,559
+Influenza (H5N1 avian influenza),has_disease_vector_evidence,FALSE,559
+Influenza (H5N1 avian influenza),roster_rows,,559
+Influenza (H5N1 avian influenza),species_role,host,559
+Influenza (H7N9 avian influenza),has_competence_evidence,FALSE,559
+Influenza (H7N9 avian influenza),has_disease_vector_evidence,FALSE,559
+Influenza (H7N9 avian influenza),roster_rows,,559
+Influenza (H7N9 avian influenza),species_role,host,559
+Lassa fever,has_competence_evidence,FALSE,21
+Lassa fever,has_disease_vector_evidence,FALSE,21
+Lassa fever,roster_rows,,21
+Lassa fever,species_role,host,21
 Lujo hemorrhagic fever,has_competence_evidence,FALSE,1
 Lujo hemorrhagic fever,has_disease_vector_evidence,FALSE,1
 Lujo hemorrhagic fever,roster_rows,,1
 Lujo hemorrhagic fever,species_role,host,1
-Marburg virus disease,has_competence_evidence,FALSE,9
-Marburg virus disease,has_disease_vector_evidence,FALSE,9
-Marburg virus disease,roster_rows,,9
-Marburg virus disease,species_role,host,9
-Mpox (Monkeypox),has_competence_evidence,FALSE,20
-Mpox (Monkeypox),has_disease_vector_evidence,FALSE,20
-Mpox (Monkeypox),roster_rows,,20
-Mpox (Monkeypox),species_role,host,20
-Nipah virus disease,has_competence_evidence,FALSE,16
-Nipah virus disease,has_disease_vector_evidence,FALSE,16
-Nipah virus disease,roster_rows,,16
-Nipah virus disease,species_role,host,16
+Marburg virus disease,has_competence_evidence,FALSE,12
+Marburg virus disease,has_disease_vector_evidence,FALSE,12
+Marburg virus disease,roster_rows,,12
+Marburg virus disease,species_role,host,12
+Mpox (Monkeypox),has_competence_evidence,FALSE,39
+Mpox (Monkeypox),has_disease_vector_evidence,FALSE,39
+Mpox (Monkeypox),roster_rows,,39
+Mpox (Monkeypox),species_role,host,39
+Nipah virus disease,has_competence_evidence,FALSE,34
+Nipah virus disease,has_disease_vector_evidence,FALSE,34
+Nipah virus disease,roster_rows,,34
+Nipah virus disease,species_role,host,34
 Oropouche fever,has_competence_evidence,TRUE,15
-Oropouche fever,has_competence_evidence,FALSE,6
+Oropouche fever,has_competence_evidence,FALSE,8
 Oropouche fever,has_disease_vector_evidence,TRUE,15
-Oropouche fever,has_disease_vector_evidence,FALSE,6
-Oropouche fever,roster_rows,,21
+Oropouche fever,has_disease_vector_evidence,FALSE,8
+Oropouche fever,roster_rows,,23
 Oropouche fever,species_role,vector,15
-Oropouche fever,species_role,host,6
+Oropouche fever,species_role,host,8
 Plague,has_competence_evidence,TRUE,47
-Plague,has_competence_evidence,FALSE,37
+Plague,has_competence_evidence,FALSE,52
 Plague,has_disease_vector_evidence,TRUE,47
-Plague,has_disease_vector_evidence,FALSE,37
-Plague,roster_rows,,84
+Plague,has_disease_vector_evidence,FALSE,52
+Plague,roster_rows,,99
 Plague,species_role,vector,47
-Plague,species_role,host,37
+Plague,species_role,host,52
 Rift Valley fever,has_competence_evidence,TRUE,72
-Rift Valley fever,has_competence_evidence,FALSE,23
+Rift Valley fever,has_competence_evidence,FALSE,47
 Rift Valley fever,has_disease_vector_evidence,TRUE,78
-Rift Valley fever,has_disease_vector_evidence,FALSE,17
-Rift Valley fever,roster_rows,,95
+Rift Valley fever,has_disease_vector_evidence,FALSE,41
+Rift Valley fever,roster_rows,,119
 Rift Valley fever,species_role,vector,78
-Rift Valley fever,species_role,host,17
+Rift Valley fever,species_role,host,41
 Severe fever with thrombocytopenia syndrome (SFTS),has_competence_evidence,TRUE,15
 Severe fever with thrombocytopenia syndrome (SFTS),has_competence_evidence,FALSE,36
 Severe fever with thrombocytopenia syndrome (SFTS),has_disease_vector_evidence,TRUE,15
@@ -105,37 +105,37 @@ Sudan virus disease (Ebola virus disease),has_disease_vector_evidence,FALSE,1
 Sudan virus disease (Ebola virus disease),roster_rows,,1
 Sudan virus disease (Ebola virus disease),species_role,host,1
 Tick-borne encephalitis,has_competence_evidence,TRUE,11
-Tick-borne encephalitis,has_competence_evidence,FALSE,84
+Tick-borne encephalitis,has_competence_evidence,FALSE,92
 Tick-borne encephalitis,has_disease_vector_evidence,TRUE,11
-Tick-borne encephalitis,has_disease_vector_evidence,FALSE,84
-Tick-borne encephalitis,roster_rows,,95
+Tick-borne encephalitis,has_disease_vector_evidence,FALSE,92
+Tick-borne encephalitis,roster_rows,,103
 Tick-borne encephalitis,species_role,vector,11
-Tick-borne encephalitis,species_role,host,84
+Tick-borne encephalitis,species_role,host,92
 Venezuelan equine encephalitis,has_competence_evidence,TRUE,32
-Venezuelan equine encephalitis,has_competence_evidence,FALSE,34
+Venezuelan equine encephalitis,has_competence_evidence,FALSE,90
 Venezuelan equine encephalitis,has_disease_vector_evidence,TRUE,35
-Venezuelan equine encephalitis,has_disease_vector_evidence,FALSE,31
-Venezuelan equine encephalitis,roster_rows,,66
+Venezuelan equine encephalitis,has_disease_vector_evidence,FALSE,87
+Venezuelan equine encephalitis,roster_rows,,122
 Venezuelan equine encephalitis,species_role,vector,35
-Venezuelan equine encephalitis,species_role,host,31
+Venezuelan equine encephalitis,species_role,host,87
 West Nile fever,has_competence_evidence,TRUE,39
-West Nile fever,has_competence_evidence,FALSE,222
+West Nile fever,has_competence_evidence,FALSE,310
 West Nile fever,has_disease_vector_evidence,TRUE,75
-West Nile fever,has_disease_vector_evidence,FALSE,186
-West Nile fever,roster_rows,,261
+West Nile fever,has_disease_vector_evidence,FALSE,274
+West Nile fever,roster_rows,,349
 West Nile fever,species_role,vector,75
-West Nile fever,species_role,host,186
+West Nile fever,species_role,host,274
 Yellow fever,has_competence_evidence,TRUE,27
-Yellow fever,has_competence_evidence,FALSE,26
+Yellow fever,has_competence_evidence,FALSE,76
 Yellow fever,has_disease_vector_evidence,TRUE,30
-Yellow fever,has_disease_vector_evidence,FALSE,23
-Yellow fever,roster_rows,,53
+Yellow fever,has_disease_vector_evidence,FALSE,73
+Yellow fever,roster_rows,,103
 Yellow fever,species_role,vector,30
-Yellow fever,species_role,host,23
+Yellow fever,species_role,host,73
 Zika virus disease,has_competence_evidence,TRUE,27
-Zika virus disease,has_competence_evidence,FALSE,47
+Zika virus disease,has_competence_evidence,FALSE,50
 Zika virus disease,has_disease_vector_evidence,TRUE,56
-Zika virus disease,has_disease_vector_evidence,FALSE,18
-Zika virus disease,roster_rows,,74
+Zika virus disease,has_disease_vector_evidence,FALSE,21
+Zika virus disease,roster_rows,,77
 Zika virus disease,species_role,vector,56
-Zika virus disease,species_role,host,18
+Zika virus disease,species_role,host,21
