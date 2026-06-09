@@ -2,10 +2,7 @@
 #      06_map_disease_countries.R ---------------------------------------------
 # ------------------------------------------------------------------------------|
 # Purpose: Map per-disease countries recovered by GenBank-simple country runs.
-# Inputs : genbank_disease_country_summary_standardized.csv
-#          Optional `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined` reads
-#          `genbank_readiness_disease_country_summary_standardized.csv` and
-#          writes maps under `maps_readiness/`.
+# Inputs : genbank_readiness_disease_country_summary_standardized.csv
 # Outputs: maps/disease_country_records/*.png
 #          maps/genbank_disease_country_map_countries.csv
 #          maps/genbank_disease_country_map_unmatched.csv
@@ -27,7 +24,7 @@ source(here("scripts", "associations", "working_inputs.R"))
 #      Resolve run mode and map paths -----------------------------------------
 # ------------------------------------------------------------------------------|
 output_dir <- genbank_simple_dir
-summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
+summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "readiness_combined") %>%
   clean_text() %>%
   stringr::str_to_lower()
 

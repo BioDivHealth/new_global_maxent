@@ -5,12 +5,13 @@
 #          disease modelling readiness surface.
 # Inputs : disease_modelling_readiness.csv
 #          disease_modelling_readiness_full.csv
-#          genbank_simple_manifest.csv
 # Outputs: genbank_simple_readiness_manifest.csv
 #          qa/genbank_simple_readiness_manifest_qa.csv
 #
 # Notes  : This script does not contact NCBI and does not overwrite the current
-#          19-target GenBank-simple manifest.
+#          19-target GenBank-simple manifest. Set
+#          GENBANK_SIMPLE_USE_LEGACY_19_MANIFEST=TRUE to add temporary
+#          old-manifest provenance fields for comparison.
 # ------------------------------------------------------------------------------|
 
 # ------------------------------------------------------------------------------|
@@ -42,6 +43,10 @@ legacy_readiness_full_path <- here(
   "disease_modelling_readiness_full.csv"
 )
 output_dir <- genbank_simple_dir
+use_legacy_19_manifest <- parse_env_flag(
+  "GENBANK_SIMPLE_USE_LEGACY_19_MANIFEST",
+  default = FALSE
+)
 current_manifest_path <- genbank_simple_existing_file_path(
   output_dir,
   "genbank_simple_manifest.csv"
@@ -185,9 +190,9 @@ if (anyDuplicated(readiness_full$analysis_unit_id) > 0) {
 }
 
 # ------------------------------------------------------------------------------|
-#      Load old manifest and manual query overrides ---------------------------
+#      Load optional legacy manifest and manual query overrides ---------------
 # ------------------------------------------------------------------------------|
-current_manifest <- if (file.exists(current_manifest_path)) {
+current_manifest <- if (use_legacy_19_manifest && file.exists(current_manifest_path)) {
   read_csv(current_manifest_path, show_col_types = FALSE, na = c("", "NA")) %>%
     mutate(across(where(is.character), clean_text)) %>%
     transmute(
@@ -329,7 +334,7 @@ duplicate_species_groups <- readiness_qa %>%
   filter(species_group_rows > 1)
 
 # ------------------------------------------------------------------------------|
-#      Add status, QA flags, and old-manifest matches -------------------------
+#      Add status, QA flags, and optional legacy-manifest matches -------------
 # ------------------------------------------------------------------------------|
 readiness_qa <- readiness_qa %>%
   left_join(duplicate_species_groups, by = "pathogen_species_name") %>%
@@ -371,7 +376,7 @@ readiness_qa <- readiness_qa %>%
       if (manual_genbank_defer) "manual_genbank_defer" else NA_character_,
       if (taxid_missing) "taxid_missing" else NA_character_,
       if (already_has_genbank_country_evidence) "already_has_genbank_country_evidence" else NA_character_,
-      if (existing_19_target) "existing_19_target" else NA_character_
+      if (use_legacy_19_manifest && existing_19_target) "existing_19_target" else NA_character_
     )),
     row_manifest_status_reason = collapse_flags(c(
       if (has_manual_genbank_override & !taxid_missing) "manual GenBank query override applied" else NA_character_,
@@ -471,24 +476,17 @@ readiness_manifest <- readiness_qa %>%
   rowwise() %>%
   mutate(
     source_db = "nuccore",
-    query_used = if_else(
-      !is.na(current_manifest_query_used),
-      current_manifest_query_used,
-      build_simple_query(
-        query_pathogen_label,
-        unlist(strsplit(dplyr::coalesce(pathogen_taxid, ""), ";\\s*"))
-      )
+    query_used = build_simple_query(
+      query_pathogen_label,
+      unlist(strsplit(dplyr::coalesce(pathogen_taxid, ""), ";\\s*"))
     ),
     query_strategy = case_when(
-      !is.na(current_manifest_query_used) ~ "existing_19_target_query_reused",
       is_allowed_influenza_target(query_pathogen_label) ~
         "influenza_subtype_constrained_full_retrieval",
       !is.na(pathogen_taxid) ~ "taxid_full_retrieval",
       TRUE ~ "organism_name_full_retrieval"
     ),
     query_source = case_when(
-      !is.na(current_manifest_query_used) ~
-        "existing_genbank_simple_manifest_exact_match",
       is_allowed_influenza_target(query_pathogen_label) ~ "simple_subtype_guardrail",
       TRUE ~ "readiness_generated_query"
     ),
@@ -541,6 +539,7 @@ write_csv(readiness_qa, readiness_qa_path)
 
 message("Wrote readiness manifest rows: ", nrow(readiness_manifest))
 message("Wrote readiness manifest QA rows: ", nrow(readiness_qa))
+message("Legacy 19-target manifest provenance enabled: ", use_legacy_19_manifest)
 message(
   "QA species-level rows: ",
   sum(!is.na(readiness_qa$pathogen_species_name))

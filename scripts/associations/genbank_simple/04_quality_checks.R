@@ -3,15 +3,11 @@
 # ------------------------------------------------------------------------------|
 # Purpose: Write a compact QA summary for GenBank-simple manifest and retrieved
 #          checkpoint outputs.
-# Inputs : genbank_simple_manifest.csv
-#          excluded_targets.csv
-#          genbank_search_logs.csv
-#          genbank_country_records.csv
-#          Optional `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined` reads
-#          readiness-prefixed combined outputs from the top-level or
-#          reorganized `qa/` and `intermediate/` folders.
-# Outputs: genbank_simple_qa_summary.csv
-#          genbank_simple_target_qa.csv
+# Inputs : genbank_simple_readiness_manifest.csv
+#          genbank_readiness_search_logs.csv
+#          genbank_readiness_country_records.csv
+# Outputs: genbank_readiness_qa_summary.csv
+#          genbank_readiness_target_qa.csv
 # ------------------------------------------------------------------------------|
 
 # ------------------------------------------------------------------------------|
@@ -27,7 +23,7 @@ source(here("scripts", "associations", "working_inputs.R"))
 #      Resolve run mode and output files --------------------------------------
 # ------------------------------------------------------------------------------|
 output_dir <- genbank_simple_dir
-summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
+summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "readiness_combined") %>%
   clean_text() %>%
   stringr::str_to_lower()
 
@@ -86,6 +82,22 @@ manifest <- read_optional_csv(genbank_simple_existing_file_path(output_dir, mani
 excluded_targets <- read_optional_csv(genbank_simple_existing_file_path(output_dir, "excluded_targets.csv"))
 search_logs <- read_optional_csv(genbank_simple_existing_file_path(output_dir, search_log_file))
 country_records <- read_optional_csv(genbank_simple_existing_file_path(output_dir, country_records_file))
+standard_manifest <- read_optional_csv(
+  genbank_simple_existing_file_path(output_dir, "genbank_simple_manifest.csv")
+)
+
+normalize_join_text <- function(x) {
+  stringr::str_to_lower(clean_text(x))
+}
+
+if (!"exclusion_reason" %in% names(excluded_targets)) {
+  excluded_targets <- tibble(exclusion_reason = character())
+}
+
+if (summary_kind == "readiness_combined" && !"current_target_id" %in% names(manifest)) {
+  manifest <- manifest %>%
+    mutate(current_target_id = NA_character_)
+}
 
 # ------------------------------------------------------------------------------|
 #      Normalize empty or missing log inputs ----------------------------------
@@ -144,12 +156,48 @@ manifest_for_qa <- if (summary_kind == "readiness_combined") {
 }
 
 search_logs_for_join <- if (summary_kind == "readiness_combined" && nrow(search_logs) > 0) {
-  manifest_for_qa %>%
+  direct_target_map <- manifest_for_qa %>%
+    transmute(readiness_target_id = target_id, record_target_id = target_id)
+
+  current_target_map <- manifest_for_qa %>%
     filter(!is.na(current_target_id)) %>%
-    select(readiness_target_id = target_id, current_target_id) %>%
-    right_join(search_logs, by = c("current_target_id" = "target_id")) %>%
-    mutate(target_id = dplyr::coalesce(readiness_target_id, current_target_id)) %>%
-    select(-readiness_target_id, -current_target_id)
+    transmute(readiness_target_id = target_id, record_target_id = current_target_id)
+
+  legacy_cache_target_map <- if (nrow(standard_manifest) > 0) {
+    standard_manifest %>%
+      mutate(across(where(is.character), clean_text)) %>%
+      transmute(
+        record_target_id = target_id,
+        legacy_pathogen_join = normalize_join_text(Pathogens),
+        legacy_disease_join = normalize_join_text(Disease_name)
+      ) %>%
+      left_join(
+        manifest_for_qa %>%
+          transmute(
+            readiness_target_id = target_id,
+            legacy_pathogen_join = normalize_join_text(Pathogens),
+            legacy_disease_join = normalize_join_text(Disease_name)
+          ),
+        by = c("legacy_pathogen_join", "legacy_disease_join")
+      ) %>%
+      select(readiness_target_id, record_target_id) %>%
+      filter(!is.na(readiness_target_id))
+  } else {
+    tibble(readiness_target_id = character(), record_target_id = character())
+  }
+
+  search_log_target_map <- bind_rows(
+    direct_target_map,
+    current_target_map,
+    legacy_cache_target_map
+  ) %>%
+    filter(!is.na(record_target_id)) %>%
+    distinct(record_target_id, .keep_all = TRUE)
+
+  search_logs %>%
+    left_join(search_log_target_map, by = c("target_id" = "record_target_id")) %>%
+    mutate(target_id = dplyr::coalesce(readiness_target_id, target_id)) %>%
+    select(-readiness_target_id)
 } else {
   search_logs
 }
@@ -167,6 +215,7 @@ target_qa <- manifest_for_qa %>%
       ) %>%
       select(
         target_id,
+        query_used_log = query_used,
         status,
         records_found,
         ids_collected,
@@ -177,6 +226,7 @@ target_qa <- manifest_for_qa %>%
     by = "target_id"
   ) %>%
   mutate(
+    query_used = dplyr::coalesce(query_used_log, query_used),
     has_retrieval_log = !is.na(status),
     records_found = suppressWarnings(as.integer(records_found)),
     records_parsed = suppressWarnings(as.integer(records_parsed)),
@@ -190,6 +240,7 @@ target_qa <- manifest_for_qa %>%
       TRUE ~ "ok"
     )
   ) %>%
+  select(-query_used_log) %>%
   arrange(qa_flag, Pathogens, Disease_name)
 
 # ------------------------------------------------------------------------------|

@@ -2,14 +2,11 @@
 #      05_standardize_countries.R ---------------------------------------------
 # ------------------------------------------------------------------------------|
 # Purpose: Add a conservative country cleanup layer to GenBank-simple records.
-# Inputs : genbank_country_records.csv
-#          Optional `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined` reads
-#          `intermediate/genbank_readiness_country_records.csv` and writes the
-#          final standardized disease-country table at the top level.
-# Outputs: genbank_country_records_standardized.csv
-#          genbank_pathogen_country_summary_standardized.csv
-#          genbank_disease_country_summary_standardized.csv
-#          genbank_country_standardization_qa.csv
+# Inputs : genbank_readiness_country_records.csv
+# Outputs: genbank_readiness_country_records_standardized.csv
+#          genbank_readiness_pathogen_country_summary_standardized.csv
+#          genbank_readiness_disease_country_summary_standardized.csv
+#          genbank_readiness_country_standardization_qa.csv
 #
 # Notes  : Raw provenance columns (`country_raw`, `geo_loc_name_raw`, `lat_lon`)
 #          are left untouched. The existing `country` column is treated as a
@@ -30,7 +27,7 @@ source(here("scripts", "associations", "working_inputs.R"))
 #      Resolve run mode and input records -------------------------------------
 # ------------------------------------------------------------------------------|
 output_dir <- genbank_simple_dir
-summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
+summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "readiness_combined") %>%
   clean_text() %>%
   stringr::str_to_lower()
 

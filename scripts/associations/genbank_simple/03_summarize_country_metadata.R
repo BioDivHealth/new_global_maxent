@@ -3,16 +3,14 @@
 # ------------------------------------------------------------------------------|
 # Purpose: Bind GenBank-simple checkpoint records and summarize pathogen-country
 #          and disease-country coverage.
-# Inputs : genbank_simple_manifest.csv
-#          pathogen_runs/search_logs/*.csv
-#          pathogen_runs/country_records/*.csv
-#          Optional `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined` binds the
-#          old 19-target run and expanded readiness run against the readiness
-#          manifest, writing readiness outputs under the top-level, `qa/`, and
-#          `intermediate/` GenBank-simple folders.
-# Outputs: genbank_country_records.csv
-#          genbank_pathogen_country_summary.csv
-#          genbank_disease_country_summary.csv
+# Inputs : genbank_simple_readiness_manifest.csv
+#          pathogen_runs_readiness/search_logs/*.csv
+#          pathogen_runs_readiness/country_records/*.csv
+#          Frozen `pathogen_runs/` 19-target checkpoints are reused as cached
+#          evidence in readiness mode; they are not an active target surface.
+# Outputs: genbank_readiness_country_records.csv
+#          genbank_readiness_pathogen_country_summary.csv
+#          genbank_readiness_disease_country_summary.csv
 # ------------------------------------------------------------------------------|
 
 # ------------------------------------------------------------------------------|
@@ -28,7 +26,7 @@ source(here("scripts", "associations", "working_inputs.R"))
 #      Resolve run mode and paths ---------------------------------------------
 # ------------------------------------------------------------------------------|
 output_dir <- genbank_simple_dir
-summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "standard") %>%
+summary_kind <- Sys.getenv("GENBANK_SIMPLE_SUMMARY_KIND", unset = "readiness_combined") %>%
   clean_text() %>%
   stringr::str_to_lower()
 
@@ -52,6 +50,10 @@ manifest_file <- if_else(
   "genbank_simple_manifest.csv"
 )
 manifest_path <- genbank_simple_existing_file_path(output_dir, manifest_file)
+standard_manifest_path <- genbank_simple_existing_file_path(
+  output_dir,
+  "genbank_simple_manifest.csv"
+)
 
 standard_run_dir <- genbank_simple_existing_dir(
   genbank_simple_standard_run_dir,
@@ -81,6 +83,15 @@ country_record_dirs <- if (summary_kind == "readiness_combined") {
 output_prefix <- if_else(summary_kind == "readiness_combined", "genbank_readiness_", "genbank_")
 
 manifest <- read_csv(manifest_path, show_col_types = FALSE, na = c("", "NA"))
+
+if (summary_kind == "readiness_combined" && !"current_target_id" %in% names(manifest)) {
+  manifest <- manifest %>%
+    mutate(current_target_id = NA_character_)
+}
+
+normalize_join_text <- function(x) {
+  stringr::str_to_lower(clean_text(x))
+}
 
 # ------------------------------------------------------------------------------|
 #      Discover checkpoint files ----------------------------------------------
@@ -193,10 +204,10 @@ search_logs <- if (length(log_paths) == 0) {
 }
 
 # ------------------------------------------------------------------------------|
-#      Build manifest lookup for standard and readiness runs ------------------
+#      Build manifest lookup for readiness and frozen-cache runs --------------
 # ------------------------------------------------------------------------------|
 manifest_join <- if (summary_kind == "readiness_combined") {
-  manifest %>%
+  readiness_lookup <- manifest %>%
     transmute(
       target_id,
       readiness_target_id = target_id,
@@ -216,13 +227,56 @@ manifest_join <- if (summary_kind == "readiness_combined") {
       network_pathogen_type = NA_character_,
       network_zoonotic_status = NA_character_,
       network_canonicalization_status = NA_character_
-    ) %>%
+    )
+
+  direct_target_join <- readiness_lookup %>%
     tidyr::pivot_longer(
       cols = c(target_id, current_target_id),
       names_to = "target_id_source",
       values_to = "record_target_id"
     ) %>%
     filter(!is.na(record_target_id)) %>%
+    distinct(record_target_id, .keep_all = TRUE)
+
+  legacy_cache_join <- if (file.exists(standard_manifest_path)) {
+    read_csv(standard_manifest_path, show_col_types = FALSE, na = c("", "NA")) %>%
+      mutate(across(where(is.character), clean_text)) %>%
+      transmute(
+        record_target_id = target_id,
+        legacy_pathogen_join = normalize_join_text(Pathogens),
+        legacy_disease_join = normalize_join_text(Disease_name)
+      ) %>%
+      left_join(
+        readiness_lookup %>%
+          transmute(
+            readiness_target_id,
+            readiness_Pathogens,
+            readiness_Disease_name,
+            readiness_PathogenTaxID,
+            source_db,
+            query_used,
+            analysis_unit_ids,
+            readiness_row_count,
+            manifest_status,
+            manifest_status_reason,
+            qa_flags,
+            in_gibb_etal,
+            in_empres_i,
+            network_pathogen_type,
+            network_zoonotic_status,
+            network_canonicalization_status,
+            legacy_pathogen_join = normalize_join_text(readiness_Pathogens),
+            legacy_disease_join = normalize_join_text(readiness_Disease_name)
+          ),
+        by = c("legacy_pathogen_join", "legacy_disease_join")
+      ) %>%
+      select(-legacy_pathogen_join, -legacy_disease_join) %>%
+      filter(!is.na(readiness_target_id))
+  } else {
+    tibble()
+  }
+
+  bind_rows(direct_target_join, legacy_cache_join) %>%
     distinct(record_target_id, .keep_all = TRUE)
 } else {
   manifest %>%
@@ -255,8 +309,14 @@ if (nrow(country_records) > 0) {
       accession_key = dplyr::coalesce(accession_version, primary_accession)
     ) %>%
     distinct(target_id, accession_key, .keep_all = TRUE) %>%
-    left_join(manifest_join, by = c("target_id" = "record_target_id")) %>%
+    left_join(
+      manifest_join,
+      by = c("target_id" = "record_target_id"),
+      suffix = c("_record", "_manifest")
+    ) %>%
     mutate(
+      source_db = dplyr::coalesce(source_db_record, source_db_manifest),
+      query_used = dplyr::coalesce(query_used_record, query_used_manifest),
       target_id = dplyr::coalesce(readiness_target_id, target_id),
       Pathogens = dplyr::coalesce(readiness_Pathogens, Pathogens),
       Disease_name = dplyr::coalesce(readiness_Disease_name, Disease_name),

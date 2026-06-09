@@ -3,9 +3,9 @@
 # ------------------------------------------------------------------------------|
 # Purpose: Retrieve all nuccore records for the approved GenBank-simple manifest
 #          through deterministic pagination and per-target checkpoints.
-# Inputs : genbank_simple_manifest.csv
-# Outputs: pathogen_runs/search_logs/*.csv
-#          pathogen_runs/country_records/*.csv
+# Inputs : genbank_simple_readiness_manifest.csv
+# Outputs: pathogen_runs_readiness/search_logs/*.csv
+#          pathogen_runs_readiness/country_records/*.csv
 #
 # Notes  : This script intentionally does not use interval/random sampling or
 #          adaptive country-plateau stopping. Set `NCBI_API_KEY` or `ENTREZ_KEY`
@@ -13,10 +13,11 @@
 #          `GENBANK_SIMPLE_TARGET_FILTER`, `GENBANK_SIMPLE_MAX_TARGETS`,
 #          `GENBANK_SIMPLE_SEARCH_PAGE_SIZE`, `GENBANK_SIMPLE_FETCH_BATCH_SIZE`,
 #          `GENBANK_SIMPLE_RESUME`, `GENBANK_SIMPLE_FORCE_RERUN`.
-#          `GENBANK_SIMPLE_MANIFEST_KIND=readiness` reads the expanded readiness
-#          manifest and writes checkpoints under `pathogen_runs_readiness/`.
+#          Readiness mode is the default. Set
+#          `GENBANK_SIMPLE_MANIFEST_KIND=standard` to use the frozen 19-target
+#          manifest and write checkpoints under `pathogen_runs/`.
 #          In readiness mode, `GENBANK_SIMPLE_READINESS_ONLY_NEW` defaults to
-#          TRUE and skips exact matches already present in the 19-target manifest.
+#          FALSE so the expanded manifest is the authoritative target surface.
 #          `GENBANK_SIMPLE_DRY_RUN=TRUE` validates target selection without
 #          contacting NCBI.
 #          `GENBANK_SIMPLE_MAX_RECORDS_FOUND` skips targets above a count-only
@@ -53,7 +54,7 @@ readiness_manifest_path <- genbank_simple_existing_file_path(
   "genbank_simple_readiness_manifest.csv"
 )
 
-manifest_kind <- Sys.getenv("GENBANK_SIMPLE_MANIFEST_KIND", unset = "standard") %>%
+manifest_kind <- Sys.getenv("GENBANK_SIMPLE_MANIFEST_KIND", unset = "readiness") %>%
   clean_text() %>%
   stringr::str_to_lower()
 
@@ -103,7 +104,7 @@ force_rerun <- parse_env_flag("GENBANK_SIMPLE_FORCE_RERUN", default = FALSE)
 dry_run <- parse_env_flag("GENBANK_SIMPLE_DRY_RUN", default = FALSE)
 readiness_only_new <- parse_env_flag(
   "GENBANK_SIMPLE_READINESS_ONLY_NEW",
-  default = manifest_kind == "readiness"
+  default = FALSE
 )
 
 # ------------------------------------------------------------------------------|
@@ -159,11 +160,15 @@ read_readiness_manifest <- function(path) {
       "pathogen_taxid",
       "query_used",
       "source_db",
-      "manifest_status",
-      "current_target_id"
+      "manifest_status"
     ),
     basename(path)
   )
+
+  if (!"current_target_id" %in% names(manifest)) {
+    manifest <- manifest %>%
+      mutate(current_target_id = NA_character_)
+  }
 
   non_ready <- manifest %>%
     filter(manifest_status != "ready_for_future_retrieval")

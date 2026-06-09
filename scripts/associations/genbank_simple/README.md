@@ -6,20 +6,27 @@ workflow with a manifest-driven process that keeps retrieval targets reviewable
 and writes standardized disease-country evidence for downstream readiness
 tables.
 
-## Target Surfaces
+## Target Surface
 
-The workflow supports two target surfaces:
+The active target surface is `genbank_simple_readiness_manifest.csv`, the
+expanded readiness manifest built from
+`pathogen_association_data/readiness/disease_modelling_readiness.csv` and written
+under `pathogen_association_data/staged/genbank_simple/manifests/`.
 
-- `genbank_simple_manifest.csv`: the original 19-target point-data-backed WHO
-  zoonotic manifest, retained as a reference/control surface under
-  `pathogen_association_data/staged/genbank_simple/manifests/`.
-- `genbank_simple_readiness_manifest.csv`: the expanded readiness manifest
-  built from `pathogen_association_data/readiness/disease_modelling_readiness.csv`
-  and written under `pathogen_association_data/staged/genbank_simple/manifests/`.
-
-Readiness mode is the current main path. It starts from non-held readiness rows,
+Readiness mode starts from non-held readiness rows,
 joins the full readiness audit table for query/provenance fields, and builds one
 retrieval target per unique species-level query label.
+
+`genbank_simple_manifest.csv` is the frozen original 19-target point-data-backed
+WHO zoonotic manifest. It is retained as legacy provenance/control data, not as
+the active pipeline scope. Set `GENBANK_SIMPLE_USE_LEGACY_19_MANIFEST=TRUE`
+only when `01b_build_readiness_manifest.R` needs temporary old-manifest
+comparison fields.
+
+The old `pathogen_runs/` checkpoint files are also frozen cache evidence. They
+are still combined into readiness summaries because rerunning GenBank retrieval
+is slow and external-state-sensitive. Do not delete or ignore those checkpoint
+files unless a full explicit retrieval refresh is planned.
 
 ## Guardrails
 
@@ -37,28 +44,34 @@ retrieval target per unique species-level query label.
 Run scripts from the repository root.
 
 1. `01_build_manifest.R`
-   Builds the original 19-target GenBank-simple manifest.
+   Legacy builder for the frozen original 19-target GenBank-simple manifest.
 
 2. `01b_build_readiness_manifest.R`
-   Builds the expanded readiness manifest and row-level manifest QA table.
+   Builds the active expanded readiness manifest and row-level manifest QA
+   table.
 
 3. `02_run_genbank_full_retrieval.R`
-   Retrieves NCBI nuccore records with deterministic pagination and per-target
-   checkpoints.
+   Retrieves NCBI nuccore records from the readiness manifest by default with
+   deterministic pagination and per-target checkpoints. Set
+   `GENBANK_SIMPLE_MANIFEST_KIND=standard` only for explicit legacy 19-target
+   runs.
 
 4. `03_summarize_country_metadata.R`
-   Binds checkpoint outputs and writes pathogen-country and disease-country
-   summaries. With `GENBANK_SIMPLE_SUMMARY_KIND=readiness_combined`, it combines
-   the original and readiness runs.
+   Binds checkpoint outputs and writes readiness pathogen-country and
+   disease-country summaries by default. It combines frozen 19-target
+   checkpoints with readiness checkpoints as cached evidence, while keeping the
+   readiness manifest as the target surface.
 
 5. `04_quality_checks.R`
-   Writes search-log, target-level, and summary QA tables.
+   Writes readiness search-log, target-level, and summary QA tables by default.
 
 6. `05_standardize_countries.R`
-   Standardizes country names and writes standardization QA.
+   Standardizes readiness country names and writes standardization QA by
+   default.
 
 7. `06_map_disease_countries.R`
-   Writes map-control CSVs and generated disease-country PNG maps.
+   Writes readiness map-control CSVs and generated disease-country PNG maps by
+   default.
 
 ## Commit Policy
 
