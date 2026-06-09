@@ -1,13 +1,13 @@
 disease_name,expanded_rows,confirmed_by_both_rows,host_vector_only_candidate_rows,distinct_hosts,distinct_vectors,taxonomy_caution_rows
-West Nile fever,1870,442,1428,95,538,33
+West Nile fever,2208,502,1706,122,571,41
+Venezuelan equine encephalitis,1691,86,1605,36,567,40
+Crimean-Congo hemorrhagic fever,1333,191,1142,25,524,31
+Tick-borne encephalitis,1314,19,1295,34,519,26
 Severe fever with thrombocytopenia syndrome (SFTS),1299,19,1280,19,518,29
-Tick-borne encephalitis,1294,19,1275,32,515,26
-Crimean-Congo hemorrhagic fever,944,116,828,12,487,25
-Rift Valley fever,936,132,804,12,483,29
-Plague,611,21,590,15,420,22
-Venezuelan equine encephalitis,523,23,500,16,403,14
-Dengue,408,9,399,9,362,11
-Zika virus disease,383,35,348,6,357,7
-Chikungunya fever,377,12,365,8,357,7
-Yellow fever,342,12,330,3,336,6
-Oropouche fever,335,10,325,1,335,6
+Plague,1049,35,1014,24,489,26
+Rift Valley fever,1048,141,907,20,497,32
+Chikungunya fever,427,14,413,13,377,12
+Dengue,409,9,400,10,362,11
+Zika virus disease,384,36,348,7,357,7
+Yellow fever,348,12,336,8,340,6
+Oropouche fever,337,10,327,2,335,6

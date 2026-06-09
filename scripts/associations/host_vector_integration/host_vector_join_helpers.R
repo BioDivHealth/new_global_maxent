@@ -20,6 +20,21 @@ read_clean_csv <- function(path, col_types = NULL) {
     mutate(across(where(is.character), clean_text))
 }
 
+filter_legacy_compatible_host_network <- function(who_network) {
+  legacy_flag <- "in_legacy_canonical_zoonotic_pathogen_host"
+
+  if (!legacy_flag %in% names(who_network)) {
+    stop(
+      "Master-plus host network is missing required legacy compatibility flag: ",
+      legacy_flag,
+      call. = FALSE
+    )
+  }
+
+  who_network %>%
+    filter(.data[[legacy_flag]] %in% TRUE)
+}
+
 prepare_disease_host_network <- function(who_network, screened_diseases = NULL) {
   out <- who_network %>%
     filter(!is.na(Disease_name), !is.na(HostTaxID), !is.na(Host))

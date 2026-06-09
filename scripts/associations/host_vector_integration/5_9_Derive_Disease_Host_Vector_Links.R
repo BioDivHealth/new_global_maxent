@@ -5,7 +5,8 @@
 #          disease-host network to the canonical disease-vector table and the
 #          observational host-vector join table.
 #
-# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for master_plus_who_host_network.csv,
+#          filtered to legacy canonical zoonotic associations
 #          vector_screening_evidence_path(
 #            "disease_vector_links_taxonomy_cleaned.csv"
 #          )
@@ -23,14 +24,15 @@ source(here("scripts", "associations", "host_vector_integration", "host_vector_j
 
 host_vector_dir <- vector_host_outputs_dir
 
-who_path <- who_working_network_path()
+who_path <- who_network_host_pathogen_path("master_plus_who_host_network.csv")
 disease_vector_path <- vector_screening_evidence_path(
   "disease_vector_links_taxonomy_cleaned.csv"
 )
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 output_path <- who_network_host_vector_path("disease_host_vector_links.csv")
 
-who_network <- read_clean_csv(who_path)
+who_network <- read_clean_csv(who_path) %>%
+  filter_legacy_compatible_host_network()
 disease_vectors <- read_clean_csv(disease_vector_path)
 host_vectors <- read_clean_csv(host_vector_path)
 
