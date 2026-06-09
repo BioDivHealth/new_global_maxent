@@ -8,7 +8,7 @@ The files here should not replace the canonical network, vector-screening, compe
 
 - `host_role_candidates.csv` is a generated table seeded from `combined_who_network_canonical_zoonotic.csv` for the current active role scope.
 - `host_role_candidates_summary.csv` is a generated QA summary for the host candidate table.
-- `species_host_vector_roster.csv` is a generated collaborator-facing roster with one row per disease plus species or vector taxon. It covers both vectored and non-vectored diseases by combining host rows from the canonical WHO backbone with vector rows from the curated disease-vector table, plus host-vector observation and competence flags where available.
+- `species_host_vector_roster.csv` is a generated collaborator-facing roster with one row per disease plus species or vector taxon. It covers both vectored and non-vectored diseases by combining host rows from the canonical WHO backbone with vector rows from the curated disease-vector table, plus host-vector observation and competence flags where available. Host rows also carry compact modelling-handoff fields from `host_role_assignments.csv` where available (`host_role_assignment`, confidence, review flag, and assignment status); unassigned host rows are marked `host_presence_only`.
 - `species_host_vector_roster_summary.csv` is a generated per-disease QA summary for the species roster.
 - `species_host_vector_roster.xlsx` is a generated two-sheet workbook for sharing: `roster` contains the same rows as the CSV, and `column_descriptions` explains each column.
 - `host_role_evidence.csv` is the manually curated evidence table for host role claims.

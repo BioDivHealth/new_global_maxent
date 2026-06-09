@@ -2,7 +2,7 @@
 
 Phase: `Phase V`
 Started: `2026-05-08`
-Last updated: `2026-05-08`
+Last updated: `2026-06-03`
 
 ## Disease Scope And Local Candidate Counts
 
@@ -33,6 +33,25 @@ Last updated: `2026-05-08`
 | CDC Transmission of Chikungunya Virus | Official public health guidance | https://www.cdc.gov/chikungunya/php/transmission/index.html | Background only | Confirms primary mosquito-borne transmission by `Aedes aegypti` and `Aedes albopictus`. |
 | CDC Yellow Book: Chikungunya | Official travel medicine guidance | https://www.cdc.gov/yellow-book/hcp/travel-associated-infections-diseases/chikungunya.html | Yes | Supports viremic humans and non-human primates as likely main amplifying reservoirs. |
 | Local chikungunya competence extraction markdown | Local curated extraction | `diseases/chikungunya/chikungunya_vector_competence_extractions.md` | Background only | Used to keep competence-only and negative rows out of final role assignments. |
+| Althouse et al. 2018 | Primary field serology / transmission-dynamics study | `pathogen_association_data/source_data/role_annotation/papers/althouse2018_chikungunya_senegal_monkeys.pdf` | Pending CSV update | Strongest species-level support for African monkey amplification hosts in Senegal; argues monkeys alone do not maintain continuous circulation. |
+| Eastwood et al. 2017 | Primary NHP serology study | `pathogen_association_data/source_data/role_annotation/papers/eastwood2017_chikungunya_kenya_primates.pdf` | Background or evidence-only | Supports Kenyan NHP CHIKV exposure and likely enzootic circulation; species do not directly match current Chikungunya roster assignments. |
+| Evans et al. 2022 | Primary NHP serology study | `pathogen_association_data/source_data/role_annotation/papers/evans2022_chikungunya_myanmar_primates.pdf` | Background only | Supports Myanmar NHP exposure / possible sylvatic circulation; sampled macaque species do not directly support a current roster species assignment. |
+| Vourc'h et al. 2014 | Primary vertebrate serology study | `pathogen_association_data/source_data/role_annotation/papers/vourch2014_chikungunya_indian_ocean_primates_rats.pdf` | Evidence-only candidate | Supports `Macaca fascicularis` antibody exposure only; no CHIKV RNA detected, so do not infer amplification or reservoir role. |
+| Patouillat et al. 2024 | Systematic review | `pathogen_association_data/source_data/role_annotation/papers/patouillat2024_asian_primate_zoonotic_pathogens_review.pdf` | Background only | Useful for Asian primate surveillance gaps and context; not a direct host-role assignment source. |
+
+## New NHP Source Check
+
+Local PDF text has been extracted under `pathogen_association_data/source_data/role_annotation/pdf_text/` for the five primate-focused Chikungunya papers above.
+
+| Source | Directly supported host evidence | Role interpretation for this review |
+|---|---|---|
+| Althouse et al. 2018 | `Chlorocebus sabaeus`, `Erythrocebus patas`, and `Papio papio` in Kedougou, Senegal had high CHIKV seropositivity and force-of-infection / reproductive-number support. | Use as the main source-backed basis for `amplifying_host` evidence for `Erythrocebus patas` and `Papio papio`. Do not assign reservoir status from this paper. `Chlorocebus sabaeus` is direct in the paper, but the local roster has `Chlorocebus aethiops`; any `Chlorocebus` row needs taxonomy review. |
+| Eastwood et al. 2017 | Kenyan NHP sera show CHIKV-neutralizing antibodies, especially in western Kenya; 2014 positives included `Papio anubis`, `Cercopithecus mitis`, and `Cercopithecus ascanius`. | Supports group-level NHP exposure / enzootic-circulation context. Current positives do not map directly to the local Chikungunya host roster, so do not add species-level assignments from this source alone. |
+| Evans et al. 2022 | Myanmar NHPs had CHIKV antibodies; sampled positives were `Macaca mulatta` and `Macaca nemestrina`, with no PCR-confirmed active infection. | Use as Asian NHP exposure context only. Do not assign `Macaca fascicularis` from this paper. |
+| Vourc'h et al. 2014 | `Macaca fascicularis` and `Rattus rattus` showed antibody exposure after the Indian Ocean outbreak; CHIKV RNA was not detected in tested sera or rat organs. | Supports at most `host_presence_only` / exposure evidence for `Macaca fascicularis`. Do not infer amplification, reservoir, or maintenance role. Do not transfer rat evidence to `Mus musculus` or `Xerus erythropus`. |
+| Patouillat et al. 2024 | Review notes that chikungunya is among viruses reported across multiple wild Asian primate species and emphasizes surveillance gaps. | Background context only; do not use as a direct evidence row unless paired with the underlying primary source. |
+
+Current conservative implication: African primates can be treated as source-backed amplification hosts only where the species and geography are directly supported, with `Erythrocebus patas` and `Papio papio` the clearest additions. Reservoir or maintenance-host status remains unresolved in these papers.
 
 ## Source-Backed Host Role Findings
 

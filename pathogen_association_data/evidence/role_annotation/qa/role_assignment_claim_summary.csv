@@ -2,6 +2,7 @@ table,disease_name,claim,confidence,rows,entities,manual_review_rows
 host_role_assignments,Argentine hemorrhagic fever,incidental_host,high,1,1,0
 host_role_assignments,Argentine hemorrhagic fever,reservoir_host,high,1,1,0
 host_role_assignments,Chikungunya fever,amplifying_host,high,1,1,0
+host_role_assignments,Chikungunya fever,amplifying_host,medium,2,2,2
 host_role_assignments,Crimean-Congo hemorrhagic fever,amplifying_host,high,1,1,1
 host_role_assignments,Crimean-Congo hemorrhagic fever,incidental_host,high,1,1,0
 host_role_assignments,Dengue,amplifying_host,high,1,1,0

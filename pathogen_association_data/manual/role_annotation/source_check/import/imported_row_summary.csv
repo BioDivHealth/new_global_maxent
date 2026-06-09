@@ -1,5 +1,7 @@
 table,import_action,rows
+host_role_assignments,imported,2
 host_role_assignments,skipped_existing_source_check_id,20
+host_role_evidence,imported,2
 host_role_evidence,skipped_existing_source_check_id,20
 vector_role_assignments,skipped_existing_source_check_id,25
 vector_role_evidence,skipped_existing_source_check_id,25

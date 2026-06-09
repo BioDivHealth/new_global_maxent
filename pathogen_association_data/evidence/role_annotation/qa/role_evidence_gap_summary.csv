@@ -1,5 +1,5 @@
 table,total_rows,substantive_rows,status
-host_role_evidence,67,67,substantive_rows_present
+host_role_evidence,69,69,substantive_rows_present
 vector_role_evidence,54,54,substantive_rows_present
-host_role_assignments,57,57,substantive_rows_present
+host_role_assignments,59,59,substantive_rows_present
 vector_role_assignments,52,52,substantive_rows_present

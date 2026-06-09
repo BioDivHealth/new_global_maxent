@@ -111,8 +111,8 @@ Tick-borne encephalitis,has_disease_vector_evidence,FALSE,84
 Tick-borne encephalitis,roster_rows,,95
 Tick-borne encephalitis,species_role,vector,11
 Tick-borne encephalitis,species_role,host,84
-Venezuelan equine encephalitis,has_competence_evidence,TRUE,31
-Venezuelan equine encephalitis,has_competence_evidence,FALSE,35
+Venezuelan equine encephalitis,has_competence_evidence,TRUE,32
+Venezuelan equine encephalitis,has_competence_evidence,FALSE,34
 Venezuelan equine encephalitis,has_disease_vector_evidence,TRUE,35
 Venezuelan equine encephalitis,has_disease_vector_evidence,FALSE,31
 Venezuelan equine encephalitis,roster_rows,,66
