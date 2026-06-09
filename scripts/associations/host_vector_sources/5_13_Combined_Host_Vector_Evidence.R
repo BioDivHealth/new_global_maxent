@@ -19,6 +19,12 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -68,7 +74,6 @@ vectormap_path <- file.path(
   vectormap_outputs_dir,
   "vectormap_vector_host_links_analysis_ready.csv"
 )
-who_network_path <- who_working_network_path()
 mapveu_path <- file.path(
   mapveu_outputs_dir,
   "mapveu_vector_host_links_analysis_ready.csv"
@@ -80,12 +85,7 @@ dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 combined_ready_path <- file.path(output_dir, "vector_host_links_analysis_ready.csv")
 combined_summary_path <- file.path(output_dir, "vector_host_links_analysis_summary.csv")
 
-who_hosts <- read_csv(
-  who_network_path,
-  show_col_types = FALSE,
-  progress = FALSE,
-  na = c("", "NA")
-) %>%
+who_hosts <- read_legacy_compatible_master_plus_network() %>%
   mutate(across(where(is.character), clean_text)) %>%
   transmute(
     matched_who_host = clean_text(Host),

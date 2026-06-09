@@ -7,7 +7,7 @@
 #
 # Inputs : vector_table_with_efsa.csv
 #          (from 5_3_Combine_LitReview_EFSA_Vector_Table.R)
-#          combined_who_network_canonical_zoonotic.csv
+#          master_plus_who_host_network.csv compatibility slice
 #
 # Output : vector_table_with_efsa_standardized.csv
 #          vector_table_with_efsa_unmatched_diseases.csv
@@ -18,6 +18,12 @@ library(pacman)
 p_load(dplyr, here, readr, stringr)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 # ------------------------------| Helper functions |----------------------------
 clean_text <- function(x) {
@@ -78,7 +84,6 @@ normalize_vector_group <- function(x) {
 }
 
 # ------------------------------| Define paths |--------------------------------
-network_path <- who_working_network_path()
 vector_output_dir <- vector_screening_efsa_outputs_dir
 vector_input_path <- vector_screening_efsa_staged_path("vector_table_with_efsa.csv")
 dir.create(vector_output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -100,11 +105,7 @@ vector_table <- read_csv(
 ) %>%
   mutate(across(where(is.character), clean_text))
 
-combined_network <- read_csv(
-  network_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-) %>%
+combined_network <- read_legacy_compatible_master_plus_network() %>%
   mutate(across(where(is.character), clean_text))
 
 # ------------------------------| Validate required columns |--------------------
@@ -118,7 +119,7 @@ if (length(missing_vector_cols) > 0) {
 }
 
 if (!("Disease_name" %in% names(combined_network))) {
-  stop("The canonical zoonotic WHO network is missing required column: Disease_name")
+  stop("The master-plus compatibility network is missing required column: Disease_name")
 }
 
 # ------------------------------| Prepare disease mapping |----------------------

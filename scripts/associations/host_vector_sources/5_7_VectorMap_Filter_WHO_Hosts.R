@@ -6,6 +6,12 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 # Clean text while keeping raw source values as intact as possible.
 clean_text <- function(x) {
@@ -248,7 +254,6 @@ dir.create(outputs_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(manual_dir, recursive = TRUE, showWarnings = FALSE)
 
 raw_links_path <- file.path(outputs_dir, "vectormap_vector_host_links_raw.csv")
-combined_network_path <- who_working_network_path()
 manual_crosswalk_path <- file.path(manual_dir, "vectormap_host_manual_crosswalk.csv")
 
 exact_output_path <- file.path(outputs_dir, "vectormap_vector_host_links_who_exact.csv")
@@ -270,11 +275,7 @@ if (!file.exists(manual_crosswalk_path)) {
 }
 
 # Load the authoritative WHO host universe and keep one row per host.
-who_hosts <- read_csv(
-  combined_network_path,
-  show_col_types = FALSE,
-  progress = FALSE
-) %>%
+who_hosts <- read_legacy_compatible_master_plus_network() %>%
   transmute(
     matched_who_host = clean_text(Host),
     matched_who_host_tax_id = clean_text(HostTaxID),
@@ -301,7 +302,45 @@ duplicate_who_keys <- who_hosts %>%
   filter(!is.na(who_host_key), n > 1)
 
 if (nrow(duplicate_who_keys) > 0) {
-  stop("WHO host lookup has duplicated normalized keys. Resolve before matching.")
+  duplicate_examples <- who_hosts %>%
+    semi_join(duplicate_who_keys, by = "who_host_key") %>%
+    group_by(who_host_key) %>%
+    summarise(
+      host_options = paste(sort(unique(matched_who_host)), collapse = "; "),
+      taxid_options = paste(
+        sort(unique(stats::na.omit(matched_who_host_tax_id))),
+        collapse = "; "
+      ),
+      .groups = "drop"
+    )
+
+  cat(
+    "Collapsing",
+    nrow(duplicate_who_keys),
+    "duplicated normalized WHO host keys in the VectorMap lookup.\n"
+  )
+  print(duplicate_examples, n = Inf)
+
+  who_hosts <- who_hosts %>%
+    mutate(
+      .taxonomy_field_count =
+        as.integer(!is.na(matched_who_host_tax_id)) +
+        as.integer(!is.na(matched_who_host_class)) +
+        as.integer(!is.na(matched_who_host_order)) +
+        as.integer(!is.na(matched_who_host_family)),
+      .title_case_label = str_detect(matched_who_host, "^[[:upper:]]")
+    ) %>%
+    arrange(
+      who_host_key,
+      desc(.taxonomy_field_count),
+      desc(.title_case_label),
+      matched_who_host,
+      matched_who_host_tax_id
+    ) %>%
+    group_by(who_host_key) %>%
+    slice(1) %>%
+    ungroup() %>%
+    select(-.taxonomy_field_count, -.title_case_label)
 }
 
 # Load the raw VectorMap host-vector evidence and preserve one row id per record.
@@ -377,15 +416,24 @@ manual_crosswalk <- read_csv(
     raw_host_label = clean_text(raw_host_label),
     raw_host_key = normalize_host_key(raw_host_label),
     source_field = clean_text(source_field),
-    matched_who_host = clean_text(matched_who_host),
+    matched_who_host_raw = clean_text(matched_who_host),
+    matched_who_host_key = normalize_host_key(matched_who_host),
     include_in_final = parse_logical_flag(include_in_final),
     note = clean_text(note)
   ) %>%
   filter(
     !is.na(raw_host_key),
     !is.na(source_field),
-    !is.na(matched_who_host),
+    !is.na(matched_who_host_key),
     include_in_final
+  ) %>%
+  left_join(
+    who_hosts %>%
+      select(
+        matched_who_host_key = who_host_key,
+        matched_who_host_resolved = matched_who_host
+      ),
+    by = "matched_who_host_key"
   )
 
 invalid_manual_sources <- manual_crosswalk %>%
@@ -396,11 +444,25 @@ if (nrow(invalid_manual_sources) > 0) {
 }
 
 invalid_manual_targets <- manual_crosswalk %>%
-  anti_join(who_hosts %>% select(matched_who_host), by = "matched_who_host")
+  filter(is.na(matched_who_host_resolved))
 
 if (nrow(invalid_manual_targets) > 0) {
-  stop("Manual crosswalk contains matched_who_host values not present in the canonical zoonotic WHO network.")
+  cat(
+    "Skipping",
+    nrow(invalid_manual_targets),
+    "manual crosswalk rows with targets outside the current WHO host universe.\n"
+  )
+  print(
+    invalid_manual_targets %>%
+      select(raw_host_label, source_field, matched_who_host_raw, note),
+    n = Inf
+  )
 }
+
+manual_crosswalk <- manual_crosswalk %>%
+  filter(!is.na(matched_who_host_resolved)) %>%
+  mutate(matched_who_host = matched_who_host_resolved) %>%
+  select(-matched_who_host_resolved)
 
 remaining_after_exact <- vectormap_raw %>%
   filter(!vectormap_row_id %in% exact_matches$vectormap_row_id)

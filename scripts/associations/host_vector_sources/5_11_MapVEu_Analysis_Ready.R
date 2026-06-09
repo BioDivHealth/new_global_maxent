@@ -6,7 +6,7 @@
 #
 # Input  : pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_raw.csv
-#          WHO network helper path for combined_who_network_canonical_zoonotic.csv
+#          master_plus_who_host_network.csv compatibility slice
 # Outputs: pathogen_association_data/staged/mapveu/outputs/
 #          mapveu_vector_host_links_analysis_ready.csv
 #          pathogen_association_data/staged/mapveu/outputs/
@@ -19,6 +19,12 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 clean_text <- function(x) {
   x <- as.character(x)
@@ -186,7 +192,6 @@ outputs_dir <- mapveu_outputs_dir
 manual_dir <- mapveu_manual_dir
 
 input_path <- file.path(outputs_dir, "mapveu_vector_host_links_raw.csv")
-who_path <- who_working_network_path()
 host_crosswalk_path <- file.path(manual_dir, "mapveu_host_manual_crosswalk.csv")
 analysis_ready_path <- file.path(outputs_dir, "mapveu_vector_host_links_analysis_ready.csv")
 analysis_summary_path <- file.path(outputs_dir, "mapveu_vector_host_links_analysis_summary.csv")
@@ -207,12 +212,7 @@ mapveu_raw <- read_csv(
   mutate(across(where(is.character), clean_text)) %>%
   mutate(mapveu_row_id = row_number())
 
-who_hosts <- read_csv(
-  who_path,
-  show_col_types = FALSE,
-  progress = FALSE,
-  na = c("", "NA")
-) %>%
+who_hosts <- read_legacy_compatible_master_plus_network() %>%
   transmute(
     matched_who_host = clean_text(Host),
     matched_who_host_tax_id = clean_text(HostTaxID),

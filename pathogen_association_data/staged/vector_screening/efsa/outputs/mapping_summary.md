@@ -5,13 +5,13 @@
 - Appendix G header row detected: 1
 - Appendix G rows read: 187
 - Unique EFSA pathogens represented in Appendix G: 24
-- Unique pathogens in combined WHO network: 29
-- Unique diseases in combined WHO network: 30
-- EFSA Appendix A pathogens matched to combined WHO network: 4
-- Exact matches: 3
+- Unique pathogens in combined WHO network: 32
+- Unique diseases in combined WHO network: 29
+- EFSA Appendix A pathogens matched to combined WHO network: 6
+- Exact matches: 5
 - Manual matches: 1
 - Fuzzy review candidates: 0
-- Unmatched EFSA pathogens: 34
+- Unmatched EFSA pathogens: 32
 
 ## Unmatched EFSA pathogens
 - Alkhurma haemorrhagic fever virus
@@ -39,8 +39,6 @@
 - Shuni virus
 - St. Louis encephalitis virus
 - Thogoto viruses
-- Vesicular stomatitis - Alagoas virus
-- Vesicular stomatitis - Indiana virus
 - Vesicular stomatitis - New Jersey virus
 - Equine encephalomyelitis (Western) virus
 - Yunnan virus
@@ -80,7 +78,6 @@
 - Schmallenberg virus (unmatched; unmatched)
 - St. Louis encephalitis virus (unmatched; unmatched)
 - Thogoto viruses (unmatched; unmatched)
-- Vesicular stomatitis - Alagoas virus (unmatched; unmatched)
 - Yunnan virus (unmatched; unmatched)
 - Aino virus (unmatched; unmatched)
 - Alkhurma haemorrhagic fever virus (unmatched; unmatched)
@@ -93,6 +90,5 @@
 - Nairobi sheep disease virus (unmatched; unmatched)
 - Peruvian horse sickness virus (unmatched; unmatched)
 - Shuni virus (unmatched; unmatched)
-- Vesicular stomatitis - Indiana virus (unmatched; unmatched)
 - Vesicular stomatitis - New Jersey virus (unmatched; unmatched)
 - Wesselsbron virus (unmatched; unmatched)

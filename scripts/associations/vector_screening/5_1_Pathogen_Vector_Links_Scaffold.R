@@ -6,6 +6,12 @@ library(pacman)
 p_load(here, readr)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 # Normalize disease labels before joining to the screening table.
 clean_disease_name <- function(x) {
@@ -25,18 +31,13 @@ first_non_empty <- function(x) {
   x[1]
 }
 
-combined_network_path <- who_working_network_path()
 screening_path <- vector_screening_manual_path("disease_vector_screening.csv")
 output_dir <- vector_screening_staged_outputs_dir
 output_path <- file.path(output_dir, "pathogen_vector_links.csv")
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Load the combined host-pathogen network and the disease-level vector screen.
-combined_network <- read_csv(
-  combined_network_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-)
+combined_network <- read_legacy_compatible_master_plus_network()
 
 screening <- read_csv(
   screening_path,

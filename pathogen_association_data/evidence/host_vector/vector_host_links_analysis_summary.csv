@@ -1886,12 +1886,11 @@ Ichneumia albicauda,Haemaphysalis paraleachi,FALSE,205599,mammalia,carnivora,her
 Ichneumia albicauda,Haemaphysalis spinulosa,FALSE,205599,mammalia,carnivora,herpestidae,Haemaphysalis spinulosa,VectorMap,TickMap,on_host_occurrence,Cameroon; Sudan,,3
 Icteria virens,Culex pipiens,FALSE,135437,aves,passeriformes,icteridae,Culex pipiens,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 Icteria virens,Ixodes scapularis,FALSE,135437,aves,passeriformes,icteridae,Ixodes scapularis,VectorMap,TickMap,on_host_occurrence,United States of America,,4
-Iguana iguana,Aedes aegypti,FALSE,8517,reptilia,squamata,iguanidae,Aedes aegypti,MapVEu,MapVEu,blood_meal,Grenada,,32
 Iguana iguana,Aedes taeniorhynchus,FALSE,8517,reptilia,squamata,iguanidae,Aedes taeniorhynchus,VectorMap,BloodMealMap,blood_meal,Puerto Rico,,1
 Iguana iguana,Amblyomma dissimile,FALSE,8517,reptilia,squamata,iguanidae,Amblyomma dissimile,VectorMap,TickMap,on_host_occurrence,United States of America,,24
 Iguana iguana,Culex bahamensis,FALSE,8517,reptilia,squamata,iguanidae,Culex bahamensis,VectorMap,BloodMealMap,blood_meal,Puerto Rico,,1
 Iguana iguana,Culex nigripalpus,FALSE,8517,reptilia,squamata,iguanidae,Culex nigripalpus,VectorMap,BloodMealMap,blood_meal,Puerto Rico,,1
-Iguana iguana,Culex quinquefasciatus,FALSE,8517,reptilia,squamata,iguanidae,Culex quinquefasciatus,MapVEu; VectorMap,BloodMealMap; MapVEu,blood_meal,Grenada; Unites States,,38
+Iguana iguana,Culex quinquefasciatus,FALSE,8517,reptilia,squamata,iguanidae,Culex quinquefasciatus,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 Iguana iguana,Deinocerites magnus,FALSE,8517,reptilia,squamata,iguanidae,Deinocerites magnus,VectorMap,BloodMealMap,blood_meal,Puerto Rico,,1
 Junco hyemalis,Ixodes brunneus,FALSE,40217,aves,passeriformes,passerellidae,Ixodes brunneus,VectorMap,TickMap,on_host_occurrence,United States of America,,24
 Junco hyemalis,Ixodes pacificus,FALSE,40217,aves,passeriformes,passerellidae,Ixodes pacificus,VectorMap,TickMap,on_host_occurrence,United States of America,,20
@@ -3095,3 +3094,8 @@ Zenaida macroura,Culex tarsalis,FALSE,47245,aves,columbiformes,columbidae,Culex 
 Zenaida macroura,Culex territans,FALSE,47245,aves,columbiformes,columbidae,Culex territans,VectorMap,BloodMealMap,blood_meal,Unites States,,1
 Zenaida macroura,Culiseta melanura,FALSE,47245,aves,columbiformes,columbidae,Culiseta melanura,VectorMap,BloodMealMap,blood_meal,Unites States,,3
 Zenaida macroura,Culiseta morsitans,FALSE,47245,aves,columbiformes,columbidae,Culiseta morsitans,VectorMap,BloodMealMap,blood_meal,Unites States,,1
+dasypus novemcinctus,Ochlerotatus infirmatus,FALSE,9361,,,,Ochlerotatus infirmatus,MapVEu,MapVEu,blood_meal,United States,,2
+iguana iguana,Aedes aegypti,FALSE,8517,,,,Aedes aegypti,MapVEu,MapVEu,blood_meal,Grenada,,32
+iguana iguana,Culex quinquefasciatus,FALSE,8517,,,,Culex quinquefasciatus,MapVEu,MapVEu,blood_meal,Grenada,,37
+oryzomys palustris,Culex cedecei,FALSE,37020,,,,Culex cedecei,MapVEu,MapVEu,blood_meal,United States,,451
+peromyscus gossypinus,Culex cedecei,FALSE,42411,,,,Culex cedecei,MapVEu,MapVEu,blood_meal,United States,,451

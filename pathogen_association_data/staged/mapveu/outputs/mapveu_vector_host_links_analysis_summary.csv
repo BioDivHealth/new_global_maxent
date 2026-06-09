@@ -153,8 +153,6 @@ Homo sapiens,9606,,,,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynch
 Homo sapiens,9606,,,,Ochlerotatus detritus,FALSE,Ochlerotatus detritus,MapVEu,United Kingdom,,2
 Homo sapiens,9606,,,,funestus group,TRUE,funestus group,MapVEu,Burkina Faso,vector_group,2
 Homo sapiens,9606,,,,gambiae species complex,TRUE,gambiae species complex,MapVEu,Burkina Faso; Central African Republic; Tanzania,vector_complex,18
-Iguana iguana,8517,reptilia,squamata,iguanidae,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
-Iguana iguana,8517,reptilia,squamata,iguanidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Grenada,,37
 Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Anopheles atroparvus,FALSE,Anopheles atroparvus,MapVEu,United Kingdom,,1
 Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Anopheles messeae x Anopheles daciae,TRUE,Anopheles messeae x Anopheles daciae,MapVEu,United Kingdom,vector_hybrid,1
 Lepus europaeus,9983,mammalia,lagomorpha,leporidae,Coquillettidia linealis,FALSE,Coquillettidia linealis,MapVEu,Australia,,1
@@ -203,3 +201,8 @@ Turdus merula,9187,aves,passeriformes,turdidae,Culex pipiens molestus,TRUE,Culex
 Turdus merula,9187,aves,passeriformes,turdidae,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Australia,,6
 Turdus merula,9187,aves,passeriformes,turdidae,Culiseta morsitans,FALSE,Culiseta morsitans,MapVEu,United Kingdom,,2
 Vulpes vulpes,9627,mammalia,carnivora,canidae,Ochlerotatus camptorhynchus,FALSE,Ochlerotatus camptorhynchus,MapVEu,Australia,,2
+dasypus novemcinctus,9361,,,,Ochlerotatus infirmatus,FALSE,Ochlerotatus infirmatus,MapVEu,United States,,2
+iguana iguana,8517,,,,Aedes aegypti,FALSE,Aedes aegypti,MapVEu,Grenada,,32
+iguana iguana,8517,,,,Culex quinquefasciatus,FALSE,Culex quinquefasciatus,MapVEu,Grenada,,37
+oryzomys palustris,37020,,,,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451
+peromyscus gossypinus,42411,,,,Culex cedecei,FALSE,Culex cedecei,MapVEu,United States,,451

@@ -9,6 +9,12 @@ suppressPackageStartupMessages({
 })
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "master_plus_compatibility_helpers.R"
+))
 
 # ------------------------------------------------------------------------------
 # Clean EFSA appendices A and G, then crosswalk EFSA pathogens to the combined
@@ -256,7 +262,6 @@ output_dir <- vector_screening_efsa_outputs_dir
 
 appendix_a_path <- vector_screening_efsa_source_path("efsa_report_appendix_a.xlsx")
 appendix_g_path <- vector_screening_efsa_source_path("efsa_report_appendix_g.xlsx")
-combined_network_path <- who_working_network_path()
 screening_path <- vector_screening_manual_path("disease_vector_screening.csv")
 manual_map_path <- vector_screening_efsa_manual_path("efsa_name_manual_map.csv")
 
@@ -425,11 +430,7 @@ appendix_g_clean <- appendix_g_clean %>%
     )
   )
 
-combined_network_raw <- read_csv(
-  combined_network_path,
-  show_col_types = FALSE,
-  na = c("", "NA")
-)
+combined_network_raw <- read_legacy_compatible_master_plus_network()
 
 combined_network_clean <- combined_network_raw %>%
   setNames(snake_case_names(names(.))) %>%
