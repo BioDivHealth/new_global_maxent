@@ -13,7 +13,7 @@ disease_vector_unmatched_rows,207
 pathogen_vector_rows,697
 pathogen_vector_unmatched_rows,331
 disease_host_vector_rows,1074
-pathogen_host_vector_rows,1171
+pathogen_host_vector_rows,1443
 diseases_with_disease_level_matches,12
 diseases_with_pathogen_level_matches,12
-taxonomy_caution_rows_total,28
+taxonomy_caution_rows_total,36

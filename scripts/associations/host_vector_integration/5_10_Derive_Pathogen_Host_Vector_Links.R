@@ -5,7 +5,8 @@
 #          pathogen-host network to the pathogen-vector backfill output and the
 #          observational host-vector join table.
 #
-# Inputs : WHO network helper path for combined_who_network_canonical_zoonotic.csv
+# Inputs : WHO network helper path for master_plus_who_host_network.csv,
+#          filtered to legacy canonical zoonotic associations
 #          vector_screening_evidence_path("pathogen_vector_links_filled.csv")
 #          pathogen_association_data/evidence/host_vector/
 #          vector_host_links_join_ready.csv
@@ -21,24 +22,30 @@ source(here("scripts", "associations", "host_vector_integration", "host_vector_j
 
 host_vector_dir <- vector_host_outputs_dir
 
-who_path <- who_working_network_path()
+who_path <- who_network_host_pathogen_path("master_plus_who_host_network.csv")
 pathogen_vector_path <- vector_screening_evidence_path("pathogen_vector_links_filled.csv")
 host_vector_path <- file.path(host_vector_dir, "vector_host_links_join_ready.csv")
 output_path <- who_network_host_vector_path("pathogen_host_vector_links.csv")
 
-who_network <- read_clean_csv(who_path)
+who_network <- read_clean_csv(who_path) %>%
+  filter_legacy_compatible_host_network()
 pathogen_vectors <- read_clean_csv(pathogen_vector_path)
 host_vectors <- read_clean_csv(host_vector_path)
 
-who_pathogen_host <- prepare_who_pathogen_host_network(who_network)
-pathogen_vector_joinable <- prepare_pathogen_vector_joinable(pathogen_vectors)
+who_pathogen_host <- prepare_who_pathogen_host_network(who_network) %>%
+  mutate(pathogen_join = normalize_name_for_match(pathogen))
+
+pathogen_vector_joinable <- prepare_pathogen_vector_joinable(pathogen_vectors) %>%
+  mutate(pathogen_join = normalize_name_for_match(pathogen))
+
 host_vector_joinable <- prepare_host_vector_joinable(host_vectors)
 
 pathogen_host_vector_links <- who_pathogen_host %>%
   inner_join(
     pathogen_vector_joinable,
-    by = c("disease_name_join", "pathogen", "pathogen_tax_id"),
-    relationship = "many-to-many"
+    by = c("disease_name_join", "pathogen_join", "pathogen_tax_id"),
+    relationship = "many-to-many",
+    suffix = c("_network", "_vector")
   ) %>%
   inner_join(
     host_vector_joinable,
@@ -48,7 +55,7 @@ pathogen_host_vector_links <- who_pathogen_host %>%
   transmute(
     disease_name = disease_name,
     disease_name_clean = pv_disease_name_clean,
-    pathogen,
+    pathogen = coalesce(pathogen_vector, pathogen_network),
     pathogen_tax_id,
     pathogen_type = coalesce(pv_pathogen_type, pathogen_type),
     pathogen_family = coalesce(pv_pathogen_family, pathogen_family),
