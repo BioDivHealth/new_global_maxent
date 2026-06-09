@@ -26,6 +26,31 @@ association data, with a focus on WHO priority pathogens.
   Builds and runs the current GenBank-simple country-evidence workflow,
   including the expanded readiness manifest and readiness-combined summaries.
 
+### Network Building Entrypoints
+
+Use these wrapper scripts as the normal runnable surface for
+`network_building/`. The older `1_*`, `2_*`, `3_*`, and `4_*` files remain
+stage scripts called by these entrypoints.
+
+```sh
+Rscript scripts/associations/network_building/01_build_disease_scope_and_analysis_units.R
+Rscript scripts/associations/network_building/02_build_master_plus_registry.R
+Rscript scripts/associations/network_building/03_build_master_plus_host_network.R
+Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_outputs.R
+```
+
+- `01_build_disease_scope_and_analysis_units.R`: builds the WHO disease scope,
+  zoonotic subset, analysis-unit tables, and disease-master scaffold.
+- `02_build_master_plus_registry.R`: builds master-plus source matches,
+  registry rows, and host-query units.
+- `03_build_master_plus_host_network.R`: builds master-plus host evidence,
+  host QA, and the downstream-ready master-plus host network.
+- `04_build_legacy_who_compatibility_outputs.R`: rebuilds the WHO-only
+  CLOVER/VIRION compatibility outputs still read by downstream scripts. By
+  default it reuses existing standardized host-taxonomy CSVs; run with
+  `--refresh-host-taxonomy` only when deliberately refreshing the external or
+  cache-sensitive CLOVER/VIRION host-taxonomy stages.
+
 ### Project Goals
 
 - **Integrate Data:** Combine WHO priority pathogen lists with host-pathogen association data from the CLOVER and VIRION databases.
@@ -34,7 +59,10 @@ association data, with a focus on WHO priority pathogens.
 - **Network Analysis:** Visualize and analyze the structure of pathogen-host networks, including risk stratification, centrality, modularity, and bridge species.
 - **Support Research:** Provide processed datasets and visualizations to guide research on zoonotic risk, host diversity, and sampling bias.
 
-### Pipeline Overview
+### Network Building Stage Notes
+
+The stage scripts below document the internal pieces that the wrapper
+entrypoints call. Run the wrappers above for routine rebuilds.
 
 1.  **WHO Pathogen Data Processing (`network_building/1_WHO_Diseases.R`):**
     -   Loads and standardizes WHO priority pathogen lists from various regional documents.
