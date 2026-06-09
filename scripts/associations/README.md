@@ -37,6 +37,7 @@ Rscript scripts/associations/network_building/01_build_disease_scope_and_analysi
 Rscript scripts/associations/network_building/02_build_master_plus_registry.R
 Rscript scripts/associations/network_building/03_build_master_plus_host_network.R
 Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_outputs.R
+Rscript scripts/associations/network_building/05_build_broad_taxa_support.R
 ```
 
 - `01_build_disease_scope_and_analysis_units.R`: builds the WHO disease scope,
@@ -50,6 +51,10 @@ Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_
   default it reuses existing standardized host-taxonomy CSVs; run with
   `--refresh-host-taxonomy` only when deliberately refreshing the external or
   cache-sensitive CLOVER/VIRION host-taxonomy stages.
+- `05_build_broad_taxa_support.R`: rebuilds broad-taxa candidate-strain
+  support outputs. By default it summarizes existing NCBI metadata files
+  without refreshing them; run with `--refresh-ncbi-metadata` only when
+  deliberately refreshing the external NCBI Datasets metadata stage.
 
 ### Project Goals
 
