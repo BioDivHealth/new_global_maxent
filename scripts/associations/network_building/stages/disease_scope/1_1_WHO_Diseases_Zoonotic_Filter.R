@@ -28,6 +28,13 @@ suppressPackageStartupMessages({
 pacman::p_load(dplyr, readr, stringr)
 
 source(here::here("scripts", "associations", "working_inputs.R"))
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "disease_scope_helpers.R"
+))
 
 character_cols <- c(
   "Family",
@@ -39,19 +46,7 @@ character_cols <- c(
   "priority_prototype_status"
 )
 
-provenance_cols <- c(
-  "is_priority_pathogen",
-  "is_prototype_pathogen",
-  "in_gibb_etal",
-  "in_empres_i",
-  "priority_prototype_status",
-  "region_africa",
-  "region_americas",
-  "region_europe",
-  "region_mediterranean",
-  "region_se_asia",
-  "region_western_pacific"
-)
+provenance_cols <- disease_scope_provenance_cols()
 
 # ------------------------------------------------------------------------------|
 #      Paths and lookup tables -------------------------------------------------|

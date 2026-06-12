@@ -17,33 +17,18 @@ library(pacman)
 p_load(dplyr, here, readr, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "disease_scope_helpers.R"
+))
 
-who_provenance_cols <- c(
-  "is_priority_pathogen",
-  "is_prototype_pathogen",
-  "in_gibb_etal",
-  "in_empres_i",
-  "priority_prototype_status",
-  "region_africa",
-  "region_americas",
-  "region_europe",
-  "region_mediterranean",
-  "region_se_asia",
-  "region_western_pacific"
-)
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
-  x <- stringr::str_replace_all(x, "\u00A0", " ")
-  x <- stringr::str_replace_all(x, "[\r\n\t]+", " ")
-  x <- stringr::str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
+who_provenance_cols <- disease_scope_provenance_cols()
 
 classify_source_scope <- function(pathogen) {
-  pathogen <- clean_text(pathogen)
+  pathogen <- disease_scope_clean_text(pathogen)
 
   dplyr::case_when(
     pathogen %in% c("Subgenus Sarbecovirus", "Subgenus Merbecovirus") ~ "broad_subgenus",
@@ -70,8 +55,8 @@ classify_analysis_rank <- function(pathogen) {
 }
 
 infer_transmission_context <- function(pathogen, disease_name) {
-  pathogen <- clean_text(pathogen)
-  disease_name <- clean_text(disease_name)
+  pathogen <- disease_scope_clean_text(pathogen)
+  disease_name <- disease_scope_clean_text(disease_name)
 
   vector_associated <- c(
     "Orthonairovirus haemorrhagiae",
@@ -118,7 +103,7 @@ who_zoonotic <- read_csv(
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), disease_scope_clean_text))
 
 base_units <- who_zoonotic %>%
   transmute(

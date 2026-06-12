@@ -17,6 +17,13 @@ library(pacman)
 p_load(fuzzyjoin, stringdist)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "disease_scope_helpers.R"
+))
 
 region_levels <- c(
   "africa",
@@ -90,14 +97,6 @@ standardize_pathogen_name <- function(x) {
     {ifelse(tolower(.) == "encephalitidis", NA, .)}
 }
 
-first_non_missing <- function(x) {
-  x <- x[!is.na(x) & x != ""]
-  if (length(x) == 0) {
-    return(NA_character_)
-  }
-  x[[1]]
-}
-
 region_status_for <- function(source_region, source_pathogen_type, region_name) {
   has_priority <- any(
     source_region == region_name & source_pathogen_type == "priority",
@@ -148,8 +147,8 @@ pathogens_all <- who_diseases_long %>%
 pathogens_with_family_risk <- who_diseases_long %>%
   group_by(Pathogens) %>%
   summarise(
-    Family = first_non_missing(Family),
-    `PHEIC risk` = first_non_missing(`PHEIC risk`),
+    Family = disease_scope_first_non_missing(Family),
+    `PHEIC risk` = disease_scope_first_non_missing(`PHEIC risk`),
     is_priority_pathogen = any(source_pathogen_type == "priority"),
     is_prototype_pathogen = any(source_pathogen_type == "prototype"),
     region_africa = region_status_for(source_region, source_pathogen_type, "africa"),

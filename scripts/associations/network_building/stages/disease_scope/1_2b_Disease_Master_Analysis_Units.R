@@ -23,30 +23,13 @@ library(pacman)
 p_load(dplyr, here, readr, readxl, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
-  x <- stringr::str_replace_all(x, "\u00A0", " ")
-  x <- stringr::str_replace_all(x, "[\r\n\t]+", " ")
-  x <- stringr::str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
-
-clean_key <- function(x) {
-  x %>%
-    clean_text() %>%
-    stringr::str_to_lower() %>%
-    stringr::str_replace_all("&", " and ") %>%
-    stringr::str_replace_all("[^a-z0-9]+", " ") %>%
-    stringr::str_squish()
-}
-
-flag_from_mark <- function(x) {
-  x <- clean_text(x)
-  !is.na(x)
-}
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "disease_scope_helpers.R"
+))
 
 standardize_master_cols <- function(master_raw) {
   master_raw %>%
@@ -66,7 +49,7 @@ standardize_master_cols <- function(master_raw) {
     ) %>%
     mutate(
       master_row = row_number(),
-      across(where(is.character), clean_text),
+      across(where(is.character), disease_scope_clean_text),
       is_section_header = is.na(pathogen_family_master) &
         is.na(master_who_flag) &
         is.na(master_gibb_flag) &
@@ -78,13 +61,13 @@ standardize_master_cols <- function(master_raw) {
         is.na(master_tier) &
         is.na(master_key_host_vector) &
         is.na(master_notes),
-      in_master_who = flag_from_mark(master_who_flag),
-      in_master_gibb = flag_from_mark(master_gibb_flag),
-      in_master_empres_i = flag_from_mark(master_empres_i_flag),
-      in_master_atlas = flag_from_mark(master_atlas_flag),
-      master_gbif_checked = flag_from_mark(master_gbif_check),
-      master_livestock_amplified = flag_from_mark(master_livestock_amplified_flag),
-      disease_master_key = clean_key(disease_master_name)
+      in_master_who = disease_scope_flag_from_mark(master_who_flag),
+      in_master_gibb = disease_scope_flag_from_mark(master_gibb_flag),
+      in_master_empres_i = disease_scope_flag_from_mark(master_empres_i_flag),
+      in_master_atlas = disease_scope_flag_from_mark(master_atlas_flag),
+      master_gbif_checked = disease_scope_flag_from_mark(master_gbif_check),
+      master_livestock_amplified = disease_scope_flag_from_mark(master_livestock_amplified_flag),
+      disease_master_key = disease_scope_clean_key(disease_master_name)
     )
 }
 
@@ -129,17 +112,17 @@ build_existing_unit_index <- function(analysis_units) {
 
   bind_rows(
     index_fields %>%
-      transmute(unit_row, match_field = "source_disease_name", match_key = clean_key(source_disease_name)),
+      transmute(unit_row, match_field = "source_disease_name", match_key = disease_scope_clean_key(source_disease_name)),
     index_fields %>%
-      transmute(unit_row, match_field = "source_pathogen", match_key = clean_key(source_pathogen)),
+      transmute(unit_row, match_field = "source_pathogen", match_key = disease_scope_clean_key(source_pathogen)),
     index_fields %>%
-      transmute(unit_row, match_field = "source_previous_name", match_key = clean_key(source_previous_name)),
+      transmute(unit_row, match_field = "source_previous_name", match_key = disease_scope_clean_key(source_previous_name)),
     index_fields %>%
-      transmute(unit_row, match_field = "source_msl39_viral_name", match_key = clean_key(source_msl39_viral_name)),
+      transmute(unit_row, match_field = "source_msl39_viral_name", match_key = disease_scope_clean_key(source_msl39_viral_name)),
     index_fields %>%
-      transmute(unit_row, match_field = "analysis_unit", match_key = clean_key(analysis_unit)),
+      transmute(unit_row, match_field = "analysis_unit", match_key = disease_scope_clean_key(analysis_unit)),
     index_fields %>%
-      transmute(unit_row, match_field = "analysis_unit_label", match_key = clean_key(analysis_unit_label))
+      transmute(unit_row, match_field = "analysis_unit_label", match_key = disease_scope_clean_key(analysis_unit_label))
   ) %>%
     filter(!is.na(match_key)) %>%
     distinct(match_key, unit_row, .keep_all = TRUE) %>%
@@ -179,8 +162,8 @@ master_existing_aliases <- tibble::tribble(
   "West Nile", "West Nile fever"
 ) %>%
   mutate(
-    disease_master_key = clean_key(disease_master_name),
-    existing_lookup_key = clean_key(existing_lookup_name)
+    disease_master_key = disease_scope_clean_key(disease_master_name),
+    existing_lookup_key = disease_scope_clean_key(existing_lookup_name)
   )
 
 input_master_path <- here("dr", "disease_master_list_v2.xlsx")
@@ -224,7 +207,7 @@ analysis_units <- readr::read_csv(
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), disease_scope_clean_text))
 
 existing_index <- build_existing_unit_index(analysis_units)
 
