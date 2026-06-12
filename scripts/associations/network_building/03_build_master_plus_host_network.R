@@ -18,49 +18,19 @@
 if (!requireNamespace("here", quietly = TRUE)) {
   stop("Package `here` is required.", call. = FALSE)
 }
-if (!requireNamespace("readr", quietly = TRUE)) {
-  stop("Package `readr` is required.", call. = FALSE)
-}
-
-source(here::here("scripts", "associations", "working_inputs.R"))
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "network_wrapper_helpers.R"
+))
+require_network_wrapper_packages()
+source_network_working_inputs()
 
 # -----------------------------------------------------------------------------|
-# 2. Define stage runner and contract outputs ----
+# 2. Define stages and contract outputs ----
 # -----------------------------------------------------------------------------|
-
-network_building_script <- function(filename) {
-  normalizePath(
-    here::here("scripts", "associations", "network_building", filename),
-    mustWork = TRUE
-  )
-}
-
-run_stage <- function(stage_file) {
-  stage_path <- network_building_script(stage_file)
-  rscript <- normalizePath(file.path(R.home("bin"), "Rscript"), mustWork = TRUE)
-
-  cat("Running network-building master-plus host-network stage:", stage_file, "\n")
-  status <- system2(rscript, stage_path)
-  if (!identical(status, 0L)) {
-    stop("Master-plus host-network stage failed: ", stage_file, call. = FALSE)
-  }
-  cat("Completed network-building master-plus host-network stage:", stage_file, "\n")
-}
-
-summarize_output <- function(name, path) {
-  if (!file.exists(path)) {
-    stop("Expected output is missing: ", path, call. = FALSE)
-  }
-
-  data <- readr::read_csv(path, show_col_types = FALSE, na = c("", "NA"))
-  data.frame(
-    output = name,
-    rows = nrow(data),
-    columns = ncol(data),
-    path = path,
-    check.names = FALSE
-  )
-}
 
 master_plus_host_network_stages <- c(
   "stages/master_plus_host_network/1_2e_Master_Host_Species.R",
@@ -81,16 +51,18 @@ contract_outputs <- c(
 # 3. Run master-plus host-network stages ----
 # -----------------------------------------------------------------------------|
 
-invisible(lapply(master_plus_host_network_stages, run_stage))
+invisible(lapply(
+  master_plus_host_network_stages,
+  run_stage,
+  running_label = "network-building master-plus host-network",
+  failure_label = "Master-plus host-network"
+))
 
 # -----------------------------------------------------------------------------|
 # 4. Print output summary ----
 # -----------------------------------------------------------------------------|
 
-output_summary <- do.call(
-  rbind,
-  Map(summarize_output, names(contract_outputs), unname(contract_outputs))
-)
+output_summary <- summarize_csv_outputs(contract_outputs)
 
 cat("Master-plus host-network wrapper complete. Contract output summary:\n")
 print(output_summary, row.names = FALSE)

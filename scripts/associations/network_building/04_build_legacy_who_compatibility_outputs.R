@@ -18,11 +18,15 @@
 if (!requireNamespace("here", quietly = TRUE)) {
   stop("Package `here` is required.", call. = FALSE)
 }
-if (!requireNamespace("readr", quietly = TRUE)) {
-  stop("Package `readr` is required.", call. = FALSE)
-}
-
-source(here::here("scripts", "associations", "working_inputs.R"))
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "network_wrapper_helpers.R"
+))
+require_network_wrapper_packages()
+source_network_working_inputs()
 
 # -----------------------------------------------------------------------------|
 # 2. Parse command-line arguments ----
@@ -59,42 +63,8 @@ if (any(args %in% c("--help", "-h"))) {
 refresh_host_taxonomy <- "--refresh-host-taxonomy" %in% args
 
 # -----------------------------------------------------------------------------|
-# 3. Define stage runner and compatibility outputs ----
+# 3. Define stages and compatibility outputs ----
 # -----------------------------------------------------------------------------|
-
-network_building_script <- function(filename) {
-  normalizePath(
-    here::here("scripts", "associations", "network_building", filename),
-    mustWork = TRUE
-  )
-}
-
-run_stage <- function(stage_file) {
-  stage_path <- network_building_script(stage_file)
-  rscript <- normalizePath(file.path(R.home("bin"), "Rscript"), mustWork = TRUE)
-
-  cat("Running legacy WHO compatibility stage:", stage_file, "\n")
-  status <- system2(rscript, stage_path)
-  if (!identical(status, 0L)) {
-    stop("Legacy WHO compatibility stage failed: ", stage_file, call. = FALSE)
-  }
-  cat("Completed legacy WHO compatibility stage:", stage_file, "\n")
-}
-
-summarize_output <- function(name, path) {
-  if (!file.exists(path)) {
-    stop("Expected output is missing: ", path, call. = FALSE)
-  }
-
-  data <- readr::read_csv(path, show_col_types = FALSE, na = c("", "NA"))
-  data.frame(
-    output = name,
-    rows = nrow(data),
-    columns = ncol(data),
-    path = path,
-    check.names = FALSE
-  )
-}
 
 required_taxonomy_outputs <- c(
   clover_host_species_standardized = file.path(
@@ -184,16 +154,18 @@ if (!refresh_host_taxonomy) {
   stages <- taxonomy_refresh_stages
 }
 
-invisible(lapply(stages, run_stage))
+invisible(lapply(
+  stages,
+  run_stage,
+  running_label = "legacy WHO compatibility",
+  failure_label = "Legacy WHO compatibility"
+))
 
 # -----------------------------------------------------------------------------|
 # 5. Print output summary ----
 # -----------------------------------------------------------------------------|
 
-output_summary <- do.call(
-  rbind,
-  Map(summarize_output, names(compatibility_outputs), unname(compatibility_outputs))
-)
+output_summary <- summarize_csv_outputs(compatibility_outputs)
 
 cat("Legacy WHO compatibility wrapper complete. Output summary:\n")
 print(output_summary, row.names = FALSE)

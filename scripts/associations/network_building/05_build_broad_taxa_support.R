@@ -16,11 +16,15 @@
 if (!requireNamespace("here", quietly = TRUE)) {
   stop("Package `here` is required.", call. = FALSE)
 }
-if (!requireNamespace("readr", quietly = TRUE)) {
-  stop("Package `readr` is required.", call. = FALSE)
-}
-
-source(here::here("scripts", "associations", "working_inputs.R"))
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "network_wrapper_helpers.R"
+))
+require_network_wrapper_packages()
+source_network_working_inputs()
 
 # -----------------------------------------------------------------------------|
 # 2. Parse command-line arguments ----
@@ -58,59 +62,8 @@ if (any(args %in% c("--help", "-h"))) {
 refresh_ncbi_metadata <- "--refresh-ncbi-metadata" %in% args
 
 # -----------------------------------------------------------------------------|
-# 3. Define stage runner and broad-taxa outputs ----
+# 3. Define stages and broad-taxa outputs ----
 # -----------------------------------------------------------------------------|
-
-network_building_script <- function(filename) {
-  normalizePath(
-    here::here("scripts", "associations", "network_building", filename),
-    mustWork = TRUE
-  )
-}
-
-run_stage <- function(stage_file) {
-  stage_path <- network_building_script(stage_file)
-  rscript <- normalizePath(file.path(R.home("bin"), "Rscript"), mustWork = TRUE)
-
-  cat("Running broad-taxa support stage:", stage_file, "\n")
-  status <- system2(rscript, stage_path)
-  if (!identical(status, 0L)) {
-    stop("Broad-taxa support stage failed: ", stage_file, call. = FALSE)
-  }
-  cat("Completed broad-taxa support stage:", stage_file, "\n")
-}
-
-summarize_csv_output <- function(name, path, required = TRUE) {
-  if (!file.exists(path)) {
-    if (required) {
-      stop("Expected output is missing: ", path, call. = FALSE)
-    }
-    return(NULL)
-  }
-
-  data <- readr::read_csv(path, show_col_types = FALSE, na = c("", "NA"))
-  data.frame(
-    output = name,
-    rows = nrow(data),
-    columns = ncol(data),
-    path = path,
-    check.names = FALSE
-  )
-}
-
-summarize_text_output <- function(name, path) {
-  if (!file.exists(path)) {
-    return(NULL)
-  }
-
-  data.frame(
-    output = name,
-    rows = length(readLines(path, warn = FALSE)),
-    columns = NA_integer_,
-    path = path,
-    check.names = FALSE
-  )
-}
 
 candidate_output <- c(
   who_broad_taxa_candidate_strains = who_diseases_broad_taxa_staged_path(
@@ -151,31 +104,20 @@ if (refresh_ncbi_metadata) {
   cat("Rebuilding candidate strains only; NCBI metadata refresh is opt-in.\n")
 }
 
-invisible(lapply(stages, run_stage))
+invisible(lapply(
+  stages,
+  run_stage,
+  running_label = "broad-taxa support",
+  failure_label = "Broad-taxa support"
+))
 
 # -----------------------------------------------------------------------------|
 # 5. Print output summary ----
 # -----------------------------------------------------------------------------|
 
-candidate_summary <- do.call(
-  rbind,
-  Map(summarize_csv_output, names(candidate_output), unname(candidate_output))
-)
-
-ncbi_csv_summary <- do.call(
-  rbind,
-  Map(
-    summarize_csv_output,
-    names(ncbi_csv_outputs),
-    unname(ncbi_csv_outputs),
-    MoreArgs = list(required = FALSE)
-  )
-)
-
-ncbi_text_summary <- do.call(
-  rbind,
-  Map(summarize_text_output, names(ncbi_text_outputs), unname(ncbi_text_outputs))
-)
+candidate_summary <- summarize_csv_outputs(candidate_output)
+ncbi_csv_summary <- summarize_csv_outputs(ncbi_csv_outputs, required = FALSE)
+ncbi_text_summary <- summarize_text_outputs(ncbi_text_outputs)
 
 output_summary <- do.call(
   rbind,
