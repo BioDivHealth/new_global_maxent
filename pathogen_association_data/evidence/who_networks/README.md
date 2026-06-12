@@ -17,17 +17,24 @@ Active WHO and master-plus host-pathogen backbones:
   backbone.
 - `combined_who_network_canonical.csv`: canonical pathogen-name version of the
   combined WHO backbone.
-- `combined_who_network_canonical_zoonotic.csv`: default downstream WHO working
-  network.
-- `master_plus_who_host_network.csv`: combined master-plus + WHO host network.
+- `combined_who_network_canonical_zoonotic.csv`: legacy WHO-only canonical
+  zoonotic network retained for provenance, compatibility checks, and explicit
+  legacy QA scripts.
+- `master_plus_who_host_network.csv`: active combined master-plus + WHO host
+  network. It includes `in_legacy_canonical_zoonotic_pathogen_host`, which
+  marks rows belonging to the old canonical zoonotic contract.
 
 Related helpers:
 
 - `who_raw_network_path()`
 - `who_canonical_network_path()`
 - `who_canonical_zoonotic_network_path()`
-- `who_working_network_path()`
 - `who_network_host_pathogen_path(filename)`
+
+`who_working_network_path()` still resolves to the legacy canonical zoonotic
+table for backwards compatibility. New active consumers should read
+`master_plus_who_host_network.csv` directly or use the compatibility helper in
+`scripts/associations/network_building/master_plus_compatibility_helpers.R`.
 
 ### `host_vector/who_only/`
 
@@ -122,8 +129,11 @@ Related helpers:
 
 ## Practical Use
 
-Use `combined_who_network_canonical_zoonotic.csv` for the default WHO
-host-pathogen working network.
+Use `master_plus_who_host_network.csv` for active WHO/master-plus
+host-pathogen work. When an old WHO-only contract is required, filter
+`in_legacy_canonical_zoonotic_pathogen_host == TRUE` or use
+`read_legacy_compatible_master_plus_network()`, which returns the old
+22-column association-grain view.
 
 Use `disease_host_vector_links.csv` for conservative disease-level
 host-vector summaries.

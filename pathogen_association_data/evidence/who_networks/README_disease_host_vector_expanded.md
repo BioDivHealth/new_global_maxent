@@ -42,10 +42,11 @@ VectorMap/MapVEu extract and it is not a final vector-role assignment table.
 The script reads three active evidence surfaces through helpers in
 `scripts/associations/working_inputs.R`:
 
-1. `who_working_network_path()`
+1. `who_network_host_pathogen_path("master_plus_who_host_network.csv")`
    - current target:
-     `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network_canonical_zoonotic.csv`
-   - role: WHO disease-host-pathogen backbone
+     `pathogen_association_data/evidence/who_networks/host_pathogen/master_plus_who_host_network.csv`
+   - role: WHO/master-plus disease-host-pathogen backbone filtered by
+     `in_legacy_canonical_zoonotic_pathogen_host`
 
 2. `vector_screening_evidence_path("disease_vector_links_taxonomy_cleaned.csv")`
    - current target:
@@ -73,7 +74,9 @@ pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_netwo
 ```
 
 `scripts/associations/network_building/4_1_Canonicalize_Combined_WHO_Network.R`
-then writes the canonical downstream working networks.
+then writes the legacy canonical compatibility networks. Active host-vector
+integration now reads `master_plus_who_host_network.csv` and filters the
+legacy-compatible rows before collapsing to `disease + host` grain.
 
 In `5_9b`, the working network is collapsed to `disease + host` grain while
 retaining summaries such as:

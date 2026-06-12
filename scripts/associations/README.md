@@ -47,8 +47,9 @@ Rscript scripts/associations/network_building/05_build_broad_taxa_support.R
 - `03_build_master_plus_host_network.R`: builds master-plus host evidence,
   host QA, and the downstream-ready master-plus host network.
 - `04_build_legacy_who_compatibility_outputs.R`: rebuilds the WHO-only
-  CLOVER/VIRION compatibility outputs still read by downstream scripts. By
-  default it reuses existing standardized host-taxonomy CSVs; run with
+  CLOVER/VIRION compatibility outputs retained for legacy provenance, contract
+  checks, and a small number of explicit legacy QA scripts. By default it reuses
+  existing standardized host-taxonomy CSVs; run with
   `--refresh-host-taxonomy` only when deliberately refreshing the external or
   cache-sensitive CLOVER/VIRION host-taxonomy stages.
 - `05_build_broad_taxa_support.R`: rebuilds broad-taxa candidate-strain
@@ -100,7 +101,9 @@ entrypoints call. Run the wrappers above for routine rebuilds.
   - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network.csv`
 - Derived review artifact with canonical pathogen labels:
   - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network_canonical.csv`
-- Default downstream working layer for the rest of `scripts/associations/`:
+- Current downstream host-pathogen working layer:
+  - `pathogen_association_data/evidence/who_networks/host_pathogen/master_plus_who_host_network.csv`
+- Legacy WHO-only compatibility/provenance layer:
   - `pathogen_association_data/evidence/who_diseases/backbone/who_pathogens_diseases_zoonotic.csv`
   - `pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network_canonical_zoonotic.csv`
 - Shared path helpers for these layers live in `scripts/associations/working_inputs.R`.
@@ -116,8 +119,10 @@ entrypoints call. Run the wrappers above for routine rebuilds.
 The intended workflow is:
 
 - keep `network_building/` scripts pointed at the raw WHO files
-- use the canonical zoonotic working layer for downstream vector-screening,
-  host-vector integration, host-vector source filtering, and GenBank scripts
+- use `master_plus_who_host_network.csv` for active downstream host-pathogen
+  consumers
+- use the legacy canonical zoonotic layer only through explicit compatibility
+  helpers or for frozen provenance/QA scripts
 
 5.  **Vector Screening (`vector_screening/5_1_*` to `vector_screening/5_6_*`):**
     -   `vector_screening/5_1_Pathogen_Vector_Links_Scaffold.R` to `vector_screening/5_6_Backfill_Pathogen_Vector_Links.R`: Build, standardize, and backfill the WHO disease-pathogen-vector tables.
@@ -126,7 +131,7 @@ The intended workflow is:
     -   Optional VecTraits API probes live under `vector_screening/exploratory/vectraits/`; their outputs are exploratory/local and remain ignored under `pathogen_association_data/staged/vector_screening/vectraits/`.
 
 6.  **Host-Vector Integration (`host_vector_integration/5_8_*` to `host_vector_integration/5_11_*`):**
-    -   These scripts connect the WHO disease/pathogen network to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/evidence/who_networks/`. Current host-vector outputs are WHO-only and live under `pathogen_association_data/evidence/who_networks/host_vector/who_only/`.
+    -   These scripts connect the master-plus WHO host network, filtered by its legacy compatibility flag where needed, to the staged VectorMap and MapVEu host-vector evidence, then write conservative disease-level, pathogen-level, expanded, and QA outputs under `pathogen_association_data/evidence/who_networks/`. Current host-vector outputs are WHO-only and live under `pathogen_association_data/evidence/who_networks/host_vector/who_only/`.
 
 7.  **Geographic Enrichment (`genbank_simple/`):**
     -   `genbank_simple/01b_build_readiness_manifest.R`: Builds the expanded readiness manifest from the disease modelling readiness surface.
@@ -135,8 +140,8 @@ The intended workflow is:
     -   Current modelling-readiness handoffs should use `pathogen_association_data/evidence/genbank_simple/genbank_readiness_disease_country_summary_standardized.csv` when present.
 
 8.  **Role Annotation (`role_annotation/6_1_*`):**
-    -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the canonical WHO disease-pathogen-host backbone for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/evidence/role_annotation/`.
-    -   `role_annotation/6_2_Derive_Species_Host_Vector_Roster.R`: Builds a collaborator-facing disease-species roster that covers both vectored and non-vectored diseases by combining host rows from the canonical WHO backbone with vector rows from the curated disease-vector table, plus host-vector observation and competence flags where available.
+    -   `role_annotation/6_1_Derive_Host_Role_Candidates.R`: Seeds conservative host-role candidate rows from the master-plus compatibility view for the current role-review scope. It writes generated candidate and summary tables under `pathogen_association_data/evidence/role_annotation/`.
+    -   `role_annotation/6_2_Derive_Species_Host_Vector_Roster.R`: Builds a collaborator-facing disease-species roster that covers both vectored and non-vectored diseases by combining host rows from the master-plus compatibility view with vector rows from the curated disease-vector table, plus host-vector observation and competence flags where available.
     -   Role annotation files are an interpretation layer. Do not treat candidate rows as final reservoir, amplifier, incidental, dead-end, or vector-role assignments without source-backed evidence review.
 
 ### Outputs
