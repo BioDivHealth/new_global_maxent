@@ -67,13 +67,14 @@ pathogen_association_data/staged/who_networks/source_components/clover_who_netwo
 pathogen_association_data/staged/who_networks/source_components/virion_who_network.csv
 ```
 
-`scripts/associations/network_building/4_CombineNetworks.R` combines those into:
+`scripts/associations/network_building/stages/legacy_who_compatibility/4_CombineNetworks.R`
+combines those into:
 
 ```text
 pathogen_association_data/evidence/who_networks/host_pathogen/combined_who_network.csv
 ```
 
-`scripts/associations/network_building/4_1_Canonicalize_Combined_WHO_Network.R`
+`scripts/associations/network_building/stages/legacy_who_compatibility/4_1_Canonicalize_Combined_WHO_Network.R`
 then writes the legacy canonical compatibility networks. Active host-vector
 integration now reads `master_plus_who_host_network.csv` and filters the
 legacy-compatible rows before collapsing to `disease + host` grain.

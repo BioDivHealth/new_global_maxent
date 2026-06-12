@@ -34,7 +34,7 @@ Related helpers:
 `who_working_network_path()` still resolves to the legacy canonical zoonotic
 table for backwards compatibility. New active consumers should read
 `master_plus_who_host_network.csv` directly or use the compatibility helper in
-`scripts/associations/network_building/master_plus_compatibility_helpers.R`.
+`scripts/associations/network_building/helpers/master_plus_compatibility_helpers.R`.
 
 ### `host_vector/who_only/`
 

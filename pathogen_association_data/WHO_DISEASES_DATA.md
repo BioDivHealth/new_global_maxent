@@ -10,7 +10,8 @@ Raw or near-raw WHO source material lives under
 `pathogen_association_data/source_data/who_diseases/`.
 
 - `regional_tables/africa_table.csv` - WHO Africa regional priority/prototype
-  pathogen table used by `scripts/associations/network_building/1_WHO_Diseases.R`.
+  pathogen table used by
+  `scripts/associations/network_building/stages/disease_scope/1_WHO_Diseases.R`.
 - `regional_tables/americas_table.csv` - WHO Americas regional priority/prototype
   pathogen table used by `1_WHO_Diseases.R`.
 - `regional_tables/europe_table.csv` - WHO Europe regional priority/prototype

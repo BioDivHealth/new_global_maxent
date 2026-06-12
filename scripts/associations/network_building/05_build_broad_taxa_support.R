@@ -133,9 +133,12 @@ ncbi_text_outputs <- c(
   )
 )
 
-stages <- c("1_3_WHO_Broad_Taxa_Candidate_Strains.R")
+stages <- c("stages/broad_taxa_support/1_3_WHO_Broad_Taxa_Candidate_Strains.R")
 if (refresh_ncbi_metadata) {
-  stages <- c(stages, "1_4_NCBI_Broad_Taxa_Candidate_Metadata.R")
+  stages <- c(
+    stages,
+    "stages/broad_taxa_support/1_4_NCBI_Broad_Taxa_Candidate_Metadata.R"
+  )
 }
 
 # -----------------------------------------------------------------------------|

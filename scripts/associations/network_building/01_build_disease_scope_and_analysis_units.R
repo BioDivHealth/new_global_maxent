@@ -61,10 +61,10 @@ summarize_output <- function(name, path) {
 }
 
 disease_scope_stages <- c(
-  "1_WHO_Diseases.R",
-  "1_1_WHO_Diseases_Zoonotic_Filter.R",
-  "1_2_WHO_Pathogen_Analysis_Units.R",
-  "1_2b_Disease_Master_Analysis_Units.R"
+  "stages/disease_scope/1_WHO_Diseases.R",
+  "stages/disease_scope/1_1_WHO_Diseases_Zoonotic_Filter.R",
+  "stages/disease_scope/1_2_WHO_Pathogen_Analysis_Units.R",
+  "stages/disease_scope/1_2b_Disease_Master_Analysis_Units.R"
 )
 
 contract_outputs <- c(

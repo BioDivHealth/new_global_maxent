@@ -70,14 +70,14 @@ Rscript scripts/associations/network_building/05_build_broad_taxa_support.R
 The stage scripts below document the internal pieces that the wrapper
 entrypoints call. Run the wrappers above for routine rebuilds.
 
-1.  **WHO Pathogen Data Processing (`network_building/1_WHO_Diseases.R`):**
+1.  **WHO Pathogen Data Processing (`network_building/stages/disease_scope/1_WHO_Diseases.R`):**
     -   Loads and standardizes WHO priority pathogen lists from various regional documents.
     -   Maps pathogens to standardized names using a translation table and fuzzy matching.
     -   Assigns risk categories and family information.
     -   Preserves whether each final pathogen is priority, prototype, or both, plus per-region WHO source status (`priority`, `prototype`, `both`, or `none`) across the WHO regions.
     -   Outputs a cleaned and consolidated pathogen list (`who_pathogens_diseases.csv`).
 
-2.  **CLOVER Integration (Bacteria) (`network_building/2_1_CLOVER.R`, `network_building/2_2_CLOVER_Host_Clean.R`, `network_building/2_3_CLOVER_Network.R`):**
+2.  **CLOVER Integration (Bacteria) (`network_building/stages/legacy_who_compatibility/2_1_CLOVER.R`, `network_building/stages/legacy_who_compatibility/2_2_CLOVER_Host_Clean.R`, `network_building/stages/legacy_who_compatibility/2_3_CLOVER_Network.R`):**
     -   `2_1_CLOVER.R`: Matches WHO-listed bacteria against the CLOVER database using exact, manual, and fuzzy matching. Extracts associated host species.
     -   `2_2_CLOVER_Host_Clean.R`: Takes the unique host species from CLOVER and standardizes their taxonomy using external databases (GBIF, ITIS, IUCN). Generates taxonomic summary visualizations.
     -   `2_3_CLOVER_Network.R`: Prepares the bacteria-host association data for network analysis by merging it with the cleaned host taxonomy. Outputs `clover_who_network.csv`.
@@ -88,10 +88,10 @@ entrypoints call. Run the wrappers above for routine rebuilds.
     -   `3_2_WHO_Virion_Hosts.R`: Extracts all known host associations for the matched VIRION viruses, filtering for high-quality detection methods.
     -   `3_3_Host_Species_Clean.R`: Takes the unique host species from VIRION and standardizes their taxonomy, similar to the CLOVER workflow. Generates taxonomic summary visualizations.
 
-4.  **Network Combination, Analysis, and Visualization (`network_building/3_4_VIRION_Networks.R`, `network_building/3_5_VIRION_Visualise_Networks.R`, `network_building/4_CombineNetworks.R`):**
-    -   `network_building/3_4_VIRION_Networks.R`: Primary VIRION network assembly and analysis script. It constructs pathogen-host networks, performs advanced analyses (centrality, modularity, bridge species, sampling bias), and writes `virion_who_network.csv` under `pathogen_association_data/staged/who_networks/source_components/`.
-    -   `network_building/3_5_VIRION_Visualise_Networks.R`: Reads `virion_who_network.csv` and generates static (`.png`) and interactive (`.html`) visualizations, with outputs saved under `figures/network_plots/` (and related subfolders).
-    -   `network_building/4_CombineNetworks.R`: Merges the processed network data from CLOVER (bacteria) and VIRION (viruses) into a single, comprehensive dataset for combined analysis.
+4.  **Network Combination, Analysis, and Visualization (`network_building/stages/legacy_who_compatibility/3_4_VIRION_Networks.R`, `network_building/stages/legacy_who_compatibility/3_5_VIRION_Visualise_Networks.R`, `network_building/stages/legacy_who_compatibility/4_CombineNetworks.R`):**
+    -   `network_building/stages/legacy_who_compatibility/3_4_VIRION_Networks.R`: Primary VIRION network assembly and analysis script. It constructs pathogen-host networks, performs advanced analyses (centrality, modularity, bridge species, sampling bias), and writes `virion_who_network.csv` under `pathogen_association_data/staged/who_networks/source_components/`.
+    -   `network_building/stages/legacy_who_compatibility/3_5_VIRION_Visualise_Networks.R`: Reads `virion_who_network.csv` and generates static (`.png`) and interactive (`.html`) visualizations, with outputs saved under `figures/network_plots/` (and related subfolders).
+    -   `network_building/stages/legacy_who_compatibility/4_CombineNetworks.R`: Merges the processed network data from CLOVER (bacteria) and VIRION (viruses) into a single, comprehensive dataset for combined analysis.
 
 ### Working Input Layers
 

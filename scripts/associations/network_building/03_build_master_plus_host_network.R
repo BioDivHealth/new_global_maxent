@@ -63,9 +63,9 @@ summarize_output <- function(name, path) {
 }
 
 master_plus_host_network_stages <- c(
-  "1_2e_Master_Host_Species.R",
-  "1_2f_Master_Host_Species_QA_Clean.R",
-  "4_2_Combine_WHO_Master_Host_Network.R"
+  "stages/master_plus_host_network/1_2e_Master_Host_Species.R",
+  "stages/master_plus_host_network/1_2f_Master_Host_Species_QA_Clean.R",
+  "stages/master_plus_host_network/4_2_Combine_WHO_Master_Host_Network.R"
 )
 
 contract_outputs <- c(

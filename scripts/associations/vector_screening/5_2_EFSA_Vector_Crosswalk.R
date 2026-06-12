@@ -13,6 +13,7 @@ source(here(
   "scripts",
   "associations",
   "network_building",
+  "helpers",
   "master_plus_compatibility_helpers.R"
 ))
 

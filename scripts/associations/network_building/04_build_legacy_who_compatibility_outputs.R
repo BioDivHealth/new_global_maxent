@@ -140,25 +140,25 @@ compatibility_outputs <- c(
 )
 
 default_stages <- c(
-  "2_1_CLOVER.R",
-  "2_3_CLOVER_Network.R",
-  "3_1_Match_WHO_Virion.R",
-  "3_2_WHO_Virion_Hosts.R",
-  "3_4_VIRION_Networks.R",
-  "4_CombineNetworks.R",
-  "4_1_Canonicalize_Combined_WHO_Network.R"
+  "stages/legacy_who_compatibility/2_1_CLOVER.R",
+  "stages/legacy_who_compatibility/2_3_CLOVER_Network.R",
+  "stages/legacy_who_compatibility/3_1_Match_WHO_Virion.R",
+  "stages/legacy_who_compatibility/3_2_WHO_Virion_Hosts.R",
+  "stages/legacy_who_compatibility/3_4_VIRION_Networks.R",
+  "stages/legacy_who_compatibility/4_CombineNetworks.R",
+  "stages/legacy_who_compatibility/4_1_Canonicalize_Combined_WHO_Network.R"
 )
 
 taxonomy_refresh_stages <- c(
-  "2_1_CLOVER.R",
-  "2_2_CLOVER_Host_Clean.R",
-  "2_3_CLOVER_Network.R",
-  "3_1_Match_WHO_Virion.R",
-  "3_2_WHO_Virion_Hosts.R",
-  "3_3_Host_Species_Clean.R",
-  "3_4_VIRION_Networks.R",
-  "4_CombineNetworks.R",
-  "4_1_Canonicalize_Combined_WHO_Network.R"
+  "stages/legacy_who_compatibility/2_1_CLOVER.R",
+  "stages/legacy_who_compatibility/2_2_CLOVER_Host_Clean.R",
+  "stages/legacy_who_compatibility/2_3_CLOVER_Network.R",
+  "stages/legacy_who_compatibility/3_1_Match_WHO_Virion.R",
+  "stages/legacy_who_compatibility/3_2_WHO_Virion_Hosts.R",
+  "stages/legacy_who_compatibility/3_3_Host_Species_Clean.R",
+  "stages/legacy_who_compatibility/3_4_VIRION_Networks.R",
+  "stages/legacy_who_compatibility/4_CombineNetworks.R",
+  "stages/legacy_who_compatibility/4_1_Canonicalize_Combined_WHO_Network.R"
 )
 
 # -----------------------------------------------------------------------------|

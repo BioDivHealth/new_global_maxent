@@ -62,8 +62,8 @@ summarize_output <- function(name, path) {
 }
 
 master_plus_registry_stages <- c(
-  "1_2c_Master_Virion_Clover_Matches.R",
-  "1_2d_Master_WHO_Analysis_Unit_Bridge.R"
+  "stages/master_plus_registry/1_2c_Master_Virion_Clover_Matches.R",
+  "stages/master_plus_registry/1_2d_Master_WHO_Analysis_Unit_Bridge.R"
 )
 
 contract_outputs <- c(
