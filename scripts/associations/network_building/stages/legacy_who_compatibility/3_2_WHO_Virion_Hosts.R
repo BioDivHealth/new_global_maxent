@@ -36,7 +36,7 @@ who_virion <- read_csv(input_csv_path, show_col_types = FALSE)
 ## 2. VIRION database -----------------------------------------------------------
 cat("Loading VIRION database...\n")
 if (!exists("virion_data")) {
-  source(here("scripts", "associations", "network_building", "virion_data.R"))
+  source(here("scripts", "associations", "network_building", "helpers", "virion_data.R"))
 }
 
 dictionaries = virionData::get_data_dictionary(

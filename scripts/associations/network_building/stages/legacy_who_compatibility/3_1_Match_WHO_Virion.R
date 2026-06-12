@@ -38,7 +38,7 @@ who_df$ID = 1:nrow(who_df)
 
 # 2. VIRION taxonomy -----------------------------------------------------------
 if (!exists("virion_data")) {
-  source(file.path("scripts", "associations", "network_building", "virion_data.R"))
+  source(file.path("scripts", "associations", "network_building", "helpers", "virion_data.R"))
   # `virion_data` object is created inside the sourced script
 }
 

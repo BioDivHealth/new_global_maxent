@@ -82,8 +82,8 @@ entrypoints call. Run the wrappers above for routine rebuilds.
     -   `2_2_CLOVER_Host_Clean.R`: Takes the unique host species from CLOVER and standardizes their taxonomy using external databases (GBIF, ITIS, IUCN). Generates taxonomic summary visualizations.
     -   `2_3_CLOVER_Network.R`: Prepares the bacteria-host association data for network analysis by merging it with the cleaned host taxonomy. Outputs `clover_who_network.csv`.
 
-3.  **VIRION Integration (Viruses) (`network_building/virion_data.R`, `network_building/3_1_Match_WHO_Virion.R`, `network_building/3_2_WHO_Virion_Hosts.R`, `network_building/3_3_Host_Species_Clean.R`):**
-    -   `virion_data.R`: Utility script to load the comprehensive VIRION dataset.
+3.  **VIRION Integration (Viruses) (`network_building/helpers/virion_data.R`, `network_building/stages/legacy_who_compatibility/3_1_Match_WHO_Virion.R`, `network_building/stages/legacy_who_compatibility/3_2_WHO_Virion_Hosts.R`, `network_building/stages/legacy_who_compatibility/3_3_Host_Species_Clean.R`):**
+    -   `helpers/virion_data.R`: Utility script to load the comprehensive VIRION dataset.
     -   `3_1_Match_WHO_Virion.R`: Matches WHO-listed viruses against the VIRION taxonomy to find corresponding `VirusTaxID`s.
     -   `3_2_WHO_Virion_Hosts.R`: Extracts all known host associations for the matched VIRION viruses, filtering for high-quality detection methods.
     -   `3_3_Host_Species_Clean.R`: Takes the unique host species from VIRION and standardizes their taxonomy, similar to the CLOVER workflow. Generates taxonomic summary visualizations.

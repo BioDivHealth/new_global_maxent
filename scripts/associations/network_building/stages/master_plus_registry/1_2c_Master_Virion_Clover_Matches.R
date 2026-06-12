@@ -194,7 +194,7 @@ stopifnot(nrow(manual_units) > 0)
 
 # ------------------------------| Load VIRION taxonomy |-----------------------
 if (!exists("virion_data")) {
-  source(file.path("scripts", "associations", "network_building", "virion_data.R"))
+  source(file.path("scripts", "associations", "network_building", "helpers", "virion_data.R"))
 }
 
 virion_taxonomy <- virion_data$taxonomy_virus %>%

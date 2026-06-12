@@ -122,7 +122,7 @@ active_queries <- host_queries %>%
   )
 
 if (!exists("virion_data")) {
-  source(file.path("scripts", "associations", "network_building", "virion_data.R"))
+  source(file.path("scripts", "associations", "network_building", "helpers", "virion_data.R"))
 }
 
 virion_links <- virion_data$virion %>%
