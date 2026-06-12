@@ -1,7 +1,7 @@
 generated_at_utc,table_name,file_name,rows,columns,source_description
-2026-06-08 15:00:15 UTC,disease_modelling_pilot,disease_modelling_pilot.csv,31,34,Generated from disease_modelling_readiness_full.csv rows in the non-held WHO pilot subset.
-2026-06-08 15:00:15 UTC,pilot_hosts,pilot_hosts.csv,1779,18,Filtered host rows from species_host_vector_roster.csv using readiness-script disease matches.
-2026-06-08 15:00:15 UTC,pilot_vectors,pilot_vectors.csv,448,22,Filtered vector rows from species_host_vector_roster.csv using readiness-script disease matches.
-2026-06-08 15:00:15 UTC,pilot_countries,pilot_countries.csv,1188,16,Filtered and summarised GenBank disease-country and WHO DON country evidence using readiness-script disease matches.
-2026-06-08 15:00:15 UTC,pilot_sdm_species,pilot_sdm_species.csv,2227,13,"Filtered host/vector roster species joined to the accessible SDM species inventory, with projection and comparison status where available."
-2026-06-08 15:00:15 UTC,pilot_evidence_summary,pilot_evidence_summary.csv,31,73,"Disease-level evidence, role, country, SDM, and join-count fields from the full readiness audit table."
+2026-06-09 17:15:30 UTC,disease_modelling_pilot,disease_modelling_pilot.csv,31,34,Generated from disease_modelling_readiness_full.csv rows in the non-held WHO pilot subset.
+2026-06-09 17:15:30 UTC,pilot_hosts,pilot_hosts.csv,2235,18,Filtered host rows from species_host_vector_roster.csv using readiness-script disease matches.
+2026-06-09 17:15:30 UTC,pilot_vectors,pilot_vectors.csv,448,22,Filtered vector rows from species_host_vector_roster.csv using readiness-script disease matches.
+2026-06-09 17:15:30 UTC,pilot_countries,pilot_countries.csv,1188,16,Filtered and summarised GenBank disease-country and WHO DON country evidence using readiness-script disease matches.
+2026-06-09 17:15:30 UTC,pilot_sdm_species,pilot_sdm_species.csv,2683,13,"Filtered host/vector roster species joined to the accessible SDM species inventory, with projection and comparison status where available."
+2026-06-09 17:15:30 UTC,pilot_evidence_summary,pilot_evidence_summary.csv,31,73,"Disease-level evidence, role, country, SDM, and join-count fields from the full readiness audit table."
