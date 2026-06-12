@@ -22,25 +22,26 @@ batch_config <- list(
 
   species_filter = paste(c(
     "Opifex fuscus",
-    "Aedes togoi",
+    #"Aedes togoi",
     "Eretmapodites chrysogaster",
-    "Aedes procax",
-    "Verrallina funerea",
-    "Aedes africanus",
-    "Aedes vittatus",
-    "Coquillettidia linealis",
-    "Culex sitiens",
-    "Culex annulirostris",
-    "Aedes vigilax",
-    "Aedes notoscriptus",
-    "Aedes triseriatus",
-    "Aedes vexans",
-    "Aedes aegypti",
-    "Aedes albopictus"
+    #"Aedes procax",
+    #"Verrallina funerea",
+    "Aedes africanus"
+    #"Aedes vittatus",
+    #"Coquillettidia linealis",
+    #"Culex sitiens",
+    #"Culex annulirostris",
+    #"Aedes vigilax",
+    #"Aedes notoscriptus",
+    #"Aedes triseriatus",
+    #"Aedes vexans",
+    #"Aedes aegypti",
+    #"Aedes albopictus"
   ), collapse = ","),
 
   fit_models = TRUE,
   dry_run_models = FALSE,
+  skip_existing_models = FALSE,
 
   start_year = 2000,
   end_year = 2026,
@@ -54,10 +55,13 @@ batch_config <- list(
   n_background = "dynamic",
   test_percent = "dynamic",
   beta_values = "4,8,12",
+  #random_features = FALSE, 
   random_features = TRUE,
   n_models = 25,
-  n_selected_models = 10,
-  use_boyce = 0.5,
+  n_selected_models = 25,
+  #n_selected_models = 10,
+  #use_boyce = 0.5,
+  use_boyce = -1,
 
   maxent_threads = 2,
   java_memory_gb = 8
@@ -85,10 +89,13 @@ generic_batch_config <- list(
   n_background = "dynamic",
   test_percent = "dynamic",
   beta_values = "4,8,12",
-  random_features = TRUE,
+  #random_features = TRUE,
+  random_features = FALSE,
   n_models = 25,
-  n_selected_models = 10,
-  use_boyce = 0.5,
+  #n_selected_models = 10,
+  n_selected_models = 25,
+  #use_boyce = 0.5,
+  use_boyce = -1,
   maxent_threads = 2,
   java_memory_gb = 8
 )

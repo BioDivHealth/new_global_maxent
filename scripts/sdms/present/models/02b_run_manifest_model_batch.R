@@ -45,7 +45,8 @@ defaults <- list(
   maxent_threads = 2,
   java_memory_gb = 8,
   predictor_stack_path = file.path(here::here(), "sdms", "cache", "Resample_rast.tif"),
-  iucn_range_path = file.path(here::here(), "sdms", "cache", "MAMMALS_TERRESTRIAL_ONLY", "MAMMALS_TERRESTRIAL_ONLY.shp")
+  iucn_range_path = file.path(here::here(), "sdms", "cache", "MAMMALS_TERRESTRIAL_ONLY", "MAMMALS_TERRESTRIAL_ONLY.shp"),
+  automaxent_root = Sys.getenv("AUTOMAXENT_ROOT", unset = "/Users/arturtrebski/Coding_Projects/AutoMaxent")
 )
 
 if (!exists("batch_config", inherits = FALSE)) {
@@ -91,6 +92,7 @@ cfg$maxent_threads <- as.integer(get_cfg("threads", "maxent_threads"))
 cfg$java_memory_gb <- as.numeric(get_cfg("java-memory-gb"))
 cfg$predictor_stack_path <- get_cfg("predictor-stack-path")
 cfg$iucn_range_path <- get_cfg("iucn-range-path")
+cfg$automaxent_root <- get_cfg("automaxent-root")
 
 if (!file.exists(cfg$target_manifest_path)) {
   stop("Missing SDM target manifest: ", cfg$target_manifest_path, call. = FALSE)
@@ -207,6 +209,7 @@ for (i in seq_len(nrow(targets))) {
       "--java-memory-gb", as.character(cfg$java_memory_gb),
       "--predictor-stack", cfg$predictor_stack_path,
       "--iucn-range-path", cfg$iucn_range_path,
+      "--automaxent-root", cfg$automaxent_root,
       "--output-root", cfg$model_output_root,
       if (cfg$random_features) "--random-features" else "--feature-grid",
       if (cfg$fit_models) "--run" else "--dry-run"
