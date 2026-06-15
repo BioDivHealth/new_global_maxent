@@ -13,6 +13,13 @@ library(tidyverse)
 library(here)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "master_plus_host_network_helpers.R"
+))
 
 large_host_threshold <- 75L
 narrow_host_threshold <- 3L
@@ -31,56 +38,18 @@ clover_host_standardized_path <- file.path(
   "clover_host_species_standardized.csv"
 )
 
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "null", "Null")] <- NA_character_
-  x <- str_replace_all(x, "\u00A0", " ")
-  x <- str_replace_all(x, "[\r\n\t]+", " ")
-  x <- str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
-
-normalize_host_key <- function(x) {
-  x %>%
-    clean_text() %>%
-    str_to_lower() %>%
-    str_replace_all("&", " and ") %>%
-    str_replace_all("[^a-z0-9]+", " ") %>%
-    str_squish()
-}
-
-first_non_missing <- function(x) {
-  x <- unique(x[!is.na(x) & x != ""])
-  if (length(x) == 0) {
-    NA_character_
-  } else {
-    x[[1]]
-  }
-}
-
-collapse_reasons <- function(...) {
-  reasons <- c(...)
-  reasons <- reasons[!is.na(reasons) & reasons != ""]
-  if (length(reasons) == 0) {
-    NA_character_
-  } else {
-    paste(unique(reasons), collapse = "; ")
-  }
-}
-
 read_host_standardization <- function(path, source_name) {
   read_csv(path, show_col_types = FALSE, na = c("", "NA")) %>%
     mutate(
-      across(where(is.character), clean_text),
+      across(where(is.character), host_network_clean_text),
       host_source = source_name,
-      HostTaxID = clean_text(HostTaxID),
-      raw_host_key = normalize_host_key(Host),
-      std_host = coalesce(clean_text(correct_name), clean_text(Host)),
-      std_host_phylum = clean_text(Phylum),
-      std_host_class = clean_text(Class),
-      std_host_family = clean_text(Family),
-      std_host_order = clean_text(Order)
+      HostTaxID = host_network_clean_text(HostTaxID),
+      raw_host_key = host_network_clean_key(Host),
+      std_host = coalesce(host_network_clean_text(correct_name), host_network_clean_text(Host)),
+      std_host_phylum = host_network_clean_text(Phylum),
+      std_host_class = host_network_clean_text(Class),
+      std_host_family = host_network_clean_text(Family),
+      std_host_order = host_network_clean_text(Order)
     ) %>%
     select(
       host_source,
@@ -107,11 +76,11 @@ summarise_host_lookup <- function(data, group_cols, method_name, suffix) {
     group_by(across(all_of(group_cols))) %>%
     summarise(
       n_std_hosts = n_distinct(std_host),
-      "{clean_col}" := first_non_missing(std_host),
-      "{phylum_col}" := first_non_missing(std_host_phylum),
-      "{class_col}" := first_non_missing(std_host_class),
-      "{family_col}" := first_non_missing(std_host_family),
-      "{order_col}" := first_non_missing(std_host_order),
+      "{clean_col}" := host_network_first_non_missing(std_host),
+      "{phylum_col}" := host_network_first_non_missing(std_host_phylum),
+      "{class_col}" := host_network_first_non_missing(std_host_class),
+      "{family_col}" := host_network_first_non_missing(std_host_family),
+      "{order_col}" := host_network_first_non_missing(std_host_order),
       .groups = "drop"
     ) %>%
     filter(n_std_hosts == 1) %>%
@@ -148,9 +117,9 @@ if (length(missing_paths) > 0) {
 
 host_rows_raw <- read_csv(host_input_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
-    across(where(is.character), clean_text),
-    HostTaxID = clean_text(HostTaxID),
-    PathogenTaxID = clean_text(PathogenTaxID),
+    across(where(is.character), host_network_clean_text),
+    HostTaxID = host_network_clean_text(HostTaxID),
+    PathogenTaxID = host_network_clean_text(PathogenTaxID),
     host_query_include_default = coalesce(host_query_include_default, FALSE),
     match_review_flag = coalesce(match_review_flag, FALSE),
     shared_species_proxy_flag = coalesce(shared_species_proxy_flag, FALSE)
@@ -173,10 +142,10 @@ analysis_unit_metadata <- tibble(
 
 if (file.exists(analysis_units_path)) {
   analysis_unit_metadata <- read_csv(analysis_units_path, show_col_types = FALSE, na = c("", "NA")) %>%
-    mutate(across(where(is.character), clean_text)) %>%
+    mutate(across(where(is.character), host_network_clean_text)) %>%
     transmute(
       analysis_unit_id,
-      `PHEIC risk` = clean_text(pheic_risk),
+      `PHEIC risk` = host_network_clean_text(pheic_risk),
       in_gibb_etal = if ("in_gibb_etal" %in% names(.)) in_gibb_etal else NA,
       in_empres_i = if ("in_empres_i" %in% names(.)) in_empres_i else NA
     ) %>%
@@ -220,7 +189,7 @@ host_rows <- host_rows_raw %>%
   mutate(
     Host_raw = Host,
     host_source = str_to_upper(MainSource),
-    raw_host_key = normalize_host_key(Host_raw)
+    raw_host_key = host_network_clean_key(Host_raw)
   ) %>%
   left_join(
     lookup_source_taxid_host,
@@ -387,7 +356,7 @@ host_clean <- host_rows_with_counts %>%
   ) %>%
   rowwise() %>%
   mutate(
-    downstream_review_reason = collapse_reasons(
+    downstream_review_reason = host_network_collapse_reasons(
       if_else(!host_query_include_default, "not_default_host_query", NA_character_),
       if_else(host_query_bucket != "default_clean", paste0("host_query_bucket=", host_query_bucket), NA_character_),
       if_else(shared_species_proxy_flag, "shared_species_proxy", NA_character_),

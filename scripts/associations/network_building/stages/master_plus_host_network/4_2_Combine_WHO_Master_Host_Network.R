@@ -16,6 +16,13 @@ library(tidyverse)
 library(here)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "master_plus_host_network_helpers.R"
+))
 
 who_network_path <- who_raw_network_path()
 master_host_path <- who_master_pathogen_host_species_clean_path()
@@ -23,16 +30,6 @@ analysis_units_path <- who_master_plus_analysis_units_path()
 who_keep_path <- who_pathogen_analysis_units_keep_path()
 legacy_network_path <- who_canonical_zoonotic_network_path()
 combined_output_path <- who_network_host_pathogen_path("master_plus_who_host_network.csv")
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "null", "Null")] <- NA_character_
-  x <- str_replace_all(x, "\u00A0", " ")
-  x <- str_replace_all(x, "[\r\n\t]+", " ")
-  x <- str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
 
 common_columns <- c(
   "Pathogen",
@@ -124,65 +121,12 @@ if (length(missing_paths) > 0) {
   stop("Missing required input files: ", paste(missing_paths, collapse = "; "))
 }
 
-add_missing_columns <- function(data, columns) {
-  missing <- setdiff(columns, names(data))
-  for (col in missing) {
-    data[[col]] <- NA
-  }
-  data
-}
-
-collapse_unique <- function(x) {
-  x <- clean_text(x)
-  x <- sort(unique(stats::na.omit(x)))
-
-  if (length(x) == 0) {
-    return(NA_character_)
-  }
-
-  paste(x, collapse = "; ")
-}
-
-scope_key <- function(x) {
-  x %>%
-    clean_text() %>%
-    str_to_lower() %>%
-    str_replace_all("&", " and ") %>%
-    str_replace_all("[^a-z0-9]+", " ") %>%
-    str_squish()
-}
-
-association_key <- function(data) {
-  paste(
-    scope_key(data$Disease_name),
-    clean_text(data$PathogenTaxID),
-    scope_key(data$Pathogen),
-    clean_text(data$HostTaxID),
-    scope_key(data$Host),
-    sep = "|||"
-  )
-}
-
-is_true <- function(x) {
-  x %in% c(TRUE, "TRUE", "true", "True", 1, "1")
-}
-
-collapse_true_flag <- function(x) {
-  values <- x[!is.na(x)]
-
-  if (length(values) == 0) {
-    return(NA)
-  }
-
-  any(is_true(values))
-}
-
 read_network <- function(path, host_network_source, source_table) {
   data <- read_csv(path, show_col_types = FALSE, na = c("", "NA")) %>%
     mutate(
-      across(where(is.character), clean_text),
-      PathogenTaxID = clean_text(PathogenTaxID),
-      HostTaxID = clean_text(HostTaxID),
+      across(where(is.character), host_network_clean_text),
+      PathogenTaxID = host_network_clean_text(PathogenTaxID),
+      HostTaxID = host_network_clean_text(HostTaxID),
       high_quality_detection = coalesce(high_quality_detection, FALSE),
       downstream_default_include = coalesce(downstream_default_include, FALSE),
       host_network_source = host_network_source,
@@ -198,7 +142,7 @@ read_network <- function(path, host_network_source, source_table) {
     )
   }
 
-  data <- add_missing_columns(
+  data <- host_network_add_missing_columns(
     data,
     c(
       "Host_raw",
@@ -290,10 +234,10 @@ read_network <- function(path, host_network_source, source_table) {
 }
 
 analysis_units <- read_csv(analysis_units_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), host_network_clean_text))
 
 who_keep_units <- read_csv(who_keep_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text)) %>%
+  mutate(across(where(is.character), host_network_clean_text)) %>%
   mutate(
     modelling_scope_status = case_when(
       source_pathogen %in% broad_source_pathogens ~ "defer_broad_or_aggregate_unit",
@@ -310,20 +254,20 @@ who_keep_units <- read_csv(who_keep_path, show_col_types = FALSE, na = c("", "NA
 
 legacy_lookup <- read_csv(legacy_network_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
-    across(where(is.character), clean_text),
-    PathogenTaxID = clean_text(PathogenTaxID),
-    HostTaxID = clean_text(HostTaxID),
-    legacy_association_key = association_key(.)
+    across(where(is.character), host_network_clean_text),
+    PathogenTaxID = host_network_clean_text(PathogenTaxID),
+    HostTaxID = host_network_clean_text(HostTaxID),
+    legacy_association_key = host_network_association_key(.)
   ) %>%
   filter(!is.na(legacy_association_key)) %>%
   group_by(legacy_association_key) %>%
   summarise(
     in_legacy_canonical_zoonotic_pathogen_host = TRUE,
-    Pathogen_raw_examples = collapse_unique(Pathogen_raw_examples),
-    Disease_name_raw_examples = collapse_unique(Disease_name_raw_examples),
-    is_zoonotic = collapse_true_flag(is_zoonotic),
-    zoonotic_status = collapse_unique(zoonotic_status),
-    canonicalization_status = collapse_unique(canonicalization_status),
+    Pathogen_raw_examples = host_network_collapse_unique(Pathogen_raw_examples),
+    Disease_name_raw_examples = host_network_collapse_unique(Disease_name_raw_examples),
+    is_zoonotic = host_network_collapse_true_flag(is_zoonotic),
+    zoonotic_status = host_network_collapse_unique(zoonotic_status),
+    canonicalization_status = host_network_collapse_unique(canonicalization_status),
     .groups = "drop"
   )
 
@@ -354,8 +298,8 @@ make_scope_aliases <- function(data, source_priority) {
     ) %>%
     transmute(
       scope_priority = source_priority,
-      disease_key = scope_key(source_disease_name),
-      pathogen_key = scope_key(pathogen_alias),
+      disease_key = host_network_clean_key(source_disease_name),
+      pathogen_key = host_network_clean_key(pathogen_alias),
       modelling_scope_status,
       modelling_scope_reason
     )
@@ -374,14 +318,14 @@ scope_by_who_disease <- bind_rows(
   analysis_units %>%
     transmute(
       scope_priority = 1L,
-      disease_key = scope_key(source_disease_name),
+      disease_key = host_network_clean_key(source_disease_name),
       modelling_scope_status,
       modelling_scope_reason
     ),
   who_keep_units %>%
     transmute(
       scope_priority = 2L,
-      disease_key = scope_key(source_disease_name),
+      disease_key = host_network_clean_key(source_disease_name),
       modelling_scope_status,
       modelling_scope_reason
     )
@@ -409,8 +353,8 @@ who_network <- read_network(
   source_table = "combined_who_network.csv"
 ) %>%
   mutate(
-    disease_key = scope_key(Disease_name),
-    pathogen_key = scope_key(Pathogen)
+    disease_key = host_network_clean_key(Disease_name),
+    pathogen_key = host_network_clean_key(Pathogen)
   ) %>%
   left_join(scope_by_who_key, by = c("disease_key", "pathogen_key")) %>%
   left_join(
@@ -452,8 +396,8 @@ all_columns <- unique(c(
 ))
 
 combined_network <- bind_rows(
-  add_missing_columns(who_network, all_columns),
-  add_missing_columns(master_network, all_columns)
+  host_network_add_missing_columns(who_network, all_columns),
+  host_network_add_missing_columns(master_network, all_columns)
 ) %>%
   group_by(Disease_name, PathogenTaxID, HostTaxID, DetectionMethod, MainSource) %>%
   mutate(
@@ -463,7 +407,7 @@ combined_network <- bind_rows(
   select(all_of(all_columns))
 
 combined_network_with_legacy <- combined_network %>%
-  mutate(legacy_association_key = association_key(.)) %>%
+  mutate(legacy_association_key = host_network_association_key(.)) %>%
   left_join(legacy_lookup, by = "legacy_association_key") %>%
   mutate(
     in_legacy_canonical_zoonotic_pathogen_host = coalesce(

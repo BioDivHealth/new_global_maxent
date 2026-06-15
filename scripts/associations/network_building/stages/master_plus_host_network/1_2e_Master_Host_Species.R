@@ -18,6 +18,13 @@ library(tidyverse)
 library(here)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "master_plus_host_network_helpers.R"
+))
 
 host_query_path <- who_diseases_host_query_path(
   "master_pathogen_host_query_units.csv"
@@ -40,36 +47,6 @@ clover_paths <- file.path(
   )
 )
 
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "null", "Null")] <- NA_character_
-  x <- str_replace_all(x, "\u00A0", " ")
-  x <- str_replace_all(x, "[\r\n\t]+", " ")
-  x <- str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
-
-normalize_name <- function(x) {
-  x %>%
-    clean_text() %>%
-    str_to_lower() %>%
-    str_replace_all("&", " and ") %>%
-    str_replace_all("[^a-z0-9]+", " ") %>%
-    str_squish()
-}
-
-split_semicolon_values <- function(x) {
-  x <- clean_text(x)
-  if (is.na(x)) {
-    return(character(0))
-  }
-  values <- str_split(x, ";", simplify = FALSE)[[1]] %>%
-    str_squish() %>%
-    discard(~ .x == "")
-  unique(values)
-}
-
 required_inputs <- c(host_query_path)
 missing_inputs <- required_inputs[!file.exists(required_inputs)]
 if (length(missing_inputs) > 0) {
@@ -82,7 +59,7 @@ if (length(missing_clover) > 0) {
 }
 
 host_queries <- read_csv(host_query_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), host_network_clean_text))
 
 required_query_cols <- c(
   "analysis_unit_id",
@@ -115,8 +92,11 @@ active_queries <- host_queries %>%
     host_query_include_default = coalesce(host_query_include_default, FALSE),
     match_review_flag = coalesce(match_review_flag, FALSE),
     shared_species_proxy_flag = coalesce(shared_species_proxy_flag, FALSE),
-    query_pathogen_keys = map(host_query_pathogen_names, ~ normalize_name(split_semicolon_values(.x))),
-    query_taxids = map(host_query_taxids, split_semicolon_values),
+    query_pathogen_keys = map(
+      host_query_pathogen_names,
+      ~ host_network_clean_key(host_network_split_semicolon_values(.x))
+    ),
+    query_taxids = map(host_query_taxids, host_network_split_semicolon_values),
     query_has_taxids = map_int(query_taxids, length) > 0,
     query_has_names = map_int(query_pathogen_keys, length) > 0
   )
@@ -128,50 +108,50 @@ if (!exists("virion_data")) {
 virion_links <- virion_data$virion %>%
   transmute(
     source = "virion",
-    source_pathogen_name = clean_text(Virus),
-    source_pathogen_taxid = clean_text(VirusTaxID),
+    source_pathogen_name = host_network_clean_text(Virus),
+    source_pathogen_taxid = host_network_clean_text(VirusTaxID),
     source_pathogen_type = "virus",
-    source_pathogen_family = clean_text(VirusFamily),
-    source_pathogen_order = clean_text(VirusOrder),
-    source_pathogen_class = clean_text(VirusClass),
-    source_host_name = clean_text(Host),
-    source_host_taxid = clean_text(HostTaxID),
-    source_host_genus = clean_text(HostGenus),
-    source_host_family = clean_text(HostFamily),
-    source_host_order = clean_text(HostOrder),
-    source_host_class = clean_text(HostClass),
-    source_database = clean_text(Database),
-    source_assoc_id = clean_text(AssocID),
-    source_detection_method = clean_text(DetectionMethod),
+    source_pathogen_family = host_network_clean_text(VirusFamily),
+    source_pathogen_order = host_network_clean_text(VirusOrder),
+    source_pathogen_class = host_network_clean_text(VirusClass),
+    source_host_name = host_network_clean_text(Host),
+    source_host_taxid = host_network_clean_text(HostTaxID),
+    source_host_genus = host_network_clean_text(HostGenus),
+    source_host_family = host_network_clean_text(HostFamily),
+    source_host_order = host_network_clean_text(HostOrder),
+    source_host_class = host_network_clean_text(HostClass),
+    source_database = host_network_clean_text(Database),
+    source_assoc_id = host_network_clean_text(AssocID),
+    source_detection_method = host_network_clean_text(DetectionMethod),
     source_host_flag_id = HostFlagID
   ) %>%
   mutate(
-    source_pathogen_key = normalize_name(source_pathogen_name),
+    source_pathogen_key = host_network_clean_key(source_pathogen_name),
     source_pathogen_taxid = str_remove(source_pathogen_taxid, "\\.0+$")
   )
 
 clover_links <- map_dfr(clover_paths, ~ read_csv(.x, show_col_types = FALSE, na = c("", "NA"))) %>%
   transmute(
     source = "clover",
-    source_pathogen_name = clean_text(Pathogen),
-    source_pathogen_taxid = clean_text(PathogenTaxID),
-    source_pathogen_type = clean_text(PathogenType),
-    source_pathogen_family = clean_text(PathogenFamily),
-    source_pathogen_order = clean_text(PathogenOrder),
-    source_pathogen_class = clean_text(PathogenClass),
-    source_host_name = clean_text(Host),
-    source_host_taxid = clean_text(HostTaxID),
-    source_host_genus = clean_text(HostGenus),
-    source_host_family = clean_text(HostFamily),
-    source_host_order = clean_text(HostOrder),
-    source_host_class = clean_text(HostClass),
-    source_database = clean_text(Database),
-    source_assoc_id = clean_text(AssocID),
-    source_detection_method = clean_text(DetectionMethod),
+    source_pathogen_name = host_network_clean_text(Pathogen),
+    source_pathogen_taxid = host_network_clean_text(PathogenTaxID),
+    source_pathogen_type = host_network_clean_text(PathogenType),
+    source_pathogen_family = host_network_clean_text(PathogenFamily),
+    source_pathogen_order = host_network_clean_text(PathogenOrder),
+    source_pathogen_class = host_network_clean_text(PathogenClass),
+    source_host_name = host_network_clean_text(Host),
+    source_host_taxid = host_network_clean_text(HostTaxID),
+    source_host_genus = host_network_clean_text(HostGenus),
+    source_host_family = host_network_clean_text(HostFamily),
+    source_host_order = host_network_clean_text(HostOrder),
+    source_host_class = host_network_clean_text(HostClass),
+    source_database = host_network_clean_text(Database),
+    source_assoc_id = host_network_clean_text(AssocID),
+    source_detection_method = host_network_clean_text(DetectionMethod),
     source_host_flag_id = NA
   ) %>%
   mutate(
-    source_pathogen_key = normalize_name(source_pathogen_name),
+    source_pathogen_key = host_network_clean_key(source_pathogen_name),
     source_pathogen_taxid = str_remove(source_pathogen_taxid, "\\.0+$")
   )
 
