@@ -52,33 +52,8 @@ zoonotic_network_output_path <- who_canonical_zoonotic_network_path()
 # ------------------------------------------------------------------------------|
 #      Manual overrides for known synonym / specificity cases -------------------|
 # ------------------------------------------------------------------------------|
-manual_pathogen_map <- tibble::tribble(
-  ~Pathogen_raw, ~Pathogen_canonical, ~canonicalization_status,
-  "Salmonella enterica", "Salmonella enterica non typhoidal serovars", "manual_specificity_map",
-  "Shigella dysenteriae", "Shigella dysenteriae serotype 1", "manual_specificity_map",
-  "Vibrio cholerae", "Vibrio cholerae serogroup 0139", "manual_specificity_map",
-  "Betacoronavirus pandemicum", "Subgenus Sarbecovirus", "manual_synonym_map",
-  "Severe acute respiratory syndrome-related coronavirus", "Subgenus Sarbecovirus", "manual_synonym_map",
-  "Betacoronavirus cameli", "Subgenus Merbecovirus", "manual_synonym_map",
-  "Zaire ebolavirus", "Orthoebolavirus zairense", "manual_synonym_map",
-  "Enterovirus c", "Enterovirus coxsackiepol", "manual_synonym_map",
-  "Human poliovirus", "Enterovirus coxsackiepol", "manual_synonym_map",
-  "Enterovirus alphacoxsackie", "Enterovirus alphacoxsackie 71", "manual_synonym_map",
-  "Enterovirus a", "Enterovirus alphacoxsackie 71", "manual_synonym_map",
-  "Enterovirus deconjuncti", "Enterovirus deconjucti 68", "manual_synonym_map",
-  "Alphainfluenzavirus influenzae", "Alphainfluenzavirus influenzae", "manual_group_retained",
-  "Protoparvovirus carnivoran1", "Protoparvovirus carnivoran", "manual_group_map",
-  "Protoparvovirus carnivoran3", "Protoparvovirus carnivoran", "manual_group_map",
-  "Protoparvovirus carnivoran4", "Protoparvovirus carnivoran", "manual_group_map",
-  "Protoparvovirus carnivoran5", "Protoparvovirus carnivoran", "manual_group_map"
-) %>%
-  mutate(Pathogen_raw_key = legacy_who_safe_lower(Pathogen_raw))
-
-zoonotic_override <- tibble::tribble(
-  ~Pathogen_canonical, ~is_zoonotic_override, ~zoonotic_status_override,
-  "Alphainfluenzavirus influenzae", TRUE, "zoonotic_group_retained"
-) %>%
-  mutate(Pathogen_canonical_key = legacy_who_safe_lower(Pathogen_canonical))
+manual_pathogen_map <- legacy_who_manual_pathogen_map()
+zoonotic_override <- legacy_who_zoonotic_override()
 
 # ------------------------------------------------------------------------------|
 #      Load and prepare WHO lookup tables --------------------------------------|
