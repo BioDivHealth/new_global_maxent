@@ -1,8 +1,12 @@
 # ------------------------------------------------------------------------------|
 # 3_5_VIRION_Visualise_Networks.R
 # ------------------------------------------------------------------------------|
+# Status : Deprecated exploratory script. It is not called by the legacy WHO
+#          compatibility wrapper and is schema-stale against the current
+#          virion_who_network.csv output from 3_4_VIRION_Networks.R.
+#
 # Purpose: Create network visualizations of WHO pathogen-host associations
-#          using standardized data from previous processing steps
+#          using standardized data from earlier VIRION processing steps.
 #
 # Input:   virion_who_network.csv (from 3_4_VIRION_Networks.R)
 #
