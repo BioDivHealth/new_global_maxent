@@ -55,7 +55,9 @@ Rscript scripts/associations/network_building/05_build_broad_taxa_support.R
 - `05_build_broad_taxa_support.R`: rebuilds broad-taxa candidate-strain
   support outputs. By default it summarizes existing NCBI metadata files
   without refreshing them; run with `--refresh-ncbi-metadata` only when
-  deliberately refreshing the external NCBI Datasets metadata stage.
+  deliberately refreshing the external NCBI Datasets metadata stage. The older
+  shell metadata workflow is retained under
+  `network_building/stages/broad_taxa_support/deprecated/` for provenance only.
 
 ### Project Goals
 

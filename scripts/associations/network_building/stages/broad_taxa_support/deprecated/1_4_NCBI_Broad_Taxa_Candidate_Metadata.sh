@@ -1,4 +1,10 @@
 #!/bin/zsh
+# Deprecated exploratory/manual workflow. The active broad-taxa entrypoint is
+# 05_build_broad_taxa_support.R, which calls the R metadata stage only when
+# --refresh-ncbi-metadata is explicitly requested. This shell version is kept
+# for provenance around older resolution/TSV/slim review outputs and should not
+# be treated as part of the current rebuild contract.
+
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
