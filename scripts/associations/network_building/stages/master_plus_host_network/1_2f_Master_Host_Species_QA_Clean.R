@@ -107,33 +107,23 @@ standard_hosts <- bind_rows(
   host_network_read_host_standardization(clover_host_standardized_path, "CLOVER")
 )
 
-lookup_source_taxid_host <- host_network_summarise_host_lookup(
-  standard_hosts,
-  c("host_source", "HostTaxID", "raw_host_key"),
-  "source_taxid_host",
-  "source_taxid_host"
+host_lookup_specs <- tribble(
+  ~lookup_name, ~group_cols, ~method_name, ~suffix,
+  "source_taxid_host", list(c("host_source", "HostTaxID", "raw_host_key")), "source_taxid_host", "source_taxid_host",
+  "source_taxid", list(c("host_source", "HostTaxID")), "source_taxid_unique", "source_taxid_unique",
+  "source_name", list(c("host_source", "raw_host_key")), "source_name", "source_name",
+  "cross_taxid", list(c("HostTaxID")), "cross_source_taxid_unique", "cross_source_taxid_unique"
 )
 
-lookup_source_taxid <- host_network_summarise_host_lookup(
-  standard_hosts,
-  c("host_source", "HostTaxID"),
-  "source_taxid_unique",
-  "source_taxid_unique"
-)
-
-lookup_source_name <- host_network_summarise_host_lookup(
-  standard_hosts,
-  c("host_source", "raw_host_key"),
-  "source_name",
-  "source_name"
-)
-
-lookup_cross_taxid <- host_network_summarise_host_lookup(
-  standard_hosts,
-  c("HostTaxID"),
-  "cross_source_taxid_unique",
-  "cross_source_taxid_unique"
-)
+host_lookups <- host_lookup_specs %>%
+  mutate(
+    lookup_data = pmap(
+      list(group_cols, method_name, suffix),
+      ~ host_network_summarise_host_lookup(standard_hosts, unlist(..1), ..2, ..3)
+    )
+  ) %>%
+  select(lookup_name, lookup_data) %>%
+  deframe()
 
 host_rows <- host_rows_raw %>%
   mutate(
@@ -142,19 +132,19 @@ host_rows <- host_rows_raw %>%
     raw_host_key = host_network_clean_key(Host_raw)
   ) %>%
   left_join(
-    lookup_source_taxid_host,
+    host_lookups$source_taxid_host,
     by = c("host_source", "HostTaxID", "raw_host_key")
   ) %>%
   left_join(
-    lookup_source_taxid,
+    host_lookups$source_taxid,
     by = c("host_source", "HostTaxID")
   ) %>%
   left_join(
-    lookup_source_name,
+    host_lookups$source_name,
     by = c("host_source", "raw_host_key")
   ) %>%
   left_join(
-    lookup_cross_taxid,
+    host_lookups$cross_taxid,
     by = "HostTaxID"
   ) %>%
   left_join(analysis_unit_metadata, by = "analysis_unit_id") %>%
@@ -378,12 +368,24 @@ stopifnot(!any(is.na(host_clean$Host[host_clean$downstream_default_include])))
 
 write_csv(host_clean, host_clean_output_path, na = "")
 
+default_clean_hosts <- host_clean %>%
+  filter(host_query_include_default, host_query_bucket == "default_clean")
+
+default_clean_host_counts <- default_clean_hosts %>%
+  distinct(
+    analysis_unit_id,
+    disease_master_name,
+    resolved_pathogen_name,
+    host_count_for_analysis_unit,
+    all_method_host_count_for_analysis_unit,
+    host_count_flag
+  )
+
 default_query_units <- host_rows_raw %>%
   filter(host_query_include_default, host_query_bucket == "default_clean") %>%
   distinct(analysis_unit_id, disease_master_name, Disease_name)
 
-default_units_with_hosts <- host_clean %>%
-  filter(host_query_include_default, host_query_bucket == "default_clean") %>%
+default_units_with_hosts <- default_clean_hosts %>%
   distinct(analysis_unit_id)
 
 default_zero_match <- default_query_units %>%
@@ -395,54 +397,26 @@ cat("Downstream default include rows:", sum(host_clean$downstream_default_includ
 cat("All-method default-clean rows:", sum(host_clean$host_query_include_default & host_clean$host_query_bucket == "default_clean"), "\n")
 cat("High-quality default-clean rows:", sum(host_clean$host_query_include_default & host_clean$host_query_bucket == "default_clean" & host_clean$high_quality_detection), "\n")
 cat("Default-clean diseases with zero matches:", nrow(default_zero_match), "\n")
-cat("Detection methods:\n")
-print(count(host_clean, high_quality_detection, DetectionMethod), n = Inf)
-cat("Host name cleaning methods:\n")
-print(count(host_clean, host_name_cleaning_method), n = Inf)
-cat("Host count flags:\n")
-print(count(host_clean, host_count_flag), n = Inf)
-cat("Host taxonomy flags:\n")
-print(count(host_clean, host_taxonomy_flag), n = Inf)
-cat("Human/model/livestock flags:\n")
-print(
-  host_clean %>%
+
+qa_tables <- list(
+  "Detection methods:" = count(host_clean, high_quality_detection, DetectionMethod),
+  "Host name cleaning methods:" = count(host_clean, host_name_cleaning_method),
+  "Host count flags:" = count(host_clean, host_count_flag),
+  "Host taxonomy flags:" = count(host_clean, host_taxonomy_flag),
+  "Human/model/livestock flags:" = host_clean %>%
     summarise(
       human_rows = sum(is_human_host),
       model_or_lab_rows = sum(is_model_or_lab_host),
       domestic_or_livestock_hint_rows = sum(is_domestic_or_livestock_hint)
     ),
-  n = Inf
-)
-cat("Large default-clean host lists:\n")
-print(
-  host_clean %>%
-    filter(host_query_include_default, host_query_bucket == "default_clean") %>%
-    distinct(analysis_unit_id, disease_master_name, resolved_pathogen_name, host_count_for_analysis_unit, host_count_flag) %>%
+  "Large default-clean host lists:" = default_clean_host_counts %>%
+    select(-all_method_host_count_for_analysis_unit) %>%
     filter(host_count_flag == "very_large") %>%
     arrange(desc(host_count_for_analysis_unit), disease_master_name),
-  n = Inf
-)
-cat("Narrow default-clean host lists:\n")
-print(
-  host_clean %>%
-    filter(host_query_include_default, host_query_bucket == "default_clean") %>%
-    distinct(analysis_unit_id, disease_master_name, resolved_pathogen_name, host_count_for_analysis_unit, all_method_host_count_for_analysis_unit, host_count_flag) %>%
+  "Narrow default-clean host lists:" = default_clean_host_counts %>%
     filter(host_count_flag == "very_narrow") %>%
     arrange(host_count_for_analysis_unit, disease_master_name),
-  n = Inf
-)
-cat("Narrow clean lists with broader all-method evidence:\n")
-print(
-  host_clean %>%
-    filter(host_query_include_default, host_query_bucket == "default_clean") %>%
-    distinct(
-      analysis_unit_id,
-      disease_master_name,
-      resolved_pathogen_name,
-      host_count_for_analysis_unit,
-      all_method_host_count_for_analysis_unit,
-      host_count_flag
-    ) %>%
+  "Narrow clean lists with broader all-method evidence:" = default_clean_host_counts %>%
     filter(
       host_count_flag == "very_narrow",
       all_method_host_count_for_analysis_unit > host_count_for_analysis_unit
@@ -451,14 +425,14 @@ print(
       desc(all_method_host_count_for_analysis_unit - host_count_for_analysis_unit),
       disease_master_name
     ),
-  n = Inf
-)
-cat("Review/proxy buckets:\n")
-print(
-  host_clean %>%
+  "Review/proxy buckets:" = host_clean %>%
     filter(host_query_bucket != "default_clean" | !host_query_include_default) %>%
     distinct(disease_master_name, resolved_pathogen_name, host_query_bucket, match_review_flag, shared_species_proxy_flag) %>%
-    arrange(host_query_bucket, disease_master_name),
-  n = Inf
+    arrange(host_query_bucket, disease_master_name)
 )
+
+iwalk(qa_tables, ~ {
+  cat(.y, "\n", sep = "")
+  print(.x, n = Inf)
+})
 cat("Wrote:", host_clean_output_path, "\n")
