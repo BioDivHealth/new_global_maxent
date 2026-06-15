@@ -24,6 +24,13 @@ library(tidyverse)
 library(here)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "master_plus_registry_helpers.R"
+))
 
 master_units_path <- who_master_disease_analysis_units_path()
 manual_path <- who_diseases_name_resolution_path(
@@ -41,37 +48,6 @@ combined_output_path <- who_master_plus_analysis_units_path()
 host_query_output_path <- who_diseases_host_query_path(
   "master_pathogen_host_query_units.csv"
 )
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "null", "Null")] <- NA_character_
-  x <- str_replace_all(x, "\u00A0", " ")
-  x <- str_replace_all(x, "[\r\n\t]+", " ")
-  x <- str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
-
-clean_key <- function(x) {
-  x %>%
-    clean_text() %>%
-    str_to_lower() %>%
-    str_replace_all("&", " and ") %>%
-    str_replace_all("[^a-z0-9]+", " ") %>%
-    str_squish()
-}
-
-coalesce_chr <- function(...) {
-  coalesce(!!!map(list(...), as.character))
-}
-
-pick_preferred <- function(preferred_source, virion_value, clover_value) {
-  case_when(
-    preferred_source == "virion" ~ as.character(virion_value),
-    preferred_source == "clover" ~ as.character(clover_value),
-    TRUE ~ NA_character_
-  )
-}
 
 transmission_rule_columns <- c(
   "analysis_unit_id",
@@ -97,11 +73,11 @@ if (length(missing_paths) > 0) {
 }
 
 master_units <- read_csv(master_units_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), registry_clean_text))
 
 manual_units <- read_csv(manual_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
-    across(where(is.character), clean_text),
+    across(where(is.character), registry_clean_text),
     analysis_unit_id = paste0("master_", master_row)
   ) %>%
   select(
@@ -120,7 +96,7 @@ manual_units <- read_csv(manual_path, show_col_types = FALSE, na = c("", "NA")) 
 
 master_matches <- read_csv(matches_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
-    across(where(is.character), clean_text),
+    across(where(is.character), registry_clean_text),
     across(
       c(
         clover_matched_taxids,
@@ -165,12 +141,12 @@ master_matches <- read_csv(matches_path, show_col_types = FALSE, na = c("", "NA"
 
 who_units <- read_csv(who_units_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
-    across(where(is.character), clean_text),
+    across(where(is.character), registry_clean_text),
     who_unit_row = row_number(),
-    who_analysis_unit_key = clean_key(analysis_unit),
-    who_analysis_unit_label_key = clean_key(analysis_unit_label),
-    who_source_disease_key = clean_key(source_disease_name),
-    who_source_pathogen_key = clean_key(source_pathogen)
+    who_analysis_unit_key = registry_clean_key(analysis_unit),
+    who_analysis_unit_label_key = registry_clean_key(analysis_unit_label),
+    who_source_disease_key = registry_clean_key(source_disease_name),
+    who_source_pathogen_key = registry_clean_key(source_pathogen)
   )
 
 transmission_rules <- tibble(
@@ -192,7 +168,7 @@ transmission_rules <- tibble(
 
 if (file.exists(transmission_rules_path)) {
   transmission_rules_raw <- read_csv(transmission_rules_path, show_col_types = FALSE, na = c("", "NA")) %>%
-    mutate(across(where(is.character), clean_text))
+    mutate(across(where(is.character), registry_clean_text))
 
   missing_transmission_cols <- setdiff(transmission_rule_columns, names(transmission_rules_raw))
   if (length(missing_transmission_cols) > 0) {
@@ -221,19 +197,19 @@ bridge <- master_units %>%
     ),
     bridge_to_existing_who = combined_row_type == "existing_who_analysis_unit",
     active_master_analysis_unit = include_as_analysis_unit == "yes",
-    resolved_disease_name_final = coalesce_chr(
+    resolved_disease_name_final = registry_coalesce_chr(
       match_resolved_disease_name,
       manual_resolved_disease_name,
       source_disease_name,
       disease_master_name
     ),
-    resolved_pathogen_name_final = coalesce_chr(
+    resolved_pathogen_name_final = registry_coalesce_chr(
       match_resolved_pathogen_name,
       manual_resolved_pathogen_name,
       analysis_unit,
       source_pathogen
     ),
-    resolved_pathogen_rank_final = coalesce_chr(
+    resolved_pathogen_rank_final = registry_coalesce_chr(
       match_resolved_pathogen_rank,
       manual_resolved_pathogen_rank,
       analysis_unit_rank
@@ -245,12 +221,12 @@ bridge <- master_units %>%
       TRUE ~ "not_reviewed"
     ),
     host_query_source = preferred_match_source,
-    host_query_pathogen_names = pick_preferred(
+    host_query_pathogen_names = registry_pick_preferred(
       preferred_match_source,
       virion_matched_pathogen_names,
       clover_matched_pathogen_names
     ),
-    host_query_taxids = pick_preferred(
+    host_query_taxids = registry_pick_preferred(
       preferred_match_source,
       virion_matched_taxids,
       clover_matched_taxids
@@ -360,10 +336,10 @@ bridge <- master_units %>%
 
 master_keys_for_who_overlap <- bridge %>%
   transmute(
-    analysis_unit_key = clean_key(analysis_unit),
-    analysis_unit_label_key = clean_key(analysis_unit_label),
-    source_disease_key = clean_key(source_disease_name),
-    source_pathogen_key = clean_key(source_pathogen)
+    analysis_unit_key = registry_clean_key(analysis_unit),
+    analysis_unit_label_key = registry_clean_key(analysis_unit_label),
+    source_disease_key = registry_clean_key(source_disease_name),
+    source_pathogen_key = registry_clean_key(source_pathogen)
   )
 
 who_only_units <- who_units %>%
@@ -380,8 +356,8 @@ who_only_units <- who_units %>%
     analysis_unit_id = paste0("who_", who_unit_row),
     master_row = NA_integer_,
     disease_master_name = NA_character_,
-    resolved_disease_name_final = coalesce_chr(source_disease_name, analysis_unit_label),
-    resolved_pathogen_name_final = coalesce_chr(analysis_unit, source_pathogen),
+    resolved_disease_name_final = registry_coalesce_chr(source_disease_name, analysis_unit_label),
+    resolved_pathogen_name_final = registry_coalesce_chr(analysis_unit, source_pathogen),
     resolved_pathogen_rank_final = analysis_unit_rank,
     include_status_final = if_else(analysis_decision == "keep", "yes_existing_who", "review"),
     active_master_analysis_unit = FALSE,

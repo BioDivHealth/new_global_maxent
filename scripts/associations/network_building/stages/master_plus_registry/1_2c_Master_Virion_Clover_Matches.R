@@ -24,6 +24,13 @@ library(stringdist)
 library(magrittr)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "master_plus_registry_helpers.R"
+))
 
 # ------------------------------| Helper paths |-------------------------------
 manual_path <- who_diseases_name_resolution_path(
@@ -57,24 +64,6 @@ clover_paths <- file.path(
 )
 
 # ------------------------------| Helpers |------------------------------------
-normalize_name <- function(x) {
-  x %>%
-    str_to_lower() %>%
-    str_replace_all("&", " and ") %>%
-    str_replace_all("[[:punct:]]+", " ") %>%
-    str_squish()
-}
-
-collapse_unique <- function(x) {
-  x <- unique(na.omit(as.character(x)))
-  x <- x[x != ""]
-  if (length(x) == 0) {
-    NA_character_
-  } else {
-    paste(x, collapse = "; ")
-  }
-}
-
 rank_in_scope <- c("species", "species_complex", "subspecies")
 include_states_in_scope <- "yes"
 
@@ -83,7 +72,7 @@ external_taxonomy_review <- tribble(
   "Alkhumra hemorrhagic fever virus", "NCBI Taxonomy", "172148", "Alkhumra hemorrhagic fever virus", "no rank", "Orthoflavivirus kyasanurense / Kyasanur Forest disease virus", "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=172148&mode=Info", "Found in NCBI but not in the local VIRION/CLOVER tables used here. Also standardizes spelling from Alkhurma to Alkhumra.",
   "Rocio virus", "NCBI Taxonomy", "64315", "Rocio virus", "no rank", "Orthoflavivirus ilheusense / Ilheus virus", "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=64315&mode=Info", "Found in NCBI but not in the local VIRION/CLOVER tables used here; NCBI places it under Orthoflavivirus ilheusense."
 ) %>%
-  mutate(query_key = normalize_name(resolved_pathogen_name))
+  mutate(query_key = registry_normalize_name(resolved_pathogen_name))
 
 manual_aliases <- read_csv(alias_path, show_col_types = FALSE, na = c("", "NA")) %>%
   rename(
@@ -93,8 +82,8 @@ manual_aliases <- read_csv(alias_path, show_col_types = FALSE, na = c("", "NA"))
   filter(!is.na(resolved_pathogen_name), !is.na(source), !is.na(source_name)) %>%
   mutate(
     source = str_to_lower(source),
-    query_key = normalize_name(resolved_pathogen_name),
-    source_key = normalize_name(source_name),
+    query_key = registry_normalize_name(resolved_pathogen_name),
+    source_key = registry_normalize_name(source_name),
     alias_review_flag = alias_type %in% c(
       "shared_species_proxy",
       "species_proxy",
@@ -116,7 +105,7 @@ if (length(unexpected_alias_sources) > 0) {
 make_matches <- function(query, source_table, source_name, max_dist = 0.08) {
   source_proc <- source_table %>%
     filter(!is.na(source_pathogen_name), source_pathogen_name != "") %>%
-    mutate(source_key = normalize_name(source_pathogen_name)) %>%
+    mutate(source_key = registry_normalize_name(source_pathogen_name)) %>%
     distinct(source, source_pathogen_name, source_taxid, source_family, source_type, source_key)
 
   exact_matches <- query %>%
@@ -182,7 +171,7 @@ manual_units <- read_csv(manual_path, show_col_types = FALSE, na = c("", "NA")) 
   ) %>%
   mutate(
     analysis_unit_id = paste0("master_", master_row),
-    query_key = normalize_name(resolved_pathogen_name),
+    query_key = registry_normalize_name(resolved_pathogen_name),
     preferred_match_source = if_else(
       str_detect(str_to_lower(pathogen_family_master), "viridae$|virus|lyssa|hanta|arena|flavi|toga|paramyxo|peribunya|reo|pox"),
       "virion",
@@ -272,12 +261,12 @@ best_matches <- all_candidates %>%
     resolved_pathogen_rank = first(resolved_pathogen_rank),
     include_as_analysis_unit = first(include_as_analysis_unit),
     split_group = first(split_group),
-    matched_pathogen_names = collapse_unique(source_pathogen_name),
-    matched_taxids = collapse_unique(source_taxid),
-    matched_families = collapse_unique(source_family),
-    matched_source_types = collapse_unique(source_type),
-    alias_types = collapse_unique(alias_type),
-    alias_notes = collapse_unique(alias_notes),
+    matched_pathogen_names = registry_collapse_unique(source_pathogen_name),
+    matched_taxids = registry_collapse_unique(source_taxid),
+    matched_families = registry_collapse_unique(source_family),
+    matched_source_types = registry_collapse_unique(source_type),
+    alias_types = registry_collapse_unique(alias_type),
+    alias_notes = registry_collapse_unique(alias_notes),
     alias_review_flag = any(alias_review_flag, na.rm = TRUE),
     best_match_type = first(match_type),
     best_match_distance = first(match_distance),
@@ -327,7 +316,7 @@ best_matches <- all_candidates %>%
   ) %>%
   rowwise() %>%
   mutate(
-    match_review_notes = collapse_unique(c(virion_alias_notes, clover_alias_notes))
+    match_review_notes = registry_collapse_unique(c(virion_alias_notes, clover_alias_notes))
   ) %>%
   ungroup() %>%
   arrange(master_row)
@@ -338,7 +327,7 @@ write_csv(best_matches, match_output_path, na = "")
 
 external_review <- best_matches %>%
   filter(overall_match_status == "unmatched") %>%
-  mutate(query_key = normalize_name(resolved_pathogen_name)) %>%
+  mutate(query_key = registry_normalize_name(resolved_pathogen_name)) %>%
   left_join(
     external_taxonomy_review %>% select(-resolved_pathogen_name),
     by = "query_key"
