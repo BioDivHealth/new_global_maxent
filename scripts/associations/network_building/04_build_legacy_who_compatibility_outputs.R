@@ -32,33 +32,23 @@ source_network_working_inputs()
 # 2. Parse command-line arguments ----
 # -----------------------------------------------------------------------------|
 
-args <- commandArgs(trailingOnly = TRUE)
-valid_flags <- c("--refresh-host-taxonomy", "--help", "-h")
-unknown_args <- setdiff(args, valid_flags)
-if (length(unknown_args) > 0) {
-  stop("Unknown arguments: ", paste(unknown_args, collapse = ", "), call. = FALSE)
-}
-
-if (any(args %in% c("--help", "-h"))) {
-  cat(
-    paste(
-      "Legacy WHO compatibility network wrapper",
-      "",
-      "Usage:",
-      "  Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_outputs.R",
-      "  Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_outputs.R --refresh-host-taxonomy",
-      "",
-      "Options:",
-      "  --refresh-host-taxonomy  Also run the CLOVER and VIRION host taxonomy",
-      "                           standardization stages. Default mode reuses",
-      "                           existing standardized host-taxonomy CSVs.",
-      "  --help, -h               Show this help message.",
-      sep = "\n"
-    ),
-    "\n"
+args <- parse_network_wrapper_args(
+  valid_flags = c("--refresh-host-taxonomy", "--help", "-h"),
+  help_text = paste(
+    "Legacy WHO compatibility network wrapper",
+    "",
+    "Usage:",
+    "  Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_outputs.R",
+    "  Rscript scripts/associations/network_building/04_build_legacy_who_compatibility_outputs.R --refresh-host-taxonomy",
+    "",
+    "Options:",
+    "  --refresh-host-taxonomy  Also run the CLOVER and VIRION host taxonomy",
+    "                           standardization stages. Default mode reuses",
+    "                           existing standardized host-taxonomy CSVs.",
+    "  --help, -h               Show this help message.",
+    sep = "\n"
   )
-  quit(status = 0)
-}
+)
 
 refresh_host_taxonomy <- "--refresh-host-taxonomy" %in% args
 

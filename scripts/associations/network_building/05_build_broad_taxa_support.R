@@ -30,34 +30,24 @@ source_network_working_inputs()
 # 2. Parse command-line arguments ----
 # -----------------------------------------------------------------------------|
 
-args <- commandArgs(trailingOnly = TRUE)
-valid_flags <- c("--refresh-ncbi-metadata", "--help", "-h")
-unknown_args <- setdiff(args, valid_flags)
-if (length(unknown_args) > 0) {
-  stop("Unknown arguments: ", paste(unknown_args, collapse = ", "), call. = FALSE)
-}
-
-if (any(args %in% c("--help", "-h"))) {
-  cat(
-    paste(
-      "Broad-taxa support wrapper",
-      "",
-      "Usage:",
-      "  Rscript scripts/associations/network_building/05_build_broad_taxa_support.R",
-      "  Rscript scripts/associations/network_building/05_build_broad_taxa_support.R --refresh-ncbi-metadata",
-      "",
-      "Options:",
-      "  --refresh-ncbi-metadata  Also run the NCBI Datasets metadata refresh.",
-      "                           Default mode rebuilds candidate strains only",
-      "                           and summarizes existing NCBI outputs when",
-      "                           present.",
-      "  --help, -h               Show this help message.",
-      sep = "\n"
-    ),
-    "\n"
+args <- parse_network_wrapper_args(
+  valid_flags = c("--refresh-ncbi-metadata", "--help", "-h"),
+  help_text = paste(
+    "Broad-taxa support wrapper",
+    "",
+    "Usage:",
+    "  Rscript scripts/associations/network_building/05_build_broad_taxa_support.R",
+    "  Rscript scripts/associations/network_building/05_build_broad_taxa_support.R --refresh-ncbi-metadata",
+    "",
+    "Options:",
+    "  --refresh-ncbi-metadata  Also run the NCBI Datasets metadata refresh.",
+    "                           Default mode rebuilds candidate strains only",
+    "                           and summarizes existing NCBI outputs when",
+    "                           present.",
+    "  --help, -h               Show this help message.",
+    sep = "\n"
   )
-  quit(status = 0)
-}
+)
 
 refresh_ncbi_metadata <- "--refresh-ncbi-metadata" %in% args
 

@@ -28,7 +28,29 @@ network_building_script <- function(filename) {
 }
 
 # -----------------------------------------------------------------------------|
-# 2. Stage execution ----
+# 2. Command-line arguments ----
+# -----------------------------------------------------------------------------|
+
+parse_network_wrapper_args <- function(
+  valid_flags,
+  help_text,
+  args = commandArgs(trailingOnly = TRUE)
+) {
+  unknown_args <- setdiff(args, valid_flags)
+  if (length(unknown_args) > 0) {
+    stop("Unknown arguments: ", paste(unknown_args, collapse = ", "), call. = FALSE)
+  }
+
+  if (any(args %in% c("--help", "-h"))) {
+    cat(help_text, "\n")
+    quit(status = 0)
+  }
+
+  args
+}
+
+# -----------------------------------------------------------------------------|
+# 3. Stage execution ----
 # -----------------------------------------------------------------------------|
 
 run_stage <- function(stage_file, running_label, failure_label = running_label) {
@@ -44,7 +66,7 @@ run_stage <- function(stage_file, running_label, failure_label = running_label) 
 }
 
 # -----------------------------------------------------------------------------|
-# 3. Output summaries ----
+# 4. Output summaries ----
 # -----------------------------------------------------------------------------|
 
 summarize_csv_output <- function(name, path, required = TRUE) {
