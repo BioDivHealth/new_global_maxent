@@ -102,67 +102,6 @@ if (length(unexpected_alias_sources) > 0) {
   )
 }
 
-make_matches <- function(query, source_table, source_name, max_dist = 0.08) {
-  source_proc <- source_table %>%
-    filter(!is.na(source_pathogen_name), source_pathogen_name != "") %>%
-    mutate(source_key = registry_normalize_name(source_pathogen_name)) %>%
-    distinct(source, source_pathogen_name, source_taxid, source_family, source_type, source_key)
-
-  exact_matches <- query %>%
-    inner_join(source_proc, by = c("query_key" = "source_key")) %>%
-    mutate(match_type = "exact", match_distance = 0)
-
-  alias_matches <- query %>%
-    inner_join(
-      manual_aliases %>%
-        filter(source == .env$source_name) %>%
-        select(query_key, source_key, alias_source_name = source_name, alias_type, alias_notes, alias_review_flag),
-      by = "query_key"
-    ) %>%
-    inner_join(source_proc, by = "source_key", relationship = "many-to-many") %>%
-    mutate(match_type = "manual_alias", match_distance = 0)
-
-  unmatched <- query %>%
-    filter(!analysis_unit_id %in% c(exact_matches$analysis_unit_id, alias_matches$analysis_unit_id))
-
-  fuzzy_matches <- tibble()
-  if (nrow(unmatched) > 0 && nrow(source_proc) > 0) {
-    fuzzy_matches <- map_dfr(seq_len(nrow(unmatched)), function(i) {
-      query_row <- unmatched[i, ]
-      distances <- stringdist::stringdist(
-        query_row$query_key,
-        source_proc$source_key,
-        method = "jw"
-      )
-      keep <- which(distances <= max_dist)
-      if (length(keep) == 0) {
-        return(tibble())
-      }
-      keep <- keep[order(distances[keep], source_proc$source_pathogen_name[keep])]
-      keep <- head(keep, 5)
-
-      bind_cols(
-        query_row[rep(1, length(keep)), ],
-        source_proc[keep, ] %>% select(-source)
-      ) %>%
-        mutate(
-          match_distance = distances[keep],
-          match_type = "fuzzy_candidate"
-        )
-    })
-  }
-
-  bind_rows(exact_matches, alias_matches, fuzzy_matches) %>%
-    mutate(source = source_name) %>%
-    select(
-      analysis_unit_id, master_row, disease_master_name, resolved_disease_name,
-      resolved_pathogen_name, resolved_pathogen_rank, include_as_analysis_unit,
-      split_group, source, source_pathogen_name, source_taxid, source_family,
-      source_type, match_type, match_distance, alias_type, alias_notes, alias_review_flag
-    ) %>%
-    distinct()
-}
-
 # ------------------------------| Load query rows |----------------------------
 manual_units <- read_csv(manual_path, show_col_types = FALSE, na = c("", "NA")) %>%
   filter(
@@ -221,21 +160,21 @@ clover_taxonomy <- map_dfr(
   distinct()
 
 # ------------------------------| Match |--------------------------------------
-virion_candidates <- make_matches(
-  manual_units,
-  virion_taxonomy,
-  source_name = "virion",
-  max_dist = 0.08
+source_taxonomies <- list(
+  virion = virion_taxonomy,
+  clover = clover_taxonomy
 )
 
-clover_candidates <- make_matches(
-  manual_units,
-  clover_taxonomy,
-  source_name = "clover",
-  max_dist = 0.08
-)
-
-all_candidates <- bind_rows(virion_candidates, clover_candidates) %>%
+all_candidates <- imap_dfr(
+  source_taxonomies,
+  ~ registry_make_source_matches(
+    manual_units,
+    .x,
+    source_name = .y,
+    manual_aliases = manual_aliases,
+    max_dist = 0.08
+  )
+) %>%
   mutate(
     match_status = case_when(
       match_type %in% c("exact", "manual_alias") ~ "accepted_candidate",
