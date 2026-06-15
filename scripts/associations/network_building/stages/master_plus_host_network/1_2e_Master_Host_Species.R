@@ -162,57 +162,9 @@ all_source_links <- bind_rows(virion_links, clover_links) %>%
     !is.na(source_host_name)
   )
 
-match_one_query <- function(row_df, source_links) {
-  source_name <- row_df$host_query_source[[1]]
-  source_subset <- source_links %>% filter(source == source_name)
-  if (nrow(source_subset) == 0) {
-    return(tibble())
-  }
-
-  taxids <- row_df$query_taxids[[1]]
-  pathogen_keys <- row_df$query_pathogen_keys[[1]]
-
-  matched <- source_subset %>% mutate(match_method = NA_character_)
-
-  if (length(taxids) > 0) {
-    matched <- matched %>%
-      filter(!is.na(source_pathogen_taxid), source_pathogen_taxid %in% taxids) %>%
-      mutate(match_method = "taxid")
-  } else if (length(pathogen_keys) > 0) {
-    matched <- matched %>%
-      filter(!is.na(source_pathogen_key), source_pathogen_key %in% pathogen_keys) %>%
-      mutate(match_method = "name")
-  } else {
-    matched <- tibble()
-  }
-
-  if (nrow(matched) == 0) {
-    return(tibble())
-  }
-
-  matched %>%
-    mutate(
-      analysis_unit_id = row_df$analysis_unit_id[[1]],
-      master_row = row_df$master_row[[1]],
-      disease_master_name = row_df$disease_master_name[[1]],
-      resolved_disease_name = row_df$resolved_disease_name[[1]],
-      resolved_pathogen_name = row_df$resolved_pathogen_name[[1]],
-      resolved_pathogen_rank = row_df$resolved_pathogen_rank[[1]],
-      preferred_match_source = row_df$preferred_match_source[[1]],
-      host_query_bucket = row_df$host_query_bucket[[1]],
-      host_query_include_default = row_df$host_query_include_default[[1]],
-      host_query_source = row_df$host_query_source[[1]],
-      host_query_pathogen_names = row_df$host_query_pathogen_names[[1]],
-      host_query_taxids = row_df$host_query_taxids[[1]],
-      match_review_flag = row_df$match_review_flag[[1]],
-      shared_species_proxy_flag = row_df$shared_species_proxy_flag[[1]],
-      match_review_notes = row_df$match_review_notes[[1]]
-    )
-}
-
 matched_rows <- map_dfr(
   seq_len(nrow(active_queries)),
-  ~ match_one_query(active_queries[.x, , drop = FALSE], all_source_links)
+  ~ host_network_match_one_query(active_queries[.x, , drop = FALSE], all_source_links)
 )
 
 matched_rows <- matched_rows %>%

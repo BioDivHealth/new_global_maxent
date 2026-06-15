@@ -38,56 +38,6 @@ clover_host_standardized_path <- file.path(
   "clover_host_species_standardized.csv"
 )
 
-read_host_standardization <- function(path, source_name) {
-  read_csv(path, show_col_types = FALSE, na = c("", "NA")) %>%
-    mutate(
-      across(where(is.character), host_network_clean_text),
-      host_source = source_name,
-      HostTaxID = host_network_clean_text(HostTaxID),
-      raw_host_key = host_network_clean_key(Host),
-      std_host = coalesce(host_network_clean_text(correct_name), host_network_clean_text(Host)),
-      std_host_phylum = host_network_clean_text(Phylum),
-      std_host_class = host_network_clean_text(Class),
-      std_host_family = host_network_clean_text(Family),
-      std_host_order = host_network_clean_text(Order)
-    ) %>%
-    select(
-      host_source,
-      HostTaxID,
-      raw_host_key,
-      std_host,
-      std_host_phylum,
-      std_host_class,
-      std_host_family,
-      std_host_order
-    ) %>%
-    filter(!is.na(std_host))
-}
-
-summarise_host_lookup <- function(data, group_cols, method_name, suffix) {
-  clean_col <- paste0("clean_host_", suffix)
-  phylum_col <- paste0("HostPhylum_", suffix)
-  class_col <- paste0("HostClass_", suffix)
-  family_col <- paste0("HostFamily_", suffix)
-  order_col <- paste0("HostOrder_", suffix)
-
-  data %>%
-    filter(if_all(all_of(group_cols), ~ !is.na(.x))) %>%
-    group_by(across(all_of(group_cols))) %>%
-    summarise(
-      n_std_hosts = n_distinct(std_host),
-      "{clean_col}" := host_network_first_non_missing(std_host),
-      "{phylum_col}" := host_network_first_non_missing(std_host_phylum),
-      "{class_col}" := host_network_first_non_missing(std_host_class),
-      "{family_col}" := host_network_first_non_missing(std_host_family),
-      "{order_col}" := host_network_first_non_missing(std_host_order),
-      .groups = "drop"
-    ) %>%
-    filter(n_std_hosts == 1) %>%
-    select(-n_std_hosts) %>%
-    mutate("{paste0('method_', suffix)}" := method_name)
-}
-
 required_input_cols <- c(
   "Pathogen",
   "PathogenTaxID",
@@ -153,32 +103,32 @@ if (file.exists(analysis_units_path)) {
 }
 
 standard_hosts <- bind_rows(
-  read_host_standardization(virion_host_standardized_path, "VIRION"),
-  read_host_standardization(clover_host_standardized_path, "CLOVER")
+  host_network_read_host_standardization(virion_host_standardized_path, "VIRION"),
+  host_network_read_host_standardization(clover_host_standardized_path, "CLOVER")
 )
 
-lookup_source_taxid_host <- summarise_host_lookup(
+lookup_source_taxid_host <- host_network_summarise_host_lookup(
   standard_hosts,
   c("host_source", "HostTaxID", "raw_host_key"),
   "source_taxid_host",
   "source_taxid_host"
 )
 
-lookup_source_taxid <- summarise_host_lookup(
+lookup_source_taxid <- host_network_summarise_host_lookup(
   standard_hosts,
   c("host_source", "HostTaxID"),
   "source_taxid_unique",
   "source_taxid_unique"
 )
 
-lookup_source_name <- summarise_host_lookup(
+lookup_source_name <- host_network_summarise_host_lookup(
   standard_hosts,
   c("host_source", "raw_host_key"),
   "source_name",
   "source_name"
 )
 
-lookup_cross_taxid <- summarise_host_lookup(
+lookup_cross_taxid <- host_network_summarise_host_lookup(
   standard_hosts,
   c("HostTaxID"),
   "cross_source_taxid_unique",

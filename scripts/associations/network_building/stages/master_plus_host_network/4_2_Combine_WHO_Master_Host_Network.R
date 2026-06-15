@@ -121,118 +121,6 @@ if (length(missing_paths) > 0) {
   stop("Missing required input files: ", paste(missing_paths, collapse = "; "))
 }
 
-read_network <- function(path, host_network_source, source_table) {
-  data <- read_csv(path, show_col_types = FALSE, na = c("", "NA")) %>%
-    mutate(
-      across(where(is.character), host_network_clean_text),
-      PathogenTaxID = host_network_clean_text(PathogenTaxID),
-      HostTaxID = host_network_clean_text(HostTaxID),
-      high_quality_detection = coalesce(high_quality_detection, FALSE),
-      downstream_default_include = coalesce(downstream_default_include, FALSE),
-      host_network_source = host_network_source,
-      source_table = source_table
-    )
-
-  missing_required <- setdiff(required_common, names(data))
-  if (length(missing_required) > 0) {
-    stop(
-      source_table,
-      " missing required columns: ",
-      paste(missing_required, collapse = ", ")
-    )
-  }
-
-  data <- host_network_add_missing_columns(
-    data,
-    c(
-      "Host_raw",
-      "host_name_cleaning_method",
-      "source_database",
-      "source_assoc_id",
-      "source_host_flag_id",
-      "host_taxonomy_ready",
-      "host_taxonomy_flag",
-      "is_human_host",
-      "is_model_or_lab_host",
-      "is_domestic_or_livestock_hint"
-    )
-  )
-
-  data %>%
-    mutate(
-      Host_raw = coalesce(Host_raw, Host),
-      host_name_cleaning_method = coalesce(host_name_cleaning_method, "existing_who_network_host"),
-      source_database = coalesce(source_database, MainSource),
-      host_taxonomy_flag = case_when(
-        !is.na(host_taxonomy_flag) ~ host_taxonomy_flag,
-        is.na(Host) ~ "missing_name",
-        is.na(HostTaxID) ~ "missing_taxid",
-        str_detect(str_to_lower(Host), "\\b(sp|spp|species|unidentified|unknown|uncultured)\\b\\.?") ~ "unresolved_sp",
-        str_detect(str_to_lower(Host), "^[a-z][a-z-]+\\s+[a-z][a-z.-]+(\\s+[a-z][a-z.-]+)?$") ~ "species_like",
-        TRUE ~ "unresolved_sp"
-      ),
-      host_taxonomy_ready = coalesce(
-        host_taxonomy_ready,
-        host_taxonomy_flag == "species_like" & !is.na(HostTaxID)
-      ),
-      is_human_host = coalesce(
-        is_human_host,
-        str_to_lower(Host) == "homo sapiens" | HostTaxID == "9606"
-      ),
-      is_model_or_lab_host = coalesce(
-        is_model_or_lab_host,
-        str_detect(
-          str_to_lower(Host),
-          paste(
-            c(
-              "^homo sapiens$",
-              "^mus musculus$",
-              "^rattus norvegicus$",
-              "^rattus rattus$",
-              "^cavia porcellus$",
-              "^mesocricetus auratus$",
-              "^oryctolagus cuniculus$",
-              "^macaca\\b",
-              "^chlorocebus\\b",
-              "^callithrix\\b",
-              "^gallus gallus$"
-            ),
-            collapse = "|"
-          )
-        )
-      ),
-      is_domestic_or_livestock_hint = coalesce(
-        is_domestic_or_livestock_hint,
-        str_detect(
-          str_to_lower(Host),
-          paste(
-            c(
-              "^bos taurus$",
-              "^bos indicus$",
-              "^bubalus bubalis$",
-              "^ovis aries$",
-              "^capra hircus$",
-              "^sus scrofa$",
-              "^equus caballus$",
-              "^equus asinus$",
-              "^camelus\\b",
-              "^lama glama$",
-              "^alpaca$",
-              "^vicugna pacos$",
-              "^gallus gallus$",
-              "^meleagris gallopavo$",
-              "^anas platyrhynchos$",
-              "^anas platyrhynchos domesticus$",
-              "^canis lupus familiaris$",
-              "^felis catus$"
-            ),
-            collapse = "|"
-          )
-        )
-      )
-    )
-}
-
 analysis_units <- read_csv(analysis_units_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(across(where(is.character), host_network_clean_text))
 
@@ -280,34 +168,9 @@ scope_by_analysis_unit_id <- analysis_units %>%
   ) %>%
   distinct(analysis_unit_id, .keep_all = TRUE)
 
-make_scope_aliases <- function(data, source_priority) {
-  alias_cols <- intersect(
-    c("analysis_unit", "analysis_unit_label", "source_pathogen", "source_previous_name", "source_msl39_viral_name"),
-    names(data)
-  )
-
-  data %>%
-    select(
-      any_of(c("source_disease_name", "modelling_scope_status", "modelling_scope_reason")),
-      all_of(alias_cols)
-    ) %>%
-    pivot_longer(
-      cols = all_of(alias_cols),
-      names_to = "pathogen_alias_source",
-      values_to = "pathogen_alias"
-    ) %>%
-    transmute(
-      scope_priority = source_priority,
-      disease_key = host_network_clean_key(source_disease_name),
-      pathogen_key = host_network_clean_key(pathogen_alias),
-      modelling_scope_status,
-      modelling_scope_reason
-    )
-}
-
 scope_by_who_key <- bind_rows(
-  make_scope_aliases(analysis_units, 1L),
-  make_scope_aliases(who_keep_units, 2L)
+  host_network_make_scope_aliases(analysis_units, 1L),
+  host_network_make_scope_aliases(who_keep_units, 2L)
 ) %>%
   filter(!is.na(disease_key), !is.na(pathogen_key)) %>%
   arrange(scope_priority) %>%
@@ -347,10 +210,11 @@ scope_by_who_disease <- bind_rows(
     .groups = "drop"
   )
 
-who_network <- read_network(
+who_network <- host_network_read_source_network(
   who_network_path,
   host_network_source = "who",
-  source_table = "combined_who_network.csv"
+  source_table = "combined_who_network.csv",
+  required_common = required_common
 ) %>%
   mutate(
     disease_key = host_network_clean_key(Disease_name),
@@ -380,10 +244,11 @@ who_network <- read_network(
     -ends_with("_disease")
   )
 
-master_network <- read_network(
+master_network <- host_network_read_source_network(
   master_host_path,
   host_network_source = "master",
-  source_table = "master_pathogen_host_species_clean.csv"
+  source_table = "master_pathogen_host_species_clean.csv",
+  required_common = required_common
 ) %>%
   select(-any_of(c("modelling_scope_status", "modelling_scope_reason"))) %>%
   left_join(scope_by_analysis_unit_id, by = "analysis_unit_id")
