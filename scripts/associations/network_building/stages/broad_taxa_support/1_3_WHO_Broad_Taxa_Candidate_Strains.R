@@ -16,16 +16,13 @@ library(pacman)
 p_load(dplyr, here, readr, stringr)
 
 source(here("scripts", "associations", "working_inputs.R"))
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
-  x <- stringr::str_replace_all(x, "\u00A0", " ")
-  x <- stringr::str_replace_all(x, "[\r\n\t]+", " ")
-  x <- stringr::str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "broad_taxa_support_helpers.R"
+))
 
 candidate_seed_path <- who_diseases_broad_taxa_manual_path(
   "who_broad_taxa_candidate_strains_seed.csv"
@@ -44,14 +41,14 @@ analysis_units_keep <- read_csv(
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), broad_taxa_clean_text))
 
 candidate_strains <- read_csv(
   candidate_seed_path,
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), broad_taxa_clean_text))
 
 candidate_strains <- candidate_strains %>%
   mutate(

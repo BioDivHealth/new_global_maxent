@@ -23,45 +23,13 @@ library(pacman)
 p_load(dplyr, here, jsonlite, purrr, readr, stringr, tibble)
 
 source(here("scripts", "associations", "working_inputs.R"))
-
-clean_text <- function(x) {
-  x <- as.character(x)
-  x[x %in% c("", "NA", "NaN", "No data", "null", "Null")] <- NA_character_
-  x <- stringr::str_replace_all(x, "\u00A0", " ")
-  x <- stringr::str_replace_all(x, "[\r\n\t]+", " ")
-  x <- stringr::str_squish(x)
-  x[x == ""] <- NA_character_
-  x
-}
-
-collapse_names <- function(x) {
-  x <- unlist(x, recursive = TRUE, use.names = FALSE)
-  x <- clean_text(x)
-  x <- unique(stats::na.omit(x))
-  if (length(x) == 0) {
-    return(NA_character_)
-  }
-  paste(x, collapse = "; ")
-}
-
-collapse_lineage <- function(x) {
-  if (is.null(x) || length(x) == 0) {
-    return(NA_character_)
-  }
-
-  lineage_names <- purrr::map_chr(x, ~ clean_text(.x$name %||% NA_character_))
-  lineage_names <- unique(stats::na.omit(lineage_names))
-
-  if (length(lineage_names) == 0) {
-    return(NA_character_)
-  }
-
-  paste(lineage_names, collapse = "; ")
-}
-
-`%||%` <- function(x, y) {
-  if (is.null(x) || length(x) == 0) y else x
-}
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "broad_taxa_support_helpers.R"
+))
 
 candidate_path <- who_diseases_broad_taxa_staged_path(
   "who_broad_taxa_candidate_strains.csv"
@@ -113,7 +81,7 @@ candidate_strains <- read_csv(
   show_col_types = FALSE,
   na = c("", "NA")
 ) %>%
-  mutate(across(where(is.character), clean_text))
+  mutate(across(where(is.character), broad_taxa_clean_text))
 
 accession_bases <- candidate_strains %>%
   transmute(accession_base = stringr::str_replace(accession, "\\.[0-9]+$", "")) %>%
@@ -197,7 +165,7 @@ fetch_accession_summary <- function(accession_base, max_version = 8, timeout_sec
 
     return(list(
       accession_base = accession_base,
-      accession_version = clean_text(report$accession %||% accession_try),
+      accession_version = broad_taxa_clean_text(report$accession %||% accession_try),
       raw_json = out_json,
       report = report
     ))
@@ -244,27 +212,27 @@ extract_report_row <- function(x) {
 
   tibble(
     accession_base = x$accession_base,
-    accession_version = clean_text(report$accession %||% NA_character_),
+    accession_version = broad_taxa_clean_text(report$accession %||% NA_character_),
     ncbi_lookup_status = "ok",
-    completeness = clean_text(report$completeness %||% NA_character_),
+    completeness = broad_taxa_clean_text(report$completeness %||% NA_character_),
     is_annotated = report$is_annotated %||% NA,
     length = as.numeric(report$length %||% NA_real_),
     protein_count = as.numeric(report$protein_count %||% NA_real_),
-    source_database = clean_text(report$source_database %||% NA_character_),
-    release_date = clean_text(report$release_date %||% NA_character_),
-    update_date = clean_text(report$update_date %||% NA_character_),
-    isolate_name = clean_text((report$isolate %||% list())$name %||% NA_character_),
-    geographic_location = clean_text((report$location %||% list())$geographic_location %||% NA_character_),
-    geographic_region = clean_text((report$location %||% list())$geographic_region %||% NA_character_),
-    virus_name_ncbi = clean_text((report$virus %||% list())$organism_name %||% NA_character_),
+    source_database = broad_taxa_clean_text(report$source_database %||% NA_character_),
+    release_date = broad_taxa_clean_text(report$release_date %||% NA_character_),
+    update_date = broad_taxa_clean_text(report$update_date %||% NA_character_),
+    isolate_name = broad_taxa_clean_text((report$isolate %||% list())$name %||% NA_character_),
+    geographic_location = broad_taxa_clean_text((report$location %||% list())$geographic_location %||% NA_character_),
+    geographic_region = broad_taxa_clean_text((report$location %||% list())$geographic_region %||% NA_character_),
+    virus_name_ncbi = broad_taxa_clean_text((report$virus %||% list())$organism_name %||% NA_character_),
     virus_tax_id = as.numeric((report$virus %||% list())$tax_id %||% NA_real_),
-    virus_lineage = collapse_lineage((report$virus %||% list())$lineage %||% list()),
-    host_name_ncbi = clean_text((report$host %||% list())$organism_name %||% NA_character_),
+    virus_lineage = broad_taxa_collapse_lineage((report$virus %||% list())$lineage %||% list()),
+    host_name_ncbi = broad_taxa_clean_text((report$host %||% list())$organism_name %||% NA_character_),
     host_tax_id = as.numeric((report$host %||% list())$tax_id %||% NA_real_),
-    host_lineage = collapse_lineage((report$host %||% list())$lineage %||% list()),
-    submitter_affiliation = clean_text((report$submitter %||% list())$affiliation %||% NA_character_),
-    submitter_country = clean_text((report$submitter %||% list())$country %||% NA_character_),
-    submitter_names = collapse_names((report$submitter %||% list())$names %||% list()),
+    host_lineage = broad_taxa_collapse_lineage((report$host %||% list())$lineage %||% list()),
+    submitter_affiliation = broad_taxa_clean_text((report$submitter %||% list())$affiliation %||% NA_character_),
+    submitter_country = broad_taxa_clean_text((report$submitter %||% list())$country %||% NA_character_),
+    submitter_names = broad_taxa_collapse_names((report$submitter %||% list())$names %||% list()),
     raw_json = x$raw_json
   )
 }
