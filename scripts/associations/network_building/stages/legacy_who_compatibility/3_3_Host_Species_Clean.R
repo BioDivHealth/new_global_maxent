@@ -15,18 +15,19 @@ p_load(here, rgbif, taxize, raster, dismo,
       doParallel, rJava, XML, Hmisc, magrittr, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "legacy_who_compatibility_helpers.R"
+))
 
 load(file = "scripts/functions/wrld_simpl2.R")
 source("scripts/New_functions/get_synonyms.R")
 iucn_redlist_key <- Sys.getenv("IUCN_REDLIST_KEY", unset = Sys.getenv("IUCN_API_KEY", unset = ""))
 if (nzchar(iucn_redlist_key)) {
   options(iucn_redlist_key = iucn_redlist_key)
-}
-
-# Collapse multi-source taxonomy fields into stable semicolon-separated cells.
-collapse_vals <- function(x, sep = "; ") {
-  x <- unique(x[!is.na(x)])
-  paste(x, collapse = sep)
 }
 
 # -----------------------------------------------------------------------------|
@@ -85,7 +86,7 @@ tax_df <- map_dfr(species_list, function(rec) {
   td_summary <- if (is.null(td) || nrow(td) == 0) {
     tibble()                       # no extra columns to add
   } else {
-    td %>% summarise(across(everything(), collapse_vals), .groups = "drop")
+    td %>% summarise(across(everything(), legacy_who_collapse_vals), .groups = "drop")
   }
   
   ## 2. Scalar + collapsed vectors ------------------------------------------
@@ -95,8 +96,8 @@ tax_df <- map_dfr(species_list, function(rec) {
     type = rec$type,  # add the type of species (host)
     taxon_level = rec$taxon_level,
     host_species = rec$host_species,  # add the original host species name
-    Spp_syn        = collapse_vals(rec$Spp_syn),
-    IUCN_spp       = collapse_vals(rec$IUCN_spp)
+    Spp_syn        = legacy_who_collapse_vals(rec$Spp_syn),
+    IUCN_spp       = legacy_who_collapse_vals(rec$IUCN_spp)
   ) %>%
     bind_cols(td_summary)          # add the TaxDat summary columns
 })

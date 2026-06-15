@@ -15,38 +15,35 @@ library(pacman)
 p_load(here, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "legacy_who_compatibility_helpers.R"
+))
 
 # -----------------------------------------------------------------------------|
-# 2. Define input guardrails ----
-# -----------------------------------------------------------------------------|
-require_columns <- function(data, columns, label) {
-  missing <- setdiff(columns, names(data))
-  if (length(missing) > 0) {
-    stop(
-      label, " is missing required columns: ",
-      paste(missing, collapse = ", "),
-      call. = FALSE
-    )
-  }
-}
-
-# -----------------------------------------------------------------------------|
-# 3. Load and validate inputs ----
+# 2. Load and validate inputs ----
 # -----------------------------------------------------------------------------|
 host_taxonomy = read_csv(file.path(who_clover_dir, "clover_host_species_standardized.csv"))
 disease_names = read_csv(file.path(who_clover_dir, "who_bacteria_clover_taxid.csv"))
 host_associations = read_csv(file.path(who_clover_dir, "who_bacteria_clover_hosts.csv"))
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
-require_columns(
+legacy_who_require_columns(
   host_taxonomy,
   c("Host", "HostTaxID", "correct_name", "Spp_syn", "Phylum", "Class", "Family", "Order"),
   "CLOVER host taxonomy"
 )
 
-require_columns(disease_names, c("ID", "Disease_name"), "CLOVER disease-name lookup")
+legacy_who_require_columns(
+  disease_names,
+  c("ID", "Disease_name"),
+  "CLOVER disease-name lookup"
+)
 
-require_columns(
+legacy_who_require_columns(
   host_associations,
   c(
     "ID", "Pathogen", "PathogenTaxID", "PHEIC risk", "Host", "HostTaxID",
@@ -59,7 +56,7 @@ require_columns(
 host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
 
 # -----------------------------------------------------------------------------|
-# 4. Build CLOVER source-component network table ----
+# 3. Build CLOVER source-component network table ----
 # -----------------------------------------------------------------------------|
 # Match disease names to host_associations
 host_associations = host_associations %>%
@@ -104,7 +101,7 @@ network_data <- host_associations %>%
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
 
 # -----------------------------------------------------------------------------|
-# 5. Write source-component output ----
+# 4. Write source-component output ----
 # -----------------------------------------------------------------------------|
 output_path <- who_network_source_component_path("clover_who_network.csv")
 dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)

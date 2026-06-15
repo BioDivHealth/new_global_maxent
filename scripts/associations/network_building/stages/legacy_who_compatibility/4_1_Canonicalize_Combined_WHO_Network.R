@@ -29,46 +29,13 @@ suppressPackageStartupMessages({
 pacman::p_load(dplyr, readr, stringr, tidyr)
 
 source(here::here("scripts", "associations", "working_inputs.R"))
-
-# ------------------------------------------------------------------------------|
-#      Helpers -----------------------------------------------------------------|
-# ------------------------------------------------------------------------------|
-clean_text <- function(x) {
-  x <- ifelse(is.na(x), NA_character_, x)
-  x <- na_if(x, "")
-  x <- na_if(x, "NA")
-  ifelse(is.na(x), NA_character_, str_squish(x))
-}
-
-first_non_missing <- function(x) {
-  x <- clean_text(x)
-  x <- x[!is.na(x)]
-  if (length(x) == 0) {
-    return(NA_character_)
-  }
-  x[[1]]
-}
-
-collapse_unique <- function(x) {
-  x <- clean_text(x)
-  x <- unique(x[!is.na(x)])
-  if (length(x) == 0) {
-    return(NA_character_)
-  }
-  paste(x, collapse = "; ")
-}
-
-safe_lower <- function(x) {
-  ifelse(is.na(x), NA_character_, str_to_lower(clean_text(x)))
-}
-
-normalize_who_pathogen <- function(x) {
-  case_when(
-    safe_lower(x) == "subgenus sarbecovirus" ~ "Subgenus Sarbecovirus",
-    safe_lower(x) == "subgenus merbecovirus" ~ "Subgenus Merbecovirus",
-    TRUE ~ clean_text(x)
-  )
-}
+source(here::here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "legacy_who_compatibility_helpers.R"
+))
 
 # ------------------------------------------------------------------------------|
 #      Paths -------------------------------------------------------------------|
@@ -105,42 +72,42 @@ manual_pathogen_map <- tibble::tribble(
   "Protoparvovirus carnivoran4", "Protoparvovirus carnivoran", "manual_group_map",
   "Protoparvovirus carnivoran5", "Protoparvovirus carnivoran", "manual_group_map"
 ) %>%
-  mutate(Pathogen_raw_key = safe_lower(Pathogen_raw))
+  mutate(Pathogen_raw_key = legacy_who_safe_lower(Pathogen_raw))
 
 zoonotic_override <- tibble::tribble(
   ~Pathogen_canonical, ~is_zoonotic_override, ~zoonotic_status_override,
   "Alphainfluenzavirus influenzae", TRUE, "zoonotic_group_retained"
 ) %>%
-  mutate(Pathogen_canonical_key = safe_lower(Pathogen_canonical))
+  mutate(Pathogen_canonical_key = legacy_who_safe_lower(Pathogen_canonical))
 
 # ------------------------------------------------------------------------------|
 #      Load and prepare WHO lookup tables --------------------------------------|
 # ------------------------------------------------------------------------------|
 disease_names <- read_csv(disease_names_path, show_col_types = FALSE, na = c("", "NA")) %>%
   mutate(
-    Pathogens = normalize_who_pathogen(Pathogens),
-    Disease_name = clean_text(Disease_name),
-    pathogen_key = safe_lower(Pathogens)
+    Pathogens = legacy_who_normalize_pathogen(Pathogens),
+    Disease_name = legacy_who_clean_text(Disease_name),
+    pathogen_key = legacy_who_safe_lower(Pathogens)
   ) %>%
   distinct(pathogen_key, .keep_all = TRUE) %>%
   select(pathogen_key, disease_name_lookup = Disease_name)
 
 who_pathogens <- read_csv(who_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text)) %>%
+  mutate(across(where(is.character), legacy_who_clean_text)) %>%
   mutate(
-    Pathogens = normalize_who_pathogen(Pathogens),
-    pathogen_key = safe_lower(Pathogens)
+    Pathogens = legacy_who_normalize_pathogen(Pathogens),
+    pathogen_key = legacy_who_safe_lower(Pathogens)
   ) %>%
   left_join(disease_names, by = "pathogen_key") %>%
   mutate(Disease_name = coalesce(Disease_name, disease_name_lookup)) %>%
   select(-disease_name_lookup)
 
 analysis_units_keep <- read_csv(analysis_units_keep_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text)) %>%
+  mutate(across(where(is.character), legacy_who_clean_text)) %>%
   transmute(
     Family = family,
     `PHEIC risk` = pheic_risk,
-    Pathogens = normalize_who_pathogen(analysis_unit),
+    Pathogens = legacy_who_normalize_pathogen(analysis_unit),
     previous_name = source_previous_name,
     msl39_viral_name = source_msl39_viral_name,
     Disease_name = source_disease_name
@@ -156,7 +123,7 @@ who_canonical_source <- bind_rows(
 who_canonical <- who_canonical_source %>%
   transmute(
     Pathogen_canonical = Pathogens,
-    pathogen_canonical_key = safe_lower(Pathogens),
+    pathogen_canonical_key = legacy_who_safe_lower(Pathogens),
     Disease_name_canonical = Disease_name,
     Family_canonical = Family,
     PHEIC_risk_canonical = `PHEIC risk`,
@@ -166,14 +133,14 @@ who_canonical <- who_canonical_source %>%
   group_by(pathogen_canonical_key, Pathogen_canonical) %>%
   summarise(
     Disease_name_canonical = if (n_distinct(Disease_name_canonical, na.rm = TRUE) == 1) {
-      first_non_missing(Disease_name_canonical)
+      legacy_who_first_non_missing(Disease_name_canonical)
     } else {
       NA_character_
     },
-    Family_canonical = first_non_missing(Family_canonical),
-    PHEIC_risk_canonical = first_non_missing(PHEIC_risk_canonical),
-    previous_name_canonical = collapse_unique(previous_name_canonical),
-    msl39_viral_name_canonical = collapse_unique(msl39_viral_name_canonical),
+    Family_canonical = legacy_who_first_non_missing(Family_canonical),
+    PHEIC_risk_canonical = legacy_who_first_non_missing(PHEIC_risk_canonical),
+    previous_name_canonical = legacy_who_collapse_unique(previous_name_canonical),
+    msl39_viral_name_canonical = legacy_who_collapse_unique(msl39_viral_name_canonical),
     .groups = "drop"
   )
 
@@ -190,9 +157,9 @@ who_alias_lookup <- who_canonical_source %>%
     names_to = "alias_type",
     values_to = "alias"
   ) %>%
-  mutate(alias = clean_text(alias)) %>%
+  mutate(alias = legacy_who_clean_text(alias)) %>%
   filter(!is.na(alias)) %>%
-  mutate(alias_key = safe_lower(alias)) %>%
+  mutate(alias_key = legacy_who_safe_lower(alias)) %>%
   distinct(alias_key, Pathogen_canonical, Disease_name_canonical)
 
 who_alias_resolved <- who_alias_lookup %>%
@@ -206,8 +173,8 @@ who_alias_resolved <- who_alias_lookup %>%
 
 zoonotic_lookup <- analysis_units_keep %>%
   mutate(
-    Pathogens = normalize_who_pathogen(Pathogens),
-    pathogen_canonical_key = safe_lower(Pathogens)
+    Pathogens = legacy_who_normalize_pathogen(Pathogens),
+    pathogen_canonical_key = legacy_who_safe_lower(Pathogens)
   ) %>%
   distinct(pathogen_canonical_key, .keep_all = TRUE) %>%
   transmute(
@@ -220,12 +187,12 @@ zoonotic_lookup <- analysis_units_keep %>%
 #      Build a canonical lookup for raw network pathogens -----------------------|
 # ------------------------------------------------------------------------------|
 network_targets <- read_csv(network_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text)) %>%
+  mutate(across(where(is.character), legacy_who_clean_text)) %>%
   distinct(Pathogen, PathogenTaxID, Disease_name) %>%
   mutate(
     Pathogen_raw = Pathogen,
     Disease_name_raw = Disease_name,
-    Pathogen_raw_key = safe_lower(Pathogen_raw)
+    Pathogen_raw_key = legacy_who_safe_lower(Pathogen_raw)
   )
 
 canonical_lookup <- network_targets %>%
@@ -250,7 +217,7 @@ canonical_lookup <- network_targets %>%
       !is.na(Pathogen_canonical_alias) ~ "who_alias_match",
       TRUE ~ "raw_retained_no_match"
     ),
-    pathogen_canonical_key = safe_lower(Pathogen_canonical)
+    pathogen_canonical_key = legacy_who_safe_lower(Pathogen_canonical)
   ) %>%
   left_join(who_canonical, by = c("pathogen_canonical_key", "Pathogen_canonical")) %>%
   mutate(
@@ -302,7 +269,7 @@ canonical_lookup <- network_targets %>%
 #      Apply the canonical lookup to the full network ---------------------------|
 # ------------------------------------------------------------------------------|
 combined_network <- read_csv(network_path, show_col_types = FALSE, na = c("", "NA")) %>%
-  mutate(across(where(is.character), clean_text)) %>%
+  mutate(across(where(is.character), legacy_who_clean_text)) %>%
   mutate(
     Pathogen_raw = Pathogen,
     Disease_name_raw = Disease_name
@@ -324,23 +291,23 @@ combined_network_canonical <- combined_network %>%
   ) %>%
   group_by(Pathogen, PathogenTaxID, Disease_name, Host, HostTaxID) %>%
   summarise(
-    Pathogen_raw_examples = collapse_unique(Pathogen_raw),
-    Disease_name_raw_examples = collapse_unique(Disease_name_raw),
-    canonicalization_status = collapse_unique(canonicalization_status),
+    Pathogen_raw_examples = legacy_who_collapse_unique(Pathogen_raw),
+    Disease_name_raw_examples = legacy_who_collapse_unique(Disease_name_raw),
+    canonicalization_status = legacy_who_collapse_unique(canonicalization_status),
     is_zoonotic = dplyr::first(is_zoonotic),
-    zoonotic_status = first_non_missing(zoonotic_status),
-    `PHEIC risk` = first_non_missing(`PHEIC risk`),
-    PathogenClass = first_non_missing(PathogenClass),
-    PathogenOrder = first_non_missing(PathogenOrder),
-    PathogenFamily = first_non_missing(PathogenFamily),
-    PathogenGenus = first_non_missing(PathogenGenus),
-    HostPhylum = first_non_missing(HostPhylum),
-    HostClass = first_non_missing(HostClass),
-    HostFamily = first_non_missing(HostFamily),
-    HostOrder = first_non_missing(HostOrder),
-    DetectionMethod = collapse_unique(DetectionMethod),
-    MainSource = collapse_unique(MainSource),
-    PathogenType = first_non_missing(PathogenType),
+    zoonotic_status = legacy_who_first_non_missing(zoonotic_status),
+    `PHEIC risk` = legacy_who_first_non_missing(`PHEIC risk`),
+    PathogenClass = legacy_who_first_non_missing(PathogenClass),
+    PathogenOrder = legacy_who_first_non_missing(PathogenOrder),
+    PathogenFamily = legacy_who_first_non_missing(PathogenFamily),
+    PathogenGenus = legacy_who_first_non_missing(PathogenGenus),
+    HostPhylum = legacy_who_first_non_missing(HostPhylum),
+    HostClass = legacy_who_first_non_missing(HostClass),
+    HostFamily = legacy_who_first_non_missing(HostFamily),
+    HostOrder = legacy_who_first_non_missing(HostOrder),
+    DetectionMethod = legacy_who_collapse_unique(DetectionMethod),
+    MainSource = legacy_who_collapse_unique(MainSource),
+    PathogenType = legacy_who_first_non_missing(PathogenType),
     .groups = "drop"
   ) %>%
   select(

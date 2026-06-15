@@ -15,30 +15,23 @@ library(pacman)
 p_load(here, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "legacy_who_compatibility_helpers.R"
+))
 
 # -----------------------------------------------------------------------------|
-# 2. Define input guardrails ----
-# -----------------------------------------------------------------------------|
-require_columns <- function(data, columns, label) {
-  missing <- setdiff(columns, names(data))
-  if (length(missing) > 0) {
-    stop(
-      label, " is missing required columns: ",
-      paste(missing, collapse = ", "),
-      call. = FALSE
-    )
-  }
-}
-
-# -----------------------------------------------------------------------------|
-# 3. Load and validate VIRION host associations ----
+# 2. Load and validate VIRION host associations ----
 # -----------------------------------------------------------------------------|
 cat("Loading pathogen-host association data...\n")
 # Load the main association data
 host_associations <- read_csv(file.path(who_virion_dir, "who_pathogens_virion_hosts_summary.csv"))
 host_detection_methods_keep <- c("Isolation/Observation", "PCR/Sequencing")
 
-require_columns(
+legacy_who_require_columns(
   host_associations,
   c(
     "Virus", "Pathogens", "Host", "HostTaxID", "VirusTaxID", "VirusGenus",
@@ -49,7 +42,7 @@ require_columns(
 )
 
 # -----------------------------------------------------------------------------|
-# 4. Harmonize pathogen and host names ----
+# 3. Harmonize pathogen and host names ----
 # -----------------------------------------------------------------------------|
 # Harmonize Virus names to standardized taxonomy
 synonyms <- c(
@@ -74,7 +67,7 @@ host_associations$Virus = host_associations$Virus_std  # Use standardized names 
 
 # Load standardized host taxonomy  
 host_taxonomy <- read_csv(file.path(who_virion_dir, "who_host_species_standardized.csv"))
-require_columns(
+legacy_who_require_columns(
   host_taxonomy,
   c("Host", "correct_name", "Phylum", "Class", "Family", "Order"),
   "VIRION host taxonomy"
@@ -82,7 +75,7 @@ require_columns(
 host_taxonomy$Host_lower = str_to_lower(host_taxonomy$Host)
 
 # -----------------------------------------------------------------------------|
-# 5. Build VIRION source-component network table ----
+# 4. Build VIRION source-component network table ----
 # -----------------------------------------------------------------------------|
 # Clean and prepare data for network analysis
 network_data <- host_associations %>%
@@ -139,7 +132,7 @@ network_data <- host_associations %>%
 cat("Prepared", nrow(network_data), "pathogen-host associations for visualization\n")
 
 # -----------------------------------------------------------------------------|
-# 6. Write source-component output ----
+# 5. Write source-component output ----
 # -----------------------------------------------------------------------------|
 output_path <- who_network_source_component_path("virion_who_network.csv")
 dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)

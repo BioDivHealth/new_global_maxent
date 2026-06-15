@@ -14,20 +14,13 @@ library(pacman)
 p_load(here, tidyverse)
 
 source(here("scripts", "associations", "working_inputs.R"))
-
-# -----------------------------------------------------------------------------|
-# 2. Define input guardrails ----
-# -----------------------------------------------------------------------------|
-require_columns <- function(data, columns, label) {
-  missing <- setdiff(columns, names(data))
-  if (length(missing) > 0) {
-    stop(
-      label, " is missing required columns: ",
-      paste(missing, collapse = ", "),
-      call. = FALSE
-    )
-  }
-}
+source(here(
+  "scripts",
+  "associations",
+  "network_building",
+  "helpers",
+  "legacy_who_compatibility_helpers.R"
+))
 
 source_component_columns <- c(
   "Pathogen", "Host_clean", "PathogenClass", "PathogenOrder",
@@ -41,8 +34,16 @@ source_component_columns <- c(
 clover_network <- read_csv(who_network_source_component_path("clover_who_network.csv"))
 virion_network <- read_csv(who_network_source_component_path("virion_who_network.csv"))
 
-require_columns(clover_network, source_component_columns, "CLOVER source component")
-require_columns(virion_network, source_component_columns, "VIRION source component")
+legacy_who_require_columns(
+  clover_network,
+  source_component_columns,
+  "CLOVER source component"
+)
+legacy_who_require_columns(
+  virion_network,
+  source_component_columns,
+  "VIRION source component"
+)
 
 # -----------------------------------------------------------------------------|
 # 4. Harmonize schemas and bind sources ----
