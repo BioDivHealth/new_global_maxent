@@ -38,8 +38,8 @@ who_df$ID = 1:nrow(who_df)
 
 # 2. VIRION taxonomy -----------------------------------------------------------
 if (!exists("virion_data")) {
-  source(file.path("scripts", "associations", "network_building", "helpers", "virion_data.R"))
-  # `virion_data` object is created inside the sourced script
+  source(file.path("scripts", "associations", "network_building", "helpers", "virion_loaders.R"))
+  virion_data <- load_virion_data()
 }
 
 taxonomy_virus <- virion_data$taxonomy_virus
