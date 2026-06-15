@@ -34,6 +34,28 @@ source(file.path("scripts", "associations", "working_inputs.R"))
 # library(remotes)
 # remotes::install_github("viralemergence/virionData", force = TRUE)
 
+read_virion_csv <- function(path) {
+  tryCatch(
+    readr::read_csv(path, show_col_types = FALSE),
+    error = function(e) {
+      if (grepl("input string .* is invalid", conditionMessage(e), ignore.case = TRUE)) {
+        warning(
+          "Encountered invalid text encoding while reading ", basename(path),
+          "; retrying with Latin1 decoding."
+        )
+        return(
+          readr::read_csv(
+            path,
+            show_col_types = FALSE,
+            locale = readr::locale(encoding = "Latin1")
+          )
+        )
+      }
+      stop(e)
+    }
+  )
+}
+
 #' Load VIRION data from local files
 #' @param data_path Path to VIRION data directory
 #' @param files Vector of file names to load (default: all main files)
@@ -43,28 +65,6 @@ load_virion_data <- function(data_path = virion_source_version_dir,
                                      "taxonomy_host.csv", "taxonomy_virus.csv",
                                      "provenance.csv.gz", "detection.csv.gz", 
                                      "temporal.csv.gz")) {
-  read_virion_csv <- function(path) {
-    tryCatch(
-      readr::read_csv(path, show_col_types = FALSE),
-      error = function(e) {
-        if (grepl("input string .* is invalid", conditionMessage(e), ignore.case = TRUE)) {
-          warning(
-            "Encountered invalid text encoding while reading ", basename(path),
-            "; retrying with Latin1 decoding."
-          )
-          return(
-            readr::read_csv(
-              path,
-              show_col_types = FALSE,
-              locale = readr::locale(encoding = "Latin1")
-            )
-          )
-        }
-        stop(e)
-      }
-    )
-  }
-  
   # Check if data directory exists
   if (!dir.exists(data_path)) {
     stop("VIRION data directory not found. Please download data from Zenodo or use virionData package.")
@@ -109,28 +109,6 @@ load_virion_package <- function(version = "latest",
   
   # Initialize data list
   virion_data <- list()
-  
-  read_virion_csv <- function(path) {
-    tryCatch(
-      readr::read_csv(path, show_col_types = FALSE),
-      error = function(e) {
-        if (grepl("input string .* is invalid", conditionMessage(e), ignore.case = TRUE)) {
-          warning(
-            "Encountered invalid text encoding while reading ", basename(path),
-            "; retrying with Latin1 decoding."
-          )
-          return(
-            readr::read_csv(
-              path,
-              show_col_types = FALSE,
-              locale = readr::locale(encoding = "Latin1")
-            )
-          )
-        }
-        stop(e)
-      }
-    )
-  }
   
   cat("Loading VIRION data tables...\n")
   
