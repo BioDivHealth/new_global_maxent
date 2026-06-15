@@ -44,9 +44,6 @@ dictionaries = virionData::get_data_dictionary(
   datapackage_json = file.path(virion_source_version_dir, "datapackage.json")
 )
 
-print(dictionaries)
-dictionaries$virion_csv
-
 virion = virion_data$virion
 
 # ----------------------------- Data processing ---------------------------
@@ -221,10 +218,6 @@ host_species = who_virion_hosts_short %>%
     HostFamily = str_to_sentence(HostFamily)
   ) %>%
   distinct()
-
-
-
-dim(host_species)
 
 # ----------------------------- Quality control -----------------------------
 cat("\n=== QUALITY CONTROL SUMMARY ===\n")
