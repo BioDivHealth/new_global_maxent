@@ -83,6 +83,35 @@ role_candidates_dir <- role_annotation_dir
 role_evidence_dir <- role_annotation_dir
 role_roster_dir <- role_annotation_dir
 role_qa_dir <- file.path(role_annotation_dir, "qa")
+role_source_check_candidates_dir <- file.path(
+  staged_data_dir,
+  "role_annotation",
+  "source_check_candidates"
+)
+
+role_modelling_features_path <- function() {
+  file.path(role_annotation_dir, "role_modelling_features.csv")
+}
+
+role_modelling_feature_summary_path <- function() {
+  file.path(role_qa_dir, "role_modelling_feature_summary.csv")
+}
+
+vector_modelling_features_path <- function() {
+  file.path(role_annotation_dir, "vector_modelling_features.csv")
+}
+
+vector_modelling_feature_summary_path <- function() {
+  file.path(role_qa_dir, "vector_modelling_feature_summary.csv")
+}
+
+role_gap_source_check_candidates_path <- function() {
+  file.path(role_source_check_candidates_dir, "role_gap_source_check_candidates.csv")
+}
+
+role_candidate_id_overrides_path <- function() {
+  file.path(role_source_check_input_dir, "candidate_id_overrides.csv")
+}
 
 # Raw CLOVER/VIRION source exports. WHO-specific generated source outputs live
 # under staged source-specific output directories.

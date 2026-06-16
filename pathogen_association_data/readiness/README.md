@@ -13,10 +13,18 @@ readiness run. The older
 `genbank_disease_country_summary_standardized.csv` is retained as a fallback for
 historical standard-mode reruns only and is treated as local/archive material.
 
-Regenerate from the repository root with:
+Regenerate disease modelling readiness from the repository root with:
 
 ```sh
-Rscript scripts/associations/role_annotation/6_10_Build_Disease_Modelling_Readiness.R
+Rscript scripts/associations/readiness/01_build_disease_modelling_readiness.R
+```
+
+Regenerate modelling evidence-tier handoff tables after refreshing role
+modelling features with:
+
+```sh
+Rscript scripts/associations/role_annotation/features/01_build_role_modelling_features.R
+Rscript scripts/associations/readiness/02_build_modelling_evidence_tiers_handoff.R
 ```
 
 ## Files
@@ -45,3 +53,10 @@ These files are workflow control surfaces, not final biological evidence
 sources. Direct vector evidence remains limited to curated vector rows, SDM
 availability is name-matched availability only, and role assignments preserve
 manual-review uncertainty.
+
+Role-derived modelling fields are owned by
+`pathogen_association_data/evidence/role_annotation/role_modelling_features.csv`
+and `pathogen_association_data/evidence/role_annotation/vector_modelling_features.csv`
+and consumed by readiness handoff scripts. Readiness scripts should not define
+new disease-specific biological proxy rules or host/vector biological evidence
+tiers.

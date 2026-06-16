@@ -2,3 +2,4 @@ decision,import_ready,n
 accept,TRUE,47
 accept_evidence_only,FALSE,8
 defer,FALSE,1
+pending,no,30

@@ -1,0 +1,165 @@
+disease_name,biological_evidence_tier,best_evidence_level,vector_competence_status,bites_humans_true,rows
+Chikungunya fever,broad,candidate,,FALSE,1
+Chikungunya fever,strict,confirmed,competent,TRUE,2
+Chikungunya fever,strict,probable,competent,TRUE,2
+Chikungunya fever,strong,candidate,competent,FALSE,4
+Chikungunya fever,strong,candidate,competent,TRUE,3
+Chikungunya fever,strong,weak,competent,TRUE,2
+Chikungunya fever,strong,probable,competent,FALSE,1
+Chikungunya fever,supported,candidate,,TRUE,2
+Chikungunya fever,supported,probable,,FALSE,2
+Chikungunya fever,supported,probable,unclear,FALSE,1
+Chikungunya fever,supported,probable,,TRUE,1
+Crimean-Congo hemorrhagic fever,broad,candidate,,FALSE,5
+Crimean-Congo hemorrhagic fever,excluded,candidate,unclear,FALSE,2
+Crimean-Congo hemorrhagic fever,strict,confirmed,competent,TRUE,11
+Crimean-Congo hemorrhagic fever,strong,confirmed,competent,FALSE,3
+Crimean-Congo hemorrhagic fever,strong,candidate,mixed,TRUE,1
+Crimean-Congo hemorrhagic fever,supported,candidate,unclear,TRUE,6
+Crimean-Congo hemorrhagic fever,supported,candidate,,TRUE,6
+Crimean-Congo hemorrhagic fever,supported,candidate,unclear,FALSE,5
+Crimean-Congo hemorrhagic fever,supported,candidate,,FALSE,4
+Crimean-Congo hemorrhagic fever,supported,confirmed,,FALSE,2
+Crimean-Congo hemorrhagic fever,supported,probable,unclear,TRUE,2
+Crimean-Congo hemorrhagic fever,supported,probable,,FALSE,1
+Crimean-Congo hemorrhagic fever,supported,probable,,TRUE,1
+Dengue,broad,weak,,FALSE,1
+Dengue,strict,confirmed,mixed,TRUE,4
+Dengue,strong,confirmed,competent,FALSE,2
+Dengue,strong,confirmed,mixed,FALSE,2
+Dengue,strong,candidate,competent,TRUE,1
+Dengue,strong,probable,mixed,FALSE,1
+Dengue,supported,candidate,unclear,FALSE,3
+Dengue,supported,probable,unclear,FALSE,1
+Dengue,supported,weak,not_competent,TRUE,1
+Oropouche fever,strict,probable,mixed,TRUE,1
+Oropouche fever,strong,candidate,mixed,TRUE,2
+Oropouche fever,strong,confirmed,competent,FALSE,1
+Oropouche fever,strong,probable,competent,FALSE,1
+Oropouche fever,supported,candidate,unclear,FALSE,3
+Oropouche fever,supported,weak,not_competent,TRUE,3
+Oropouche fever,supported,candidate,not_competent,TRUE,1
+Oropouche fever,supported,candidate; probable,unclear,TRUE,1
+Oropouche fever,supported,probable,unclear,TRUE,1
+Oropouche fever,supported,weak,unclear,TRUE,1
+Plague,excluded,confirmed,competent,FALSE,2
+Plague,excluded,confirmed,mixed,TRUE,1
+Plague,strict,confirmed,competent,TRUE,1
+Plague,strong,confirmed,competent,FALSE,21
+Plague,strong,confirmed,mixed,FALSE,12
+Plague,strong,probable,mixed,FALSE,4
+Plague,supported,candidate,unclear,FALSE,3
+Plague,supported,confirmed,unclear,FALSE,1
+Plague,supported,probable,unclear,FALSE,1
+Plague,supported,weak,unclear,FALSE,1
+Rift Valley fever,broad,candidate,,FALSE,4
+Rift Valley fever,excluded,probable,unclear,TRUE,1
+Rift Valley fever,strict,probable,competent,TRUE,11
+Rift Valley fever,strict,probable,mixed,TRUE,1
+Rift Valley fever,strong,probable,competent,FALSE,5
+Rift Valley fever,strong,candidate,competent,TRUE,4
+Rift Valley fever,strong,candidate; probable,competent,TRUE,2
+Rift Valley fever,strong,confirmed; probable,mixed,TRUE,2
+Rift Valley fever,strong,candidate,competent,FALSE,1
+Rift Valley fever,strong,candidate,mixed,FALSE,1
+Rift Valley fever,strong,candidate; confirmed,competent,TRUE,1
+Rift Valley fever,strong,confirmed,mixed,FALSE,1
+Rift Valley fever,strong,confirmed; probable,competent,TRUE,1
+Rift Valley fever,strong,confirmed; probable,mixed,FALSE,1
+Rift Valley fever,strong,probable,mixed,FALSE,1
+Rift Valley fever,strong,weak,mixed,FALSE,1
+Rift Valley fever,supported,candidate,unclear,FALSE,12
+Rift Valley fever,supported,candidate,unclear,TRUE,6
+Rift Valley fever,supported,weak,unclear,TRUE,6
+Rift Valley fever,supported,probable,unclear,TRUE,5
+Rift Valley fever,supported,weak,unclear,FALSE,4
+Rift Valley fever,supported,weak,not_competent,FALSE,2
+Rift Valley fever,supported,candidate,not_competent,TRUE,1
+Rift Valley fever,supported,candidate,,FALSE,1
+Rift Valley fever,supported,candidate,,TRUE,1
+Rift Valley fever,supported,probable,not_competent,TRUE,1
+Rift Valley fever,supported,probable,unclear,FALSE,1
+Severe fever with thrombocytopenia syndrome (SFTS),strict,confirmed,competent,TRUE,2
+Severe fever with thrombocytopenia syndrome (SFTS),strong,confirmed,competent,FALSE,3
+Severe fever with thrombocytopenia syndrome (SFTS),strong,weak,mixed,FALSE,1
+Severe fever with thrombocytopenia syndrome (SFTS),supported,weak,unclear,FALSE,4
+Severe fever with thrombocytopenia syndrome (SFTS),supported,candidate,unclear,FALSE,2
+Severe fever with thrombocytopenia syndrome (SFTS),supported,probable,unclear,FALSE,1
+Severe fever with thrombocytopenia syndrome (SFTS),supported,weak,not_competent,FALSE,1
+Severe fever with thrombocytopenia syndrome (SFTS),supported,weak,unclear,TRUE,1
+Tick-borne encephalitis,strict,confirmed,competent,TRUE,5
+Tick-borne encephalitis,strong,confirmed,competent,FALSE,3
+Tick-borne encephalitis,strong,probable,competent,FALSE,1
+Tick-borne encephalitis,strong,weak,unclear,TRUE,1
+Tick-borne encephalitis,supported,weak,unclear,FALSE,1
+Venezuelan equine encephalitis,broad,candidate,,FALSE,1
+Venezuelan equine encephalitis,strict,probable,competent,TRUE,2
+Venezuelan equine encephalitis,strict,confirmed,competent,TRUE,1
+Venezuelan equine encephalitis,strong,candidate; confirmed,competent,FALSE,3
+Venezuelan equine encephalitis,strong,candidate; confirmed,competent,TRUE,2
+Venezuelan equine encephalitis,strong,candidate,competent,TRUE,1
+Venezuelan equine encephalitis,strong,candidate,unclear,TRUE,1
+Venezuelan equine encephalitis,strong,confirmed,competent,FALSE,1
+Venezuelan equine encephalitis,strong,confirmed; probable,competent,TRUE,1
+Venezuelan equine encephalitis,strong,probable,competent,FALSE,1
+Venezuelan equine encephalitis,supported,candidate,unclear,FALSE,6
+Venezuelan equine encephalitis,supported,candidate,unclear,TRUE,4
+Venezuelan equine encephalitis,supported,probable,unclear,TRUE,4
+Venezuelan equine encephalitis,supported,probable,unclear,FALSE,3
+Venezuelan equine encephalitis,supported,candidate,,TRUE,2
+Venezuelan equine encephalitis,supported,candidate; probable,unclear,TRUE,1
+Venezuelan equine encephalitis,supported,confirmed,unclear,FALSE,1
+West Nile fever,broad,candidate,,FALSE,10
+West Nile fever,excluded,candidate,,FALSE,1
+West Nile fever,strict,confirmed,competent,TRUE,6
+West Nile fever,strict,probable,competent,TRUE,2
+West Nile fever,strict,confirmed,mixed,TRUE,1
+West Nile fever,strong,probable,competent,FALSE,4
+West Nile fever,strong,candidate,competent,FALSE,3
+West Nile fever,strong,candidate,competent,TRUE,3
+West Nile fever,strong,candidate,mixed,FALSE,2
+West Nile fever,strong,probable,mixed,FALSE,2
+West Nile fever,strong,candidate,mixed,TRUE,1
+West Nile fever,strong,candidate,unclear,TRUE,1
+West Nile fever,strong,confirmed,competent,FALSE,1
+West Nile fever,strong,confirmed,mixed,FALSE,1
+West Nile fever,strong,weak,competent,FALSE,1
+West Nile fever,supported,candidate,,TRUE,19
+West Nile fever,supported,candidate,unclear,FALSE,5
+West Nile fever,supported,candidate,,FALSE,4
+West Nile fever,supported,candidate,unclear,TRUE,2
+West Nile fever,supported,probable,,TRUE,2
+West Nile fever,supported,candidate,not_competent,TRUE,1
+West Nile fever,supported,weak,not_competent,FALSE,1
+West Nile fever,supported,weak,unclear,FALSE,1
+West Nile fever,supported,weak,unclear,TRUE,1
+Yellow fever,strict,confirmed,competent,TRUE,6
+Yellow fever,strict,confirmed,mixed,TRUE,2
+Yellow fever,strong,confirmed,competent,FALSE,8
+Yellow fever,strong,probable,competent,FALSE,4
+Yellow fever,supported,candidate,unclear,TRUE,4
+Yellow fever,supported,candidate,unclear,FALSE,3
+Yellow fever,supported,probable,,FALSE,2
+Yellow fever,supported,confirmed,,FALSE,1
+Zika virus disease,broad,candidate,,FALSE,10
+Zika virus disease,broad,weak,,FALSE,6
+Zika virus disease,broad,candidate; weak,,FALSE,1
+Zika virus disease,excluded,candidate,,TRUE,2
+Zika virus disease,strict,probable,mixed,TRUE,5
+Zika virus disease,strict,confirmed,competent,TRUE,2
+Zika virus disease,strict,confirmed,mixed,TRUE,2
+Zika virus disease,strong,confirmed,competent,FALSE,2
+Zika virus disease,strong,candidate,mixed,FALSE,1
+Zika virus disease,strong,candidate,mixed,TRUE,1
+Zika virus disease,strong,confirmed,mixed,FALSE,1
+Zika virus disease,supported,candidate,,TRUE,7
+Zika virus disease,supported,weak,not_competent,FALSE,3
+Zika virus disease,supported,candidate,not_competent,TRUE,2
+Zika virus disease,supported,candidate,unclear,TRUE,2
+Zika virus disease,supported,weak,not_competent,TRUE,2
+Zika virus disease,supported,weak,,TRUE,2
+Zika virus disease,supported,candidate,unclear,FALSE,1
+Zika virus disease,supported,probable,unclear,TRUE,1
+Zika virus disease,supported,probable,,FALSE,1
+Zika virus disease,supported,weak,unclear,FALSE,1
+Zika virus disease,supported,weak,unclear,TRUE,1

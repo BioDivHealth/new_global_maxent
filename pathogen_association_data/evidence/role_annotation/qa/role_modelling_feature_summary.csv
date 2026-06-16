@@ -1,0 +1,74 @@
+disease_name,host_role_bucket,host_role_evidence_basis,modelling_role_proxy_confidence,modelling_role_proxy_needs_review,rows
+Argentine hemorrhagic fever,host_presence_only,candidate_only,low,TRUE,8
+Argentine hemorrhagic fever,dead_end_or_incidental_host,exact_source_backed,high,FALSE,1
+Argentine hemorrhagic fever,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Borna disease (encephalitis),host_presence_only,candidate_only,low,TRUE,23
+Chikungunya fever,host_presence_only,candidate_only,low,TRUE,27
+Chikungunya fever,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,2
+Chikungunya fever,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Crimean-Congo hemorrhagic fever,host_presence_only,candidate_only,low,TRUE,57
+Crimean-Congo hemorrhagic fever,dead_end_or_incidental_host,exact_source_backed,high,FALSE,1
+Dengue,host_presence_only,candidate_only,low,TRUE,52
+Dengue,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Ebola virus disease,host_presence_only,candidate_only,low,TRUE,16
+Ebola virus disease,susceptible_or_spillover_host,exact_source_backed,medium,TRUE,2
+Ebola virus disease,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Hantavirus pulmonary syndrome,host_presence_only,candidate_only,low,TRUE,28
+Hemorrhagic fever with renal syndrome (Hantaan virus),host_presence_only,candidate_only,low,TRUE,28
+Hemorrhagic fever with renal syndrome (Hantaan virus),dead_end_or_incidental_host,exact_source_backed,high,FALSE,1
+Hemorrhagic fever with renal syndrome (Hantaan virus),reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Hepatitis E,host_presence_only,candidate_only,low,TRUE,74
+Influenza (H5N1 avian influenza),host_presence_only,disease_group_proxy,low,TRUE,280
+Influenza (H5N1 avian influenza),reservoir_or_amplifying_host,disease_group_proxy,medium,TRUE,173
+Influenza (H5N1 avian influenza),susceptible_or_spillover_host,disease_group_proxy,low,TRUE,102
+Influenza (H5N1 avian influenza),dead_end_or_incidental_host,exact_source_backed,high,FALSE,1
+Influenza (H5N1 avian influenza),reservoir_or_amplifying_host,exact_reviewed_needs_review,medium,TRUE,1
+Influenza (H5N1 avian influenza),susceptible_or_spillover_host,exact_reviewed_needs_review,medium,TRUE,1
+Influenza (H5N1 avian influenza),susceptible_or_spillover_host,exact_source_backed,medium,TRUE,1
+Influenza (H7N9 avian influenza),host_presence_only,disease_group_proxy,low,TRUE,280
+Influenza (H7N9 avian influenza),reservoir_or_amplifying_host,disease_group_proxy,medium,TRUE,173
+Influenza (H7N9 avian influenza),susceptible_or_spillover_host,disease_group_proxy,low,TRUE,105
+Influenza (H7N9 avian influenza),dead_end_or_incidental_host,disease_group_proxy,medium,TRUE,1
+Lassa fever,host_presence_only,candidate_only,low,TRUE,17
+Lassa fever,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,2
+Lassa fever,reservoir_or_amplifying_host,exact_reviewed_needs_review,medium,TRUE,1
+Lassa fever,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Lujo hemorrhagic fever,host_presence_only,candidate_only,low,TRUE,1
+Marburg virus disease,host_presence_only,candidate_only,low,TRUE,9
+Marburg virus disease,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,2
+Marburg virus disease,dead_end_or_incidental_host,exact_source_backed,medium,TRUE,1
+Mpox (Monkeypox),host_presence_only,candidate_only,low,TRUE,36
+Mpox (Monkeypox),reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Mpox (Monkeypox),reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,1
+Mpox (Monkeypox),susceptible_or_spillover_host,exact_source_backed,medium,TRUE,1
+Nipah virus disease,host_presence_only,candidate_only,low,TRUE,28
+Nipah virus disease,reservoir_or_amplifying_host,exact_source_backed,high,TRUE,2
+Nipah virus disease,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,2
+Nipah virus disease,reservoir_or_amplifying_host,exact_reviewed_needs_review,medium,TRUE,1
+Nipah virus disease,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Oropouche fever,host_presence_only,candidate_only,low,TRUE,7
+Oropouche fever,reservoir_or_amplifying_host,exact_reviewed_needs_review,medium,TRUE,1
+Plague,host_presence_only,candidate_only,low,TRUE,50
+Plague,dead_end_or_incidental_host,exact_source_backed,high,FALSE,1
+Plague,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,1
+Rift Valley fever,host_presence_only,candidate_only,low,TRUE,37
+Rift Valley fever,reservoir_or_amplifying_host,exact_source_backed,high,TRUE,2
+Rift Valley fever,dead_end_or_incidental_host,exact_source_backed,high,FALSE,1
+Rift Valley fever,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,1
+Severe fever with thrombocytopenia syndrome (SFTS),host_presence_only,candidate_only,low,TRUE,35
+Severe fever with thrombocytopenia syndrome (SFTS),reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,1
+Sudan virus disease (Ebola virus disease),reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+Tick-borne encephalitis,host_presence_only,candidate_only,low,TRUE,90
+Tick-borne encephalitis,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,2
+Venezuelan equine encephalitis,host_presence_only,candidate_only,low,TRUE,86
+Venezuelan equine encephalitis,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
+West Nile fever,host_presence_only,candidate_only,low,TRUE,128
+West Nile fever,reservoir_or_amplifying_host,disease_group_proxy,low,TRUE,85
+West Nile fever,reservoir_or_amplifying_host,weighted_taxonomic_proxy,medium_low,TRUE,47
+West Nile fever,reservoir_or_amplifying_host,weighted_taxonomic_proxy,medium,TRUE,11
+West Nile fever,dead_end_or_incidental_host,exact_source_backed,high,FALSE,2
+West Nile fever,reservoir_or_amplifying_host,exact_source_backed,medium,TRUE,1
+Yellow fever,host_presence_only,candidate_only,low,TRUE,72
+Yellow fever,reservoir_or_amplifying_host,exact_source_backed,medium,FALSE,1
+Zika virus disease,host_presence_only,candidate_only,low,TRUE,20
+Zika virus disease,reservoir_or_amplifying_host,exact_source_backed,high,FALSE,1
