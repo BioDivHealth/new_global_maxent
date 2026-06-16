@@ -687,6 +687,10 @@ pilot_vectors <- pilot_roster %>%
     "vector_group",
     "vector_taxon_rank",
     "vector_join_key",
+    "vector_role_assignment",
+    "vector_role_confidence",
+    "vector_role_needs_manual_review",
+    "vector_role_assignment_status",
     "has_disease_vector_evidence",
     "has_host_vector_evidence",
     "has_competence_evidence",
@@ -857,6 +861,10 @@ pilot_sdm_species <- pilot_roster %>%
       "host_role_confidence",
       "host_role_needs_manual_review",
       "host_role_assignment_status",
+      "vector_role_assignment",
+      "vector_role_confidence",
+      "vector_role_needs_manual_review",
+      "vector_role_assignment_status",
       "species_key"
     )))
   ) %>%
@@ -880,6 +888,10 @@ pilot_sdm_species <- pilot_roster %>%
     host_role_confidence,
     host_role_needs_manual_review,
     host_role_assignment_status,
+    vector_role_assignment,
+    vector_role_confidence,
+    vector_role_needs_manual_review,
+    vector_role_assignment_status,
     sdm_available,
     sdm_species
   )

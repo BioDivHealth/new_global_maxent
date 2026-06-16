@@ -157,8 +157,12 @@ summary_path <- file.path(role_dir, "species_host_vector_roster_summary.csv")
 xlsx_path <- file.path(role_dir, "species_host_vector_roster.xlsx")
 host_role_candidates_path <- file.path(role_dir, "host_role_candidates.csv")
 host_role_assignments_path <- file.path(role_dir, "host_role_assignments.csv")
+vector_role_assignments_path <- file.path(role_dir, "vector_role_assignments.csv")
+qa_dir <- file.path(role_dir, "qa")
+vector_assignment_unmatched_path <- file.path(qa_dir, "vector_role_assignments_unmatched_to_roster.csv")
 
 dir.create(role_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(qa_dir, recursive = TRUE, showWarnings = FALSE)
 
 # ------------------------------------------------------------------------------|
 #      Disease Scope Metadata --------------------------------------------------|
@@ -255,6 +259,33 @@ host_role_candidates <- read_csv(
   group_by(role_disease_key, role_species_key, role_tax_id_key) %>%
   summarise(
     host_role_candidate_confidence = collapse_unique(role_confidence),
+    .groups = "drop"
+  )
+
+vector_role_assignments_raw <- read_csv(
+  vector_role_assignments_path,
+  show_col_types = FALSE,
+  na = c("", "NA")
+) %>%
+  mutate(across(where(is.character), clean_text)) %>%
+  mutate(
+    role_disease_key = role_join_key(disease_name),
+    role_vector_key = role_join_key(vector_join_key),
+    assignment_needs_manual_review = is_true(needs_manual_review)
+  ) %>%
+  filter(
+    !is.na(role_disease_key),
+    !is.na(role_vector_key),
+    !is.na(vector_role_assignment)
+  )
+
+vector_role_assignments <- vector_role_assignments_raw %>%
+  group_by(role_disease_key, role_vector_key) %>%
+  summarise(
+    vector_role_assignment = collapse_unique(vector_role_assignment),
+    vector_role_confidence_from_assignment = collapse_unique(assignment_confidence),
+    vector_role_assignment_status = collapse_unique(assignment_status),
+    vector_role_needs_manual_review_from_assignment = any(assignment_needs_manual_review, na.rm = TRUE),
     .groups = "drop"
   )
 
@@ -515,7 +546,8 @@ roster <- bind_rows(
   mutate(
     role_disease_key = role_join_key(disease_name),
     role_species_key = role_join_key(species_name),
-    role_tax_id_key = tax_join_key(tax_id)
+    role_tax_id_key = tax_join_key(tax_id),
+    role_vector_key = role_join_key(vector_join_key)
   ) %>%
   left_join(
     host_role_assignments,
@@ -525,9 +557,14 @@ roster <- bind_rows(
     host_role_candidates,
     by = c("role_disease_key", "role_species_key", "role_tax_id_key")
   ) %>%
+  left_join(
+    vector_role_assignments,
+    by = c("role_disease_key", "role_vector_key")
+  ) %>%
   mutate(
     disease_has_vector_rows = disease_name %in% unique(vector_rows$disease_name),
     has_host_role_assignment = species_role == "host" & !is.na(host_role_assignment),
+    has_vector_role_assignment = species_role == "vector" & !is.na(vector_role_assignment),
     host_role_assignment = dplyr::case_when(
       species_role != "host" ~ NA_character_,
       has_host_role_assignment ~ host_role_assignment,
@@ -549,9 +586,31 @@ roster <- bind_rows(
       has_host_role_assignment ~ host_role_assignment_status,
       TRUE ~ "candidate_only"
     ),
+    vector_role_assignment = dplyr::case_when(
+      species_role != "vector" ~ NA_character_,
+      has_vector_role_assignment ~ vector_role_assignment,
+      TRUE ~ NA_character_
+    ),
+    vector_role_confidence = dplyr::case_when(
+      species_role != "vector" ~ NA_character_,
+      has_vector_role_assignment ~ vector_role_confidence_from_assignment,
+      TRUE ~ NA_character_
+    ),
+    vector_role_needs_manual_review = dplyr::case_when(
+      species_role != "vector" ~ NA,
+      has_vector_role_assignment ~ vector_role_needs_manual_review_from_assignment,
+      TRUE ~ NA
+    ),
+    vector_role_assignment_status = dplyr::case_when(
+      species_role != "vector" ~ NA_character_,
+      has_vector_role_assignment ~ vector_role_assignment_status,
+      TRUE ~ NA_character_
+    ),
     review_boundary = dplyr::case_when(
       appears_as_host & !appears_as_vector ~
         "host presence only; final host role not assigned",
+      appears_as_vector & has_vector_role_assignment ~
+        "reviewed or draft vector role assignment available",
       appears_as_vector & has_disease_vector_evidence & has_competence_evidence ~
         "vector evidence plus competence annotation; final vector role not assigned",
       appears_as_vector & has_disease_vector_evidence ~
@@ -583,6 +642,10 @@ roster <- bind_rows(
     vector_group,
     vector_taxon_rank,
     vector_join_key,
+    vector_role_assignment,
+    vector_role_confidence,
+    vector_role_needs_manual_review,
+    vector_role_assignment_status,
     has_disease_vector_evidence,
     has_host_vector_evidence,
     has_competence_evidence,
@@ -606,6 +669,22 @@ summary_table <- bind_rows(
     mutate(flag_value = NA_character_),
   roster %>%
     count(disease_name, metric = "species_role", flag_value = species_role, name = "row_count"),
+  roster %>%
+    filter(species_role == "vector") %>%
+    count(
+      disease_name,
+      metric = "has_vector_role_assignment",
+      flag_value = as.character(!is.na(vector_role_assignment)),
+      name = "row_count"
+    ),
+  roster %>%
+    filter(species_role == "vector", !is.na(vector_role_assignment)) %>%
+    count(
+      disease_name,
+      metric = "vector_role_assignment",
+      flag_value = vector_role_assignment,
+      name = "row_count"
+    ),
   roster %>%
     count(disease_name, metric = "has_disease_vector_evidence", flag_value = as.character(has_disease_vector_evidence), name = "row_count"),
   roster %>%
@@ -637,6 +716,10 @@ column_dictionary <- tibble::tribble(
   "vector_group", "Broad vector group for vector rows, such as mosquito, tick, flea, or midge.",
   "vector_taxon_rank", "Taxonomic grain of the vector name after cleanup, such as species, genus, or infraspecific.",
   "vector_join_key", "Normalized vector name key used to join disease-vector, host-vector, and competence evidence.",
+  "vector_role_assignment", "Compact reviewed or draft vector role used for modelling handoff. Source-backed rows come from vector_role_assignments.csv; unassigned vector rows are blank.",
+  "vector_role_confidence", "Confidence for vector_role_assignment. Source-backed rows use assignment_confidence from vector_role_assignments.csv.",
+  "vector_role_needs_manual_review", "TRUE when the vector role assignment remains review-flagged; blank when no reviewed/draft vector role assignment exists.",
+  "vector_role_assignment_status", "Status for vector_role_assignment, such as draft_source_backed or draft_needs_review.",
   "has_disease_vector_evidence", "TRUE if the vector appears in the curated disease-vector table for this disease.",
   "has_host_vector_evidence", "TRUE if this vector also has VectorMap/MapVEu host-vector evidence in the integrated host-vector layer.",
   "has_competence_evidence", "TRUE if this disease-vector pair has a joined vector competence annotation.",
@@ -648,13 +731,40 @@ column_dictionary <- tibble::tribble(
   "vector_competence_status", "Joined competence status for the disease-vector pair, such as competent, mixed, not_competent, or unclear.",
   "transmission_demonstrated", "Whether transmission was demonstrated in the competence evidence where extractable.",
   "natural_infection_reported", "Whether natural infection was reported in the competence evidence where extractable.",
-  "vector_role_hint", "Source-language hint for vector role, such as primary_vector, bridge_vector, or sylvatic_vector, where captured.",
+  "vector_role_hint", "Source-language hint from the disease-vector evidence layer, such as primary_vector, bridge_vector, or sylvatic_vector. This is separate from reviewed vector_role_assignment.",
   "uncertainty_reason", "Compact caveat flags from competence extraction, such as field_detection_only, temperature_dependent, or no_transmission_demonstrated.",
   "taxonomy_caution", "TRUE when vector taxonomy cleanup or matching raised a review caution."
 )
 
+vector_assignment_unmatched_to_roster <- vector_role_assignments_raw %>%
+  anti_join(
+    roster %>%
+      filter(species_role == "vector") %>%
+      mutate(
+        role_disease_key = role_join_key(disease_name),
+        role_vector_key = role_join_key(vector_join_key)
+      ) %>%
+      distinct(role_disease_key, role_vector_key),
+    by = c("role_disease_key", "role_vector_key")
+  ) %>%
+  select(
+    disease_name,
+    source_pathogen,
+    vector_species,
+    vector_join_key,
+    vector_role_assignment,
+    assignment_status,
+    assignment_confidence,
+    evidence_record_ids,
+    assignment_basis,
+    needs_manual_review,
+    review_notes
+  ) %>%
+  arrange(disease_name, vector_species, vector_role_assignment)
+
 write_csv(roster, output_path, na = "")
 write_csv(summary_table, summary_path, na = "")
+write_csv(vector_assignment_unmatched_to_roster, vector_assignment_unmatched_path, na = "")
 write_xlsx(
   list(
     roster = roster,
@@ -665,4 +775,5 @@ write_xlsx(
 
 message("Wrote species host/vector roster: ", output_path)
 message("Wrote species host/vector roster summary: ", summary_path)
+message("Wrote vector assignment unmatched QA: ", vector_assignment_unmatched_path)
 message("Wrote species host/vector roster workbook: ", xlsx_path)

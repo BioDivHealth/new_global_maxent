@@ -560,7 +560,7 @@ pilot_package_source_descriptions <- function() {
   c(
     disease_modelling_pilot = "Generated from disease_modelling_readiness_full.csv rows in the non-held WHO pilot subset.",
     pilot_hosts = "Filtered host rows from species_host_vector_roster.csv using readiness-script disease matches.",
-    pilot_vectors = "Filtered vector rows from species_host_vector_roster.csv using readiness-script disease matches.",
+    pilot_vectors = "Filtered vector rows from species_host_vector_roster.csv using readiness-script disease matches, including reviewed/draft vector role assignments where available.",
     pilot_countries = "Filtered and summarised GenBank disease-country and WHO DON country evidence using readiness-script disease matches.",
     pilot_sdm_species = "Filtered host/vector roster species joined to the accessible SDM species inventory, with projection and comparison status where available.",
     pilot_evidence_summary = "Disease-level evidence, role, country, SDM, and join-count fields from the full readiness audit table."
@@ -673,7 +673,7 @@ pilot_package_readme_lines <- function() {
     "- `manifest.csv`: row counts, column counts, source descriptions, and generation time.",
     "- `disease_modelling_pilot.csv`: one row per non-held WHO-origin pilot analysis unit.",
     "- `pilot_hosts.csv`: host species rows for pilot diseases from `species_host_vector_roster.csv`.",
-    "- `pilot_vectors.csv`: vector taxon rows for pilot diseases from `species_host_vector_roster.csv`.",
+    "- `pilot_vectors.csv`: vector taxon rows for pilot diseases from `species_host_vector_roster.csv`, including reviewed/draft `vector_role_assignment` fields where available.",
     "- `pilot_countries.csv`: GenBank and WHO DON disease-country evidence summaries.",
     "- `pilot_sdm_species.csv`: host/vector species with accessible SDM model status, plus projection and comparison status where available.",
     "- `pilot_evidence_summary.csv`: disease-level evidence, country, role, and SDM counts.",

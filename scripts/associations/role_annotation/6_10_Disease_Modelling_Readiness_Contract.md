@@ -78,9 +78,9 @@ master-plus compatibility migration for role-roster inputs:
 | `disease_modelling_pilot.csv` | 31 | 34 |
 | `disease_modelling_pilot_package/manifest.csv` | 6 | 6 |
 | `disease_modelling_pilot_package/pilot_hosts.csv` | 2235 | 18 |
-| `disease_modelling_pilot_package/pilot_vectors.csv` | 448 | 22 |
+| `disease_modelling_pilot_package/pilot_vectors.csv` | 448 | 26 |
 | `disease_modelling_pilot_package/pilot_countries.csv` | 1188 | 16 |
-| `disease_modelling_pilot_package/pilot_sdm_species.csv` | 2683 | 13 |
+| `disease_modelling_pilot_package/pilot_sdm_species.csv` | 2683 | 17 |
 | `disease_modelling_pilot_package/pilot_evidence_summary.csv` | 31 | 73 |
 
 Host-role fields are part of the current baseline for `pilot_hosts.csv` and
@@ -90,6 +90,14 @@ Host-role fields are part of the current baseline for `pilot_hosts.csv` and
 - `host_role_confidence`
 - `host_role_needs_manual_review`
 - `host_role_assignment_status`
+
+Vector-role fields are part of the current baseline for `pilot_vectors.csv` and
+`pilot_sdm_species.csv`:
+
+- `vector_role_assignment`
+- `vector_role_confidence`
+- `vector_role_needs_manual_review`
+- `vector_role_assignment_status`
 
 ## Package Manifest
 

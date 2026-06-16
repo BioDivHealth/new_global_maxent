@@ -15,7 +15,7 @@ status fields live in `disease_modelling_pilot.csv` and
 - `manifest.csv`: row counts, column counts, source descriptions, and generation time.
 - `disease_modelling_pilot.csv`: one row per non-held WHO-origin pilot analysis unit.
 - `pilot_hosts.csv`: host species rows for pilot diseases from `species_host_vector_roster.csv`.
-- `pilot_vectors.csv`: vector taxon rows for pilot diseases from `species_host_vector_roster.csv`.
+- `pilot_vectors.csv`: vector taxon rows for pilot diseases from `species_host_vector_roster.csv`, including reviewed/draft `vector_role_assignment` fields where available.
 - `pilot_countries.csv`: GenBank and WHO DON disease-country evidence summaries.
 - `pilot_sdm_species.csv`: host/vector species with accessible SDM model status, plus projection and comparison status where available.
 - `pilot_evidence_summary.csv`: disease-level evidence, country, role, and SDM counts.

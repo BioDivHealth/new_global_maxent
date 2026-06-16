@@ -1,16 +1,16 @@
 disease_name,host_candidate_rows,human_host_candidate_rows,livestock_host_candidate_rows,bird_host_candidate_rows,rodent_host_candidate_rows,bat_host_candidate_rows,roster_rows,roster_host_rows,roster_vector_rows,roster_vectors_with_host_vector_evidence,roster_vectors_with_competence,roster_vectors_with_human_biting,roster_taxonomy_caution_rows,disease_vector_rows,disease_vector_confirmed_rows,disease_vector_probable_rows,disease_vector_candidate_rows,vector_competence_joined_rows,vector_competence_transmission_yes_rows,vector_competence_natural_infection_yes_rows,genbank_country_rows,genbank_distinct_countries_or_territories,genbank_records_with_country,genbank_unmatched_map_rows,genbank_unmatched_records,who_don_focal_country_rows,who_don_distinct_records,who_don_distinct_countries,who_don_high_confidence_rows,who_don_manual_review_rows,host_role_evidence_rows,host_role_evidence_substantive_rows,vector_role_evidence_rows,vector_role_evidence_substantive_rows,host_role_assignment_rows,host_role_substantive_assignment_rows,vector_role_assignment_rows,vector_role_substantive_assignment_rows,has_host_candidates,has_vector_rows,has_competence_joined,has_genbank_country_evidence,has_who_don_focal_evidence,has_substantive_host_role_evidence,has_substantive_vector_role_evidence,has_any_substantive_role_evidence,role_assignment_status
-Chikungunya fever,20,1,0,1,2,9,41,20,21,12,15,12,0,21,2,7,10,15,14,0,115,115,10709,7,3187,0,0,0,0,0,4,4,3,3,3,3,3,3,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Crimean-Congo hemorrhagic fever,13,1,5,0,3,0,62,13,49,35,30,27,2,49,16,4,29,30,2,1,53,53,5335,1,4,4,4,3,0,4,2,2,5,5,2,2,5,5,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Dengue,37,1,0,0,5,14,53,37,16,6,15,6,0,16,8,2,4,15,2,3,143,143,53740,7,1254,47,38,28,1,47,1,1,6,6,1,1,6,6,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Oropouche fever,6,1,0,0,0,0,21,6,15,10,15,10,0,16,1,4,7,16,2,9,15,15,3156,1,3,5,1,5,0,5,2,2,3,3,2,2,3,3,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Plague,37,1,1,0,22,0,84,37,47,11,47,2,3,47,38,5,3,47,37,14,36,36,152996,1,1101,21,19,10,1,21,3,3,4,4,3,3,4,4,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Rift Valley fever,17,1,5,0,1,6,95,17,78,45,72,43,1,88,6,33,36,82,30,53,33,33,1793,1,6,18,13,10,1,18,5,5,6,6,5,5,6,6,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Chikungunya fever,30,1,0,1,4,9,51,30,21,12,15,12,0,21,2,7,10,15,14,0,115,115,10709,7,3187,0,0,0,0,0,4,4,3,3,3,3,3,3,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Crimean-Congo hemorrhagic fever,58,1,7,2,3,1,107,58,49,35,30,27,2,49,16,4,29,30,2,1,53,53,5335,1,4,4,4,3,0,4,2,2,5,5,2,2,5,5,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Dengue,53,1,0,0,5,21,69,53,16,6,15,6,0,16,8,2,4,15,2,3,143,143,53740,7,1254,47,38,28,1,47,1,1,6,6,1,1,6,6,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Oropouche fever,8,1,1,0,0,1,23,8,15,10,15,10,0,16,1,4,7,16,2,9,15,15,3156,1,3,5,1,5,0,5,2,2,3,3,2,2,3,3,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Plague,52,1,1,0,23,0,99,52,47,11,47,2,3,47,38,5,3,47,37,14,36,36,152996,1,1101,21,19,10,1,21,3,3,4,4,3,3,4,4,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Rift Valley fever,41,1,6,0,5,6,119,41,78,45,72,43,1,88,6,33,36,82,30,53,33,33,1793,1,6,18,13,10,1,18,5,5,6,6,5,5,6,6,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
 Severe fever with thrombocytopenia syndrome (SFTS),0,0,0,0,0,0,51,36,15,7,15,3,0,15,5,1,2,15,5,15,6,6,9975,0,0,0,0,0,0,0,3,3,4,4,2,2,3,3,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Tick-borne encephalitis,0,0,0,0,0,0,95,84,11,6,11,6,0,11,8,1,0,11,10,8,37,37,3428,1,1,0,0,0,0,0,4,4,5,5,3,3,5,5,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Venezuelan equine encephalitis,31,1,1,7,9,7,66,31,35,21,31,19,0,43,9,12,22,40,19,17,19,19,368,1,1,0,0,0,0,0,3,3,3,3,2,2,3,3,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
-West Nile fever,186,1,7,140,6,1,261,186,75,47,39,39,1,75,9,10,52,39,21,1,73,73,8316,0,0,14,11,4,0,14,4,4,6,6,3,3,5,5,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Yellow fever,23,1,0,0,0,0,53,23,30,12,27,12,0,32,18,7,7,29,20,10,42,42,1995,1,1,109,71,34,7,104,2,2,6,6,1,1,6,6,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
-Zika virus disease,18,1,0,0,2,6,74,18,56,29,27,29,2,57,7,7,27,27,7,11,78,78,2245,3,25,16,15,14,9,14,1,1,3,3,1,1,3,3,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Tick-borne encephalitis,0,0,0,0,0,0,103,92,11,6,11,6,0,11,8,1,0,11,10,8,37,37,3428,1,1,0,0,0,0,0,4,4,5,5,3,3,5,5,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Venezuelan equine encephalitis,87,1,6,12,12,11,122,87,35,19,32,19,0,43,9,12,22,40,19,17,19,19,368,1,1,0,0,0,0,0,3,3,3,3,2,2,3,3,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,reviewed_assignment_present
+West Nile fever,274,1,8,144,14,8,349,274,75,47,39,39,1,75,9,10,52,39,21,1,73,73,8316,0,0,14,11,4,0,14,4,4,6,6,3,3,5,5,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Yellow fever,73,1,0,0,1,6,103,73,30,12,27,12,0,32,18,7,7,29,20,10,42,42,1995,1,1,109,71,34,7,104,2,2,6,6,1,1,6,6,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
+Zika virus disease,21,1,0,0,2,6,77,21,56,29,27,29,2,57,7,7,27,27,7,11,78,78,2245,3,25,16,15,14,9,14,1,1,3,3,1,1,3,3,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,reviewed_assignment_present
 Acute diarrhoea,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,2,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Acute encephalitis syndrome due to Chandipura virus,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Acute febrile illness,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,3,0,3,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
@@ -23,7 +23,7 @@ African horse sickness,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,14,2747,0,0,0,
 Alkhurma,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,76,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Andes,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,8,530,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Anthrax,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,91,91,39701,2,5,15,15,4,0,15,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Argentine hemorrhagic fever,8,1,0,0,6,0,8,8,0,0,0,0,0,0,0,0,0,0,0,0,3,3,178,0,0,0,0,0,0,0,2,2,0,0,2,2,0,0,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Argentine hemorrhagic fever,10,1,0,0,6,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,3,3,178,0,0,0,0,0,0,0,2,2,0,0,2,2,0,0,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Australian bat lyssavirus,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,46,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Babesia microti,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,49,1168,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Barmah Forest virus,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,119,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
@@ -48,7 +48,7 @@ Dracunculiasis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,2,0,2,0,0,0
 Duvenhage,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Dysentery,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 EEE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,20,939,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Ebola virus disease,16,1,0,0,2,6,16,16,0,0,0,0,0,0,0,0,0,0,0,0,16,16,3578,0,0,210,158,18,7,207,5,5,0,0,4,4,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Ebola virus disease,19,1,0,0,2,7,19,19,0,0,0,0,0,0,0,0,0,0,0,0,16,16,3578,0,0,210,158,18,7,207,5,5,0,0,4,4,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Ehrlichia chaffeensis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,18,231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Encephalitis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,4,0,5,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Enterovirus D68 respiratory disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
@@ -61,19 +61,19 @@ HIV,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,
 Haemorrhagic fever syndrome,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,140,121,27,0,140,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Hand foot and mouth disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,4,5,0,7,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Hantavirus disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,3,2,3,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Hantavirus pulmonary syndrome,0,0,0,0,0,0,17,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
+Hantavirus pulmonary syndrome,0,0,0,0,0,0,28,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Hantavirus pulmonary syndrome; Sin Nombre,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,302,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Hemorrhagic fever with renal syndrome (Hantaan virus),21,1,0,0,14,1,21,21,0,0,0,0,0,0,0,0,0,0,0,0,5,5,2064,0,0,0,0,0,0,0,2,2,0,0,2,2,0,0,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Hemorrhagic fever with renal syndrome (Hantaan virus),30,1,0,0,17,1,30,30,0,0,0,0,0,0,0,0,0,0,0,0,5,5,2064,0,0,0,0,0,0,0,2,2,0,0,2,2,0,0,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Hendra,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,213,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Hepatitis A,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Hepatitis E,0,0,0,0,0,0,49,49,0,0,0,0,0,0,0,0,0,0,0,0,62,62,11877,0,0,6,4,4,0,6,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
+Hepatitis E,0,0,0,0,0,0,74,74,0,0,0,0,0,0,0,0,0,0,0,0,62,62,11877,0,0,6,4,4,0,6,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,18,7,4,14,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza (H1N1),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2285,63,138,0,2285,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza (H1N2),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,2,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza (H3N2),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,5,6,1,6,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Influenza (H5N1 avian influenza),538,1,10,382,3,12,538,538,0,0,0,0,0,0,0,0,0,0,0,0,95,95,194591,0,0,0,0,0,0,0,5,5,0,0,5,5,0,0,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Influenza (H5N1 avian influenza),559,1,11,382,3,13,559,559,0,0,0,0,0,0,0,0,0,0,0,0,95,95,194591,0,0,0,0,0,0,0,5,5,0,0,5,5,0,0,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Influenza (H5N1),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,5,2,2,5,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Influenza (H7N9 avian influenza),0,0,0,0,0,0,538,538,0,0,0,0,0,0,0,0,0,0,0,0,20,20,16128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
+Influenza (H7N9 avian influenza),0,0,0,0,0,0,559,559,0,0,0,0,0,0,0,0,0,0,0,0,20,20,16128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza (H7N9),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza A(H5N1),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,102,99,7,2,101,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Influenza A(H5N6),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,1,1,5,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
@@ -84,7 +84,7 @@ Jamestown Canyon,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,434,0,0,0,0,0,0,0,0
 Japanese encephalitis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,22,3342,2,9,1,1,1,0,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Kyasanur Forest disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,294,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 La Crosse encephalitis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,324,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Lassa fever,14,1,1,0,9,0,14,14,0,0,0,0,0,0,0,0,0,0,0,0,11,11,2684,0,0,27,21,11,4,27,4,4,0,0,4,4,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Lassa fever,21,1,1,0,12,0,21,21,0,0,0,0,0,0,0,0,0,0,0,0,11,11,2684,0,0,27,21,11,4,27,4,4,0,0,4,4,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Legionellosis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,6,6,1,5,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Leishmania aethiopica,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,87,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Leishmaniasis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,2,0,4,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
@@ -95,17 +95,17 @@ Lujo hemorrhagic fever,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,3,3,9,0,0,0,0,0,0
 Lumpy skin disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,58,2676,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Machupo,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,137,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Malaria,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,2,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Marburg virus disease,9,1,0,0,3,4,9,9,0,0,0,0,0,0,0,0,0,0,0,0,16,16,358,0,0,67,32,17,1,67,3,3,0,0,3,3,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Marburg virus disease,12,1,0,0,3,6,12,12,0,0,0,0,0,0,0,0,0,0,0,0,16,16,358,0,0,67,32,17,1,67,3,3,0,0,3,3,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Mayaro,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,182,1,28,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Measles,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,57,19,47,2,57,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Menangle,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Meningococcal disease,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,98,40,6,137,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Microcephaly,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,1,0,4,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Middle East Respiratory Syndrome (MERS),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,280,184,22,1,279,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Mpox (Monkeypox),20,1,0,0,4,0,20,20,0,0,0,0,0,0,0,0,0,0,0,0,59,59,11748,0,0,3,3,3,2,3,5,5,0,0,3,3,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Mpox (Monkeypox),39,1,0,0,4,0,39,39,0,0,0,0,0,0,0,0,0,0,0,0,59,59,11748,0,0,3,3,3,2,3,5,5,0,0,3,3,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
 Murine typhus,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,21,2307,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Murray Valley encephalitis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,321,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
-Nipah virus disease,16,1,4,0,1,7,16,16,0,0,0,0,0,0,0,0,0,0,0,0,8,8,372,0,0,6,3,4,0,6,7,7,0,0,7,7,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
+Nipah virus disease,34,1,5,0,1,17,34,34,0,0,0,0,0,0,0,0,0,0,0,0,8,8,372,0,0,6,3,4,0,6,7,7,0,0,7,7,0,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,reviewed_assignment_present
 O'nyong-nyong,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Omsk HF,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,122,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
 Pertussis,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,no_role_evidence_or_assignment
