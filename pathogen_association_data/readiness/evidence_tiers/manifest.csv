@@ -1,0 +1,3 @@
+table_name,relative_path,row_count,column_count,description
+tiered_species,pathogen_association_data/readiness/evidence_tiers/tiered_species.csv,2734,65,One row per readiness species/taxon with derived tier/profile fields.
+host_role_bucket_counts,pathogen_association_data/readiness/evidence_tiers/host_role_bucket_counts.csv,76,8,Counts of broad modelling-facing host-role buckets and evidence bases.
